@@ -37,9 +37,6 @@ updater:
 # Discover some devices automatically
 discovery:
 
-# Allows you to issue voice commands from the frontend in enabled browsers
-#conversation:
-
 # Enables support for tracking state changes over time.
 history:
 
@@ -61,24 +58,8 @@ device_tracker:
     track_new_devices: false 
   - platform: bluetooth_tracker
 
-##########################
-# Sensors
-##########################
 # Track the sun
 sun:
-
-# Weather Prediction
-sensor weather:
-  - platform: darksky
-    api_key: !secret dark_sky_api_password
-    monitored_conditions:
-      - summary
-      - temperature
-      - wind_speed
-      - humidity
-      - temperature_min
-      - temperature_max
-      - hourly_summary
 
 media_player:
    platform: plex
@@ -88,57 +69,13 @@ netatmo:
   secret_key: !secret netatmo_secret_key
   username: !secret netatmo_username
   password: !secret netatmo_password
-
-sensor fast:
-  - platform: fastdotcom 
-
-sensor cpu:
-  - platform: command_line
-    name: CPU Temperature
-    command: "cat /sys/class/thermal/thermal_zone0/temp"
-    unit_of_measurement: "°C"
-    value_template: '{{ (value | multiply(0.001)) | round(1) }}'
-
-  - platform: systemmonitor
-    resources:
-    - type: disk_use_percent
-      arg: /
-    - type: memory_free
-    - type: processor_use
-    - type: network_in
-      arg: eth0
-    - type: network_out
-      arg: eth0
-    - type: last_boot
-
-# Plant sensors
-sensor plants:
-  - platform: miflora
-    mac: C4:7C:8D:60:E4:B2
-    name: Sanseviera 
-    force_update: false
-    monitored_conditions:
-     - moisture
-     - light
-     - temperature
-     - conductivity
-     - battery
-
-  - platform: miflora
-    mac: C4:7C:8D:62:80:E6
-    name: Palme
-    force_update: false
-    monitored_conditions:
-     - moisture
-     - light
-     - temperature
-     - conductivity
-     - battery
+ 
 
 ##########################
 # Includes
 ##########################
 
+sensor: !include includes/sensors.yaml
 automation: !include includes/automations.yaml
 script: !include includes/scripts.yaml
 group: !include includes/groups.yaml

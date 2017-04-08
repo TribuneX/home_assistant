@@ -1,0 +1,57 @@
+##########################
+# Sensors
+##########################
+
+# Weather Prediction
+- platform: darksky
+  api_key: !secret dark_sky_api_password
+  monitored_conditions:
+    - summary
+    - temperature
+    - wind_speed
+    - humidity
+    - temperature_min
+    - temperature_max
+    - hourly_summary
+- platform: fastdotcom 
+
+- platform: command_line
+  name: CPU Temperature
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: '{{ (value | multiply(0.001)) | round(1) }}'
+
+- platform: systemmonitor
+  resources:
+  - type: disk_use_percent
+    arg: /
+  - type: memory_free
+  - type: processor_use
+  - type: network_in
+    arg: eth0
+  - type: network_out
+    arg: eth0
+  - type: last_boot
+
+# Plant sensors
+- platform: miflora
+  mac: C4:7C:8D:60:E4:B2
+  name: Sanseviera 
+  force_update: false
+  monitored_conditions:
+    - moisture
+    - light
+    - temperature
+    - conductivity
+    - battery
+
+- platform: miflora
+  mac: C4:7C:8D:62:80:E6
+  name: Palme
+  force_update: false
+  monitored_conditions:
+    - moisture
+    - light
+    - temperature
+    - conductivity
+    - battery
