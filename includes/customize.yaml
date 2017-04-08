@@ -52,3 +52,7 @@
     icon: mdi:lightbulb-on
   scene.alles_aus:
     icon: mid:power
+  device_tracker.nicolesiphone:
+    friendly_name: Nicole
+  device_tracker.iphones:
+    friendly_name: Sascha
