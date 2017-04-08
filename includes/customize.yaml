@@ -1,0 +1,54 @@
+
+  switch.light_tv:
+    icon: mdi:lightbulb-on
+    assumed_state: false
+  switch.light_sessel:
+    icon: mdi:lightbulb-on
+    assumed_state: false
+  switch.light_stern:
+    icon: mdi:lightbulb-on
+    assumed_state: false
+  switch.light_sofa:
+    icon: mdi:lightbulb-on
+    assumed_state: false
+  switch.light_nicole:
+    icon: mdi:lightbulb-on
+    assumed_state: false
+  switch.light_sascha:
+    icon: mdi:lightbulb-on
+    assumed_state: false
+  switch.light_baum:
+    icon: mdi:lightbulb-on
+    assumed_state: false
+  switch.tv:
+    icon: mdi:television
+    assumed_state: false
+  switch.tv_2:
+    icon: mdi:television
+    assumed_state: false
+  switch.server:
+    icon: mdi:server
+  sensor.palme_battery:
+    icon: mdi:battery-80
+  sensor.sanseviera_battery:
+    icon: mdi:battery-80
+  sensor.sanseviera_light_intensity:
+    icon: mdi:white-balance-sunny
+  sensor.palme_light_intensity:
+    icon: mdi:white-balance-sunny
+  sensor.palme_conductivity:
+    icon: mdi:barley
+  sensor.sanseviera_conductivity:
+    icon: mdi:barley
+  sensor.sanseviera_moisture:
+    icon: mdi:cup-water
+  sensor.palme_moisture:
+    icon: mdi:cup-water
+  sensor.fastcom_download:
+    icon: mdi:cloud-download
+  scene.lampen_bett:
+    icon: mdi:lightbulb-on
+  scene.lampen_wohnzimmer:
+    icon: mdi:lightbulb-on
+  scene.alles_aus:
+    icon: mid:power
