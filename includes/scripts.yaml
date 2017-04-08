@@ -1,0 +1,52 @@
+##########################
+# Skripte
+##########################
+
+restart_ha:
+  alias: Restart Home Assistant
+  sequence:
+    - alias: Restart HA
+      service: homeassistant.restart
+
+reload_automations:
+  alias: Reload Automations
+  sequence:
+    - alias: Reload-Automations
+      service: automation.reload
+
+reboot_pi:
+  alias: Reboot System
+  sequence:
+    - service: homeassistant.turn_off
+    - service: shell_command.pi 
+
+# Turns lights on and off after sunset
+vacation_lights:
+  sequence:
+    # wait an hour after sunset
+    - delay:
+        hours: 1
+    # turn lights on for 2 hours after sunset
+    - service: switch.turn_on
+      entity_id: switch.light_tv
+    - delay:
+        hours: 2
+    # turn lights off and wait 2 hours
+    - service: switch.turn_off
+      entity_id: switch.light_tv
+    - delay:
+        hours: 2    
+    # turn lights on for 30 more minutes
+    - service: switch.turn_on
+      entity_id: switch.light_tv
+    - delay:
+        minutes: 30
+    # turn lights off
+    - service: switch.turn_off
+      entity_id: switch.light_tv
+# Inspired by https://github.com/Tommatheussen/Home-Assistant-Configuration/blob/master/script/get_latest_config.yaml
+get_latest_config:
+  alias: "Get Latest Config"
+  sequence:
+    - service: shell_command.git_pull
+    - service: homeassistant.restart

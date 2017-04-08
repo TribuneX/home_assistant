@@ -1,0 +1,219 @@
+##########################
+# Automations 
+##########################
+
+- alias: 'Nicole left'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: device_tracker.nicolesiphone
+    # Optional 
+    from: 'home'
+    to: 'not_home'
+  action:
+    - service: notify.telegram
+      data:
+        message: 'Nicole just left home.'
+
+- alias: 'Nicole arrived'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: device_tracker.nicolesiphone
+    # Optional 
+    from: 'not_home'
+    to: 'home'
+  action:
+    - service: notify.telegram
+      data:
+        message: 'Nicole arrived at home.'
+
+- alias: 'Water Sanseviera' 
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: device_tracker.iphones
+    from: 'not_home'
+    to: 'home'
+  condition:
+    condition: numeric_state
+    entity_id: sensor.sanseviera_moisture
+    below: 20
+  action:
+    - service: notify.telegram
+      data:
+        message: 'Please water Sanseviera! Moisture: {{states.sensor.sanseviera_moisture.state}}% | Light: {{states.sensor.sanseviera_light_intensity.state}} lux | Conductivity: {{states.sensor.sanseviera_conductivity.state}}'
+
+- alias: 'Water Palm'
+  hide_entity: True 
+  trigger:
+    platform: state
+    entity_id: device_tracker.iphones
+    from: 'not_home'
+    to: 'home'
+  condition:
+    condition: numeric_state
+    entity_id: sensor.palme_moisture
+    below: 20
+  action:
+    - service: notify.telegram
+      data:
+        message: 'Please water Palm! Moisture: {{states.sensor.palme_moisture.state}}% | Light: {{states.sensor.palme_light_intensity.state}} lux | Conductivity: {{states.sensor.palme_conductivity.state}}'
+
+- alias: 'CO2 Bedroom'
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_schlafzimmer_co2
+    above: 900
+  action:
+    - service: notify.telegram
+      data:
+        message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
+
+- alias: 'CO2 Livingroom'
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_wohnzimmer_co2
+    above: 900
+  action:
+    - service: notify.telegram
+      data:
+        message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
+
+- alias: 'Noise Livingroom'
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_wohnzimmer_noise
+    above: 65
+  action:
+    - service: notify.telegram
+      data:
+        message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise.state}}db'
+
+- alias: 'Update Available Notifications'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    - service: notify.telegram
+      data:
+        message: 'Update for Home Assistant is available.'
+
+- alias: 'Power off all'
+  hide_entity: True
+  trigger:
+      platform: time
+      after: '03:00'
+  action:
+    service: switch.turn_off
+
+- alias: 'Nobody at home'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: group.personen
+    from: 'home'
+    to: 'not_home'
+    for:
+      minutes: 10 
+  action:
+    - service: notify.telegram
+      data:
+        message: 'Everybody left. I will switch off all devices.'
+    - service: switch.turn_off
+
+- alias: 'Lights in the dark'
+  trigger:
+    platform: state
+    entity_id: group.personen
+    from: 'not_home'
+    to: 'home'
+  condition:
+    condition: sun
+    after: sunset
+    after_offset: "-00:30:00"
+
+  action:
+    - service: switch.turn_on
+      entity_id: switch.light_sofa
+    - service: switch.turn_on
+      entity_id: switch.light_tv
+
+- alias: 'Lights when I am home'
+  trigger:
+    - platform: sun
+      event: sunset
+      #offset: '-00:15:00'
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: device_tracker.iphones
+        state: 'home'
+      - condition: state
+        entity_id: device_tracker.nicolesiphone
+        state: 'home'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.light_sofa
+    - service: switch.turn_on
+      entity_id: switch.light_tv
+
+- alias: 'Weather Report'
+  trigger:
+    platform: time
+    after: '07:30'
+  action:
+    - service: notify.telegram
+      data:
+        message: 'Weather Report for today: Current: {{states.sensor.netatmo_outdoor_temperature.state}}°C 
+        H/L: {{states.sensor.dark_sky_daily_high_temperature.state}}°C/{{states.sensor.dark_sky_daily_low_temperature.state}}°C 
+        {{states.sensor.dark_sky_hourly_summary.state}}'
+
+# Vacation Mode 
+# Inspired by https://github.com/ronmarco/home-assistant-config/blob/master/yaml_automation/status-vacation.yaml
+
+# Turn vacation mode on automatically
+- alias: 'turn on vacation mode when nobody is home for more than 24 hours'
+  trigger:
+    - platform: state
+      entity_id: group.personen
+      from: 'home'
+      to: 'not_home'
+      for:
+        hours: 24
+        minutes: 0
+        seconds: 0
+  action:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.vacation_mode
+
+
+# Turn vacation mode off automatically
+- alias: 'turn vacation mode off when home'
+  trigger:
+    - platform: state
+      entity_id: group.personen 
+      from: 'not_home'
+      to: 'home'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.vacation_mode
+
+# Turn on lights when vacation mode active
+- alias: 'turn on vacation lights at sunset when vacation mode on'
+  trigger:
+    - platform: state
+      entity_id: sun.sun
+      from: 'above_horizon'
+      to: 'below_horizon'
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+  action:
+    - service: script.vacation_lights

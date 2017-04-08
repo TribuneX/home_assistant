@@ -1,0 +1,201 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Frankfurt
+
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude_value
+  longitude: !secret longitude_value
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 107
+
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Berlin
+
+  customize:
+    switch.light_tv:
+      icon: mdi:lightbulb-on
+      assumed_state: false
+    switch.light_sessel:
+      icon: mdi:lightbulb-on
+      assumed_state: false
+    switch.light_stern:
+      icon: mdi:lightbulb-on
+      assumed_state: false
+    switch.light_sofa:
+      icon: mdi:lightbulb-on
+      assumed_state: false
+    switch.light_nicole:
+      icon: mdi:lightbulb-on
+      assumed_state: false
+    switch.light_sascha:
+      icon: mdi:lightbulb-on
+      assumed_state: false
+    switch.light_baum:
+      icon: mdi:lightbulb-on
+      assumed_state: false
+    switch.tv:
+      icon: mdi:television
+      assumed_state: false
+    switch.tv_2:
+      icon: mdi:television
+      assumed_state: false
+    switch.server:
+      icon: mdi:server
+    sensor.palme_battery:
+      icon: mdi:battery-80
+    sensor.sanseviera_battery:
+      icon: mdi:battery-80
+    sensor.sanseviera_light_intensity:
+      icon: mdi:white-balance-sunny
+    sensor.palme_light_intensity:
+      icon: mdi:white-balance-sunny
+    sensor.palme_conductivity:
+      icon: mdi:barley
+    sensor.sanseviera_conductivity:
+      icon: mdi:barley
+    sensor.sanseviera_moisture:
+      icon: mdi:cup-water
+    sensor.palme_moisture:
+      icon: mdi:cup-water
+    sensor.fastcom_download:
+      icon: mdi:cloud-download
+    scene.lampen_bett:
+      icon: mdi:lightbulb-on
+    scene.lampen_wohnzimmer:
+      icon: mdi:lightbulb-on
+    scene.alles_aus:
+      icon: mid:power
+
+recorder:
+  db_url: !secret mysql_path
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL or running in Docker etc
+  base_url: !secret base_url
+  ssl_certificate: !secret ssl_certificate_path   # path to your cacert.pem
+  ssl_key: !secret ssl_private_key
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Telegram bot
+notify:
+  - name: telegram
+    platform: telegram
+    api_key: !secret telegram_api_key
+    chat_id: !secret telegram_chat_id
+
+# Presence Detection
+device_tracker:
+  - platform: fritz
+    host: !secret fritz_host
+    password: !secret fritz_password
+    track_new_devices: false 
+  - platform: bluetooth_tracker
+
+##########################
+# Sensors
+##########################
+# Track the sun
+sun:
+
+# Weather Prediction
+sensor weather:
+  - platform: darksky
+    api_key: !secret dark_sky_api_password
+    monitored_conditions:
+      - summary
+      - temperature
+      - wind_speed
+      - humidity
+      - temperature_min
+      - temperature_max
+      - hourly_summary
+
+media_player:
+   platform: plex
+
+netatmo:
+  api_key: !secret netatmo_api_key
+  secret_key: !secret netatmo_secret_key
+  username: !secret netatmo_username
+  password: !secret netatmo_password
+
+sensor fast:
+  - platform: fastdotcom 
+
+sensor cpu:
+  - platform: command_line
+    name: CPU Temperature
+    command: "cat /sys/class/thermal/thermal_zone0/temp"
+    unit_of_measurement: "°C"
+    value_template: '{{ (value | multiply(0.001)) | round(1) }}'
+
+  - platform: systemmonitor
+    resources:
+    - type: disk_use_percent
+      arg: /
+    - type: memory_free
+    - type: processor_use
+    - type: network_in
+      arg: eth0
+    - type: network_out
+      arg: eth0
+    - type: last_boot
+
+# Plant sensors
+sensor plants:
+  - platform: miflora
+    mac: C4:7C:8D:60:E4:B2
+    name: Sanseviera 
+    force_update: false
+    monitored_conditions:
+     - moisture
+     - light
+     - temperature
+     - conductivity
+     - battery
+
+  - platform: miflora
+    mac: C4:7C:8D:62:80:E6
+    name: Palme
+    force_update: false
+    monitored_conditions:
+     - moisture
+     - light
+     - temperature
+     - conductivity
+     - battery
+
+##########################
+# Includes
+##########################
+
+automation: !include includes/automations.yaml
+script: !include includes/scripts.yaml
+group: !include includes/groups.yaml
+switch: !include includes/switch.yaml
+scene: !include includes/scenes.yaml
+input_boolean: !include includes/inputs.yaml
+shell_command: !include includes/shell_commands.yaml

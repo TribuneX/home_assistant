@@ -1,0 +1,7 @@
+##########################
+# Shell commands
+##########################
+
+turn_off_server: 'bash /opt/scripts/freenas/shutdown_server.sh'
+pi: 'sudo reboot -now'
+git_pull: 'bash /opt/homeassistant/bash/git_pull.sh'

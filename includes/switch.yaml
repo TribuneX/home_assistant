@@ -1,0 +1,48 @@
+##########################
+# Switches
+##########################
+    
+- platform: command_line
+  switches:
+    light_tv:
+      command_on: "sudo /opt/rcswitch-pi/send 11111 2 1"
+      command_off: "sudo /opt/rcswitch-pi/send 11111 2 0"
+      friendly_name: Lampe Fernseher
+    tv:
+      command_on: "sudo /opt/rcswitch-pi/send 11111 1 1"
+      command_off: "sudo /opt/rcswitch-pi/send 11111 1 0"
+      friendly_name: Fernseher
+    light_sofa:
+      command_on: "sudo /opt/rcswitch-pi/send 11111 4 1"
+      command_off: "sudo /opt/rcswitch-pi/send 11111 4 0"
+      friendly_name: Lampe Sofa
+    light_sessel:
+      command_on: "sudo /opt/rcswitch-pi/send 11111 3 1"
+      command_off: "sudo /opt/rcswitch-pi/send 11111 3 0"
+      friendly_name: Lampe Sessel
+    light_stern:
+      command_on: "sudo /opt/rcswitch-pi/send 11110 3 1"
+      command_off: "sudo /opt/rcswitch-pi/send 11110 3 0"
+      friendly_name: Stern
+    light_baum:
+      command_on: "sudo /opt/rcswitch-pi/send 11110 4 1"
+      command_off: "sudo /opt/rcswitch-pi/send 11110 4 0"
+      friendly_name: Weihnachtsbaum    
+    tv_2:
+      command_on: "sudo /opt/rcswitch-pi/send 11001 1 1"
+      command_off: "sudo /opt/rcswitch-pi/send 11001 1 0"
+      friendly_name: Fernseher 2
+    light_nicole:
+      command_on: "sudo /opt/rcswitch-pi/send 11001 2 1"
+      command_off: "sudo /opt/rcswitch-pi/send 11001 2 0"
+      friendly_name: Lampe Nicole
+    light_sascha:
+      command_on: "sudo /opt/rcswitch-pi/send 11001 3 1"
+      command_off: "sudo /opt/rcswitch-pi/send 11001 3 0"
+      friendly_name: Lampe Sascha
+- platform: wake_on_lan
+  name: Server
+  host: server.cbs-service.net
+  mac_address: "38-EA-A7-A3-25-F0"
+  turn_off:
+    service: shell_command.turn_off_server

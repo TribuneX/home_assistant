@@ -1,0 +1,136 @@
+##########################
+# Groups
+##########################
+
+
+frankfurt:
+  name: Räume
+  view: yes
+  entities:
+    - group.outdoor
+    - group.wohnzimmer
+    - group.schlafzimmer
+wohnzimmer:
+  name: Wohnzimmer
+  entities:
+    - sensor.netatmo_wohnzimmer_temperature
+    - sensor.netatmo_wohnzimmer_co2
+    - sensor.netatmo_wohnzimmer_humidity
+    - sensor.netatmo_wohnzimmer_pressure
+    - sensor.netatmo_wohnzimmer_noise
+    - switch.light_tv
+    - switch.light_sofa
+    - switch.light_sessel
+    - switch.tv
+schlafzimmer:
+  name: Schlafzimmer
+  entities:
+    - sensor.netatmo_schlafzimmer_temperature
+    - sensor.netatmo_schlafzimmer_co2
+    - sensor.netatmo_schlafzimmer_humidity
+    - switch.light_sascha
+    - switch.light_nicole
+    - switch.tv_2
+outdoor:
+  name: Außen
+  entities:
+    - sensor.dark_sky_summary
+    - sun.sun
+    - sensor.netatmo_outdoor_temperature
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_temperature
+    - sensor.netatmo_outdoor_humidity
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_hourly_summary
+plant_wohnzimmer:
+  name: Sanseviera
+  entities:  
+    - sensor.sanseviera_moisture
+    - sensor.sanseviera_light_intensity
+    - sensor.sanseviera_temperature
+    - sensor.sanseviera_conductivity
+    - sensor.sanseviera_battery
+plant_palme:
+  name: Palme
+  entities:  
+    - sensor.palme_moisture
+    - sensor.palme_light_intensity
+    - sensor.palme_temperature
+    - sensor.palme_conductivity
+    - sensor.palme_battery
+pi:
+  name: Raspberry
+  entities:
+    - sensor.cpu_temperature
+    - sensor.cpu_use
+    - sensor.disk_use_
+    - sensor.last_boot
+    - sensor.ram_free
+    - sensor.sent_eth0
+    - sensor.received_eth0
+    - sensor.fastcom_download
+personen:
+  name: Personen
+  entities:
+    - device_tracker.iphones
+    - device_tracker.nicolesiphone
+automation_group:
+  name: Automations
+  entities:
+    - automation.co2_bedroom
+    - automation.co2_livingroom
+    - automation.lights_in_the_dark
+    - automation.lights_when_i_am_home
+    - automation.nicole_arrived
+    - automation.nicole_left
+    - automation.nobody_at_home
+    - automation.noise_livingroom
+    - automation.power_off_all
+    - automation.update_available_notifications
+    - automation.water_palm
+    - automation.water_sanseviera
+    - automation.weather_report
+state_group:
+  name: States
+  entities:
+    - input_boolean.vacation_mode
+scripts:
+  name: Skripte
+  entities:
+    - script.reload_automations
+    - script.restart_ha
+    - script.reboot_pi
+    - script.get_latest_config
+
+# Tabs
+plants:
+  name: Pflanzen
+  view: yes
+  entities:
+    - group.plant_wohnzimmer
+    - group.plant_palme  
+automation:
+  name: Automation
+  view: yes
+  entities:
+    - group.automation_group
+    - group.scripts
+scenes: 
+  name: Szenen
+  view: yes
+  entities:
+    - scene.alles_aus
+    - scene.lampen_bett
+    - scene.lampen_wohnzimmer
+home:
+  name: Home
+  view: yes
+  entities:
+    - group.personen
+system:
+  name: System
+  view: yes
+  entities:
+    - group.pi

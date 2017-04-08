@@ -1,0 +1,15 @@
+##########################
+# Szenen 
+##########################
+
+- name: Lampen Bett
+  entities:
+    switch.light_sascha: on
+    switch.light_nicole: on
+- name: Lampen Wohnzimmer
+  entities:
+    switch.light_sofa: on
+    switch.light_tv: on
+- name: Alles aus
+  entities:
+      group.all_switches: off
