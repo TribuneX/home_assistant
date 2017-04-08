@@ -49,4 +49,3 @@ get_latest_config:
   alias: "Get Latest Config"
   sequence:
     - service: shell_command.git_pull
-    - service: homeassistant.restart
