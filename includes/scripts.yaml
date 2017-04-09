@@ -49,3 +49,7 @@ get_latest_config:
   alias: "Get Latest Config"
   sequence:
     - service: shell_command.git_pull
+restart_music:
+  alias: "Restart Music"
+  sequence:
+    - service: shell_command.restart_forked-daapd
