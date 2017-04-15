@@ -253,9 +253,13 @@
   condition:
     condition: time
     after: '23:00'
+    before: '05:00'
   action:
     - service: homeassistant.turn_off
       entity_id: group.schlafzimmer
+    - service: notify.telegram
+      data:
+        message: 'I will turn off the devices in 45 minutes'
 
 # Turn of devices in the livingroom 15 minutes when switched on after 3:01
 - alias: '15 minutes timer for devices at night'
