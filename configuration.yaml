@@ -81,12 +81,10 @@ input_select:
     initial: TV
     icon: mdi:television
   tv_move_before:
-    name: 'TV mode before'
+    name: 'HDMI Mode'
     options:
      - TV
-     - AppleTV
-     - FireTV
-     - Music
+     - HDMI
     initial: TV
     icon: mdi:television
 

@@ -219,20 +219,15 @@
     - service: script.vacation_lights
 
 
-- alias: 'switch TV mode to TV'
+- alias: 'switch TV mode to TV from HDMI'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
     to: 'TV'
   condition:
-    condition: or
-    conditions:
-      - condition: state
-      entity_id: input_select.tv_mode_before
-      state: 'AppleTV'
-      - condition: state
-      entity_id: input_select.tv_mode_before
-      state: 'FireTV'
+      condition: state
+      entity_id: input_select.hdmi_mode
+      state: 'HDMI'
     action:
       - service: broadlink.send_packet_192_168_178_51
         data:
@@ -243,8 +238,9 @@
             - "JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA="
       - service: input_select.select_option
         data:
-          entity_id: input_select.tv_mode_before
+          entity_id: input_select.hdmi_mode
           option: 'TV'
+
 
 - alias: 'switch TV mode to AppleTV if TV before'
   trigger:
@@ -253,7 +249,7 @@
     to: "AppleTV"
   condition:
     condition: state
-    entity_id: input_select.tv_mode_before
+    entity_id: input_select.hdmi_mode
     state: 'TV'
   action:
     - service: broadlink.send_packet_192_168_178_51
@@ -264,8 +260,8 @@
           - "JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA="
     - service: input_select.select_option
       data:
-        entity_id: input_select.tv_mode_before
-        option: 'AppleTV'
+        entity_id: input_select.hdmi_mode
+        option: 'HDMI'
   
 - alias: 'switch TV mode to AppleTV if FireTV brefore'
   trigger:
@@ -274,17 +270,12 @@
     to: "AppleTV"
   condition:
     condition: state
-    entity_id: input_select.tv_mode_before
-    state: 'FireTV'
+    entity_id: input_select.hdmi_mode
+    state: 'HDMI'
   action:
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet: 
           - "JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA="
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.tv_mode_before
-        option: 'AppleTV'
-
    
 
