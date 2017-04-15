@@ -292,4 +292,11 @@
         packet:
           - "JgBQAAABKZIUERU1FBEUERQ1FBEVNRQ1FDUUEhQ1FDUUERU1FDUUERQ2FBEUNRQ1FBIUERQRFBEUERQ1FBEVERQ1FDUUNRU1FAAFAgABKEkUAA0FAAAAAAAAAAA="
    
+- alias: 'listen to music'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'Music'
+  action:
+    - service: script.listen_to_music
 
