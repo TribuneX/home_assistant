@@ -281,7 +281,7 @@
   trigger:
     platform: state
     entity_id: input_select.tv_mode
-    to: 'AppleTV'
+    to: 'FireTV'
   condition:
     condition: state
     entity_id: input_select.hdmi_mode
