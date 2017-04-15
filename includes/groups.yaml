@@ -108,6 +108,9 @@ scripts:
     - script.get_latest_config
     - script.vacation_lights
     - script.restart_music
+    - script.watch_tv
+    - script.watch_apple_tv
+    - script.watch_fire_tv
 # Tabs
 plants:
   name: Pflanzen
