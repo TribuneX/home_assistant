@@ -237,6 +237,24 @@
   condition:
     condition: state
     entity_id: input_select.hdmi_mode
+    state: 'OFF'
+  action:
+    - service: script.turn_tv_on
+    - service: scrip.turn_receiver_on
+    - service: script.watch_apple_tv
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.hdmi_mode
+        option: 'HDMI'
+
+- alias: 'watch AppleTV (was TV)'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'AppleTV'
+  condition:
+    condition: state
+    entity_id: input_select.hdmi_mode
     state: 'TV'
   action:
     - service: script.watch_apple_tv
@@ -259,7 +277,6 @@
       data:
         packet:
           - "JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA="
-
 
 - alias: 'watch FireTV (was TV)'
   trigger:
@@ -292,11 +309,34 @@
         packet:
           - "JgBQAAABKZIUERU1FBEUERQ1FBEVNRQ1FDUUEhQ1FDUUERU1FDUUERQ2FBEUNRQ1FBIUERQRFBEUERQ1FBEVERQ1FDUUNRU1FAAFAgABKEkUAA0FAAAAAAAAAAA="
    
-- alias: 'listen to music'
+- alias: 'listen to music (tv is on)'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'Music'
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: input_select.hdmi_mode
+        state: 'HDMI'
+      - condition: state
+        entity_id: input_select.hdmi_mode
+        state: 'TV'
+  action:
+    - service: script.turn_tv_on
+    - service: script.listen_to_music
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.hdmi_mode
+        option: 'OFF'
+
+- alias: 'listen to music (receiver is off)'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
     to: 'Music'
   action:
+    - service: script.turn_receiver_on
     - service: script.listen_to_music
 
