@@ -214,7 +214,7 @@
     - service: script.vacation_lights
 
 # Turn on light at Sofa if ATV is paused
-- alias: 'turn on light when AppleTV is paused'
+- alias: 'Turn on light when AppleTV is paused'
   trigger:
     - platform: state
       entity_id: media_player.wohnzimmer
@@ -229,7 +229,7 @@
       entity_id: switch.light_sofa
 
 # Turn on light at Sofa if ATV is paused
-- alias: 'turn off light when AppleTV is played'
+- alias: 'Turn off light when AppleTV is played'
   trigger:
     - platform: state
       entity_id: media_player.wohnzimmer
@@ -242,6 +242,22 @@
   action:
     - service: switch.turn_off
       entity_id: switch.light_sofa
+
+# Turn of devices in the bedroom 30 minutes when switched on after 0:00
+- alias: '30 minutes timer for devices at night'
+  trigger:
+    - platform: state
+      entity_id: group.schlafzimmer
+      from: 'off'
+      to: 'on'
+      for:
+      minutes: 1
+  condition:
+    condition: time
+    after: '22:00'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: group.schlafzimmer
 
 
 - alias: 'watch TV (was HDMI)'
