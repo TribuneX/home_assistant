@@ -279,9 +279,9 @@
       entity_id: switch.tv
       from: 'on'
       to: 'off'
-    condition:
-      condition: time
-      after: '21:00'
+  condition:
+    condition: time
+    after: '21:00'
   action: 
     - service: switch.turn_on
       entity_id: switch.light_sascha
@@ -297,9 +297,9 @@
       to: 'off'
       for:
         minutes: 15
-    condition:
-      condition: time
-      after: '21:00'
+  condition:
+    condition: time
+    after: '21:00'
   action: 
     - service: homeassistant.turn_off
       entity_id: group.wohnzimmer
