@@ -119,14 +119,14 @@
     from: 'home'
     to: 'not_home'
     for:
-      minutes: 10 
+      minutes: 5 
   action:
     - service: notify.telegram
       data:
         message: 'Everybody left. I will switch off all devices.'
     - service: switch.turn_off
 
-- alias: 'Lights in the dark'
+- alias: 'Switch on light after sunset'
   trigger:
     platform: state
     entity_id: group.personen
@@ -139,11 +139,9 @@
 
   action:
     - service: switch.turn_on
-      entity_id: switch.light_sofa
-    - service: switch.turn_on
       entity_id: switch.light_tv
 
-- alias: 'Lights when I am home'
+- alias: 'Lights when someone arrives home'
   trigger:
     - platform: sun
       event: sunset
@@ -153,8 +151,6 @@
     entity_id: group.personen
     state: 'home'
   action:
-    - service: switch.turn_on
-      entity_id: switch.light_sofa
     - service: switch.turn_on
       entity_id: switch.light_tv
 
@@ -173,7 +169,7 @@
 # Inspired by https://github.com/ronmarco/home-assistant-config/blob/master/yaml_automation/status-vacation.yaml
 
 # Turn vacation mode on automatically
-- alias: 'turn on vacation mode when nobody is home for more than 24 hours'
+- alias: 'Turn on vacation mode when nobody is home for more than 24 hours'
   trigger:
     - platform: state
       entity_id: group.personen
@@ -189,7 +185,7 @@
 
 
 # Turn vacation mode off automatically
-- alias: 'turn vacation mode off when home'
+- alias: 'Turn vacation mode off when home'
   trigger:
     - platform: state
       entity_id: group.personen 
@@ -200,7 +196,7 @@
       entity_id: input_boolean.vacation_mode
 
 # Turn on lights when vacation mode active
-- alias: 'turn on vacation lights at sunset when vacation mode on'
+- alias: 'Turn on vacation lights at sunset when vacation mode on'
   trigger:
     - platform: state
       entity_id: sun.sun
@@ -275,6 +271,22 @@
     - service: homeassistant.turn_off
       entity_id: group.wohnzimmer
 
+
+# Turn on lights in bedroom, if TV is switched off
+- alias: 'Turn on lights in bedroom after TV is switched off'
+  trigger:
+    - platform: state
+      entity_id: switch.tv
+      from: 'on'
+      to: 'off'
+    condition:
+      condition: time
+      after: '21:00'
+  action: 
+    - service: switch.turn_on
+      entity_id: switch.light_sascha
+    - service: switch.turn_on
+      entity_id: switch.nicole  
 
 - alias: 'watch TV (was HDMI)'
   trigger:
