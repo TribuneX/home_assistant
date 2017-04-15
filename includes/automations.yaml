@@ -213,6 +213,37 @@
   action:
     - service: script.vacation_lights
 
+# Turn on light at Sofa if ATV is paused
+- alias: 'turn on light when AppleTV is paused'
+  trigger:
+    - platform: state
+      entity_id: media_player.wohnzimmer
+      from: 'playing'
+      to: 'paused'
+  condition:
+    condition: sun
+    after: sunset
+    after_offset: "-00:30:00"
+  action:
+    - service: switch.turn_on
+      entity_id: switch.light_sofa
+
+# Turn on light at Sofa if ATV is paused
+- alias: 'turn off light when AppleTV is played'
+  trigger:
+    - platform: state
+      entity_id: media_player.wohnzimmer
+      from: 'paused'
+      to: 'playing'
+  condition:
+    condition: sun
+    after: sunset
+    after_offset: "-00:30:00"
+  action:
+    - service: switch.turn_off
+      entity_id: switch.light_sofa
+
+
 - alias: 'watch TV (was HDMI)'
   trigger:
     platform: state
@@ -356,3 +387,5 @@
       data:
         entity_id: input_select.hdmi_mode
         option: 'AUS'
+
+
