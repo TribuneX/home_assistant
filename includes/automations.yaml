@@ -223,7 +223,7 @@
   trigger:
     platform: state
     entity_id: input_select.tv_mode
-    to: "TV"
+    to: 'TV'
   condition:
     condition: state
     entity_id: input_select.tv_mode_before
@@ -239,7 +239,7 @@
     - service: input_select.select_option
         data:
           entity_id: input_select.tv_mode_before
-          option: TV
+          option: 'TV'
 
 - alias: 'switch TV mode to AppleTV'
   trigger:
