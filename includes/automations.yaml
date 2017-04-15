@@ -344,3 +344,15 @@
     - service: script.turn_receiver_on
     - service: script.listen_to_music
 
+- alias: 'turn off tv'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'AUS'
+  action:
+    - service: script.turn_tv_on
+    - service: scrip.turn_receiver_on
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.hdmi_mode
+        option: 'AUS'
