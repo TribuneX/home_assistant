@@ -307,9 +307,13 @@
   condition:
     condition: time
     after: '21:00'
+    before: '05:00'
   action: 
     - service: homeassistant.turn_off
       entity_id: group.wohnzimmer
+    - service: notify.telegram
+      data:
+        message: 'I will turn of the lights in 15 minutes. Good Night.'
 
 - alias: 'watch TV (was HDMI)'
   trigger:
