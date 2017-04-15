@@ -243,21 +243,37 @@
     - service: switch.turn_off
       entity_id: switch.light_sofa
 
-# Turn of devices in the bedroom 30 minutes when switched on after 0:00
-- alias: '30 minutes timer for devices at night'
+# Turn of devices in the bedroom 30 minutes when switched on after 23:00
+- alias: '45 minutes timer for devices at night'
   trigger:
     - platform: state
       entity_id: group.schlafzimmer
       from: 'off'
       to: 'on'
       for:
-        minutes: 1
+        minutes: 45
   condition:
     condition: time
-    after: '22:00'
+    after: '23:00'
   action:
     - service: homeassistant.turn_off
       entity_id: group.schlafzimmer
+
+# Turn of devices in the livingroom 15 minutes when switched on after 3:01
+- alias: '15 minutes timer for devices at night'
+  trigger:
+    - platform: state
+      entity_id: group.wohnzimmer
+      from: 'off'
+      to: 'on'
+      for:
+        minutes: 15
+  condition:
+    condition: time
+    after: '3:01'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: group.wohnzimmer
 
 
 - alias: 'watch TV (was HDMI)'
