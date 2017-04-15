@@ -149,10 +149,9 @@
       event: sunset
       #offset: '-00:15:00'
   condition:
-    condition: 
-      condition: state
-      entity_id: group.personen
-      state: 'home'
+    condition: state
+    entity_id: group.personen
+    state: 'home'
   action:
     - service: switch.turn_on
       entity_id: switch.light_sofa
@@ -260,5 +259,37 @@
       data:
         packet:
           - "JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA="
+
+
+- alias: 'watch FireTV (was TV)'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'FireTV'
+  condition:
+    condition: state
+    entity_id: input_select.hdmi_mode
+    state: 'TV'
+  action:
+    - service: script.watch_fire_tv
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.hdmi_mode
+        option: 'HDMI'
+  
+- alias: 'watch FireTV (was AppleTV)'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'AppleTV'
+  condition:
+    condition: state
+    entity_id: input_select.hdmi_mode
+    state: 'HDMI'
+  action:
+    - service: broadlink.send_packet_192_168_178_51
+      data:
+        packet:
+          - "JgBQAAABKZIUERU1FBEUERQ1FBEVNRQ1FDUUEhQ1FDUUERU1FDUUERQ2FBEUNRQ1FBIUERQRFBEUERQ1FBEVERQ1FDUUNRU1FAAFAgABKEkUAA0FAAAAAAAAAAA="
    
 
