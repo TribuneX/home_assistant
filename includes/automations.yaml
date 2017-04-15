@@ -217,3 +217,63 @@
       state: 'on'
   action:
     - service: script.vacation_lights
+
+
+- alias: 'switch TV mode to TV'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: "TV"
+  condition:
+    condition: state
+    entity_id: input_select.tv_mode_before
+    state: 'AppleTV'
+  action:
+    - service: broadlink.send_packet_192_168_178_51
+      data:
+        packet: 
+          - "JgCMAJOWEjgRORE5EhMRFBEUERQRFBE5ETkROBEUERQSExEUERQRNxMUERQRFBEUEhMRFBEUERQRORE4EjgSOBI4ETkSOBIABgeVlRI4EjgSOBITEhMRFBEUERQRORE4ETkSExITERQSExEUETkSExEUEhMRFBITERQRFBEUETkROBI4EjgRORI4EjgSAA0FAAAAAAAAAAAAAAAA="
+          - "JgCMAJOWEjgRORE5EhMRFBEUERQRFBE5ETkROBEUERQSExEUERQRNxMUERQRFBEUEhMRFBEUERQRORE4EjgSOBI4ETkSOBIABgeVlRI4EjgSOBITEhMRFBEUERQRORE4ETkSExITERQSExEUETkSExEUEhMRFBITERQRFBEUETkROBI4EjgRORI4EjgSAA0FAAAAAAAAAAAAAAAA="
+          - "JgCMAJOWEjgRORE5EhMRFBEUERQRFBE5ETkROBEUERQSExEUERQRNxMUERQRFBEUEhMRFBEUERQRORE4EjgSOBI4ETkSOBIABgeVlRI4EjgSOBITEhMRFBEUERQRORE4ETkSExITERQSExEUETkSExEUEhMRFBITERQRFBEUETkROBI4EjgRORI4EjgSAA0FAAAAAAAAAAAAAAAA="
+          - "JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA="
+    - service: input_select.select_option
+        data:
+          entity_id: input_select.tv_mode_before
+          option: TV
+
+- alias: 'switch TV mode to AppleTV'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: "TV"
+  condition:
+    condition: state
+    entity_id: input_select.tv_mode_before
+    state: 'TV'
+  action:
+    - service: broadlink.send_packet_192_168_178_51
+      data:
+        packet: 
+          - "JgCMAJOWEjgRORE5EhMRFBEUERQRFBE5ETkROBEUERQSExEUERQRNxMUERQRFBEUEhMRFBEUERQRORE4EjgSOBI4ETkSOBIABgeVlRI4EjgSOBITEhMRFBEUERQRORE4ETkSExITERQSExEUETkSExEUEhMRFBITERQRFBEUETkROBI4EjgRORI4EjgSAA0FAAAAAAAAAAAAAAAA="
+          - "JgCMAJOWEjgRORE5EhMRFBEUERQRFBE5ETkROBEUERQSExEUERQRNxMUERQRFBEUEhMRFBEUERQRORE4EjgSOBI4ETkSOBIABgeVlRI4EjgSOBITEhMRFBEUERQRORE4ETkSExITERQSExEUETkSExEUEhMRFBITERQRFBEUETkROBI4EjgRORI4EjgSAA0FAAAAAAAAAAAAAAAA="
+          - "JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA="
+    - service: input_select.select_option
+        data:
+          entity_id: input_select.tv_mode_before
+          option: 'AppleTV'
+  condition:
+    condition: state
+    entity_id: input_select.tv_mode_before
+    state: 'FireTV'
+  action:
+    - service: broadlink.send_packet_192_168_178_51
+      data:
+        packet: 
+          - "JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA="
+    - service: input_select.select_option
+        data:
+          entity_id: input_select.tv_mode_before
+          option: 'AppleTV'
+
+   
+

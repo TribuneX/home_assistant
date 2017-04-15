@@ -70,6 +70,26 @@ netatmo:
   password: !secret netatmo_password
  
 
+input_select:
+  tv_move:
+    name: 'TV mode'
+    options:
+     - TV
+     - Apple TV
+     - Fire TV
+     - Music
+    initial: TV
+    icon: mdi:television
+  tv_move_before:
+    name: 'TV mode before'
+    options:
+     - TV
+     - AppleTV
+     - FireTV
+     - Music
+    initial: TV
+    icon: mdi:television
+
 ##########################
 # Includes
 ##########################
