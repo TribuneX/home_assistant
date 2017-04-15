@@ -149,14 +149,10 @@
       event: sunset
       #offset: '-00:15:00'
   condition:
-    condition: or
-    conditions:
-      - condition: state
-        entity_id: device_tracker.iphones
-        state: 'home'
-      - condition: state
-        entity_id: device_tracker.nicolesiphone
-        state: 'home'
+    condition: 
+      condition: state
+      entity_id: group.personen
+      state: 'home'
   action:
     - service: switch.turn_on
       entity_id: switch.light_sofa
