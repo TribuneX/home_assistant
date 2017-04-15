@@ -217,9 +217,9 @@
       from: 'playing'
       to: 'paused'
   condition:
-    condition: sun
-    after: sunset
-    after_offset: "-00:30:00"
+    condition: state
+    entity_id: sun.sun
+    state: below_horizon
   action:
     - service: switch.turn_on
       entity_id: switch.light_sofa
@@ -232,9 +232,9 @@
       from: 'paused'
       to: 'playing'
   condition:
-    condition: sun
-    after: sunset
-    after_offset: "-00:30:00"
+    condition: state
+    entity_id: sun.sun
+    state: below_horizon
   action:
     - service: switch.turn_off
       entity_id: switch.light_sofa
