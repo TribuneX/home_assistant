@@ -106,7 +106,7 @@ scripts:
     - script.restart_ha
     - script.reboot_pi
     - script.get_latest_config
-    - script.vacation_light_mode
+    - script.vacation_lights
     - script.restart_music
 # Tabs
 plants:
