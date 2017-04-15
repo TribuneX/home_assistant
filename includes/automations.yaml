@@ -214,8 +214,7 @@
   action:
     - service: script.vacation_lights
 
-
-- alias: 'switch TV mode to TV from HDMI'
+- alias: 'watch TV (was HDMI)'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -231,8 +230,7 @@
         entity_id: input_select.hdmi_mode
         option: 'TV'
 
-
-- alias: 'switch TV mode to AppleTV if TV before'
+- alias: 'watch AppleTV (was TV)'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -248,7 +246,7 @@
         entity_id: input_select.hdmi_mode
         option: 'HDMI'
   
-- alias: 'switch TV mode to AppleTV if FireTV brefore'
+- alias: 'watch AppleTV (was FireTV)'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -260,7 +258,7 @@
   action:
     - service: broadlink.send_packet_192_168_178_51
       data:
-        packet: 
+        packet:
           - "JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA="
    
 
