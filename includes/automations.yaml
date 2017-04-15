@@ -237,7 +237,7 @@
   condition:
     condition: state
     entity_id: input_select.hdmi_mode
-    state: 'OFF'
+    state: 'AUS'
   action:
     - service: script.turn_tv_on
     - service: scrip.turn_receiver_on
@@ -329,13 +329,17 @@
     - service: input_select.select_option
       data:
         entity_id: input_select.hdmi_mode
-        option: 'OFF'
+        option: 'AUS'
 
 - alias: 'listen to music (receiver is off)'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
     to: 'Music'
+  condition:
+    condition: state
+    entity_id: input_select.hdmi_mode
+    state: 'AUS'
   action:
     - service: script.turn_receiver_on
     - service: script.listen_to_music

@@ -55,6 +55,20 @@ restart_music:
   sequence:
     - service: shell_command.restart_forked_daapd
 
+turn_tv_on:
+  sequence:
+    - service: broadlink.send_packet_192_168_178_51
+      data:
+        packet: 
+          - "JgCMAJGWETgRORE5ERQRFBEUERQRFBE5EDkROREUERQRFBEUERQRFBE4ERQRFBEUERQRFBEUETkRFBA5ETkRORE5ETkROREABgmSlRE5ETkQOREUERQRFBEUERQRORE5ETkQFRAUERQRFBEUERQROREUERQQFRAUERQRFBE5ERQRORE5ETgRORE5ETkRAA0FAAAAAAAAAAAAAAAA="
+
+turn_receiver_on:
+  sequence:
+    - service: broadlink.send_packet_192_168_178_51
+      data:
+        packet: 
+          - "JgBQAAABJJUSExE4ExIRFBI3EhMSNxM3EhISExM3EjcTEhI3EzcSEhI3EzcTEhM2ExITEhI3EzcSExETEzcSExI3EjcTEhITEgAFGgABJEwSAA0FAAAAAAAAAAA="
+
 watch_tv:
   sequence:
     - service: broadlink.send_packet_192_168_178_51

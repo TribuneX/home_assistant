@@ -74,20 +74,20 @@ input_select:
   tv_mode:
     name: 'TV mode'
     options:
-     - OFF
+     - AUS
      - TV
      - AppleTV
      - FireTV
      - Music
-    initial: OFF
+    initial: AUS
     icon: mdi:television
   hdmi_mode:
     name: 'HDMI Mode'
     options:
-     - OFF
+     - AUS
      - TV
      - HDMI
-    initial: OFF
+    initial: AUS
     icon: mdi:television
 
 ##########################
