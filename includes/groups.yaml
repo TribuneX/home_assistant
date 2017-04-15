@@ -92,6 +92,9 @@ automation_group:
     - automation.water_palm
     - automation.water_sanseviera
     - automation.weather_report
+    - automation.turn_on_vacation_lights_at_sunset_when_vacation_mode_on
+    - automation.turn_on_vacation_mode_when_nobody_is_home_for_more_than_24_hours
+    - automation.turn_vacation_mode_off_when_home
 state_group:
   name: States
   entities:
@@ -115,6 +118,7 @@ automation:
   name: Automation
   view: yes
   entities:
+    - group.state
     - group.automation_group
     - group.scripts
 scenes: 
