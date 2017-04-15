@@ -22,6 +22,7 @@ reboot_pi:
 
 # Turns lights on and off after sunset
 vacation_lights:
+  alias: Vacation Light Mode
   sequence:
     # wait an hour after sunset
     - delay:
