@@ -216,6 +216,8 @@
       entity_id: media_player.wohnzimmer
       from: 'playing'
       to: 'paused'
+      for:
+        seconds: 5
   condition:
     condition: state
     entity_id: sun.sun
@@ -230,7 +232,7 @@
     - platform: state
       entity_id: media_player.wohnzimmer
       from: 'paused'
-      to: 'playing'
+      to: 'playing'  
   condition:
     condition: state
     entity_id: sun.sun
