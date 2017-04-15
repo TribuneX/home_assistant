@@ -71,7 +71,7 @@ netatmo:
  
 
 input_select:
-  tv_move:
+  tv_mode:
     name: 'TV mode'
     options:
      - TV
@@ -80,7 +80,7 @@ input_select:
      - Music
     initial: TV
     icon: mdi:television
-  tv_move_before:
+  hdmi_mode:
     name: 'HDMI Mode'
     options:
      - TV
