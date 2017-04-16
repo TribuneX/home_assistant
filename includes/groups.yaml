@@ -114,12 +114,11 @@ scripts:
 
 # Tabs
 default_view:
-  view: yes
-  icon: mdi:home 
+  view: no
 rooms:
   name: Räume
   view: yes
-  icon: mdi:border-all
+  icon: mdi:home
   entities:
     - group.outdoor
     - group.wohnzimmer
