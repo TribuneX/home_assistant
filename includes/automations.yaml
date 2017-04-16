@@ -255,13 +255,12 @@
     after: '23:00'
     before: '05:00'
   action:
-    - service: homeassistant.turn_off
-      entity_id: group.schlafzimmer
+    - service: script.turn_off_bedroom_delay_45
     - service: notify.telegram
       data:
-        message: 'I will turn off the devices in 45 minutes'
+        message: 'I will turn off the devices in the bedroom in 45 minutes'
 
-# Turn of devices in the livingroom 15 minutes when switched on after 3:01
+# Turn off devices in the livingroom 15 minutes when switched on after 3:01
 - alias: '15 minutes timer for devices at night'
   trigger:
     - platform: state
@@ -275,8 +274,10 @@
     after: '03:01'
     before: '05:00'
   action:
-    - service: homeassistant.turn_off
-      entity_id: group.wohnzimmer
+    - service: script.turn_off_livingroom_delay_15
+    - service: notify.telegram
+      data:
+        message: 'I will turn off the devices in the livingroom in 15 minutes'
 
 
 # Turn on lights in bedroom, if TV is switched off
@@ -310,8 +311,7 @@
     after: '21:00'
     before: '05:00'
   action: 
-    - service: homeassistant.turn_off
-      entity_id: group.wohnzimmer
+    - service: script.turn_off_livingroom_delay_15
     - service: notify.telegram
       data:
         message: 'I will turn of the lights in 15 minutes. Good Night.'

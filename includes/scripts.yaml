@@ -55,6 +55,22 @@ restart_music:
   sequence:
     - service: shell_command.restart_forked_daapd
 
+turn_off_livingroom_delay_15:
+  alias: 'Turn off livingroom (delay 15 minutes)'
+  sequence:
+    - delay:
+        minutes: 15
+    - service: homeassistant.turn_off
+      entity_id: group.wohnzimmer
+
+turn_off_bedroom_delay_45:
+  alias: 'Turn off bedroom (delay 45 minutes)'
+  sequence:
+    - delay:
+        minutes: 45
+    - service: homeassistant.turn_off
+      entity_id: group.schlafzimmer
+
 turn_tv_on:
   sequence:
     - service: broadlink.send_packet_192_168_178_51
