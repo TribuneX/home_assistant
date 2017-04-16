@@ -42,6 +42,9 @@ history:
 # View all events in a logbook
 logbook:
 
+# Support for iOS app
+ios:
+
 # Telegram bot
 notify:
   - name: telegram
