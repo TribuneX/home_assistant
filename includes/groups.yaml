@@ -3,13 +3,7 @@
 ##########################
 
 
-frankfurt:
-  name: Räume
-  view: yes
-  entities:
-    - group.outdoor
-    - group.wohnzimmer
-    - group.schlafzimmer
+
 wohnzimmer:
   name: Wohnzimmer
   entities:
@@ -111,16 +105,30 @@ scripts:
     - script.watch_tv
     - script.watch_apple_tv
     - script.watch_fire_tv
+
 # Tabs
+default_view:
+  view: yes
+  icon: mdi:home 
+rooms:
+  name: Räume
+  view: yes
+  icon: mdi:border-all
+  entities:
+    - group.outdoor
+    - group.wohnzimmer
+    - group.schlafzimmer
 plants:
   name: Pflanzen
   view: yes
+  icon: mdi:barley
   entities:
     - group.plant_wohnzimmer
     - group.plant_palme  
 automation:
   name: Automation
   view: yes
+  icon: mdi:settings
   entities:
     - group.state
     - group.automation_group
@@ -128,6 +136,7 @@ automation:
 scenes: 
   name: Szenen
   view: yes
+  icon: mdi:lightbulb-on
   entities:
     - scene.alles_aus
     - scene.lampen_bett
@@ -135,10 +144,12 @@ scenes:
 home:
   name: Home
   view: yes
+  icon: mdi:account
   entities:
     - group.personen
 system:
   name: System
   view: yes
+  icon: mdi:server
   entities:
     - group.pi
