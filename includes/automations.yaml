@@ -272,7 +272,8 @@
         minutes: 15
   condition:
     condition: time
-    after: '3:01'
+    after: '03:01'
+    before: '05:00'
   action:
     - service: homeassistant.turn_off
       entity_id: group.wohnzimmer

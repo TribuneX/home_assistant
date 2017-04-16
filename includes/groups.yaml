@@ -113,8 +113,6 @@ scripts:
     - script.watch_fire_tv
 
 # Tabs
-default_view:
-  view: no
 rooms:
   name: Räume
   view: yes
