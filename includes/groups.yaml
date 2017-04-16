@@ -38,6 +38,12 @@ outdoor:
     - sensor.dark_sky_humidity
     - sensor.dark_sky_wind_speed
     - sensor.dark_sky_hourly_summary
+working:
+  name: Arbeitszimmer
+  entities:
+    - group.pi
+    - switch.server
+    - sensor.palme_temperature
 plant_wohnzimmer:
   name: Sanseviera
   entities:  
@@ -118,6 +124,7 @@ rooms:
     - group.outdoor
     - group.wohnzimmer
     - group.schlafzimmer
+    - group.arbeitszimmer
 plants:
   name: Pflanzen
   view: yes
