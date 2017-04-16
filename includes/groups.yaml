@@ -95,6 +95,13 @@ automation_group:
     - automation.turn_on_vacation_lights_at_sunset_when_vacation_mode_on
     - automation.turn_on_vacation_mode_when_nobody_is_home_for_more_than_24_hours
     - automation.turn_vacation_mode_off_when_home
+    - automation.15_minutes_timer_for_devices_at_night
+    - automation.45_minutes_timer_for_devices_at_night
+    - automation.switch_on_light_after_sunset
+    - automation.turn_off_light_when_appletv_is_played
+    - automation.turn_on_light_when_appletv_is_paused
+    - automation.turn_off_lights_in_livingroom_after_tv_is_switched_off
+    - automation.turn_on_lights_in_bedroom_after_tv_is_switched_off
 state_group:
   name: States
   entities:
@@ -108,6 +115,11 @@ scripts:
     - script.get_latest_config
     - script.vacation_lights
     - script.restart_music
+    - script.turn_off_bedroom_delay_45
+    - script.turn_off_livingroom_delay_15
+    - script.turn_tv_on
+    - script.turn_receiver_on
+    - script.listen_to_music
     - script.watch_tv
     - script.watch_apple_tv
     - script.watch_fire_tv

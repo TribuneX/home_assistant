@@ -182,7 +182,9 @@
   action:
     - service: homeassistant.turn_on
       entity_id: input_boolean.vacation_mode
-
+    - service: notify.telegram
+      data:
+        message: 'I did not see anybody within the last 24 hours. I will switch on the vacation mode'
 
 # Turn vacation mode off automatically
 - alias: 'Turn vacation mode off when home'
@@ -194,6 +196,9 @@
   action:
     - service: homeassistant.turn_off
       entity_id: input_boolean.vacation_mode
+    - service: notify.telegram
+      data:
+        message: 'Welcome back! I switched off the vation mode'
 
 # Turn on lights when vacation mode active
 - alias: 'Turn on vacation lights at sunset when vacation mode on'
