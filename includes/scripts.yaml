@@ -85,7 +85,7 @@ turn_receiver_on:
         packet: 
           - 'JgBQAAABJJUSExE4ExIRFBI3EhMSNxM3EhISExM3EjcTEhI3EzcSEhI3EzcTEhM2ExITEhI3EzcSExETEzcSExI3EjcTEhITEgAFGgABJEwSAA0FAAAAAAAAAAA='
 
-watch_tv:
+input_tv:
   sequence:
     - service: broadlink.send_packet_192_168_178_51
       data:

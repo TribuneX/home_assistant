@@ -323,4 +323,20 @@
   action:
     - service: script.input_apple_tv
 
+- alias: 'watch FireTV'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'FireTV'
+  action:
+    - service: script.input_fire_tv
+
+- alias: 'watch TV'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'TV'
+  action:
+    - service: script.input_tv
+
 
