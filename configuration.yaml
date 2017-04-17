@@ -78,7 +78,6 @@ netatmo:
  
 
 input_select:
-  friendly_name:
   tv_mode:
     name: 'TV mode'
     options:
