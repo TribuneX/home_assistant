@@ -47,13 +47,12 @@ ios:
 
 # Telegram bot
 notify:
-  - name: telegram
-    platform: telegram
+  - platform: telegram
+    name: telegram
     api_key: !secret telegram_api_key
     chat_id: !secret telegram_chat_id
 
-notify:
- - platform: ios
+  - platform: ios
    name: ios_app
    target: !secret ios_token
 
