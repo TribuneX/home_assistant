@@ -339,4 +339,12 @@
   action:
     - service: script.input_tv
 
+- alias: 'listen to music'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'Music'
+  action:
+    - service: script.input_music
+
 
