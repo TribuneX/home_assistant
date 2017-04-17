@@ -352,6 +352,7 @@
   trigger:
     platform: state
     entity_id: input_select.tv_mode
+  action:
   - service: notify.telegram
       data:
         message: 'Debug: State changed'
