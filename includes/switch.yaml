@@ -79,7 +79,8 @@
 
 - platform: template
     switches:
-      skylight:
+      input_apple_tv:
+        friendly_name: 'Apple TV'
         value_template: "True"
         turn_on:
           service: script.turn_on
