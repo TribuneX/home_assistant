@@ -145,6 +145,8 @@ input_music:
 turn_on_tv_delay_10_s:
   sequence:
     - service: switch.turn_on
-      entity_id: switch.light_tv
+      entity_id: switch.tv
     - delay: 
         seconds: 10
+    - service: switch.turn_on
+      entity_id: switch.tv
