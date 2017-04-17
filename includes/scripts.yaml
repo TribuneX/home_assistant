@@ -87,6 +87,10 @@ turn_receiver_on:
 
 input_tv:
   sequence:
+    - service: switch.turn_on
+      entity_id: switch.tv
+    - delay:
+        seconds: 20
     # press channel up to switch back to TV and change input
     - service: broadlink.send_packet_192_168_178_51
       data:
@@ -104,6 +108,10 @@ input_hdmi:
 
 input_apple_tv:
   sequence:
+    - service: switch.turn_on
+      entity_id: switch.tv
+    - delay:
+        seconds: 20
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet: 
@@ -114,6 +122,10 @@ input_apple_tv:
 
 input_fire_tv:
   sequence:
+    - service: switch.turn_on
+      entity_id: switch.tv
+    - delay:
+        seconds: 20
     # switch input to FireTV      
     - service: broadlink.send_packet_192_168_178_51
       data:
@@ -125,6 +137,10 @@ input_fire_tv:
 
 input_music:
   sequence:
+    - service: switch.turn_on
+      entity_id: switch.tv
+    - delay:
+        seconds: 20
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
