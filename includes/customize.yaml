@@ -51,7 +51,7 @@
   scene.lampen_wohnzimmer:
     icon: mdi:lightbulb-on
   scene.alles_aus:
-    icon: mid:power
+    icon: mid:home
   scene.tv:
     icon: mid:television
   scene.apple_tv:
