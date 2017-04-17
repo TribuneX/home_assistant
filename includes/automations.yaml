@@ -427,14 +427,3 @@
         seconds: 20
     - service: script.input_music
 
-
-- alias: 'switch on TV if requested by scene necessary'
-   trigger:
-     platform: state
-     entity_id: input_select.tv_mode
-   action:
-     - service: input_select.select_option
-        data:
-          entity_id: input_select.who_cooks
-          option: Paulus
-
