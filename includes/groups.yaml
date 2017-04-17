@@ -135,7 +135,7 @@ tv_scenes:
 
 # Tabs
 default_view:
-  view: no
+
 rooms:
   name: Räume
   view: yes
