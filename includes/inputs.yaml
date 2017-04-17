@@ -3,6 +3,6 @@
 ##########################
 
 vacation_mode: 
-  name: "On Vacation"
+  name: 'On Vacation'
   initial: off
   icon: mdi:airplane

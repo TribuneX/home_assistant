@@ -5,45 +5,45 @@
 - platform: command_line
   switches:
     light_tv:
-      command_on: "sudo /opt/rcswitch-pi/send 11111 2 1"
-      command_off: "sudo /opt/rcswitch-pi/send 11111 2 0"
+      command_on: 'sudo /opt/rcswitch-pi/send 11111 2 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11111 2 0'
       friendly_name: Lampe Fernseher
     tv:
-      command_on: "sudo /opt/rcswitch-pi/send 11111 1 1"
-      command_off: "sudo /opt/rcswitch-pi/send 11111 1 0"
+      command_on: 'sudo /opt/rcswitch-pi/send 11111 1 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11111 1 0'
       friendly_name: Fernseher
     light_sofa:
-      command_on: "sudo /opt/rcswitch-pi/send 11111 4 1"
-      command_off: "sudo /opt/rcswitch-pi/send 11111 4 0"
+      command_on: 'sudo /opt/rcswitch-pi/send 11111 4 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11111 4 0'
       friendly_name: Lampe Sofa
     light_sessel:
-      command_on: "sudo /opt/rcswitch-pi/send 11111 3 1"
-      command_off: "sudo /opt/rcswitch-pi/send 11111 3 0"
+      command_on: 'sudo /opt/rcswitch-pi/send 11111 3 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11111 3 0'
       friendly_name: Lampe Sessel
     light_stern:
-      command_on: "sudo /opt/rcswitch-pi/send 11110 3 1"
-      command_off: "sudo /opt/rcswitch-pi/send 11110 3 0"
+      command_on: 'sudo /opt/rcswitch-pi/send 11110 3 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11110 3 0'
       friendly_name: Stern
     light_baum:
-      command_on: "sudo /opt/rcswitch-pi/send 11110 4 1"
-      command_off: "sudo /opt/rcswitch-pi/send 11110 4 0"
+      command_on: 'sudo /opt/rcswitch-pi/send 11110 4 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11110 4 0'
       friendly_name: Weihnachtsbaum    
     tv_2:
-      command_on: "sudo /opt/rcswitch-pi/send 11001 1 1"
-      command_off: "sudo /opt/rcswitch-pi/send 11001 1 0"
+      command_on: 'sudo /opt/rcswitch-pi/send 11001 1 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11001 1 0'
       friendly_name: Fernseher 2
     light_nicole:
-      command_on: "sudo /opt/rcswitch-pi/send 11001 2 1"
-      command_off: "sudo /opt/rcswitch-pi/send 11001 2 0"
+      command_on: 'sudo /opt/rcswitch-pi/send 11001 2 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11001 2 0'
       friendly_name: Lampe Nicole
     light_sascha:
-      command_on: "sudo /opt/rcswitch-pi/send 11001 3 1"
-      command_off: "sudo /opt/rcswitch-pi/send 11001 3 0"
+      command_on: 'sudo /opt/rcswitch-pi/send 11001 3 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11001 3 0'
       friendly_name: Lampe Sascha
 - platform: wake_on_lan
   name: Server
   host: server.cbs-service.net
-  mac_address: "38-EA-A7-A3-25-F0"
+  mac_address: '38-EA-A7-A3-25-F0'
   turn_off:
     service: shell_command.turn_off_server
 - platform: broadlink
@@ -53,14 +53,26 @@
   type: rm_mini
   switches:
     tv:
-      friendly_name: "Samsung TV"
+      friendly_name: 'Samsung TV'
       command_on: 'JgCMAJOVEzcTNhM3ExITEhMSExITEhM3EzcUNhMSExITEhMSEhMSEhM3ExITEhM3ExITEhMSEzcTEhM3EzcTEhM2EzcTNxMABgeTlRI4EzcSOBEUERQRFBAUERQRORI4EjgSExEUERQRFBEUERQROREUERQROBMSERQRFBE5EhMRORI4EhMRORI4ETkRAA0FAAAAAAAAAAAAAAAA='
       command_off: 'JgCMAJGWETgRORE5ERQRFBEUERQRFBE5EDkROREUERQRFBEUERQRFBE4ERQRFBEUERQRFBEUETkRFBA5ETkRORE5ETkROREABgmSlRE5ETkQOREUERQRFBEUERQRORE5ETkQFRAUERQRFBEUERQROREUERQQFRAUERQRFBE5ERQRORE5ETgRORE5ETkRAA0FAAAAAAAAAAAAAAAA='
     receiver:
-      friendly_name: "Onkyo Receiver"
+      friendly_name: 'Onkyo Receiver'
       command_on: 'JgBQAAABKJMSExI4ERQRFBE4EhMSOBE4ETgSExI4ETgSExI4ETgRFBEUEhMSOBEUERQRFBEUERQSOBE4ERQROBI4ETgROBI4EQAFBQABJkoSAA0FAAAAAAAAAAA='
       command_off: 'JgBQAAABKZIUERU1FBEUERQ1FBEVNRQ1FBEVEBU1FDUUERU0FTUUERQ1FDYUERQ1FBEVEBU1FDUUERUQFTUUERQ1FDUVERQRFAAFJgABKUcVAA0FAAAAAAAAAAA='
     hmdi:
-      friendly_name: "HDMI"
+      friendly_name: 'HDMI'
       command_on: 'JgDSAJOVETkRORA5ERQQFBAUERQQFBA6EDkRORAUERQQFBAUERQQOREUEBQQOREUEDkRORA6EBQQORE5EBQRORAUERQQFBAABgKSlhE4EjgSOBETEhISExETEhISOBI4ETgSExETERMSExETEjcSExETEjgRExI4ETgSOBETEjgROBITETgSExETEhISAAYAlJUROBI3EzcSEhITEhITERMSETgSOBI4ERMSEhITERMSEhM3EhISExI3EhMROBI4ETgSExE4EjgRExI4ERMTERITEQANBQAAAAAAAA='
       command_off: 'JgCMAJOVEzcTNhM3ExITEhMSExITEhM3EzcUNhMSExITEhMSEhMSEhM3ExITEhM3ExITEhMSEzcTEhM3EzcTEhM2EzcTNxMABgeTlRI4EzcSOBEUERQRFBAUERQRORI4EjgSExEUERQRFBEUERQROREUERQROBMSERQRFBE5EhMRORI4EhMRORI4ETkRAA0FAAAAAAAAAAAAAAAA='
+    apple_tv:
+      friendly_name: 'Apple TV'
+      command_on: 'JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
+      command_off: 'JgBQAAABJZQSExI3EhMRFBI3EhMROBM3EjcTEhI3EzcSEhI4EjcTEhI4EhISOBISExISExITEhISExM2ExITNRM4EzcSNxI4EgAE9QABJUsSAA0FAAAAAAAAAAA='
+    apple_tv:
+      friendly_name: 'FireTV'
+      command_on: 'JgBQAAABKZIUERU1FBEUERQ1FBEVNRQ1FDUUEhQ1FDUUERU1FDUUERQ2FBEUNRQ1FBIUERQRFBEUERQ1FBEVERQ1FDUUNRU1FAAFAgABKEkUAA0FAAAAAAAAAAA='
+      command_off: 'JgBQAAABJZQSExI3EhMRFBI3EhMROBM3EjcTEhI3EzcSEhI4EjcTEhI4EhISOBISExISExITEhISExM2ExITNRM4EzcSNxI4EgAE9QABJUsSAA0FAAAAAAAAAAA='
+    input_tv:
+      friendly_name: 'TV'
+      command_on: 'JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
+      command_off: 'JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
