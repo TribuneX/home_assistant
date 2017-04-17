@@ -76,3 +76,15 @@
       friendly_name: 'TV'
       command_on: 'JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
       command_off: 'JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
+
+- platform: template
+    switches:
+      skylight:
+        value_template: "True"
+        turn_on:
+          service: script.turn_on
+          entity_id: script.input_apple_tv
+        turn_off:
+          service: switch.turn_on
+          entity_id: switch.input_fire_tv
+
