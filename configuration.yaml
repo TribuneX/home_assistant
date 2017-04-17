@@ -52,6 +52,11 @@ notify:
     api_key: !secret telegram_api_key
     chat_id: !secret telegram_chat_id
 
+notify:
+ - platform: ios
+   name: ios_app
+   target: !secret ios_token
+
 # Presence Detection
 device_tracker:
   - platform: fritz
@@ -74,6 +79,7 @@ netatmo:
  
 
 input_select:
+  friendly_name:
   tv_mode:
     name: 'TV mode'
     options:
