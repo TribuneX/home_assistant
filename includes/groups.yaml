@@ -16,6 +16,8 @@ wohnzimmer:
     - switch.light_sofa
     - switch.light_sessel
     - switch.tv
+    - input_select.tv_mode
+    - media_player.wohnzimmer
 schlafzimmer:
   name: Schlafzimmer
   entities:
@@ -38,7 +40,7 @@ outdoor:
     - sensor.dark_sky_humidity
     - sensor.dark_sky_wind_speed
     - sensor.dark_sky_hourly_summary
-working:
+arbeitszimmer:
   name: Arbeitszimmer
   entities:
     - group.pi
@@ -132,6 +134,8 @@ tv_scenes:
     - scene.musik
 
 # Tabs
+default_view:
+  view: no
 rooms:
   name: Räume
   view: yes
