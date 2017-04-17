@@ -296,7 +296,7 @@
     - service: switch.turn_on
       entity_id: switch.light_sascha
     - service: switch.turn_on
-      entity_id: switch.nicole 
+      entity_id: switch.light_nicole 
 
 # Turn off lights in livingroom after TV is switched off
 - alias: 'Turn off lights in livingroom after TV is switched off'
@@ -426,4 +426,3 @@
     - delay:
         seconds: 20
     - service: script.input_music
-
