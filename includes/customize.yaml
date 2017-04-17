@@ -51,9 +51,9 @@
   scene.lampen_wohnzimmer:
     icon: mdi:lightbulb-on
   scene.alles_aus:
-    icon: mid:home
+    icon: mdi:power
   scene.tv:
-    icon: mid:television
+    icon: mdi:television
   scene.apple_tv:
     icon: mdi:airplay
   scene.firetv:
