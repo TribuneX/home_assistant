@@ -104,7 +104,7 @@ automation_group:
     - automation.turn_on_light_when_appletv_is_paused
     - automation.turn_off_lights_in_livingroom_after_tv_is_switched_off
     - automation.turn_on_lights_in_bedroom_after_tv_is_switched_off
-state_group:
+states:
   name: States
   entities:
     - input_boolean.vacation_mode
@@ -145,6 +145,7 @@ rooms:
     - group.wohnzimmer
     - group.schlafzimmer
     - group.arbeitszimmer
+    - group.states
 plants:
   name: Pflanzen
   view: yes
