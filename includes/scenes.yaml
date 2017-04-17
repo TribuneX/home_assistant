@@ -13,3 +13,18 @@
 - name: Alles aus
   entities:
       group.all_switches: off
+
+- name: Apple TV
+  entities: 
+    input_select.tv_mode:
+        option: AppleTV
+
+- name: FireTV
+  entities: 
+    input_select.tv_mode:
+        option: FireTV
+
+- name: TV
+  entities: 
+    input_select.tv_mode:
+        option: TV

@@ -84,15 +84,7 @@ input_select:
      - Music
     initial: AUS
     icon: mdi:television
-  hdmi_mode:
-    name: 'HDMI Mode'
-    options:
-     - AUS
-     - TV
-     - HDMI
-    initial: AUS
-    icon: mdi:television
-
+    
 ##########################
 # Includes
 ##########################
