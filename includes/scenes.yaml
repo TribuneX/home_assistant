@@ -28,3 +28,8 @@
   entities: 
     input_select.tv_mode:
         option: TV
+
+- name: Musik
+  entities: 
+    input_select.tv_mode:
+        option: Music
