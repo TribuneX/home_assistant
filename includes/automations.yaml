@@ -348,3 +348,11 @@
     - service: script.input_music
 
 
+- alias: 'switch on TV if requested by scene necessary'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+  - service: notify.telegram
+      data:
+        message: 'Debug: State changed'
+

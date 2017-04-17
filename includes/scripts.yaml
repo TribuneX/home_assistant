@@ -87,8 +87,6 @@ turn_receiver_on:
 
 input_tv:
   sequence:
-    - service: script.turn_on
-      entity_id: script.turn_on_tv_delay_10_s
     # press channel up to switch back to TV and change input
     - service: broadlink.send_packet_192_168_178_51
       data:
@@ -106,9 +104,6 @@ input_hdmi:
 
 input_apple_tv:
   sequence:
-    - service: script.turn_on
-      entity_id: script.turn_on_tv_delay_10_s
-    # switch input to AppleTV
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet: 
@@ -119,8 +114,6 @@ input_apple_tv:
 
 input_fire_tv:
   sequence:
-    - service: script.turn_on
-      entity_id: script.turn_on_tv_delay_10_s
     # switch input to FireTV      
     - service: broadlink.send_packet_192_168_178_51
       data:
@@ -132,8 +125,6 @@ input_fire_tv:
 
 input_music:
   sequence:
-    - service: script.turn_on
-      entity_id: script.turn_on_tv_delay_10_s
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
@@ -141,12 +132,3 @@ input_music:
           - 'JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
           #power off TV
           - 'JgCMAJGWETgRORE5ERQRFBEUERQRFBE5EDkROREUERQRFBEUERQRFBE4ERQRFBEUERQRFBEUETkRFBA5ETkRORE5ETkROREABgmSlRE5ETkQOREUERQRFBEUERQRORE5ETkQFRAUERQRFBEUERQROREUERQQFRAUERQRFBE5ERQRORE5ETgRORE5ETkRAA0FAAAAAAAAAAAAAAAA='
-
-turn_on_tv_delay_10_s:
-  sequence:
-    - service: switch.turn_on
-      entity_id: switch.tv
-    - delay: 
-        seconds: 10
-    - service: switch.turn_on
-      entity_id: switch.tv
