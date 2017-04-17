@@ -87,34 +87,64 @@ turn_receiver_on:
 
 input_tv:
   sequence:
+    - service: script.turn_on
+      entity_id: script.turn_on_tv_delay_10_s
+    # press channel up to switch back to TV and change input
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet: 
           - 'JgCMAJOVEzcTNhM3ExITEhMSExITEhM3EzcUNhMSExITEhMSEhMSEhM3ExITEhM3ExITEhMSEzcTEhM3EzcTEhM2EzcTNxMABgeTlRI4EzcSOBEUERQRFBAUERQRORI4EjgSExEUERQRFBEUERQROREUERQROBMSERQRFBE5EhMRORI4EhMRORI4ETkRAA0FAAAAAAAAAAAAAAAA='
           - 'JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
 
+input_hdmi:
+  sequence:
+    - service: broadlink.send_packet_192_168_178_51
+      data:
+        packet:
+          - 'JgCMAJOWEjgRORE5EhMRFBEUERQRFBE5ETkROBEUERQSExEUERQRNxMUERQRFBEUEhMRFBEUERQRORE4EjgSOBI4ETkSOBIABgeVlRI4EjgSOBITEhMRFBEUERQRORE4ETkSExITERQSExEUETkSExEUEhMRFBITERQRFBEUETkROBI4EjgRORI4EjgSAA0FAAAAAAAAAAAAAAAA='
+          - 'JgCMAJOWEjgRORE5EhMRFBEUERQRFBE5ETkROBEUERQSExEUERQRNxMUERQRFBEUEhMRFBEUERQRORE4EjgSOBI4ETkSOBIABgeVlRI4EjgSOBITEhMRFBEUERQRORE4ETkSExITERQSExEUETkSExEUEhMRFBITERQRFBEUETkROBI4EjgRORI4EjgSAA0FAAAAAAAAAAAAAAAA='
+
 input_apple_tv:
   sequence:
+    - service: script.turn_on
+      entity_id: script.turn_on_tv_delay_10_s
+    # switch input to AppleTV
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet: 
           - 'JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
+    # switch to input HDMI
+    - service: script.turn_on
+      entity_id: script.input_hdmi
 
 input_fire_tv:
   sequence:
+    - service: script.turn_on
+      entity_id: script.turn_on_tv_delay_10_s
+    # switch input to FireTV      
     - service: broadlink.send_packet_192_168_178_51
       data:
-        packet: 
+        packet:
           - 'JgBQAAABKZIUERU1FBEUERQ1FBEVNRQ1FDUUEhQ1FDUUERU1FDUUERQ2FBEUNRQ1FBIUERQRFBEUERQ1FBEVERQ1FDUUNRU1FAAFAgABKEkUAA0FAAAAAAAAAAA='
+    # switch to input HDMI
+    - service: script.turn_on
+      entity_id: script.input_hdmi
 
 input_music:
   sequence:
+    - service: script.turn_on
+      entity_id: script.turn_on_tv_delay_10_s
     - service: broadlink.send_packet_192_168_178_51
       data:
-        packet: 
-          # power off TV
-          #- 'JgCMAJGWETgRORE5ERQRFBEUERQRFBE5EDkROREUERQRFBEUERQRFBE4ERQRFBEUERQRFBEUETkRFBA5ETkRORE5ETkROREABgmSlRE5ETkQOREUERQRFBEUERQRORE5ETkQFRAUERQRFBEUERQROREUERQQFRAUERQRFBE5ERQRORE5ETgRORE5ETkRAA0FAAAAAAAAAAAAAAAA='
+        packet:
           # change input to AppleTV
           - 'JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
+          #power off TV
+          - 'JgCMAJGWETgRORE5ERQRFBEUERQRFBE5EDkROREUERQRFBEUERQRFBE4ERQRFBEUERQRFBEUETkRFBA5ETkRORE5ETkROREABgmSlRE5ETkQOREUERQRFBEUERQRORE5ETkQFRAUERQRFBEUERQROREUERQQFRAUERQRFBE5ERQRORE5ETgRORE5ETkRAA0FAAAAAAAAAAAAAAAA='
 
-
+turn_on_tv_delay_10_s:
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.light_tv
+    - delay: 
+        seconds: 10
