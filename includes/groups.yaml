@@ -123,6 +123,13 @@ scripts:
     - script.watch_tv
     - script.watch_apple_tv
     - script.watch_fire_tv
+tv_scenes:
+  name: TV
+  entities:
+    - scene.tv
+    - scene.apple_tv
+    - scene.firetv
+    - scene.musik
 
 # Tabs
 rooms:
@@ -157,6 +164,7 @@ scenes:
     - scene.alles_aus
     - scene.lampen_bett
     - scene.lampen_wohnzimmer
+    - group.tv_scenes
 home:
   name: Home
   view: yes

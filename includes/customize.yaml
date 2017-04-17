@@ -52,6 +52,14 @@
     icon: mdi:lightbulb-on
   scene.alles_aus:
     icon: mid:power
+  scene.tv:
+    icon: mid:television
+  scene.apple_tv:
+    icon: mdi:airplay
+  scene.firetv:
+    icon: mdi:youtube-play
+  scene.musik:
+    icon: mdi:play-circle
   device_tracker.nicolesiphone:
     friendly_name: Nicole
   device_tracker.iphones:
