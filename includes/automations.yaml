@@ -316,6 +316,10 @@
         message: 'I will turn of the lights in 15 minutes. Good Night.'
   
 - alias: 'watch AppleTV'
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -324,6 +328,10 @@
     - service: script.input_apple_tv
 
 - alias: 'watch FireTV'
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -332,6 +340,10 @@
     - service: script.input_fire_tv
 
 - alias: 'watch TV'
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -340,6 +352,10 @@
     - service: script.input_tv
 
 - alias: 'listen to music'
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -347,13 +363,78 @@
   action:
     - service: script.input_music
 
-
-- alias: 'switch on TV if requested by scene necessary'
+- alias: 'watch AppleTV + TV'
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'off'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
+    to: 'AppleTV'
   action:
-    - service: notify.telegram
-      data:
-        message: 'Debug: State changed'
+    - service: switch.turn_on
+      entity_id: switch.tv
+    - delay:
+        seconds: 20
+    - service: script.input_apple_tv
+
+- alias: 'watch FireTV + TV'
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'off'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'FireTV'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.tv
+    - delay:
+        seconds: 20
+    - service: script.input_fire_tv
+
+- alias: 'watch TV + TV'
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'off'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'TV'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.tv
+    - delay:
+        seconds: 20
+    - service: script.input_tv
+
+- alias: 'listen to music'
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'off'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'Music'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.tv
+    - delay:
+        seconds: 20
+    - service: script.input_music
+
+
+- alias: 'switch on TV if requested by scene necessary'
+   trigger:
+     platform: state
+     entity_id: input_select.tv_mode
+   action:
+     - service: input_select.select_option
+        data:
+          entity_id: input_select.who_cooks
+          option: Paulus
 
