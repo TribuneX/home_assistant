@@ -53,8 +53,8 @@ notify:
     chat_id: !secret telegram_chat_id
 
   - platform: ios
-   name: ios_app
-   target: !secret ios_token
+    name: ios_app
+    target: !secret ios_token
 
 # Presence Detection
 device_tracker:
