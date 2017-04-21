@@ -132,6 +132,11 @@ tv_scenes:
     - scene.apple_tv
     - scene.firetv
     - scene.musik
+iphone:
+  name: iPhone
+  entities:
+    - sensor.iphones_battery_level
+    - sensor.iphones_battery_state
 
 # Tabs
 default_view:
@@ -176,6 +181,7 @@ home:
   icon: mdi:account
   entities:
     - group.personen
+    - group.iphone
 system:
   name: System
   view: yes
