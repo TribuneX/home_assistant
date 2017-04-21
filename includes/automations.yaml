@@ -2,7 +2,8 @@
 # Automations 
 ##########################
 
-- alias: 'Nicole left'
+- alias: '
+ left'
   hide_entity: True
   trigger:
     platform: state
@@ -193,12 +194,16 @@
       entity_id: group.personen 
       from: 'not_home'
       to: 'home'
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
   action:
     - service: homeassistant.turn_off
       entity_id: input_boolean.vacation_mode
     - service: notify.telegram
       data:
-        message: 'Welcome back! I switched off the vation mode'
+        message: 'Welcome back! I switched off the vacation mode'
 
 # Turn on lights when vacation mode active
 - alias: 'Turn on vacation lights at sunset when vacation mode on'
