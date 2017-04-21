@@ -12,7 +12,7 @@
     from: 'home'
     to: 'not_home'
   action:
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'Nicole just left home.'
 
@@ -25,7 +25,7 @@
     from: 'not_home'
     to: 'home'
   action:
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'Nicole arrived at home.'
 
@@ -41,7 +41,7 @@
     entity_id: sensor.sanseviera_moisture
     below: 20
   action:
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'Please water Sanseviera! Moisture: {{states.sensor.sanseviera_moisture.state}}% | Light: {{states.sensor.sanseviera_light_intensity.state}} lux | Conductivity: {{states.sensor.sanseviera_conductivity.state}}'
 
@@ -57,7 +57,7 @@
     entity_id: sensor.palme_moisture
     below: 20
   action:
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'Please water Palm! Moisture: {{states.sensor.palme_moisture.state}}% | Light: {{states.sensor.palme_light_intensity.state}} lux | Conductivity: {{states.sensor.palme_conductivity.state}}'
 
@@ -68,7 +68,7 @@
     entity_id: sensor.netatmo_schlafzimmer_co2
     above: 900
   action:
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
 
@@ -79,7 +79,7 @@
     entity_id: sensor.netatmo_wohnzimmer_co2
     above: 900
   action:
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
 
@@ -90,7 +90,7 @@
     entity_id: sensor.netatmo_wohnzimmer_noise
     above: 65
   action:
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise.state}}db'
 
@@ -100,7 +100,7 @@
     platform: state
     entity_id: updater.updater
   action:
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'Update for Home Assistant is available.'
 
@@ -122,7 +122,7 @@
     for:
       minutes: 5 
   action:
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'Everybody left. I will switch off all devices.'
     - service: switch.turn_off
@@ -160,11 +160,13 @@
     platform: time
     after: '07:30'
   action:
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'Weather Report for today: Current: {{states.sensor.netatmo_outdoor_temperature.state}}°C 
         H/L: {{states.sensor.dark_sky_daily_high_temperature.state}}°C/{{states.sensor.dark_sky_daily_low_temperature.state}}°C 
         {{states.sensor.dark_sky_hourly_summary.state}}'
+        data: 
+          title: 'Jarvis'
 
 # Vacation Mode 
 # Inspired by https://github.com/ronmarco/home-assistant-config/blob/master/yaml_automation/status-vacation.yaml
@@ -183,7 +185,7 @@
   action:
     - service: homeassistant.turn_on
       entity_id: input_boolean.vacation_mode
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'I did not see anybody within the last 24 hours. I will switch on the vacation mode'
 
@@ -201,7 +203,7 @@
   action:
     - service: homeassistant.turn_off
       entity_id: input_boolean.vacation_mode
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'Welcome back! I switched off the vacation mode'
 
@@ -264,7 +266,7 @@
     before: '05:00'
   action:
     - service: script.turn_off_bedroom_delay_45
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'I will turn off the devices in the bedroom in 45 minutes'
 
@@ -281,7 +283,7 @@
     before: '05:00'
   action:
     - service: script.turn_off_livingroom_delay_15
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'I will turn off the devices in the livingroom in 15 minutes'
 
@@ -316,7 +318,7 @@
     before: '05:00'
   action: 
     - service: script.turn_off_livingroom_delay_15
-    - service: notify.telegram
+    - service: notify.ios_iphones
       data:
         message: 'I will turn of the lights in 15 minutes. Good Night.'
   
