@@ -14,6 +14,7 @@
   action:
     - service: notify.ios_iphones
       data:
+        title: 'Location'
         message: 'Nicole just left home.'
 
 - alias: 'Nicole arrived'
@@ -27,6 +28,7 @@
   action:
     - service: notify.ios_iphones
       data:
+        title: 'Location'
         message: 'Nicole arrived at home.'
 
 - alias: 'Water Sanseviera' 
@@ -43,6 +45,7 @@
   action:
     - service: notify.ios_iphones
       data:
+        title: 'Plants'
         message: 'Please water Sanseviera! Moisture: {{states.sensor.sanseviera_moisture.state}}% | Light: {{states.sensor.sanseviera_light_intensity.state}} lux | Conductivity: {{states.sensor.sanseviera_conductivity.state}}'
 
 - alias: 'Water Palm'
@@ -59,6 +62,7 @@
   action:
     - service: notify.ios_iphones
       data:
+        title: 'Plants'
         message: 'Please water Palm! Moisture: {{states.sensor.palme_moisture.state}}% | Light: {{states.sensor.palme_light_intensity.state}} lux | Conductivity: {{states.sensor.palme_conductivity.state}}'
 
 - alias: 'CO2 Bedroom'
@@ -70,6 +74,7 @@
   action:
     - service: notify.ios_iphones
       data:
+        title: 'Rooms'
         message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
 
 - alias: 'CO2 Livingroom'
@@ -81,6 +86,7 @@
   action:
     - service: notify.ios_iphones
       data:
+        title: 'Rooms'
         message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
 
 - alias: 'Noise Livingroom'
@@ -92,6 +98,7 @@
   action:
     - service: notify.ios_iphones
       data:
+        title: 'Rooms'
         message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise.state}}db'
 
 - alias: 'Update Available Notifications'
@@ -102,6 +109,7 @@
   action:
     - service: notify.ios_iphones
       data:
+        title: 'Update'
         message: 'Update for Home Assistant is available.'
 
 - alias: 'Power off all'
@@ -124,6 +132,7 @@
   action:
     - service: notify.ios_iphones
       data:
+        title: 'Location'
         message: 'Everybody left. I will switch off all devices.'
     - service: switch.turn_off
 
@@ -165,9 +174,8 @@
         title: 'Weather Report for today'
         message: 'Current: {{states.sensor.netatmo_outdoor_temperature.state}}°C 
         H/L: {{states.sensor.dark_sky_daily_high_temperature.state}}°C/{{states.sensor.dark_sky_daily_low_temperature.state}}°C 
-        {{states.sensor.dark_sky_hourly_summary.state}}'
-          
-
+        {{states.sensor.dark_sky_hourly_summary.state}}'       
+  
 # Vacation Mode 
 # Inspired by https://github.com/ronmarco/home-assistant-config/blob/master/yaml_automation/status-vacation.yaml
 
@@ -187,6 +195,7 @@
       entity_id: input_boolean.vacation_mode
     - service: notify.ios_iphones
       data:
+        title: 'Vacation mode'
         message: 'I did not see anybody within the last 24 hours. I will switch on the vacation mode'
 
 # Turn vacation mode off automatically
@@ -205,6 +214,7 @@
       entity_id: input_boolean.vacation_mode
     - service: notify.ios_iphones
       data:
+        title: 'Vacation mode'
         message: 'Welcome back! I switched off the vacation mode'
 
 # Turn on lights when vacation mode active
@@ -268,6 +278,7 @@
     - service: script.turn_off_bedroom_delay_45
     - service: notify.ios_iphones
       data:
+        title: 'Timer'
         message: 'I will turn off the devices in the bedroom in 45 minutes'
 
 # Turn off devices in the livingroom 15 minutes when switched on after 3:01
@@ -285,6 +296,7 @@
     - service: script.turn_off_livingroom_delay_15
     - service: notify.ios_iphones
       data:
+        title: 'Timer'
         message: 'I will turn off the devices in the livingroom in 15 minutes'
 
 
@@ -320,6 +332,7 @@
     - service: script.turn_off_livingroom_delay_15
     - service: notify.ios_iphones
       data:
+        title: 'Timer'
         message: 'I will turn of the lights in 15 minutes. Good Night.'
   
 - alias: 'watch AppleTV'
