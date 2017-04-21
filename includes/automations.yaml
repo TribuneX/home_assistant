@@ -167,6 +167,8 @@
         {{states.sensor.dark_sky_hourly_summary.state}}'
         data: 
           title: 'Jarvis'
+          push:
+            badge: 5
 
 # Vacation Mode 
 # Inspired by https://github.com/ronmarco/home-assistant-config/blob/master/yaml_automation/status-vacation.yaml
