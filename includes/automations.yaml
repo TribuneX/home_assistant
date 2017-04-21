@@ -162,13 +162,11 @@
   action:
     - service: notify.ios_iphones
       data:
-        message: 'Weather Report for today: Current: {{states.sensor.netatmo_outdoor_temperature.state}}°C 
+        title: 'Weather Report for today'
+        message: 'Current: {{states.sensor.netatmo_outdoor_temperature.state}}°C 
         H/L: {{states.sensor.dark_sky_daily_high_temperature.state}}°C/{{states.sensor.dark_sky_daily_low_temperature.state}}°C 
         {{states.sensor.dark_sky_hourly_summary.state}}'
-        data: 
-          title: 'Jarvis'
-          push:
-            badge: 5
+          
 
 # Vacation Mode 
 # Inspired by https://github.com/ronmarco/home-assistant-config/blob/master/yaml_automation/status-vacation.yaml
