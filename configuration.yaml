@@ -27,8 +27,10 @@ config:
 http:
   api_password: !secret http_password
   base_url: !secret base_url
-  ssl_certificate: !secret ssl_certificate_path   # path to your cacert.pem
+  ssl_certificate: !secret ssl_certificate_path        
   ssl_key: !secret ssl_private_key
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
 
 # Checks for available updates
 updater:
