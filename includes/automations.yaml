@@ -149,7 +149,7 @@
 
   action:
     - service: switch.turn_on
-      entity_id: switch.light_tv
+      entity_id: light.lampe_fernseher
 
 - alias: 'Lights when someone arrives home'
   trigger:
@@ -162,7 +162,7 @@
     state: 'home'
   action:
     - service: switch.turn_on
-      entity_id: switch.light_tv
+      entity_id: light.lampe_fernseher
 
 - alias: 'Weather Report'
   trigger:
@@ -246,7 +246,7 @@
     state: below_horizon
   action:
     - service: switch.turn_on
-      entity_id: switch.light_sofa
+      entity_id: light.lampe_sofa
 
 # Turn on light at Sofa if ATV is paused
 - alias: 'Turn off light when AppleTV is played'
@@ -261,7 +261,7 @@
     state: below_horizon
   action:
     - service: switch.turn_off
-      entity_id: switch.light_sofa
+      entity_id: light.lampe_sofa
 
 # Turn of devices in the bedroom 30 minutes when switched on after 23:00
 - alias: '45 minutes timer for devices at night'

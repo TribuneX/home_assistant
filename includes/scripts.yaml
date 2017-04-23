@@ -29,22 +29,22 @@ vacation_lights:
         hours: 1
     # turn lights on for 2 hours after sunset
     - service: switch.turn_on
-      entity_id: switch.light_tv
+      entity_id: light.lampe_fernseher
     - delay:
         hours: 2
     # turn lights off and wait 2 hours
     - service: switch.turn_off
-      entity_id: switch.light_tv
+      entity_id: light.lampe_fernseher
     - delay:
         hours: 2    
     # turn lights on for 30 more minutes
     - service: switch.turn_on
-      entity_id: switch.light_tv
+      entity_id: light.lampe_fernseher
     - delay:
         minutes: 30
     # turn lights off
     - service: switch.turn_off
-      entity_id: switch.light_tv
+      entity_id: light.lampe_fernseher
 # Inspired by https://github.com/Tommatheussen/Home-Assistant-Configuration/blob/master/script/get_latest_config.yaml
 get_latest_config:
   alias: 'Get Latest Config'
@@ -108,10 +108,6 @@ input_hdmi:
 
 input_apple_tv:
   sequence:
-    # - service: switch.turn_on
-    #   entity_id: switch.tv
-    # - delay:
-    #     seconds: 20
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet: 
@@ -122,11 +118,6 @@ input_apple_tv:
 
 input_fire_tv:
   sequence:
-    # - service: switch.turn_on
-    #   entity_id: switch.tv
-    # - delay:
-    #     seconds: 20
-    # switch input to FireTV      
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
@@ -137,14 +128,10 @@ input_fire_tv:
 
 input_music:
   sequence:
-    # - service: switch.turn_on
-    #   entity_id: switch.tv
-    # - delay:
-    #     seconds: 20
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
           # change input to AppleTV
           - 'JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
           #power off TV
-          - 'JgCMAJGWETgRORE5ERQRFBEUERQRFBE5EDkROREUERQRFBEUERQRFBE4ERQRFBEUERQRFBEUETkRFBA5ETkRORE5ETkROREABgmSlRE5ETkQOREUERQRFBEUERQRORE5ETkQFRAUERQRFBEUERQROREUERQQFRAUERQRFBE5ERQRORE5ETgRORE5ETkRAA0FAAAAAAAAAAAAAAAA='
+          #- 'JgCMAJGWETgRORE5ERQRFBEUERQRFBE5EDkROREUERQRFBEUERQRFBE4ERQRFBEUERQRFBEUETkRFBA5ETkRORE5ETkROREABgmSlRE5ETkQOREUERQRFBEUERQRORE5ETkQFRAUERQRFBEUERQROREUERQQFRAUERQRFBE5ERQRORE5ETgRORE5ETkRAA0FAAAAAAAAAAAAAAAA='
