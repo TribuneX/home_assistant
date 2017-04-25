@@ -261,7 +261,7 @@
         entity_id: light.lampe_fernseher
         brightness: 20
 
-- alisa: 'Dim sofa light'
+- alias: 'Dim sofa light'
   trigger: 
     - platform: state
       entity_id: media_player.wohnzimmer
