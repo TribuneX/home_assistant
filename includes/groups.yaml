@@ -12,10 +12,9 @@ wohnzimmer:
     - sensor.netatmo_wohnzimmer_humidity
     - sensor.netatmo_wohnzimmer_pressure
     - sensor.netatmo_wohnzimmer_noise
-    - switch.light_tv
-    - switch.light_sofa
     - switch.light_sessel
-    - switch.tv
+    - light.lampe_fernseher
+    - light.lampe_sofa
     - input_select.tv_mode
     - media_player.wohnzimmer
 schlafzimmer:
@@ -27,6 +26,7 @@ schlafzimmer:
     - switch.light_sascha
     - switch.light_nicole
     - switch.tv_2
+    - light.lampe_gang_bad
 outdoor:
   name: Außen
   entities:
