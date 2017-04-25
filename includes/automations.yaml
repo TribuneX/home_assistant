@@ -2,8 +2,7 @@
 # Automations 
 ##########################
 
-- alias: '
- left'
+- alias: 'Nicole left'
   hide_entity: True
   trigger:
     platform: state
@@ -136,30 +135,23 @@
         message: 'Everybody left. I will switch off all devices.'
     - service: switch.turn_off
 
-- alias: 'Switch on light after sunset'
-  trigger:
-    platform: state
-    entity_id: group.personen
-    from: 'not_home'
-    to: 'home'
-  condition:
-    condition: sun
-    after: sunset
-    after_offset: '-00:30:00'
-
-  action:
-    - service: switch.turn_on
-      entity_id: light.lampe_fernseher
-
-- alias: 'Lights when someone arrives home'
+- alias: 'TV light at sunset'
   trigger:
     - platform: sun
       event: sunset
-      #offset: '-00:15:00'
+    - platform: state
+      entity_id: group.personen
+      from: 'not_home'
+      to: 'home'
   condition:
-    condition: state
-    entity_id: group.personen
-    state: 'home'
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: group.personen
+        state: 'home'
+      - condition: sun
+        after: sunset
+        after_offset: '-00:30:00'
   action:
     - service: switch.turn_on
       entity_id: light.lampe_fernseher
