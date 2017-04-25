@@ -152,7 +152,6 @@ pings:
 
 # Tabs
 default_view:
-  hide: true
 
 rooms:
   name: Räume
