@@ -155,6 +155,7 @@
   action:
     - service: switch.turn_on
       entity_id: light.lampe_fernseher
+      brightness: 40
 
 - alias: 'Weather Report'
   trigger:
@@ -239,6 +240,7 @@
   action:
     - service: switch.turn_on
       entity_id: light.lampe_sofa
+      brightness: 40
 
 # Turn on light at Sofa if ATV is paused
 - alias: 'Turn off light when AppleTV is played'
@@ -252,8 +254,24 @@
     entity_id: sun.sun
     state: below_horizon
   action:
-    - service: switch.turn_off
+    - service: switch.turn_on
+      entity_id: light.lampe_fernseher
+      brightness: 20
+
+- alisa: 'Dim sofa light'
+  trigger: 
+    - platform: state
+      entity_id: media_player.wohnzimmer
+      from: 'paused'
+      to: 'playing' 
+  condition:
+    condition: state
+    entity_id: light.living_room
+    state: 'on'
+  action:
+    - service: switch.turn_on
       entity_id: light.lampe_sofa
+      brightness: 20
 
 # Turn of devices in the bedroom 30 minutes when switched on after 23:00
 - alias: '45 minutes timer for devices at night'
