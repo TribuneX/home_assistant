@@ -100,6 +100,7 @@ tradfri:
 ##########################
 
 sensor: !include includes/sensors.yaml
+binay_sensor: !include includes/binary_sensor.yaml
 automation: !include includes/automations.yaml
 script: !include includes/scripts.yaml
 group: !include includes/groups.yaml
