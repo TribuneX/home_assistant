@@ -57,3 +57,9 @@
     - temperature
     - conductivity
     - battery
+    
+# Monitor system uptime
+binary_sensor:
+  - platform: ping
+    name: PING Eltern
+    host: home.cbs-service.net
