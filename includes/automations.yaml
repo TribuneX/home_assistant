@@ -7,7 +7,6 @@
   trigger:
     platform: state
     entity_id: device_tracker.nicolesiphone
-    # Optional 
     from: 'home'
     to: 'not_home'
   action:
@@ -21,7 +20,6 @@
   trigger:
     platform: state
     entity_id: device_tracker.nicolesiphone
-    # Optional 
     from: 'not_home'
     to: 'home'
   action:
@@ -111,8 +109,8 @@
         title: 'Update'
         message: 'Update for Home Assistant is available.'
 
+# Power off all devices after 03:00 AM. 
 - alias: 'Power off all'
-  hide_entity: True
   trigger:
       platform: time
       after: '03:00'
@@ -139,6 +137,7 @@
   trigger:
     - platform: sun
       event: sunset
+      offset: '-00:30:00'
     - platform: state
       entity_id: group.personen
       from: 'not_home'
@@ -151,7 +150,7 @@
         state: 'home'
       - condition: sun
         after: sunset
-        after_offset: '-00:30:00'
+        offset: '-00:30:00'
   action:
     - service: light.turn_on
       data: 
@@ -242,7 +241,7 @@
     - service: light.turn_on
       data: 
         entity_id: light.lampe_fernseher
-        brightness: 40
+        brightness: 80
 
 # Turn on light at Sofa if ATV is paused
 - alias: 'Turn off light when AppleTV is played'
@@ -269,7 +268,7 @@
       to: 'playing' 
   condition:
     condition: state
-    entity_id: light.living_room
+    entity_id: light.lampe_sofa
     state: 'on'
   action:
     - service: light.turn_on
@@ -313,7 +312,6 @@
         title: 'Timer'
         message: 'I will turn off the devices in the livingroom in 15 minutes'
 
-
 # Turn on lights in bedroom, if TV is switched off
 - alias: 'Turn on lights in bedroom after TV is switched off'
   trigger:
@@ -349,6 +347,24 @@
         title: 'Timer'
         message: 'I will turn of the lights in 15 minutes. Good Night.'
   
+# Trigger alarm if motion is detected, altough noboby is home
+- alias: 'Alarm'
+  trigger: 
+    - platform: state 
+      entity_id: light.lampe_sofa
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: state
+        entity_id: group.personen
+        state: 'not home'
+  action: 
+    - service: notify.ios_iphones
+      data:
+        title: 'Alarm'
+        message: 'Motion was detected, but nobody seems to be at home!'
+
+
 - alias: 'watch AppleTV'
   trigger:
     platform: state
