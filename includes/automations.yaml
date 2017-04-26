@@ -355,7 +355,7 @@
       from: 'off'
       to: 'on'
   condition:
-    - condition: state
+    condition: state
         entity_id: group.personen
         state: 'not home'
   action: 
