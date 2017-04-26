@@ -314,6 +314,15 @@
         title: 'Timer'
         message: 'I will turn off the devices in the livingroom in 15 minutes'
 
+- alias: 'Switch on TV if it was turned on by another remote'
+  trigger: 
+    - platform: state
+      entity_id: device_tracker.broadlink
+      from: 'not home'
+      to: 'home'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.tv
 
 # Turn on lights in bedroom, if TV is switched off
 - alias: 'Turn on lights in bedroom after TV is switched off'
