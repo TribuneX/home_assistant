@@ -50,8 +50,8 @@ ios:
 # Telegram bot
 notify:
   platform: ios
-    name: ios_app
-    target: !secret ios_token
+  name: ios_app
+  target: !secret ios_token
 
   #- platform: telegram
   #  name: telegram
