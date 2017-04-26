@@ -357,7 +357,7 @@
   condition:
     condition: state
     entity_id: group.personen
-    state: 'not home'
+    state: 'home'
   action: 
     - service: notify.ios_iphones
       data:
