@@ -152,7 +152,7 @@
         state: 'home'
       - condition: sun
         after: sunset
-        offset: '-00:30:00'
+        after_offset: '-00:30:00'
   action:
     - service: light.turn_on
       data: 
