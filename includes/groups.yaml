@@ -15,6 +15,7 @@ wohnzimmer:
     - switch.light_sessel
     - light.lampe_fernseher
     - light.lampe_sofa
+    - switch.tv
     - input_select.tv_mode
     - media_player.wohnzimmer
     - device_tracker.broadlink
