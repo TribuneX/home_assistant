@@ -26,7 +26,6 @@ schlafzimmer:
     - switch.light_sascha
     - switch.light_nicole
     - switch.tv_2
-    - light.lampe_gang_bad
 outdoor:
   name: Außen
   entities:
@@ -40,6 +39,10 @@ outdoor:
     - sensor.dark_sky_humidity
     - sensor.dark_sky_wind_speed
     - sensor.dark_sky_hourly_summary
+gang:
+  name: Gang
+  entities:
+    - light.lampe_gang_bad
 arbeitszimmer:
   name: Arbeitszimmer
   entities:
