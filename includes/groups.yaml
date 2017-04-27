@@ -19,6 +19,11 @@ wohnzimmer:
     - input_select.tv_mode
     - media_player.wohnzimmer
     - device_tracker.broadlink
+wohzimmer_lampen:
+  name: Wohnzimmer Lampen
+  entities:
+    - light.lampe_fernseher
+    - light.lampe_sofa
 schlafzimmer:
   name: Schlafzimmer
   entities:

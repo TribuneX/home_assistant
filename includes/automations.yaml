@@ -156,9 +156,7 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: light.lampe_fernseher
-        brightness: 50
-        entity_id: light.lampe_sofa
+        entity_id: group.wohzimmer_lampen
         brightness: 50
 
 - alias: 'Weather Report'
@@ -244,9 +242,7 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: light.lampe_fernseher
-        brightness: 150
-        entity_id: light.lampe_sofa
+        entity_id: group.wohzimmer_lampen
         brightness: 150
 
 # Turn on light at Sofa if ATV is paused
@@ -263,9 +259,7 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: light.lampe_fernseher
-        brightness: 20
-        entity_id: light.lampe_sofa
+        entity_id: group.wohzimmer_lampen
         brightness: 20
 
 # Turn of devices in the bedroom 30 minutes when switched on after 23:00
