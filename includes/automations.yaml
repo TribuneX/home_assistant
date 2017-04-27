@@ -238,7 +238,7 @@
       from: 'playing'
       to: 'paused'
       for:
-        seconds: 5
+        seconds: 2
   condition:
     condition: state
     entity_id: sun.sun
@@ -247,6 +247,10 @@
     - service: light.turn_on
       data: 
         entity_id: light.lampe_fernseher
+        brightness: 80
+    - service: light.turn_on
+      data: 
+        entity_id: light.lampe_sofa
         brightness: 80
 
 # Turn on light at Sofa if ATV is paused
@@ -265,18 +269,6 @@
       data: 
         entity_id: light.lampe_fernseher
         brightness: 20
-
-- alias: 'Dim sofa light'
-  trigger: 
-    - platform: state
-      entity_id: media_player.wohnzimmer
-      from: 'paused'
-      to: 'playing' 
-  condition:
-    condition: state
-    entity_id: light.lampe_sofa
-    state: 'on'
-  action:
     - service: light.turn_on
       data: 
         entity_id: light.lampe_sofa
