@@ -157,11 +157,9 @@
     - service: light.turn_on
       data: 
         entity_id: light.lampe_fernseher
-        brightness: 40
-    - service: light.turn_on
-      data: 
+        brightness: 50
         entity_id: light.lampe_sofa
-        brightness: 40
+        brightness: 50
 
 - alias: 'Weather Report'
   trigger:
@@ -247,11 +245,9 @@
     - service: light.turn_on
       data: 
         entity_id: light.lampe_fernseher
-        brightness: 80
-    - service: light.turn_on
-      data: 
+        brightness: 150
         entity_id: light.lampe_sofa
-        brightness: 80
+        brightness: 150
 
 # Turn on light at Sofa if ATV is paused
 - alias: 'Turn off light when AppleTV is played'
