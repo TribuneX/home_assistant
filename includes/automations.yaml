@@ -158,6 +158,10 @@
       data: 
         entity_id: light.lampe_fernseher
         brightness: 40
+    - service: light.turn_on
+      data: 
+        entity_id: light.lampe_sofa
+        brightness: 40
 
 - alias: 'Weather Report'
   trigger:
@@ -369,7 +373,7 @@
   condition:    
     condition: state    
     entity_id: group.personen   
-    state: 'home'   
+    state: 'not home'   
   action:     
     - service: notify.ios_iphones   
       data:   
