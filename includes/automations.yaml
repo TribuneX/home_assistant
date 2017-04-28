@@ -14,7 +14,7 @@
     - service: notify.ios_iphones
       data:
         title: 'Location'
-        message: 'Nicole just left home.'
+        message: 'Nicole left.'
 
 - alias: 'Nicole arrived'
   hide_entity: True
@@ -28,7 +28,7 @@
     - service: notify.ios_iphones
       data:
         title: 'Location'
-        message: 'Nicole arrived at home.'
+        message: 'Nicole arrived.'
 
 - alias: 'Water Sanseviera' 
   hide_entity: True
@@ -139,7 +139,7 @@
   trigger:
     - platform: sun
       event: sunset
-      offset: '-00:30:00'
+      offset: '+00:30:00'
     - platform: state
       entity_id: group.personen
       from: 'not_home'
@@ -152,7 +152,7 @@
         state: 'home'
       - condition: sun
         after: sunset
-        after_offset: '-00:30:00'
+        after_offset: '+00:30:00'
   action:
     - service: light.turn_on
       data: 
@@ -275,10 +275,10 @@
     before: '05:00'
   action:
     - service: script.turn_off_bedroom_delay_45
-    - service: notify.ios_iphones
-      data:
-        title: 'Timer'
-        message: 'I will turn off the devices in the bedroom in 45 minutes'
+    #- service: notify.ios_iphones
+    #  data:
+    #    title: 'Timer'
+    #    message: 'I will turn off the devices in the bedroom in 45 minutes'
 
 # Turn off devices in the livingroom 15 minutes when switched on after 3:01
 - alias: '15 minutes timer for devices at night'
@@ -293,10 +293,10 @@
     before: '05:00'
   action:
     - service: script.turn_off_livingroom_delay_15
-    - service: notify.ios_iphones
-      data:
-        title: 'Timer'
-        message: 'I will turn off the devices in the livingroom in 15 minutes'
+    #- service: notify.ios_iphones
+    #  data:
+    #    title: 'Timer'
+    #    message: 'I will turn off the devices in the livingroom in 15 minutes'
 
 - alias: 'Switch on TV if it was turned on by another remote'
   trigger: 
