@@ -143,10 +143,12 @@ tv_scenes:
     - scene.firetv
     - scene.musik
 iphone:
-  name: iPhone
+  name: Devices
   entities:
     - sensor.iphones_battery_level
     - sensor.iphones_battery_state
+    - sensor.ipads_battery_level
+    - sensor.ipads_battery_state
 pings:
   name: Ping
   entities:
