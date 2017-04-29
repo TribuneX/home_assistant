@@ -258,8 +258,10 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: light.lampe_fernseher
-        brightness: 20
+        - entity_id: light.lampe_sofa
+        - brightness: 20
+        - entity_id: light.lampe_fernseher
+        - brightness: 20
 
 - alias: 'Dim sofa light'
   trigger: 
