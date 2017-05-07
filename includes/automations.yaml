@@ -480,3 +480,20 @@
   action:
     - service: switch.turn_off
       entity_id: switch.tv
+
+- alias: 'Turn on TV if media is played'
+  trigger: 
+    - platform: state
+      entity_id: media_player.wohnzimmer
+      from: 'paused'
+      to: 'playing' 
+  condition:
+    condition: state
+    entity_id: input_select.tv_mode
+    state: 'AUS'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.tv
+    - delay:
+        seconds: 20
+    - service: script.input_apple_tv
