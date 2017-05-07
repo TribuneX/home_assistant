@@ -496,4 +496,9 @@
       entity_id: switch.tv
     - delay:
         seconds: 20
-    - service: script.input_apple_tv
+    - service: script.input_music
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.tv_mode
+        option: Music
+
