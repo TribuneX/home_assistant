@@ -64,3 +64,9 @@
     friendly_name: Nicole
   device_tracker.iphones:
     friendly_name: Sascha
+
+  group.all_automations:
+    hidden: false
+
+  group.all_scripts:
+    hidden: false

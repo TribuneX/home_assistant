@@ -91,29 +91,7 @@ personen:
 automation_group:
   name: Automations
   entities:
-    - automation.co2_bedroom
-    - automation.co2_livingroom
-    - automation.lights_in_the_dark
-    - automation.lights_when_i_am_home
-    - automation.nicole_arrived
-    - automation.nicole_left
-    - automation.nobody_at_home
-    - automation.noise_livingroom
-    - automation.power_off_all
-    - automation.update_available_notifications
-    - automation.water_palm
-    - automation.water_sanseviera
-    - automation.weather_report
-    - automation.turn_on_vacation_lights_at_sunset_when_vacation_mode_on
-    - automation.turn_on_vacation_mode_when_nobody_is_home_for_more_than_24_hours
-    - automation.turn_vacation_mode_off_when_home
-    - automation.15_minutes_timer_for_devices_at_night
-    - automation.45_minutes_timer_for_devices_at_night
-    - automation.switch_on_light_after_sunset
-    - automation.turn_off_light_when_appletv_is_played
-    - automation.turn_on_light_when_appletv_is_paused
-    - automation.turn_off_lights_in_livingroom_after_tv_is_switched_off
-    - automation.turn_on_lights_in_bedroom_after_tv_is_switched_off
+    - group.all_automations
 states:
   name: States
   entities:
@@ -121,20 +99,7 @@ states:
 scripts:
   name: Skripte
   entities:
-    - script.reload_automations
-    - script.restart_ha
-    - script.reboot_pi
-    - script.get_latest_config
-    - script.vacation_lights
-    - script.restart_music
-    - script.turn_off_bedroom_delay_45
-    - script.turn_off_livingroom_delay_15
-    - script.turn_tv_on
-    - script.turn_receiver_on
-    - script.listen_to_music
-    - script.watch_tv
-    - script.watch_apple_tv
-    - script.watch_fire_tv
+    - group.all_scripts
 tv_scenes:
   name: TV
   entities:
