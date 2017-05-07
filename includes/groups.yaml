@@ -85,12 +85,13 @@ personen:
 tv_scenes:
   name: TV
   entities:
+    - scene.aus
     - scene.tv
     - scene.apple_tv
     - scene.firetv
     - scene.musik
     - input_select.tv_mode
-    - switch.tv
+    #- switch.tv
 iphone:
   name: Devices
   entities:

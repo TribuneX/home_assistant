@@ -471,3 +471,12 @@
     - delay:
         seconds: 20
     - service: script.input_music
+
+- alias: 'Turn off TV'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'AUS'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.tv

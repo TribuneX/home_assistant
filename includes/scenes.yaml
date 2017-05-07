@@ -15,6 +15,11 @@
   entities:
       group.all_switches: off
 
+- name: AUS
+  entities: 
+    input_select.tv_mode:
+        option: AUS
+
 - name: Apple TV
   entities: 
     input_select.tv_mode:
