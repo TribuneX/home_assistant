@@ -48,7 +48,6 @@ gang:
 arbeitszimmer:
   name: Arbeitszimmer
   entities:
-    - group.pi
     - switch.server
     - sensor.palme_temperature
 plant_wohnzimmer:

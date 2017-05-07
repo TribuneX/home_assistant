@@ -64,6 +64,26 @@
     friendly_name: Nicole
   device_tracker.iphones:
     friendly_name: Sascha
+  sensor.netatmo_schlafzimmer_temperature:
+    friendly_name: Temperatur Schlafzimmer 
+  sensor.netatmo_schlafzimmer_co2:
+    friendly_name: CO2 Schlafzimmer
+  sensor.netatmo_schlafzimmer_humidity:
+    friendly_name: Luftfeuchtigkeit Schlafzimmer
+  sensor.netatmo_wohnzimmer_temperature:
+    friendly_name: Temperatur Wohnzimmer 
+  sensor.netatmo_wohnzimmer_co2:
+    friendly_name: CO2 Wohnzimmer
+  sensor.netatmo_wohnzimmer_humidity:
+    friendly_name: Luftfeuchtigkeit Wohnzimmer
+  sensor.netatmo_wohnzimmer_pressure:
+    friendly_name: Druck Wohnzimmer
+  sensor.netatmo_wohnzimmer_noise:
+    friendly_name: Lautstärke
+  sensor.netatmo_outdoor_temperature:
+    friendly_name: Temperatur außen
+  sensor.netatmo_outdoor_humidity:
+    friendly_name: Luftfeuchtigkeit außen
 
   group.all_automations:
     hidden: false
