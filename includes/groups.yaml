@@ -89,6 +89,8 @@ tv_scenes:
     - scene.apple_tv
     - scene.firetv
     - scene.musik
+    - input_select.tv_mode
+    - switch.tv
 iphone:
   name: Devices
   entities:
@@ -125,9 +127,7 @@ media:
   view: yes
   icon: mdi:television 
   entities:
-    - switch.tv
     - group.tv_scenes
-    - input_select.tv_mode
     - media_player.wohnzimmer
 scenes: 
   name: Szenen

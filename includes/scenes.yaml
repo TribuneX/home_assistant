@@ -10,6 +10,7 @@
   entities:
     switch.light_sofa: on
     switch.light_tv: on
+
 - name: Alles aus
   entities:
       group.all_switches: off
@@ -24,7 +25,7 @@
     input_select.tv_mode:
         option: FireTV
 
-- name: TV
+- name: TV 
   entities: 
     input_select.tv_mode:
         option: TV
