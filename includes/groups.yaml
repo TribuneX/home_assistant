@@ -164,10 +164,7 @@ pings:
 
 # Tabs
 default_view:
-  view: no
-
-rooms:
-  name: Räume
+  #name: Räume
   view: yes
   icon: mdi:home
   entities:
