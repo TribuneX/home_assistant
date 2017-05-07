@@ -138,21 +138,6 @@ default_view:
     - group.schlafzimmer
     - group.arbeitszimmer
     - group.states
-plants:
-  name: Pflanzen
-  view: yes
-  icon: mdi:barley
-  entities:
-    - group.plant_wohnzimmer
-    - group.plant_palme  
-automation:
-  name: Automation
-  view: yes
-  icon: mdi:settings
-  entities:
-    - group.state
-    - group.automation_group
-    - group.scripts
 scenes: 
   name: Szenen
   view: yes
@@ -162,6 +147,14 @@ scenes:
     - scene.lampen_bett
     - scene.lampen_wohnzimmer
     - group.tv_scenes
+automation:
+  name: Automation
+  view: yes
+  icon: mdi:settings
+  entities:
+    - group.state
+    - group.automation_group
+    - group.scripts
 home:
   name: Home
   view: yes
@@ -169,6 +162,13 @@ home:
   entities:
     - group.personen
     - group.iphone
+plants:
+  name: Pflanzen
+  view: yes
+  icon: mdi:barley
+  entities:
+    - group.plant_wohnzimmer
+    - group.plant_palme  
 system:
   name: System
   view: yes
