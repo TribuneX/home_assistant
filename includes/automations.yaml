@@ -135,7 +135,7 @@
         message: 'Everybody left. I will switch off all devices.'
     - service: switch.turn_off
 
-- alias: 'TV light at sunset'
+- alias: 'Livingroom lights at sunset'
   trigger:
     - platform: sun
       event: sunset
@@ -157,7 +157,7 @@
     - service: light.turn_on
       data: 
         entity_id: group.wohzimmer_lampen
-        brightness: 50
+        brightness: 150
 
 - alias: 'Weather Report'
   trigger:
