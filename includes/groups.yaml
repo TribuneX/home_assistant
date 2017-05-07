@@ -40,7 +40,7 @@ outdoor:
     - sensor.netatmo_outdoor_humidity
     #- sensor.dark_sky_humidity
     - sensor.dark_sky_wind_speed
-    - sensor.dark_sky_hourly_summary
+    #- sensor.dark_sky_hourly_summary
 gang:
   name: Gang
   entities:
@@ -130,22 +130,6 @@ media:
   entities:
     - group.tv_scenes
     - media_player.wohnzimmer
-scenes: 
-  name: Szenen
-  view: yes
-  icon: mdi:lightbulb-on
-  entities:
-    - scene.alles_aus
-    - scene.lampen_bett
-    - scene.lampen_wohnzimmer
-    - group.tv_scenes
-automation:
-  name: Automation
-  view: yes
-  icon: mdi:settings
-  entities:
-    - group.all_automations
-    - group.all_scripts
 home:
   name: Home
   view: yes
@@ -167,3 +151,13 @@ system:
   entities:
     - group.pi
     - group.pings
+automation:
+  name: Automation
+  view: yes
+  icon: mdi:settings
+  entities:
+    - group.all_automations
+    - group.all_scripts
+    - scene.alles_aus
+    - scene.lampen_bett
+    - scene.lampen_wohnzimmer
