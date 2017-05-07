@@ -86,6 +86,12 @@
     friendly_name: Temperatur außen
   sensor.netatmo_outdoor_humidity:
     friendly_name: Luftfeuchtigkeit außen
+  sensor.dark_sky_daily_high_temperature:
+    friendly_name: High
+  sensor.dark_sky_daily_low_temperature:
+    friendly_name: Low
+  sensor.dark_sky_summary:
+    friendly_name: Aussicht
 
   group.all_automations:
     hidden: false
