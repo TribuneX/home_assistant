@@ -1,24 +1,19 @@
 ##########################
 # Groups
 ##########################
-
-
-
 wohnzimmer:
   name: Wohnzimmer
   entities:
+    - light.lampe_fernseher
+    - light.lampe_sofa
+    - switch.light_sessel
     - sensor.netatmo_wohnzimmer_temperature
     - sensor.netatmo_wohnzimmer_co2
     - sensor.netatmo_wohnzimmer_humidity
     - sensor.netatmo_wohnzimmer_pressure
     - sensor.netatmo_wohnzimmer_noise
-    - switch.light_sessel
-    - light.lampe_fernseher
-    - light.lampe_sofa
-    - switch.tv
-    - input_select.tv_mode
-    - media_player.wohnzimmer
-    - device_tracker.broadlink
+
+    #- device_tracker.broadlink
 wohzimmer_lampen:
   name: Wohnzimmer Lampen
   entities:
@@ -27,12 +22,12 @@ wohzimmer_lampen:
 schlafzimmer:
   name: Schlafzimmer
   entities:
-    - sensor.netatmo_schlafzimmer_temperature
-    - sensor.netatmo_schlafzimmer_co2
-    - sensor.netatmo_schlafzimmer_humidity
     - switch.light_sascha
     - switch.light_nicole
     - switch.tv_2
+    - sensor.netatmo_schlafzimmer_temperature
+    - sensor.netatmo_schlafzimmer_co2
+    - sensor.netatmo_schlafzimmer_humidity
 outdoor:
   name: Außen
   entities:
@@ -88,18 +83,6 @@ personen:
   entities:
     - device_tracker.iphones
     - device_tracker.nicolesiphone
-automation_group:
-  name: Automations
-  entities:
-    - group.all_automations
-states:
-  name: States
-  entities:
-    - input_boolean.vacation_mode
-scripts:
-  name: Skripte
-  entities:
-    - group.all_scripts
 tv_scenes:
   name: TV
   entities:
@@ -138,6 +121,15 @@ default_view:
     - group.schlafzimmer
     - group.arbeitszimmer
     - group.states
+media:
+  name: Media
+  view: yes
+  icon: mdi:television 
+  entities:
+    - switch.tv
+    - group.tv_scenes
+    - input_select.tv_mode
+    - media_player.wohnzimmer
 scenes: 
   name: Szenen
   view: yes
@@ -152,7 +144,6 @@ automation:
   view: yes
   icon: mdi:settings
   entities:
-    - group.state
     - group.all_automations
     - group.all_scripts
 home:
