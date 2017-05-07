@@ -52,6 +52,8 @@
     icon: mdi:lightbulb-on
   scene.alles_aus:
     icon: mdi:power
+  scene.aus
+    icon: mdi:power
   scene.tv:
     icon: mdi:television
   scene.apple_tv:

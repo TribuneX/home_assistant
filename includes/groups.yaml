@@ -90,7 +90,7 @@ tv_scenes:
     - scene.apple_tv
     - scene.firetv
     - scene.musik
-    - input_select.tv_mode
+    #- input_select.tv_mode
     #- switch.tv
 iphone:
   name: Devices

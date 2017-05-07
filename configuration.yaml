@@ -87,7 +87,7 @@ input_select:
     name: 'TV mode'
     options:
      - AUS
-     - TV
+     - Fernseher
      - AppleTV
      - FireTV
      - Music
