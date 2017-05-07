@@ -79,15 +79,13 @@ turn_tv_on:
       data:
         packet: 
           - 'JgDSAJWTEzYSOBM3ExETERMSExETERM3EzcTNhMSEhITERMSExETNxMRExETNxM2ExITERM3ExETNxI3ExISEhQ1EzcTERMABf+VkxQ2EzYUNhMRExITERQQExITNhM3EzcTERMRExITERMREzcTERMSEzYTNxMRExETNxMRFDYTNxISExETNxM2ExITAAX/lZMTNRQ3EzYTEhQQExITERMREzcTNhM3ExETEhMRExETEhM2ExITERM3EzYTEhMREzYUERM2EzcTERMSEzYTNxMREwANBQAAAAAAAA=='
-          #- 'JgCMAJGWETgRORE5ERQRFBEUERQRFBE5EDkROREUERQRFBEUERQRFBE4ERQRFBEUERQRFBEUETkRFBA5ETkRORE5ETkROREABgmSlRE5ETkQOREUERQRFBEUERQRORE5ETkQFRAUERQRFBEUERQROREUERQQFRAUERQRFBE5ERQRORE5ETgRORE5ETkRAA0FAAAAAAAAAAAAAAAA='
-
+          
 turn_tv_off:
   sequence:
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet: 
           - 'JgDSAJaUEzYTNxI4EhISEhMSERMRExI4EjgSNxMSEBQSEhITEBQRExITERMRNhU3EhMQFBI3EzcSOBM2EhMRExI3EjgSEhIABgCUlBI4EzYUNhITERMSEhITEBQSNxM3EjgTERISEhMRExISERQRExISEjgSOBMRERMRORI3EzcTNxETERMRORI3ExISAAYAlJQTNhI4EzYUERISEhMRExISEjgSNxM3EhISExETEhITEhETEhMRExI3EjgTERITETgSOBI3EzcSEhITETgTNxISEgANBQAAAAAAAA=='
-
 
 turn_receiver_on:
   sequence:
@@ -103,28 +101,30 @@ turn_receiver_off:
         packet: 
           - 'JgBQAAABJpQTExI3EhMVEBM2ExMSNxI3FBEVERQ1EjcTEhM3EjcTEhM2EzcSNxMSFBESFBI3EhMTEhMSExIUNhI3EzYTEhM3EgAFKAABJ0oSAA0FAAAAAAAAAAA='
 
-input_tv:
-  sequence:
-    # - service: switch.turn_on
-    #   entity_id: switch.tv
-    # - delay:
-    #     seconds: 20
-    # press channel up to switch back to TV and change input
-    - service: broadlink.send_packet_192_168_178_51
-      data:
-        packet:
-          - 'JgBGAJSQEjURNxI0EhAPExASEhASEBI1DzgQNxISEBISEBMPDxMQNxI1Ew8POBA3ERISDxASEBISEBI1EBIQEhI1EjUPOBAADQUAAA=='
-          - 'JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
-
 input_hdmi:
   sequence:
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
           - 'JgDSAJOVFDUUNhQ2FBAVDxIUERISEhQ2EzcTNhQRExEQFBAVERMRORETERMSORIREzcUNRQ2FBAUNhM2FRATNhMSEBQRExEABgKUkxM3FDUUNhQQFBETERMSFBAPOhE5ETkRFBIREhMSEhITEjcRExEUEjcRFBE5EjcTNhQRDjsRORETEjgRExEUEhISAAYAlJQROBE6ETgSEhETERQSEhMRFDYTNhQ2FQ8UERQRERISExM2ExISEhI4ExIROBI3FDYTEhE4EjcRFBI3EhMSEhETFQANBQAAAAAAAA=='
-          
+
+input_tv:
+  sequence:
+    # - service: switch.turn_on
+    #   entity_id: switch.tv
+    # - delay:
+    #     seconds: 20
+    # switch on TV and change input
+    - service: broadlink.send_packet_192_168_178_51
+      data:
+        packet:
+          - 'JgBGAJSQEjURNxI0EhAPExASEhASEBI1DzgQNxISEBISEBMPDxMQNxI1Ew8POBA3ERISDxASEBISEBI1EBIQEhI1EjUPOBAADQUAAA=='
+          - 'JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
+
 input_apple_tv:
   sequence:
+    - service: script.turn_on
+      entity_id: script.turn_tv_on
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet: 
@@ -132,14 +132,25 @@ input_apple_tv:
     # switch to input HDMI
     - service: script.turn_on
       entity_id: script.input_hdmi
+    - delay:
+        seconds: 20
+    - service: script.turn_on
+      entity_id: script.input_hdmi
+
 
 input_fire_tv:
   sequence:
+    - service: script.turn_on
+      entity_id: script.turn_tv_on
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
           - 'JgBQAAABKZIUERU1FBEUERQ1FBEVNRQ1FDUUEhQ1FDUUERU1FDUUERQ2FBEUNRQ1FBIUERQRFBEUERQ1FBEVERQ1FDUUNRU1FAAFAgABKEkUAA0FAAAAAAAAAAA='
     # switch to input HDMI
+    - service: script.turn_on
+      entity_id: script.input_hdmi
+    - delay:
+        seconds: 20
     - service: script.turn_on
       entity_id: script.input_hdmi
 
@@ -150,5 +161,5 @@ input_music:
         packet:
           # change input to AppleTV
           - 'JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
-          #power off TV
-          #- 'JgCMAJGWETgRORE5ERQRFBEUERQRFBE5EDkROREUERQRFBEUERQRFBE4ERQRFBEUERQRFBEUETkRFBA5ETkRORE5ETkROREABgmSlRE5ETkQOREUERQRFBEUERQRORE5ETkQFRAUERQRFBEUERQROREUERQQFRAUERQRFBE5ERQRORE5ETgRORE5ETkRAA0FAAAAAAAAAAAAAAAA='
+    - service: script.turn_on
+      entity_id: script.turn_tv_off 
