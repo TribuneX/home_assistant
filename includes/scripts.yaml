@@ -110,11 +110,9 @@ input_hdmi:
 
 input_tv:
   sequence:
-    # - service: switch.turn_on
-    #   entity_id: switch.tv
-    # - delay:
-    #     seconds: 20
     # switch on TV and change input
+    - service: script.turn_on
+      entity_id: script.turn_tv_on
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
@@ -129,8 +127,8 @@ input_tv:
 
 input_apple_tv:
   sequence:
-    #- service: script.turn_on
-    #  entity_id: script.turn_tv_on
+    - service: script.turn_on
+      entity_id: script.turn_tv_on
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet: 
@@ -142,8 +140,8 @@ input_apple_tv:
 
 input_fire_tv:
   sequence:
-    #- service: script.turn_on
-    #  entity_id: script.turn_tv_on
+    - service: script.turn_on
+      entity_id: script.turn_tv_on
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
