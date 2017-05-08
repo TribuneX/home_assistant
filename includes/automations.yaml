@@ -405,7 +405,7 @@
   trigger:
     platform: state
     entity_id: input_select.tv_mode
-    to: 'TV'
+    to: 'Fernseher'
   condition:  
    condition: state
    entity_id: switch.tv
@@ -461,7 +461,7 @@
   trigger:
     platform: state
     entity_id: input_select.tv_mode
-    to: 'TV'
+    to: 'Fernseher'
   condition:  
    condition: state
    entity_id: switch.tv
