@@ -54,7 +54,7 @@
     icon: mdi:power
   scene.aus:
     icon: mdi:power
-  scene.tv:
+  scene.fernseher:
     icon: mdi:television
   scene.apple_tv:
     icon: mdi:airplay
