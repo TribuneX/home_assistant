@@ -153,6 +153,7 @@ plants:
     - group.plant_wohnzimmer
     - group.plant_palme  
     - group.plant_bad
+    - plant.bad
 system:
   name: System
   view: yes
