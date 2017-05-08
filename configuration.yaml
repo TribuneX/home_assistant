@@ -97,7 +97,21 @@ input_select:
 tradfri:
   host: 192.168.178.52
   api_key: !secret tradfri_api_key
-    
+
+plant:
+  bad:
+    sensors:
+      moisture: sensor.bad_moisture
+      battery: sensor.bad_battery
+      temperature: sensor.bad_temperature
+      conductivity: sensor.bad_conductivity
+      brightness: sensor.bad_light_intensity
+    min_moisture: 20
+    max_moisture: 60
+    min_battery: 17
+    min_conductivity: 500
+    min_temperature: 15
+
 ##########################
 # Includes
 ##########################
