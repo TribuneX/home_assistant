@@ -86,7 +86,7 @@ tv_scenes:
   name: TV
   entities:
     - scene.aus
-    - scene.tv
+    - scene.fernseher
     - scene.apple_tv
     - scene.firetv
     - scene.musik
