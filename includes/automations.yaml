@@ -30,6 +30,23 @@
         title: 'Location'
         message: 'Nicole arrived.'
 
+- alias: 'Water Bad' 
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: device_tracker.iphones
+    from: 'not_home'
+    to: 'home'
+  condition:
+    condition: numeric_state
+    entity_id: sensor.bad_moisture
+    below: 20
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Plants'
+        message: 'Please water bad plant! Moisture: {{states.sensor.bad_moisture.state}}% | Light: {{states.sensor.bad_light_intensity.state}} lux | Conductivity: {{states.sensor.bad_conductivity.state}}'
+
 - alias: 'Water Sanseviera' 
   hide_entity: True
   trigger:
@@ -40,7 +57,7 @@
   condition:
     condition: numeric_state
     entity_id: sensor.sanseviera_moisture
-    below: 20
+    below: 16
   action:
     - service: notify.ios_iphones
       data:
