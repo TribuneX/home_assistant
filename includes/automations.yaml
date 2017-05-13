@@ -162,7 +162,7 @@
       from: 'not_home'
       to: 'home'
   condition:
-    condition: or
+    condition: and
     conditions:
       - condition: state
         entity_id: group.personen
