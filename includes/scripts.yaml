@@ -129,26 +129,26 @@ input_apple_tv:
   sequence:
     - service: script.turn_on
       entity_id: script.turn_tv_on
-    # switch to input HDMI
-    - service: script.turn_on
-      entity_id: script.input_hdmi
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet: 
           - 'JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
-    
+    # switch to input HDMI
+    - service: script.turn_on
+      entity_id: script.input_hdmi
+
 input_fire_tv:
   sequence:
     - service: script.turn_on
       entity_id: script.turn_tv_on
-    # switch to input HDMI
-    - service: script.turn_on
-      entity_id: script.input_hdmi
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
           - 'JgBQAAABKZIUERU1FBEUERQ1FBEVNRQ1FDUUEhQ1FDUUERU1FDUUERQ2FBEUNRQ1FBIUERQRFBEUERQ1FBEVERQ1FDUUNRU1FAAFAgABKEkUAA0FAAAAAAAAAAA='
-
+    # switch to input HDMI
+    - service: script.turn_on
+      entity_id: script.input_hdmi
+      
 input_music:
   sequence:
     - service: broadlink.send_packet_192_168_178_51
