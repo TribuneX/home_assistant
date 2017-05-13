@@ -74,6 +74,14 @@ plant_bad:
     - sensor.bad_temperature
     - sensor.bad_conductivity
     - sensor.bad_battery
+plant_palmek:
+  name: Bad
+  entities:  
+    - sensor.palmek_moisture
+    - sensor.palmek_light_intensity
+    - sensor.palmek_temperature
+    - sensor.palmek_conductivity
+    - sensor.palmek_battery
 pi:
   name: Raspberry
   entities:
@@ -153,7 +161,7 @@ plants:
     - group.plant_wohnzimmer
     - group.plant_palme  
     - group.plant_bad
-    - plant.bad
+    - group_plant_palmek
 system:
   name: System
   view: yes
