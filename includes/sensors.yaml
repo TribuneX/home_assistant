@@ -35,7 +35,7 @@
 
 # Plant sensors
 - platform: miflora
-  mac: C4:7C:8D:60:E4:B2
+  mac: C4:7C:8D:62:B7:02
   name: Sanseviera 
   force_update: false
   median: 3
@@ -59,7 +59,7 @@
     - battery
 
 - platform: miflora
-  mac: C4:7C:8D:62:80:E6
+  mac: C4:7C:8D:62:B8:85
   name: Palme
   force_update: false
   median: 3
