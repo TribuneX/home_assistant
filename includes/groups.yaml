@@ -75,7 +75,7 @@ plant_bad:
     - sensor.bad_conductivity
     - sensor.bad_battery
 plant_palmek:
-  name: Bad
+  name: Palmek
   entities:  
     - sensor.palmek_moisture
     - sensor.palmek_light_intensity
