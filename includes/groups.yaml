@@ -161,7 +161,7 @@ plants:
     - group.plant_wohnzimmer
     - group.plant_palme  
     - group.plant_bad
-    - group_plant_palmek
+    - group.plant_palmek
 system:
   name: System
   view: yes
