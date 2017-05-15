@@ -156,7 +156,7 @@
   trigger:
     - platform: sun
       event: sunset
-      offset: '-00:30:00'
+      offset: '-00:20:00'
     - platform: state
       entity_id: group.personen
       from: 'not_home'
@@ -169,7 +169,7 @@
         state: 'home'
       - condition: sun
         after: sunset
-        after_offset: '-00:30:00'
+        after_offset: '-00:20:00'
   action:
     - service: light.turn_on
       data: 
