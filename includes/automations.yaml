@@ -389,6 +389,18 @@
   action:
     - service: script.input_apple_tv
 
+- alias: 'watch Plex'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'Plex'
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'on'
+  action:
+    - service: script.input_plex
+
 - alias: 'watch FireTV'
   trigger:
     platform: state
@@ -440,6 +452,23 @@
     - delay:
         seconds: 20
     - service: script.input_apple_tv
+
+
+- alias: 'watch Plex + TV'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'Plex'
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'off'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.tv
+    - delay:
+        seconds: 20
+    - service: script.input_plex
 
 - alias: 'watch FireTV + TV'
   trigger:

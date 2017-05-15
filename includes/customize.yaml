@@ -58,6 +58,8 @@
     icon: mdi:television
   scene.apple_tv:
     icon: mdi:airplay
+  scene.plex:
+    icon: mdi:airplay
   scene.firetv:
     icon: mdi:youtube-play
   scene.musik:

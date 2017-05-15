@@ -137,6 +137,13 @@ input_apple_tv:
     - service: script.turn_on
       entity_id: script.input_hdmi
 
+input_plex:
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.server
+    - service: script.turn_on
+      entity_id: script.input_apple_tv
+
 input_fire_tv:
   sequence:
     - service: script.turn_on
@@ -148,7 +155,7 @@ input_fire_tv:
     # switch to input HDMI
     - service: script.turn_on
       entity_id: script.input_hdmi
-      
+
 input_music:
   sequence:
     - service: broadlink.send_packet_192_168_178_51

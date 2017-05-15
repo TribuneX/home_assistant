@@ -104,6 +104,7 @@ tv_scenes:
     - scene.aus
     - scene.fernseher
     - scene.apple_tv
+    - scene.plex
     - scene.firetv
     - scene.musik
     #- input_select.tv_mode

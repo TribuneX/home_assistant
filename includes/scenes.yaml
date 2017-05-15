@@ -25,6 +25,11 @@
     input_select.tv_mode:
         option: AppleTV
 
+- name: Plex
+  entities: 
+    input_select.tv_mode:
+        option: Plex
+
 - name: FireTV
   entities: 
     input_select.tv_mode:

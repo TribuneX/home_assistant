@@ -89,6 +89,7 @@ input_select:
      - AUS
      - Fernseher
      - AppleTV
+     - Plex
      - FireTV
      - Music
     initial: AUS
