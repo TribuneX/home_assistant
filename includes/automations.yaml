@@ -548,3 +548,14 @@
         entity_id: input_select.tv_mode
         option: Music
 
+- alias: 'Power TV is on'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: device_tracker.wohnzimmer
+    # Optional 
+    from: 'not_home'
+    to: 'home'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.tv
