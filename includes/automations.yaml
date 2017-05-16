@@ -559,3 +559,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.tv
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.tv_mode
+        option: Fernseher
