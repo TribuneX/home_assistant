@@ -119,7 +119,8 @@ tradfri:
 
 sensor: !include includes/sensors.yaml
 binary_sensor: !include includes/binary_sensor.yaml
-automation: !include includes/automations.yaml
+automation: !include_dir_merge_list automation/
+#automation: !include includes/automations.yaml
 script: !include includes/scripts.yaml
 group: !include includes/groups.yaml
 switch: !include includes/switch.yaml
