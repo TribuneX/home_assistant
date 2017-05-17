@@ -94,6 +94,8 @@
     friendly_name: Low
   sensor.dark_sky_summary:
     friendly_name: Aussicht
+  sensor.dark_sky_precip_intensity:
+    friendly_name: Regen
 
   group.all_automations:
     hidden: false

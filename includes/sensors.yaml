@@ -13,6 +13,7 @@
     - temperature_min
     - temperature_max
     - hourly_summary
+    - precip_intensity
 - platform: fastdotcom
 
 - platform: command_line

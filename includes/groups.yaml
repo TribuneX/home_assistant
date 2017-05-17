@@ -41,6 +41,7 @@ outdoor:
     #- sensor.dark_sky_humidity
     - sensor.dark_sky_wind_speed
     #- sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_precip_intensity
 gang:
   name: Gang
   entities:
