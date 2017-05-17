@@ -137,7 +137,7 @@
       entity_id: light.gang
       from: 'off'
       to: 'on'
-    condition:
+  condition:
     condition: and
     conditions:
       - condition: sun
