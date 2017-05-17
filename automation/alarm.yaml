@@ -1,0 +1,17 @@
+# Trigger alarm if motion is detected, altough noboby is home   
+- alias: 'Alarm'    
+  trigger:    
+    - platform: state     
+      entity_id: light.lampe_sofa   
+      from: 'off'   
+      to: 'on'    
+  condition:    
+    condition: state    
+    entity_id: group.personen   
+    state: 'not home'   
+  action:     
+    - service: notify.ios_iphones   
+      data:   
+        title: 'Alarm'    
+        message: 'Motion was detected, but nobody seems to be at home!'
+

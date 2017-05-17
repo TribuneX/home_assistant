@@ -1,0 +1,20 @@
+- alias: 'Power off all'
+  hide_entity: True
+  trigger:
+      platform: time
+      after: '03:00'
+  action:
+    service: switch.turn_off
+
+
+- alias: 'Update Available Notifications'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Update'
+        message: 'Update for Home Assistant is available.'
+

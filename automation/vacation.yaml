@@ -1,0 +1,54 @@
+# Vacation Mode 
+# Inspired by https://github.com/ronmarco/home-assistant-config/blob/master/yaml_automation/status-vacation.yaml
+
+# Turn vacation mode on automatically
+- alias: 'Turn on vacation mode when nobody is home for more than 24 hours'
+  trigger:
+    - platform: state
+      entity_id: group.personen
+      from: 'home'
+      to: 'not_home'
+      for:
+        hours: 24
+        minutes: 0
+        seconds: 0
+  action:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.vacation_mode
+    - service: notify.ios_iphones
+      data:
+        title: 'Vacation mode'
+        message: 'I did not see anybody within the last 24 hours. I will switch on the vacation mode'
+
+# Turn vacation mode off automatically
+- alias: 'Turn vacation mode off when home'
+  trigger:
+    - platform: state
+      entity_id: group.personen 
+      from: 'not_home'
+      to: 'home'
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.vacation_mode
+    - service: notify.ios_iphones
+      data:
+        title: 'Vacation mode'
+        message: 'Welcome back! I switched off the vacation mode'
+
+# Turn on lights when vacation mode active
+- alias: 'Turn on vacation lights at sunset when vacation mode on'
+  trigger:
+    - platform: state
+      entity_id: sun.sun
+      from: 'above_horizon'
+      to: 'below_horizon'
+  condition:
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: 'on'
+  action:
+    - service: script.vacation_lights

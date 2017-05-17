@@ -1,0 +1,48 @@
+- alias: 'CO2 Bedroom'
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_schlafzimmer_co2
+    above: 900
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Rooms'
+        message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
+
+- alias: 'CO2 Livingroom'
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_wohnzimmer_co2
+    above: 900
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Rooms'
+        message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
+
+- alias: 'Noise Livingroom'
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_wohnzimmer_noise
+    above: 65
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Rooms'
+        message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise.state}}db'
+
+
+- alias: 'Weather Report'
+  trigger:
+    platform: time
+    after: '07:30'
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Weather Report for today'
+        message: 'Current: {{states.sensor.netatmo_outdoor_temperature.state}}°C 
+        H/L: {{states.sensor.dark_sky_daily_high_temperature.state}}°C/{{states.sensor.dark_sky_daily_low_temperature.state}}°C 
+        {{states.sensor.dark_sky_hourly_summary.state}}'    
