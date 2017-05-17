@@ -1,9 +1,8 @@
-
 - alias: 'Livingroom lights at sunset'
   trigger:
     - platform: sun
       event: sunset
-      offset: '-00:20:00'
+      offset: '-00:10:00'
     - platform: state
       entity_id: group.personen
       from: 'not_home'
@@ -16,7 +15,7 @@
         state: 'home'
       - condition: sun
         after: sunset
-        after_offset: '-00:20:00'
+        after_offset: '-00:10:00'
   action:
     - service: light.turn_on
       data: 
@@ -130,3 +129,25 @@
       data:
         title: 'Timer'
         message: 'I will turn of the lights in 15 minutes. Good Night.'
+
+# Turn on lights in the livingroom if someone is awake before sun rises
+- alias: 'Livingroom lights in the morning'
+  trigger:
+    - platform: state
+      entity_id: light.gang
+      from: 'off'
+      to: 'on'
+    condition:
+    condition: and
+    conditions:
+      - condition: sun
+        after: sunrise
+        after_offset: '-01:00:00'
+      - condition: sun
+        after: sunrise
+        after_offset: '+00:00:00'
+  action:
+    - service: light.turn_on
+      data: 
+        entity_id: group.wohzimmer_lampen
+        brightness: 150
