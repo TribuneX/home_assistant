@@ -47,14 +47,14 @@
         H/L: {{states.sensor.dark_sky_daily_high_temperature.state}}°C/{{states.sensor.dark_sky_daily_low_temperature.state}}°C 
         {{states.sensor.dark_sky_hourly_summary.state}}'    
 
-  - alias: 'Rainy Day'
-    trigger:
-      - platform: state
-        entity_id: sensor.dark_sky_precip_intensity
-        state: 'rain'
-    action:
-      - service: notify.ios_iphones
-        data:
-          title: 'Weather Report'
-          message: 'It looks like its gonna rain soon. {{states.sensor.dark_sky_hourly_summary.state}}'
+- alias: 'Rainy Day'
+  trigger:
+    - platform: state
+      entity_id: sensor.dark_sky_precip_intensity
+      state: 'rain'
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Weather Report'
+        message: 'It looks like its gonna rain soon. {{states.sensor.dark_sky_hourly_summary.state}}'
 
