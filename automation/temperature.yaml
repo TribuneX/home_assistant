@@ -53,7 +53,7 @@
         entity_id: sensor.precip_intensity
         state: 'rain'
     action:
-     - service: notify.ios_iphones
+      - service: notify.ios_iphones
         data:
           title: 'Weather Report'
           message: 'It looks like its gonna rain soon. {{states.sensor.dark_sky_hourly_summary.state}}'
