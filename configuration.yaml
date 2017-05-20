@@ -118,6 +118,21 @@ tradfri:
 #     min_conductivity: 500
 #     min_temperature: 15
 
+zone 1:
+  name: Work Sascha
+  latitude: !secret lat_zone_1 
+  longitude: !secret long_zone_1 
+
+zone 2:
+  name: Work Nicole
+  latitude: !secret lat_zone_2 
+  longitude: !secret long_zone_2 
+
+zone_3:
+  name: Home Nicole
+  latitude: !secret lat_zone_3 
+  longitude: !secret long_zone_3
+
 ##########################
 # Includes
 ##########################
