@@ -73,7 +73,11 @@ device_tracker:
 sun:
 
 media_player:
-   platform: plex
+  - platform: plex
+
+  - platform: apple_tv
+    host: atv.cbs-service.net
+    login_id: !secret atv_login
 
 netatmo:
   api_key: !secret netatmo_api_key
