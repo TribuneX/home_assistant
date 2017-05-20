@@ -26,7 +26,7 @@
 - alias: 'Turn on light when AppleTV is paused'
   trigger:
     - platform: state
-      entity_id: media_player.wohnzimmer
+      entity_id: media_player.appletv
       from: 'playing'
       to: 'paused'
       for:
@@ -45,7 +45,7 @@
 - alias: 'Turn off light when AppleTV is played'
   trigger:
     - platform: state
-      entity_id: media_player.wohnzimmer
+      entity_id: media_player.appletv
       from: 'paused'
       to: 'playing'  
   condition:

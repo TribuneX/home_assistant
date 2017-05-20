@@ -151,7 +151,7 @@
 - alias: 'Turn on TV if media is played'
   trigger: 
     - platform: state
-      entity_id: media_player.wohnzimmer
+      entity_id: media_player.appletv
       from: 'paused'
       to: 'playing' 
   condition:

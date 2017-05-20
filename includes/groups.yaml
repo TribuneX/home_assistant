@@ -147,7 +147,7 @@ media:
   icon: mdi:television 
   entities:
     - group.tv_scenes
-    - media_player.wohnzimmer
+    - media_player.appletv
 home:
   name: Home
   view: yes
