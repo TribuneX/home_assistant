@@ -76,6 +76,7 @@ media_player:
   - platform: plex
 
   - platform: apple_tv
+    name: AppleTV
     host: atv.cbs-service.net
     login_id: !secret atv_login
 
