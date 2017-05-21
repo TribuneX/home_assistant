@@ -1,35 +1,54 @@
 - alias: 'Nicole left'
-  hide_entity: True
-  trigger:
-    platform: state
-    entity_id: device_tracker.nicolesiphone
-    # Optional 
-    from: 'home'
-    to: 'not_home'
-    for:
-      seconds: 10
+    trigger:
+      platform: zone
+      entity_id: device_tracker.nicoles_iphone_app
+      zone: zone.home
+      # Event is either enter or leave
+      event: leave  # or "leave"
   action:
     - service: notify.ios_iphones
       data:
         title: 'Location'
-        message: 'Nicole left.'
+        message: 'Nicole left home.'
 
-- alias: 'Nicole arrived'
-  hide_entity: True
+-alias: 'Nicole arrived'
   trigger:
-    platform: state
-    entity_id: device_tracker.nicolesiphone
-    # Optional 
-    from: 'not_home'
-    to: 'home'
-    for:
-      seconds: 10
+    platform: zone
+    entity_id: device_tracker.nicoles_iphone_app
+    zone: zone.home
+    # Event is either enter or leave
+    event: enter  # or "leave"
   action:
     - service: notify.ios_iphones
       data:
         title: 'Location'
-        message: 'Nicole arrived.'
+        message: 'Nicole arrived at home.'
 
+- alias: 'Nicole left'
+    trigger:
+      platform: zone
+      entity_id: device_tracker.nicoles_iphone_app
+      zone: zone.work_nicole
+      # Event is either enter or leave
+      event: leave  # or "leave"
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Location'
+        message: 'Nicole left work.'
+
+-alias: 'Nicole arrived'
+  trigger:
+    platform: zone
+    entity_id: ddevice_tracker.nicoles_iphone_app
+    zone: zone.work_nicole
+    # Event is either enter or leave
+    event: enter  # or "leave"
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Location'
+        message: 'Nicole arrived at work.'
 
 - alias: 'Nobody at home'
   hide_entity: True
