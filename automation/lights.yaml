@@ -30,7 +30,7 @@
       from: 'playing'
       to: 'paused'
       for:
-        seconds: 2
+        seconds: 10
   condition:
     condition: state
     entity_id: sun.sun
