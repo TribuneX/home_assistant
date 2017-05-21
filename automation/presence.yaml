@@ -1,10 +1,10 @@
 - alias: 'Nicole left'
-    trigger:
-      platform: zone
-      entity_id: device_tracker.nicoles_iphone_app
-      zone: zone.home
-      # Event is either enter or leave
-      event: leave  # or "leave"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.nicoles_iphone_app
+    zone: zone.home
+    # Event is either enter or leave
+    event: leave  # or "leave"
   action:
     - service: notify.ios_iphones
       data:
@@ -25,12 +25,12 @@
         message: 'Nicole arrived at home.'
 
 - alias: 'Nicole left'
-    trigger:
-      platform: zone
-      entity_id: device_tracker.nicoles_iphone_app
-      zone: zone.work_nicole
-      # Event is either enter or leave
-      event: leave  # or "leave"
+  trigger:
+    platform: zone
+    entity_id: device_tracker.nicoles_iphone_app
+    zone: zone.work_nicole
+    # Event is either enter or leave
+    event: leave  # or "leave"
   action:
     - service: notify.ios_iphones
       data:
