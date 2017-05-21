@@ -1,4 +1,4 @@
-- alias: 'Nicole left'
+- alias: 'Nicole left home'
   trigger:
     platform: zone
     entity_id: device_tracker.nicoles_iphone_app
@@ -11,7 +11,7 @@
         title: 'Location'
         message: 'Nicole left home.'
 
-- alias: 'Nicole arrived'
+- alias: 'Nicole arrived at home'
   trigger:
     platform: zone
     entity_id: device_tracker.nicoles_iphone_app
@@ -24,7 +24,7 @@
         title: 'Location'
         message: 'Nicole arrived at home.'
 
-- alias: 'Nicole left'
+- alias: 'Nicole left work'
   trigger:
     platform: zone
     entity_id: device_tracker.nicoles_iphone_app
@@ -37,7 +37,7 @@
         title: 'Location'
         message: 'Nicole left work.'
 
-- alias: 'Nicole arrived'
+- alias: 'Nicole arrived at work'
   trigger:
     platform: zone
     entity_id: ddevice_tracker.nicoles_iphone_app
