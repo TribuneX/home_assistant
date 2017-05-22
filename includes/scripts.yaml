@@ -113,6 +113,8 @@ input_tv:
     # switch on TV and change input
     - service: script.turn_on
       entity_id: script.turn_tv_on
+    - delay:
+        seconds: 1
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
