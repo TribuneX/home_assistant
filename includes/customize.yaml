@@ -52,7 +52,7 @@
     icon: mdi:barley
   sensor.palmek_moisture:
     icon: mdi:cup-water
-    sensor.bad_battery:
+  sensor.bad_battery:
     icon: mdi:battery-80
   sensor.bad_light_intensity:
     icon: mdi:white-balance-sunny
