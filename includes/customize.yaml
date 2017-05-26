@@ -44,6 +44,22 @@
     icon: mdi:cup-water
   sensor.palme_moisture:
     icon: mdi:cup-water
+  sensor.palmek_battery:
+    icon: mdi:battery-80
+  sensor.palmek_light_intensity:
+    icon: mdi:white-balance-sunny
+  sensor.palmek_conductivity:
+    icon: mdi:barley
+  sensor.palmek_moisture:
+    icon: mdi:cup-water
+    sensor.bad_battery:
+    icon: mdi:battery-80
+  sensor.bad_light_intensity:
+    icon: mdi:white-balance-sunny
+  sensor.bad_conductivity:
+    icon: mdi:barley
+  sensor.bad_moisture:
+    icon: mdi:cup-water
   sensor.fastcom_download:
     icon: mdi:cloud-download
   scene.lampen_bett:
