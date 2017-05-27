@@ -17,7 +17,7 @@ homeassistant:
   customize: !include includes/customize.yaml
 
 logger:
-  default: info
+  default: warning
 
 recorder:
   db_url: !secret mysql_path
