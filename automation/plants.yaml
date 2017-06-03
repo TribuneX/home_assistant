@@ -48,3 +48,20 @@
       data:
         title: 'Plants'
         message: 'Please water Palm! Moisture: {{states.sensor.palme_moisture.state}}% | Light: {{states.sensor.palme_light_intensity.state}} lux | Conductivity: {{states.sensor.palme_conductivity.state}}'
+
+- alias: 'Water Palmk'
+  hide_entity: True 
+  trigger:
+    platform: state
+    entity_id: device_tracker.iphones
+    from: 'not_home'
+    to: 'home'
+  condition:
+    condition: numeric_state
+    entity_id: sensor.palme_moisture
+    below: 20
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Plants'
+        message: 'Please water Palm next to the computer! Moisture: {{states.sensor.palmek_moisture.state}}% | Light: {{states.sensor.palmek_light_intensity.state}} lux | Conductivity: {{states.sensor.palmek_conductivity.state}}'
