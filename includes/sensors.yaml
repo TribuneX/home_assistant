@@ -85,7 +85,7 @@
 
 
 - platform: yahoo_finance
-    symbols:
-      - AMZN
-      - APPL
-      - STAG
+  symbols:
+    - AMZN
+    - APPL
+    - STAG
