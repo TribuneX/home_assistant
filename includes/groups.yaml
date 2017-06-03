@@ -133,7 +133,6 @@ stocks:
   name: Stock
   entities:
     - sensor.amzn
-    - sensor.amzn.change
     - sensor.aapl
     - sensor.stag
 
