@@ -181,3 +181,11 @@ automation:
     - scene.alles_aus
     - scene.lampen_bett
     - scene.lampen_wohnzimmer
+finance:
+  name: Finance
+  view: yes
+  icon: mdi:trending-up
+  entities:
+    - sensor.amzn
+    - sensor.appl
+    - sensor.stag
