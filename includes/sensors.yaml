@@ -83,4 +83,9 @@
     - conductivity
     - battery
 
-    
+
+- platform: yahoo_finance
+    symbols:
+      - AMZN
+      - APPL
+      - STAG
