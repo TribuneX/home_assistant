@@ -135,7 +135,7 @@ stocks:
     - sensor.amzn
     - sensor.aapl
     - sensor.stag
-inputs:
+settings:
   name: Settings
   entities:
     - input_select.log_level
@@ -199,4 +199,4 @@ finance:
   view: yes
   icon: mdi:trending-up
   entities:
-    - group.stocks
+    - group.settings
