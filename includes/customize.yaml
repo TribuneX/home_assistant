@@ -129,6 +129,8 @@
     homebridge_hidden: true
   media_player.appletv:
     homebridge_hidden: true
+  light.wohnzimmer:
+    homebridge_hidden: true
 
   group.all_automations:
     hidden: false
