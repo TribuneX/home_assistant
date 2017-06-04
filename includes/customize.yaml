@@ -31,14 +31,20 @@
     icon: mdi:server
   sensor.palme_battery:
     icon: mdi:battery-80
+  sensor.sanseviera_temperature:
+    homebridge_hidden: true
   sensor.sanseviera_battery:
     icon: mdi:battery-80
   sensor.sanseviera_light_intensity:
     icon: mdi:white-balance-sunny
+    homebridge_hidden: true
   sensor.palme_light_intensity:
     icon: mdi:white-balance-sunny
+    homebridge_hidden: true
   sensor.palme_conductivity:
     icon: mdi:barley
+  sensor.palme_temperature:
+    homebridge_hidden: true
   sensor.sanseviera_conductivity:
     icon: mdi:barley
   sensor.sanseviera_moisture:
@@ -49,6 +55,7 @@
     icon: mdi:battery-80
   sensor.palmek_light_intensity:
     icon: mdi:white-balance-sunny
+    homebridge_hidden: true
   sensor.palmek_conductivity:
     icon: mdi:barley
   sensor.palmek_moisture:
@@ -57,6 +64,7 @@
     icon: mdi:battery-80
   sensor.bad_light_intensity:
     icon: mdi:white-balance-sunny
+    homebridge_hidden: true
   sensor.bad_conductivity:
     icon: mdi:barley
   sensor.bad_moisture:
@@ -113,6 +121,13 @@
     friendly_name: Aussicht
   sensor.dark_sky_precip_intensity:
     friendly_name: Regen
+  input_boolean.vacation_mode:
+    homebridge_hidden: true
+  light.gang:
+    homebridge_hidden: true
+  light.gang_2:
+    homebridge_hidden: true
+
 
   group.all_automations:
     hidden: false
