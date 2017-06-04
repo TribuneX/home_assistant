@@ -127,7 +127,8 @@
     homebridge_hidden: true
   light.gang_2:
     homebridge_hidden: true
-
+  media_player.appletv:
+    homebridge_hidden: true
 
   group.all_automations:
     hidden: false
