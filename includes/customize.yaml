@@ -23,6 +23,7 @@
   switch.tv:
     icon: mdi:television
     assumed_state: false
+    homebridge_hidden: true
   switch.tv_2:
     icon: mdi:television
     assumed_state: false

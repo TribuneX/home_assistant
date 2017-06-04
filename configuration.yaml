@@ -91,13 +91,14 @@ input_select:
   tv_mode:
     name: 'TV mode'
     options:
+     - INIT
      - AUS
      - Fernseher
      - AppleTV
      - Plex
      - FireTV
      - Music
-    initial: AUS
+    initial: INIT
     icon: mdi:television
   log_level:
     name: 'Log Level'

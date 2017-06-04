@@ -199,4 +199,4 @@ finance:
   view: yes
   icon: mdi:trending-up
   entities:
-    - group.settings
+    - group.stocks

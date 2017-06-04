@@ -116,6 +116,8 @@ input_tv:
         packet:
           - 'JgDSAJSUEjgSNxM3EhISExISEhIRFBI3EjgSNxITERMSExETEhISOBI3ExISNxI4EhISExETERMSExI3ERQRExI4ETgSOBEABgGUlBM2EjYUNxMSERMSExISEhISOBI3EjgTERITERMSEhITETgSOBISEjgSNxITEhIRExITEhISOBISEhISOBI4EjcSAAYAlJQSOBI3EzcSEhITEBQSEhITETgSOBI3EhMRExISEhMSEhI4EzYRFBE4EjgSEhITERMSEhITETgSExETEjcSOBI4EgANBQAAAAAAAA=='
           - 'JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
+    - service: script.turn_on
+      entity_id: script.reset_media
 
 input_apple_tv:
   sequence:
@@ -128,6 +130,8 @@ input_apple_tv:
     # switch to input HDMI
     - service: script.turn_on
       entity_id: script.input_hdmi
+    - service: script.turn_on
+      entity_id: script.reset_media
 
 input_plex:
   sequence:
@@ -135,6 +139,8 @@ input_plex:
       entity_id: switch.server
     - service: script.turn_on
       entity_id: script.input_apple_tv
+    - service: script.turn_on
+      entity_id: script.reset_media
 
 input_fire_tv:
   sequence:
@@ -147,6 +153,8 @@ input_fire_tv:
     # switch to input HDMI
     - service: script.turn_on
       entity_id: script.input_hdmi
+    - service: script.turn_on
+      entity_id: script.reset_media
 
 input_music:
   sequence:
@@ -156,4 +164,14 @@ input_music:
           # change input to AppleTV
           - 'JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
     - service: script.turn_on
-      entity_id: script.turn_tv_off 
+      entity_id: script.turn_tv_off
+    - service: script.turn_on
+      entity_id: script.reset_media
+
+
+reset_media:
+  sequence:
+    - service: input_select.select_option
+          data:
+            entity_id: input_select.tv_mode
+            option: INIT 
