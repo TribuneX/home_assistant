@@ -2,7 +2,7 @@
   hide_entity: True
   trigger:
       platform: time
-      after: '03:00'
+      at: '03:00'
   action:
     service: switch.turn_off
 
