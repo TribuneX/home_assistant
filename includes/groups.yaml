@@ -135,6 +135,12 @@ stocks:
     - sensor.amzn
     - sensor.aapl
     - sensor.stag
+inputs:
+  name: Settings
+  entities:
+    - input_select.log_level
+    - input_select.tv_mode
+    - input_boolean.vacation_mode
 
 # Tabs
 default_view:
@@ -187,7 +193,7 @@ automation:
     - scene.alles_aus
     - scene.lampen_bett
     - scene.lampen_wohnzimmer
-    - input_select.log_level
+    - group.settings
 finance:
   name: Finance
   view: yes
