@@ -172,6 +172,6 @@ input_music:
 reset_media:
   sequence:
     - service: input_select.select_option
-          data:
-            entity_id: input_select.tv_mode
-            option: INIT 
+      data:
+        entity_id: input_select.tv_mode
+        option: INIT 
