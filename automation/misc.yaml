@@ -18,3 +18,13 @@
         title: 'Update'
         message: 'Update for Home Assistant is available.'
 
+# Inspired by https://community.home-assistant.io/t/logger-set-level/14267
+- alias: Log Level
+  trigger:
+    platform: state
+    entity_id: input_select.log_level
+  action:
+    service: logger.set_level
+    data_template:
+      homeassistant.components: "{{ trigger.to_state.state }}"
+

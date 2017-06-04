@@ -99,6 +99,18 @@ input_select:
      - Music
     initial: AUS
     icon: mdi:television
+  log_level:
+    name: 'Log Level'
+    options:
+      - critical
+      - fatal
+      - error
+      - warning
+      - warn
+      - info
+      - debug
+      - notset
+    initial: warn
 
 tradfri:
   host: 192.168.178.52

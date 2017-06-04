@@ -187,6 +187,7 @@ automation:
     - scene.alles_aus
     - scene.lampen_bett
     - scene.lampen_wohnzimmer
+    - input_select.log_level
 finance:
   name: Finance
   view: yes
