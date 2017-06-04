@@ -16,11 +16,41 @@
       - condition: sun
         after: sunset
         after_offset: '-00:10:00'
+      - condition: state
+        entity_id: switch.tv
+        state: 'off'
   action:
     - service: light.turn_on
       data: 
-        entity_id: group.wohzimmer_lampen
+        entity_id: group.wohnzimmer_lampen
         brightness: 150
+
+- alias: 'Livingroom lights at sunset + TV is on'
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '-00:10:00'
+    - platform: state
+      entity_id: group.personen
+      from: 'not_home'
+      to: 'home'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.personen
+        state: 'home'
+      - condition: sun
+        after: sunset
+        after_offset: '-00:10:00'
+      - condition: state
+        entity_id: switch.tv
+        state: 'on'
+  action:
+    - service: light.turn_on
+      data: 
+        entity_id: group.wohnzimmer_lampen
+        brightness: 20
 
 # Turn on light at Sofa if ATV is paused
 - alias: 'Turn on light when AppleTV is paused'
@@ -38,7 +68,7 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: group.wohzimmer_lampen
+        entity_id: group.wohnzimmer_lampen
         brightness: 150
 
 # Turn on light at Sofa if ATV is paused
@@ -55,7 +85,7 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: group.wohzimmer_lampen
+        entity_id: group.wohnzimmer_lampen
         brightness: 20
 
 # Turn of devices in the bedroom 30 minutes when switched on after 23:00
@@ -149,5 +179,5 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: group.wohzimmer_lampen
+        entity_id: group.wohnzimmer_lampen
         brightness: 150

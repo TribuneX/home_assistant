@@ -14,7 +14,7 @@ wohnzimmer:
     - sensor.netatmo_wohnzimmer_noise
 
     #- device_tracker.broadlink
-wohzimmer_lampen:
+wohnzimmer_lampen:
   name: Wohnzimmer Lampen
   entities:
     - light.lampe_fernseher
