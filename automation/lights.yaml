@@ -60,7 +60,7 @@
       from: 'playing'
       to: 'paused'
       for:
-        seconds: {{states.input_slider.appletv_delay.state | int }}
+        seconds: 1
   condition:
     condition: state
     entity_id: sun.sun
