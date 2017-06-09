@@ -94,4 +94,4 @@
   sensors:
     out_vs_in:
       value_template: "{{states.sensor.netatmo_wohnzimmer_temperature.state | round(0)-states.sensor.netatmo_outdoor_temperature.state | round(0)}}"
-        friendly_name: "Temperature Diff"
+      friendly_name: "Temperature Diff"
