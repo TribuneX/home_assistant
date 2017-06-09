@@ -93,5 +93,5 @@
 - platform: template
   sensors:
     out_vs_in:
-      value_template: "{% if states.sensor.netatmo_wohnzimmer_temperature.state < state.sensor.netatmo_outdoor_temperature.state %}Warmer Outside{% else %}Cooler Outside{%endif %}"
+      value_template: "{% if states.sensor.netatmo_wohnzimmer_temperature.state < states.sensor.netatmo_outdoor_temperature.state %}Warmer Outside{% else %}Cooler Outside{%endif %}"
         friendly_name: "Temperature Diff"
