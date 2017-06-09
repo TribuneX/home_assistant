@@ -50,7 +50,7 @@ logbook:
 # Support for iOS app
 ios:
 
-# Telegram bot
+# iOS notification
 notify:
   platform: ios
   name: ios_app
@@ -112,6 +112,14 @@ input_select:
       - debug
       - notset
     initial: warn
+
+input_slider:
+  appletv_delay:
+    name: AppleTV Delay
+    initial: 10
+    min: 0
+    max: 10
+    step: 1
 
 tradfri:
   host: 192.168.178.52

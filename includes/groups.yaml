@@ -160,6 +160,7 @@ media:
   entities:
     - group.tv_scenes
     - media_player.appletv
+    - input_slider.appletv_delay
 home:
   name: Home
   view: yes
