@@ -94,25 +94,25 @@
   device_tracker.iphones:
     friendly_name: Sascha
   sensor.netatmo_schlafzimmer_temperature:
-    friendly_name: Temperatur Schlafzimmer 
+    friendly_name: Temperatur 
   sensor.netatmo_schlafzimmer_co2:
-    friendly_name: CO2 Schlafzimmer
+    friendly_name: CO2
   sensor.netatmo_schlafzimmer_humidity:
-    friendly_name: Luftfeuchtigkeit Schlafzimmer
+    friendly_name: Luftfeuchtigkeit
   sensor.netatmo_wohnzimmer_temperature:
-    friendly_name: Temperatur Wohnzimmer 
+    friendly_name: Temperatur 
   sensor.netatmo_wohnzimmer_co2:
-    friendly_name: CO2 Wohnzimmer
+    friendly_name: CO2
   sensor.netatmo_wohnzimmer_humidity:
-    friendly_name: Luftfeuchtigkeit Wohnzimmer
+    friendly_name: Luftfeuchtigkeit
   sensor.netatmo_wohnzimmer_pressure:
-    friendly_name: Druck Wohnzimmer
+    friendly_name: Druck
   sensor.netatmo_wohnzimmer_noise:
     friendly_name: Lautstärke
   sensor.netatmo_outdoor_temperature:
-    friendly_name: Temperatur außen
+    friendly_name: Temperatur
   sensor.netatmo_outdoor_humidity:
-    friendly_name: Luftfeuchtigkeit außen
+    friendly_name: Luftfeuchtigkeit
   sensor.dark_sky_daily_high_temperature:
     friendly_name: High
   sensor.dark_sky_daily_low_temperature:
