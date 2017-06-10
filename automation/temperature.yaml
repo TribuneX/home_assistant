@@ -50,7 +50,7 @@
     - service: notify.ios_iphones
       data:
         title: 'Weather'
-        message: 'Close the door! It is {{states.sensor.sensor.out_vs_in.state}}°C warmer outside'
+        message: 'Close the door! It is {{states.sensor.out_vs_in.state}}°C warmer outside'
 
 - alias: 'It is colder outside'
   trigger:
@@ -70,7 +70,7 @@
     - service: notify.ios_iphones
       data:
         title: 'Weather'
-        message: 'You should open the door! It is {{states.sensor.sensor.out_vs_in.state}}°C colder outside'
+        message: 'You should open the door! It is {{states.sensor.out_vs_in.state}}°C colder outside'
 
 - alias: 'Weather Report'
   trigger:
