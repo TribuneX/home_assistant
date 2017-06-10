@@ -1,5 +1,4 @@
 - alias: 'CO2 Bedroom'
-  hide_entity: True
   trigger:
     platform: numeric_state
     entity_id: sensor.netatmo_schlafzimmer_co2
@@ -11,7 +10,6 @@
         message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
 
 - alias: 'CO2 Livingroom'
-  hide_entity: True
   trigger:
     platform: numeric_state
     entity_id: sensor.netatmo_wohnzimmer_co2
@@ -23,7 +21,6 @@
         message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
 
 - alias: 'Noise Livingroom'
-  hide_entity: True
   trigger:
     platform: numeric_state
     entity_id: sensor.netatmo_wohnzimmer_noise
@@ -34,6 +31,46 @@
         title: 'Rooms'
         message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise.state}}db'
 
+
+- alias: 'It is warmer outside'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.out_vs_in
+      above: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.personen
+        state: 'home'
+      - condition: numeric_state
+        entity_id: 'sensor.netatmo_outdoor_temperature'
+        above: '20'
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Weather'
+        message: 'Close the door! It is {{states.sensor.sensor.out_vs_in.state}}°C warmer outside'
+
+- alias: 'It is colder outside'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.out_vs_in
+      below: 0
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.personen
+        state: 'home'
+      - condition: numeric_state
+        entity_id: 'sensor.netatmo_outdoor_temperature'
+        above: '20'
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Weather'
+        message: 'You should open the door! It is {{states.sensor.sensor.out_vs_in.state}}°C colder outside'
 
 - alias: 'Weather Report'
   trigger:
