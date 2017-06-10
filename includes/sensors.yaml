@@ -13,7 +13,10 @@
     - temperature_min
     - temperature_max
     - hourly_summary
+    - precip_type
     - precip_intensity
+    - precip_probability
+    - cloud_cover
 - platform: fastdotcom
 
 - platform: command_line

@@ -87,7 +87,7 @@
 - alias: 'Rainy Day'
   trigger:
     - platform: state
-      entity_id: sensor.dark_sky_precip_intensity
+      entity_id: sensor.dark_sky_precip_type
       state: 'rain'
   action:
     - service: notify.ios_iphones
