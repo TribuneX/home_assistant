@@ -62,7 +62,7 @@
     conditions:
       - condition: state
         entity_id: group.personen
-        state: 'home'
+        to: 'home'
       - condition: numeric_state
         entity_id: 'sensor.netatmo_outdoor_temperature'
         above: '20'
@@ -88,7 +88,7 @@
   trigger:
     - platform: state
       entity_id: sensor.dark_sky_precip_type
-      state: 'rain'
+      to: 'rain'
   action:
     - service: notify.ios_iphones
       data:

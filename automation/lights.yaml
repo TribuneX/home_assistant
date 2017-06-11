@@ -12,13 +12,13 @@
     conditions:
       - condition: state
         entity_id: group.personen
-        state: 'home'
+        to: 'home'
       - condition: sun
         after: sunset
         after_offset: '-00:10:00'
       - condition: state
         entity_id: switch.tv
-        state: 'off'
+        to: 'off'
   action:
     - service: light.turn_on
       data: 
@@ -39,13 +39,13 @@
     conditions:
       - condition: state
         entity_id: group.personen
-        state: 'home'
+        to: 'home'
       - condition: sun
         after: sunset
         after_offset: '-00:10:00'
       - condition: state
         entity_id: switch.tv
-        state: 'on'
+        to: 'on'
   action:
     - service: light.turn_on
       data: 
@@ -64,7 +64,7 @@
   condition:
     condition: state
     entity_id: sun.sun
-    state: below_horizon
+    to: below_horizon
   action:
     - service: light.turn_on
       data: 
@@ -81,7 +81,7 @@
   condition:
     condition: state
     entity_id: sun.sun
-    state: below_horizon
+    to: below_horizon
   action:
     - service: light.turn_on
       data: 
