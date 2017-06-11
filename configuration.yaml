@@ -93,7 +93,7 @@ input_select:
     options:
      - INIT
      - AUS
-     - Fernseher
+     - TV
      - AppleTV
      - Plex
      - FireTV

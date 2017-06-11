@@ -79,14 +79,19 @@
     icon: mdi:power
   switch.tv_mode:
     icon: mdi:television
+    friendly_name: TV
   switch.appletv_mode:
     icon: mdi:airplay
+    friendly_name: Apple TV
   switch.plex_mode:
-    icon: mdi:local-play
+    icon: mdi:youtube-play
+    friendly_name: Plex
   switch.fire_tv_mode:
     icon: mdi:youtube-play
+    friendly_name: FireTV
   switch.music_mode:
     icon: mdi:play-circle
+    friendly_name: Musik
   device_tracker.nicolesiphone:
     friendly_name: Nicole
   device_tracker.iphones:
