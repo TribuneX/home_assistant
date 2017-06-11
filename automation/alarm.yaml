@@ -2,9 +2,13 @@
 - alias: 'Alarm'    
   trigger:    
     - platform: state     
-      entity_id: light.lampe_sofa   
+      entity_id: light.lampe_gang_bad  
       from: 'off'   
-      to: 'on'    
+      to: 'on' 
+    - platform: state     
+      entity_id: light.lampe_gang_eingang  
+      from: 'off'   
+      to: 'on'   
   condition:    
     condition: state    
     entity_id: group.personen   

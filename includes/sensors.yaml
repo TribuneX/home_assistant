@@ -98,3 +98,10 @@
     out_vs_in:
       value_template: "{{states.sensor.netatmo_outdoor_temperature.state | round(0) - states.sensor.netatmo_wohnzimmer_temperature.state | round(0)}}"
       friendly_name: "Temperature Diff"
+
+# Inspired by https://community.home-assistant.io/t/0-46-1-not-available-via-upgrade/19539
+- platform: rest
+      resource: https://pypi.python.org/pypi/homeassistant/json
+      name: HA Current Version
+      value_template: '{{ value_json.info.version }}'
+      scan_interval: 3600
