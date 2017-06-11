@@ -102,14 +102,11 @@ personen:
 tv_scenes:
   name: TV
   entities:
-    - scene.aus
-    - scene.fernseher
-    - scene.apple_tv
-    - scene.plex
-    - scene.firetv
-    - scene.musik
-    #- input_select.tv_mode
-    #- switch.tv
+    - switch.tv_mode
+    - switch.appletv_mode
+    - switch.plex_mode
+    - switch.fire_tv_mode
+    - switch.music_mode
 iphone:
   name: Devices
   entities:

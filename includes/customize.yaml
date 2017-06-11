@@ -77,17 +77,15 @@
     icon: mdi:lightbulb-on
   scene.alles_aus:
     icon: mdi:power
-  scene.aus:
-    icon: mdi:power
-  scene.tv:
+  switch.tv_mode:
     icon: mdi:television
-  scene.apple_tv:
+  switch.appletv_mode:
     icon: mdi:airplay
-  scene.plex:
+  switch.plex_mode:
     icon: mdi:local-play
-  scene.firetv:
+  switch.fire_tv_mode:
     icon: mdi:youtube-play
-  scene.musik:
+  switch.music_mode:
     icon: mdi:play-circle
   device_tracker.nicolesiphone:
     friendly_name: Nicole
