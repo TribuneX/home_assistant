@@ -67,7 +67,7 @@ device_tracker:
     host: !secret fritz_host
     password: !secret fritz_password
     track_new_devices: false 
-  - platform: bluetooth_tracker
+  #- platform: bluetooth_tracker
 
 # Track the sun
 sun:
