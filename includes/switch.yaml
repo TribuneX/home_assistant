@@ -57,40 +57,50 @@
     tv_mode:
       value_template: "{{ is_state('switch.tv', 'on')}}"
       turn_on:
-        service: script.turn_on
-        entity_id: script.input_tv
+        service: input_select.select_option
+          data:
+            entity_id: input_select.tv_mode
+            option: TV
       turn_off:
         service: switch.turn_off
         entity_id: switch.tv
     appletv_mode:
       value_template: "{{ is_state('switch.tv', 'on')}}"
       turn_on:
-        service: script.turn_on
-        entity_id: script.input_apple_tv
+        service: input_select.select_option
+          data:
+            entity_id: input_select.tv_mode
+            option: AppleTV
       turn_off:
         service: switch.turn_off
         entity_id: switch.tv
     plex_mode:
       value_template: "{{ is_state('switch.tv', 'on')}}"
       turn_on:
-        service: script.turn_on
-        entity_id: script.input_plex
+        service: input_select.select_option
+          data:
+            entity_id: input_select.tv_mode
+            option: Plex
       turn_off:
         service: switch.turn_off
         entity_id: switch.tv
     fire_tv_mode:
       value_template: "{{ is_state('switch.tv', 'on')}}"
       turn_on:
-        service: script.turn_on
-        entity_id: script.input_fire_tv
+        service: input_select.select_option
+          data:
+            entity_id: input_select.tv_mode
+            option: FireTV
       turn_off:
         service: switch.turn_off
         entity_id: switch.tv
     music_mode:
       value_template: "{{ is_state('switch.tv', 'on')}}"
       turn_on:
-        service: script.turn_on
-        entity_id: script.input_music
+        service: input_select.select_option
+          data:
+            entity_id: input_select.tv_mode
+            option: Music
       turn_off:
         service: switch.turn_off
         entity_id: switch.tv

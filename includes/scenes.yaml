@@ -26,10 +26,10 @@
     input_select.tv_mode:
         option: FireTV
 
-- name: Fernseher 
+- name: TV 
   entities: 
     input_select.tv_mode:
-        option: Fernseher
+        option: TV
 
 - name: Musik
   entities: 

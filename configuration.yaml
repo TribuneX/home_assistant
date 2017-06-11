@@ -121,6 +121,7 @@ input_slider:
     max: 10
     step: 1
 
+
 tradfri:
   host: 192.168.178.52
   api_key: !secret tradfri_api_key

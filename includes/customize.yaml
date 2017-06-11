@@ -79,12 +79,12 @@
     icon: mdi:power
   scene.aus:
     icon: mdi:power
-  scene.fernseher:
+  scene.tv:
     icon: mdi:television
   scene.apple_tv:
     icon: mdi:airplay
   scene.plex:
-    icon: mdi:airplay
+    icon: mdi:local-play
   scene.firetv:
     icon: mdi:youtube-play
   scene.musik:
