@@ -38,7 +38,7 @@
   trigger:
     platform: state
     entity_id: input_select.tv_mode
-    to: 'Fernseher'
+    to: 'TV'
   condition:  
    condition: state
    entity_id: switch.tv
@@ -73,7 +73,6 @@
     - delay:
         seconds: 20
     - service: script.input_apple_tv
-
 
 - alias: 'watch Plex + TV'
   trigger:
@@ -111,7 +110,7 @@
   trigger:
     platform: state
     entity_id: input_select.tv_mode
-    to: 'Fernseher'
+    to: 'TV'
   condition:  
    condition: state
    entity_id: switch.tv
