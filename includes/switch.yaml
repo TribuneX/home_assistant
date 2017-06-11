@@ -65,7 +65,7 @@
         service: switch.turn_off
         entity_id: switch.tv
     appletv_mode:
-      value_template: "{{ is_state('switch.tv', 'on')}}"
+      value_template: "{{ is_state('input_select.tv_mode', 'INIT')}}"
       turn_on:
         service: input_select.select_option
         data:
@@ -75,7 +75,7 @@
         service: switch.turn_off
         entity_id: switch.tv
     plex_mode:
-      value_template: "{{ is_state('switch.tv', 'on')}}"
+      value_template: "{{ is_state('input_select.tv_mode', 'INIT')}}"
       turn_on:
         service: input_select.select_option
         data:
@@ -85,7 +85,7 @@
         service: switch.turn_off
         entity_id: switch.tv
     fire_tv_mode:
-      value_template: "{{ is_state('switch.tv', 'on')}}"
+      value_template: "{{ is_state('input_select.tv_mode', 'INIT')}}"
       turn_on:
         service: input_select.select_option
         data:
@@ -95,7 +95,7 @@
         service: switch.turn_off
         entity_id: switch.tv
     music_mode:
-      value_template: "{{ is_state('switch.tv', 'on')}}"
+      value_template: "{{ is_state('input_select.tv_mode', 'INIT')}}"
       turn_on:
         service: input_select.select_option
         data:
