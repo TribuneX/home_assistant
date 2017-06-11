@@ -1,4 +1,4 @@
-- alias: 'watch AppleTV'
+- alias: 'Watch AppleTV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -10,7 +10,7 @@
   action:
     - service: script.input_apple_tv
 
-- alias: 'watch Plex'
+- alias: 'Watch Plex'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -22,7 +22,7 @@
   action:
     - service: script.input_plex
 
-- alias: 'watch FireTV'
+- alias: 'Watch FireTV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -34,7 +34,7 @@
   action:
     - service: script.input_fire_tv
 
-- alias: 'watch TV'
+- alias: 'Watch TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -46,7 +46,7 @@
   action:
     - service: script.input_tv
 
-- alias: 'listen to music'
+- alias: 'Listen to music'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -58,7 +58,7 @@
   action:
     - service: script.input_music
 
-- alias: 'watch AppleTV + TV'
+- alias: 'Watch AppleTV + TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -74,7 +74,7 @@
         seconds: 20
     - service: script.input_apple_tv
 
-- alias: 'watch Plex + TV'
+- alias: 'Watch Plex + TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -90,7 +90,7 @@
         seconds: 20
     - service: script.input_plex
 
-- alias: 'watch FireTV + TV'
+- alias: 'Watch FireTV + TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -106,7 +106,7 @@
         seconds: 20
     - service: script.input_fire_tv
 
-- alias: 'watch TV + TV'
+- alias: 'Watch TV + TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -122,7 +122,7 @@
         seconds: 20
     - service: script.input_tv
 
-- alias: 'listen to music'
+- alias: 'Listen to music + TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
