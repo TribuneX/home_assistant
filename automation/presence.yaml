@@ -62,6 +62,6 @@
         message: 'Everybody left. I will switch off all devices.'
     - service: switch.turn_off
     - service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: AUS 
+      data:
+        entity_id: input_select.tv_mode
+        option: AUS 
