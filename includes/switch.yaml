@@ -53,11 +53,44 @@
   type: rm_mini
 
 - platform: template
-  switch_tv:
-    value_template: "{{ is_state('switch.tv', 'on')}}"
-    turn_on:
-      service: script.turn_on
-      entity_id: script.input_tv
-    turn_off:
-      service: switch.turn_off
-      entity_id: switch.tv
+  switches:
+    tv_mode:
+      value_template: "{{ is_state('switch.tv', 'on')}}"
+      turn_on:
+        service: script.turn_on
+        entity_id: script.input_tv
+      turn_off:
+        service: switch.turn_off
+        entity_id: switch.tv
+    appletv_mode:
+      value_template: "{{ is_state('switch.tv', 'on')}}"
+      turn_on:
+        service: script.turn_on
+        entity_id: script.input_apple_tv
+      turn_off:
+        service: switch.turn_off
+        entity_id: switch.tv
+    plex_mode:
+      value_template: "{{ is_state('switch.tv', 'on')}}"
+      turn_on:
+        service: script.turn_on
+        entity_id: script.input_plex
+      turn_off:
+        service: switch.turn_off
+        entity_id: switch.tv
+    fire_tv_mode:
+      value_template: "{{ is_state('switch.tv', 'on')}}"
+      turn_on:
+        service: script.turn_on
+        entity_id: script.input_fire_tv
+      turn_off:
+        service: switch.turn_off
+        entity_id: switch.tv
+    music_mode:
+      value_template: "{{ is_state('switch.tv', 'on')}}"
+      turn_on:
+        service: script.turn_on
+        entity_id: script.input_music
+      turn_off:
+        service: switch.turn_off
+        entity_id: switch.tv
