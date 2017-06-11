@@ -62,7 +62,7 @@
     conditions:
       - condition: state
         entity_id: group.personen
-        to: 'home'
+        state: 'home'
       - condition: numeric_state
         entity_id: 'sensor.netatmo_outdoor_temperature'
         above: '20'
