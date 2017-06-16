@@ -150,6 +150,7 @@ devices:
     - sensor.appletv_bedroom
     - sensor.broadlink
     - sensor.switch
+    - sensor.netatmo
 
 # Tabs
 default_view:

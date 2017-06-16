@@ -143,6 +143,8 @@
     icon: mdi:remote
   sensor.tradfi:
     icon: mdi:lightbulb-on
+  sensor.netatmo:
+    icon: mdi:weather-hail
 
 
   input_boolean.vacation_mode:

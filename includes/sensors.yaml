@@ -106,6 +106,7 @@
   value_template: '{{ value_json.info.version }}'
   scan_interval: 3600
 
+# Inspired by https://github.com/CCOSTAN/Home-AssistantConfig/blob/9b088e5bee97d242463b7d794edeb4a1d967bac1/sensor/devices_states.yaml
 - platform: template
   sensors:
       robo:
@@ -139,6 +140,10 @@
       appletv_livingroom:
         friendly_name: 'AppleTV Livingroom'
         value_template: "{{ 'Online' if is_state('device_tracker.wohnzimmer', 'home') else 'Offline' }}"
+
+      netatmo:
+        friendly_name: 'AppleTV Livingroom'
+        value_template: "{{ 'Online' if is_state('device_tracker.netatmo', 'home') else 'Offline' }}"
 
 
 
