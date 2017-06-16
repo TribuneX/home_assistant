@@ -139,6 +139,10 @@ settings:
     - input_select.log_level
     - input_select.tv_mode
     - input_boolean.vacation_mode
+devices:
+  name: Devices
+  entities:
+    - sensor.robo
 
 # Tabs
 default_view:
@@ -181,6 +185,7 @@ system:
   icon: mdi:server
   entities:
     - group.pi
+    - group.devices
     - group.pings
 automation:
   name: Automation

@@ -105,3 +105,9 @@
   name: HA Current Version
   value_template: '{{ value_json.info.version }}'
   scan_interval: 3600
+
+- platform: template
+  sensors:
+      robo:
+        friendly_name: 'Robo'
+        value_template: "{{ 'Online' if is_state('device_tracker.pc286c07f695b2', 'home') else 'Offline' }}"
