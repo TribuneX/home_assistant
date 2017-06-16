@@ -124,6 +124,9 @@
     friendly_name: Aussicht
   sensor.dark_sky_precip_intensity:
     friendly_name: Regen
+  switch.ventilator:
+    icon: mdi:air-conditioner
+    assumed_state: false
   input_boolean.vacation_mode:
     homebridge_hidden: true
   light.gang:
