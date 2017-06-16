@@ -152,10 +152,8 @@
         value_template: "{{ 'Online' if is_state('device_tracker.wohnzimmer', 'home') else 'Offline' }}"
 
       netatmo:
-        friendly_name: 'AppleTV Livingroom'
+        friendly_name: 'Netatmo'
         value_template: "{{ 'Online' if is_state('device_tracker.netatmo', 'home') else 'Offline' }}"
-
-
 
 
 

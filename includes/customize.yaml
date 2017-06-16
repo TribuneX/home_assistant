@@ -131,24 +131,32 @@
     icon: mdi:adjust
   sensor.switch:
     icon: mdi:server-network
+    homebridge_hidden: true
   sensor.plex:
     icon: mdi:youtube-play
   sensor.appletv_livingroom:
     icon: mdi:airplay
+    homebridge_hidden: true
   sensor.appletv_bedroom:
     icon: mdi:airplay
+    homebridge_hidden: true
   sensor.epson:
     icon: mdi:printer
   sensor.broadlink:
     icon: mdi:remote
-  sensor.tradfi:
+    homebridge_hidden: true
+  sensor.tradfri:
     icon: mdi:lightbulb-on
+    homebridge_hidden: true
   sensor.netatmo:
     icon: mdi:weather-hail
+    homebridge_hidden: true
   sensor.speedtest_upload:
     icon: mdi:speedometer
+    homebridge_hidden: true
   sensor.speedtest_download:
     icon: mdi:speedometer
+    homebridge_hidden: true
 
 
   input_boolean.vacation_mode:
