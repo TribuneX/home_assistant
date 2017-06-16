@@ -20,6 +20,10 @@
       command_on: 'sudo /opt/rcswitch-pi/send 11111 3 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11111 3 0'
       friendly_name: Lampe Sessel
+    ventilator:
+      command_on: 'sudo /opt/rcswitch-pi/send 11110 2 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11110 2 0'
+      friendly_name: Ventilator
     light_stern:
       command_on: 'sudo /opt/rcswitch-pi/send 11110 3 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11110 3 0'
@@ -40,6 +44,7 @@
       command_on: 'sudo /opt/rcswitch-pi/send 11001 3 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11001 3 0'
       friendly_name: Lampe Sascha
+
 - platform: wake_on_lan
   name: Server
   host: server.cbs-service.net
