@@ -121,39 +121,39 @@
   sensors:
       robo:
         friendly_name: 'Robo'
-        value_template: "{{ 'Online' if is_state('device_tracker.pc286c07f695b2', 'home') else 'Offline' }}"
+        value_template: "{{ 'Online' if is_state('device_tracker.pc286c07f695b2', 'home') else 'Off' }}"
 
       epson:
         friendly_name: 'Epson'
-        value_template: "{{ 'Online' if is_state('device_tracker.epson029ea9', 'home') else 'Offline' }}"
+        value_template: "{{ 'Online' if is_state('device_tracker.epson029ea9', 'home') else 'Off' }}"
 
       broadlink:
         friendly_name: 'Broadlink'
-        value_template: "{{ 'Online' if is_state('device_tracker.broadlink', 'home') else 'Offline' }}"
+        value_template: "{{ 'Online' if is_state('device_tracker.broadlink', 'home') else 'Off' }}"
 
       plex:
         friendly_name: 'Plex'
-        value_template: "{{ 'Online' if is_state('device_tracker.plex', 'home') else 'Offline' }}"
+        value_template: "{{ 'Online' if is_state('device_tracker.plex', 'home') else 'Off' }}"
 
       switch:
         friendly_name: 'Switch'
-        value_template: "{{ 'Online' if is_state('device_tracker.switch', 'home') else 'Offline' }}"
+        value_template: "{{ 'Online' if is_state('device_tracker.switch', 'home') else 'Off' }}"
 
       tradfri:
         friendly_name: 'Tradfri Gateway'
-        value_template: "{{ 'Online' if is_state('device_tracker.tradfri', 'home') else 'Offline' }}"
+        value_template: "{{ 'Online' if is_state('device_tracker.tradfri', 'home') else 'Off' }}"
 
       appletv_bedroom:
         friendly_name: 'AppleTV Bedroom'
-        value_template: "{{ 'Online' if is_state('device_tracker.appletv', 'home') else 'Offline' }}"
+        value_template: "{{ 'Online' if is_state('device_tracker.appletv', 'home') else 'Off' }}"
 
       appletv_livingroom:
         friendly_name: 'AppleTV Livingroom'
-        value_template: "{{ 'Online' if is_state('device_tracker.wohnzimmer', 'home') else 'Offline' }}"
+        value_template: "{{ 'Online' if is_state('device_tracker.wohnzimmer', 'home') else 'Off' }}"
 
       netatmo:
         friendly_name: 'Netatmo'
-        value_template: "{{ 'Online' if is_state('device_tracker.netatmo', 'home') else 'Offline' }}"
+        value_template: "{{ 'Online' if is_state('device_tracker.netatmo', 'home') else 'Off' }}"
 
 
 
