@@ -90,7 +90,7 @@
     icon: mdi:youtube-play
     friendly_name: FireTV
   switch.music_mode:
-    icon: mdi:play-circle
+    icon: mdi:music-circle
     friendly_name: Musik
   device_tracker.nicolesiphone:
     friendly_name: Nicole
