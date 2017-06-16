@@ -30,12 +30,22 @@
 
 
 # automations for the fan
-- alias: 'Fan auto off'
+- alias: 'Activate Fan auto off'
   trigger:
     platform: state
     entity_id: switch.ventilator
     to: 'on'
   action: 
-    - service: script.turn_off_fan_after_delay
+    - service: script.turn_on
+      entity_id: script.turn_off_fan_after_delay
+
+- alias: 'Deactivate fan auto off'
+  trigger:
+    platform: state
+    entity_id: switch.ventilator
+    to: 'off'
+  action: 
+    - service: script.turn_off
+      entity_id: script.turn_off_fan_after_delay 
 
 
