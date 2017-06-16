@@ -159,6 +159,14 @@ input_music:
     - service: script.turn_on
       entity_id: script.turn_tv_off
 
+turn_off_all:
+  sequence:
+    - service: switch.turn_off
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.tv_mode
+        option: AUS 
+
 # reset_media:
 #   sequence:
 #     - service: input_select.select_option
