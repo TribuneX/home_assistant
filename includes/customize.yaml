@@ -125,8 +125,26 @@
   sensor.dark_sky_precip_intensity:
     friendly_name: Regen
   switch.ventilator:
-    icon: mdi:air-conditioner
+    icon: mdi:fan
     assumed_state: false
+  sensor.robo:
+    icon: mdi:adjust
+  sensor.switch:
+    icon: mdi:server-network
+  sensor.plex:
+    icon: mdi:youtube-play
+  sensor.appletv_livingroom:
+    icon: mdi:airplay
+  sensor.appletv_bedroom:
+    icon: mdi:airplay
+  sensor.epson:
+    icon: mdi:printer
+  sensor.broadlink:
+    icon: mdi:remote
+  sensor.tradfi:
+    icon: mdi:lightbulb-on
+
+
   input_boolean.vacation_mode:
     homebridge_hidden: true
   light.gang:

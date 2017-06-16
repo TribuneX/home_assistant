@@ -143,6 +143,13 @@ devices:
   name: Devices
   entities:
     - sensor.robo
+    - sensor.epson
+    - sensor.tradfri
+    - sensor.plex
+    - sensor.appletv_livingroom
+    - sensor.appletv_bedroom
+    - sensor.broadlink
+    - sensor.switch
 
 # Tabs
 default_view:
