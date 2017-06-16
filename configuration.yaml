@@ -110,7 +110,7 @@ input_select:
       - info
       - debug
       - notset
-    initial: warn
+    initial: error
 
 input_slider:
   appletv_delay:
