@@ -159,6 +159,13 @@ input_music:
     - service: script.turn_on
       entity_id: script.turn_tv_off
 
+turn_off_fan_after_delay:
+  sequence:
+    - delay:
+        hours: 2
+    - service: switch.turn_off
+      entity_id: switch.ventilator 
+
 turn_off_all:
   sequence:
     - service: switch.turn_off

@@ -19,7 +19,7 @@
         message: 'Update for Home Assistant is available.'
 
 # Inspired by https://community.home-assistant.io/t/logger-set-level/14267
-- alias: Log Level
+- alias: 'Log Level'
   trigger:
     platform: state
     entity_id: input_select.log_level
@@ -27,4 +27,15 @@
     service: logger.set_level
     data_template:
       homeassistant.components: "{{ trigger.to_state.state }}"
+
+
+# automations for the fan
+- alias: 'Fan auto off'
+  trigger:
+    platform: state
+    entity_id: switch.ventilator
+    to: 'on'
+  action: 
+    - service: script.turn_off_fan_after_delay
+
 
