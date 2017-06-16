@@ -153,9 +153,11 @@
     homebridge_hidden: true
   sensor.speedtest_upload:
     icon: mdi:speedometer
+    friendly_name: Upload
     homebridge_hidden: true
   sensor.speedtest_download:
     icon: mdi:speedometer
+    friendly_name: Download
     homebridge_hidden: true
 
 
