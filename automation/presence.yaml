@@ -60,4 +60,4 @@
       data:
         title: 'Location'
         message: 'Everybody left. I will switch off all devices.'
-   - service: script.turn_off_all
+    - service: script.turn_off_all
