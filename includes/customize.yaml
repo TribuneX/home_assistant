@@ -145,6 +145,10 @@
     icon: mdi:lightbulb-on
   sensor.netatmo:
     icon: mdi:weather-hail
+  sensor.speedtest_upload:
+    icon: mdi:speedometer
+  sensor.speedtest_download:
+    icon: mdi:speedometer
 
 
   input_boolean.vacation_mode:

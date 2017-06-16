@@ -17,7 +17,17 @@
     - precip_intensity
     - precip_probability
     - cloud_cover
-- platform: fastdotcom
+
+- platform: speedtest
+  minute: 30
+  hour:
+    - 0
+    - 6
+    - 12
+    - 18
+  monitored_conditions:
+    - download
+    - upload
 
 - platform: command_line
   name: CPU Temperature
