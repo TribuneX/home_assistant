@@ -4,7 +4,7 @@
       platform: time
       at: '03:00'
   action:
-    service: switch.turn_off
+    - service: script.turn_off_all
 
 
 - alias: 'Update Available Notifications'
@@ -19,7 +19,7 @@
         message: 'Update for Home Assistant is available.'
 
 # Inspired by https://community.home-assistant.io/t/logger-set-level/14267
-- alias: Log Level
+- alias: 'Log Level'
   trigger:
     platform: state
     entity_id: input_select.log_level
@@ -28,3 +28,36 @@
     data_template:
       homeassistant.components: "{{ trigger.to_state.state }}"
 
+
+# automations for the fan
+- alias: 'Activate Fan auto off'
+  trigger:
+    platform: state
+    entity_id: switch.ventilator
+    to: 'on'
+  action: 
+    - service: script.turn_on
+      entity_id: script.turn_off_fan_after_delay
+
+- alias: 'Deactivate fan auto off'
+  trigger:
+    platform: state
+    entity_id: switch.ventilator
+    to: 'off'
+  action: 
+    - service: script.turn_off
+      entity_id: script.turn_off_fan_after_delay 
+
+# Inspired by https://community.home-assistant.io/t/failed-login-detection/4280/20
+- alias: "Send notification upon failed login attempt"
+  trigger:
+    - platform: state
+      entity_id: persistent_notification.httplogin
+  condition:
+    - condition: template
+      value_template: "{{ trigger.to_state.state != None }}"
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: "Failed login!"
+        message: '{{ trigger.to_state.state }}'
