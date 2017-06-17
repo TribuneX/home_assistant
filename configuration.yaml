@@ -110,15 +110,6 @@ input_select:
       - notset
     initial: error
 
-input_slider:
-  appletv_delay:
-    name: AppleTV Delay
-    initial: 10
-    min: 0
-    max: 10
-    step: 1
-
-
 tradfri:
   host: tradfri.cbs-service.net
   api_key: !secret tradfri_api_key
