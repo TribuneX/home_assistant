@@ -159,7 +159,8 @@
     icon: mdi:speedometer
     friendly_name: Download
     homebridge_hidden: true
-
+  script.get_latest_config:
+    icon: mdi:github-circle
 
   input_boolean.vacation_mode:
     homebridge_hidden: true

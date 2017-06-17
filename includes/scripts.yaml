@@ -48,7 +48,7 @@ vacation_lights:
 
 # Inspired by https://github.com/Tommatheussen/Home-Assistant-Configuration/blob/master/script/get_latest_config.yaml
 get_latest_config:
-  alias: 'Get Latest Config'
+  alias: 'Update config'
   sequence:
     - service: shell_command.git_pull
 
