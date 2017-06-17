@@ -4,5 +4,5 @@
 
 turn_off_server: 'bash /opt/scripts/freenas/shutdown_server.sh'
 pi: 'sudo reboot -now'
-git_pull: 'sudo bash /opt/home_assistant/bash/git_pull.sh'
+git_pull: 'bash /opt/home_assistant/bash/git_pull.sh'
 restart_forked_daapd: 'sudo service forked-daapd restart'
