@@ -168,4 +168,3 @@ switch: !include includes/switch.yaml
 scene: !include includes/scenes.yaml
 input_boolean: !include includes/inputs.yaml
 shell_command: !include includes/shell_commands.yaml
-command_line: !include includes/command_line.yaml
