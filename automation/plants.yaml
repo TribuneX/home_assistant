@@ -5,6 +5,8 @@
     entity_id: device_tracker.iphones
     from: 'not_home'
     to: 'home'
+    for:
+      minutes: 5
   condition:
     condition: numeric_state
     entity_id: sensor.bad_moisture
@@ -22,6 +24,8 @@
     entity_id: device_tracker.iphones
     from: 'not_home'
     to: 'home'
+    for:
+      minutes: 4 
   condition:
     condition: numeric_state
     entity_id: sensor.sanseviera_moisture
@@ -39,6 +43,8 @@
     entity_id: device_tracker.iphones
     from: 'not_home'
     to: 'home'
+    for:
+      minutes: 3 
   condition:
     condition: numeric_state
     entity_id: sensor.palme_moisture
@@ -56,6 +62,8 @@
     entity_id: device_tracker.iphones
     from: 'not_home'
     to: 'home'
+    for:
+      minutes: 6 
   condition:
     condition: numeric_state
     entity_id: sensor.palme_moisture
