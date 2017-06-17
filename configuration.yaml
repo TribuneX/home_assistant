@@ -73,8 +73,6 @@ device_tracker:
 sun:
 
 media_player:
-  - platform: plex
-
   - platform: apple_tv
     name: AppleTV
     host: atv.cbs-service.net
