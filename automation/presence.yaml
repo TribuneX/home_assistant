@@ -56,8 +56,8 @@
     for:
       minutes: 3 
   action:
-    - service: notify.ios_iphones
-      data:
-        title: 'Location'
-        message: 'Everybody left. I will switch off all devices.'
+    #- service: notify.ios_iphones
+    #  data:
+    #    title: 'Location'
+    #    message: 'Everybody left. I will switch off all devices.'
     - service: script.turn_off_all
