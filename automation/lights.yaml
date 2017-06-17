@@ -7,6 +7,9 @@
       entity_id: group.personen
       from: 'not_home'
       to: 'home'
+    - platform: state
+      entity_id: light.lampe_gang_eingang
+      to: 'on'
   condition:
     condition: and
     conditions:
@@ -34,6 +37,9 @@
       entity_id: group.personen
       from: 'not_home'
       to: 'home'
+    - platform: state
+      entity_id: light.lampe_gang_eingang
+      to: 'on'
   condition:
     condition: and
     conditions:
