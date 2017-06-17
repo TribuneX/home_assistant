@@ -161,6 +161,8 @@
     homebridge_hidden: true
   script.get_latest_config:
     icon: mdi:github-circle
+  sensor.ha_current_version:
+    icon: mdi:home-assistant
 
   input_boolean.vacation_mode:
     homebridge_hidden: true
