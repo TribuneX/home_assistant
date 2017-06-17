@@ -52,9 +52,7 @@
     platform: state
     entity_id: group.personen
     from: 'home'
-    to: 'not_home'
-    for:
-      minutes: 3 
+    to: 'not_home' 
   action:
     #- service: notify.ios_iphones
     #  data:
