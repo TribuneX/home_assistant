@@ -1,0 +1,4 @@
+- platform: command_line
+    name: Travis Status
+    command: "curl https://api.travis-ci.org/repos/TribuneX/home_assistant/cc.xml\?branch\=master | grep lastBuildStatus | cut -d'\"' -f2"
+    scan_interval: 60
