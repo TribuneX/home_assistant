@@ -120,7 +120,7 @@ input_slider:
 
 
 tradfri:
-  host: 192.168.178.52
+  host: tradfri.cbs-service.net
   api_key: !secret tradfri_api_key
 
 # plant:
@@ -159,7 +159,6 @@ zone 3:
 sensor: !include includes/sensors.yaml
 binary_sensor: !include includes/binary_sensor.yaml
 automation: !include_dir_merge_list automation/
-#automation: !include includes/automations.yaml
 script: !include includes/scripts.yaml
 group: !include includes/groups.yaml
 switch: !include includes/switch.yaml
