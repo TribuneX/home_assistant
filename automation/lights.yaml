@@ -16,12 +16,16 @@
       - condition: state
         entity_id: group.personen
         state: 'home'
-      - condition: sun
-        after: sunset
-        after_offset: '-00:10:00'
       - condition: state
         entity_id: switch.tv
         state: 'off'
+      - condition: or
+        conditions:
+          - condition: sun
+            after: sunset
+            after_offset: '-00:10:00'
+          - condition: sun
+            before: sunrise
   action:
     - service: light.turn_on
       data: 
