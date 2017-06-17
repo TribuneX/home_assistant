@@ -83,7 +83,7 @@ netatmo:
   secret_key: !secret netatmo_secret_key
   username: !secret netatmo_username
   password: !secret netatmo_password
- 
+
 
 input_select:
   tv_mode:
@@ -111,7 +111,7 @@ input_select:
     initial: error
 
 tradfri:
-  host: tradfri.cbs-service.net
+  host: 192.168.178.52
   api_key: !secret tradfri_api_key
 
 # plant:
