@@ -47,15 +47,14 @@
         message: 'Nicole arrived at work.'
 
 - alias: 'Nobody at home'
-  hide_entity: True
   trigger:
     platform: state
     entity_id: group.personen
     from: 'home'
     to: 'not_home' 
   action:
-    #- service: notify.ios_iphones
+    - service: script.turn_off_all
+  #- service: notify.ios_iphones
     #  data:
     #    title: 'Location'
     #    message: 'Everybody left. I will switch off all devices.'
-    - service: script.turn_off_all
