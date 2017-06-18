@@ -138,6 +138,7 @@ settings:
   name: Settings
   entities:
     - script.get_latest_config
+    - script.restart_hass
     - input_select.log_level
     - input_select.tv_mode
     - input_boolean.vacation_mode

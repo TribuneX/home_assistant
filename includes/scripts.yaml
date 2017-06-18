@@ -5,8 +5,7 @@
 restart_ha:
   alias: Restart Home Assistant
   sequence:
-    - alias: Restart Home Assistant
-      service: homeassistant.restart
+    - service: shell_command_restart_homeassistat
 
 reload_automations:
   alias: Reload Automations

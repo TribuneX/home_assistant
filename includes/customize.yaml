@@ -169,6 +169,9 @@
     icon: mdi:lightbulb-on
   light.lampe_sofa:
     icon: mdi:lightbulb-on
+  script.restart_hass:
+    icon: mdi:home-assistant
+    friendly_name: Restart
 
   input_boolean.vacation_mode:
     homebridge_hidden: true
