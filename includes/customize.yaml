@@ -160,6 +160,9 @@
     icon: mdi:speedometer
     friendly_name: Download
     homebridge_hidden: true
+  sensor.server:
+    icon: mdi:server
+    homebridge_hidden: true
   script.get_latest_config:
     icon: mdi:github-circle
   sensor.ha_current_version:
