@@ -2,10 +2,10 @@
 # Skripte
 ##########################
 
-restart_ha:
+restart_hass:
   alias: Restart Home Assistant
   sequence:
-    - service: shell_command_restart_homeassistat
+    - service: shell_command.restart_homeassistant
 
 reload_automations:
   alias: Reload Automations
