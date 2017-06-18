@@ -2,10 +2,7 @@
 - alias: 'Device Status'
   trigger:
     - platform: state
-      entity_id:
-        - sensor.robo
-        - sensor.tradfri
-        - sensor.switch
+      entity_id: sensor.robo, sensor.tradfri, sensor.switch
       to: 'off'
       for:
         minutes: 5
