@@ -155,6 +155,10 @@
         friendly_name: 'Netatmo'
         value_template: "{{ 'Online' if is_state('device_tracker.netatmo', 'home') else 'Off' }}"
 
+      server:
+        friendly_name: 'Server'
+        value_template: "{{ 'Online' if is_state('device_tracker.server', 'home') else 'Off' }}"
+
 
 - platform: command_line
   name: Travis Status
