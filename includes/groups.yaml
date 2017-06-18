@@ -154,6 +154,7 @@ devices:
     - sensor.broadlink
     - sensor.switch
     - sensor.netatmo
+    - sensor.server
 
 # Tabs
 default_view:
