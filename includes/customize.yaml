@@ -175,6 +175,9 @@
   script.restart_hass:
     icon: mdi:home-assistant
     friendly_name: Restart
+  script.reboot_pi:
+    icon: mdi:restart
+    friendly_name: Reboot
 
   input_boolean.vacation_mode:
     homebridge_hidden: true
