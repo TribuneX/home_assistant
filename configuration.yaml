@@ -50,6 +50,14 @@ logbook:
     entities:
       - sensor.netatmo
       - device_tracker.netatmo
+      - device_tracker.server
+      - device_tracker.wohnzimmer
+      - device_tracker.appletv
+      - device_tracker.tradfri
+      - device_tracker.switch
+      - device_tracker.plex
+      - device_tracker.broadlink
+      - device_tracker.epson029ea9
 
 # Support for iOS app
 ios:
