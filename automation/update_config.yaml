@@ -7,5 +7,8 @@
       entity_id: sensor.travis_status
       state: 'Success'
   action:
+    # turn on TV before updating the config, since the broadlink needs to be on during startup
+    - service: switch.turn_on
+      entity_id: switch.tv 
     - service: script.get_latest_config
 
