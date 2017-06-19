@@ -46,6 +46,10 @@ history:
 
 # View all events in a logbook
 logbook:
+  exclude:
+    entities:
+      - sensor.netatmo
+      - device_tracker.netatmo
 
 # Support for iOS app
 ios:
