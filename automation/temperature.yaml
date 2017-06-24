@@ -32,11 +32,14 @@
         message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise.state}}db'
 
 
-- alias: 'It is warmer outside'
+- alias: 'Out vs In notification'
   trigger:
     - platform: numeric_state
       entity_id: sensor.out_vs_in
-      above: 0
+      above: 2
+    - platform: numeric_state
+      entity_id: sensor.out_vs_in
+      below: -2
   condition:
     condition: and
     conditions:
@@ -50,27 +53,7 @@
     - service: notify.ios_iphones
       data:
         title: 'Weather'
-        message: 'Close the door! It is {{states.sensor.out_vs_in.state}}°C warmer outside. Out: {{states.sensor.netatmo_outdoor_temperature.state}}°C / In: {{states.sensor.netatmo_wohnzimmer_temperature.state}}°C'
-
-- alias: 'It is colder outside'
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.out_vs_in
-      below: 0
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: device_tracker.iphones
-        state: 'home'
-      - condition: numeric_state
-        entity_id: 'sensor.netatmo_outdoor_temperature'
-        above: '20'
-  action:
-    - service: notify.ios_iphones
-      data:
-        title: 'Weather'
-        message: 'You should open the door! It is {{states.sensor.out_vs_in.state}}°C colder outside. Out: {{states.sensor.netatmo_outdoor_temperature.state}}°C / In: {{states.sensor.netatmo_wohnzimmer_temperature.state}}°C'
+        message: 'Out vs. In is: {{states.sensor.out_vs_in.state}}°C. Out: {{states.sensor.netatmo_outdoor_temperature.state}}°C / In: {{states.sensor.netatmo_wohnzimmer_temperature.state}}°C'
 
 - alias: 'Weather Report'
   trigger:
