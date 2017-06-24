@@ -4,15 +4,14 @@
 wohnzimmer:
   name: Wohnzimmer
   entities:
-    - light.lampe_fernseher
-    - light.lampe_sofa
-    - switch.light_sessel
     - sensor.netatmo_wohnzimmer_temperature
     - sensor.netatmo_wohnzimmer_co2
     - sensor.netatmo_wohnzimmer_humidity
     - sensor.netatmo_wohnzimmer_pressure
     - sensor.netatmo_wohnzimmer_noise
-
+    - light.lampe_fernseher
+    - light.lampe_sofa
+    - switch.light_sessel
     #- device_tracker.broadlink
 wohnzimmer_lampen:
   name: Wohnzimmer Lampen
@@ -22,22 +21,22 @@ wohnzimmer_lampen:
 schlafzimmer:
   name: Schlafzimmer
   entities:
+    - sensor.netatmo_schlafzimmer_temperature
+    - sensor.netatmo_schlafzimmer_co2
+    - sensor.netatmo_schlafzimmer_humidity
     - switch.light_sascha
     - switch.light_nicole
     - switch.tv_2
     - switch.ventilator
-    - sensor.netatmo_schlafzimmer_temperature
-    - sensor.netatmo_schlafzimmer_co2
-    - sensor.netatmo_schlafzimmer_humidity
 outdoor:
   name: Außen
   entities:
-    - sensor.dark_sky_summary
-    - sun.sun
     - sensor.netatmo_outdoor_temperature
     #- sensor.dark_sky_temperature
     - sensor.dark_sky_daily_high_temperature
     - sensor.dark_sky_daily_low_temperature
+    - sensor.dark_sky_summary
+    - sun.sun
     - sensor.netatmo_outdoor_humidity
     #- sensor.dark_sky_humidity
     - sensor.dark_sky_wind_speed
