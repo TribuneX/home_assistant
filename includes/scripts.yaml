@@ -110,6 +110,8 @@ input_hdmi:
 
 input_tv:
   sequence:
+    - service: script.turn_on
+      entity_id: script.turn_receiver_on
     # switch on TV and change input
     - service: broadlink.send_packet_192_168_178_51
       data:
@@ -119,6 +121,8 @@ input_tv:
 
 input_apple_tv:
   sequence:
+    - service: script.turn_on
+      entity_id: script.turn_receiver_on
     #- service: script.turn_on
     #  entity_id: script.turn_tv_on
     - service: broadlink.send_packet_192_168_178_51
@@ -131,6 +135,8 @@ input_apple_tv:
 
 input_plex:
   sequence:
+    - service: script.turn_on
+      entity_id: script.turn_receiver_on
     - service: switch.turn_on
       entity_id: switch.server
     - service: script.turn_on
@@ -138,6 +144,8 @@ input_plex:
 
 input_fire_tv:
   sequence:
+    - service: script.turn_on
+      entity_id: script.turn_receiver_on
     #- service: script.turn_on
     #  entity_id: script.turn_tv_on
     - service: broadlink.send_packet_192_168_178_51
@@ -150,6 +158,8 @@ input_fire_tv:
 
 input_music:
   sequence:
+    - service: script.turn_on
+      entity_id: script.turn_receiver_on
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
