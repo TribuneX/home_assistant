@@ -24,7 +24,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.netatmo_wohnzimmer_noise
-    above: 50
+    above: 56
   action:
     - service: notify.ios_iphones
       data:
