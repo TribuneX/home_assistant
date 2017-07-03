@@ -133,6 +133,9 @@ input_apple_tv:
     # switch to input HDMI
     - service: script.turn_on
       entity_id: script.input_hdmi
+    - service: script.turn_on
+      entity_id: script.turn_tv_on
+
 
 input_plex:
   sequence:
@@ -156,6 +159,8 @@ input_fire_tv:
     # switch to input HDMI
     - service: script.turn_on
       entity_id: script.input_hdmi
+    - service: script.turn_on
+      entity_id: script.turn_tv_on
 
 input_music:
   sequence:
