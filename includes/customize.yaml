@@ -183,6 +183,11 @@
       uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
       major: 0
       minor: 0
+  zone.bedroom:
+    beacon:
+      uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
+      major: 0
+      minor: 1
 
   input_boolean.vacation_mode:
     homebridge_hidden: true
