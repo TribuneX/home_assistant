@@ -155,6 +155,11 @@ zone 3:
   latitude: !secret lat_zone_3 
   longitude: !secret long_zone_3
 
+zone 4:
+  name: Sofa
+  latitude: !secret lat_zone_3 
+  longitude: !secret long_zone_3
+
 ##########################
 # Includes
 ##########################
