@@ -179,10 +179,10 @@
     icon: mdi:restart
     friendly_name: Reboot
   zone.sofa:
-  beacon:
-    uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
-    major: 0
-    minor: 0
+    beacon:
+      uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
+      major: 0
+      minor: 0
 
   input_boolean.vacation_mode:
     homebridge_hidden: true
