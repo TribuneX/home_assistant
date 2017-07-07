@@ -12,6 +12,7 @@ wohnzimmer:
     - light.lampe_fernseher
     - light.lampe_sofa
     - switch.light_sessel
+    - switch.sonos_speaker
     #- device_tracker.broadlink
 wohnzimmer_lampen:
   name: Wohnzimmer Lampen
