@@ -92,7 +92,7 @@
   switch.music_mode:
     icon: mdi:music-circle
     friendly_name: Musik
-  switch.sonos_speaker
+  switch.sonos_speaker:
     icon: mdi:speaker
   device_tracker.nicolesiphone:
     friendly_name: Nicole
