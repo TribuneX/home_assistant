@@ -175,7 +175,7 @@ media:
   entities:
     - group.tv_scenes
     - media_player.appletv
-    - input_slider.appletv_delay
+    - media_player.living_room
 home:
   name: Home
   view: yes
