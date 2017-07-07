@@ -24,8 +24,8 @@
           - condition: sun
             after: sunset
             after_offset: '-00:10:00'
-          - condition: sun
-            before: sunrise
+          - condition: time
+            before: '03:00'
   action:
     - service: light.turn_on
       data: 
@@ -58,8 +58,8 @@
           - condition: sun
             after: sunset
             after_offset: '-00:10:00'
-          - condition: sun
-            before: sunrise
+          - condition: time
+            before: '03:00'
   action:
     - service: light.turn_on
       data: 
