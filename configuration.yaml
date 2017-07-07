@@ -90,6 +90,8 @@ media_player:
     host: atv.cbs-service.net
     login_id: !secret atv_login
 
+  - platform: sonos
+
 netatmo:
   api_key: !secret netatmo_api_key
   secret_key: !secret netatmo_secret_key
