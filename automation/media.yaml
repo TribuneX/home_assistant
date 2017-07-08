@@ -168,13 +168,13 @@
         option: Music
 
   - alias: 'Turn on Sonos if I am home'
-  trigger:
-    platform: state
-    entity_id: device_tracker.iphones
-    from: 'not_home'
-    to: 'home'
-    for:
-      minutes: 3 
-  action:
-    - service: switch.turn_on
-      entity_id: switch.sonos_speaker
+    trigger:
+      platform: state
+      entity_id: device_tracker.iphones
+      from: 'not_home'
+      to: 'home'
+      for:
+        minutes: 3 
+    action:
+      - service: switch.turn_on
+        entity_id: switch.sonos_speaker
