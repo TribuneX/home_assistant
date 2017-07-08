@@ -186,13 +186,14 @@ media:
   entities:
     - group.tv_scenes
     - media_player.appletv
-music:
-  name: Music
-  view: yes
-  icon: mdi:music-circle
-  entities:
     - media_player.living_room
-    - media_player.spotify
+# music:
+#   name: Music
+#   view: yes
+#   icon: mdi:music-circle
+#   entities:
+#     - media_player.living_room
+#     - media_player.spotify
 home:
   name: Home
   view: yes
@@ -203,7 +204,7 @@ home:
 cleaner:
   name: Robo
   view: yes
-  icon: mdi:adjust
+  icon: mdi:broom
   entities:
     - group.robomop
 plants:

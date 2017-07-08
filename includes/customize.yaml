@@ -132,7 +132,7 @@
     icon: mdi:fan
     assumed_state: false
   sensor.robo:
-    icon: mdi:adjust
+    icon: mdi:broom
   sensor.switch:
     icon: mdi:server-network
     homebridge_hidden: true
