@@ -157,6 +157,16 @@ devices:
     - sensor.switch
     - sensor.netatmo
     - sensor.server
+robomop:
+  name: 'Mi Robot Quick Control'
+  entities:
+    - switch.robomop
+    - sensor.mi_info_status
+    - sensor.mi_info_battery
+    - sensor.mi_info_fanspeed
+    - sensor.mi_info_cleanedarea
+    - sensor.mi_info_cleaningtime
+    - sensor.mi_info_errors
 
 # Tabs
 default_view:
@@ -190,6 +200,12 @@ home:
   entities:
     - group.personen
     - group.iphone
+cleaner:
+  name: Robo
+  view: yes
+  icon: mdi:adjust
+  entities:
+    - group.robomop
 plants:
   name: Pflanzen
   view: yes

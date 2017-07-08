@@ -159,6 +159,40 @@
         friendly_name: 'Server'
         value_template: "{{ 'online' if is_state('device_tracker.server', 'home') else 'off' }}"
 
+#### SENSORS TO SHOW THE DIFFERENT ATTRIBUTES ####
+# Inspired by https://github.com/rytilahti/python-mirobo/issues/4
+      mi_info_status:
+        value_template: '{{ states.switch.mi_robot_vacuum.attributes.Status}}'
+        friendly_name: 'Status'
+        icon_template: mdi:comment
+
+      mi_info_battery:
+        value_template: '{{ states.switch.mi_robot_vacuum.attributes.Battery}}'
+        friendly_name: 'Battery'
+        unit_of_measurement: '%'
+        icon_template: mdi:battery-charging-100
+
+      mi_info_fanspeed:
+        value_template: '{{ states.switch.mi_robot_vacuum.attributes.Fan}}'
+        friendly_name: 'Fanspeed'
+        unit_of_measurement: '%'
+        icon_template: mdi:fan
+
+      mi_info_cleanedarea:
+        value_template: '{{ states.switch.mi_robot_vacuum.attributes["Cleaned area"] | round(0) }}'
+        friendly_name: 'Cleaned area'
+        unit_of_measurement: 'm2'
+        icon_template: mdi:map
+
+      mi_info_cleaningtime:
+        value_template: '{{ states.switch.mi_robot_vacuum.attributes["Cleaning time"]}}'
+        friendly_name: 'Cleaning time'
+        icon_template: mdi:clock
+
+      mi_info_errors:
+        value_template: '{{ states.switch.mi_robot_vacuum.attributes.Error}}'
+        friendly_name: 'Errors'
+        icon_template: mdi:alert-circle
 
 - platform: command_line
   name: Travis Status
