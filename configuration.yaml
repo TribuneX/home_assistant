@@ -19,6 +19,8 @@ homeassistant:
 logger:
   default: warning
 
+mqtt:
+
 recorder:
   db_url: !secret mysql_path
 # Enables the frontend
