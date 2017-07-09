@@ -211,5 +211,19 @@
       entity_id: media_player.appletv
       state: 'playing'
   action:
-    - service: media_player.media_stop
+    - service: media_player.media_pause
       entity_id: media_player.appletv
+
+- alias: 'Pause SONOS if AppleTV is used'
+  trigger:
+    platform: state
+    entity_id: media_player.appletv
+    from: 'paused'
+    to: 'playing'
+  condition:
+    - condition: state
+      entity_id: media_player.living_room
+      state: 'playing'
+  action:
+    - service: media_player.media_pause
+      entity_id: media_player.living_room
