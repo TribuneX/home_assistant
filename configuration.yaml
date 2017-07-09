@@ -20,9 +20,10 @@ logger:
   default: warning
 
 mqtt:
-  broker: 192.168.178.23
+  broker: localhost
   username: pi
   password: !secret mqtt_password
+  protocol: 3.1
 
 
 recorder:
