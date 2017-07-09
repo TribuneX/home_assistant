@@ -191,7 +191,9 @@ media:
   entities:
     - group.tv_scenes
     - media_player.appletv
+    - group.speaker
     - media_player.living_room
+
 # music:
 #   name: Music
 #   view: yes
