@@ -99,7 +99,6 @@
     friendly_name: Nicole
   device_tracker.iphones:
     friendly_name: Sascha
-    entity_picture: /home/homeassistant/.homeassistant/pictures/sascha.png
   sensor.netatmo_schlafzimmer_temperature:
     friendly_name: Temperatur 
   sensor.netatmo_schlafzimmer_co2:

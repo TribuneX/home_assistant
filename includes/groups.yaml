@@ -172,7 +172,6 @@ speaker:
   entities:
     - switch.sonos_speaker
     - input_slider.sonos_speaker
-    - media_player.living_room
 
 # Tabs
 default_view:
