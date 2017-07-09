@@ -171,7 +171,7 @@ speaker:
   name: Speaker
   entities:
     - switch.sonos_speaker
-    - input_slider.speaker
+    - input_slider.sonos_speaker
 
 # Tabs
 default_view:
