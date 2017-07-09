@@ -178,3 +178,24 @@
   action:
     - service: switch.turn_on
       entity_id: switch.sonos_speaker
+
+
+- alias: Speaker - Adjust Volume
+  trigger:
+    platform: state
+    entity_id: input_slider.speaker
+  action:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.living_room
+        volume_level: '{{ trigger.to_state.state }}'
+
+- alias: Speaker- Volume
+  trigger:
+    platform: state
+    entity_id: media_player.living_room
+  action:
+    - service: input_slider.select_value
+      data_template:
+        entity_id: input_slider.speaker
+        value: '{{ states.media_player.living_room.attributes.volume_level }}'

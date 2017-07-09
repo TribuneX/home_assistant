@@ -167,6 +167,11 @@ robomop:
     - sensor.mi_info_cleanedarea
     - sensor.mi_info_cleaningtime
     - sensor.mi_info_errors
+speaker:
+  name: Speaker
+  entities:
+    - switch.sonos_speaker
+    - input_slider.speaker
 
 # Tabs
 default_view:
