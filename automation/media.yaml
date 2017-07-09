@@ -183,7 +183,7 @@
 - alias: Speaker - Adjust Volume
   trigger:
     platform: state
-    entity_id: input_slider.speaker
+    entity_id: input_slider.sonos_speaker
   action:
     - service: media_player.volume_set
       data_template:
@@ -197,5 +197,19 @@
   action:
     - service: input_slider.select_value
       data_template:
-        entity_id: input_slider.speaker
+        entity_id: input_slider.sonos_speaker
         value: '{{ states.media_player.living_room.attributes.volume_level }}'
+
+- alias: 'Pause AppleTV if SONOS is used'
+  trigger:
+    platform: state
+    entity_id: media_player.living_room
+    from: 'paused'
+    to: 'playing'
+  condition:
+    - condition: state
+      entity_id: media_player.appletv
+      state: 'playing'
+  action:
+    - service: media_player.media_stop
+      entity_id: media_player.appletv
