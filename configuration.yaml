@@ -20,6 +20,10 @@ logger:
   default: warning
 
 mqtt:
+  broker: 192.168.178.23
+  username: pi
+  password: !secret mqtt_password
+
 
 recorder:
   db_url: !secret mysql_path
