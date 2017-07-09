@@ -130,7 +130,7 @@ input_select:
 
 input_slider:
   sonos_speaker:
-    name: Speaker
+    name: Volume
     initial: 0.3
     min: 0
     max: 1

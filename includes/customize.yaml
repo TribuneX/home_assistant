@@ -181,6 +181,8 @@
   script.reboot_pi:
     icon: mdi:restart
     friendly_name: Reboot
+  input_slider.sonos_speaker:
+    icon: mdi:volume-high 
   zone.sofa:
     beacon:
       uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
