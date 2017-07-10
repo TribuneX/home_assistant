@@ -1,4 +1,4 @@
-- alias: 'Notify if Robot starts cleaning' 
+- alias: 'Robot started cleaning' 
   trigger:
     platform: state
     entity_id: sensor.mi_info_status
@@ -10,7 +10,7 @@
         title: 'Robot'
         message: 'Robot started to clean!'
 
-- alias: 'Notify if Robot stops cleaning' 
+- alias: 'Robot stopped cleaning' 
   trigger:
     platform: state
     entity_id: sensor.mi_info_status
@@ -20,6 +20,9 @@
       data:
         title: 'Robot'
         message: 'Robot started stopped cleaning after {{states.sensor.mi_info_cleaningtime.state}} and is succesfully docked!'
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.cleaned_today
 
 - alias: 'Robot error notification'
   trigger:
@@ -31,11 +34,10 @@
         title: 'Robot'
         message: 'Robot is in trouble: {{states.sensor.mi_info_errors.state}}'
 
-- alias: 'Start robot cleanup'
+- alias: 'Robot cleanup if nobody is home'
   trigger:
-    trigger:
-    - platform: time
-      after: '14:00:00'
+    platform: time
+    after: '14:00:00'
   condition:
     condition: and
     conditions:
@@ -51,3 +53,29 @@
   action:
     - service: switch.turn_on
       entity_id: switch.robomop
+
+- alias: 'Robot waits until everybody left'
+  trigger:
+    platform: state
+    entity_id: group.personen
+    from: 'home'
+    to: 'not_home' 
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - fri
+  action:
+    - service: switch.turn_on
+      entity_id: switch.robomop
+
+- alias: 'Reset cleaned today counter'
+  trigger:
+    platform: time
+    after: '01:00:00'
+  action:
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.cleaned_today
