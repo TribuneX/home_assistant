@@ -1,7 +1,7 @@
 - alias: 'Notify if Robot starts cleaning' 
   trigger:
     platform: state
-    entity_id: switch.robomop
+    entity_id: sensor.mi_info_status
     from: 'Charging'
     to: 'Cleaning'
   action:
@@ -13,11 +13,21 @@
 - alias: 'Notify if Robot stops cleaning' 
   trigger:
     platform: state
-    entity_id: switch.robomop
+    entity_id: sensor.mi_info_status
     from: 'Cleaning'
     to: 'Charging'
   action:
     - service: notify.ios_iphones
       data:
         title: 'Robot'
-        message: 'Robot started stopped cleaing and is succesfully docked!'
+        message: 'Robot started stopped cleaing after {{states.sensor.mi_info_cleaningtime.state}} and is succesfully docked!'
+
+- alias: 'Robot error notification'
+  trigger:
+    platform: state
+    entity_id: sensor.mi_info_errors
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Robot'
+        message: 'Robot is in trouble. Error: {{states.sensor.mi_info_errors.state}'
