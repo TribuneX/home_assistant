@@ -50,6 +50,9 @@
       - condition: state
         entity_id: group.personen
         state: 'not_home'
+      - condition: state
+        entity_id: input_boolean.cleaned_today
+        state: 'off'
   action:
     - service: switch.turn_on
       entity_id: switch.robomop
@@ -61,12 +64,17 @@
     from: 'home'
     to: 'not_home' 
   condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - fri
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - fri
+      - condition: state
+        entity_id: input_boolean.cleaned_today
+        state: 'off'
   action:
     - service: switch.turn_on
       entity_id: switch.robomop
