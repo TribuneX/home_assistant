@@ -144,7 +144,7 @@ settings:
     - input_select.log_level
     - input_select.tv_mode
     - input_boolean.vacation_mode
-    - input_boolean_cleaned_today
+    - input_boolean.cleaned_today
     - sensor.ha_current_version
 devices:
   name: Devices
@@ -169,7 +169,7 @@ robomop:
     - sensor.mi_info_cleanedarea
     - sensor.mi_info_cleaningtime
     - sensor.mi_info_errors
-    - input_boolean_cleaned_today
+    - input_boolean.cleaned_today
 speaker:
   name: Sonos
   entities:
