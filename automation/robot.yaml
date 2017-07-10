@@ -29,6 +29,7 @@
   trigger:
     platform: state
     entity_id: sensor.mi_info_errors
+    from: 'No_error'
   action:
     - service: notify.ios_iphones
       data:
@@ -38,7 +39,7 @@
 - alias: 'Robot cleanup if nobody is home'
   trigger:
     platform: time
-    after: '14:00:00'
+    at: '14:00:00'
   condition:
     condition: and
     conditions:
@@ -83,7 +84,7 @@
 - alias: 'Reset cleaned today counter'
   trigger:
     platform: time
-    after: '01:00:00'
+    at: '01:00:00'
   action:
     - service: input_boolean.turn_off
       data:
