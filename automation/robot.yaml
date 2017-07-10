@@ -1,0 +1,23 @@
+- alias: 'Notify if Robot starts cleaning' 
+  trigger:
+    platform: state
+    entity_id: switch.robomop
+    from: 'Charging'
+    to: 'Cleaning'
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Robot'
+        message: 'Robot started to clean!'
+
+- alias: 'Notify if Robot stops cleaning' 
+  trigger:
+    platform: state
+    entity_id: switch.robomop
+    from: 'Cleaning'
+    to: 'Charging'
+  action:
+    - service: notify.ios_iphones
+      data:
+        title: 'Robot'
+        message: 'Robot started stopped cleaing and is succesfully docked!'
