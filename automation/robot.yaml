@@ -14,7 +14,7 @@
   trigger:
     platform: state
     entity_id: sensor.mi_info_status
-    from: 'Returning_home'
+    from: 'Returning home'
     to: 'Charging'
   action:
     - service: notify.ios_iphones
@@ -29,7 +29,7 @@
   trigger:
     platform: state
     entity_id: sensor.mi_info_errors
-    from: 'No_error'
+    from: 'No error'
   action:
     - service: notify.ios_iphones
       data:
