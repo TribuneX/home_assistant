@@ -14,7 +14,6 @@
   trigger:
     platform: state
     entity_id: sensor.mi_info_status
-    from: 'Cleaning'
     to: 'Charging'
   action:
     - service: notify.ios_iphones
@@ -30,4 +29,4 @@
     - service: notify.ios_iphones
       data:
         title: 'Robot'
-        message: 'Robot is in trouble. Error: {{states.sensor.mi_info_errors.state}}'
+        message: 'Robot is in trouble: {{states.sensor.mi_info_errors.state}}'
