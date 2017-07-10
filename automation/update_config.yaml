@@ -10,5 +10,7 @@
     # turn on TV before updating the config, since the broadlink needs to be on during startup
     - service: switch.turn_on
       entity_id: switch.tv 
+    - service: switch.turn_on
+      entity_id: switch.sonos_speaker
     - service: script.get_latest_config
 
