@@ -30,3 +30,24 @@
       data:
         title: 'Robot'
         message: 'Robot is in trouble: {{states.sensor.mi_info_errors.state}}'
+
+- alias: 'Start robot cleanup'
+  trigger:
+    trigger:
+    - platform: time
+      after: '14:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - fri
+      - condition: state
+        entity_id: group.personen
+        state: 'not_home'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.robomop
