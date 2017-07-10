@@ -10,4 +10,4 @@ vacation_mode:
 cleaned_today:
   name: 'Cleaned today'
   initial: off
-  icon: mdi: broom
+  icon: mdi:broom
