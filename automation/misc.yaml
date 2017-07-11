@@ -48,6 +48,19 @@
     - service: script.turn_off
       entity_id: script.turn_off_fan_after_delay 
 
+- alias: 'Startup'
+  trigger:
+    platform: event
+    event_type: homeassistant_start
+  action:
+    - service: switch.turn_on
+      entity_id: switch.sonos_speaker
+    # - service: input_select.select_option
+    #   data:
+    #     entity_id: input_select.tv_mode
+    #     option: AppleTV
+
+
 # Inspired by https://community.home-assistant.io/t/failed-login-detection/4280/20
 # - alias: "Send notification upon failed login attempt"
 #   trigger:
