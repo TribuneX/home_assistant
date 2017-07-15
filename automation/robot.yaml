@@ -39,7 +39,7 @@
 - alias: 'Robot cleanup if nobody is home'
   trigger:
     platform: time
-    at: '14:00:00'
+    at: '14:00'
   condition:
     condition: and
     conditions:

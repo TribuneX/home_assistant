@@ -1,5 +1,4 @@
-- alias: 'Power off all'
-  hide_entity: True
+- alias: 'Turn off all'
   trigger:
       platform: time
       at: '03:00'
@@ -8,7 +7,6 @@
 
 
 - alias: 'Update Available Notifications'
-  hide_entity: True
   trigger:
     platform: state
     entity_id: updater.updater
