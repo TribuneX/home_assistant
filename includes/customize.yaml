@@ -93,7 +93,7 @@
     icon: mdi:music-circle
     friendly_name: Musik
   switch.sonos_speaker:
-    icon: mdi:speaker
+    icon: mdi:speaker-wireless
     assumed_state: false
   device_tracker.nicolesiphone:
     friendly_name: Nicole
@@ -136,7 +136,7 @@
     icon: mdi:server-network
     homebridge_hidden: true
   sensor.plex:
-    icon: mdi:youtube-play
+    icon: mdi:plex
   sensor.appletv_livingroom:
     icon: mdi:airplay
     homebridge_hidden: true
@@ -182,6 +182,7 @@
     friendly_name: Reboot
   input_slider.sonos_speaker:
     icon: mdi:volume-high 
+  # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
   sensor.epson_ink_level_black:
     entity_picture: /local/icon_ink_black.png
   sensor.epson_ink_level_magenta:
