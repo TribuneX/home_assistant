@@ -190,6 +190,9 @@
     icon: mdi:cup-water
   sensor.epson_ink_level_cyan:
     icon: mdi:cup-water
+  sensor.fritz_netmonitor:
+    friendly_name: FritzBox
+    icon: mdi:router-wireless
   zone.sofa:
     beacon:
       uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
