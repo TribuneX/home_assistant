@@ -149,6 +149,7 @@ settings:
 devices:
   name: Devices
   entities:
+    - sensor.fritz_netmonitor
     - sensor.robo
     - sensor.epson
     - sensor.tradfri
@@ -163,6 +164,7 @@ robot:
   name: 'Mi Robot'
   entities:
     - switch.robot
+    - sensor.robo
     - sensor.mi_info_status
     - sensor.mi_info_battery
     - sensor.mi_info_fanspeed
@@ -178,6 +180,7 @@ speaker:
 printer:
   name: Epson Printer
   entities:
+    - sensor.epson
     - sensor.epson_ink_level_black
     - sensor.epson_ink_level_magenta
     - sensor.epson_ink_level_yellow
