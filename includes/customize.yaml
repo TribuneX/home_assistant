@@ -182,6 +182,14 @@
     friendly_name: Reboot
   input_slider.sonos_speaker:
     icon: mdi:volume-high 
+  sensor.epson_ink_level_black:
+    icon: cup-water
+  sensor.epson_ink_level_magenta:
+    icon: cup-water
+  sensor.epson_ink_level_yellow:
+    icon: cup-water
+  sensor.epson_ink_level_cyan:
+    icon: cup-water
   zone.sofa:
     beacon:
       uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0

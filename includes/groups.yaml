@@ -175,6 +175,13 @@ speaker:
   entities:
     - switch.sonos_speaker
     - input_slider.sonos_speaker
+printer:
+  name: Epson
+  entities:
+    - sensor.epson_ink_level_black
+    - sensor.epson_ink_level_magenta
+    - sensor.epson_ink_level_yellow
+    - sensor.epson_ink_level_cyan
 
 # Tabs
 default_view:
@@ -234,6 +241,7 @@ system:
     - group.pi
     - group.devices
     - group.pings
+    - group.printer
 automation:
   name: Automation
   view: yes
