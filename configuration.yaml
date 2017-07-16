@@ -98,6 +98,7 @@ media_player:
     name: AppleTV
     host: atv.cbs-service.net
     login_id: !secret atv_login
+    credentials: !secret apple_tv_credentials
 
   - platform: sonos
 

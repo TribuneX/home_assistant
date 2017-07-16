@@ -159,10 +159,10 @@ devices:
     - sensor.switch
     - sensor.netatmo
     - sensor.server
-robomop:
-  name: 'Mi Robot Quick Control'
+robot:
+  name: 'Mi Robot'
   entities:
-    - switch.robomop
+    - switch.robot
     - sensor.mi_info_status
     - sensor.mi_info_battery
     - sensor.mi_info_fanspeed
