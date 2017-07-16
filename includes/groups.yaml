@@ -176,7 +176,7 @@ speaker:
     - switch.sonos_speaker
     - input_slider.sonos_speaker
 printer:
-  name: Epson
+  name: Epson Printer
   entities:
     - sensor.epson_ink_level_black
     - sensor.epson_ink_level_magenta
@@ -223,7 +223,7 @@ cleaner:
   view: yes
   icon: mdi:broom
   entities:
-    - group.robomop
+    - group.robot
 plants:
   name: Pflanzen
   view: yes

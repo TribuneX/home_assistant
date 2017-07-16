@@ -162,35 +162,35 @@
 #### SENSORS TO SHOW THE DIFFERENT ATTRIBUTES ####
 # Inspired by https://github.com/rytilahti/python-mirobo/issues/4
       mi_info_status:
-        value_template: '{{ states.switch.robomop.attributes.Status}}'
+        value_template: '{{ states.switch.robot.attributes.Status}}'
         friendly_name: 'Status'
         icon_template: mdi:comment
 
       mi_info_battery:
-        value_template: '{{ states.switch.robomop.attributes.Battery}}'
+        value_template: '{{ states.switch.robot.attributes.Battery}}'
         friendly_name: 'Battery'
         unit_of_measurement: '%'
         icon_template: mdi:battery-charging-100
 
       mi_info_fanspeed:
-        value_template: '{{ states.switch.robomop.attributes.Fan}}'
+        value_template: '{{ states.switch.robot.attributes.Fan}}'
         friendly_name: 'Fanspeed'
         unit_of_measurement: '%'
         icon_template: mdi:fan
 
       mi_info_cleanedarea:
-        value_template: '{{ states.switch.robomop.attributes["Cleaned area"] | round(0) }}'
+        value_template: '{{ states.switch.robot.attributes["Cleaned area"] | round(0) }}'
         friendly_name: 'Cleaned area'
         unit_of_measurement: 'm2'
         icon_template: mdi:map
 
       mi_info_cleaningtime:
-        value_template: '{{ states.switch.robomop.attributes["Cleaning time"]}}'
+        value_template: '{{ states.switch.robot.attributes["Cleaning time"]}}'
         friendly_name: 'Cleaning time'
         icon_template: mdi:clock
 
       mi_info_errors:
-        value_template: '{{ states.switch.robomop.attributes.Error}}'
+        value_template: '{{ states.switch.robot.attributes.Error}}'
         friendly_name: 'Errors'
         icon_template: mdi:alert-circle
 
