@@ -57,10 +57,10 @@
   friendly_name: IR Control
   type: rm_mini
 
-- platform: xiaomi_vacuum
-  name: 'robomop'
-  host: 192.168.178.47
-  token: !secret mirobo_token
+# - platform: xiaomi_vacuum
+# name: 'robomop'
+# host: 192.168.178.47
+# token: !secret mirobo_token
 
 - platform: template
   switches:
