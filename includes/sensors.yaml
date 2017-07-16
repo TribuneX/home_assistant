@@ -206,21 +206,25 @@
 
 - platform: command_line
   name: Epson Ink Level Black
-  command: /usr/bin/curl -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML | grep   'Ink_K' | cut -d"'" -f6
+  command: /usr/bin/curl -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML | awk '/Ink_K.PNG/' | awk -F"'" '$6+0 == $6 { printf "%.0f\n", $6 / 50 * 100 }'
+  unit_of_measurement: '%'
   scan_interval: 60
 
 - platform: command_line
   name: Epson Ink Level Magenta
-  command: /usr/bin/curl -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML | grep   'Ink_M' | cut -d"'" -f6
+  command: /usr/bin/curl -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML | awk '/Ink_M.PNG/' | awk -F"'" '$6+0 == $6 { printf "%.0f\n", $6 / 50 * 100 }'
+  unit_of_measurement: '%'
   scan_interval: 60
 
 - platform: command_line
   name: Epson Ink Level Yellow
-  command: /usr/bin/curl -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML | grep   'Ink_Y' | cut -d"'" -f6
+  command: /usr/bin/curl -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML | awk '/Ink_Y.PNG/' | awk -F"'" '$6+0 == $6 { printf "%.0f\n", $6 / 50 * 100 }'
+  unit_of_measurement: '%'
   scan_interval: 60
 
 - platform: command_line
   name: Epson Ink Level Cyan
-  command: /usr/bin/curl -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML | grep   'Ink_C' | cut -d"'" -f6
+  command: /usr/bin/curl -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML | awk '/Ink_C.PNG/' | awk -F"'" '$6+0 == $6 { printf "%.0f\n", $6 / 50 * 100 }'
+  unit_of_measurement: '%'
   scan_interval: 60
   
