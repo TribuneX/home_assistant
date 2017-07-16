@@ -95,7 +95,6 @@ sun:
 
 media_player:
   - platform: apple_tv
-    name: AppleTV
     host: atv.cbs-service.net
     login_id: !secret atv_login
     credentials: !secret apple_tv_credentials

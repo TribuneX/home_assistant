@@ -200,7 +200,7 @@ media:
   icon: mdi:television 
   entities:
     - group.tv_scenes
-    - media_player.appletv
+    - media_player.atv_wohnzimmer
     - group.speaker
     - media_player.living_room
 
