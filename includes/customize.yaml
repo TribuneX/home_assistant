@@ -208,6 +208,10 @@
 
   input_boolean.vacation_mode:
     homebridge_hidden: true
+  input_boolean.cleade_today:
+    homebridge_hidden: true
+  media_player.living_room:
+    homebridge_hidden: true
   light.gang:
     homebridge_hidden: true
   light.gang_2:
