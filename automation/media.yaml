@@ -150,7 +150,7 @@
 - alias: 'Turn on TV if media is played'
   trigger: 
     - platform: state
-      entity_id: media_player.appletv
+      entity_id: media_player.atv_wohnzimmer
       from: 'paused'
       to: 'playing' 
   condition:
@@ -208,16 +208,16 @@
     to: 'playing'
   condition:
     - condition: state
-      entity_id: media_player.appletv
+      entity_id: media_player.atv_wohnzimmer
       state: 'playing'
   action:
     - service: media_player.media_pause
-      entity_id: media_player.appletv
+      entity_id: media_player.atv_wohnzimmer
 
 - alias: 'Pause SONOS if AppleTV is used'
   trigger:
     platform: state
-    entity_id: media_player.appletv
+    entity_id: media_player.atv_wohnzimmer
     from: 'paused'
     to: 'playing'
   condition:
