@@ -147,26 +147,6 @@
     - service: switch.turn_off
       entity_id: switch.tv
 
-- alias: 'Turn on TV if media is played'
-  trigger: 
-    - platform: state
-      entity_id: media_player.atv_wohnzimmer
-      from: 'paused'
-      to: 'playing' 
-  condition:
-    condition: state
-    entity_id: switch.tv
-    state: 'off'
-  action:
-    - service: switch.turn_on
-      entity_id: switch.tv
-    - delay:
-        seconds: 20
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.tv_mode
-        option: Music
-
 - alias: 'Turn on Sonos if I am home'
   trigger:
     platform: state
