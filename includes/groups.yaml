@@ -101,7 +101,7 @@ personen:
   entities:
     - device_tracker.iphones
     - device_tracker.nicolesiphone
-    - device_tracker.pi_iphonesowntracks
+    #- device_tracker.pi_iphonesowntracks
 tv_scenes:
   name: TV
   entities:
