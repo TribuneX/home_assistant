@@ -196,10 +196,22 @@
 
 - alias: 'Pause SONOS if AppleTV is used'
   trigger:
-    platform: state
-    entity_id: media_player.atv_wohnzimmer
-    from: 'paused'
-    to: 'playing'
+    - platform: state
+      entity_id: media_player.atv_wohnzimmer
+      from: 'paused'
+      to: 'playing'
+    - platform: state
+      entity_id: input_select.tv_mode
+      to: 'AppleTV'
+    - platform: state
+      entity_id: input_select.tv_mode
+      to: 'TV'
+    - platform: state
+      entity_id: input_select.tv_mode
+      to: 'Plex'
+    - platform: state
+      entity_id: input_select.tv_mode
+      to: 'FireTV'
   condition:
     - condition: state
       entity_id: media_player.living_room
