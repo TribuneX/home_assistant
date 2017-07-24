@@ -50,9 +50,29 @@
   trigger:
     platform: homeassistant
     event: start
+  condition:
+    - condition: state
+      entity_id: group.personen
+      state: 'home'
   action:
     - service: switch.turn_on
       entity_id: switch.sonos_speaker
+
+- alias: 'Startup nobody is home'
+  trigger:
+    platform: homeassistant
+    event: start
+  condition:
+    - condition: state
+      entity_id: group.personen
+      state: 'not_home'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.sonos_speaker
+    - service: input_select.select_option
+        data:
+          entity_id: input_select.tv_mode
+          option: AUS
     # - service: input_select.select_option
     #   data:
     #     entity_id: input_select.tv_mode
