@@ -76,9 +76,14 @@
       for:
         seconds: 1
   condition:
-    condition: state
-    entity_id: sun.sun
-    state: below_horizon
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: below_horizon
+      - condition: time
+        after: '15:00'
+        before: '03:00'
   action:
     - service: light.turn_on
       data: 
@@ -86,16 +91,21 @@
         brightness: 150
 
 # Turn on light at Sofa if ATV is paused
-- alias: 'Turn off light when AppleTV is played'
+- alias: 'Dim light when AppleTV is played'
   trigger:
     - platform: state
       entity_id: media_player.atv_wohnzimmer
       from: 'paused'
       to: 'playing'  
   condition:
-    condition: state
-    entity_id: sun.sun
-    state: below_horizon
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: below_horizon
+      - condition: time
+        after: '15:00'
+        before: '03:00'
   action:
     - service: light.turn_on
       data: 
