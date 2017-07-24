@@ -70,9 +70,9 @@
     - service: switch.turn_off
       entity_id: switch.sonos_speaker
     - service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: AUS
+      data:
+        entity_id: input_select.tv_mode
+        option: AUS
     # - service: input_select.select_option
     #   data:
     #     entity_id: input_select.tv_mode
