@@ -57,6 +57,7 @@ logbook:
   exclude:
     entities:
       - sensor.netatmo
+      - sensor.netatmo_outdoor_radio
       - device_tracker.netatmo
       - device_tracker.server
       - device_tracker.wohnzimmer
