@@ -2,14 +2,27 @@
 - alias: 'Device status offline'
   trigger:
     - platform: state
-      entity_id: sensor.robo, sensor.tradfri, sensor.switch, binary_sensor.ping_dreieich, binary_sensor.ping_eltern, binary_sensor.ping_gote, binary_sensor.ping_polanetzki, binary_sensor.ping_schwarzwald, binary_sensor.ping_sebastian, binary_sensor.ping_sonja, binary_sensor.ping_uwe, binary_sensor.ping_vhv
+      entity_id: sensor.robo, sensor.tradfri, sensor.switch
       to: 'off'
       for:
         minutes: 5
   action:
     - service: notify.ios_iphones   
       data_template:   
-        title: 'Devices'    
+        title: 'Devices' 
+        message: '{{ trigger.to_state.attributes.friendly_name }} is {{ trigger.to_state.state }}'
+
+- alias: 'Remote Device status offline'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.ping_dreieich, binary_sensor.ping_eltern, binary_sensor.ping_gote, binary_sensor.ping_polanetzki, binary_sensor.ping_schwarzwald, binary_sensor.ping_sebastian, binary_sensor.ping_sonja, binary_sensor.ping_uwe, binary_sensor.ping_vhv
+      to: 'off'
+      for:
+        minutes: 10
+  action:
+    - service: notify.ios_iphones   
+      data_template:   
+        title: 'Devices'  
         message: '{{ trigger.to_state.attributes.friendly_name }} is {{ trigger.to_state.state }}'
 
 # Inspired by https://github.com/CCOSTAN/Home-AssistantConfig
