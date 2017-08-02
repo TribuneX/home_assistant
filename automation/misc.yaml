@@ -51,11 +51,16 @@
     platform: homeassistant
     event: start
   condition:
-    - condition: state
-      entity_id: group.personen
-      state: 'home'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.personen
+        state: 'home'
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'paused'
   action:
-    - service: switch.turn_on
+    - service: switch.turn_off
       entity_id: switch.sonos_speaker
 
 - alias: 'Startup nobody is home'
