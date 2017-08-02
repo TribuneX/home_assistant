@@ -57,7 +57,7 @@
         state: 'off'
   action:
     - service: switch.turn_on
-      entity_id: switch.robomop
+      entity_id: switch.robot
 
 - alias: 'Robot waits until everybody left'
   trigger:
@@ -79,7 +79,7 @@
         state: 'off'
   action:
     - service: switch.turn_on
-      entity_id: switch.robomop
+      entity_id: switch.robot
 
 - alias: 'Reset cleaned today counter'
   trigger:
