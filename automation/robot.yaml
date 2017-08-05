@@ -46,7 +46,6 @@
       - condition: time
         weekday:
           - mon
-          - tue
           - wed
           - fri
       - condition: state
@@ -69,9 +68,9 @@
     condition: and
     conditions:
       - condition: time
+        after: '14:00:00'
         weekday:
           - mon
-          - tue
           - wed
           - fri
       - condition: state
