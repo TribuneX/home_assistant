@@ -162,7 +162,7 @@ devices:
     - sensor.netatmo
     - sensor.server
 robot:
-  name: 'Mi Robot'
+  name: 'Staubsauger'
   entities:
     - vacuum.staubsauger
     - input_boolean.cleaned_today
