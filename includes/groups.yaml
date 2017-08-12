@@ -164,14 +164,7 @@ devices:
 robot:
   name: 'Mi Robot'
   entities:
-    - switch.robot
-    - sensor.robo
-    - sensor.mi_info_status
-    - sensor.mi_info_battery
-    - sensor.mi_info_fanspeed
-    - sensor.mi_info_cleanedarea
-    - sensor.mi_info_cleaningtime
-    - sensor.mi_info_errors
+    - vacuum.staubsauger
     - input_boolean.cleaned_today
 speaker:
   name: Sonos
@@ -198,6 +191,7 @@ default_view:
     - group.schlafzimmer
     - group.arbeitszimmer
     - group.states
+    - group.robot
 media:
   name: Media
   view: yes
@@ -222,12 +216,6 @@ home:
   entities:
     - group.personen
     - group.iphone
-cleaner:
-  name: Robo
-  view: yes
-  icon: mdi:broom
-  entities:
-    - group.robot
 plants:
   name: Pflanzen
   view: yes

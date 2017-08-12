@@ -20,7 +20,7 @@
     - service: notify.ios_iphones
       data:
         title: 'Robot'
-        message: 'Robot started stopped cleaning after {{states.sensor.mi_info_cleaningtime.state}} and is succesfully docked!'
+        message: 'Robot started stopped cleaning after {{states.vacuum.staubsauger.state}} and is succesfully docked!'
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.cleaned_today
@@ -55,8 +55,8 @@
         entity_id: input_boolean.cleaned_today
         state: 'off'
   action:
-    - service: switch.turn_on
-      entity_id: switch.robot
+    - service: vacuum.turn_on
+      entity_id: vacuum.staubsauger
 
 - alias: 'Robot waits until everybody left'
   trigger:
@@ -77,8 +77,8 @@
         entity_id: input_boolean.cleaned_today
         state: 'off'
   action:
-    - service: switch.turn_on
-      entity_id: switch.robot
+    - service: vacuum.turn_on
+      entity_id: vacuum.staubsauger
 
 - alias: 'Reset cleaned today counter'
   trigger:
