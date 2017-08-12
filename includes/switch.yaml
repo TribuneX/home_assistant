@@ -28,6 +28,10 @@
       command_on: 'sudo /opt/rcswitch-pi/send 11110 3 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11110 3 0'
       friendly_name: Stern
+    tradfri:
+      command_on: 'sudo /opt/rcswitch-pi/send 11111 4 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11111 4 0'
+      friendly_name: Tradfri Gateway
     light_baum:
       command_on: 'sudo /opt/rcswitch-pi/send 11110 4 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11110 4 0'
