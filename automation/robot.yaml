@@ -1,7 +1,7 @@
 - alias: 'Robot started cleaning' 
   trigger:
     platform: state
-    entity_id: sensor.mi_info_status
+    entity_id: vacuum.staubsauger.attributes.status
     from: 'Charging'
     to: 'Cleaning'
   action:
@@ -13,14 +13,14 @@
 - alias: 'Robot stopped cleaning' 
   trigger:
     platform: state
-    entity_id: sensor.mi_info_status
+    entity_id: vacuum.staubsauger.attributes.status
     from: 'Returning home'
     to: 'Charging'
   action:
     - service: notify.ios_iphones
       data:
         title: 'Robot'
-        message: 'Robot started stopped cleaning after {{states.vacuum.staubsauger.state}} and is succesfully docked!'
+        message: 'Robot started stopped cleaning after {{states.vacuum.staubsauger.attributes.cleaning_time.state}} and is succesfully docked!'
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.cleaned_today
