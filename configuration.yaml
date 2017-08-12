@@ -164,6 +164,12 @@ tradfri:
 #     min_conductivity: 500
 #     min_temperature: 15
 
+vacuum:
+  platform: xiaomi
+  name: Staubsauger
+  host: 192.168.178.47
+  token: !secret mirobo_token
+
 zone 1:
   name: Work Sascha
   latitude: !secret lat_zone_1 
