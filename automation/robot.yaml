@@ -25,17 +25,6 @@
       data:
         entity_id: input_boolean.cleaned_today
 
-- alias: 'Robot error notification'
-  trigger:
-    platform: state
-    entity_id: sensor.mi_info_errors
-    from: 'No error'
-  action:
-    - service: notify.ios_iphones
-      data:
-        title: 'Robot'
-        message: 'Robot is in trouble: {{states.sensor.mi_info_errors.state}}'
-
 - alias: 'Robot cleanup if nobody is home'
   trigger:
     platform: time
