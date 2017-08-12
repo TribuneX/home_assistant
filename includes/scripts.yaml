@@ -183,10 +183,16 @@ turn_off_fan_after_delay:
 
 turn_off_all:
   sequence:
-    - service: switch.turn_off
-      entity_id: group.all_switches
     - service: light.turn_off
       entity_id: group.all_lights
+    - delay:
+        minutes: 1
+    - service: switch.turn_off
+      entity_id: group.all_switches
+    - delay: 
+        minutes: 1
+    - service: switch.turn_on
+      entity_id: switch.tradfri
     - service: input_select.select_option
       data:
         entity_id: input_select.tv_mode
