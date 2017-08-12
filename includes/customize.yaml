@@ -152,6 +152,10 @@
   sensor.tradfri:
     icon: mdi:lightbulb-on
     homebridge_hidden: true
+  switch.tradfri:
+    icon: mdi:lightbulb-on
+    assumed_state: false
+    homebridge_hidden: true
   sensor.netatmo:
     icon: mdi:weather-hail
     homebridge_hidden: true
