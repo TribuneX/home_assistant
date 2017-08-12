@@ -175,12 +175,6 @@
         unit_of_measurement: '%'
         icon_template: mdi:battery-charging-100
 
-      mi_info_fanspeed:
-        value_template: '{{ states.vacuum.staubsauger.attributes.fan}}'
-        friendly_name: 'Fanspeed'
-        unit_of_measurement: '%'
-        icon_template: mdi:fan
-
       mi_info_cleanedarea:
         value_template: '{{ states.vacuum.staubsauger.attributes.cleaned_area | round(0) }}'
         friendly_name: 'Cleaned area'
