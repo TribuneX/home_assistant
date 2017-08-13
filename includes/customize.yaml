@@ -94,7 +94,7 @@
     friendly_name: Musik
   switch.sonos_speaker:
     icon: mdi:speaker-wireless
-    friendly_name: Sonos
+    friendly_name: Speaker
     assumed_state: false
   device_tracker.nicolesiphone:
     friendly_name: Nicole
