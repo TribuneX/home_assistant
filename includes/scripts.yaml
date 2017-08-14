@@ -5,7 +5,16 @@
 restart_hass:
   alias: Restart Home Assistant
   sequence:
+    - service: script.prepare_restart
     - service: shell_command.restart_homeassistant
+
+prepare_restart:
+  alias: Prepare for restart
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.tv 
+    - service: switch.turn_on
+      entity_id: switch.sonos_speaker
 
 reload_automations:
   alias: Reload Automations
