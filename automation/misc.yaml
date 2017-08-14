@@ -62,6 +62,8 @@
   action:
     - service: switch.turn_off
       entity_id: switch.sonos_speaker
+    - service: switch.turn_on
+      entity_id: switch.tradfri
 
 - alias: 'Startup nobody is home'
   trigger:
@@ -74,6 +76,8 @@
   action:
     - service: switch.turn_off
       entity_id: switch.sonos_speaker
+    - service: switch.turn_on
+      entity_id: switch.tradfri
     - service: input_select.select_option
       data:
         entity_id: input_select.tv_mode
