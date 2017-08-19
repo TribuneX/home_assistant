@@ -133,6 +133,7 @@
     assumed_state: false
   sensor.robo:
     icon: mdi:broom
+    friendly_name: Staubsauger
   sensor.switch:
     icon: mdi:server-network
     homebridge_hidden: true
@@ -140,22 +141,23 @@
     icon: mdi:plex
   sensor.appletv_livingroom:
     icon: mdi:airplay
-    homebridge_hidden: true
+    friendly_name: AppleTV wohnzimmer
   sensor.appletv_bedroom:
     icon: mdi:airplay
-    homebridge_hidden: true
+    friendly_name: AppleTV Schlafzimmer
   sensor.epson:
     icon: mdi:printer
+    friendly_name: Drucker
   sensor.broadlink:
     icon: mdi:remote
     homebridge_hidden: true
   sensor.tradfri:
     icon: mdi:lightbulb-on
-    homebridge_hidden: true
+    friendly_name: Tradfri Gateway
   switch.tradfri:
     icon: mdi:lightbulb-on
     assumed_state: false
-    homebridge_hidden: true
+    friendly_name: Tradfri Gateway
   sensor.netatmo:
     icon: mdi:weather-hail
     homebridge_hidden: true
