@@ -180,8 +180,18 @@
   action:
     - service: media_player.media_pause
       entity_id: media_player.atv_wohnzimmer
+    
+
+- alias: 'Deactivate Auto standby is Sonos is playing'
+  trigger:
+    platform: state
+    entity_id: media_player.living_room
+    from: 'paused'
+    to: 'playing'
+  action:
     - service: script.turn_off
       entity_id: script.turn_off_speaker_after_delay
+
 
 - alias: 'Auto standby is Sonos is paused'
   trigger:
