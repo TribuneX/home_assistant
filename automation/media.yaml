@@ -147,19 +147,6 @@
     - service: switch.turn_off
       entity_id: switch.tv
 
-- alias: 'Turn on Sonos if I am home'
-  trigger:
-    platform: state
-    entity_id: device_tracker.iphones
-    from: 'not_home'
-    to: 'home'
-    for:
-      minutes: 3 
-  action:
-    - service: switch.turn_on
-      entity_id: switch.sonos_speaker
-
-
 - alias: Speaker - Adjust Volume
   trigger:
     platform: state
@@ -193,6 +180,18 @@
   action:
     - service: media_player.media_pause
       entity_id: media_player.atv_wohnzimmer
+    - service: script.turn_off
+      entity_id: script.turn_off_speaker_after_delay
+
+- alias: 'Auto standby is Sonos is paused'
+  trigger:
+    platform: state
+    entity_id: media_player.living_room
+    from: 'playing'
+    to: 'paused'
+  action:
+    - service: script.turn_on
+      entity_id: script.turn_off_speaker_after_delay
 
 - alias: 'Pause SONOS if AppleTV is used'
   trigger:
