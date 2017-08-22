@@ -159,7 +159,7 @@
   condition:
     condition: time
     after: '21:00'
-    before: '05:00'
+    before: '00:00'
   action: 
     - service: switch.turn_on
       entity_id: switch.light_sascha
