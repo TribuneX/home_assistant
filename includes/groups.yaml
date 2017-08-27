@@ -129,12 +129,12 @@ pings:
     - binary_sensor.ping_sebastian
     - binary_sensor.ping_uwe
     - binary_sensor.ping_vhv
-stocks:
-  name: Stock
-  entities:
-    - sensor.amzn
-    - sensor.aapl
-    - sensor.stag
+# stocks:
+#   name: Stock
+#   entities:
+#     - sensor.amzn
+#     - sensor.aapl
+#     - sensor.stag
 settings:
   name: Settings
   entities:
@@ -247,9 +247,9 @@ automation:
     - scene.lampen_bett
     - scene.lampen_wohnzimmer
     - group.settings
-finance:
-  name: Finance
-  view: yes
-  icon: mdi:trending-up
-  entities:
-    - group.stocks
+# finance:
+#   name: Finance
+#   view: yes
+#   icon: mdi:trending-up
+#   entities:
+#     - group.stocks
