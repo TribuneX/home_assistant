@@ -51,7 +51,9 @@
     platform: state
     entity_id: group.personen
     from: 'home'
-    to: 'not_home' 
+    to: 'not_home'
+    for: 
+      minutes: 5 
   action:
     - service: script.turn_off_all
   #- service: notify.ios_iphones
