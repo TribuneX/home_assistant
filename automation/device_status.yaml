@@ -38,17 +38,3 @@
       data_template:   
         title: 'Devices'    
         message: '{{ trigger.to_state.attributes.friendly_name }} is {{ trigger.to_state.state }}'
-
-
-- alias: 'Reboot tradfri if offline'
-  trigger:
-    - platform: state
-      entity_id: sensor.tradfri
-      to: 'off'
-  action:
-    - service: switch.turn_off
-      entity_id: switch.tradfri
-    - delay:
-        seconds: 5
-    - service: switch.turn_on
-      entity_id: switch.tradfri
