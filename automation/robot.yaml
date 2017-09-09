@@ -43,6 +43,9 @@
       - condition: state
         entity_id: input_boolean.cleaned_today
         state: 'off'
+      - condition: state
+        entity_id: input_boolean.vacation_mode
+        state: 'off'
   action:
     - service: vacuum.turn_on
       entity_id: vacuum.staubsauger
@@ -64,6 +67,9 @@
           - fri
       - condition: state
         entity_id: input_boolean.cleaned_today
+        state: 'off'
+      - condition: state
+        entity_id: input_boolean.vacation_mode
         state: 'off'
   action:
     - service: vacuum.turn_on

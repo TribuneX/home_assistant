@@ -40,16 +40,6 @@ vacation_lights:
       entity_id: light.lampe_fernseher
     - delay:
         hours: 2
-    # turn lights off and wait 2 hours
-    - service: switch.turn_off
-      entity_id: light.lampe_fernseher
-    - delay:
-        hours: 2    
-    # turn lights on for 30 more minutes
-    - service: switch.turn_on
-      entity_id: light.lampe_fernseher
-    - delay:
-        minutes: 30
     # turn lights off
     - service: switch.turn_off
       entity_id: light.lampe_fernseher
