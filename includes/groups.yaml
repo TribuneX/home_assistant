@@ -146,7 +146,6 @@ settings:
     - input_boolean.vacation_mode
     - input_boolean.cleaned_today
     - sensor.ha_current_version
-    - switch.tradfri
 devices:
   name: Devices
   entities:
