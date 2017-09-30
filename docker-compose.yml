@@ -7,4 +7,5 @@ services:
     network_mode: "host"
     volumes:
       - /opt/home_assistant/:/config
+      - /home/pi/secrets.yaml:/config/secrets.yaml
       - /etc/localtime:/etc/localtime:ro
