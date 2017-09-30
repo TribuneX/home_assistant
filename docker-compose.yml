@@ -4,7 +4,7 @@ services:
   hass:
     container_name: hass
     image: lroguet/rpi-home-assistant:latest
-    net: host
+    network_mode: "host"
     volumes:
       - /opt/home_assistant/:/config
       - /etc/localtime:/etc/localtime:ro
