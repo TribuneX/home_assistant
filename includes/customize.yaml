@@ -173,9 +173,9 @@
   sensor.ha_current_version:
     icon: mdi:home-assistant
     friendly_name: Current version
-  light.lampe_fernseher:
+  light.fernseher:
     icon: mdi:lightbulb-on
-  light.lampe_sofa:
+  light.sofa:
     icon: mdi:lightbulb-on
   script.restart_hass:
     icon: mdi:home-assistant
@@ -213,14 +213,6 @@
   input_boolean.cleade_today:
     homebridge_hidden: true
   media_player.living_room:
-    homebridge_hidden: true
-  light.gang:
-    homebridge_hidden: true
-  light.gang_2:
-    homebridge_hidden: true
-  media_player.appletv:
-    homebridge_hidden: true
-  light.wohnzimmer:
     homebridge_hidden: true
 
   group.all_automations:
