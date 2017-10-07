@@ -37,12 +37,12 @@ vacation_lights:
         hours: 1
     # turn lights on for 2 hours after sunset
     - service: switch.turn_on
-      entity_id: light.lampe_fernseher
+      entity_id: light.fernseher
     - delay:
         hours: 2
     # turn lights off
     - service: switch.turn_off
-      entity_id: light.lampe_fernseher
+      entity_id: light.fernseher
 
 # Inspired by https://github.com/Tommatheussen/Home-Assistant-Configuration/blob/master/script/get_latest_config.yaml
 get_latest_config:
