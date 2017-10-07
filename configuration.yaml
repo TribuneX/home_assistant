@@ -113,7 +113,7 @@ netatmo:
   password: !secret netatmo_password
 
 
-input_number:
+input_select:
   tv_mode:
     name: 'TV mode'
     options:
@@ -166,7 +166,7 @@ tradfri:
 #     min_temperature: 15
 
 vacuum:
-  platform: xiaomi_miio
+  platform: xiaomi_miio 
   name: Staubsauger
   host: 192.168.178.47
   token: !secret mirobo_token
