@@ -113,7 +113,7 @@ netatmo:
   password: !secret netatmo_password
 
 
-input_select:
+input_number:
   tv_mode:
     name: 'TV mode'
     options:
@@ -138,7 +138,7 @@ input_select:
       - notset
     initial: error
 
-input_slider:
+input_number:
   sonos_speaker:
     name: Volume
     initial: 0.3
