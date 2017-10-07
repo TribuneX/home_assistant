@@ -9,16 +9,16 @@ wohnzimmer:
     - sensor.netatmo_wohnzimmer_humidity
     - sensor.netatmo_wohnzimmer_pressure
     - sensor.netatmo_wohnzimmer_noise
-    - light.lampe_fernseher
-    - light.lampe_sofa
+    - light.fernseher
+    - light.sofa
     - switch.light_sessel
     - switch.sonos_speaker
     #- device_tracker.broadlink
 wohnzimmer_lampen:
   name: Wohnzimmer Lampen
   entities:
-    - light.lampe_fernseher
-    - light.lampe_sofa
+    - light.fernseher
+    - light.sofa
 schlafzimmer:
   name: Schlafzimmer
   entities:
@@ -46,7 +46,7 @@ outdoor:
 gang:
   name: Gang
   entities:
-    - light.lampe_gang_bad
+    - light.bad_2
 arbeitszimmer:
   name: Arbeitszimmer
   entities:
