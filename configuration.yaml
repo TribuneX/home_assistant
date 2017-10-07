@@ -166,7 +166,7 @@ tradfri:
 #     min_temperature: 15
 
 vacuum:
-  platform: xiaomi
+  platform: xiaomi_miio
   name: Staubsauger
   host: 192.168.178.47
   token: !secret mirobo_token
