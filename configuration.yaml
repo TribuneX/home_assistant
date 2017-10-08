@@ -29,6 +29,10 @@ mqtt:
 
 recorder:
   db_url: !secret mysql_path
+  purge_interval: 2
+  purge_keep_days: 5
+
+
 # Enables the frontend
 frontend:
 
