@@ -119,7 +119,7 @@
     before: '05:00'
   action:
     - service: script.turn_off_bedroom_delay_45
-    #- service: notify.ios_iphones
+    #- service: notify.ios_iphones_app
     #  data:
     #    title: 'Timer'
     #    message: 'I will turn off the devices in the bedroom in 45 minutes'
@@ -137,7 +137,7 @@
     before: '05:00'
   action:
     - service: script.turn_off_livingroom_delay_15
-    #- service: notify.ios_iphones
+    #- service: notify.ios_iphones_app
     #  data:
     #    title: 'Timer'
     #    message: 'I will turn off the devices in the livingroom in 15 minutes'
@@ -173,7 +173,7 @@
     before: '05:00'
   action: 
     - service: script.turn_off_livingroom_delay_15
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Timer'
         message: 'I will turn of the lights in 15 minutes. Good Night.'
