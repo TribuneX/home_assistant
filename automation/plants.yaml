@@ -12,7 +12,7 @@
     entity_id: sensor.bad_moisture
     below: 15
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Plants'
         message: 'Please water plant in the bathroom! Moisture: {{states.sensor.bad_moisture.state}}% | Conductivity: {{states.sensor.bad_conductivity.state}}'
@@ -31,7 +31,7 @@
     entity_id: sensor.sanseviera_moisture
     below: 10
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Plants'
         message: 'Please water Plant Sanseviera! Moisture: {{states.sensor.sanseviera_moisture.state}}% | Conductivity: {{states.sensor.sanseviera_conductivity.state}}'
@@ -50,7 +50,7 @@
     entity_id: sensor.palme_moisture
     below: 20
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Plants'
         message: 'Please water Palm! Moisture: {{states.sensor.palme_moisture.state}}% | Conductivity: {{states.sensor.palme_conductivity.state}}'
@@ -69,7 +69,7 @@
     entity_id: sensor.palme_moisture
     below: 15
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Plants'
         message: 'Please water Palm next to the computer! Moisture: {{states.sensor.palmek_moisture.state}}% | Conductivity: {{states.sensor.palmek_conductivity.state}}'

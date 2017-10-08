@@ -11,7 +11,7 @@
     platform: state
     entity_id: updater.updater
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Update'
         message: 'Update for Home Assistant is available.'
@@ -101,7 +101,7 @@
 #     - condition: template
 #       value_template: "{{ trigger.to_state.state != None }}"
 #   action:
-#     - service: notify.ios_iphones
+#     - service: notify.ios_iphones_app
 #       data:
 #         title: "Failed login!"
 #         message: '{{ trigger.to_state.state }}'

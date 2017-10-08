@@ -14,7 +14,7 @@
     entity_id: group.personen   
     state: 'not home'   
   action:     
-    - service: notify.ios_iphones   
+    - service: notify.ios_iphones_app   
       data:   
         title: 'Alarm'    
         message: 'Motion was detected, but nobody seems to be at home!'

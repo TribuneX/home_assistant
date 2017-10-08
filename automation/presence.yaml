@@ -5,7 +5,7 @@
     zone: zone.home
     event: leave
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Location'
         message: 'Nicole left home.'
@@ -17,7 +17,7 @@
     zone: zone.home
     event: enter
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Location'
         message: 'Nicole arrived at home.'
@@ -29,7 +29,7 @@
     zone: zone.work_nicole
     event: leave
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Location'
         message: 'Nicole left work.'
@@ -41,7 +41,7 @@
     zone: zone.work_nicole
     event: enter
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Location'
         message: 'Nicole arrived at work.'
@@ -56,7 +56,7 @@
       minutes: 5 
   action:
     - service: script.turn_off_all
-  #- service: notify.ios_iphones
+  #- service: notify.ios_iphones_app
     #  data:
     #    title: 'Location'
     #    message: 'Everybody left. I will switch off all devices.'

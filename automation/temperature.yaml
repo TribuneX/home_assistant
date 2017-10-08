@@ -4,7 +4,7 @@
     entity_id: sensor.netatmo_schlafzimmer_co2
     above: 900
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Rooms'
         message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
@@ -15,7 +15,7 @@
     entity_id: sensor.netatmo_wohnzimmer_co2
     above: 900
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Rooms'
         message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
@@ -26,7 +26,7 @@
     entity_id: sensor.netatmo_wohnzimmer_noise
     above: 59
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Rooms'
         message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise.state}}db'
@@ -50,7 +50,7 @@
         entity_id: 'sensor.netatmo_outdoor_temperature'
         above: '20'
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Weather'
         message: 'Out vs. In is: {{states.sensor.out_vs_in.state}}°C. Out: {{states.sensor.netatmo_outdoor_temperature.state}}°C / In: {{states.sensor.netatmo_wohnzimmer_temperature.state}}°C'
@@ -64,7 +64,7 @@
     entity_id: device_tracker.iphones
     state: 'home'
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Weather Report for today'
         message: 'Current: {{states.sensor.netatmo_outdoor_temperature.state}}°C 
@@ -77,7 +77,7 @@
       entity_id: sensor.dark_sky_precip_type
       to: 'rain'
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Weather Report'
         message: 'It looks like its gonna rain soon. {{states.sensor.dark_sky_hourly_summary.state}}'

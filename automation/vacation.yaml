@@ -15,7 +15,7 @@
   action:
     - service: homeassistant.turn_on
       entity_id: input_boolean.vacation_mode
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Vacation mode'
         message: 'I did not see anybody within the last 24 hours. I will switch on the vacation mode'
@@ -34,7 +34,7 @@
   action:
     - service: homeassistant.turn_off
       entity_id: input_boolean.vacation_mode
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Vacation mode'
         message: 'Welcome back! I switched off the vacation mode'
@@ -52,7 +52,7 @@
       state: 'on'
   action:
     - service: script.vacation_lights
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Vacation mode'
         message: 'I switched on the lights while you are on vacation'

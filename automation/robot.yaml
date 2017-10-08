@@ -5,7 +5,7 @@
     from: 'Charging'
     to: 'Cleaning'
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Robot'
         message: 'Robot started to clean!'
@@ -17,7 +17,7 @@
     from: 'Returning home'
     to: 'Charging'
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Robot'
         message: 'Robot started stopped cleaning after {{states.sensor.mi_info_cleaningtime.state}} and is succesfully docked!'
@@ -97,7 +97,7 @@
       entity_id: input_boolean.cleaned_today
       state: 'on'
   action:
-    - service: notify.ios_iphones
+    - service: notify.ios_iphones_app
       data:
         title: 'Robot'
         message: 'Please clean the dust bin.'
