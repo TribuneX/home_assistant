@@ -183,7 +183,7 @@
   script.reboot_pi:
     icon: mdi:restart
     friendly_name: Reboot
-  input_slider.sonos_speaker:
+  input_number.sonos_speaker:
     icon: mdi:volume-high 
   # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
   sensor.epson_ink_level_black:
