@@ -138,13 +138,13 @@ input_select:
       - notset
     initial: error
 
-input_slider:
-  sonos_speaker:
-    name: Volume
-    initial: 0.3
-    min: 0
-    max: 1
-    step: 0.01
+# input_slider:
+#   sonos_speaker:
+#     name: Volume
+#     initial: 0.3
+#     min: 0
+#     max: 1
+#     step: 0.01
 
 tradfri:
   host: 192.168.178.52
