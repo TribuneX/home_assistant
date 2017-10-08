@@ -138,7 +138,7 @@ input_select:
       - notset
     initial: error
 
-input_number:
+input_slider:
   sonos_speaker:
     name: Volume
     initial: 0.3
