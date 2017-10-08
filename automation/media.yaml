@@ -162,7 +162,7 @@
     platform: state
     entity_id: media_player.living_room
   action:
-    - service: input_number.select_value
+    - service: input_number.set_value
       data_template:
         entity_id: input_number.sonos_speaker
         value: '{{ states.media_player.living_room.attributes.volume_level }}'
