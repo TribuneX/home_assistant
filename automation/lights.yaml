@@ -186,7 +186,7 @@
 - alias: 'Livingroom lights in the morning'
   trigger:
     - platform: state
-      entity_id: light.gang
+      entity_id: light.bad
       from: 'off'
       to: 'on'
   condition:
