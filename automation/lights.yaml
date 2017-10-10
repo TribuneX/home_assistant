@@ -190,9 +190,14 @@
       from: 'off'
       to: 'on'
   condition:
-      condition: state
-      entity_id: sun.sun
-      state: below_horizon
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sun.sun
+        state: below_horizon
+      - condition: time
+        after: '06:00'
+        before: '09:00'
   action:
     - service: light.turn_on
       data: 
