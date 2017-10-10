@@ -199,3 +199,17 @@
         entity_id: group.wohnzimmer_lampen
         brightness: 150
         transition: 20
+
+- alias: 'Livingroom lights in the morning - Turn off'
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: '-00:10:00'
+  condition:
+      condition: state
+      entity_id: group.wohnzimmer_lampen
+      state: "on"
+  action:
+    - service: light.turn_off
+      data: 
+        entity_id: group.wohnzimmer_lampen
