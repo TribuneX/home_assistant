@@ -8,10 +8,6 @@
     #  command_on: 'sudo /opt/rcswitch-pi/send 11111 2 1'
     #  command_off: 'sudo /opt/rcswitch-pi/send 11111 2 0'
     #  friendly_name: Lampe Fernseher
-    tv:
-      command_on: 'sudo /opt/rcswitch-pi/send 11111 1 1'
-      command_off: 'sudo /opt/rcswitch-pi/send 11111 1 0'
-      friendly_name: Fernseher
     sonos_speaker:
       command_on: 'sudo /opt/rcswitch-pi/send 11111 2 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11111 2 0'
@@ -47,7 +43,7 @@
 
 
 - platform: mqtt
-  name: "sonoff_TV"
+  name: "TV"
   state_topic: "home/sonoff/living_room/1/stat"
   command_topic: "home/sonoff/living_room/1"
   qos: 0
