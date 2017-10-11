@@ -156,6 +156,7 @@ devices:
     - sensor.switch
     - sensor.netatmo
     - sensor.server
+    - switch.tv
 robot:
   name: 'Staubsauger'
   entities:
