@@ -47,7 +47,7 @@
 
 
 - platform: mqtt
-  name: "TV"
+  name: "sonoff_TV"
   state_topic: "home/sonoff/living_room/1/stat"
   command_topic: "home/sonoff/living_room/1"
   qos: 0

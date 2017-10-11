@@ -101,6 +101,7 @@ personen:
 tv_scenes:
   name: TV
   entities:
+    - switch.sonoff_TV
     - switch.tv_mode
     - switch.appletv_mode
     - switch.plex_mode
