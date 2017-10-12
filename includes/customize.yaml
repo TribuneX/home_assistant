@@ -94,7 +94,7 @@
     friendly_name: Musik
   switch.sonos_mode:
     icon: mdi:speaker-wireless
-    friendly_name: Sonos
+    friendly_name: Play
   switch.sonos_speaker:
     icon: mdi:speaker-wireless
     friendly_name: Speaker

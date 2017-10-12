@@ -129,6 +129,13 @@ input_select:
      - Music
     initial: AUS
     icon: mdi:television
+  sonos_mode:
+    name: 'Sonos mode'
+    options:
+     - Pause
+     - Play
+    initial: Pause
+    icon: mdi:speaker-wireless
   log_level:
     name: 'Log Level'
     options:

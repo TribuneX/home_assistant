@@ -141,8 +141,8 @@
 - alias: 'Listen to music on Sonos'
   trigger:
     platform: state
-    entity_id: input_select.tv_mode
-    to: 'Sonos'
+    entity_id: input_select.sonos_mode
+    to: 'Play'
   condition:  
    condition: state
    entity_id: switch.sonos_speaker
@@ -153,8 +153,8 @@
 - alias: 'Listen to music on Sonos + Sonos'
   trigger:
     platform: state
-    entity_id: input_select.tv_mode
-    to: 'Sonos'
+    entity_id: input_select.sonos_mode
+    to: 'Play'
   condition:  
    condition: state
    entity_id: switch.sonos_speaker
