@@ -63,15 +63,15 @@
     - service: switch.turn_off
       entity_id: switch.sonos_speaker
 
-- alias: 'Startup default states'
-  trigger:
-    platform: homeassistant
-    event: start
-  action:
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.tv_mode
-        option: AppleTV
+# - alias: 'Startup default states'
+#   trigger:
+#     platform: homeassistant
+#     event: start
+#   action:
+#     - service: input_select.select_option
+#       data:
+#         entity_id: input_select.tv_mode
+#         option: AppleTV
 
 - alias: 'Startup nobody is home'
   trigger:
@@ -88,22 +88,3 @@
       data:
         entity_id: input_select.tv_mode
         option: AUS
-    # - service: input_select.select_option
-    #   data:
-    #     entity_id: input_select.tv_mode
-    #     option: AppleTV
-
-
-# Inspired by https://community.home-assistant.io/t/failed-login-detection/4280/20
-# - alias: "Send notification upon failed login attempt"
-#   trigger:
-#     - platform: state
-#       entity_id: persistent_notification.httplogin
-#   condition:
-#     - condition: template
-#       value_template: "{{ trigger.to_state.state != None }}"
-#   action:
-#     - service: notify.ios_iphones_app
-#       data:
-#         title: "Failed login!"
-#         message: '{{ trigger.to_state.state }}'
