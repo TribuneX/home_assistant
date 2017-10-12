@@ -5,6 +5,7 @@
   switch.light_sessel:
     icon: mdi:lightbulb-on
     assumed_state: false
+    friendly_name: Sessel
   switch.light_stern:
     icon: mdi:lightbulb-on
     assumed_state: false
@@ -14,9 +15,11 @@
   switch.light_nicole:
     icon: mdi:lightbulb-on
     assumed_state: false
+    friendly_name: Nicole
   switch.light_sascha:
     icon: mdi:lightbulb-on
     assumed_state: false
+    friendly_name: Sascha
   switch.light_baum:
     icon: mdi:lightbulb-on
     assumed_state: false
