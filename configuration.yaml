@@ -154,7 +154,7 @@ input_number:
 tradfri:
   host: 192.168.178.52
   api_key: !secret tradfri_api_key
-  allow_tradfri_groups: false
+  allow_tradfri_groups: true
 
 # plant:
 #   bad:
