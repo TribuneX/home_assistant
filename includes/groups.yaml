@@ -12,11 +12,6 @@ wohnzimmer:
     - light.fernseher
     - light.sofa
     - switch.light_sessel
-wohnzimmer_lampen:
-  name: Wohnzimmer Lampen
-  entities:
-    - light.fernseher
-    - light.sofa
 schlafzimmer:
   name: Schlafzimmer
   entities:

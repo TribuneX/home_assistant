@@ -26,7 +26,7 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: group.wohnzimmer_lampen
+        entity_id: light.wohnzimmer
         brightness: 150
         transition: 20
 
@@ -58,7 +58,7 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: group.wohnzimmer_lampen
+        entity_id: light.wohnzimmer
         brightness: 20
         transition: 20
 
@@ -83,7 +83,7 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: group.wohnzimmer_lampen
+        entity_id: light.wohnzimmer
         brightness: 150
         transition: 20
 
@@ -106,7 +106,7 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: group.wohnzimmer_lampen
+        entity_id: light.wohnzimmer
         brightness: 20
         transition: 20
 
@@ -201,7 +201,7 @@
   action:
     - service: light.turn_on
       data: 
-        entity_id: group.wohnzimmer_lampen
+        entity_id: light.wohnzimmer
         brightness: 150
         transition: 20
 
@@ -212,9 +212,9 @@
       offset: '-00:10:00'
   condition:
       condition: state
-      entity_id: group.wohnzimmer_lampen
+      entity_id: light.wohnzimmer
       state: "on"
   action:
     - service: light.turn_off
       data: 
-        entity_id: group.wohnzimmer_lampen
+        entity_id: light.wohnzimmer
