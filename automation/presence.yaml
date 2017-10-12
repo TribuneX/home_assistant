@@ -1,7 +1,7 @@
 - alias: 'Nicole left home'
   trigger:
     platform: zone
-    entity_id: device_tracker.nicoles_iphone_app
+    entity_id: device_tracker.owntracks_nicole_iphone
     zone: zone.home
     event: leave
   action:
@@ -13,7 +13,7 @@
 - alias: 'Nicole arrived at home'
   trigger:
     platform: zone
-    entity_id: device_tracker.nicoles_iphone_app
+    entity_id: device_tracker.owntracks_nicole_iphone
     zone: zone.home
     event: enter
   action:
@@ -25,7 +25,7 @@
 - alias: 'Nicole left work'
   trigger:
     platform: zone
-    entity_id: device_tracker.nicoles_iphone_app
+    entity_id: device_tracker.owntracks_nicole_iphone
     zone: zone.work_nicole
     event: leave
   action:
@@ -37,7 +37,7 @@
 - alias: 'Nicole arrived at work'
   trigger:
     platform: zone
-    entity_id: device_tracker.nicoles_iphone_app
+    entity_id: device_tracker.owntracks_nicole_iphone
     zone: zone.work_nicole
     event: enter
   action:
