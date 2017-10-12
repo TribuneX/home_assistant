@@ -132,14 +132,10 @@
           entity_id: input_select.tv_mode
           option: AUS
     sonos_mode:
-      value_template: "{{ is_state('input_select.tv_mode', 'Sonos')}}"
+      value_template: "{{ is_state('media_player.living_room', 'playing')}}"
       turn_on:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: Sonos
+        service: switch.turn_on
+        entity_id: script.play_sonos
       turn_off:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: AUS
+        service: switch.turn_on
+        entity_id: script.pause_sonos

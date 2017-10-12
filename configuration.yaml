@@ -127,7 +127,6 @@ input_select:
      - Plex
      - FireTV
      - Music
-     - Sonos
     initial: AUS
     icon: mdi:television
   log_level:

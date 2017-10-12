@@ -115,7 +115,6 @@ tv_scenes:
     - switch.plex_mode
     - switch.fire_tv_mode
     - switch.music_mode
-    - switch.sonos_mode
 iphone:
   name: Devices
   entities:
@@ -177,8 +176,9 @@ robot:
 speaker:
   name: Sonos
   entities:
+    - switch.sonos_mode
     - switch.sonos_speaker
-    - input_number.sonos_speaker
+    - input_number.sonos_speaker   
 printer:
   name: Epson Printer
   entities:
