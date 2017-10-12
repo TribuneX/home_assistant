@@ -95,9 +95,18 @@ pi:
 personen:
   name: Personen
   entities:
+    - group.sascha
+    - group.nicole
+sascha:
+  name: Sascha
+  entities:
     - device_tracker.iphones
+    - device_tracker.owntracks_iphones
+nicole:
+  name: Nicole
+  entities:
     - device_tracker.nicolesiphone
-    #- device_tracker.pi_iphonesowntracks
+    - device_tracker.owntracks_nicole_iphone
 tv_scenes:
   name: TV
   entities:

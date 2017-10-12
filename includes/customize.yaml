@@ -197,6 +197,11 @@
   sensor.fritz_netmonitor:
     friendly_name: FritzBox
     icon: mdi:router-wireless
+
+  group.sascha:
+    entity_picture: /local/sascha.png
+
+
   zone.sofa:
     beacon:
       uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
