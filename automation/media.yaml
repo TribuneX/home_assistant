@@ -138,39 +138,33 @@
         seconds: 20
     - service: script.input_music
 
-- alias: 'Listen to music on Sonos'
+- alias: "Play selected source on sonos"
   trigger:
-    platform: state
-    entity_id: input_select.sonos_mode
-    to: 'Play'
+    - entity_id: input_select.sonos_source
+      platform: state
   condition:  
    condition: state
    entity_id: switch.sonos_speaker
-   state: 'on'
+   state: 'on'    
   action:
-    - service: script.input_sonos
+  - data_template:
+      source: "{{ trigger.to_state.state }}"
+    entity_id: media_player.living_room
+    service: media_player.select_source
 
-- alias: 'Listen to music on Sonos + Sonos'
+- alias: "Play selected source on sonos + sonos"
   trigger:
-    platform: state
-    entity_id: input_select.sonos_mode
-    to: 'Play'
+    - entity_id: input_select.sonos_source
+      platform: state
   condition:  
    condition: state
    entity_id: switch.sonos_speaker
-   state: 'off'
+   state: 'off'    
   action:
-    - service: switch.turn_on
+  - service: switch.turn_on
       entity_id: switch.sonos_speaker
     - delay:
         seconds: 10
-    - service: script.input_sonos
-
-- alias: "Play selected source on sonos"
-trigger:
-  - entity_id: input_select.sonos_source
-    platform: state
-  action:
   - data_template:
       source: "{{ trigger.to_state.state }}"
     entity_id: media_player.living_room
