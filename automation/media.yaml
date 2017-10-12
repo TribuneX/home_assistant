@@ -142,7 +142,7 @@
   trigger:
     platform: state
     entity_id: input_select.tv_mode
-    to: 'Music'
+    to: 'Sonos'
   condition:  
    condition: state
    entity_id: switch.sonos_speaker
@@ -154,7 +154,7 @@
   trigger:
     platform: state
     entity_id: input_select.tv_mode
-    to: 'Music'
+    to: 'Sonos'
   condition:  
    condition: state
    entity_id: switch.sonos_speaker
