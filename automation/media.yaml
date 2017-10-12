@@ -162,9 +162,9 @@
    state: 'off'    
   action:
   - service: switch.turn_on
-      entity_id: switch.sonos_speaker
-    - delay:
-        seconds: 10
+    entity_id: switch.sonos_speaker
+  - delay:
+      seconds: 10
   - data_template:
       source: "{{ trigger.to_state.state }}"
     entity_id: media_player.living_room
