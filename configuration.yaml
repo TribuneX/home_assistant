@@ -161,7 +161,7 @@ input_number:
     step: 0.01
 
 tradfri:
-  host: tradfri.cbs-service.net
+  host: 192.168.178.52
   api_key: !secret tradfri_api_key
   allow_tradfri_groups: true
 
