@@ -218,3 +218,36 @@
     - service: light.turn_off
       data: 
         entity_id: light.wohnzimmer
+
+
+- alias: 'Dimm lights at night'
+  trigger:
+      platform: time
+      at: '22:00'
+  action:
+    - service: light.turn_on
+      data: 
+        entity_id: light.bad
+        brightness: 10
+    - delay:
+        hours: 2
+    - service: light.turn_off
+      entity_id: light.bad
+
+
+- alias: 'Brighter lights at day'
+  trigger:
+      platform: state
+      entity_id: light.bad
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      after: '06:00'
+      before: '09:00'
+  action:
+    - service: light.turn_on
+      data: 
+        entity_id: light.bad
+        brightness: 50
+        transition: 20
