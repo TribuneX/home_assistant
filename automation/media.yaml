@@ -166,6 +166,15 @@
         seconds: 10
     - service: script.input_sonos
 
+- alias: "Play selected source on sonos"
+trigger:
+  - entity_id: input_select.sonos_source
+    platform: state
+  action:
+  - data_template:
+      source: "{{ trigger.to_state.state }}"
+    entity_id: media_player.living_room
+    service: media_player.select_source
 
 - alias: 'Pause Sonos'
   trigger:

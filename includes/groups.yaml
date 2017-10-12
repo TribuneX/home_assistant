@@ -176,8 +176,8 @@ robot:
 speaker:
   name: Sonos
   entities:
-    - switch.sonos_mode
-    - switch.sonos_speaker
+    - input_select.sonos_source
+    - script.pause_sonos
     - input_number.sonos_speaker   
 printer:
   name: Epson Printer

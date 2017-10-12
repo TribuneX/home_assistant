@@ -181,13 +181,6 @@ input_music:
     - service: script.turn_on
       entity_id: script.turn_tv_off
 
-input_sonos:
-  sequence:
-    - service: media_player.select_source
-      data:
-        entity_id: media_player.living_room
-        source: 'Fidi & Bumsi'
-
 pause_sonos:
   sequence:
     - service: media_player.media_pause
