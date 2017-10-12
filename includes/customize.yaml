@@ -181,6 +181,8 @@
     icon: mdi:lightbulb-on
   light.sofa:
     icon: mdi:lightbulb-on
+  light.wohnzimmer:
+    friendly_name: Lampen
   light.bad:
     homebridge_hidden: true
   light.eingang:
