@@ -135,7 +135,8 @@ input_select:
       - Fidi & Bumsi
       - HIT RADIO FFH
       - ANTENNE BAYERN
-    initial: HIT RADIO FFH
+      - AUS
+    initial: AUS
     icon: mdi:radio
   log_level:
     name: 'Log Level'
