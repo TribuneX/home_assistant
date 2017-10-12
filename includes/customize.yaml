@@ -99,6 +99,7 @@
     icon: mdi:speaker-wireless
     friendly_name: Speaker
     assumed_state: false
+    homebridge_hidden: true
   device_tracker.nicolesiphone:
     friendly_name: Nicole
   device_tracker.iphones:
