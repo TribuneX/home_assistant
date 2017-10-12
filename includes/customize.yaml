@@ -94,10 +94,10 @@
     friendly_name: FireTV
   switch.music_mode:
     icon: mdi:music-circle
-    friendly_name: Musik
+    friendly_name: Audio
   switch.sonos_mode:
     icon: mdi:speaker-wireless
-    friendly_name: Speaker
+    friendly_name: Musik
   switch.sonos_speaker:
     icon: mdi:speaker-wireless
     friendly_name: Speaker
