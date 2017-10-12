@@ -20,7 +20,7 @@ logger:
   default: warning
 
 mqtt:
-  broker: 192.168.178.23
+  broker: hass.cbs-service.net
   username: owntracks
   password: !secret mqtt_password
   protocol: 3.1
