@@ -182,7 +182,7 @@ tradfri:
 vacuum:
   platform: xiaomi_miio 
   name: Staubsauger
-  host: 192.168.178.47
+  host: robo.cbs-service.net
   token: !secret mirobo_token
 
 zone 1:
