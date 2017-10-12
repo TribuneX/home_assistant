@@ -68,8 +68,10 @@
     platform: homeassistant
     event: start
   action:
-    - service: switch.turn_on
-      entity_id: switch.tradfri
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.tv_mode
+        option: AppleTV
 
 - alias: 'Startup nobody is home'
   trigger:
