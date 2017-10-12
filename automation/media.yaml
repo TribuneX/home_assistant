@@ -167,6 +167,19 @@
     - service: script.input_sonos
 
 
+- alias: 'Pause Sonos'
+  trigger:
+    platform: state
+    entity_id: input_select.sonos_mode
+    to: 'Pause'
+  condition:  
+   condition: state
+   entity_id: switch.sonos_speaker
+   state: 'on'
+  action:
+    - service: script.pause_sonos
+
+
 - alias: 'Turn off TV'
   trigger:
     platform: state
