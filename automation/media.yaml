@@ -173,8 +173,8 @@
 - alias: 'Pause Sonos'
   trigger:
     platform: state
-    entity_id: input_select.sonos_mode
-    to: 'Pause'
+    entity_id: input_select.sonos_source
+    to: 'AUS'
   condition:  
    condition: state
    entity_id: switch.sonos_speaker

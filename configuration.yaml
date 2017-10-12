@@ -132,6 +132,7 @@ input_select:
   sonos_source:
     name: Sonos Source
     options:
+      - Hits (Sascha)
       - Fidi & Bumsi
       - HIT RADIO FFH
       - ANTENNE BAYERN

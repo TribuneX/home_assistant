@@ -12,8 +12,6 @@ wohnzimmer:
     - light.fernseher
     - light.sofa
     - switch.light_sessel
-    - switch.sonos_speaker
-    #- device_tracker.broadlink
 wohnzimmer_lampen:
   name: Wohnzimmer Lampen
   entities:
@@ -177,7 +175,7 @@ speaker:
   name: Sonos
   entities:
     - input_select.sonos_source
-    - script.pause_sonos
+    - switch.sonos_mode
     - input_number.sonos_speaker   
 printer:
   name: Epson Printer

@@ -131,3 +131,15 @@
         data:
           entity_id: input_select.tv_mode
           option: AUS
+    sonos_mode:
+      value_template: "{{ is_state('media_player.living_room', 'Playing')}}"
+      turn_on:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.sonos_source
+          option: Hits (Sascha)
+      turn_off:
+        service: input_select.select_option
+        data:
+          entity_id: input_select.sonos_source
+          option: AUS
