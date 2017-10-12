@@ -109,6 +109,8 @@ input_hdmi:
 input_tv:
   sequence:
     - service: script.turn_on
+      entity_id: script.pause_sonos
+    - service: script.turn_on
       entity_id: script.turn_receiver_on
     # switch on TV and change input
     - service: broadlink.send_packet_192_168_178_51
@@ -121,6 +123,8 @@ input_tv:
 
 input_apple_tv:
   sequence:
+    - service: script.turn_on
+      entity_id: script.pause_sonos
     - service: script.turn_on
       entity_id: script.turn_receiver_on
     #- service: script.turn_on
@@ -149,6 +153,8 @@ input_plex:
 input_fire_tv:
   sequence:
     - service: script.turn_on
+      entity_id: script.pause_sonos
+    - service: script.turn_on
       entity_id: script.turn_receiver_on
     - service: broadlink.send_packet_192_168_178_51
       data:
@@ -164,6 +170,8 @@ input_fire_tv:
 input_music:
   sequence:
     - service: script.turn_on
+      entity_id: script.pause_sonos
+    - service: script.turn_on
       entity_id: script.turn_receiver_on
     - service: broadlink.send_packet_192_168_178_51
       data:
@@ -172,6 +180,18 @@ input_music:
           - 'JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
     - service: script.turn_on
       entity_id: script.turn_tv_off
+
+input_sonos:
+  sequence:
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.living_room
+        source: 'Fidi & Bumsi'
+
+pause_sonos:
+  sequence:
+    - service: media_player.media_pause
+      entity_id: media_player.living_room
 
 turn_off_fan_after_delay:
   sequence:

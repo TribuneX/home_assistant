@@ -138,6 +138,35 @@
         seconds: 20
     - service: script.input_music
 
+- alias: 'Listen to music on Sonos'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'Music'
+  condition:  
+   condition: state
+   entity_id: switch.sonos_speaker
+   state: 'on'
+  action:
+    - service: script.input_sonos
+
+- alias: 'Listen to music on Sonos + Sonos'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+    to: 'Music'
+  condition:  
+   condition: state
+   entity_id: switch.sonos_speaker
+   state: 'off'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.sonos_speaker
+    - delay:
+        seconds: 10
+    - service: script.input_sonos
+
+
 - alias: 'Turn off TV'
   trigger:
     platform: state
