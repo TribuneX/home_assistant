@@ -135,7 +135,7 @@ input_select:
       - Fidi & Bumsi
       - HIT RADIO FFH
       - ANTENNE BAYERN
-    initial: Spotify
+    initial: HIT RADIO FFH
     icon: mdi:radio
   log_level:
     name: 'Log Level'
