@@ -181,6 +181,14 @@
     icon: mdi:lightbulb-on
   light.sofa:
     icon: mdi:lightbulb-on
+  light.bad:
+    homebridge_hidden: true
+  light.eingang:
+    homebridge_hidden: true
+  light.bad_2:
+    homebridge_hidden: true
+  light.eingang_2:
+    homebridge_hidden: true
   script.restart_hass:
     icon: mdi:home-assistant
     friendly_name: Restart
@@ -218,7 +226,7 @@
 
   input_boolean.vacation_mode:
     homebridge_hidden: true
-  input_boolean.cleade_today:
+  input_boolean.cleaned_today:
     homebridge_hidden: true
   media_player.living_room:
     homebridge_hidden: true
