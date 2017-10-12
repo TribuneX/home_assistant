@@ -230,7 +230,7 @@
         entity_id: light.bad
         brightness: 10
     - delay:
-        hours: 2
+        seconds: 2
     - service: light.turn_off
       entity_id: light.bad
 
@@ -251,3 +251,7 @@
         entity_id: light.bad
         brightness: 50
         transition: 20
+    - delay:
+        minutes: 1 
+    - service: light.turn_off
+      entity_id: light.bad
