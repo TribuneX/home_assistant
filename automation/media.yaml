@@ -1,4 +1,4 @@
-- alias: 'Watch AppleTV'
+- alias: 'Media: Watch AppleTV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -10,7 +10,7 @@
   action:
     - service: script.input_apple_tv
 
-- alias: 'Watch Plex'
+- alias: 'Media: Watch Plex'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -22,7 +22,7 @@
   action:
     - service: script.input_plex
 
-- alias: 'Watch FireTV'
+- alias: 'Media: Watch FireTV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -34,7 +34,7 @@
   action:
     - service: script.input_fire_tv
 
-- alias: 'Watch TV'
+- alias: 'Media: Watch TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -46,7 +46,7 @@
   action:
     - service: script.input_tv
 
-- alias: 'Listen to music'
+- alias: 'Media: Listen to music'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -58,7 +58,7 @@
   action:
     - service: script.input_music
 
-- alias: 'Watch AppleTV + TV'
+- alias: 'Media: Watch AppleTV + TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -74,7 +74,7 @@
         seconds: 20
     - service: script.input_apple_tv
 
-- alias: 'Watch Plex + TV'
+- alias: 'Media: Watch Plex + TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -90,7 +90,7 @@
         seconds: 20
     - service: script.input_plex
 
-- alias: 'Watch FireTV + TV'
+- alias: 'Media: Watch FireTV + TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -106,7 +106,7 @@
         seconds: 20
     - service: script.input_fire_tv
 
-- alias: 'Watch TV + TV'
+- alias: 'Media: Watch TV + TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -122,7 +122,7 @@
         seconds: 20
     - service: script.input_tv
 
-- alias: 'Listen to music + TV'
+- alias: 'Media: Listen to music + TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -170,7 +170,7 @@
     entity_id: media_player.living_room
     service: media_player.select_source
 
-- alias: 'Pause Sonos'
+- alias: 'Media: Pause Sonos'
   trigger:
     platform: state
     entity_id: input_select.sonos_source
@@ -183,7 +183,7 @@
     - service: script.pause_sonos
 
 
-- alias: 'Turn off TV'
+- alias: 'Media: Turn off TV'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -212,7 +212,7 @@
         entity_id: input_number.sonos_speaker
         value: '{{ states.media_player.living_room.attributes.volume_level }}'
 
-- alias: 'Pause AppleTV if SONOS is used'
+- alias: 'Media: Pause AppleTV if SONOS is used'
   trigger:
     platform: state
     entity_id: media_player.living_room
@@ -226,7 +226,7 @@
     - service: media_player.media_pause
       entity_id: media_player.atv_wohnzimmer
 
-- alias: 'Auto standby is Sonos is paused for 10 minutes'
+- alias: 'Media: Auto standby is Sonos is paused for 10 minutes'
   trigger:
     platform: state
     entity_id: media_player.living_room
@@ -238,7 +238,7 @@
     - service: switch.turn_off
       entity_id: switch.sonos_speaker
 
-- alias: 'Pause SONOS if AppleTV is used'
+- alias: 'Media: Pause SONOS if AppleTV is used'
   trigger:
     - platform: state
       entity_id: media_player.atv_wohnzimmer

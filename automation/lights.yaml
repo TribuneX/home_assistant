@@ -1,4 +1,4 @@
-- alias: 'Livingroom lights at sunset'
+- alias: 'Lights: Livingroom lights at sunset'
   trigger:
     - platform: sun
       event: sunset
@@ -30,7 +30,7 @@
         brightness: 150
         transition: 20
 
-- alias: 'Livingroom lights at sunset + TV is on'
+- alias: 'Lights: Livingroom lights at sunset + TV is on'
   trigger:
     - platform: sun
       event: sunset
@@ -63,7 +63,7 @@
         transition: 20
 
 # Turn on light at Sofa if ATV is paused
-- alias: 'Turn on light when AppleTV is paused'
+- alias: 'Lights: Turn on light when AppleTV is paused'
   trigger:
     - platform: state
       entity_id: media_player.atv_wohnzimmer
@@ -88,7 +88,7 @@
         transition: 20
 
 # Turn on light at Sofa if ATV is paused
-- alias: 'Dim light when AppleTV is played'
+- alias: 'Lights: Dim light when AppleTV is played'
   trigger:
     - platform: state
       entity_id: media_player.atv_wohnzimmer
@@ -111,7 +111,7 @@
         transition: 20
 
 # Turn of devices in the bedroom 30 minutes when switched on after 23:00
-- alias: '45 minutes timer for devices at night'
+- alias: 'Lights: 45 minutes timer for devices at night'
   trigger:
     - platform: state
       entity_id: group.schlafzimmer
@@ -129,7 +129,7 @@
     #    message: 'I will turn off the devices in the bedroom in 45 minutes'
 
 # Turn off devices in the livingroom 15 minutes when switched on after 3:01
-- alias: '15 minutes timer for devices at night'
+- alias: 'Lights: 15 minutes timer for devices at night'
   trigger:
     - platform: state
       entity_id: group.wohnzimmer
@@ -141,14 +141,10 @@
     before: '05:00'
   action:
     - service: script.turn_off_livingroom_delay_15
-    #- service: notify.ios_iphones_app
-    #  data:
-    #    title: 'Timer'
-    #    message: 'I will turn off the devices in the livingroom in 15 minutes'
 
 
 # Turn on lights in bedroom, if TV is switched off
-- alias: 'Turn on lights in bedroom after TV is switched off'
+- alias: 'Lights: Turn on lights in bedroom after TV is switched off'
   trigger:
     - platform: state
       entity_id: switch.tv
@@ -163,27 +159,10 @@
       entity_id: switch.light_sascha
     - service: switch.turn_on
       entity_id: switch.light_nicole 
-
-# Turn off lights in livingroom after TV is switched off
-- alias: 'Turn off lights in livingroom after TV is switched off'
-  trigger:
-    - platform: state
-      entity_id: switch.tv
-      from: 'on'
-      to: 'off'
-  condition:
-    condition: time
-    after: '21:00'
-    before: '05:00'
-  action: 
     - service: script.turn_off_livingroom_delay_15
-    - service: notify.ios_iphones_app
-      data:
-        title: 'Timer'
-        message: 'I will turn of the lights in 15 minutes. Good Night.'
 
 # Turn on lights in the livingroom if someone is awake before sun rises
-- alias: 'Livingroom lights in the morning'
+- alias: 'Lights: Livingroom lights in the morning'
   trigger:
     - platform: state
       entity_id: light.bad
@@ -205,7 +184,7 @@
         brightness: 150
         transition: 20
 
-- alias: 'Livingroom lights in the morning - Turn off'
+- alias: 'Lights: Livingroom lights in the morning - Turn off'
   trigger:
     - platform: sun
       event: sunrise
@@ -220,7 +199,7 @@
         entity_id: light.wohnzimmer
 
 
-- alias: 'Dimm lights at night'
+- alias: 'Lights: Dimm lights at night'
   trigger:
       platform: time
       at: '22:00'
@@ -235,7 +214,7 @@
       entity_id: light.bad
 
 
-- alias: 'Brighter lights at day'
+- alias: 'Lights: Brighter lights at day'
   trigger:
       platform: state
       entity_id: light.bad

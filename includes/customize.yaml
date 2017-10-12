@@ -104,9 +104,13 @@
     assumed_state: false
     homebridge_hidden: true
   device_tracker.nicolesiphone:
-    friendly_name: Nicole
+    friendly_name: Nicole-Router
   device_tracker.iphones:
-    friendly_name: Sascha
+    friendly_name: Sascha-Router
+  device_tracker.owntracks_nicole_iphone:
+    friendly_name: Nicole-owntracks
+  device_tracker.owntracks_iphones:
+    friendly_name: Sascha-owntracks
   sensor.netatmo_schlafzimmer_temperature:
     friendly_name: Temperatur 
   sensor.netatmo_schlafzimmer_co2:

@@ -1,4 +1,4 @@
-- alias: 'Water Bathroom plant' 
+- alias: 'Plants: Water Bathroom plant' 
   hide_entity: True
   trigger:
     platform: state
@@ -17,7 +17,7 @@
         title: 'Plants'
         message: 'Please water plant in the bathroom! Moisture: {{states.sensor.bad_moisture.state}}% | Conductivity: {{states.sensor.bad_conductivity.state}}'
 
-- alias: 'Water Sanseviera plant' 
+- alias: 'Plants: Water Sanseviera plant' 
   hide_entity: True
   trigger:
     platform: state
@@ -36,7 +36,7 @@
         title: 'Plants'
         message: 'Please water Plant Sanseviera! Moisture: {{states.sensor.sanseviera_moisture.state}}% | Conductivity: {{states.sensor.sanseviera_conductivity.state}}'
 
-- alias: 'Water Palm plant'
+- alias: 'Plants: Water Palm plant'
   hide_entity: True 
   trigger:
     platform: state
@@ -55,7 +55,7 @@
         title: 'Plants'
         message: 'Please water Palm! Moisture: {{states.sensor.palme_moisture.state}}% | Conductivity: {{states.sensor.palme_conductivity.state}}'
 
-- alias: 'Water small palm plant'
+- alias: 'Plants: Water small palm plant'
   hide_entity: True 
   trigger:
     platform: state

@@ -1,4 +1,4 @@
-- alias: 'Robot started cleaning' 
+- alias: 'Robot: Robot started cleaning' 
   trigger:
     platform: state
     entity_id: sensor.mi_info_status
@@ -10,7 +10,7 @@
         title: 'Robot'
         message: 'Robot started to clean!'
 
-- alias: 'Robot stopped cleaning' 
+- alias: 'Robot: Robot stopped cleaning' 
   trigger:
     platform: state
     entity_id: sensor.mi_info_status
@@ -25,7 +25,7 @@
       data:
         entity_id: input_boolean.cleaned_today
 
-- alias: 'Robot cleanup if nobody is home'
+- alias: 'Robot: Robot cleanup if nobody is home'
   trigger:
     platform: time
     at: '14:00'
@@ -50,7 +50,7 @@
     - service: vacuum.turn_on
       entity_id: vacuum.staubsauger
 
-- alias: 'Robot waits until everybody left'
+- alias: 'Robot: Robot waits until everybody left'
   trigger:
     platform: state
     entity_id: group.personen
@@ -75,7 +75,7 @@
     - service: vacuum.turn_on
       entity_id: vacuum.staubsauger
 
-- alias: 'Reset cleaned today counter'
+- alias: 'Robot: Reset cleaned today counter'
   trigger:
     platform: time
     at: '01:00:00'
@@ -84,7 +84,7 @@
       data:
         entity_id: input_boolean.cleaned_today
 
-- alias: 'Robot: Clean dust bin' 
+- alias: 'Robot: Robot: Clean dust bin' 
   trigger:
     platform: state
     entity_id: device_tracker.iphones

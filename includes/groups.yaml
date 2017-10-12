@@ -167,7 +167,7 @@ robot:
     - sensor.mi_info_cleaningtime
     - input_boolean.cleaned_today
 speaker:
-  name: Sonos
+  name: Musik
   entities:
     - input_select.sonos_source
     - switch.sonos_mode

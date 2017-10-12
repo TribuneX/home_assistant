@@ -1,9 +1,9 @@
 # Inspired by https://github.com/CCOSTAN/Home-AssistantConfig
-- alias: 'Printer ink levels'
+- alias: 'Printer: Printer ink levels'
   trigger:
     - platform: numeric_state
       entity_id: sensor.epson_ink_level_black, sensor.epson_ink_level_magenta, sensor.epson_ink_level_yellow, sensor.epson_ink_level_cyan
-      below: 20
+      below: 10
   action:
     - service: notify.ios_iphones_app   
       data_template:   
