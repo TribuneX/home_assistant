@@ -32,14 +32,6 @@
       command_on: 'sudo /opt/rcswitch-pi/send 11001 1 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11001 1 0'
       friendly_name: Fernseher 2
-    light_nicole:
-      command_on: 'sudo /opt/rcswitch-pi/send 11001 2 1'
-      command_off: 'sudo /opt/rcswitch-pi/send 11001 2 0'
-      friendly_name: Lampe Nicole
-    light_sascha:
-      command_on: 'sudo /opt/rcswitch-pi/send 11001 3 1'
-      command_off: 'sudo /opt/rcswitch-pi/send 11001 3 0'
-      friendly_name: Lampe Sascha
 
 
 - platform: mqtt

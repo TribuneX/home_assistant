@@ -155,10 +155,11 @@
     after: '21:00'
     before: '00:00'
   action: 
-    - service: switch.turn_on
-      entity_id: switch.light_sascha
-    - service: switch.turn_on
-      entity_id: switch.light_nicole 
+    - service: light.turn_on
+      data: 
+        entity_id: light.schlafzimmer
+        brightness: 100
+        transition: 20
     - service: script.turn_off_livingroom_delay_15
 
 # Turn on lights in the livingroom if someone is awake before sun rises

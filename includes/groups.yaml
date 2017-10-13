@@ -18,8 +18,8 @@ schlafzimmer:
     - sensor.netatmo_schlafzimmer_temperature
     - sensor.netatmo_schlafzimmer_co2
     - sensor.netatmo_schlafzimmer_humidity
-    - switch.light_sascha
-    - switch.light_nicole
+    - light.sascha
+    - light.nicole
     - switch.tv_2
     - switch.ventilator
 outdoor:
