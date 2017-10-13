@@ -173,10 +173,6 @@
   sensor.ha_current_version:
     icon: mdi:home-assistant
     friendly_name: Current version
-  light.fernseher:
-    icon: mdi:lightbulb-on
-  light.sofa:
-    icon: mdi:lightbulb-on
   light.wohnzimmer:
     friendly_name: Lampen
   light.bad:
