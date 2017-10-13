@@ -164,7 +164,7 @@
   - service: switch.turn_on
     entity_id: switch.sonos_speaker
   - delay:
-      seconds: 25
+      seconds: 33
   - data_template:
       source: "{{ trigger.to_state.state }}"
     entity_id: media_player.living_room
