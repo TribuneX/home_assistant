@@ -263,3 +263,19 @@
   action:
     - service: media_player.media_pause
       entity_id: media_player.living_room
+
+- alias: 'Media: Play Radio when someone arrives at home'
+  trigger:
+    platform: state
+    entity_id: group.personen
+    from: 'not_home'
+    to: 'home'
+  condition:
+    - condition: time
+      after: '08:00'
+      before: '22:00'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.sonos_mode
+        option: HIT RADIO FFH
