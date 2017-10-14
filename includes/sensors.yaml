@@ -162,6 +162,11 @@
         friendly_name: 'Server'
         value_template: "{{ 'online' if is_state('device_tracker.server', 'home') else 'off' }}"
 
+      sonos:
+        friendly_name: 'Sonos'
+        value_template: "{{ 'online' if is_state('device_tracker.batplay1', 'home') else 'off' }}"
+        
+
 #### SENSORS TO SHOW THE DIFFERENT ATTRIBUTES ####
 # Inspired by https://github.com/rytilahti/python-mirobo/issues/4
       mi_info_status:
