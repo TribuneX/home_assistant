@@ -176,9 +176,9 @@
     entity_id: media_player.living_room
     service: media_player.select_source
   - service: input_select.select_option
-      data:
-        entity_id: input_select.sonos_source
-        option: 'SELECT'
+    data:
+      entity_id: input_select.sonos_source
+      option: 'SELECT'
 
 - alias: 'Media: Turn off TV'
   trigger:
