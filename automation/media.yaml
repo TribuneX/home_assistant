@@ -189,15 +189,15 @@
         entity_id: media_player.living_room
         volume_level: '{{ trigger.to_state.state }}'
 
-- alias: Speaker- Volume
-  trigger:
-    platform: state
-    entity_id: media_player.living_room
-  action:
-    - service: input_number.set_value
-      data_template:
-        entity_id: input_number.sonos_speaker
-        value: '{{ states.media_player.living_room.attributes.volume_level }}'
+# - alias: Speaker - Volume
+#   trigger:
+#     platform: state
+#     entity_id: media_player.living_room
+#   action:
+#     - service: input_number.set_value
+#       data_template:
+#         entity_id: input_number.sonos_speaker
+#         value: '{{ states.media_player.living_room.attributes.volume_level }}'
 
 - alias: 'Media: Pause AppleTV if SONOS is used'
   trigger:
