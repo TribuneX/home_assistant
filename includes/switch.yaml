@@ -129,9 +129,7 @@
         service: input_select.select_option
         data:
           entity_id: input_select.sonos_source
-          option: Hits (Sascha)
+          option: 'HIT RADIO FFH'
       turn_off:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.sonos_source
-          option: AUS
+        service: switch.turn_on
+        entity_id: switch.pause_sonos

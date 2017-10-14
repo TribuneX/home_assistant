@@ -170,28 +170,6 @@
     entity_id: media_player.living_room
     service: media_player.select_source
 
-- alias: 'Media: Turn off Sonos'
-  trigger:
-    platform: state
-    entity_id: input_select.sonos_mode
-    to: 'AUS'
-  action:
-    - service: switch.turn_off
-      entity_id: switch.sonos_speaker
-
-- alias: 'Media: Pause Sonos'
-  trigger:
-    platform: state
-    entity_id: input_select.sonos_source
-    to: 'AUS'
-  condition:  
-   condition: state
-   entity_id: switch.sonos_speaker
-   state: 'on'
-  action:
-    - service: script.pause_sonos
-
-
 - alias: 'Media: Turn off TV'
   trigger:
     platform: state

@@ -206,9 +206,6 @@ turn_off_all:
         entity_id: input_select.tv_mode
         option: AUS 
     - service: input_select.select_option
-      data:
-        entity_id: input_select.sonos_mode
-        option: AUS
 
 turn_off_speaker_after_delay:
   sequence:
