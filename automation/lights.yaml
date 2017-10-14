@@ -229,3 +229,37 @@
         minutes: 1 
     - service: light.turn_off
       entity_id: light.bad
+
+
+- alias: 'Lights: Bedroom lights triggered by beacon'
+  trigger:
+    platform: state
+    entity_id: device_tracker.owntracks_iphones
+    from: home
+    to: Bedroom
+  action:
+    - service: light.turn_on
+      data: 
+        entity_id: light.schlafzimmer
+        brightness: 100
+        transition: 20
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Location'
+        message: 'Beacon bedroom detected'
+
+- alias: 'Lights: Bedroom lights triggered by beacon - off'
+  trigger:
+    platform: state
+    entity_id: device_tracker.owntracks_iphones
+    from: Bedroom
+    to: home
+  action:
+    - service: light.turn_off
+      data: 
+        entity_id: light.schlafzimmer
+        transition: 20
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Location'
+        message: 'Beacon bedroom lost'
