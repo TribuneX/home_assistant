@@ -264,5 +264,5 @@
   action:
     - service: input_select.select_option
       data:
-        entity_id: input_select.sonos_mode
-        option: HIT RADIO FFH
+        entity_id: input_select.sonos_source
+        option: 'HIT RADIO FFH'
