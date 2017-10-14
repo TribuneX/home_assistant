@@ -258,6 +258,8 @@
       entity_id: media_player.living_room
       state: 'playing'
   action:
+    - delay:
+        seconds: 20
     - service: media_player.media_pause
       entity_id: media_player.living_room
 
