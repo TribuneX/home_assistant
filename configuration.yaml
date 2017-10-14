@@ -200,6 +200,7 @@ zone 2:
 
 zone 3:
   name: Home Nicole
+  radius: 50
   latitude: !secret latitude_value
   longitude: !secret longitude_value
 
@@ -210,6 +211,7 @@ zone 3:
 
 zone 4:
   name: Bedroom
+  radius: 1
   latitude: !secret latitude_value
   longitude: !secret longitude_value
 
