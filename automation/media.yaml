@@ -142,7 +142,7 @@
   trigger:
     - entity_id: input_select.sonos_source
       platform: state
-      from: 'AUS'
+      from: 'SELECT'
   condition:  
    condition: state
    entity_id: switch.sonos_speaker
@@ -155,13 +155,13 @@
   - service: input_select.select_option
     data:
       entity_id: input_select.sonos_source
-      option: 'AUS'
+      option: 'SELECT'
 
 - alias: "Play selected source on sonos + sonos"
   trigger:
     - entity_id: input_select.sonos_source
       platform: state
-      from: 'AUS'
+      from: 'SELECT'
   condition:  
    condition: state
    entity_id: switch.sonos_speaker
@@ -178,7 +178,7 @@
   - service: input_select.select_option
       data:
         entity_id: input_select.sonos_source
-        option: 'AUS'
+        option: 'SELECT'
 
 - alias: 'Media: Turn off TV'
   trigger:

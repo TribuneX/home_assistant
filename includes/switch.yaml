@@ -133,7 +133,7 @@
         - service: input_select.select_option
           data:
             entity_id: input_select.sonos_source
-            option: 'AUS'
+            option: 'SELECT'
       turn_off:
         service: script.turn_on
         entity_id: script.pause_sonos
