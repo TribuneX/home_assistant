@@ -126,10 +126,14 @@
     sonos_mode:
       value_template: "{{ is_state('media_player.living_room', 'playing')}}"
       turn_on:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.sonos_source
-          option: 'HIT RADIO FFH'
+        - service: input_select.select_option
+          data:
+            entity_id: input_select.sonos_source
+            option: 'HIT RADIO FFH'
+        - service: input_select.select_option
+          data:
+            entity_id: input_select.sonos_source
+            option: 'AUS'
       turn_off:
-        service: switch.turn_on
-        entity_id: switch.pause_sonos
+        service: script.turn_on
+        entity_id: script.pause_sonos

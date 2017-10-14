@@ -142,6 +142,7 @@
   trigger:
     - entity_id: input_select.sonos_source
       platform: state
+      from: 'AUS'
   condition:  
    condition: state
    entity_id: switch.sonos_speaker
@@ -151,11 +152,16 @@
       source: "{{ trigger.to_state.state }}"
     entity_id: media_player.living_room
     service: media_player.select_source
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.sonos_source
+      option: 'AUS'
 
 - alias: "Play selected source on sonos + sonos"
   trigger:
     - entity_id: input_select.sonos_source
       platform: state
+      from: 'AUS'
   condition:  
    condition: state
    entity_id: switch.sonos_speaker
@@ -169,6 +175,10 @@
       source: "{{ trigger.to_state.state }}"
     entity_id: media_player.living_room
     service: media_player.select_source
+  - service: input_select.select_option
+      data:
+        entity_id: input_select.sonos_source
+        option: 'AUS'
 
 - alias: 'Media: Turn off TV'
   trigger:
