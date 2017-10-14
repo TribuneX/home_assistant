@@ -211,10 +211,3 @@ turn_off_speaker_after_delay:
         minutes: 10
     - service: switch.turn_off
       entity_id: switch.sonos_speaker
-
-# reset_media:
-#   sequence:
-#     - service: input_select.select_option
-#       data:
-#         entity_id: input_select.tv_mode
-#         option: INIT 
