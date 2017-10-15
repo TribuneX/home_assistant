@@ -88,8 +88,8 @@ pi:
 personen:
   name: Personen
   entities:
-    - group.sascha
-    - group.nicole
+    - device_tracker.iphones
+    - device_tracker.nicolesiphone
 sascha:
   name: Sascha
   entities:
