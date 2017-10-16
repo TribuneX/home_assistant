@@ -96,6 +96,7 @@ device_tracker:
     password: !secret fritz_password
     track_new_devices: false 
   - platform: owntracks
+    max_gps_accuracy: 100
   #- platform: bluetooth_tracker
 
 # Track the sun
