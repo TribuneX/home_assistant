@@ -160,6 +160,7 @@ devices:
     - sensor.server
     - sensor.sonos
     - switch.tv
+    - switch.sonos_speaker
 robot:
   name: 'Staubsauger'
   entities:
