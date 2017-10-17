@@ -28,7 +28,7 @@
       data: 
         entity_id: light.wohnzimmer
         brightness: 150
-        transition: 20
+        transition: 4
 
 - alias: 'Lights: Livingroom lights at sunset + TV is on'
   trigger:
@@ -60,7 +60,7 @@
       data: 
         entity_id: light.wohnzimmer
         brightness: 20
-        transition: 20
+        transition: 4
 
 # Turn on light at Sofa if ATV is paused
 - alias: 'Lights: Turn on light when AppleTV is paused'
@@ -85,7 +85,7 @@
       data: 
         entity_id: light.wohnzimmer
         brightness: 150
-        transition: 20
+        transition: 4
 
 # Turn on light at Sofa if ATV is paused
 - alias: 'Lights: Dim light when AppleTV is played'
@@ -108,7 +108,7 @@
       data: 
         entity_id: light.wohnzimmer
         brightness: 20
-        transition: 20
+        transition: 4
 
 # Turn of devices in the bedroom 30 minutes when switched on after 23:00
 - alias: 'Lights: 45 minutes timer for devices at night'
@@ -159,7 +159,7 @@
       data: 
         entity_id: light.schlafzimmer
         brightness: 100
-        transition: 20
+        transition: 4
     - service: script.turn_off_livingroom_delay_15
 
 # Turn on lights in the livingroom if someone is awake before sun rises
@@ -183,7 +183,7 @@
       data: 
         entity_id: light.wohnzimmer
         brightness: 150
-        transition: 20
+        transition: 4
 
 - alias: 'Lights: Livingroom lights in the morning - Turn off'
   trigger:
@@ -224,7 +224,7 @@
       data: 
         entity_id: light.bad
         brightness: 50
-        transition: 20
+        transition: 4
     - delay:
         minutes: 1 
     - service: light.turn_off
@@ -242,7 +242,7 @@
       data: 
         entity_id: light.schlafzimmer
         brightness: 100
-        transition: 20
+        transition: 4
     - service: notify.ios_iphones_app
       data:
         title: 'Location'
@@ -258,7 +258,7 @@
     - service: light.turn_off
       data: 
         entity_id: light.schlafzimmer
-        transition: 20
+        transition: 4
     - service: notify.ios_iphones_app
       data:
         title: 'Location'
