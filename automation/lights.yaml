@@ -180,7 +180,7 @@
         before: '10:00'
       - condition: sun
         before: sunrise
-        offset: '+0:10:00'
+        before_offset: '0:10:00'
   action:
     - service: light.turn_on
       data: 
