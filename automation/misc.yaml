@@ -102,13 +102,3 @@
     - service: script.prepare_restart
     - service: script.get_latest_config
 
-- alias: 'Misc: Raspberry full volume'
-  trigger:
-    platform: numeric_state
-    entity_id: sensor.disk_use
-    above: 90
-  action:
-    - service: notify.ios_iphones_app
-      data:
-        title: 'System'
-        message: 'Volume is running out of space. Current usage is: {{states.sensor.disk_use_.state}}%'
