@@ -25,7 +25,7 @@ reload_automations:
 reboot_pi:
   alias: Reboot System
   sequence:
-    - service: homeassistant.turn_off
+    - service: homeassistant.stop
     - service: shell_command.pi 
 
 # Turns lights on and off after sunset
