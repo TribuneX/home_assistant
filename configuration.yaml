@@ -26,6 +26,7 @@ mqtt:
   protocol: 3.1
   port: 1883
 
+map:
 
 recorder:
   db_url: !secret mysql_path
