@@ -36,6 +36,10 @@ vacation_lights:
     - delay:
         hours: 1
     # turn lights on for 2 hours after sunset
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Vacation mode'
+        message: 'I switched on the lights while you are on vacation'
     - service: light.turn_on
       entity_id: light.fernseher
     - delay:
