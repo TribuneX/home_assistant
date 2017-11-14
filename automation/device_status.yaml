@@ -33,12 +33,6 @@
       to: 'on'
       for:
         minutes: 1
-  condition:
-     condition: state
-      entity_id: sensor.robo, sensor.tradfri, sensor.switch, binary_sensor.ping_dreieich, binary_sensor.ping_eltern, binary_sensor.ping_gote, binary_sensor.ping_polanetzki, binary_sensor.ping_schwarzwald, binary_sensor.ping_sebastian, binary_sensor.ping_sonja, binary_sensor.ping_uwe, binary_sensor.ping_vhv
-      state: 'off'
-      for:
-        minutes: 5
   action:
     - service: notify.ios_iphones_app   
       data_template:   
