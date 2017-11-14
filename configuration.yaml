@@ -155,7 +155,7 @@ input_select:
       - info
       - debug
       - notset
-    initial: error
+    initial: fatal
 
 input_number:
   sonos_speaker:
