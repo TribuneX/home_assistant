@@ -83,10 +83,10 @@
     friendly_name: FireTV
   switch.music_mode:
     icon: mdi:music-circle
-    friendly_name: Audio
+    friendly_name: Music
   switch.sonos_mode:
     icon: mdi:speaker-wireless
-    friendly_name: Musik
+    friendly_name: Sonos
   switch.sonos_speaker:
     icon: mdi:speaker-wireless
     friendly_name: Speaker
@@ -183,6 +183,10 @@
     homebridge_hidden: true
   light.eingang_2:
     homebridge_hidden: true
+  light.kueche1:
+    homebridge_hidden: true
+  light.kueche2:
+    homebridge_hidden: true
   script.restart_hass:
     icon: mdi:home-assistant
     friendly_name: Restart
@@ -217,13 +221,6 @@
       uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E1
       major: 1
       minor: 1
-
-  input_boolean.vacation_mode:
-    homebridge_hidden: true
-  input_boolean.cleaned_today:
-    homebridge_hidden: true
-  media_player.living_room:
-    homebridge_hidden: true
 
   group.all_automations:
     hidden: false
