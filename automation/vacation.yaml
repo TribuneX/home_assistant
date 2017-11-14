@@ -52,7 +52,3 @@
       state: 'on'
   action:
     - service: script.vacation_lights
-    - service: notify.ios_iphones_app
-      data:
-        title: 'Vacation mode'
-        message: 'I switched on the lights while you are on vacation'

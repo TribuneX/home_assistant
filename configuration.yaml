@@ -26,6 +26,7 @@ mqtt:
   protocol: 3.1
   port: 1883
 
+map:
 
 recorder:
   db_url: !secret mysql_path
@@ -167,6 +168,7 @@ input_number:
 tradfri:
   host: 192.168.178.52
   allow_tradfri_groups: true
+  api_key: !secret tradfri_api_key
 
 # plant:
 #   bad:
