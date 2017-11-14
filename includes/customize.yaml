@@ -183,9 +183,9 @@
     homebridge_hidden: true
   light.eingang_2:
     homebridge_hidden: true
-  light.kueche1:
+  light.kuche1:
     homebridge_hidden: true
-  light.kueche2:
+  light.kuche2:
     homebridge_hidden: true
   script.restart_hass:
     icon: mdi:home-assistant
