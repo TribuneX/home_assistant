@@ -92,7 +92,7 @@
 - alias: 'Misc: Update config if travis build is successfull'
   trigger:
     platform: state
-    entity_id: sensor.tribunexhome_assistant_last_build_started_at
+    entity_id: sensor.tribunexhome_assistant_last_build_id
   condition:
     - condition: state
       entity_id: sensor.tribunexhome_assistant_last_build_state
