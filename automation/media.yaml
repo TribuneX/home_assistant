@@ -175,6 +175,10 @@
       source: "{{ trigger.to_state.state }}"
     entity_id: media_player.living_room
     service: media_player.select_source
+  - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.living_room
+        volume_level: '{{ trigger.to_state.state }}'
   - service: input_select.select_option
     data:
       entity_id: input_select.sonos_source
@@ -281,4 +285,4 @@
     - service: media_player.volume_set
       data_template:
         entity_id: media_player.living_room
-        volume_level: 0.3
+        volume_level: '{{ trigger.to_state.state }}'
