@@ -176,9 +176,9 @@
     entity_id: media_player.living_room
     service: media_player.select_source
   - service: media_player.volume_set
-      data_template:
-        entity_id: media_player.living_room
-        volume_level: '{{ trigger.to_state.state }}'
+    data:
+      entity_id: media_player.living_room
+      volume_level: 0.3
   - service: input_select.select_option
     data:
       entity_id: input_select.sonos_source
@@ -283,6 +283,6 @@
         entity_id: input_select.sonos_source
         option: 'HIT RADIO FFH'
     - service: media_player.volume_set
-      data_template:
+      data:
         entity_id: media_player.living_room
-        volume_level: '{{ trigger.to_state.state }}'
+        volume_level: 0.2
