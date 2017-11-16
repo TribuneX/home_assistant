@@ -168,31 +168,6 @@
       sonos:
         friendly_name: 'Sonos'
         value_template: "{{ 'online' if is_state('device_tracker.batplay1', 'home') else 'off' }}"
-        
-
-#### SENSORS TO SHOW THE DIFFERENT ATTRIBUTES ####
-# Inspired by https://github.com/rytilahti/python-mirobo/issues/4
-      mi_info_status:
-        value_template: '{{ states.vacuum.staubsauger.attributes.status}}'
-        friendly_name: 'Status'
-        icon_template: mdi:comment
-
-      mi_info_battery:
-        value_template: '{{ states.vacuum.staubsauger.attributes.battery_level}}'
-        friendly_name: 'Battery'
-        unit_of_measurement: '%'
-        icon_template: mdi:battery-charging-100
-
-      mi_info_cleanedarea:
-        value_template: '{{ states.vacuum.staubsauger.attributes.cleaned_area | round(0) }}'
-        friendly_name: 'Cleaned area'
-        unit_of_measurement: 'm2'
-        icon_template: mdi:map
-
-      mi_info_cleaningtime:
-        value_template: '{{ states.vacuum.staubsauger.attributes.cleaning_time}}'
-        friendly_name: 'Cleaning time'
-        icon_template: mdi:clock
 
 - platform: command_line
   name: Epson Ink Level Black
