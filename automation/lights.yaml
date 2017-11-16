@@ -221,7 +221,7 @@
 - alias: 'Lights: Brighter lights at day'
   trigger:
       platform: time
-      at: '06:00'
+      at: '05:30'
   action:
     - service: light.turn_on
       data: 
