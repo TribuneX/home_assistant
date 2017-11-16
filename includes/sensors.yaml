@@ -32,6 +32,9 @@
 - platform: fritzbox_netmonitor
   host: !secret fritz_host
 
+- platform: travisci
+  api_key: !secret github_token
+
 - platform: command_line
   name: CPU Temperature
   command: 'cat /sys/class/thermal/thermal_zone0/temp'
