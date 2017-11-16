@@ -92,11 +92,8 @@
 - alias: 'Misc: Update config if travis build is successfull'
   trigger:
     platform: state
-    entity_id: sensor.tribunexhome_assistant_last_build_id
-  condition:
-    - condition: state
-      entity_id: sensor.tribunexhome_assistant_last_build_state
-      state: 'passed'
+    entity_id: sensor.tribunexhome_assistant_last_build_state
+    to: 'passed'
   action:
     # turn on TV before updating the config, since the broadlink needs to be on during startup
     - service: script.prepare_restart
