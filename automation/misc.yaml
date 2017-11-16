@@ -63,15 +63,15 @@
     - service: switch.turn_off
       entity_id: switch.sonos_speaker
 
-# - alias: 'Misc: Startup default states'
-#   trigger:
-#     platform: homeassistant
-#     event: start
-#   action:
-#     - service: input_select.select_option
-#       data:
-#         entity_id: input_select.tv_mode
-#         option: AppleTV
+- alias: 'Misc: Startup default states'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.log_level
+        option: 'fatal'
 
 - alias: 'Misc: Startup nobody is home'
   trigger:
