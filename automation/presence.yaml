@@ -12,10 +12,10 @@
 
 - alias: 'Presence: Nicole arrived at home'
   trigger:
-    platform: state
-    entity_id: group.nicole
-    from: not_home
-    to: home
+    platform: zone
+    entity_id: device_tracker.owntracks_nicole_iphone
+    zone: zone.home
+    event: enter
   action:
     - service: notify.ios_iphones_app
       data:
