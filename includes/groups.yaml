@@ -165,8 +165,6 @@ robot:
   name: 'Staubsauger'
   entities:
     - vacuum.staubsauger
-    - sensor.mi_info_status      
-    - sensor.mi_info_cleaningtime
     - input_boolean.cleaned_today
 speaker:
   name: Musik
