@@ -187,10 +187,10 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-    - group.outdoor
     - group.wohnzimmer
     - group.schlafzimmer
     - group.arbeitszimmer
+    - group.outdoor
     - group.states
     - group.robot
 media:
@@ -216,7 +216,6 @@ home:
   icon: mdi:account
   entities:
     - group.personen
-    - group.iphone
 plants:
   name: Pflanzen
   view: yes
@@ -240,12 +239,10 @@ automation:
   view: yes
   icon: mdi:settings
   entities:
+    - group.settings
     - group.all_automations
     - group.all_scripts
-    - scene.alles_aus
-    - scene.lampen_bett
-    - scene.lampen_wohnzimmer
-    - group.settings
+    
 # finance:
 #   name: Finance
 #   view: yes
