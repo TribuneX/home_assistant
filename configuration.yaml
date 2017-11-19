@@ -80,6 +80,11 @@ logbook:
       - device_tracker.plex
       - device_tracker.broadlink
       - device_tracker.epson029ea9
+      - device_tracker.batplay1
+      - light.kuche1
+      - light.kuche2
+      - light.eingang
+
 
 # Support for iOS app
 ios:
