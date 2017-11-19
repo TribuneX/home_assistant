@@ -18,6 +18,10 @@ homeassistant:
 
 logger:
   default: warning
+  logs:
+    # Hide botvac connexion errors which happen sometimes:
+    homeassistant.components.vacuum: error
+    miio.device: critical
 
 mqtt:
   broker: hass.cbs-service.net
