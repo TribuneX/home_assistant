@@ -40,7 +40,7 @@ arbeitszimmer:
   name: Arbeitszimmer
   entities:
     - switch.server
-    - sensor.palme_temperature
+    - sensor.palmek_temperature
 plant_wohnzimmer:
   name: Sanseviera
   entities:  
