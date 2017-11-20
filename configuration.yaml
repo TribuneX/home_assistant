@@ -40,7 +40,7 @@ recorder:
 
 # Enables the frontend
 frontend:
-  javascript_version: latest
+  #javascript_version: latest
 
 # Enables configuration UI
 config:
