@@ -80,5 +80,5 @@
     - service: notify.ios_iphones_app
       data:
         title: 'Weather Report'
-        message: 'It looks like its gonna rain ({{states.sensor.dark_sky_precip_intensity.state}}) soon ({{states.sensor.dark_sky_precip_probability.state}}). {{states.sensor.dark_sky_precip_intensity.state}}'
+        message: 'It looks like its gonna rain ({{states.sensor.dark_sky_precip_intensity.state}}) soon ({{states.sensor.dark_sky_precip_probability.state}}%). {{states.sensor.sensor.dark_sky_summary.state}}'
 
