@@ -74,11 +74,11 @@
 - alias: 'Weather: Rainy Day'
   trigger:
     - platform: state
-      entity_id: sensor.dark_sky_precip_type
+      entity_id: sensor.dark_sky_precip
       to: 'rain'
   action:
     - service: notify.ios_iphones_app
       data:
         title: 'Weather Report'
-        message: 'It looks like its gonna rain soon. {{states.sensor.dark_sky_hourly_summary.state}}'
+        message: 'It looks like its gonna rain ({{states.sensor.dark_sky_precip_intensity.state}}) soon ({{states.sensor.dark_sky_precip_probability.state}}). {{states.sensor.dark_sky_precip_intensity.state}}'
 
