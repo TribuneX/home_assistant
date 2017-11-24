@@ -1,7 +1,7 @@
 - alias: 'Robot: Robot started cleaning' 
   trigger:
     platform: state
-    entity_id: vacuum.staubsauger.attributes.status
+    entity_id: sensor.mi_info_status
     from: 'Charging'
     to: 'Cleaning'
   action:
@@ -13,7 +13,7 @@
 - alias: 'Robot: Robot stopped cleaning' 
   trigger:
     platform: state
-    entity_id: vacuum.staubsauger.attributes.status
+    entity_id: sensor.mi_info_status
     from: 'Returning home'
     to: 'Charging'
   action:

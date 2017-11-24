@@ -124,7 +124,12 @@
 
 # Inspired by https://github.com/CCOSTAN/Home-AssistantConfig/blob/9b088e5bee97d242463b7d794edeb4a1d967bac1/sensor/devices_states.yaml
 - platform: template
-  sensors:
+  sensors: 
+      # Inspired by https://github.com/rytilahti/python-mirobo/issues/4   
+      mi_info_status:   
+       value_template: '{{ states.vacuum.staubsauger.attributes.status}}'    
+       friendly_name: 'Status'   
+       icon_template: mdi:comment
       robo:
         friendly_name: 'Robo'
         value_template: "{{ 'online' if is_state('device_tracker.pc286c07f695b2', 'home') else 'off' }}"
@@ -193,3 +198,5 @@
   unit_of_measurement: '%'
   scan_interval: 60
   
+
+
