@@ -193,6 +193,7 @@ default_view:
     - group.outdoor
     - group.states
     - group.robot
+    - group.personen
 media:
   name: Media
   view: yes
@@ -201,21 +202,7 @@ media:
     - group.tv_scenes
     - media_player.atv_wohnzimmer
     - group.speaker
-    - media_player.living_room
-
-# music:
-#   name: Music
-#   view: yes
-#   icon: mdi:music-circle
-#   entities:
-#     - media_player.living_room
-#     - media_player.spotify
-home:
-  name: Home
-  view: yes
-  icon: mdi:account
-  entities:
-    - group.personen
+    - media_player.living_room    
 plants:
   name: Pflanzen
   view: yes
