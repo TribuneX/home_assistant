@@ -103,6 +103,7 @@ nicole:
 tv_scenes:
   name: TV
   entities:
+    - switch.tv
     - switch.tv_mode
     - switch.appletv_mode
     - switch.plex_mode
