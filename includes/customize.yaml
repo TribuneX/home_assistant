@@ -90,6 +90,9 @@
     icon: mdi:speaker-wireless
     friendly_name: Sonos
     homebridge_hidden: true
+  switch.sonos_mode:
+    icon: mdi:speaker-wireless          
+    friendly_name: Sonos
   device_tracker.nicolesiphone:
     friendly_name: Nicole-Router
   device_tracker.iphones:
