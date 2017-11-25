@@ -18,7 +18,7 @@
     homebridge_hidden: true
   switch.tv_2:
     icon: mdi:television
-    assumed_state: false
+    friendly_name: Fernseher 2
   switch.server:
     icon: mdi:server
   sensor.palme_battery:
@@ -86,13 +86,9 @@
   switch.music_mode:
     icon: mdi:music-circle
     friendly_name: Music
-  switch.sonos_mode:
+  switch.speaker_1:
     icon: mdi:speaker-wireless
     friendly_name: Sonos
-  switch.sonos_speaker:
-    icon: mdi:speaker-wireless
-    friendly_name: Speaker
-    assumed_state: false
     homebridge_hidden: true
   device_tracker.nicolesiphone:
     friendly_name: Nicole-Router

@@ -43,7 +43,6 @@
   payload_on: "on"
   payload_off: "off"
   retain: true
-  friendly_name: Speaker 1
 
 - platform: mqtt
   name: "TV_2"
@@ -53,7 +52,6 @@
   payload_on: "on"
   payload_off: "off"
   retain: true
-  friendly_name: Fernseher 2
 
 - platform: mqtt
   name: "Socket_1"

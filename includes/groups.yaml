@@ -158,7 +158,6 @@ devices:
     - sensor.switch
     - sensor.netatmo
     - sensor.server
-    - sensor.sonos
     - switch.tv
     - switch.speaker_1
 robot:
