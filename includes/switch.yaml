@@ -36,14 +36,14 @@
   retain: true
 
 - platform: mqtt
-  name: "Speaker1"
+  name: "Speaker_1"
   state_topic: "home/sonoff/living_room/2/stat"
   command_topic: "home/sonoff/living_room/2"
   qos: 0
   payload_on: "on"
   payload_off: "off"
   retain: true
-  friendly_name: Speaker1
+  friendly_name: Speaker 1
 
 - platform: mqtt
   name: "TV_2"
@@ -56,7 +56,7 @@
   friendly_name: Fernseher 2
 
 - platform: mqtt
-  name: "Socket1"
+  name: "Socket_1"
   state_topic: "home/sonoff/default_room/1/stat"
   command_topic: "home/sonoff/default_room/1"
   qos: 0
