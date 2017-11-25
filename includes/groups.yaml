@@ -35,7 +35,9 @@ outdoor:
     #- sensor.dark_sky_humidity
     - sensor.dark_sky_wind_speed
     #- sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_precip
     - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_precip_probability
 arbeitszimmer:
   name: Arbeitszimmer
   entities:
