@@ -8,10 +8,6 @@
     #  command_on: 'sudo /opt/rcswitch-pi/send 11111 2 1'
     #  command_off: 'sudo /opt/rcswitch-pi/send 11111 2 0'
     #  friendly_name: Lampe Fernseher
-    sonos_speaker:
-      command_on: 'sudo /opt/rcswitch-pi/send 11111 3 1'
-      command_off: 'sudo /opt/rcswitch-pi/send 11111 3 0'
-      friendly_name: Speaker
     light_sessel:
       command_on: 'sudo /opt/rcswitch-pi/send 11111 2 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11111 2 0'
@@ -28,10 +24,6 @@
       command_on: 'sudo /opt/rcswitch-pi/send 11110 4 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11110 4 0'
       friendly_name: Weihnachtsbaum    
-    tv_2:
-      command_on: 'sudo /opt/rcswitch-pi/send 11001 1 1'
-      command_off: 'sudo /opt/rcswitch-pi/send 11001 1 0'
-      friendly_name: Fernseher 2
 
 
 - platform: mqtt
@@ -44,13 +36,14 @@
   retain: true
 
 - platform: mqtt
-  name: "Sonos"
+  name: "Speaker1"
   state_topic: "home/sonoff/living_room/2/stat"
   command_topic: "home/sonoff/living_room/2"
   qos: 0
   payload_on: "on"
   payload_off: "off"
   retain: true
+  friendly_name: Speaker1
 
 - platform: mqtt
   name: "TV_2"
@@ -60,11 +53,12 @@
   payload_on: "on"
   payload_off: "off"
   retain: true
+  friendly_name: Fernseher 2
 
 - platform: mqtt
   name: "Socket1"
-  state_topic: "home/sonoff/default/1/stat"
-  command_topic: "home/sonoff/default/1"
+  state_topic: "home/sonoff/default_room/1/stat"
+  command_topic: "home/sonoff/default_room/1"
   qos: 0
   payload_on: "on"
   payload_off: "off"

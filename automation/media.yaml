@@ -145,7 +145,7 @@
       from: 'SELECT'
   condition:  
    condition: state
-   entity_id: switch.sonos_speaker
+   entity_id: switch.speaker1
    state: 'on'    
   action:
   - data_template:
@@ -164,11 +164,11 @@
       from: 'SELECT'
   condition:  
    condition: state
-   entity_id: switch.sonos_speaker
+   entity_id: switch.speaker1
    state: 'off'    
   action:
   - service: switch.turn_on
-    entity_id: switch.sonos_speaker
+    entity_id: switch.speaker1
   - delay:
       seconds: 33
   - data_template:
@@ -237,7 +237,7 @@
         minutes: 10
   action:
     - service: switch.turn_off
-      entity_id: switch.sonos_speaker
+      entity_id: switch.speaker1
 
 - alias: 'Media: Pause SONOS if AppleTV is used'
   trigger:
