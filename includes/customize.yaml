@@ -189,6 +189,14 @@
     homebridge_hidden: true
   light.kuche2:
     homebridge_hidden: true
+  light.sofa:
+    homebridge_hidden: true
+  light.fernseher:
+    homebridge_hidden: true
+  light.sascha:
+    homebridge_hidden: true
+  light.nicole:
+    homebridge_hidden: true
   script.restart_hass:
     icon: mdi:home-assistant
     friendly_name: Restart
