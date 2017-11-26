@@ -201,9 +201,6 @@
     - service: light.turn_off
       data: 
         entity_id: light.wohnzimmer
-    - service: script.turn_on
-      data:
-        entity_id: script.christmas_lights_on
 
 
 - alias: 'Lights: Dimm lights at night'
