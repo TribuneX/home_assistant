@@ -174,7 +174,7 @@
     icon: mdi:github-circle
   sensor.ha_current_version:
     icon: mdi:home-assistant
-    friendly_name: Current version
+    friendly_name: Latest HA version
   light.wohnzimmer:
     friendly_name: Lampen
   light.bad:
