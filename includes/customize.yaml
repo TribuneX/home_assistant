@@ -10,7 +10,7 @@
   switch.light_baum:
     icon: mdi:lightbulb-on
     assumed_state: false
-  light_sterne:
+  switch.light_sterne:
     icon: mdi:lightbulb-on
     assumed_state: false
   switch.tv:
