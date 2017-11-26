@@ -183,7 +183,7 @@ printer:
     - sensor.epson_ink_level_yellow
     - sensor.epson_ink_level_cyan
 christmas:
-  name: christmas
+  name: christmas_lights
   entities:
     - switch.light.baum
     - switch.light_sterne
@@ -244,7 +244,7 @@ christmas:
   view: yes
   icon: mdi:pine-tree
   entities:
-    - group.christmas
+    - group.christmas_lights
     
 # finance:
 #   name: Finance
