@@ -19,7 +19,7 @@
     homebridge_hidden: true
   switch.tv_2:
     icon: mdi:television
-    friendly_name: Fernseher 2
+    friendly_name: TV 2
   switch.server:
     icon: mdi:server
   sensor.palme_battery:
