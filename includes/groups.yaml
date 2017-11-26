@@ -185,7 +185,7 @@ printer:
 winter_lights:
   name: Christmas
   entities:
-    - switch.light.baum
+    - switch.light_baum
     - switch.light_sterne
     - switch.socket_1
     - switch.gang
