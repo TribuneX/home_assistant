@@ -180,19 +180,16 @@
         before: '10:00'
       - condition: sun
         before: sunrise
-        before_offset: '0:10:00'
+        before_offset: '0:01:00'
   action:
-    - service: light.turn_on
-      data: 
-        entity_id: light.wohnzimmer
-        brightness: 150
-        transition: 4
+    - service: script.turn_on
+      entity_id: script.livingroom_morning
 
 - alias: 'Lights: Livingroom lights in the morning - Turn off'
   trigger:
     - platform: sun
       event: sunrise
-      offset: '+0:15:00'
+      offset: '+0:45:00'
   condition:
       condition: state
       entity_id: light.wohnzimmer
