@@ -7,8 +7,10 @@
     assumed_state: false
   light.nicole:
     friendly_name: Nicole
+    homebridge_hidden: true
   light.sascha:
     friendly_name: Sascha
+    homebridge_hidden: true
   switch.light_baum:
     icon: mdi:lightbulb-on
     assumed_state: false
@@ -195,10 +197,6 @@
   light.sofa:
     homebridge_hidden: true
   light.fernseher:
-    homebridge_hidden: true
-  light.sascha:
-    homebridge_hidden: true
-  light.nicole:
     homebridge_hidden: true
   script.restart_hass:
     icon: mdi:home-assistant
