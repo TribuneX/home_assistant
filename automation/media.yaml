@@ -278,11 +278,5 @@
       after: '08:00'
       before: '22:00'
   action:
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.sonos_source
-        option: 'HIT RADIO FFH'
-    - service: media_player.volume_set
-      data:
-        entity_id: media_player.living_room
-        volume_level: 0.2
+    - service: script.turn_on
+      entity_id: script.radio_sonos

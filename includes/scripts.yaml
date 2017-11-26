@@ -195,6 +195,17 @@ play_sonos:
     - service: media_player.media_play
       entity_id: media_player.living_room
 
+radio_sonos:
+  sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.sonos_source
+        option: 'HIT RADIO FFH'
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.living_room
+        volume_level: 0.2
+
 turn_off_fan_after_delay:
   sequence:
     - delay:
