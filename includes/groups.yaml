@@ -182,6 +182,14 @@ printer:
     - sensor.epson_ink_level_magenta
     - sensor.epson_ink_level_yellow
     - sensor.epson_ink_level_cyan
+christmas:
+  name: christmas
+  entities:
+    - switch.light.baum
+    - switch.light_sterne
+    - switch.socket_1
+    - switch.gang
+
 
 # Tabs
 default_view:
@@ -231,6 +239,12 @@ automation:
     - group.settings
     - group.all_automations
     - group.all_scripts
+christmas:
+  name: christmas
+  view: yes
+  icon: mdi:pine-tree
+  entities:
+    - group.christmas
     
 # finance:
 #   name: Finance

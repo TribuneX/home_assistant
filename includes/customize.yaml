@@ -94,6 +94,9 @@
   switch.sonos_mode:
     icon: mdi:speaker-wireless          
     friendly_name: Sonos
+  switch.socket_1
+    friendly_name: Stern
+    icon: mdi:star
   device_tracker.nicolesiphone:
     friendly_name: Nicole-Router
   device_tracker.iphones:

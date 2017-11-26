@@ -24,6 +24,10 @@
       command_on: 'sudo /opt/rcswitch-pi/send 11110 4 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11110 4 0'
       friendly_name: Weihnachtsbaum    
+    light_sterne:
+      command_on: 'sudo /opt/rcswitch-pi/send 11110 1 1'
+      command_off: 'sudo /opt/rcswitch-pi/send 11110 1 0'
+      friendly_name: Sterne
 
 
 - platform: mqtt
