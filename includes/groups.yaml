@@ -182,7 +182,7 @@ printer:
     - sensor.epson_ink_level_magenta
     - sensor.epson_ink_level_yellow
     - sensor.epson_ink_level_cyan
-christmas:
+christmas_lights:
   name: christmas_lights
   entities:
     - switch.light.baum
