@@ -105,12 +105,12 @@ nicole:
 tv_scenes:
   name: TV
   entities:
-    - switch.tv
+    - switch.tv_mode
     - switch.appletv_mode
     - switch.plex_mode
     - switch.fire_tv_mode
     - switch.music_mode
-    - switch.tv_mode
+    - switch.tv
 iphone:
   name: Devices
   entities:
