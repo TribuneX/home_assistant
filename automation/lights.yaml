@@ -29,6 +29,10 @@
         entity_id: light.wohnzimmer
         brightness: 150
         transition: 4
+    - service: script.turn_on
+      data:
+        entity_id: script.christmas_lights_on
+
 
 - alias: 'Lights: Livingroom lights at sunset + TV is on'
   trigger:
@@ -61,6 +65,9 @@
         entity_id: light.wohnzimmer
         brightness: 20
         transition: 4
+    - service: script.turn_on
+      data:
+        entity_id: script.christmas_lights_on
 
 # Turn on light at Sofa if ATV is paused
 - alias: 'Lights: Turn on light when AppleTV is paused'
@@ -123,10 +130,6 @@
     before: '05:00'
   action:
     - service: script.turn_off_bedroom_delay_45
-    #- service: notify.ios_iphones_app
-    #  data:
-    #    title: 'Timer'
-    #    message: 'I will turn off the devices in the bedroom in 45 minutes'
 
 # Turn off devices in the livingroom 15 minutes when switched on after 3:01
 - alias: 'Lights: 15 minutes timer for devices at night'
@@ -198,6 +201,9 @@
     - service: light.turn_off
       data: 
         entity_id: light.wohnzimmer
+    - service: script.turn_on
+      data:
+        entity_id: script.christmas_lights_on
 
 
 - alias: 'Lights: Dimm lights at night'

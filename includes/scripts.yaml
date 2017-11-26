@@ -66,6 +66,8 @@ turn_off_livingroom_delay_15:
         minutes: 15
     - service: homeassistant.turn_off
       entity_id: group.wohnzimmer
+    - service: script.turn_on
+      entity_id: script.christmas_lights_off
 
 turn_off_bedroom_delay_45:
   alias: 'Turn off bedroom (delay 45 minutes)'
@@ -131,8 +133,6 @@ input_apple_tv:
       entity_id: script.pause_sonos
     - service: script.turn_on
       entity_id: script.turn_receiver_on
-    #- service: script.turn_on
-    #  entity_id: script.turn_tv_on
     - service: broadlink.send_packet_192_168_178_51
       data:
         packet:
@@ -241,3 +241,24 @@ livingroom_morning:
         transition: 4
     - service: script.turn_on
       entity_id: script.radio_sonos
+
+christmas_lights_on:
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.light_sterne
+    - service: switch.turn_on
+      entity_id: switch.baum
+    - service: switch.turn_on
+      entity_id: switch.socket_1
+
+christmas_lights_off:
+  sequence:
+    - service: switch.turn_off
+      entity_id: switch.light_sterne
+    - service: switch.turn_off
+      entity_id: switch.baum
+    - service: switch.turn_off
+      entity_id: switch.socket_1
+
+
+
