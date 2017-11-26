@@ -190,6 +190,11 @@ pause_sonos:
     - service: media_player.media_pause
       entity_id: media_player.living_room
 
+play_sonos:
+  sequence:
+    - service: media_player.media_play
+      entity_id: media_player.living_room
+
 turn_off_fan_after_delay:
   sequence:
     - delay:
