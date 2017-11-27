@@ -72,8 +72,7 @@ turn_off_livingroom_delay_15:
 turn_off_livingroom_lights_delay_15:
   sequence:
     - service: light.turn_off
-        data: 
-          entity_id: light.wohnzimmer
+      entity_id: light.wohnzimmer
 
 turn_off_bedroom_delay_45:
   alias: 'Turn off bedroom (delay 45 minutes)'
