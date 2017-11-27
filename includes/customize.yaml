@@ -1,3 +1,5 @@
+  # Switches
+
   switch.light_sessel:
     icon: mdi:lightbulb-on
     assumed_state: false
@@ -5,11 +7,10 @@
   switch.light_stern:
     icon: mdi:lightbulb-on
     assumed_state: false
-  light.nicole:
-    friendly_name: Nicole
-  light.sascha:
-    friendly_name: Sascha
   switch.light_baum:
+    icon: mdi:lightbulb-on
+    assumed_state: false
+  switch.light_sterne:
     icon: mdi:lightbulb-on
     assumed_state: false
   switch.tv:
@@ -22,6 +23,38 @@
     friendly_name: TV 2
   switch.server:
     icon: mdi:server
+  switch.tv_mode:
+    icon: mdi:television
+    friendly_name: TV
+  switch.appletv_mode:
+    icon: mdi:airplay
+    friendly_name: Apple TV
+  switch.plex_mode:
+    icon: mdi:plex
+    friendly_name: Plex
+  switch.fire_tv_mode:
+    icon: mdi:youtube-play
+    friendly_name: FireTV
+  switch.music_mode:
+    icon: mdi:music-circle
+    friendly_name: Music
+  switch.speaker_1:
+    icon: mdi:speaker-wireless
+    friendly_name: Sonos
+    homebridge_hidden: true
+  switch.sonos_mode:
+    icon: mdi:speaker-wireless          
+    friendly_name: Sonos
+  switch.socket_1:
+    friendly_name: Stern
+    icon: mdi:star
+  switch.ventilator:
+    icon: mdi:fan
+    assumed_state: false
+  
+
+# Sensors
+
   sensor.palme_battery:
     icon: mdi:battery-80
   sensor.sanseviera_temperature:
@@ -72,70 +105,6 @@
     icon: mdi:lightbulb-on
   scene.alles_aus:
     icon: mdi:power
-  switch.tv_mode:
-    icon: mdi:television
-    friendly_name: TV
-  switch.appletv_mode:
-    icon: mdi:airplay
-    friendly_name: Apple TV
-  switch.plex_mode:
-    icon: mdi:plex
-    friendly_name: Plex
-  switch.fire_tv_mode:
-    icon: mdi:youtube-play
-    friendly_name: FireTV
-  switch.music_mode:
-    icon: mdi:music-circle
-    friendly_name: Music
-  switch.speaker_1:
-    icon: mdi:speaker-wireless
-    friendly_name: Sonos
-    homebridge_hidden: true
-  switch.sonos_mode:
-    icon: mdi:speaker-wireless          
-    friendly_name: Sonos
-  switch.socket_1
-    friendly_name: Stern
-    icon: mdi:star
-  device_tracker.nicolesiphone:
-    friendly_name: Nicole-Router
-  device_tracker.iphones:
-    friendly_name: Sascha-Router
-  device_tracker.owntracks_nicole_iphone:
-    friendly_name: Nicole-owntracks
-  device_tracker.owntracks_iphones:
-    friendly_name: Sascha-owntracks
-  sensor.netatmo_schlafzimmer_temperature:
-    friendly_name: Temperatur 
-  sensor.netatmo_schlafzimmer_co2:
-    friendly_name: CO2
-  sensor.netatmo_schlafzimmer_humidity:
-    friendly_name: Luftfeuchtigkeit
-  sensor.netatmo_wohnzimmer_temperature:
-    friendly_name: Temperatur 
-  sensor.netatmo_wohnzimmer_co2:
-    friendly_name: CO2
-  sensor.netatmo_wohnzimmer_humidity:
-    friendly_name: Luftfeuchtigkeit
-  sensor.netatmo_wohnzimmer_pressure:
-    friendly_name: Druck
-  sensor.netatmo_wohnzimmer_noise:
-    friendly_name: Lautstärke
-  sensor.netatmo_outdoor_temperature:
-    friendly_name: Temperatur
-  sensor.netatmo_outdoor_humidity:
-    friendly_name: Luftfeuchtigkeit
-  sensor.dark_sky_daily_high_temperature:
-    friendly_name: High
-  sensor.dark_sky_daily_low_temperature:
-    friendly_name: Low
-  sensor.dark_sky_summary:
-    friendly_name: Aussicht
-  sensor.dark_sky_precip_intensity:
-    friendly_name: Regen
-  switch.ventilator:
-    icon: mdi:fan
-    assumed_state: false
   sensor.robo:
     icon: mdi:broom
     friendly_name: Staubsauger
@@ -173,11 +142,74 @@
   sensor.server:
     icon: mdi:server
     homebridge_hidden: true
-  script.get_latest_config:
-    icon: mdi:github-circle
+
+  sensor.netatmo_schlafzimmer_temperature:
+    friendly_name: Temperatur 
+  sensor.netatmo_schlafzimmer_co2:
+    friendly_name: CO2
+  sensor.netatmo_schlafzimmer_humidity:
+    friendly_name: Luftfeuchtigkeit
+  sensor.netatmo_wohnzimmer_temperature:
+    friendly_name: Temperatur 
+  sensor.netatmo_wohnzimmer_co2:
+    friendly_name: CO2
+  sensor.netatmo_wohnzimmer_humidity:
+    friendly_name: Luftfeuchtigkeit
+  sensor.netatmo_wohnzimmer_pressure:
+    friendly_name: Druck
+  sensor.netatmo_wohnzimmer_noise:
+    friendly_name: Lautstärke
+  sensor.netatmo_outdoor_temperature:
+    friendly_name: Temperatur
+  sensor.netatmo_outdoor_humidity:
+    friendly_name: Luftfeuchtigkeit
+  sensor.dark_sky_daily_high_temperature:
+    friendly_name: High
+  sensor.dark_sky_daily_low_temperature:
+    friendly_name: Low
+  sensor.dark_sky_summary:
+    friendly_name: Aussicht
+  sensor.dark_sky_precip_intensity:
+    friendly_name: Regen
+
   sensor.ha_current_version:
     icon: mdi:home-assistant
     friendly_name: Latest HA version
+
+  sensor.fritz_netmonitor:
+    friendly_name: FritzBox
+    icon: mdi:router-wireless
+
+  # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
+  sensor.epson_ink_level_black:
+    entity_picture: /local/icon_ink_black.png
+  sensor.epson_ink_level_magenta:
+    entity_picture: /local/icon_ink_magenta.png
+  sensor.epson_ink_level_yellow:
+    entity_picture: /local/icon_ink_yellow.png
+  sensor.epson_ink_level_cyan:
+    entity_picture: /local/icon_ink_cyan.png
+  
+# Device Tracker
+
+  device_tracker.nicolesiphone:
+    friendly_name: Nicole-Router
+  device_tracker.iphones:
+    friendly_name: Sascha-Router
+  device_tracker.owntracks_nicole_iphone:
+    friendly_name: Nicole-owntracks
+  device_tracker.owntracks_iphones:
+    friendly_name: Sascha-owntracks
+  
+  
+# Lights
+
+  light.nicole:
+    friendly_name: Nicole
+    homebridge_hidden: true
+  light.sascha:
+    friendly_name: Sascha
+    homebridge_hidden: true
   light.wohnzimmer:
     friendly_name: Lampen
   light.bad:
@@ -196,10 +228,6 @@
     homebridge_hidden: true
   light.fernseher:
     homebridge_hidden: true
-  light.sascha:
-    homebridge_hidden: true
-  light.nicole:
-    homebridge_hidden: true
   script.restart_hass:
     icon: mdi:home-assistant
     friendly_name: Restart
@@ -208,22 +236,21 @@
     friendly_name: Reboot
   input_number.sonos_speaker:
     icon: mdi:volume-high 
-  # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
-  sensor.epson_ink_level_black:
-    entity_picture: /local/icon_ink_black.png
-  sensor.epson_ink_level_magenta:
-    entity_picture: /local/icon_ink_magenta.png
-  sensor.epson_ink_level_yellow:
-    entity_picture: /local/icon_ink_yellow.png
-  sensor.epson_ink_level_cyan:
-    entity_picture: /local/icon_ink_cyan.png
-  sensor.fritz_netmonitor:
-    friendly_name: FritzBox
-    icon: mdi:router-wireless
+  
+
+# Groups 
+
   group.sascha:
     entity_picture: /local/sascha.png
   group.nicole:
     entity_picture: /local/nicole.png
+  group.all_automations:
+    hidden: false
+  group.all_scripts:
+    hidden: false
+
+# Zones
+
   # zone.sofa:
   #   beacon:
   #     uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
@@ -235,8 +262,8 @@
       major: 1
       minor: 1
 
-  group.all_automations:
-    hidden: false
+# Scripts
 
-  group.all_scripts:
-    hidden: false
+  script.get_latest_config:
+    icon: mdi:github-circle
+  
