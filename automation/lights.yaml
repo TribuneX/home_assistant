@@ -170,28 +170,26 @@
       from: 'off'
       to: 'on'
   condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: '06:00'
-        before: '10:00'
+    condition: time
+    after: '06:00'
+    before: '10:00'
   action:
     - service: script.turn_on
       entity_id: script.livingroom_morning
 
 - alias: 'Lights: Livingroom lights in the morning - Turn off'
   trigger:
-    - platform: sun
-      event: sunrise
-      offset: '+01:00:00'
-  condition:
-      condition: state
+    - platform: state
       entity_id: light.wohnzimmer
-      state: "on"
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: time
+    after: '06:00'
+    before: '10:30'
   action:
-    - service: light.turn_off
-      data: 
-        entity_id: light.wohnzimmer
+    - service: script.turn_on
+      entity_id: script.turn_off_livingroom_lights_delay_15
 
 
 - alias: 'Lights: Dimm lights at night'
