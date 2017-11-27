@@ -38,3 +38,7 @@
 - platform: ping
   name: PING VHV
   host: vhv.cbs-service.net
+
+- platform: ping
+  name: PING WSW
+  host: wsw.cbs-service.net

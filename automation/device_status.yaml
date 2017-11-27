@@ -15,7 +15,7 @@
 - alias: 'Status: Remote Device status offline'
   trigger:
     - platform: state
-      entity_id: binary_sensor.ping_dreieich, binary_sensor.ping_eltern, binary_sensor.ping_gote, binary_sensor.ping_polanetzki, binary_sensor.ping_schwarzwald, binary_sensor.ping_sebastian, binary_sensor.ping_sonja, binary_sensor.ping_uwe, binary_sensor.ping_vhv
+      entity_id: binary_sensor.ping_dreieich, binary_sensor.ping_eltern, binary_sensor.ping_gote, binary_sensor.ping_polanetzki, binary_sensor.ping_schwarzwald, binary_sensor.ping_sebastian, binary_sensor.ping_sonja, binary_sensor.ping_uwe, binary_sensor.ping_vhv, binary_sensor.ping_wsw
       to: 'off'
       for:
         minutes: 5
@@ -29,7 +29,7 @@
 - alias: 'Status: Device status online'
   trigger:
     - platform: state
-      entity_id: sensor.robo, sensor.tradfri, sensor.switch, binary_sensor.ping_dreieich, binary_sensor.ping_eltern, binary_sensor.ping_gote, binary_sensor.ping_polanetzki, binary_sensor.ping_schwarzwald, binary_sensor.ping_sebastian, binary_sensor.ping_sonja, binary_sensor.ping_uwe, binary_sensor.ping_vhv
+      entity_id: sensor.robo, sensor.tradfri, sensor.switch, binary_sensor.ping_dreieich, binary_sensor.ping_eltern, binary_sensor.ping_gote, binary_sensor.ping_polanetzki, binary_sensor.ping_schwarzwald, binary_sensor.ping_sebastian, binary_sensor.ping_sonja, binary_sensor.ping_uwe, binary_sensor.ping_vhv, binary_sensor.ping_wsw
       to: 'on'
       for:
         minutes: 1
