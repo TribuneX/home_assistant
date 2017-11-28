@@ -173,9 +173,14 @@
       from: 'off'
       to: 'on'
   condition:
-    condition: time
-    after: '06:00'
-    before: '10:00'
+    condition: and
+    conditions:
+    - condition: time
+      after: '06:00'
+      before: '10:00'
+    - condition: state
+      entity_id: light.wohnzimmer
+      state: 'off'
   action:
     - service: script.turn_on
       entity_id: script.livingroom_morning
