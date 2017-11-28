@@ -195,13 +195,7 @@ sonos_play_radio:
     - service: input_select.select_option
       data:
         entity_id: input_select.sonos_source
-        option: 'HIT RADIO FFH'
-
-sonos_set_default_volume:
-  sequence:
-    - service: media_player.volume_set
-      entity_id: media_player.living_room
-      volume_level: 0.2
+        option: 'HIT RADIO FFH'    
 
 turn_off_fan_after_delay:
   sequence:
