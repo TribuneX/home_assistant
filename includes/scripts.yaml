@@ -70,6 +70,7 @@ turn_off_livingroom_delay_15:
       entity_id: script.christmas_lights_off
 
 turn_off_livingroom_lights_delay_15:
+  alias: 'Turn off livingroom lights (delay 15 minutes)'
   sequence:
     - delay:
         minutes: 15
