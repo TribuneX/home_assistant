@@ -149,6 +149,7 @@
       source: "{{ trigger.to_state.state }}"
     entity_id: media_player.living_room
     service: media_player.select_source
+  - service: script.sonos_set_default_volume
   - service: input_select.select_option
     data:
       entity_id: input_select.sonos_source
@@ -172,10 +173,7 @@
       source: "{{ trigger.to_state.state }}"
     entity_id: media_player.living_room
     service: media_player.select_source
-  - service: media_player.volume_set
-    data:
-      entity_id: media_player.living_room
-      volume_level: 0.3
+  - service: script.sonos_set_default_volume
   - service: input_select.select_option
     data:
       entity_id: input_select.sonos_source
@@ -275,4 +273,22 @@
       after: '08:00'
       before: '22:00'
   action:
-    - service: script.radio_sonos
+    - service: script.sonos_play_radio
+
+- alias: 'Media: Turn on radio in the morning'
+  trigger:
+    - platform: state
+      entity_id: light.bad
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: and
+    conditions:
+    - condition: time
+      after: '07:00'
+      before: '10:00'
+    - condition: state
+      entity_id: switch.speaker_1
+      state: 'off'
+  action:
+    - service: script.sonos_play_radio

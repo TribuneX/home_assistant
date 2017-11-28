@@ -154,7 +154,7 @@
       after: '06:00'
       before: '10:00'
     - condition: state
-      entity_id: light.wohnzimmer
+      entity_id: light.fernseher
       state: 'off'
   action:
     - service: script.livingroom_morning
