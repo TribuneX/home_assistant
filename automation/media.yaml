@@ -132,10 +132,7 @@
    entity_id: switch.tv
    state: 'off'
   action:
-    - service: switch.turn_on
-      entity_id: switch.tv
-    - delay:
-        seconds: 20
+    - service: script.livingroom_dimmed_lights
     - service: script.input_music
 
 - alias: "Play selected source on sonos"
@@ -278,5 +275,4 @@
       after: '08:00'
       before: '22:00'
   action:
-    - service: script.turn_on
-      entity_id: script.radio_sonos
+    - service: script.radio_sonos

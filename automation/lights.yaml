@@ -24,15 +24,8 @@
           - condition: time
             before: '03:00'
   action:
-    - service: light.turn_on
-      data: 
-        entity_id: light.wohnzimmer
-        brightness: 150
-        transition: 4
-    - service: script.turn_on
-      data:
-        entity_id: script.christmas_lights_on
-
+    - service: script.livingroom_default_lights
+    - service: script.christmas_lights_on
 
 - alias: 'Lights: Livingroom lights at sunset + TV is on'
   trigger:
@@ -60,14 +53,8 @@
           - condition: time
             before: '03:00'
   action:
-    - service: light.turn_on
-      data: 
-        entity_id: light.wohnzimmer
-        brightness: 20
-        transition: 4
-    - service: script.turn_on
-      data:
-        entity_id: script.christmas_lights_on
+    - service: script.livingroom_dimmed_lights
+    - service: script.christmas_lights_on
 
 # Turn on light at Sofa if ATV is paused
 - alias: 'Lights: Turn on light when AppleTV is paused'
@@ -88,11 +75,7 @@
         after: '15:00'
         before: '03:00'
   action:
-    - service: light.turn_on
-      data: 
-        entity_id: light.wohnzimmer
-        brightness: 150
-        transition: 4
+    - service: script.livingroom_default_lights
 
 # Turn on light at Sofa if ATV is paused
 - alias: 'Lights: Dim light when AppleTV is played'
@@ -111,11 +94,7 @@
         after: '15:00'
         before: '03:00'
   action:
-    - service: light.turn_on
-      data: 
-        entity_id: light.wohnzimmer
-        brightness: 20
-        transition: 4
+    - service: script.livingroom_dimmed_lights
 
 # Turn of devices in the bedroom 30 minutes when switched on after 23:00
 - alias: 'Lights: 45 minutes timer for devices at night'
@@ -158,11 +137,7 @@
     after: '21:00'
     before: '00:00'
   action: 
-    - service: light.turn_on
-      data: 
-        entity_id: light.schlafzimmer
-        brightness: 100
-        transition: 4
+    - service: script.bedroom_dimmed_lights
     - service: script.turn_off_livingroom_delay_15
 
 # Turn on lights in the livingroom if someone is awake before sun rises
@@ -182,10 +157,8 @@
       entity_id: light.wohnzimmer
       state: 'off'
   action:
-    - service: script.turn_on
-      entity_id: script.livingroom_morning
-    - service: script.turn_on
-      entity_id: script.turn_off_livingroom_lights_delay_15
+    - service: script.livingroom_morning
+    - service: script.turn_off_livingroom_lights_delay_15
 
 - alias: 'Lights: Dimm lights at night'
   trigger:
@@ -225,11 +198,7 @@
     from: home
     to: Bedroom
   action:
-    - service: light.turn_on
-      data: 
-        entity_id: light.schlafzimmer
-        brightness: 100
-        transition: 4
+    - service: script.bedroom_dimmed_lights
     - service: notify.ios_iphones_app
       data:
         title: 'Location'

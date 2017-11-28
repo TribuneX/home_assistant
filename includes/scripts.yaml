@@ -54,13 +54,8 @@ get_latest_config:
   sequence:
     - service: shell_command.git_pull
 
-restart_music:
-  alias: 'Restart Music'
-  sequence:
-    - service: shell_command.restart_forked_daapd
-
 turn_off_livingroom_delay_15:
-  alias: 'Turn off livingroom (delay 15 minutes)'
+  alias: 'Turn off livingroom group (delay 15 minutes)'
   sequence:
     - delay:
         minutes: 15
@@ -68,14 +63,6 @@ turn_off_livingroom_delay_15:
       entity_id: group.wohnzimmer
     - service: script.turn_on
       entity_id: script.christmas_lights_off
-
-turn_off_livingroom_lights_delay_15:
-  alias: 'Turn off livingroom lights (delay 15 minutes)'
-  sequence:
-    - delay:
-        minutes: 15
-    - service: light.turn_off
-      entity_id: light.wohnzimmer
 
 turn_off_bedroom_delay_45:
   alias: 'Turn off bedroom (delay 45 minutes)'
@@ -238,13 +225,46 @@ turn_off_speaker_after_delay:
 
 livingroom_morning:
   sequence:
+    - service: script.turn_on
+      entity_id: script.livingroom_default_lights
+    - service: script.turn_on
+      entity_id: script.christmas_lights_on
+    - service: script.turn_on
+      entity_id: script.radio_sonos
+
+livingroom_default_lights:
+  sequence:
     - service: light.turn_on
       data: 
         entity_id: light.wohnzimmer
         brightness: 150
         transition: 4
+
+livingroom_dimmed_lights:
+  sequence:
+    - service: light.turn_on
+      data: 
+        entity_id: light.wohnzimmer
+        brightness: 20
+        transition: 4
+
+bedroom_dimmed_lights:
+  sequence:
+    - service: light.turn_on
+      data: 
+        entity_id: light.schlafzimmer
+        brightness: 100
+        transition: 4
+
+turn_off_livingroom_lights_delay_15:
+  alias: 'Turn off livingroom lights (delay 15 minutes)'
+  sequence:
+    - delay:
+        minutes: 15
+    - service: light.turn_off
+      entity_id: light.wohnzimmer
     - service: script.turn_on
-      entity_id: script.radio_sonos
+      entity_id: script.christmas_lights_off
 
 christmas_lights_on:
   sequence:
