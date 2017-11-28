@@ -34,8 +34,7 @@
     entity_id: switch.ventilator
     to: 'on'
   action: 
-    - service: script.turn_on
-      entity_id: script.turn_off_fan_after_delay
+    - service: script.turn_off_fan_after_delay
 
 - alias: 'Misc: Deactivate fan auto off'
   trigger:
