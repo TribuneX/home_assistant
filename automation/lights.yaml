@@ -138,8 +138,6 @@
       from: 'off'
       to: 'on'
   condition:
-    condition: and
-    conditions:
     - condition: time
       after: '06:00'
       before: '10:00'
