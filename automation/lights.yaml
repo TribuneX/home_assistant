@@ -129,6 +129,14 @@
       entity_id: light.bad
       from: 'off'
       to: 'on'
+    - platform: state
+      entity_id: light.kueche1
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: light.eingang
+      from: 'off'
+      to: 'on'
   condition:
     condition: and
     conditions:
