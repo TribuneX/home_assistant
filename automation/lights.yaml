@@ -143,9 +143,6 @@
     - condition: time
       after: '06:00'
       before: '10:00'
-    - condition: state
-      entity_id: light.fernseher
-      state: 'off'
   action:
     - service: script.turn_off
       entity_id: script.turn_off_livingroom_lights_delay_15
