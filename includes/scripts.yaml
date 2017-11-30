@@ -229,8 +229,6 @@ livingroom_morning:
       entity_id: script.livingroom_default_lights
     - service: script.turn_on
       entity_id: script.christmas_lights_on
-    - service: script.turn_on
-      entity_id: script.sonos_play_radio
 
 livingroom_default_lights:
   sequence:
