@@ -187,6 +187,8 @@ pause_sonos:
 
 play_sonos:
   sequence:
+    - service: switch.turn_on
+      entity_id: switch.speaker_1
     - service: media_player.media_play
       entity_id: media_player.living_room
 
