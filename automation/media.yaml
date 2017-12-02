@@ -204,16 +204,6 @@
         entity_id: media_player.living_room
         volume_level: '{{ trigger.to_state.state }}'
 
-# - alias: Speaker - Volume
-#   trigger:
-#     platform: state
-#     entity_id: media_player.living_room
-#   action:
-#     - service: input_number.set_value
-#       data_template:
-#         entity_id: input_number.sonos_speaker
-#         value: '{{ states.media_player.living_room.attributes.volume_level }}'
-
 - alias: 'Media: Pause AppleTV if SONOS is used'
   trigger:
     platform: state
@@ -246,25 +236,11 @@
       entity_id: media_player.atv_wohnzimmer
       from: 'paused'
       to: 'playing'
-    - platform: state
-      entity_id: input_select.tv_mode
-      to: 'AppleTV'
-    - platform: state
-      entity_id: input_select.tv_mode
-      to: 'TV'
-    - platform: state
-      entity_id: input_select.tv_mode
-      to: 'Plex'
-    - platform: state
-      entity_id: input_select.tv_mode
-      to: 'FireTV'
   condition:
     - condition: state
       entity_id: media_player.living_room
       state: 'playing'
   action:
-    - delay:
-        seconds: 20
     - service: media_player.media_pause
       entity_id: media_player.living_room
 
