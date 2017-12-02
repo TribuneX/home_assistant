@@ -180,7 +180,7 @@ all_media_pause:
   sequence:
     - service: media_player.media_pause
       entity_id: media_player.living_room
-    - service: media_player.media_pause
+    - service: media_player.media_stop
       entity_id: media_player.atv_wohnzimmer
 
 
@@ -296,7 +296,7 @@ my_weather:
       data:
         variables:
           where: "living_room"
-          what: "Hello, the Weather at Home is beautiful"
+          message: "Draußen ist es 0 Grad kalt"
 
 sonos_tts:
   sequence:
