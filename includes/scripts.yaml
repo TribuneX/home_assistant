@@ -309,6 +309,33 @@ my_weather:
           where: "living_room"
           message: "Draußen ist es 0 Grad kalt"
 
+# Inspired by https://github.com/arsaboo/homeassistant-config/blob/master/scripts.yaml
+sonos_say:
+    alias: "Sonos TTS script"
+    sequence:
+      - service: media_player.sonos_snapshot
+        data_template:
+          entity_id: "{{ sonos_entity|default('media_player.living_room') }}"
+      - service: media_player.sonos_unjoin
+        data_template:
+          entity_id: "{{ sonos_entity|default('media_player.living_room') }}"
+      - service: media_player.volume_set
+        data_template:
+          entity_id: "{{ sonos_entity|default('media_player.living_room') }}"
+          volume_level: "{{ volume|default(0.5) }}"
+      - service: tts.google_say
+        data_template:
+          entity_id: "{{ sonos_entity|default('media_player.living_room') }}"
+          message: "{{ message }}"
+      - delay: "{{ delay|default('00:00:00') }}"
+      - wait_template: "{{ is_state(sonos_entity|default('media_player.living_room'), 'playing') }}"
+        timeout: '00:00:05'
+      - wait_template: "{{ not is_state(sonos_entity|default('media_player.living_room'), 'playing') }}"
+        timeout: '00:02:00'
+      - service: media_player.sonos_restore
+        data_template:
+          entity_id: "{{ sonos_entity|default('media_player.living_room') }}"
+
 sonos_tts:
   sequence:
     - service: media_player.sonos_snapshot
