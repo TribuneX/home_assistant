@@ -3,7 +3,7 @@
 ##########################
 
 turn_off_server: 'bash /opt/scripts/freenas/shutdown_server.sh'
-pi: 'ssh pi@127.0.0.1 sudo reboot'
+reboot_command_pi: 'sudo reboot'
 git_pull: 'bash /opt/home_assistant/bash/git_pull.sh'
 restart_forked_daapd: 'sudo service forked-daapd restart'
 restart_homeassistant: 'sudo systemctl restart home-assistant@homeassistant'
