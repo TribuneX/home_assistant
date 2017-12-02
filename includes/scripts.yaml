@@ -295,7 +295,7 @@ my_weather:
       entity_id: script.sonos_tts
       data:
         variables:
-          where: "media_player.living_room"
+          where: "living_room"
           what: "Hello, the Weather at Home is beautiful"
 
 sonos_tts:
