@@ -203,10 +203,9 @@ sonos_welcome_message:
     - delay:
         seconds: 34
     - service: script.turn_on
-      entity_id: script.sonos_tts
+      entity_id: script.sonos_say
       data:
         variables:
-          where: "living_room"
           message: "Willkommen zuhause! Schön das du wieder da bist" #Wrong grammar, but sounds nicer!
 
 turn_off_fan_after_delay:
@@ -303,10 +302,9 @@ my_weather:
   alias: My Weather
   sequence:
     - service: script.turn_on
-      entity_id: script.sonos_tts
+      entity_id: script.sonos_say
       data:
         variables:
-          where: "living_room"
           message: "Draußen ist es 0 Grad kalt"
 
 # Inspired by https://github.com/arsaboo/homeassistant-config/blob/master/scripts.yaml
@@ -322,7 +320,7 @@ sonos_say:
       - service: media_player.volume_set
         data_template:
           entity_id: "{{ sonos_entity|default('media_player.living_room') }}"
-          volume_level: "{{ volume|default(0.5) }}"
+          volume_level: "{{ volume|default(0.4) }}"
       - service: tts.google_say
         data_template:
           entity_id: "{{ sonos_entity|default('media_player.living_room') }}"
@@ -331,7 +329,7 @@ sonos_say:
       - wait_template: "{{ is_state(sonos_entity|default('media_player.living_room'), 'playing') }}"
         timeout: '00:00:05'
       - wait_template: "{{ not is_state(sonos_entity|default('media_player.living_room'), 'playing') }}"
-        timeout: '00:02:00'
+        timeout: '00:00:20'
       - service: media_player.sonos_restore
         data_template:
           entity_id: "{{ sonos_entity|default('media_player.living_room') }}"
