@@ -142,6 +142,8 @@
   sensor.server:
     icon: mdi:server
     homebridge_hidden: true
+  sensor.cpu_temperature
+    homebridge_hidden: true
 
   sensor.netatmo_schlafzimmer_temperature:
     friendly_name: Temperatur 
