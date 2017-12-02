@@ -288,5 +288,26 @@ christmas_lights_off:
     - service: switch.turn_off
       entity_id: switch.socket_1
 
+my_weather:
+  alias: My Weather
+  sequence:
+    - service: script.turn_on
+      entity_id: script.sonos_tts
+      data:
+        variables:
+          where: "media_player.living_room"
+          what: "Hello, the Weather at Home is beautiful"
 
-
+sonos_tts:
+  sequence:
+    - service: media_player.sonos_snapshot
+      data_template:
+        entity_id: "media_player.{{ where }}"
+    - service: tts.google_say
+      data_template:
+        entity_id: "media_player.{{ where }}"
+        message: "{{ message }}"
+    - delay: '00:00:{{ states.media_player[where].attributes.media_duration | int }}'
+    - service: media_player.sonos_restore
+      data_template:
+        entity_id: "media_player.{{ where }}"

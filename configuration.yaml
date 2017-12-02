@@ -201,6 +201,10 @@ vacuum:
   host: robo.cbs-service.net
   token: !secret mirobo_token
 
+tts:
+  - platform: google
+    language: 'de'
+
 zone 1:
   name: Work Sascha
   latitude: !secret lat_zone_1 
