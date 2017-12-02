@@ -178,11 +178,14 @@ input_music:
 
 all_media_pause:
   sequence:
-    - service: media_player.media_pause
-      entity_id: media_player.living_room
+    - service: script.pause_sonos
     - service: media_player.media_stop
       entity_id: media_player.atv_wohnzimmer
 
+pause_sonos:
+  sequence:
+    - service: media_player.media_pause
+      entity_id: media_player.living_room
 
 play_sonos:
   sequence:
