@@ -196,7 +196,18 @@ sonos_play_radio:
     - service: input_select.select_option
       data:
         entity_id: input_select.sonos_source
-        option: 'HIT RADIO FFH'    
+        option: 'HIT RADIO FFH'
+
+sonos_welcome_message:
+  sequence:
+    - delay:
+        minutes: 2
+    - service: script.turn_on
+      entity_id: script.sonos_tts
+      data:
+        variables:
+          where: "living_room"
+          message: "Willkommen zuhause! Schön das du wieder da bist" #Wrong grammar, but sounds nicer!
 
 turn_off_fan_after_delay:
   sequence:
