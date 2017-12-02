@@ -109,8 +109,7 @@ input_hdmi:
           
 input_tv:
   sequence:
-    - service: script.turn_on
-      entity_id: script.pause_sonos
+    - service: script.all_media_pause 
     - service: script.turn_on
       entity_id: script.turn_receiver_on
     # switch on TV and change input
@@ -124,8 +123,7 @@ input_tv:
 
 input_apple_tv:
   sequence:
-    - service: script.turn_on
-      entity_id: script.pause_sonos
+    - service: script.all_media_pause
     - service: script.turn_on
       entity_id: script.turn_receiver_on
     - service: broadlink.send_packet_192_168_178_51
@@ -151,8 +149,7 @@ input_plex:
 
 input_fire_tv:
   sequence:
-    - service: script.turn_on
-      entity_id: script.pause_sonos
+    - service: script.all_media_pause
     - service: script.turn_on
       entity_id: script.turn_receiver_on
     - service: broadlink.send_packet_192_168_178_51
@@ -168,8 +165,7 @@ input_fire_tv:
 
 input_music:
   sequence:
-    - service: script.turn_on
-      entity_id: script.pause_sonos
+    - service: script.all_media_pause
     - service: script.turn_on
       entity_id: script.turn_receiver_on
     - service: broadlink.send_packet_192_168_178_51
@@ -180,10 +176,13 @@ input_music:
     - service: script.turn_on
       entity_id: script.turn_tv_off
 
-pause_sonos:
+all_media_pause:
   sequence:
     - service: media_player.media_pause
       entity_id: media_player.living_room
+    - service: media_player.media_pause
+      entity_id: media_player.atv_wohnzimmer
+
 
 play_sonos:
   sequence:
