@@ -8,18 +8,10 @@
     #  command_on: 'sudo /opt/rcswitch-pi/send 11111 2 1'
     #  command_off: 'sudo /opt/rcswitch-pi/send 11111 2 0'
     #  friendly_name: Lampe Fernseher
-    light_sessel:
-      command_on: 'sudo /opt/rcswitch-pi/send 11111 2 1'
-      command_off: 'sudo /opt/rcswitch-pi/send 11111 2 0'
-      friendly_name: Lampe Sessel
     ventilator:
       command_on: 'sudo /opt/rcswitch-pi/send 11110 2 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11110 2 0'
       friendly_name: Ventilator
-    light_stern:
-      command_on: 'sudo /opt/rcswitch-pi/send 11110 3 1'
-      command_off: 'sudo /opt/rcswitch-pi/send 11110 3 0'
-      friendly_name: Stern
     light_baum:
       command_on: 'sudo /opt/rcswitch-pi/send 11110 4 1'
       command_off: 'sudo /opt/rcswitch-pi/send 11110 4 0'
