@@ -201,7 +201,7 @@ sonos_play_radio:
 sonos_welcome_message:
   sequence:
     - delay:
-        seconds: 34
+        seconds: 33
     - service: script.turn_on
       entity_id: script.sonos_say
       data:
