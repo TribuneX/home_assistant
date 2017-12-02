@@ -151,6 +151,8 @@ settings:
 devices:
   name: Devices
   entities:
+    - switch.tv
+    - switch.speaker_1
     - sensor.fritz_netmonitor
     - sensor.robo
     - sensor.epson
@@ -162,8 +164,6 @@ devices:
     - sensor.switch
     - sensor.netatmo
     - sensor.server
-    - switch.tv
-    - switch.speaker_1
 robot:
   name: 'Staubsauger'
   entities:
