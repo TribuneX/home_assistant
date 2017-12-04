@@ -218,8 +218,6 @@
   light.sascha:
     friendly_name: Sascha
     homebridge_hidden: true
-  light.wohnzimmer:
-    friendly_name: Lampen
   light.bad:
     homebridge_hidden: true
   light.eingang:
