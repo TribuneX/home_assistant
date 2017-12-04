@@ -179,6 +179,8 @@ input_music:
 all_media_pause:
   sequence:
     - service: script.pause_sonos
+    - service: media_player.turn_on
+      entity_id: media_player.atv_wohnzimmer
     - service: media_player.media_stop
       entity_id: media_player.atv_wohnzimmer
 
