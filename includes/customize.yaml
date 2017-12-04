@@ -144,6 +144,12 @@
     homebridge_hidden: true
   sensor.cpu_temperature:
     homebridge_hidden: true
+  sensor.eingang:
+    icon: mdi:battery-80
+  sensor.kueche:
+    icon: mdi:battery-80
+  sensor.bad:
+    icon: mdi:battery-80
 
   sensor.netatmo_schlafzimmer_temperature:
     friendly_name: Temperatur 
@@ -222,6 +228,8 @@
     homebridge_hidden: true
   light.eingang_2:
     homebridge_hidden: true
+  light.kuche:
+    homebridge_hidden: true
   light.kueche1:
     homebridge_hidden: true
   light.kueche2:
@@ -230,15 +238,10 @@
     homebridge_hidden: true
   light.fernseher:
     homebridge_hidden: true
-  script.restart_hass:
-    icon: mdi:home-assistant
-    friendly_name: Restart
-  script.reboot_pi:
-    icon: mdi:restart
-    friendly_name: Reboot
-  input_number.sonos_speaker:
-    icon: mdi:volume-high 
-  
+  light.wohnzimmer:
+    homebridge_hidden: true
+  light.schlafzimmer:
+    homebridge_hidden: true
 
 # Groups 
 
@@ -268,4 +271,12 @@
 
   script.get_latest_config:
     icon: mdi:github-circle
+  script.restart_hass:
+    icon: mdi:home-assistant
+    friendly_name: Restart
+  script.reboot_pi:
+    icon: mdi:restart
+    friendly_name: Reboot
+  input_number.sonos_speaker:
+    icon: mdi:volume-high 
   

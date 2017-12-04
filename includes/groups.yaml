@@ -149,7 +149,7 @@ settings:
     - input_boolean.cleaned_today
     - sensor.ha_current_version
 devices:
-  name: Devices
+  name: 'Devices'
   entities:
     - switch.tv
     - switch.speaker_1
@@ -164,6 +164,12 @@ devices:
     - sensor.switch
     - sensor.netatmo
     - sensor.server
+tradfri:
+  name: 'Tradfri'
+  entities:
+    - sensor.eingang
+    - sensor.bad
+    - sensor.kueche
 robot:
   name: 'Staubsauger'
   entities:
@@ -232,6 +238,7 @@ system:
     - group.devices
     - group.pings
     - group.printer
+    - group.tradfri
 automation:
   name: Automation
   view: yes
