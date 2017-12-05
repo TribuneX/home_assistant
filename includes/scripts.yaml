@@ -277,8 +277,9 @@ turn_off_livingroom_lights_delay_15:
         minutes: 15
     - service: light.turn_off
       entity_id: light.wohnzimmer
-    - service: script.turn_on
-      entity_id: script.christmas_lights_off
+    - service: script.christmas_lights_off
+    - service: script.pause_sonos
+
 
 christmas_lights_on:
   sequence:
