@@ -278,14 +278,13 @@
     - condition: time
       after: '07:00'
       before: '10:00'
-    - condition:
-        condition: or
-        conditions:
-        - condition: state
-          entity_id: switch.speaker_1
-          state: 'off'
-        - condition: state
-          entity_id: media_player.living_room
-          state: 'paused'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: switch.speaker_1
+        state: 'off'
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'paused'
   action:
     - service: script.sonos_play_radio
