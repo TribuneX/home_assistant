@@ -250,7 +250,12 @@ livingroom_default_lights:
   sequence:
     - service: light.turn_on
       data: 
-        entity_id: light.wohnzimmer
+        entity_id: light.sofa
+        brightness: 150
+        transition: 4
+    - service: light.turn_on
+      data: 
+        entity_id: light.fernseher
         brightness: 150
         transition: 4
 
@@ -258,7 +263,12 @@ livingroom_dimmed_lights:
   sequence:
     - service: light.turn_on
       data: 
-        entity_id: light.wohnzimmer
+        entity_id: light.sofa
+        brightness: 20
+        transition: 4
+    - service: light.turn_on
+      data: 
+        entity_id: light.fernseher
         brightness: 20
         transition: 4
 
@@ -266,7 +276,12 @@ bedroom_dimmed_lights:
   sequence:
     - service: light.turn_on
       data: 
-        entity_id: light.schlafzimmer
+        entity_id: light.sascha
+        brightness: 100
+        transition: 4
+    - service: light.turn_on
+      data: 
+        entity_id: light.nicole
         brightness: 100
         transition: 4
 
