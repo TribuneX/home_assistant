@@ -202,6 +202,16 @@ sonos_play_radio:
       data:
         entity_id: input_select.sonos_source
         option: 'HIT RADIO FFH'
+    - service: media_player.volume_set
+        data_template:
+          entity_id: media_player.living_room
+          volume_level: "{{ volume|default(0.2) }}"
+    - delay:
+        seconds: 35
+    - service: media_player.volume_set
+        data_template:
+          entity_id: media_player.living_room
+          volume_level: "{{ volume|default(0.2) }}"
 
 sonos_welcome_message:
   sequence:

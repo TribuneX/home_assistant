@@ -288,3 +288,6 @@
         state: 'paused'
   action:
     - service: script.sonos_play_radio
+      data:
+        variables:
+          volume: 0.1
