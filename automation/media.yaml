@@ -22,18 +22,6 @@
   action:
     - service: script.input_plex
 
-- alias: 'Media: Watch FireTV'
-  trigger:
-    platform: state
-    entity_id: input_select.tv_mode
-    to: 'FireTV'
-  condition:  
-   condition: state
-   entity_id: switch.tv
-   state: 'on'
-  action:
-    - service: script.input_fire_tv
-
 - alias: 'Media: Watch TV'
   trigger:
     platform: state
@@ -89,22 +77,6 @@
     - delay:
         seconds: 20
     - service: script.input_plex
-
-- alias: 'Media: Watch FireTV + TV'
-  trigger:
-    platform: state
-    entity_id: input_select.tv_mode
-    to: 'FireTV'
-  condition:  
-   condition: state
-   entity_id: switch.tv
-   state: 'off'
-  action:
-    - service: switch.turn_on
-      entity_id: switch.tv
-    - delay:
-        seconds: 20
-    - service: script.input_fire_tv
 
 - alias: 'Media: Watch TV + TV'
   trigger:

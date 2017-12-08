@@ -114,13 +114,6 @@
         data:
           entity_id: input_select.tv_mode
           option: AUS
-    fire_tv_mode:
-      value_template: "{{ is_state('input_select.tv_mode', 'FireTV')}}"
-      turn_on:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: FireTV
       turn_off:
         service: input_select.select_option
         data:

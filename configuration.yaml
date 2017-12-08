@@ -140,7 +140,6 @@ input_select:
      - TV
      - AppleTV
      - Plex
-     - FireTV
      - Music
     initial: AUS
     icon: mdi:television

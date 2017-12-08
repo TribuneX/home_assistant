@@ -32,9 +32,6 @@
   switch.plex_mode:
     icon: mdi:plex
     friendly_name: Plex
-  switch.fire_tv_mode:
-    icon: mdi:youtube-play
-    friendly_name: FireTV
   switch.music_mode:
     icon: mdi:music-circle
     friendly_name: Music
