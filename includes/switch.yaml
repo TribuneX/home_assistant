@@ -114,11 +114,6 @@
         data:
           entity_id: input_select.tv_mode
           option: AUS
-      turn_off:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: AUS
     music_mode:
       value_template: "{{ is_state('input_select.tv_mode', 'Music')}}"
       turn_on:
