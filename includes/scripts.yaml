@@ -14,7 +14,7 @@ prepare_restart:
     - service: switch.turn_on
       entity_id: switch.tv 
     - service: switch.turn_on
-      entity_id: switch.sonos_speaker
+      entity_id: switch.speaker_1
 
 reload_automations:
   alias: Reload Automations
@@ -25,6 +25,7 @@ reload_automations:
 reboot_pi:
   alias: Reboot System
   sequence:
+    - service: script.prepare_restart
     - service: homeassistant.stop
     - service: shell_command.reboot_command_pi 
 
