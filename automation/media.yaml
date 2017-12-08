@@ -59,7 +59,7 @@
     - service: switch.turn_on
       entity_id: switch.tv
     - delay:
-        seconds: 20
+        seconds: 15
     - service: script.input_apple_tv
 
 - alias: 'Media: Watch Plex + TV'
@@ -75,7 +75,7 @@
     - service: switch.turn_on
       entity_id: switch.tv
     - delay:
-        seconds: 20
+        seconds: 15
     - service: script.input_plex
 
 - alias: 'Media: Watch TV + TV'
@@ -91,7 +91,7 @@
     - service: switch.turn_on
       entity_id: switch.tv
     - delay:
-        seconds: 20
+        seconds: 15
     - service: script.input_tv
 
 - alias: 'Media: Listen to music + TV'
