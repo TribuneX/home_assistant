@@ -350,17 +350,3 @@ sonos_say:
       - service: media_player.sonos_restore
         data_template:
           entity_id: "{{ sonos_entity|default('media_player.living_room') }}"
-
-sonos_tts:
-  sequence:
-    - service: media_player.sonos_snapshot
-      data_template:
-        entity_id: "media_player.{{ where }}"
-    - service: tts.google_say
-      data_template:
-        entity_id: "media_player.{{ where }}"
-        message: "{{ message }}"
-    - delay: '00:00:{{ states.media_player[where].attributes.media_duration | int }}'
-    - service: media_player.sonos_restore
-      data_template:
-        entity_id: "media_player.{{ where }}"
