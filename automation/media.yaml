@@ -256,7 +256,6 @@
       before: '22:00'
   action:
     - service: script.sonos_play_radio
-    - service: script.sonos_welcome_message
 
 - alias: 'Media: Turn on radio in the morning'
   trigger:
