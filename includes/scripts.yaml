@@ -324,15 +324,6 @@ christmas_lights_off:
     - service: switch.turn_off
       entity_id: switch.socket_1
 
-my_weather:
-  alias: My Weather
-  sequence:
-    - service: script.turn_on
-      entity_id: script.sonos_say
-      data:
-        variables:
-          message: "Draußen ist es 0 Grad kalt"
-
 # Inspired by https://github.com/arsaboo/homeassistant-config/blob/master/scripts.yaml
 sonos_say:
     alias: "Sonos TTS script"
