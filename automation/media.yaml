@@ -277,6 +277,9 @@
     - condition: time
       after: '07:00'
       before: '10:00'
+    - condition: state
+      entity_id: switch.tv
+      state: 'off'
     - condition: or
       conditions:
       - condition: state
