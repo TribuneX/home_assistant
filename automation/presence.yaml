@@ -4,6 +4,10 @@
     entity_id: device_tracker.owntracks_nicole_iphone
     zone: zone.home
     event: leave
+  condition:
+    condition: state    
+    entity_id: group.sascha   
+    state: 'not home'  
   action:
     - service: notify.ios_iphones_app
       data:
