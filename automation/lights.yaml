@@ -76,7 +76,6 @@
         before: '03:00'
   action:
     - service: script.livingroom_default_lights
-    - service: script.livingroom_dimmed_lights
 
 # Turn of devices in the bedroom 30 minutes when switched on after 23:00
 - alias: 'Lights: 45 minutes timer for devices at night'
