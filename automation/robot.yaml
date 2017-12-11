@@ -1,10 +1,9 @@
 - alias: 'Robot: Robot started cleaning' 
   trigger:
-    - platform: template
-      entity_id: vacuum.staubsauger
-      value_template: '{{state.attributes.status}}'
-      from: 'Charging'
-      to: 'Cleaning'
+    platform: state
+    entity_id: sensor.vacuum_status
+    from: 'Charging'
+    to: 'Cleaning'
   action:
     - service: notify.ios_iphones_app
       data:
@@ -13,11 +12,10 @@
 
 - alias: 'Robot: Robot stopped cleaning' 
   trigger:
-    - platform: template
-      entity_id: vacuum.staubsauger
-      value_template: '{{state.attributes.status}}'
-      from: 'Returning home'
-      to: 'Charging'
+    platform: state
+    entity_id: sensor.vacuum_status
+    from: 'Returning home'
+    to: 'Charging'
   action:
     - service: notify.ios_iphones_app
       data:
