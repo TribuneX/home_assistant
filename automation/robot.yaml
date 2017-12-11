@@ -2,7 +2,7 @@
   trigger:
     - platform: template
       entity_id: vacuum.staubsauger
-      value_template: {{state.attributes.status}}
+      value_template: '{{state.attributes.status}}'
       from: 'Charging'
       to: 'Cleaning'
   action:
@@ -15,7 +15,7 @@
   trigger:
     - platform: template
       entity_id: vacuum.staubsauger
-      value_template: {{state.attributes.status}}
+      value_template: '{{state.attributes.status}}'
       from: 'Returning home'
       to: 'Charging'
   action:
