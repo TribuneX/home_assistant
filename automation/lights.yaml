@@ -56,6 +56,27 @@
     - service: script.livingroom_dimmed_lights
     - service: script.christmas_lights_on
 
+
+-# Turn on light at Sofa if ATV is paused   
+- alias: 'Lights: Dim light when AppleTV is played'   
+  trigger:    
+    - platform: state   
+      entity_id: media_player.atv_wohnzimmer    
+      from: 'paused'    
+      to: 'playing'     
+  condition:    
+    condition: and    
+    conditions:   
+      - condition: state    
+        entity_id: sun.sun    
+        state: below_horizon    
+      - condition: time   
+        after: '15:00'    
+        before: '03:00'   
+  action:   
+    - service: script.livingroom_dimmed_lights
+
+
 # Turn on light at Sofa if ATV is paused
 - alias: 'Lights: Turn on light when AppleTV is paused'
   trigger:
