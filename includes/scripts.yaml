@@ -206,13 +206,13 @@ sonos_play_radio:
     - service: media_player.volume_set
       data_template:
         entity_id: media_player.living_room
-        volume_level: "{{ volume|default(0.2) }}"
+        volume_level: "{{ volume|default(0.1) }}"
     - delay:
         seconds: 35
     - service: media_player.volume_set
       data_template:
         entity_id: media_player.living_room
-        volume_level: "{{ volume|default(0.2) }}"
+        volume_level: "{{ volume|default(0.1) }}"
 
 sonos_welcome_message:
   sequence:
