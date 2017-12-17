@@ -216,8 +216,8 @@ media:
   icon: mdi:television 
   entities:
     - group.tv_scenes
-    - media_player.atv_wohnzimmer
-    - media_player.atv_schlafzimmer
+    - media_player.wohnzimmer
+    - media_player.schlafzimmer
     - group.speaker
     - media_player.living_room    
 plants:
