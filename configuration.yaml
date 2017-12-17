@@ -117,11 +117,11 @@ media_player:
   - platform: apple_tv
     host: atv.cbs-service.net
     login_id: !secret atv_login
-    credentials: !secret apple_tv_credentials
+    credentials: !secret atv_credentials
   - platform: apple_tv
     host: atv2.cbs-service.net
     login_id: !secret atv_login
-    credentials: !secret apple_tv2_credentials
+    credentials: !secret atv2_credentials
 
   - platform: sonos
 
