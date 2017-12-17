@@ -187,11 +187,11 @@
     to: 'playing'
   condition:
     - condition: state
-      entity_id: media_player.atv_wohnzimmer
+      entity_id: media_player.wohnzimmer
       state: 'playing'
   action:
     - service: media_player.media_pause
-      entity_id: media_player.atv_wohnzimmer
+      entity_id: media_player.wohnzimmer
 
 - alias: 'Media: Auto standby is Sonos is paused for 10 minutes'
   trigger:
@@ -208,7 +208,7 @@
 - alias: 'Media: Pause SONOS if AppleTV is used'
   trigger:
     - platform: state
-      entity_id: media_player.atv_wohnzimmer
+      entity_id: media_player.wohnzimmer
       from: 'paused'
       to: 'playing'
   condition:
