@@ -217,6 +217,7 @@ media:
   entities:
     - group.tv_scenes
     - media_player.atv_wohnzimmer
+    - media_player.atv_schlafzimmer
     - group.speaker
     - media_player.living_room    
 plants:

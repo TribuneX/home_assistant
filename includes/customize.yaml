@@ -112,7 +112,7 @@
     icon: mdi:plex
   sensor.appletv_livingroom:
     icon: mdi:airplay
-    friendly_name: AppleTV wohnzimmer
+    friendly_name: AppleTV Wohnzimmer
   sensor.appletv_bedroom:
     icon: mdi:airplay
     friendly_name: AppleTV Schlafzimmer

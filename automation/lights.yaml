@@ -57,6 +57,7 @@
     - service: script.christmas_lights_on
 
 
+
 # Turn on light at Sofa if ATV is paused   
 - alias: 'Lights: Dim light when AppleTV is played'   
   trigger:    
