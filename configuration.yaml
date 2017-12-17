@@ -118,6 +118,10 @@ media_player:
     host: atv.cbs-service.net
     login_id: !secret atv_login
     credentials: !secret apple_tv_credentials
+  - platform: apple_tv
+    host: atv2.cbs-service.net
+    login_id: !secret atv_login
+    credentials: !secret apple_tv2_credentials
 
   - platform: sonos
 
@@ -171,7 +175,7 @@ input_select:
 input_number:
   sonos_speaker:
     name: Volume
-    initial: 0.2
+    initial: 0.1
     min: 0
     max: 1
     step: 0.01
