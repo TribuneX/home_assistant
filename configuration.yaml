@@ -36,6 +36,31 @@ recorder:
   db_url: !secret mysql_path
   purge_interval: 2
   purge_keep_days: 5
+  exclude:
+    entities:
+      - sensor.netatmo
+      - sensor.netatmo_outdoor_radio
+      - sensor.netatmo_schlafzimmer_radio
+      - sensor.dark_sky_summary
+      - sensor.dark_sky_hourly_summary
+      - device_tracker.netatmo
+      - device_tracker.server
+      - device_tracker.wohnzimmer
+      - device_tracker.appletv
+      - device_tracker.tradfri
+      - device_tracker.switch
+      - device_tracker.plex
+      - device_tracker.broadlink
+      - device_tracker.epson029ea9
+      - device_tracker.batplay1
+      - light.kuche1
+      - light.kuche2
+      - light.eingang
+      - sensor.tribunexhome_assistant_last_build_duration
+      - sensor.tribunexhome_assistant_last_build_finished_at
+      - sensor.tribunexhome_assistant_last_build_id
+      - sensor.tribunexhome_assistant_last_build_started_at
+      - sensor.tribunexhome_assistant_last_build_state
 
 
 # Enables the frontend
@@ -84,6 +109,11 @@ logbook:
       - light.kuche1
       - light.kuche2
       - light.eingang
+      - sensor.tribunexhome_assistant_last_build_duration
+      - sensor.tribunexhome_assistant_last_build_finished_at
+      - sensor.tribunexhome_assistant_last_build_id
+      - sensor.tribunexhome_assistant_last_build_started_at
+      - sensor.tribunexhome_assistant_last_build_state
 
 
 # Support for iOS app
