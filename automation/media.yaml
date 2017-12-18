@@ -236,7 +236,7 @@
   condition:
     - condition: time
       after: '08:00'
-      before: '22:00'
+      before: '23:00'
   action:
     - service: script.sonos_play_radio
 
