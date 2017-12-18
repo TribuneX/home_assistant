@@ -164,11 +164,13 @@ devices:
     - sensor.netatmo
     - sensor.server
 tradfri:
-  name: 'Tradfri'
+  name: 'Batterien'
   entities:
     - sensor.eingang
     - sensor.bad
     - sensor.kueche
+    - sensor.netatmo_schlafzimmer_battery
+    - sensor.netatmo_outdoor_battery
 robot:
   name: 'Staubsauger'
   entities:
