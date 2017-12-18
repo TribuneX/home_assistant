@@ -96,12 +96,6 @@
     icon: mdi:cup-water
   sensor.fastcom_download:
     icon: mdi:cloud-download
-  scene.lampen_bett:
-    icon: mdi:lightbulb-on
-  scene.lampen_wohnzimmer:
-    icon: mdi:lightbulb-on
-  scene.alles_aus:
-    icon: mdi:power
   sensor.robo:
     icon: mdi:broom
     friendly_name: Staubsauger
