@@ -26,6 +26,9 @@
   action:
     - service: script.livingroom_default_lights
     - service: script.christmas_lights_on
+    - service: light.turn_on
+      data:
+        entity_id: light.eingang
 
 - alias: 'Lights: Livingroom lights at sunset + TV is on'
   trigger:
