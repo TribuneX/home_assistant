@@ -117,6 +117,10 @@
    entity_id: switch.speaker_1
    state: 'on'    
   action:
+  - service: media_player.shuffle_set
+    data:
+      entity_id: media_player.living_room
+      shuffle: true
   - data_template:
       source: "{{ trigger.to_state.state }}"
     entity_id: media_player.living_room
@@ -140,6 +144,10 @@
     entity_id: switch.speaker_1
   - delay:
       seconds: 35
+  - service: media_player.shuffle_set
+    data:
+      entity_id: media_player.living_room
+      shuffle: true
   - data_template:
       source: "{{ trigger.to_state.state }}"
     entity_id: media_player.living_room
