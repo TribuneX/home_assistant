@@ -196,7 +196,6 @@ winter_lights:
     - switch.light_baum
     - switch.light_sterne
     - switch.socket_1
-    - switch.gang
 
 
 # Tabs

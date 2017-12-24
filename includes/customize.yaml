@@ -4,14 +4,11 @@
     icon: mdi:lightbulb-on
     assumed_state: false
     friendly_name: Sessel
-  switch.light_stern:
-    icon: mdi:lightbulb-on
-    assumed_state: false
   switch.light_baum:
-    icon: mdi:lightbulb-on
+    icon: mdi:pine-tree
     assumed_state: false
   switch.light_sterne:
-    icon: mdi:lightbulb-on
+    icon: mdi:star
     assumed_state: false
   switch.tv:
     icon: mdi:television
@@ -43,7 +40,7 @@
     icon: mdi:speaker-wireless          
     friendly_name: Sonos
   switch.socket_1:
-    friendly_name: Stern
+    friendly_name: Christmas Star
     icon: mdi:star
   switch.ventilator:
     icon: mdi:fan
