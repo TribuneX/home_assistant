@@ -79,13 +79,13 @@
 - alias: 'Weather: Rainy Day'
   initial_state: 'on'
   trigger:
-    - platform: state
-      entity_id: sensor.dark_sky_precip
-      to: 'rain'
+    - platform: numeric_state
+      entity_id: sensor.dark_sky_precip_probability
+      above: 25
   condition:
-    condition: numeric_state
-    entity_id: sensor.dark_sky_precip_probability
-    above: 20
+    condition: state
+    entity_id: sensor.dark_sky_precip
+    state: 'rain'
   action:
     - service: notify.ios_iphones_app
       data:
@@ -96,9 +96,9 @@
 - alias: 'Weather: Rainy Day'
   initial_state: 'on'
   trigger:
-    - platform: state
-      entity_id: sensor.dark_sky_precip
-      to: 'unknown'
+    - platform: numeric_state
+      entity_id: sensor.dark_sky_precip_probability
+      below: 25
   action:
     - service: notify.ios_iphones_app
       data:
