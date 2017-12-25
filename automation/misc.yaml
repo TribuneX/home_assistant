@@ -74,10 +74,7 @@
     platform: homeassistant
     event: start
   action:
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.log_level
-        option: 'fatal'
+    - service: script.init_hass
 
 - alias: 'Misc: Startup nobody is home'
   initial_state: 'on'
@@ -95,6 +92,7 @@
       data:
         entity_id: input_select.tv_mode
         option: AUS
+    - service: script.init_hass
 
 - alias: 'Misc: Update config if travis build is successfull'
   initial_state: 'on'

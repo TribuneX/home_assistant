@@ -29,6 +29,20 @@ reboot_pi:
     - service: homeassistant.stop
     - service: shell_command.reboot_command_pi 
 
+restart_homebridge:
+  alias: Restart Homebrige
+  sequence:
+    - service: shell_command.restart_homebridge
+
+init_hass:
+  alias: Init HASS
+  sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.log_level
+        option: 'fatal'
+    - service: script.restart_homebridge
+
 # Turns lights on and off after sunset
 vacation_lights:
   alias: Vacation Light Mode
