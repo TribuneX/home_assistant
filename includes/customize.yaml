@@ -263,6 +263,9 @@
   script.reboot_pi:
     icon: mdi:restart
     friendly_name: Reboot
+  script.restart_homebridge:
+    icon: mdi:home-automation
+    friendly_name: Restart Homebridge
   input_number.sonos_speaker:
     icon: mdi:volume-high 
   
