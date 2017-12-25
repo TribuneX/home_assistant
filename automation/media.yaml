@@ -260,6 +260,13 @@
     - condition: time
       after: '07:00'
       before: '10:00'
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        - sat
     - condition: state
       entity_id: switch.tv
       state: 'off'
