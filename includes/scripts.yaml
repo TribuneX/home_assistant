@@ -66,10 +66,10 @@ turn_off_livingroom_delay_15:
       entity_id: script.christmas_lights_off
 
 turn_off_bedroom_delay_45:
-  alias: 'Turn off bedroom (delay 45 minutes)'
+  alias: 'Turn off bedroom (delay 60 minutes)'
   sequence:
     - delay:
-        minutes: 45
+        minutes: 60
     - service: homeassistant.turn_off
       entity_id: group.schlafzimmer
 
