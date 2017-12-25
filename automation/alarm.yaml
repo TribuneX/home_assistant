@@ -1,5 +1,6 @@
 # Trigger alarm if motion is detected, altough noboby is home   
-- alias: 'Alarm'    
+- alias: 'Alarm' 
+  initial_state: 'on'   
   trigger:    
     - platform: state     
       entity_id: light.bad 

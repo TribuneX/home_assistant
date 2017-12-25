@@ -1,4 +1,5 @@
 - alias: 'Lights: Livingroom lights at sunset'
+  initial_state: 'on'
   trigger:
     - platform: sun
       event: sunset
@@ -31,6 +32,7 @@
         entity_id: light.eingang
 
 - alias: 'Lights: Livingroom lights at sunset + TV is on'
+  initial_state: 'on'
   trigger:
     - platform: sun
       event: sunset
@@ -62,7 +64,8 @@
 
 
 # Turn on light at Sofa if ATV is paused   
-- alias: 'Lights: Dim light when AppleTV is played'   
+- alias: 'Lights: Dim light when AppleTV is played'
+  initial_state: 'on'   
   trigger:    
     - platform: state   
       entity_id: media_player.wohnzimmer    
@@ -83,6 +86,7 @@
 
 # Turn on light at Sofa if ATV is paused
 - alias: 'Lights: Turn on light when AppleTV is paused'
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: media_player.wohnzimmer
@@ -104,6 +108,7 @@
 
 # Turn of devices in the bedroom 30 minutes when switched on after 23:00
 - alias: 'Lights: 45 minutes timer for devices at night'
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: group.schlafzimmer
@@ -118,6 +123,7 @@
 
 # Turn off devices in the livingroom 15 minutes when switched on after 3:01
 - alias: 'Lights: 15 minutes timer for devices at night'
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: group.wohnzimmer
@@ -133,6 +139,7 @@
 
 # Turn on lights in bedroom, if TV is switched off
 - alias: 'Lights: Turn on lights in bedroom after TV is switched off'
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: switch.tv
@@ -148,6 +155,7 @@
 
 # Turn on lights in the livingroom if someone is awake before sun rises
 - alias: 'Lights: Livingroom lights in the morning'
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: light.bad
@@ -179,6 +187,7 @@
     - service: script.turn_off_livingroom_lights_delay_15
 
 - alias: 'Lights: Dimm lights at night'
+  initial_state: 'on'
   trigger:
       platform: time
       at: '22:00'
@@ -194,6 +203,7 @@
 
 
 - alias: 'Lights: Brighter lights at day'
+  initial_state: 'on'
   trigger:
       platform: time
       at: '05:30'
@@ -210,6 +220,7 @@
 
 
 - alias: 'Lights: Bedroom lights triggered by beacon'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: device_tracker.owntracks_iphones
@@ -223,6 +234,7 @@
         message: 'Beacon bedroom detected'
 
 - alias: 'Lights: Bedroom lights triggered by beacon - off'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: device_tracker.owntracks_iphones

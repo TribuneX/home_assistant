@@ -1,5 +1,6 @@
 # Inspired by https://github.com/CCOSTAN/Home-AssistantConfig
 - alias: 'Printer: Printer ink levels'
+  initial_state: 'on'
   trigger:
     - platform: numeric_state
       entity_id: sensor.epson_ink_level_black, sensor.epson_ink_level_magenta, sensor.epson_ink_level_yellow, sensor.epson_ink_level_cyan

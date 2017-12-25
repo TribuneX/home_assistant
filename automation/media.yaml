@@ -1,4 +1,5 @@
 - alias: 'Media: Watch AppleTV'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -11,6 +12,7 @@
     - service: script.input_apple_tv
 
 - alias: 'Media: Watch Plex'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -23,6 +25,7 @@
     - service: script.input_plex
 
 - alias: 'Media: Watch TV'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -35,6 +38,7 @@
     - service: script.input_tv
 
 - alias: 'Media: Listen to music'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -47,6 +51,7 @@
     - service: script.input_music
 
 - alias: 'Media: Watch AppleTV + TV'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -63,6 +68,7 @@
     - service: script.input_apple_tv
 
 - alias: 'Media: Watch Plex + TV'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -79,6 +85,7 @@
     - service: script.input_plex
 
 - alias: 'Media: Watch TV + TV'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -95,6 +102,7 @@
     - service: script.input_tv
 
 - alias: 'Media: Listen to music + TV'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -108,6 +116,7 @@
     - service: script.input_music
 
 - alias: "Play selected source on sonos"
+  initial_state: 'on'
   trigger:
     - entity_id: input_select.sonos_source
       platform: state
@@ -131,6 +140,7 @@
       option: 'SELECT'
 
 - alias: "Play selected source on sonos + sonos"
+  initial_state: 'on'
   trigger:
     - entity_id: input_select.sonos_source
       platform: state
@@ -158,6 +168,7 @@
       option: 'SELECT'
 
 - alias: 'Media: Turn off TV'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
@@ -167,6 +178,7 @@
       entity_id: switch.tv
 
 - alias: Speaker - Adjust Volume
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_number.sonos_speaker
@@ -177,6 +189,7 @@
         volume_level: '{{ trigger.to_state.state }}'
 
 - alias: Speaker - Update Volume slider
+  initial_state: 'off'
   trigger:
     platform: state
     entity_id: media_player.living_room
@@ -188,6 +201,7 @@
 
 
 - alias: 'Media: Pause AppleTV if SONOS is used'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: media_player.living_room
@@ -202,6 +216,7 @@
       entity_id: media_player.wohnzimmer
 
 - alias: 'Media: Auto standby is Sonos is paused for 10 minutes'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: media_player.living_room
@@ -214,6 +229,7 @@
       entity_id: switch.speaker_1
 
 - alias: 'Media: Pause SONOS if AppleTV is used'
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: media_player.wohnzimmer
@@ -228,6 +244,7 @@
       entity_id: media_player.living_room
 
 - alias: 'Media: Play Radio when someone arrives at home'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: group.personen
@@ -241,6 +258,7 @@
     - service: script.sonos_play_radio
 
 - alias: 'Media: Turn on radio in the morning'
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: light.bad

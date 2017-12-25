@@ -1,4 +1,5 @@
 - alias: 'Presence: Nicole left home'
+  initial_state: 'on'
   trigger:
     platform: zone
     entity_id: device_tracker.owntracks_nicole_iphone
@@ -15,6 +16,7 @@
         message: 'Nicole left home.'
 
 - alias: 'Presence: Nicole arrived at home'
+  initial_state: 'on'
   trigger:
     platform: zone
     entity_id: device_tracker.owntracks_nicole_iphone
@@ -27,6 +29,7 @@
         message: 'Nicole arrived at home.'
 
 - alias: 'Presence: Nicole left work'
+  initial_state: 'on'
   trigger:
     platform: zone
     entity_id: device_tracker.owntracks_nicole_iphone
@@ -39,6 +42,7 @@
         message: 'Nicole left work.'
 
 - alias: 'Presence: Nicole arrived at work'
+  initial_state: 'on'
   trigger:
     platform: zone
     entity_id: device_tracker.owntracks_nicole_iphone
@@ -51,6 +55,7 @@
         message: 'Nicole arrived at work.'
 
 - alias: 'Presence: Nobody at home'
+  initial_state: 'on'
   trigger:
     platform: state
     entity_id: group.personen

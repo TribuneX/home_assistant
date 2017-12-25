@@ -3,6 +3,7 @@
 
 # Turn vacation mode on automatically
 - alias: 'Vacation: Turn on vacation mode when nobody is home for more than 24 hours'
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: group.personen
@@ -22,6 +23,7 @@
 
 # Turn vacation mode off automatically
 - alias: 'Vacation: Turn vacation mode off when home'
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: group.personen 
@@ -41,6 +43,7 @@
 
 # Turn on lights when vacation mode active
 - alias: 'Vacation: Turn on vacation lights at sunset when vacation mode on'
+  initial_state: 'on'
   trigger:
     - platform: state
       entity_id: sun.sun
