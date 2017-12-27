@@ -156,7 +156,7 @@
 
       appletv_bedroom:
         friendly_name: 'AppleTV Bedroom'
-        value_template: "{{ 'online' if is_state('device_tracker.appletv', 'home') else 'off' }}"
+        value_template: "{{ 'online' if is_state('device_tracker.schlafzimmer', 'home') else 'off' }}"
 
       appletv_livingroom:
         friendly_name: 'AppleTV Livingroom'
