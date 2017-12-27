@@ -165,6 +165,8 @@ devices:
     - sensor.netatmo
     - sensor.server
     - sensor.aqara_gateway
+    - sensor.sonos
+    - sensor.sonos2
 tradfri:
   name: 'Batterien'
   entities:
