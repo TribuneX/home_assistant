@@ -249,12 +249,12 @@ zone 2:
 #   latitude: !secret latitude_value
 #   longitude: !secret longitude_value
 
-zone 4:
-  name: Bedroom
-  radius: 5
-  passive: true
-  latitude: !secret latitude_value
-  longitude: !secret longitude_value
+# zone 4:
+#   name: Bedroom
+#   radius: 5
+#   passive: true
+#   latitude: !secret latitude_value
+#   longitude: !secret longitude_value
 
 ##########################
 # Includes
