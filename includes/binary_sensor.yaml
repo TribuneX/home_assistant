@@ -42,3 +42,25 @@
 - platform: ping
   name: PING WSW
   host: 192.168.2.1
+
+
+- platform: 'bayesian'
+    prior: 0.5
+    name: 'Sascha Home'
+    probability_threshold: 0.95
+    observations:
+      - entity_id: 'device_tracker.iphones'
+        prob_given_true: 0.8
+        prob_given_false: 0.2
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: 'device_tracker.owntracks_iphones'
+        prob_given_true: 0.7
+        prob_given_false: 0.4
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: 'binary_sensor.door_window_sensor_158d0001d8253a'
+        prob_given_true: 0.9
+        prob_given_false: 0.5
+        platform: 'state'
+        to_state: 'on' 
