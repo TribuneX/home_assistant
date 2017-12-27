@@ -74,24 +74,7 @@
     platform: homeassistant
     event: start
   action:
-    - service: script.init_hass
-
-- alias: 'Misc: Startup restore AppleTV state'
-  initial_state: 'on'
-  trigger:
-    platform: homeassistant
-    event: start
-  condition:
-    - condition: state
-      entity_id: media_player.wohnzimmer
-      state: 'playing'
-  action:
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.tv_mode
-        option: AppleTV
-
-    
+    - service: script.init_hass    
 
 - alias: 'Misc: Startup nobody is home'
   initial_state: 'on'
