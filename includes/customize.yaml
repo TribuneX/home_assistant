@@ -200,6 +200,9 @@
   sensor.aqara_gateway:
     icon: mdi:home-automation
 
+  sensor.sascha_home:
+    entity_picture: /local/sascha.png
+
 
 # Device Tracker
 
