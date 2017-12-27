@@ -171,11 +171,11 @@
         value_template: "{{ 'online' if is_state('device_tracker.server', 'home') else 'off' }}"
 
       sonos:
-        friendly_name: 'Sonos'
+        friendly_name: 'Sonos 1'
         value_template: "{{ 'online' if is_state('device_tracker.batplay1', 'home') else 'off' }}"
 
       sonos2:
-        friendly_name: 'Sonos'
+        friendly_name: 'Sonos 2'
         value_template: "{{ 'online' if is_state('device_tracker.batplay2', 'home') else 'off' }}"
 
       aqara_gateway:

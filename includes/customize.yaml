@@ -138,6 +138,10 @@
     icon: mdi:battery-80
   sensor.bad:
     icon: mdi:battery-80
+  sensor.sonos:
+    icon: mdi:speaker-wireless
+  sensor.sonos2:
+    icon: mdi:speaker-wireless
 
   sensor.netatmo_schlafzimmer_temperature:
     friendly_name: Temperatur 
