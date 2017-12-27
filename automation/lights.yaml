@@ -196,6 +196,14 @@
     entity_id: binary_sensor.motion_sensor_158d0001a90475
     from: 'off'
     to: 'on'
+  condition: or
+      conditions:
+        - condition: sun
+          after: sunset
+          before_offset: '-01:00:00'
+        - condition: sun
+          before: sunrise
+          after_offset: '-00:10:00'
   action:
     - service: script.workingroom_default_lights
 
