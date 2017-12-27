@@ -30,7 +30,6 @@
           {% else %}
             script.livingroom_default_lights
           {% endif %}
-    - service: script.livingroom_default_lights
     - service: script.christmas_lights_on
     - service: light.turn_on
       data:
