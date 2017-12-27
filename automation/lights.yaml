@@ -51,7 +51,10 @@
         state: below_horizon    
       - condition: time   
         after: '15:00'    
-        before: '03:00'   
+        before: '03:00'
+      - condition: state
+        entity_id: light.sofa
+        state: 'on'   
   action:   
     - service: script.livingroom_dimmed_lights
 
@@ -75,6 +78,9 @@
       - condition: time
         after: '15:00'
         before: '03:00'
+      - condition: state
+        entity_id: light.sofa
+        state: 'on'
   action:
     - service: script.livingroom_default_lights
 
