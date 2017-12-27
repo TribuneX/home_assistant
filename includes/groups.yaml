@@ -90,9 +90,8 @@ pi:
 personen:
   name: Personen
   entities:
-    - device_tracker.iphones
-    - sensor.sascha_home
-    - device_tracker.nicolesiphone
+    - group.sascha
+    - group.nicole
 sascha:
   name: Sascha
   entities:
