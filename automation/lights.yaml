@@ -259,14 +259,12 @@
   action:
     - service: script.workingroom_default_lights
 
-- alias: 'Lights: Turn off light in working room if there is no motion for 5 minutes'
+- alias: 'Lights: Turn off light in working room if there is no motion for 2 minutes'
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001a90475
     from: 'on'
     to: 'off'
-    for: 
-      minutes: 3
   action:
     - service: light.turn_off
       entity_id: light.arbeitszimmer
