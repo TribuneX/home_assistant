@@ -262,11 +262,11 @@
   #     uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E0
   #     major: 2
   #     minor: 2
-  zone.bedroom:
-    beacon:
-      uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E1
-      major: 1
-      minor: 1
+  # zone.bedroom:
+  #   beacon:
+  #     uuid: E2C56DB5-DFFB-48D2-B060-D0F5A71096E1
+  #     major: 1
+  #     minor: 1
 
 # Scripts
 
