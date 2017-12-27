@@ -246,14 +246,10 @@
 - alias: 'Media: Play Radio when someone arrives at home'
   initial_state: 'on'
   trigger:
-    - platform: state
-      entity_id: group.personen
-      from: 'not_home'
-      to: 'home'
-    - platform: state
-        entity_id: binary_sensor.door_window_sensor_158d0001d8253a
-        from: 'off'
-        to: 'on'
+    platform: state
+    entity_id: group.personen
+    from: 'not_home'
+    to: 'home'
   condition:
     - condition: time
       after: '08:00'

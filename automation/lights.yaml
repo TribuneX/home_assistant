@@ -8,10 +8,6 @@
       entity_id: group.personen
       from: 'not_home'
       to: 'home'
-    - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d0001d8253a
-      from: 'off'
-      to: 'on'
   condition:
     condition: and
     conditions:
