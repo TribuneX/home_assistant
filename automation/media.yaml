@@ -1,54 +1,24 @@
-- alias: 'Media: Watch AppleTV'
+- alias: 'Media: Select mode'
   initial_state: 'on'
   trigger:
     platform: state
     entity_id: input_select.tv_mode
-    to: 'AppleTV'
   condition:  
    condition: state
    entity_id: switch.tv
    state: 'on'
-  action:
-    - service: script.input_apple_tv
-
-- alias: 'Media: Watch Plex'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: input_select.tv_mode
-    to: 'Plex'
-  condition:  
-   condition: state
-   entity_id: switch.tv
-   state: 'on'
-  action:
-    - service: script.input_plex
-
-- alias: 'Media: Watch TV'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: input_select.tv_mode
-    to: 'TV'
-  condition:  
-   condition: state
-   entity_id: switch.tv
-   state: 'on'
-  action:
-    - service: script.input_tv
-
-- alias: 'Media: Listen to music'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: input_select.tv_mode
-    to: 'Music'
-  condition:  
-   condition: state
-   entity_id: switch.tv
-   state: 'on'
-  action:
-    - service: script.input_music
+  data_template:
+    service: script.turn_on
+    entity_id: >
+      {% if trigger.to_state.state == 'AppleTV' %}
+        script.input_apple_tv
+      {% elif trigger.to_state.state == 'TV' %}
+        script.input_tv
+      {% elif trigger.to_state.state == 'Plex' %}
+        script.input_plex
+      {% elif trigger.to_state.state == 'Music' %}
+        script.input_music
+      {% endif %}
 
 - alias: 'Media: Watch AppleTV + TV'
   initial_state: 'on'
