@@ -257,7 +257,7 @@
     from: 'off'
     to: 'on'
   action:
-    - service: light.turn_on
-      data: 
-        entity_id: light.arbeitszimmer
-        brightness: 150
+    - service: script.turn_off
+      entity_id: script.turn_off_workingroom_delay
+    - service: script.workingroom_default_lights
+    - service: script.turn_off_workingroom_delay
