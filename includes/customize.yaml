@@ -102,11 +102,11 @@
   sensor.plex:
     icon: mdi:plex
   sensor.appletv_livingroom:
-    icon: mdi:airplay
-    friendly_name: AppleTV Wohnzimmer
+    icon: mdi:apple
+    friendly_name: AppleTV Livingroom
   sensor.appletv_bedroom:
-    icon: mdi:airplay
-    friendly_name: AppleTV Schlafzimmer
+    icon: mdi:apple
+    friendly_name: AppleTV Bedroom
   sensor.epson:
     icon: mdi:printer
     friendly_name: Drucker
