@@ -106,6 +106,7 @@ logbook:
       - device_tracker.broadlink
       - device_tracker.epson029ea9
       - device_tracker.batplay1
+      - device_tracker.lumigatewayv3miio73057319
       - light.kuche1
       - light.kuche2
       - light.eingang
@@ -114,6 +115,10 @@ logbook:
       - sensor.tribunexhome_assistant_last_build_id
       - sensor.tribunexhome_assistant_last_build_started_at
       - sensor.tribunexhome_assistant_last_build_state
+      - binary_sensor.motion_sensor_158d0001a90475
+      - binary_sensor.switch_158d0001d8795f
+      - light.gateway_light_7811dc6c865a
+      - sensor.illumination_7811dc6c865a
 
 
 # Support for iOS app
