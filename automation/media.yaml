@@ -104,16 +104,6 @@
       entity_id: input_select.sonos_source
       option: 'SELECT'
 
-- alias: 'Media: Turn off TV'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: input_select.tv_mode
-    to: 'AUS'
-  action:
-    - service: switch.turn_off
-      entity_id: switch.tv
-
 - alias: Speaker - Adjust Volume
   initial_state: 'on'
   trigger:
@@ -135,7 +125,6 @@
       data_template:
         entity_id: input_number.sonos_speaker
         value: '{{ states.media_player.living_room.attributes.volume_level }}'
-
 
 - alias: 'Media: Pause AppleTV if SONOS is used'
   initial_state: 'on'
