@@ -7,18 +7,19 @@
    condition: state
    entity_id: switch.tv
    state: 'on'
-  data_template:
-    service: script.turn_on
-    entity_id: >
-      {% if trigger.to_state.state == 'AppleTV' %}
-        script.input_apple_tv
-      {% elif trigger.to_state.state == 'TV' %}
-        script.input_tv
-      {% elif trigger.to_state.state == 'Plex' %}
-        script.input_plex
-      {% elif trigger.to_state.state == 'Music' %}
-        script.input_music
-      {% endif %}
+  action:
+    - service: script.turn_on 
+    data_template:
+      entity_id: >
+        {% if trigger.to_state.state == 'AppleTV' %}
+          script.input_apple_tv
+        {% elif trigger.to_state.state == 'TV' %}
+          script.input_tv
+        {% elif trigger.to_state.state == 'Plex' %}
+          script.input_plex
+        {% elif trigger.to_state.state == 'Music' %}
+          script.input_music
+        {% endif %}
 
 - alias: 'Media: Watch AppleTV + TV'
   initial_state: 'on'
