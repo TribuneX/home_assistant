@@ -249,3 +249,15 @@
       data:
         title: 'Location'
         message: 'Beacon bedroom lost'
+
+- alias: 'Lights: Turn on light in working room if motion is detected'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001a90475
+    from: 'off'
+    to: 'on'
+  action:
+    - service: light.turn_on
+      data: 
+        entity_id: light.arbeitszimmer
+        brightness: 150
