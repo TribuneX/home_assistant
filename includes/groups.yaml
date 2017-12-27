@@ -162,7 +162,6 @@ devices:
     - sensor.appletv_bedroom
     - sensor.broadlink
     - sensor.switch
-    - sensor.netatmo
     - sensor.server
     - sensor.aqara_gateway
     - sensor.sonos
@@ -175,6 +174,9 @@ tradfri:
     - sensor.kueche
     - sensor.netatmo_schlafzimmer_battery
     - sensor.netatmo_outdoor_battery
+    - binary_sensor.door_window_sensor_158d0001d8253a_battery_level
+    - binary_sensor.motion_sensor_158d0001a90475_battery_level
+    - binary_sensor.switch_158d0001d8795f_battery_level
 robot:
   name: 'Staubsauger'
   entities:
