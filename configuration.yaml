@@ -106,7 +106,7 @@ logbook:
       - device_tracker.broadlink
       - device_tracker.epson029ea9
       - device_tracker.batplay1
-      - device_tracker.lumigatewayv3miio73057319
+      - device_tracker.aquara_gateway
       - light.kuche1
       - light.kuche2
       - light.eingang
