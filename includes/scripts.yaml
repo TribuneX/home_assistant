@@ -69,6 +69,11 @@ get_latest_config:
   sequence:
     - service: shell_command.git_pull
 
+turn_off_tv_livingroom:
+  sequence:
+    - service: switch.turn_off
+      entity_id: switch.tv
+
 turn_off_livingroom_delay_15:
   alias: 'Turn off livingroom group (delay 15 minutes)'
   sequence:

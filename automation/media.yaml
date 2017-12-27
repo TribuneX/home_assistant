@@ -19,7 +19,11 @@
           script.input_plex
         {% elif trigger.to_state.state == 'Music' %}
           script.input_music
+        {% elif trigger.to_state.state == 'AUS' %}
+          script.turn_off_tv_livingroom
         {% endif %}
+
+        
 
 - alias: 'Media: Watch AppleTV + TV'
   initial_state: 'on'
