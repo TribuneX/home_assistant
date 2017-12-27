@@ -47,7 +47,7 @@
 - platform: 'bayesian'
   prior: 0.5
   name: 'Sascha Home'
-  probability_threshold: 0.95
+  probability_threshold: 0.90
   observations:
     - entity_id: 'device_tracker.iphones'
       prob_given_true: 0.95
