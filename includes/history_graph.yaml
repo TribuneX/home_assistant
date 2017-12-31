@@ -26,3 +26,13 @@ plants_moisture:
     - sensor.sanseviera_moisture
   hours_to_show: 168
   refresh: 300
+
+epson_ink_level:
+  name: Epson Ink Level
+  entities:
+    - sensor.epson_ink_level_black
+    - sensor.epson_ink_level_magenta
+    - sensor.epson_ink_level_yellow
+    - sensor.epson_ink_level_cyan
+  hours_to_show: 168
+  refresh: 300
