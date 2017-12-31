@@ -260,6 +260,8 @@ graphs:
   icon: mdi:chart-line-variant
   entities:
     - history_graph.room_temps
+    - history_graph.room_co2
+    - history_graph.plants_moisture
 christmas:
   name: christmas
   view: yes
