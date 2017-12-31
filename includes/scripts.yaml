@@ -68,6 +68,7 @@ get_latest_config:
   alias: 'Update config'
   sequence:
     - service: shell_command.git_pull
+    - service: script.restart_hass
 
 turn_off_tv_livingroom:
   sequence:
