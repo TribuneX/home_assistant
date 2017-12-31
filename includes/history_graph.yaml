@@ -1,7 +1,7 @@
 room_temps:
   name: Room Temperatures
   entities:
-    - sensor.bad_temperature
+    #- sensor.bad_temperature
     - sensor.netatmo_schlafzimmer_temperature
     - sensor.netatmo_wohnzimmer_temperature
     #- sensor.palmek_temperature
