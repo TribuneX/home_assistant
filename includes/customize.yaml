@@ -144,31 +144,43 @@
     icon: mdi:speaker-wireless
 
   sensor.netatmo_schlafzimmer_temperature:
-    friendly_name: Temperatur 
+    friendly_name: Temperature Bedroom
+    homebridge_name: Temperature
   sensor.netatmo_schlafzimmer_co2:
-    friendly_name: CO2
+    friendly_name: CO2 Bedroom
+    homebridge_name: CO2
   sensor.netatmo_schlafzimmer_humidity:
-    friendly_name: Luftfeuchtigkeit
+    friendly_name: Humidity Bedroom
+    homebridge_name: Humidity
   sensor.netatmo_wohnzimmer_temperature:
-    friendly_name: Temperatur 
+    friendly_name: Temperature Livingroom
+    homebridge_name: Temperature 
   sensor.netatmo_wohnzimmer_co2:
-    friendly_name: CO2
+    friendly_name: CO2 Livingroom
+    homebridge_name: CO2
   sensor.netatmo_wohnzimmer_humidity:
-    friendly_name: Luftfeuchtigkeit
+    friendly_name: Humidity Livingroom
+    homebridge_name: Humidity
   sensor.netatmo_wohnzimmer_pressure:
-    friendly_name: Druck
+    friendly_name: Pressure Livingroom
+    homebridge_name: Pressure
   sensor.netatmo_wohnzimmer_noise:
-    friendly_name: Lautstärke
+    friendly_name: Noise Livingroom
+    homebridge_name: Noise
   sensor.netatmo_outdoor_temperature:
-    friendly_name: Temperatur
+    friendly_name: Temperature Outdoor
+    homebridge_name: Temperature
   sensor.netatmo_outdoor_humidity:
-    friendly_name: Luftfeuchtigkeit
+    friendly_name: Humidity Outdoor
+    homebridge_name: Humidity
   sensor.dark_sky_daily_high_temperature:
-    friendly_name: High
+    friendly_name: High Outdoor
+    homebridge_name: High
   sensor.dark_sky_daily_low_temperature:
-    friendly_name: Low
+    friendly_name: Low Outdoor
+    homebridge_name: Low
   sensor.dark_sky_summary:
-    friendly_name: Aussicht
+    friendly_name: Summary
   sensor.dark_sky_precip_intensity:
     friendly_name: Regen
 
