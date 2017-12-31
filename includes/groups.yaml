@@ -202,7 +202,12 @@ winter_lights:
     - switch.light_baum
     - switch.light_sterne
     - switch.socket_1
-
+all_graphs:
+  name: Graphs
+  entities:
+    - history_graph.room_temps
+    - history_graph.room_co2
+    - history_graph.plants_moisture
 
 # Tabs
 default_view:
@@ -259,9 +264,7 @@ graphs:
   view: yes
   icon: mdi:chart-line-variant
   entities:
-    - history_graph.room_temps
-    - history_graph.room_co2
-    - history_graph.plants_moisture
+    - group.all_graphs
 christmas:
   name: christmas
   view: yes
