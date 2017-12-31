@@ -269,3 +269,4 @@ switch: !include includes/switch.yaml
 scene: !include includes/scenes.yaml
 input_boolean: !include includes/inputs.yaml
 shell_command: !include includes/shell_commands.yaml
+history_graph: !include includes/history_graph.yaml

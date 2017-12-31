@@ -254,6 +254,12 @@ automation:
     - group.settings
     - group.all_automations
     - group.all_scripts
+graphs:
+  name: Graphs
+  view: yes
+  icon: mdi:chart-line-variant
+  entities:
+    - history_graph.room_temps
 christmas:
   name: christmas
   view: yes
