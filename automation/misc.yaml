@@ -102,7 +102,6 @@
     to: 'passed'
   action:
     # turn on TV before updating the config, since the broadlink needs to be on during startup
-    - service: script.prepare_restart
     - service: script.get_latest_config
 
 - alias: 'Misc: Raspberry full volume'
