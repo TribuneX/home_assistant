@@ -4,7 +4,7 @@ room_temps:
     - sensor.bad_temperature
     - sensor.netatmo_schlafzimmer_temperature
     - sensor.netatmo_wohnzimmer_temperature
-    - sensor.palmek_temperature
+    #- sensor.palmek_temperature
     #- sensor.netatmo_outdoor_temperature
   hours_to_show: 72
   refresh: 300
