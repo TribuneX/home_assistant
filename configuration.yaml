@@ -65,7 +65,7 @@ recorder:
 
 # Enables the frontend
 frontend:
-  javascript_version: latest
+  javascript_version: es5
 
 # Enables configuration UI
 config:
