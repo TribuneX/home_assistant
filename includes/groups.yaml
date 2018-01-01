@@ -153,6 +153,7 @@ devices:
   entities:
     - switch.tv
     - switch.speaker_1
+    - switch.socket_1
     - sensor.fritz_netmonitor
     - sensor.robo
     - sensor.epson
@@ -201,7 +202,6 @@ winter_lights:
   entities:
     - switch.light_baum
     - switch.light_sterne
-    - switch.socket_1
 
 # Tabs
 default_view:

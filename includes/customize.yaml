@@ -40,8 +40,8 @@
     icon: mdi:speaker-wireless          
     friendly_name: Sonos
   switch.socket_1:
-    friendly_name: Christmas Star
-    icon: mdi:star
+    friendly_name: Sonos2
+    icon: mdi:speaker-wireless
   switch.ventilator:
     icon: mdi:fan
     assumed_state: false
