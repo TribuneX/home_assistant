@@ -211,10 +211,7 @@
         before: sunrise
         before_offset: '-01:00:00'
   action:
-    - service: light.turn_on
-      entity_id: light.kueche1
-    - service: light.turn_on
-      entity_id: light.kueche2
+    - service: script.kueche_lights_on
 
 - alias: 'Lights: Turn off light in working room if there is no motion for 2 minutes'
   trigger:
@@ -225,7 +222,4 @@
     for: 
       minutes: 1
   action:
-    - service: light.turn_off
-      entity_id: light.kueche1
-    - service: light.turn_off
-      entity_id: light.kueche2
+    - service: script.kueche_lights_off
