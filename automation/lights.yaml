@@ -3,7 +3,7 @@
   trigger:
     - platform: sun
       event: sunset
-      offset: '-00:10:00'
+      offset: '-00:20:00'
     - platform: state
       entity_id: group.personen
       from: 'not_home'
@@ -18,7 +18,7 @@
         conditions:
           - condition: sun
             after: sunset
-            after_offset: '-00:10:00'
+            after_offset: '-00:20:00'
           - condition: time
             before: '03:00'
   action:
