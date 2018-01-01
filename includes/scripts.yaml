@@ -364,15 +364,13 @@ kueche_lights_on:
 
 kueche_lights_off:
   sequence:
-    - service: light.turn_on
+    - service: light.turn_off
       data:
         entity_id: light.kueche1
-        brightness: 0
         transition: 2
-    - service: light.turn_on
+    - service: light.turn_off
       data:
         entity_id: light.kueche2
-        brightness: 0
         transition: 2
 
 # Inspired by https://github.com/arsaboo/homeassistant-config/blob/master/scripts.yaml
