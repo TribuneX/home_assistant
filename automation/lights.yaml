@@ -212,9 +212,9 @@
         before_offset: '-01:00:00'
   action:
     - service: light.turn_on
-      entity_id: ight.kueche1
+      entity_id: light.kueche1
     - service: light.turn_on
-      entity_id: ight.kueche2
+      entity_id: light.kueche2
 
 - alias: 'Lights: Turn off light in working room if there is no motion for 2 minutes'
   trigger:
@@ -226,6 +226,6 @@
       minutes: 1
   action:
     - service: light.turn_off
-      entity_id: ight.kueche1
+      entity_id: light.kueche1
     - service: light.turn_off
-      entity_id: ight.kueche2
+      entity_id: light.kueche2
