@@ -209,7 +209,7 @@
         after_offset: '-01:00:00'
       - condition: sun
         before: sunrise
-        before_offset: '-01:00:00'
+        before_offset: '01:00:00'
   action:
     - service: script.kueche_lights_on
 
