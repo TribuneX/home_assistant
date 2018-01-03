@@ -1,4 +1,4 @@
-room_temps:
+room_temperatures:
   name: Room Temperatures
   entities:
     - sensor.netatmo_schlafzimmer_temperature
@@ -15,7 +15,7 @@ room_co2:
   refresh: 300
 
 plants_moisture:
-  name: Plant Moisture
+  name: Plants Moisture
   entities:
     - sensor.bad_moisture
     - sensor.palme_moisture
