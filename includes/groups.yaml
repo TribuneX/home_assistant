@@ -202,6 +202,10 @@ winter_lights:
   entities:
     - switch.light_baum
     - switch.light_sterne
+all_speaker:
+  entities:
+    - switch.speaker_1
+    - switch.socket_1
 
 # Tabs
 default_view:

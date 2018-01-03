@@ -65,7 +65,8 @@
         entity_id: media_player.living_room
         state: 'paused'
   action:
-    - service: script.turn_off_all_speaker
+    - service: homeassistant.turn_off
+      entity_id: group.all_speaker
 
 - alias: 'Misc: Startup default states'
   initial_state: 'on'
@@ -85,7 +86,8 @@
       entity_id: group.personen
       state: 'not_home'
   action:
-    - service: script.turn_off_all_speaker
+    - service: homeassistant.turn_off
+      entity_id: group.all_speaker
     - service: input_select.select_option
       data:
         entity_id: input_select.tv_mode

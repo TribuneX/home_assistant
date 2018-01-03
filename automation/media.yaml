@@ -60,7 +60,7 @@
       from: 'SELECT'
   condition:  
    condition: state
-   entity_id: switch.speaker_1
+   entity_id: group.all_speaker
    state: 'on'    
   action:
   - service: media_player.shuffle_set
@@ -84,13 +84,11 @@
       from: 'SELECT'
   condition:  
    condition: state
-   entity_id: switch.speaker_1
+   entity_id: group.all_speaker
    state: 'off'    
   action:
-  - service: switch.turn_on
-    entity_id: switch.speaker_1
-  - service: switch.turn_on
-    entity_id: switch.socket_1
+  - service: homeassistant.turn_on
+      entity_id: group.all_speaker
   - delay:
       seconds: 35
   - service: media_player.shuffle_set
@@ -153,7 +151,8 @@
     for:
         minutes: 10
   action:
-    - service: script.turn_off_all_speaker
+    - service: homeassistant.turn_off
+      entity_id: group.all_speaker
 
 - alias: 'Media: Pause SONOS if AppleTV is used'
   initial_state: 'on'
@@ -218,7 +217,7 @@
     - condition: or
       conditions:
       - condition: state
-        entity_id: switch.speaker_1
+        entity_id: group.all_speaker
         state: 'off'
       - condition: state
         entity_id: media_player.living_room
