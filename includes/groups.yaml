@@ -196,12 +196,7 @@ printer:
     - sensor.epson_ink_level_black
     - sensor.epson_ink_level_magenta
     - sensor.epson_ink_level_yellow
-    - sensor.epson_ink_level_cyan
-winter_lights:
-  name: Christmas
-  entities:
-    - switch.light_baum
-    - switch.light_sterne
+    - sensor.epson_ink_level_cyan    
 all_speaker:
   entities:
     - switch.speaker_1
@@ -271,7 +266,8 @@ christmas:
   view: yes
   icon: mdi:pine-tree
   entities:
-    - group.winter_lights
+    - switch.light_baum
+    - switch.light_sterne
     
 # finance:
 #   name: Finance
