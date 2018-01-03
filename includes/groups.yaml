@@ -252,15 +252,6 @@ automation:
     - group.settings
     - group.all_automations
     - group.all_scripts
-graphs:
-  name: Graphs
-  view: yes
-  icon: mdi:chart-line-variant
-  entities:
-    - history_graph.room_temperatures
-    - history_graph.room_co2
-    - history_graph.plants_moisture
-    - history_graph.epson_ink_level
 christmas:
   name: christmas
   view: yes
