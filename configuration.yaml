@@ -40,6 +40,7 @@ influxdb:
   include:
     domains:
       - sensor
+      - binary_sensor
 
 recorder:
   db_url: !secret mysql_path
