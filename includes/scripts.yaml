@@ -214,8 +214,7 @@ pause_sonos:
 
 play_sonos:
   sequence:
-    - service: switch.turn_on
-      entity_id: switch.speaker_1
+    - service: script.turn_on_all_speaker
     - service: media_player.media_play
       entity_id: media_player.living_room
 
@@ -264,13 +263,18 @@ turn_off_all:
         entity_id: input_select.tv_mode
         option: AUS 
 
-turn_off_speaker_after_delay:
+turn_off_all_speaker:
   sequence:
-    - delay:
-        minutes: 10
     - service: switch.turn_off
       entity_id: switch.speaker_1
     - service: switch.turn_off
+      entity_id: switch.socket_1
+
+turn_on_all_speaker:
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.speaker_1
+    - service: switch.turn_on
       entity_id: switch.socket_1
 
 livingroom_morning:

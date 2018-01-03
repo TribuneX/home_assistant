@@ -153,10 +153,7 @@
     for:
         minutes: 10
   action:
-    - service: switch.turn_off
-      entity_id: switch.speaker_1
-    - service: switch.turn_off
-      entity_id: switch.socket_1
+    - service: script.turn_off_all_speaker
 
 - alias: 'Media: Pause SONOS if AppleTV is used'
   initial_state: 'on'
