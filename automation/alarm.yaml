@@ -3,16 +3,8 @@
   initial_state: 'on'   
   trigger:    
     - platform: state     
-      entity_id: light.bad 
+      entity_id: light.bad, light.eingang, binary_sensor.door_window_sensor_158d0001d8253a
       from: 'off'   
-      to: 'on' 
-    - platform: state     
-      entity_id: light.eingang  
-      from: 'off'   
-      to: 'on'
-    - platform: state
-      entity_id: binary_sensor.door_window_sensor_158d0001d8253a
-      from: 'off'
       to: 'on'   
   condition:    
     condition: state    
