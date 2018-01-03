@@ -15,6 +15,8 @@ prepare_restart:
       entity_id: switch.tv 
     - service: switch.turn_on
       entity_id: switch.speaker_1
+    - service: switch.turn_on
+      entity_id: switch.socket_1
 
 reload_automations:
   alias: Reload Automations
