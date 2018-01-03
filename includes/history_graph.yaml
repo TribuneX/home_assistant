@@ -3,7 +3,7 @@ room_temperatures:
   entities:
     - sensor.netatmo_schlafzimmer_temperature
     - sensor.netatmo_wohnzimmer_temperature
-    - sensor.netatmo_outdoor_temperature
+    #- sensor.netatmo_outdoor_temperature
     - sensor.palmek_temperature
     - sensor.bad_temperature
   hours_to_show: 72
