@@ -30,7 +30,7 @@
           {% else %}
             script.livingroom_default_lights
           {% endif %}
-    - service: script.christmas_lights_on
+    #- service: script.christmas_lights_on
     - service: light.turn_on
       data:
         entity_id: light.eingang

@@ -273,8 +273,8 @@ livingroom_morning:
   sequence:
     - service: script.turn_on
       entity_id: script.livingroom_default_lights
-    - service: script.turn_on
-      entity_id: script.christmas_lights_on
+    #- service: script.turn_on
+    #  entity_id: script.christmas_lights_on
 
 livingroom_default_lights:
   sequence:
@@ -338,18 +338,14 @@ christmas_lights_on:
     - service: switch.turn_on
       entity_id: switch.light_sterne
     - service: switch.turn_on
-      entity_id: switch.baum
-    - service: switch.turn_on
-      entity_id: switch.socket_1
+      entity_id: switch.light_baum
 
 christmas_lights_off:
   sequence:
     - service: switch.turn_off
       entity_id: switch.light_sterne
     - service: switch.turn_off
-      entity_id: switch.baum
-    - service: switch.turn_off
-      entity_id: switch.socket_1
+      entity_id: switch.light_baum
 
 kueche_lights_on:
   sequence:
