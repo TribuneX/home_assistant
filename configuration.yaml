@@ -32,6 +32,15 @@ mqtt:
 
 map:
 
+
+influxdb:
+  host: pi3.cbs-service.net
+  username: homeassistant
+  password: influxdb_password
+  include:
+    domains:
+      - sensor
+
 recorder:
   db_url: !secret mysql_path
   purge_interval: 2
