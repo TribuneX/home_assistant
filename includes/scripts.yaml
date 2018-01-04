@@ -82,8 +82,8 @@ turn_off_livingroom_delay_15:
         minutes: 15
     - service: homeassistant.turn_off
       entity_id: group.wohnzimmer
-    - service: homeassistant.turn_off
-      entity_id: group.christmas
+    # - service: homeassistant.turn_off
+    #   entity_id: group.christmas
 
 turn_off_bedroom_delay_45:
   alias: 'Turn off bedroom (delay 60 minutes)'
@@ -266,8 +266,8 @@ livingroom_morning:
   sequence:
     - service: script.turn_on
       entity_id: script.livingroom_default_lights
-    - service: homeassistant.turn_on
-      entity_id: group.christmas
+    # - service: homeassistant.turn_on
+    #   entity_id: group.christmas
 
 livingroom_default_lights:
   sequence:
@@ -322,8 +322,8 @@ turn_off_livingroom_lights_delay_15:
         minutes: 30
     - service: light.turn_off
       entity_id: light.wohnzimmer
-    - service: homeassistant.turn_off
-      entity_id: group.christmas
+    # - service: homeassistant.turn_off
+    #   entity_id: group.christmas
     - service: script.pause_sonos
 
 kueche_lights_on:
