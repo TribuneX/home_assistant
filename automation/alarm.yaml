@@ -9,7 +9,7 @@
   condition:    
     condition: state    
     entity_id: group.personen   
-    state: 'not home'   
+    state: 'not_home'   
   action:     
     - service: notify.ios_iphones_app   
       data_template:   
