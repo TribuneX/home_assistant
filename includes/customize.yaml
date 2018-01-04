@@ -296,6 +296,9 @@
   script.restart_homebridge:
     icon: mdi:home-automation
     friendly_name: Restart Homebridge
+  script.enable_beacon:
+    icon: mdi:wifi
   input_number.sonos_speaker:
     icon: mdi:volume-high 
+
   
