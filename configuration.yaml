@@ -257,17 +257,6 @@ zone 2:
   latitude: !secret lat_zone_2 
   longitude: !secret long_zone_2 
 
-# zone 4:
-#   name: Sofa
-#   latitude: !secret latitude_value
-#   longitude: !secret longitude_value
-
-# zone 4:
-#   name: Bedroom
-#   radius: 5
-#   passive: true
-#   latitude: !secret latitude_value
-#   longitude: !secret longitude_value
 
 ##########################
 # Includes
@@ -282,3 +271,5 @@ switch: !include includes/switch.yaml
 scene: !include includes/scenes.yaml
 input_boolean: !include includes/inputs.yaml
 shell_command: !include includes/shell_commands.yaml
+homeassistant:
+  packages: !include_dir_named packages
