@@ -15,6 +15,7 @@ homeassistant:
   time_zone: Europe/Berlin
 
   customize: !include includes/customize.yaml
+  packages: !include_dir_named packages
 
 logger:
   default: warning
@@ -271,5 +272,3 @@ switch: !include includes/switch.yaml
 scene: !include includes/scenes.yaml
 input_boolean: !include includes/inputs.yaml
 shell_command: !include includes/shell_commands.yaml
-homeassistant:
-  packages: !include_dir_named packages
