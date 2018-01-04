@@ -30,7 +30,8 @@
           {% else %}
             script.livingroom_default_lights
           {% endif %}
-    #- service: script.christmas_lights_on
+    - service: homeassistant.turn_on
+      entity_id: group.christmas
     - service: light.turn_on
       data:
         entity_id: light.eingang
@@ -223,3 +224,24 @@
       minutes: 1
   action:
     - service: script.kueche_lights_off
+
+
+- alias: 'Turn on hallway light if door is opened'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d0001d8253a
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: or
+    conditions:
+      - condition: sun
+        after: sunset
+        after_offset: '-01:00:00'
+      - condition: sun
+        before: sunrise
+        before_offset: '01:00:00'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.eingang
