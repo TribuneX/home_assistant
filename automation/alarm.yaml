@@ -3,13 +3,18 @@
   initial_state: 'on'   
   trigger:    
     - platform: state     
-      entity_id: light.bad, light.eingang, binary_sensor.door_window_sensor_158d0001d8253a
+      entity_id: light.bad, light.eingang, binary_sensor.door_window_sensor_158d0001d8253a, light.kueche1
       from: 'off'   
       to: 'on'   
-  condition:    
-    condition: state    
-    entity_id: group.personen   
-    state: 'not_home'   
+  condition:
+    condition: and
+    conditions:    
+      - condition: state    
+        entity_id: group.personen   
+        state: 'not_home'
+      - condition: state
+        entity_id: vacuum.staubsauger
+        state: 'off'
   action:     
     - service: notify.ios_iphones_app   
       data_template:   
