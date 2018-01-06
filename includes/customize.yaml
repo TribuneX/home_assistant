@@ -258,6 +258,8 @@
     homebridge_hidden: true
   light.schlafzimmer:
     homebridge_hidden: true
+  light.sessel:
+    homebridge_hidden: true
 
 # Groups 
 

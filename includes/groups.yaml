@@ -11,7 +11,7 @@ wohnzimmer:
     - sensor.netatmo_wohnzimmer_noise
     - light.fernseher
     - light.sofa
-    - switch.light_sessel
+    - light.sessel
 schlafzimmer:
   name: Schlafzimmer
   entities:

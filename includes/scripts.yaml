@@ -289,6 +289,13 @@ livingroom_default_lights:
         entity_id: light.fernseher
         brightness: 150
         transition: 4
+    - service: light.turn_on
+      data: 
+        entity_id: light.sessel
+        brightness: 150
+        transition: 4
+
+    
 
 workingroom_default_lights:
   sequence:
@@ -307,6 +314,11 @@ livingroom_dimmed_lights:
     - service: light.turn_on
       data: 
         entity_id: light.fernseher
+        brightness: 20
+        transition: 4
+    - service: light.turn_on
+      data: 
+        entity_id: light.sessel
         brightness: 20
         transition: 4
 
