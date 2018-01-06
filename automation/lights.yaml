@@ -30,8 +30,8 @@
           {% else %}
             script.livingroom_default_lights
           {% endif %}
-    - service: homeassistant.turn_on
-      entity_id: group.christmas
+    # - service: homeassistant.turn_on
+    #   entity_id: group.christmas
     - service: light.turn_on
       data:
         entity_id: light.eingang
