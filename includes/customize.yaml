@@ -269,8 +269,10 @@
     entity_picture: /local/nicole.png
   group.all_automations:
     hidden: false
+    friendly_name: Automations
   group.all_scripts:
     hidden: false
+    friendly_name: Scripts
 
 # Zones
 
