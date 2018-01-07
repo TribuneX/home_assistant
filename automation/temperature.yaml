@@ -84,8 +84,8 @@
       above: 60
   condition:
     - condition: time   
-        after: '07:00'    
-        before: '20:00'
+      after: '07:00'    
+      before: '20:00'
   action:
     - service: notify.ios_iphones_app
       data:
@@ -101,8 +101,8 @@
       below: 20
   condition:
     - condition: time   
-        after: '07:00'    
-        before: '20:00'
+      after: '07:00'    
+      before: '20:00'
   action:
     - service: notify.ios_iphones_app
       data:
