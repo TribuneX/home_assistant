@@ -81,16 +81,15 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.dark_sky_precip_probability
-      above: 25
-  condition:
-    condition: state
-    entity_id: sensor.dark_sky_precip
-    state: 'rain'
+      above: 60
+  condition: time   
+    after: '07:00'    
+    before: '20:00'
   action:
     - service: notify.ios_iphones_app
       data:
-        title: 'Weather Report'
-        message: 'It looks like its gonna rain ({{states.sensor.dark_sky_precip_intensity.state}}) soon ({{states.sensor.dark_sky_precip_probability.state}}%). {{states.sensor.dark_sky_summary.state}}'
+        title: 'Rain Alert'
+        message: 'It looks like its gonna rain: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
 
 
 - alias: 'Weather: Rainy Day'
@@ -98,9 +97,12 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.dark_sky_precip_probability
-      below: 25
+      below: 20
+  condition: time   
+    after: '07:00'    
+    before: '20:00'
   action:
     - service: notify.ios_iphones_app
       data:
-        title: 'Weather Report'
-        message: 'It looks like it stopped raining: ({{states.sensor.dark_sky_precip_intensity.state}}) soon ({{states.sensor.dark_sky_precip_probability.state}}%). {{states.sensor.dark_sky_summary.state}}'
+        title: 'Rain Stoppes'
+        message: 'It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
