@@ -1,4 +1,4 @@
-- alias: 'Lights: Livingroom lights at sunset'
+- alias: 'Lights: Turn on livingroom lights at sunset'
   initial_state: 'on'
   trigger:
     - platform: sun
@@ -37,7 +37,7 @@
         entity_id: light.eingang
 
 # Turn on light at Sofa if ATV is paused   
-- alias: 'Lights: Dim light when AppleTV is played'
+- alias: 'Lights: Dim lights when AppleTV is played'
   initial_state: 'on'   
   trigger:    
     - platform: state   
@@ -133,7 +133,7 @@
     - service: script.turn_off_livingroom_delay_15
 
 # Turn on lights in the livingroom if someone is awake before sun rises
-- alias: 'Lights: Livingroom lights in the morning'
+- alias: 'Lights: Turn on livingroom lights in the morning'
   initial_state: 'on'
   trigger:
     - platform: state
@@ -165,7 +165,7 @@
     - service: script.livingroom_morning
     - service: script.turn_off_livingroom_lights_delay_15
 
-- alias: 'Lights: Dimm lights at night'
+- alias: 'Lights: Dim hallway light at night'
   initial_state: 'on'
   trigger:
       platform: time
@@ -180,7 +180,7 @@
     - service: light.turn_off
       entity_id: light.bad
 
-- alias: 'Lights: Brighter lights at day'
+- alias: 'Lights: Set hallway light to be brighter during the day'
   initial_state: 'on'
   trigger:
       platform: time
@@ -196,7 +196,7 @@
     - service: light.turn_off
       entity_id: light.bad
 
-- alias: 'Lights: Turn on light in working room if motion is detected'
+- alias: 'Lights: Turn on light in the kitchen if motion is detected'
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001a90475
@@ -214,14 +214,14 @@
   action:
     - service: script.kueche_lights_on
 
-- alias: 'Lights: Turn off light in working room if there is no motion for 2 minutes'
+- alias: 'Lights: Turn off light in the kitchen if there is no motion for 2.5 minutes'
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001a90475
     from: 'on'
     to: 'off'
     for: 
-      minutes: 1
+      seconds: 30
   action:
     - service: script.kueche_lights_off
 
