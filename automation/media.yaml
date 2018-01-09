@@ -282,7 +282,7 @@
     platform: event
     event_type: cube_action
     event_data:
-      entity_id: binary_sensor.cube_158d000101bded
+      entity_id: binary_sensor.cube_158d0001108360
       action_type: rotate
   condition:
       - condition: state
