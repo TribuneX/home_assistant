@@ -286,7 +286,7 @@
       action_type: rotate
   condition:
       - condition: state
-        entity_id: switch.sonos_speaker
+        entity_id: group.all_speaker
         state: 'on' 
   action:
     - service: media_player.volume_set
