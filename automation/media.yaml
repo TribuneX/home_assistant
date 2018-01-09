@@ -275,3 +275,26 @@
     data:
       entity_id: input_select.tv_mode
       option: AUS
+
+
+- alias: 'Media: Select sonos volume with cube rotation'
+  trigger:
+    platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d000101bded
+      action_type: rotate
+  condition:
+      - condition: state
+        entity_id: switch.sonos_speaker
+        state: 'on' 
+  action:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.living_room          
+        volume_level: >
+          {%if trigger.event.data.action_value | float > 0 %} 
+          {{  states.media_player.living_room.attributes.volume_level | float + 0.05 }}
+          {% else %} 
+          {{  states.media_player.living_room.attributes.volume_level | float - 0.05 }}
+          {% endif %}
