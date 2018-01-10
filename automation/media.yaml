@@ -226,7 +226,7 @@
     - service: script.sonos_play_radio
       data:
         variables:
-          volume: 0.1
+          volume: 0.05
 
 - alias: 'Media: Turn on AppleTV on flip90'
   initial_state: 'on'
