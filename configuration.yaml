@@ -25,7 +25,7 @@ logger:
     miio.device: critical
 
 mqtt:
-  broker: hass.cbs-service.net
+  broker: pi.cbs-service.net
   username: owntracks
   password: !secret mqtt_password
   protocol: 3.1
