@@ -247,14 +247,14 @@
         entity_id: light.arbeitszimmer
         brightness: 150
 
-- alias: 'Lights: Turn off light in working room if there is no motion for 2.5 minutes'
+- alias: 'Lights: Turn off light in working room if there is no motion for 3 minutes'
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d000121c575
     from: 'on'
     to: 'off'
     for: 
-      seconds: 30
+      minutes: 1
   action:
     - service: light.turn_off
       data:
