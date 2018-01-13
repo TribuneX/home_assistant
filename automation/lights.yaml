@@ -226,6 +226,42 @@
     - service: script.kueche_lights_off
 
 
+- alias: 'Lights: Turn on light in working room if motion is detected'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d000121c575
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: or
+    conditions:
+      - condition: sun
+        after: sunset
+        after_offset: '-01:00:00'
+      - condition: sun
+        before: sunrise
+        before_offset: '01:00:00'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.arbeitszimmer
+        brightness: 150
+
+- alias: 'Lights: Turn off light in working room if there is no motion for 2.5 minutes'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d000121c575
+    from: 'on'
+    to: 'off'
+    for: 
+      seconds: 30
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.arbeitszimmer
+        transition: 2
+
+
 - alias: 'Turn on hallway light if door is opened'
   trigger:
     platform: state
