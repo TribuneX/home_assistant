@@ -181,6 +181,8 @@ tradfri:
     - sensor.door1_battery
     - sensor.door2_battery
     - sensor.motion1_battery
+    - sensor.motion2_battery
+    - sensor.cube_battery
     - sensor.switch1_battery
 robot:
   name: 'Staubsauger'
