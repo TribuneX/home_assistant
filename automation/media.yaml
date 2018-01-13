@@ -276,14 +276,14 @@
       entity_id: input_select.tv_mode
       option: AUS
 
-- alias: 'Media: Pause Radio on flip90'
+- alias: 'Media: Pause Radio on tap_twice'
   initial_state: 'on'
   trigger:
     platform: event
     event_type: cube_action
     event_data:
       entity_id: binary_sensor.cube_158d0001108360
-      action_type: flip90
+      action_type: tap_twice
   condition:
     condition: state
     entity_id: group.all_speaker
