@@ -48,8 +48,8 @@ init_hass:
       data:
         entity_id: input_select.log_level
         option: 'fatal'
-    - service: script.restart_homebridge
-    - service: script.enable_beacon 
+    #- service: script.restart_homebridge
+    #- service: script.enable_beacon 
 
 # Turns lights on and off after sunset
 vacation_lights:
