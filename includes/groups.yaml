@@ -12,6 +12,7 @@ wohnzimmer:
     - light.fernseher
     - light.sofa
     - light.sessel
+    - binary_sensor.door_window_sensor_158d0001b7700c
 schlafzimmer:
   name: Schlafzimmer
   entities:
@@ -25,6 +26,7 @@ schlafzimmer:
 outdoor:
   name: Außen
   entities:
+    - binary_sensor.door_window_sensor_158d0001d8253a
     - sensor.netatmo_outdoor_temperature
     #- sensor.dark_sky_temperature
     - sensor.dark_sky_daily_high_temperature
@@ -177,6 +179,7 @@ tradfri:
     - sensor.netatmo_schlafzimmer_battery
     - sensor.netatmo_outdoor_battery
     - sensor.door1_battery
+    - sensor.door2_battery
     - sensor.motion1_battery
     - sensor.switch1_battery
 robot:
@@ -202,6 +205,10 @@ all_speaker:
   entities:
     - switch.speaker_1
     - switch.socket_1
+doors:
+  name: Doors
+  entities:
+    - binary_sensor.door_window_sensor_158d0001b7700c
 
 # Tabs
 default_view:
