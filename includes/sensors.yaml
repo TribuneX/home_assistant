@@ -133,32 +133,32 @@
 
       door1_battery:   
        value_template: '{{ states.binary_sensor.door_window_sensor_158d0001d8253a.attributes.battery_level}}'    
-       friendly_name: 'Status'   
+       friendly_name: 'Front Door'   
        icon_template: mdi:battery-80
 
       door2_battery:   
        value_template: '{{ states.binary_sensor.door_window_sensor_158d0001b7700c.attributes.battery_level}}'    
-       friendly_name: 'Status'   
+       friendly_name: 'Balcony Door'   
        icon_template: mdi:battery-80
 
       motion1_battery:   
        value_template: '{{ states.binary_sensor.motion_sensor_158d0001a90475.attributes.battery_level}}'    
-       friendly_name: 'Status'   
+       friendly_name: 'Kitchen Motion'   
        icon_template: mdi:battery-80
 
       motion2_battery:   
        value_template: '{{ states.binary_sensor.motion_sensor_158d000121c575.attributes.battery_level}}'    
-       friendly_name: 'Status'   
+       friendly_name: 'Working Room Motion'   
        icon_template: mdi:battery-80
 
       switch1_battery:   
        value_template: '{{ states.binary_sensor.switch_158d0001d8795f.attributes.battery_level}}'    
-       friendly_name: 'Status'   
+       friendly_name: 'Switch'   
        icon_template: mdi:battery-80
       
       cube_battery:   
        value_template: '{{ states.binary_sensor.cube_158d0001108360.attributes.battery_level}}'    
-       friendly_name: 'Status'   
+       friendly_name: 'Cube'   
        icon_template: mdi:battery-80
 
       sascha_home:
