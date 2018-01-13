@@ -96,15 +96,15 @@
       entity_id: switch.tv
     - service: script.init_hass
 
-- alias: 'Misc: Update config if travis build is successfull'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: sensor.tribunexhome_assistant_last_build_state
-    to: 'passed'
-  action:
-    # turn on TV before updating the config, since the broadlink needs to be on during startup
-    - service: script.get_latest_config
+# - alias: 'Misc: Update config if travis build is successfull'
+#   initial_state: 'on'
+#   trigger:
+#     platform: state
+#     entity_id: sensor.tribunexhome_assistant_last_build_state
+#     to: 'passed'
+#   action:
+#     # turn on TV before updating the config, since the broadlink needs to be on during startup
+#     - service: script.get_latest_config
 
 - alias: 'Misc: Raspberry full volume'
   initial_state: 'on'
