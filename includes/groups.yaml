@@ -1,7 +1,7 @@
 ##########################
 # Groups
 ##########################
-wohnzimmer:
+living_room:
   name: 'Living Room'
   entities:
     - sensor.netatmo_wohnzimmer_temperature
@@ -13,7 +13,7 @@ wohnzimmer:
     - light.sofa
     - light.sessel
     - binary_sensor.door_window_sensor_158d0001b7700c
-schlafzimmer:
+bed_room:
   name: 'Bedroom'
   entities:
     - sensor.netatmo_schlafzimmer_temperature
@@ -37,12 +37,12 @@ outdoor:
     - sensor.dark_sky_precip
     - sensor.dark_sky_precip_intensity
     - sensor.dark_sky_precip_probability
-arbeitszimmer:
+office:
   name: 'Office'
   entities:
     - switch.server
     - sensor.palmek_temperature
-plant_wohnzimmer:
+plant_1:
   name: 'Sanseviera'
   entities:  
     - sensor.sanseviera_moisture
@@ -50,7 +50,7 @@ plant_wohnzimmer:
     - sensor.sanseviera_temperature
     - sensor.sanseviera_conductivity
     - sensor.sanseviera_battery
-plant_palme:
+plant_2:
   name: 'Palm'
   entities:  
     - sensor.palme_moisture
@@ -58,7 +58,7 @@ plant_palme:
     - sensor.palme_temperature
     - sensor.palme_conductivity
     - sensor.palme_battery
-plant_bad:
+plant_3:
   name: 'Bath'
   entities:  
     - sensor.bad_moisture
@@ -66,7 +66,7 @@ plant_bad:
     - sensor.bad_temperature
     - sensor.bad_conductivity
     - sensor.bad_battery
-plant_palmek:
+plant_4:
   name: 'Small Palm'
   entities:  
     - sensor.palmek_moisture
@@ -209,9 +209,9 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-    - group.wohnzimmer
-    - group.schlafzimmer
-    - group.arbeitszimmer
+    - group.living_room
+    - group.bed_room
+    - group.office
     - group.outdoor
     - group.states
     - group.robot
@@ -231,10 +231,10 @@ plants:
   view: yes
   icon: mdi:barley
   entities:
-    - group.plant_wohnzimmer
-    - group.plant_palme  
-    - group.plant_bad
-    - group.plant_palmek
+    - group.plant_1
+    - group.plant_2  
+    - group.plant_3
+    - group.plant_4
 system:
   name: 'System'
   view: yes
