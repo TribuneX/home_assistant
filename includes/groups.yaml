@@ -178,7 +178,7 @@ tradfri:
 robot:
   name: 'Vacuum Cleaner'
   entities:
-    - vacuum.staubsauger
+    - vacuum.vacuum_cleaner
     - input_boolean.cleaned_today
 speaker:
   name: 'Music'
