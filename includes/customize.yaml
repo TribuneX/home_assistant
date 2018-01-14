@@ -1,9 +1,5 @@
   # Switches
 
-  switch.light_sessel:
-    icon: mdi:lightbulb-on
-    assumed_state: false
-    friendly_name: Sessel
   switch.light_baum:
     icon: mdi:pine-tree
     assumed_state: false
@@ -81,7 +77,7 @@
   sensor.palmek_moisture:
     icon: mdi:cup-water
   sensor.palmek_temperature:
-    friendly_name: Temperatur
+    friendly_name: Temperature
   sensor.bad_battery:
     icon: mdi:battery-80
   sensor.bad_light_intensity:
@@ -95,7 +91,7 @@
     icon: mdi:cloud-download
   sensor.robo:
     icon: mdi:broom
-    friendly_name: Staubsauger
+    friendly_name: 'Vaccum Cleaner'
   sensor.switch:
     icon: mdi:server-network
     homebridge_hidden: true
@@ -267,9 +263,9 @@
 
 # Groups 
 
-  group.sascha:
+  group.user_1:
     entity_picture: /local/sascha.png
-  group.nicole:
+  group.user_2:
     entity_picture: /local/nicole.png
   group.all_automations:
     hidden: false
