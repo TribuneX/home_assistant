@@ -2,7 +2,7 @@
 # Groups
 ##########################
 wohnzimmer:
-  name: Wohnzimmer
+  name: 'Living Room'
   entities:
     - sensor.netatmo_wohnzimmer_temperature
     - sensor.netatmo_wohnzimmer_co2
@@ -14,7 +14,7 @@ wohnzimmer:
     - light.sessel
     - binary_sensor.door_window_sensor_158d0001b7700c
 schlafzimmer:
-  name: Schlafzimmer
+  name: 'Bedroom'
   entities:
     - sensor.netatmo_schlafzimmer_temperature
     - sensor.netatmo_schlafzimmer_co2
@@ -24,29 +24,26 @@ schlafzimmer:
     - switch.tv_2
     - switch.ventilator
 outdoor:
-  name: Außen
+  name: 'Outdoor'
   entities:
     - binary_sensor.door_window_sensor_158d0001d8253a
     - sensor.netatmo_outdoor_temperature
-    #- sensor.dark_sky_temperature
     - sensor.dark_sky_daily_high_temperature
     - sensor.dark_sky_daily_low_temperature
     - sensor.dark_sky_summary
     - sun.sun
     - sensor.netatmo_outdoor_humidity
-    #- sensor.dark_sky_humidity
     - sensor.dark_sky_wind_speed
-    #- sensor.dark_sky_hourly_summary
     - sensor.dark_sky_precip
     - sensor.dark_sky_precip_intensity
     - sensor.dark_sky_precip_probability
 arbeitszimmer:
-  name: Arbeitszimmer
+  name: 'Office'
   entities:
     - switch.server
     - sensor.palmek_temperature
 plant_wohnzimmer:
-  name: Sanseviera
+  name: 'Sanseviera'
   entities:  
     - sensor.sanseviera_moisture
     - sensor.sanseviera_light_intensity
@@ -54,7 +51,7 @@ plant_wohnzimmer:
     - sensor.sanseviera_conductivity
     - sensor.sanseviera_battery
 plant_palme:
-  name: Palme
+  name: 'Palm'
   entities:  
     - sensor.palme_moisture
     - sensor.palme_light_intensity
@@ -62,7 +59,7 @@ plant_palme:
     - sensor.palme_conductivity
     - sensor.palme_battery
 plant_bad:
-  name: Bad
+  name: 'Bath'
   entities:  
     - sensor.bad_moisture
     - sensor.bad_light_intensity
@@ -70,7 +67,7 @@ plant_bad:
     - sensor.bad_conductivity
     - sensor.bad_battery
 plant_palmek:
-  name: Palmek
+  name: 'Small Palm'
   entities:  
     - sensor.palmek_moisture
     - sensor.palmek_light_intensity
@@ -78,7 +75,7 @@ plant_palmek:
     - sensor.palmek_conductivity
     - sensor.palmek_battery
 pi:
-  name: Raspberry
+  name: 'Raspberry'
   entities:
     - sensor.cpu_temperature
     - sensor.cpu_use
@@ -90,22 +87,22 @@ pi:
     - sensor.speedtest_download
     - sensor.speedtest_upload
 personen:
-  name: Personen
+  name: 'People'
   entities:
-    - group.sascha
-    - group.nicole
-sascha:
-  name: Sascha
+    - group.user_1
+    - group.user_2
+user_1:
+  name: 'Sascha'
   entities:
     - device_tracker.iphones
     - device_tracker.owntracks_iphones
-nicole:
-  name: Nicole
+user_2:
+  name: 'Nicole'
   entities:
     - device_tracker.nicolesiphone
     - device_tracker.owntracks_nicole_iphone
 tv_scenes:
-  name: TV
+  name: 'TV'
   entities:
     - switch.tv_mode
     - switch.appletv_mode
@@ -113,14 +110,14 @@ tv_scenes:
     - switch.music_mode
     - switch.tv
 iphone:
-  name: Devices
+  name: 'Devices'
   entities:
     - sensor.iphones_battery_level
     - sensor.iphones_battery_state
     - sensor.ipads_battery_level
     - sensor.ipads_battery_state
 pings:
-  name: Ping
+  name: 'Ping'
   entities:
     - binary_sensor.ping_eltern
     - binary_sensor.ping_sonja
@@ -132,14 +129,8 @@ pings:
     - binary_sensor.ping_uwe
     - binary_sensor.ping_vhv
     - binary_sensor.ping_wsw
-# stocks:
-#   name: Stock
-#   entities:
-#     - sensor.amzn
-#     - sensor.aapl
-#     - sensor.stag
 settings:
-  name: Settings
+  name: 'Settings'
   entities:
     - script.get_latest_config
     - script.restart_hass
@@ -171,7 +162,7 @@ devices:
     - sensor.sonos
     - sensor.sonos2
 tradfri:
-  name: 'Batterien'
+  name: 'Battery Status'
   entities:
     - sensor.eingang
     - sensor.bad
@@ -185,18 +176,18 @@ tradfri:
     - sensor.cube_battery
     - sensor.switch1_battery
 robot:
-  name: 'Staubsauger'
+  name: 'Vacuum Cleaner'
   entities:
     - vacuum.staubsauger
     - input_boolean.cleaned_today
 speaker:
-  name: Musik
+  name: 'Music'
   entities:
     - input_select.sonos_source
     - switch.sonos_mode
     - input_number.sonos_speaker   
 printer:
-  name: Epson Printer
+  name: 'Epson Printer'
   entities:
     - sensor.epson
     - sensor.epson_ink_level_black
@@ -208,13 +199,13 @@ all_speaker:
     - switch.speaker_1
     - switch.socket_1
 doors:
-  name: Doors
+  name: 'Doors'
   entities:
     - binary_sensor.door_window_sensor_158d0001b7700c
 
 # Tabs
 default_view:
-  #name: Räume
+  name: 'Home'
   view: yes
   icon: mdi:home
   entities:
@@ -226,7 +217,7 @@ default_view:
     - group.robot
     - group.personen
 media:
-  name: Media
+  name: 'Media'
   view: yes
   icon: mdi:television 
   entities:
@@ -236,7 +227,7 @@ media:
     - group.speaker
     - media_player.living_room    
 plants:
-  name: Pflanzen
+  name: 'Plants'
   view: yes
   icon: mdi:barley
   entities:
@@ -245,7 +236,7 @@ plants:
     - group.plant_bad
     - group.plant_palmek
 system:
-  name: System
+  name: 'System'
   view: yes
   icon: mdi:server
   entities:
@@ -255,7 +246,7 @@ system:
     - group.printer
     - group.tradfri
 automation:
-  name: Automation
+  name: 'Automation'
   view: yes
   icon: mdi:settings
   entities:
@@ -263,16 +254,9 @@ automation:
     - group.all_automations
     - group.all_scripts
 christmas:
-  name: christmas
-  view: yes
+  name: 'Christmas'
+  view: no
   icon: mdi:pine-tree
   entities:
     - switch.light_baum
     - switch.light_sterne
-    
-# finance:
-#   name: Finance
-#   view: yes
-#   icon: mdi:trending-up
-#   entities:
-#     - group.stocks

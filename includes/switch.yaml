@@ -121,7 +121,7 @@
       value_template: "{{ is_state('media_player.living_room', 'playing')}}"
       turn_on:
         service: script.turn_on
-        entity_id: script.play_sonos
+        entity_id: script.sonos_play_radio
       turn_off:
         service: script.turn_on
         entity_id: script.pause_sonos
