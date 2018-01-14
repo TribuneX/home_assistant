@@ -142,11 +142,6 @@ notify:
   name: ios_app
   target: !secret ios_token
 
-  #- platform: telegram
-  #  name: telegram
-  #  api_key: !secret telegram_api_key
-  #  chat_id: !secret telegram_chat_id
-
 # Presence Detection
 device_tracker:
   - platform: fritz
@@ -171,10 +166,6 @@ media_player:
     credentials: !secret atv2_credentials
 
   - platform: sonos
-
-  # - platform: spotify
-  #   client_id: !secret spotify_client_id
-  #   client_secret: !secret spotify_client_secret
 
 netatmo:
   api_key: !secret netatmo_api_key
@@ -238,7 +229,7 @@ xiaomi_aqara:
 
 vacuum:
   platform: xiaomi_miio 
-  name: Staubsauger
+  name: 'Vacuum Cleaner'
   host: robo.cbs-service.net
   token: !secret mirobo_token
 
