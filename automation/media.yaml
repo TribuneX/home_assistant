@@ -327,3 +327,33 @@
           {% else %} 
           {{  states.media_player.living_room.attributes.volume_level | float - 0.05 }}
           {% endif %}
+
+- alias: 'Turn on TV 2 in bedroom on long button press'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001d8795f
+      click_type: single
+  condition:
+    - condition: state
+      entity_id: switch.tv_2
+      state: 'off' 
+  action:
+    - service: switch.turn_on
+      entity_id: switch.tv_2
+
+
+- alias: 'Turn off TV 2 in bedroom on long button press'
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001d8795f
+      click_type: single
+  condition:
+    - condition: state
+      entity_id: switch.tv_2
+      state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.tv_2
