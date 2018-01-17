@@ -202,6 +202,18 @@ doors:
   name: 'Doors'
   entities:
     - binary_sensor.door_window_sensor_158d0001b7700c
+lights_livingroom:
+  name: 'Lights Living Room'
+  entities:
+    - light.fernseher
+    - light.sofa
+    - light.sessel
+
+lights_bedroom:
+  name: 'Lights Bedroom'
+  entities:
+    - light.sascha
+    - light.nicole
 
 # Tabs
 default_view:
