@@ -298,7 +298,7 @@
 
 
 - alias: 'Turn off lights in bedroom'
-  triger:  
+  trigger:  
     platform: event
     event_type: click
     event_data:
