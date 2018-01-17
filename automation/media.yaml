@@ -345,6 +345,7 @@
 
 
 - alias: 'Turn off TV 2 in bedroom on long button press'
+  triger:  
     platform: event
     event_type: click
     event_data:

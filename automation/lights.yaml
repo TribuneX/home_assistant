@@ -298,6 +298,7 @@
 
 
 - alias: 'Turn off lights in bedroom'
+  triger:  
     platform: event
     event_type: click
     event_data:
@@ -310,5 +311,3 @@
   action:
     - service: homeassistant.turn_off
       entity_id: group.lights_bedroom
-
-
