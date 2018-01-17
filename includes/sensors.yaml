@@ -127,7 +127,7 @@
   sensors: 
       # Inspired by https://github.com/rytilahti/python-mirobo/issues/4   
       vacuum_status:   
-       value_template: '{{ states.vacuum.staubsauger.attributes.status}}'    
+       value_template: '{{ states.vacuum.vacuum_cleaner.attributes.status}}'    
        friendly_name: 'Status'   
        icon_template: mdi:comment
 

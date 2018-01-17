@@ -22,7 +22,7 @@
     - service: notify.ios_iphones_app
       data:
         title: 'Robot'
-        message: 'Cleanup successful after {{states.vacuum.staubsauger.attributes.cleaning_time}} minutes.'
+        message: 'Cleanup successful after {{states.vacuum.vacuum_cleaner.attributes.cleaning_time}} minutes.'
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.cleaned_today
@@ -50,7 +50,7 @@
         state: 'off'
   action:
     - service: vacuum.turn_on
-      entity_id: vacuum.staubsauger
+      entity_id: vacuum.vacuum_cleaner
 
 - alias: 'Robot: Robot waits until everybody left'
   initial_state: 'on'
@@ -75,7 +75,7 @@
         state: 'off'
   action:
     - service: vacuum.turn_on
-      entity_id: vacuum.staubsauger
+      entity_id: vacuum.vacuum_cleaner
 
 - alias: 'Robot: Reset cleaned today counter'
   initial_state: 'on'
