@@ -208,6 +208,17 @@ lights_livingroom:
     - light.fernseher
     - light.sofa
     - light.sessel
+docker_container:
+  name: 'Docker Container'
+  control: hidden
+  entities:
+    - switch.homebridge
+    - switch.influxdb
+    - switch.grafana
+    - switch.mosquitto
+    - switch.resilio
+    - switch.dnsmasq
+    - switch.portainer
 
 lights_bedroom:
   name: 'Lights Bedroom'
@@ -257,6 +268,7 @@ system:
     - group.pings
     - group.printer
     - group.tradfri
+    - group.docker_container
 automation:
   name: 'Automation'
   view: yes
