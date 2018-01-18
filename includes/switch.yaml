@@ -67,6 +67,49 @@
   friendly_name: IR Control
   type: rm_mini
 
+
+- platform: rest
+  resource: http://pi3.cbs-service.net:8126/container/influxdb
+  name: Influxdb
+  body_on: '{"state": "start"}'
+  body_off: '{"state": "stop"}'
+  is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
+
+- platform: rest
+  resource: http://pi3.cbs-service.net:8126/container/portainer
+  name: Portainer
+  body_on: '{"state": "start"}'
+  body_off: '{"state": "stop"}'
+  is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
+
+- platform: rest
+  resource: http://pi3.cbs-service.net:8126/container/mosquitto
+  name: Mosquitto
+  body_on: '{"state": "start"}'
+  body_off: '{"state": "stop"}'
+  is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
+
+- platform: rest
+  resource: http://pi3.cbs-service.net:8126/container/resilio
+  name: Resilio
+  body_on: '{"state": "start"}'
+  body_off: '{"state": "stop"}'
+  is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
+
+- platform: rest
+  resource: http://pi3.cbs-service.net:8126/container/dnsmasq
+  name: dnsmasq
+  body_on: '{"state": "start"}'
+  body_off: '{"state": "stop"}'
+  is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
+
+- platform: rest
+  resource: http://pi3.cbs-service.net:8126/container/grafana
+  name: Grafana
+  body_on: '{"state": "start"}'
+  body_off: '{"state": "stop"}'
+  is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
+
 - platform: template
   switches:
     tv_mode:
