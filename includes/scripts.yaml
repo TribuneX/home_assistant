@@ -24,13 +24,6 @@ reload_automations:
     - alias: Reload-Automations
       service: automation.reload
 
-reboot_pi:
-  alias: Reboot System
-  sequence:
-    - service: script.prepare_restart
-    - service: homeassistant.stop
-    - service: shell_command.reboot_command_pi 
-
 restart_homebridge:
   alias: Restart Homebrige
   sequence:

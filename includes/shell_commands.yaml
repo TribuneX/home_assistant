@@ -3,10 +3,6 @@
 ##########################
 
 turn_off_server: 'bash /opt/scripts/freenas/shutdown_server.sh'
-reboot_command_pi: 'sudo reboot'
-git_pull: 'bash /opt/home_assistant/bash/git_pull.sh'
-restart_forked_daapd: 'sudo service forked-daapd restart'
 restart_homebridge: 'curl http://pi3.cbs-service.net:8126/container/homebridge/restart'
-enable_beacon: 'bash /opt/home_assistant/bash/enable_beacon.sh'
 restart_hass: 'curl http://pi3.cbs-service.net:8126/container/homeassistant/restart'
 restart_influxdb: 'curl http://pi3.cbs-service.net:8126/container/influxdb/restart'
