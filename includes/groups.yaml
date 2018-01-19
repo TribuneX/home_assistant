@@ -218,6 +218,18 @@ docker_container:
     - switch.dnsmasq
     - switch.portainer
 
+not_necessary_devices:
+  name: 'Not necessary'
+  entities:
+    - switch.light_baum
+    - switch.light_sterne
+    - switch.server
+    - switch.socket_1
+    - switch.speaker_1
+    - switch.tv
+    - switch.tv_2
+    - switch.ventilator
+
 lights_bedroom:
   name: 'Lights Bedroom'
   entities:
