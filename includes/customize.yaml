@@ -41,6 +41,20 @@
   switch.ventilator:
     icon: mdi:fan
     assumed_state: false
+  switch.homebridge:
+    homebridge_hidden: true
+  switch.influxdb:
+    homebridge_hidden: true
+  switch.grafana:
+    homebridge_hidden: true
+  switch.mosquitto:
+    homebridge_hidden: true
+  switch.resilio:
+    homebridge_hidden: true
+  switch.dnsmasq:
+    homebridge_hidden: true
+  switch.portainer:
+    homebridge_hidden: true
   
 
 # Sensors
