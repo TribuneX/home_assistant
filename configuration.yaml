@@ -193,6 +193,7 @@ input_select:
       - HIT RADIO FFH
       - ANTENNE BAYERN
       - Christmas
+      - Gregor
       - Soundtracks
       - SELECT
     initial: SELECT
