@@ -98,35 +98,35 @@ turn_off_bedroom_delay_45:
 
 turn_tv_on:
   sequence:
-    - service: broadlink.send_packet_192_168_178_51
+    - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet: 
           - 'JgDSAJSUEzcSNxM3EhISExISEhMSEhI3EzcSOBISEhISExISEhITNxISEhMROBI4EhISExE4EhMROBI4EhISEhI4EjgSEhIABgCUlBI3EzcSOBISEhISExISEhISOBI3EzcSEhITEhISExISEjcTEhISEjgSNxITERMSOBISEjcSOBISExISNxI4EhISAAYAlJQSOBI3EzcSEhITEhISEhITEjcSOBI3ExISEhITERMSEhI4EhISExE4EjgSEhISEjgSEhI4EjcTEhISEjgSNxITEgANBQAAAAAAAA=='
           
 turn_tv_off:
   sequence:
-    - service: broadlink.send_packet_192_168_178_51
+    - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet: 
           - 'JgDSAJaUEzYTNxI4EhISEhMSERMRExI4EjgSNxMSEBQSEhITEBQRExITERMRNhU3EhMQFBI3EzcSOBM2EhMRExI3EjgSEhIABgCUlBI4EzYUNhITERMSEhITEBQSNxM3EjgTERISEhMRExISERQRExISEjgSOBMRERMRORI3EzcTNxETERMRORI3ExISAAYAlJQTNhI4EzYUERISEhMRExISEjgSNxM3EhISExETEhITEhETEhMRExI3EjgTERITETgSOBI3EzcSEhITETgTNxISEgANBQAAAAAAAA=='
 
 turn_receiver_on:
   sequence:
-    - service: broadlink.send_packet_192_168_178_51
+    - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet: 
           - 'JgBQAAABKJMUERQ1FBEVERQ1FBEUNRQ2FDUUERQ1FTUUERQ1FDYUERQRFBEUNRQSFBEUERQRFBEUNRQ2FBEUNRQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
 
 turn_receiver_off:
   sequence:
-    - service: broadlink.send_packet_192_168_178_51
+    - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet: 
           - 'JgBQAAABJpQTExI3EhMVEBM2ExMSNxI3FBEVERQ1EjcTEhM3EjcTEhM2EzcSNxMSFBESFBI3EhMTEhMSExIUNhI3EzYTEhM3EgAFKAABJ0oSAA0FAAAAAAAAAAA='
 
 input_hdmi:
   sequence:
-    - service: broadlink.send_packet_192_168_178_51
+    - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet:
           - 'JgDSAJaSFDYSNxU1FBAUERQQFBAVEBQ1FDYUNRUQFBAUEBUQFBAUNhQQFBAVNRQQFDYUNRU1FBEROBQ2FBAUNhQQFBAVEBQABf6WkhQ1FDYUNRUQERMSEhITFBAUNhQ1FDYSEhITFBAUEBQRFDUUERQQFDUVEBQ1FTUUNhQQFDUVNRQQFTUUEBQRERMUAAX+lpIUNhQ1FDYUEBQQFRASEhQQFTUUNhE4FBEUEBISFRAUEBI4FBAUEBQ2FBAVNRQ1FTUUEBM3FDUSExI3FRAUEBQRFAANBQAAAAAAAA=='
@@ -137,7 +137,7 @@ input_tv:
     - service: script.turn_on
       entity_id: script.turn_receiver_on
     # switch on TV and change input
-    - service: broadlink.send_packet_192_168_178_51
+    - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet:
           # switch on TV
@@ -150,7 +150,7 @@ input_apple_tv:
     - service: script.all_media_pause
     - service: script.turn_on
       entity_id: script.turn_receiver_on
-    - service: broadlink.send_packet_192_168_178_51
+    - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet:
           # switch receiver input to AppleTV 
@@ -176,7 +176,7 @@ input_fire_tv:
     - service: script.all_media_pause
     - service: script.turn_on
       entity_id: script.turn_receiver_on
-    - service: broadlink.send_packet_192_168_178_51
+    - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet:
           # switch receiver to input FireTV
@@ -192,7 +192,7 @@ input_music:
     - service: script.all_media_pause
     - service: script.turn_on
       entity_id: script.turn_receiver_on
-    - service: broadlink.send_packet_192_168_178_51
+    - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet:
           # change input to AppleTV
