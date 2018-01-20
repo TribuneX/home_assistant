@@ -157,8 +157,6 @@ devices:
     - sensor.switch
     - sensor.server
     - sensor.aqara_gateway
-    - sensor.sonos
-    - sensor.sonos2
 tradfri:
   name: 'Battery Status'
   entities:

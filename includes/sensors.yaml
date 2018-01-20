@@ -172,11 +172,11 @@
 
       robo:
         friendly_name: 'Robo'
-        value_template: "{{ 'online' if is_state('device_tracker.pc286c07f695b2', 'home') else 'off' }}"
+        value_template: "{{ 'online' if is_state('device_tracker.robot', 'home') else 'off' }}"
 
       epson:
         friendly_name: 'Epson'
-        value_template: "{{ 'online' if is_state('device_tracker.epson029ea9', 'home') else 'off' }}"
+        value_template: "{{ 'online' if is_state('device_tracker.epson', 'home') else 'off' }}"
 
       broadlink:
         friendly_name: 'Broadlink'
@@ -196,31 +196,19 @@
 
       appletv_bedroom:
         friendly_name: 'AppleTV Bedroom'
-        value_template: "{{ 'online' if is_state('device_tracker.schlafzimmer', 'home') else 'off' }}"
+        value_template: "{{ 'online' if is_state('device_tracker.appletvschlafzimmer', 'home') else 'off' }}"
 
       appletv_livingroom:
         friendly_name: 'AppleTV Livingroom'
-        value_template: "{{ 'online' if is_state('device_tracker.wohnzimmer', 'home') else 'off' }}"
-
-      netatmo:
-        friendly_name: 'Netatmo'
-        value_template: "{{ 'online' if is_state('device_tracker.netatmo', 'home') else 'off' }}"
-
+        value_template: "{{ 'online' if is_state('device_tracker.appletvwohnzimmer', 'home') else 'off' }}"
+        
       server:
         friendly_name: 'Server'
         value_template: "{{ 'online' if is_state('device_tracker.server', 'home') else 'off' }}"
 
-      sonos:
-        friendly_name: 'Sonos 1'
-        value_template: "{{ 'online' if is_state('device_tracker.batplay1', 'home') else 'off' }}"
-
-      sonos2:
-        friendly_name: 'Sonos 2'
-        value_template: "{{ 'online' if is_state('device_tracker.batplay2', 'home') else 'off' }}"
-
       aqara_gateway:
         friendly_name: 'Aqara Gateway'
-        value_template: "{{ 'online' if is_state('device_tracker.aqara_gateway', 'home') else 'off' }}"
+        value_template: "{{ 'online' if is_state('device_tracker.aqaragateway', 'home') else 'off' }}"
 
 - platform: command_line
   name: Epson Ink Level Black
