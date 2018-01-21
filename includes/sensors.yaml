@@ -34,6 +34,8 @@
 
 - platform: travisci
   api_key: !secret github_token
+  repository:
+    - home_assistant
 
 - platform: command_line
   name: CPU Temperature
@@ -101,12 +103,6 @@
     - temperature
     - conductivity
     - battery
-
-# - platform: yahoo_finance
-#   symbols:
-#     - AMZN
-#     - AAPL
-#     - STAG
 
 # Inspired by https://community.home-assistant.io/t/temp-compare/19497
 - platform: template
