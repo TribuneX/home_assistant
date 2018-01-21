@@ -28,7 +28,7 @@
           {% if is_state('switch.tv', 'on') %}
             script.livingroom_dimmed_lights
           {% else %}
-            script.livingroom_default_lights
+            script.turn_on_livingroom_default_lights
           {% endif %}
     # - service: homeassistant.turn_on
     #   entity_id: group.christmas
@@ -83,10 +83,9 @@
         entity_id: light.sofa
         state: 'on'
   action:
-    - service: script.livingroom_default_lights
+    - service: script.turn_on_livingroom_default_lights
 
-# Turn of devices in the bedroom 30 minutes when switched on after 23:00
-- alias: 'Lights: 45 minutes timer for devices at night'
+- alias: 'Lights: 60 minutes timer for devices at night'
   initial_state: 'on'
   trigger:
     - platform: state
@@ -98,7 +97,7 @@
     after: '23:00'
     before: '05:00'
   action:
-    - service: script.turn_off_bedroom_delay_45
+    - service: script.turn_off_bedroom_delay_60
 
 # Turn off devices in the livingroom 15 minutes when switched on after 3:01
 - alias: 'Lights: 15 minutes timer for devices at night'
@@ -162,7 +161,7 @@
   action:
     - service: script.turn_off
       entity_id: script.turn_off_livingroom_lights_delay_15
-    - service: script.livingroom_morning
+    - service: script.turn_on_livingroom_morning
     - service: script.turn_off_livingroom_lights_delay_15
 
 - alias: 'Lights: Dim hallway light at night'
@@ -242,10 +241,7 @@
         before: sunrise
         before_offset: '01:00:00'
   action:
-    - service: light.turn_on
-      data:
-        entity_id: light.arbeitszimmer
-        brightness: 150
+    - service: script.turn_on_office_default_lights
 
 - alias: 'Lights: Turn off light in working room if there is no motion for 3 minutes'
   trigger:

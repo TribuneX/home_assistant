@@ -47,7 +47,7 @@ init_hass:
     #- service: script.enable_beacon 
 
 # Turns lights on and off after sunset
-vacation_lights:
+turn_on_vacation_lights:
   alias: Vacation Light Mode
   sequence:
     # wait an hour after sunset
@@ -81,7 +81,7 @@ turn_off_livingroom_delay_15:
     # - service: homeassistant.turn_off
     #   entity_id: group.christmas
 
-turn_off_bedroom_delay_45:
+turn_off_bedroom_delay_60:
   alias: 'Turn off bedroom (delay 60 minutes)'
   sequence:
     - delay:
@@ -89,46 +89,46 @@ turn_off_bedroom_delay_45:
     - service: homeassistant.turn_off
       entity_id: group.schlafzimmer
 
-turn_tv_on:
+turn_on_tv:
   sequence:
     - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet: 
           - 'JgDSAJSUEzcSNxM3EhISExISEhMSEhI3EzcSOBISEhISExISEhITNxISEhMROBI4EhISExE4EhMROBI4EhISEhI4EjgSEhIABgCUlBI3EzcSOBISEhISExISEhISOBI3EzcSEhITEhISExISEjcTEhISEjgSNxITERMSOBISEjcSOBISExISNxI4EhISAAYAlJQSOBI3EzcSEhITEhISEhITEjcSOBI3ExISEhITERMSEhI4EhISExE4EjgSEhISEjgSEhI4EjcTEhISEjgSNxITEgANBQAAAAAAAA=='
           
-turn_tv_off:
+turn_off_tv:
   sequence:
     - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet: 
           - 'JgDSAJaUEzYTNxI4EhISEhMSERMRExI4EjgSNxMSEBQSEhITEBQRExITERMRNhU3EhMQFBI3EzcSOBM2EhMRExI3EjgSEhIABgCUlBI4EzYUNhITERMSEhITEBQSNxM3EjgTERISEhMRExISERQRExISEjgSOBMRERMRORI3EzcTNxETERMRORI3ExISAAYAlJQTNhI4EzYUERISEhMRExISEjgSNxM3EhISExETEhITEhETEhMRExI3EjgTERITETgSOBI3EzcSEhITETgTNxISEgANBQAAAAAAAA=='
 
-turn_receiver_on:
+turn_on_receiver:
   sequence:
     - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet: 
           - 'JgBQAAABKJMUERQ1FBEVERQ1FBEUNRQ2FDUUERQ1FTUUERQ1FDYUERQRFBEUNRQSFBEUERQRFBEUNRQ2FBEUNRQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
 
-turn_receiver_off:
+turn_off_receiver:
   sequence:
     - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet: 
           - 'JgBQAAABJpQTExI3EhMVEBM2ExMSNxI3FBEVERQ1EjcTEhM3EjcTEhM2EzcSNxMSFBESFBI3EhMTEhMSExIUNhI3EzYTEhM3EgAFKAABJ0oSAA0FAAAAAAAAAAA='
 
-input_hdmi:
+set_input_hdmi:
   sequence:
     - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet:
           - 'JgDSAJaSFDYSNxU1FBAUERQQFBAVEBQ1FDYUNRUQFBAUEBUQFBAUNhQQFBAVNRQQFDYUNRU1FBEROBQ2FBAUNhQQFBAVEBQABf6WkhQ1FDYUNRUQERMSEhITFBAUNhQ1FDYSEhITFBAUEBQRFDUUERQQFDUVEBQ1FTUUNhQQFDUVNRQQFTUUEBQRERMUAAX+lpIUNhQ1FDYUEBQQFRASEhQQFTUUNhE4FBEUEBISFRAUEBI4FBAUEBQ2FBAVNRQ1FTUUEBM3FDUSExI3FRAUEBQRFAANBQAAAAAAAA=='
           
-input_tv:
+set_input_tv:
   sequence:
-    - service: script.all_media_pause 
+    - service: script.pause_all_media 
     - service: script.turn_on
-      entity_id: script.turn_receiver_on
+      entity_id: script.turn_on_receiver
     # switch on TV and change input
     - service: switch.broadlink_send_packet_192_168_178_51
       data:
@@ -138,11 +138,11 @@ input_tv:
           # change receiver input to TV
           - 'JgBQAAABKJMUERQ1FREUERQ1FBEUNRQ2FDUUERU0FTUUERQ1FTUUERQ1FBEVEBU1FBEUERQRFBEVEBU1FDUUERU0FTUUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
 
-input_apple_tv:
+set_input_apple_tv:
   sequence:
-    - service: script.all_media_pause
+    - service: script.pause_all_media
     - service: script.turn_on
-      entity_id: script.turn_receiver_on
+      entity_id: script.turn_on_receiver
     - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet:
@@ -150,25 +150,25 @@ input_apple_tv:
           - 'JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
     # switch to input HDMI
     - service: script.turn_on
-      entity_id: script.input_hdmi
+      entity_id: script.set_input_hdmi
     - service: script.turn_on
-      entity_id: script.turn_tv_on
+      entity_id: script.turn_on_tv
 
 
-input_plex:
+set_input_plex:
   sequence:
     - service: script.turn_on
-      entity_id: script.turn_receiver_on
+      entity_id: script.turn_on_receiver
     - service: switch.turn_on
       entity_id: switch.server
     - service: script.turn_on
-      entity_id: script.input_apple_tv
+      entity_id: script.set_input_apple_tv
 
-input_fire_tv:
+set_input_fire_tv:
   sequence:
-    - service: script.all_media_pause
+    - service: script.pause_all_media
     - service: script.turn_on
-      entity_id: script.turn_receiver_on
+      entity_id: script.turn_on_receiver
     - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet:
@@ -176,24 +176,24 @@ input_fire_tv:
           - 'JgBQAAABKZIUERU1FBEUERQ1FBEVNRQ1FDUUEhQ1FDUUERU1FDUUERQ2FBEUNRQ1FBIUERQRFBEUERQ1FBEVERQ1FDUUNRU1FAAFAgABKEkUAA0FAAAAAAAAAAA='
     # switch to input HDMI
     - service: script.turn_on
-      entity_id: script.input_hdmi
+      entity_id: script.set_input_hdmi
     - service: script.turn_on
-      entity_id: script.turn_tv_on
+      entity_id: script.turn_on_tv
 
-input_music:
+set_input_music:
   sequence:
-    - service: script.all_media_pause
+    - service: script.pause_all_media
     - service: script.turn_on
-      entity_id: script.turn_receiver_on
+      entity_id: script.turn_on_receiver
     - service: switch.broadlink_send_packet_192_168_178_51
       data:
         packet:
           # change input to AppleTV
           - 'JgBQAAABKJMUERQ1FBEVEBU1FBEUNRQ2FDUUERU0FDYUERQ1FTUUERQ1FDUUNhQ1FBEVEBURFBEUERQRFBEUERQ1FDYUNRQ1FQAFAgABKEgUAA0FAAAAAAAAAAA='
     - service: script.turn_on
-      entity_id: script.turn_tv_off
+      entity_id: script.turn_off_tv
 
-all_media_pause:
+pause_all_media:
   sequence:
     - service: script.pause_sonos
     - service: media_player.turn_on
@@ -213,7 +213,7 @@ play_sonos:
     - service: media_player.media_play
       entity_id: media_player.living_room
 
-sonos_play_radio:
+play_sonos_radio:
   sequence:
     - service: input_select.select_option
       data:
@@ -229,16 +229,6 @@ sonos_play_radio:
       data_template:
         entity_id: media_player.living_room
         volume_level: "{{ volume|default(0.1) }}"
-
-sonos_welcome_message:
-  sequence:
-    - delay:
-        seconds: 35
-    - service: script.turn_on
-      entity_id: script.sonos_say
-      data:
-        variables:
-          message: "Willkommen zuhause! Schön das du wieder da bist" #Wrong grammar, but sounds nicer!
 
 turn_off_fan_after_delay:
   sequence:
@@ -258,7 +248,7 @@ turn_off_all:
         entity_id: input_select.tv_mode
         option: AUS 
 
-livingroom_morning:
+turn_on_livingroom_morning:
   sequence:
     - service: light.turn_on
       data: 
@@ -273,7 +263,7 @@ livingroom_morning:
     # - service: homeassistant.turn_on
     #   entity_id: group.christmas
 
-livingroom_default_lights:
+turn_on_livingroom_default_lights:
   sequence:
     - service: light.turn_on
       data: 
@@ -291,16 +281,14 @@ livingroom_default_lights:
         brightness: 150
         transition: 4
 
-    
-
-workingroom_default_lights:
+turn_on_office_default_lights:
   sequence:
     - service: light.turn_on
       data: 
         entity_id: light.arbeitszimmer
         brightness: 150
 
-livingroom_dimmed_lights:
+turn_on_livingroom_dimmed_lights:
   sequence:
     - service: light.turn_on
       data: 
@@ -318,7 +306,7 @@ livingroom_dimmed_lights:
         brightness: 20
         transition: 4
 
-bedroom_dimmed_lights:
+turn_on_bedroom_dimmed_lights:
   sequence:
     - service: light.turn_on
       data: 
@@ -331,7 +319,7 @@ bedroom_dimmed_lights:
         brightness: 100
         transition: 4
 
-turn_off_livingroom_lights_delay_15:
+turn_off_livingroom_lights_delay_30:
   alias: 'Turn off livingroom lights (delay 30 minutes)'
   sequence:
     - delay:
@@ -342,7 +330,7 @@ turn_off_livingroom_lights_delay_15:
     #   entity_id: group.christmas
     - service: script.pause_sonos
 
-kueche_lights_on:
+turn_on_kitchen_lights:
   sequence:
     - service: light.turn_on
       data:
@@ -353,7 +341,7 @@ kueche_lights_on:
         entity_id: light.kueche2
         brightness: 150
 
-kueche_lights_off:
+turn_off_kitchen_lights:
   sequence:
     - service: light.turn_off
       data:
