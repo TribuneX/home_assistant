@@ -105,7 +105,7 @@
     icon: mdi:cloud-download
   sensor.robo:
     icon: mdi:broom
-    friendly_name: 'Vaccum Cleaner'
+    friendly_name: 'Vacuum Cleaner'
   sensor.switch:
     icon: mdi:server-network
     homebridge_hidden: true
@@ -226,29 +226,25 @@
   sensor.aqara_gateway:
     icon: mdi:home-automation
 
-  sensor.sascha_home:
-    entity_picture: /local/sascha.png
-
-
 # Device Tracker
 
-  device_tracker.nicolesiphone:
-    friendly_name: Nicole-Router
+  device_tracker.user_2_iphone:
+    friendly_name: 'User 2 Router'
   device_tracker.iphones:
-    friendly_name: Sascha-Router
-  device_tracker.owntracks_nicole_iphone:
-    friendly_name: Nicole-owntracks
+    friendly_name: 'User 1 Router'
+  device_tracker.owntracks_user_2_iphone:
+    friendly_name: 'User 2 owntracks'
   device_tracker.owntracks_iphones:
-    friendly_name: Sascha-owntracks
+    friendly_name: 'User 1 owntracks'
   
   
 # Lights
 
-  light.nicole:
-    friendly_name: Nicole
+  light.bed1:
+    friendly_name: !secret user_2
     homebridge_hidden: true
-  light.sascha:
-    friendly_name: Sascha
+  light.bed2:
+    friendly_name: !secret user_1
     homebridge_hidden: true
   light.bad:
     homebridge_hidden: true
@@ -278,9 +274,9 @@
 # Groups 
 
   group.user_1:
-    entity_picture: /local/sascha.png
+    entity_picture: /local/user_1.png
   group.user_2:
-    entity_picture: /local/nicole.png
+    entity_picture: /local/user_2.png
   group.all_automations:
     hidden: false
     friendly_name: Automations

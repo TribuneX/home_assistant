@@ -157,15 +157,6 @@
        friendly_name: 'Cube'   
        icon_template: mdi:battery-80
 
-      sascha_home:
-        value_template:
-          "{% if is_state('binary_sensor.sascha_home', 'on') %}
-          home
-          {% else %}
-          not_home
-          {% endif %}"
-        friendly_name: Sascha
-
       robo:
         friendly_name: 'Robo'
         value_template: "{{ 'online' if is_state('device_tracker.robot', 'home') else 'off' }}"

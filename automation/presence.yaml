@@ -1,58 +1,58 @@
-- alias: 'Presence: Nicole left home'
+- alias: 'Presence: User 2 left home'
   initial_state: 'on'
   trigger:
     platform: zone
-    entity_id: device_tracker.owntracks_nicole_iphone
+    entity_id: device_tracker.owntracks_user_2_iphone
     zone: zone.home
     event: leave
   condition:
     condition: state    
-    entity_id: group.sascha   
+    entity_id: group.user_1   
     state: 'not home'  
   action:
     - service: notify.ios_iphones_app
       data:
         title: 'Location'
-        message: 'Nicole left home.'
+        message: 'User 2 left home.'
 
-- alias: 'Presence: Nicole arrived at home'
+- alias: 'Presence: User 2 arrived at home'
   initial_state: 'on'
   trigger:
     platform: zone
-    entity_id: device_tracker.owntracks_nicole_iphone
+    entity_id: device_tracker.owntracks_user_2_iphone
     zone: zone.home
     event: enter
   action:
     - service: notify.ios_iphones_app
       data:
         title: 'Location'
-        message: 'Nicole arrived at home.'
+        message: 'User 2 arrived at home.'
 
-- alias: 'Presence: Nicole left work'
+- alias: 'Presence: User 2 left work'
   initial_state: 'on'
   trigger:
     platform: zone
-    entity_id: device_tracker.owntracks_nicole_iphone
-    zone: zone.work_nicole
+    entity_id: device_tracker.owntracks_user_2_iphone
+    zone: zone.work_user_2
     event: leave
   action:
     - service: notify.ios_iphones_app
       data:
         title: 'Location'
-        message: 'Nicole left work.'
+        message: 'User 2 left work.'
 
-- alias: 'Presence: Nicole arrived at work'
+- alias: 'Presence: User 2 arrived at work'
   initial_state: 'on'
   trigger:
     platform: zone
-    entity_id: device_tracker.owntracks_nicole_iphone
-    zone: zone.work_nicole
+    entity_id: device_tracker.owntracks_user_2_iphone
+    zone: zone.work_user_2
     event: enter
   action:
     - service: notify.ios_iphones_app
       data:
         title: 'Location'
-        message: 'Nicole arrived at work.'
+        message: 'User 2 arrived at work.'
 
 - alias: 'Presence: Nobody at home'
   initial_state: 'on'

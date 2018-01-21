@@ -19,8 +19,8 @@ bed_room:
     - sensor.netatmo_schlafzimmer_temperature
     - sensor.netatmo_schlafzimmer_co2
     - sensor.netatmo_schlafzimmer_humidity
-    - light.sascha
-    - light.nicole
+    - light.bed2
+    - light.bed1
     - switch.tv_2
     - switch.ventilator
 outdoor:
@@ -92,15 +92,15 @@ personen:
     - group.user_1
     - group.user_2
 user_1:
-  name: 'Sascha'
+  name: !secret user_1
   entities:
     - device_tracker.iphones
     - device_tracker.owntracks_iphones
 user_2:
-  name: 'Nicole'
+  name: !secret user_2
   entities:
-    - device_tracker.nicolesiphone
-    - device_tracker.owntracks_nicole_iphone
+    - device_tracker.user_2_iphone
+    - device_tracker.owntracks_user_2_iphone
 tv_scenes:
   name: 'TV'
   entities:
@@ -231,8 +231,8 @@ not_necessary_devices:
 lights_bedroom:
   name: 'Lights Bedroom'
   entities:
-    - light.sascha
-    - light.nicole
+    - light.bed2
+    - light.bed1
 
 # Tabs
 default_view:
