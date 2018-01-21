@@ -267,8 +267,16 @@ turn_off_all:
 
 livingroom_morning:
   sequence:
-    - service: script.turn_on
-      entity_id: script.livingroom_default_lights
+    - service: light.turn_on
+      data: 
+        entity_id: light.sofa
+        brightness: 150
+        transition: 4
+    - service: light.turn_on
+      data: 
+        entity_id: light.fernseher
+        brightness: 150
+        transition: 4
     # - service: homeassistant.turn_on
     #   entity_id: group.christmas
 
