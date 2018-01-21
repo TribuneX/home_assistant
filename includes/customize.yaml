@@ -28,15 +28,16 @@
   switch.music_mode:
     icon: mdi:music-circle
     friendly_name: Music
+  switch.sonos_mode:
+    icon: mdi:speaker-wireless          
+    friendly_name: Sonos
   switch.speaker_1:
     icon: mdi:speaker-wireless
     friendly_name: Sonos
     homebridge_hidden: true
-  switch.sonos_mode:
-    icon: mdi:speaker-wireless          
-    friendly_name: Sonos
-  switch.socket_1:
+  switch.speaker_2:
     friendly_name: Sonos2
+    homebridge_hidden: true
     icon: mdi:speaker-wireless
   switch.ventilator:
     icon: mdi:fan
@@ -58,7 +59,6 @@
   
 
 # Sensors
-
   sensor.palme_battery:
     icon: mdi:battery-80
   sensor.sanseviera_temperature:

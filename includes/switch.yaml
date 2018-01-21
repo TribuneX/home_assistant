@@ -30,7 +30,7 @@
   retain: true
 
 - platform: mqtt
-  name: "Socket_1"
+  name: "Speaker 2"
   state_topic: "home/sonoff/default_room/1/stat"
   command_topic: "home/sonoff/default_room/1"
   qos: 0
