@@ -66,13 +66,6 @@ vacation_lights:
     - service: light.turn_off
       entity_id: light.fernseher
 
-# Inspired by https://github.com/Tommatheussen/Home-Assistant-Configuration/blob/master/script/get_latest_config.yaml
-get_latest_config:
-  alias: 'Update config'
-  sequence:
-    - service: shell_command.git_pull
-    - service: script.restart_hass
-
 turn_off_tv_livingroom:
   sequence:
     - service: switch.turn_off
