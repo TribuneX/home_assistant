@@ -3,7 +3,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: group.sascha
+    entity_id: group.user_1
     from: 'not_home'
     to: 'home'
     for:
@@ -23,7 +23,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: group.sascha
+    entity_id: group.user_1
     from: 'not_home'
     to: 'home'
     for:
@@ -43,7 +43,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: group.sascha
+    entity_id: group.user_1
     from: 'not_home'
     to: 'home'
     for:
@@ -63,7 +63,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: group.sascha
+    entity_id: group.user_1
     from: 'not_home'
     to: 'home'
     for:

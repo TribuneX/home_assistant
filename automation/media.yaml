@@ -12,13 +12,13 @@
       data_template:
         entity_id: >
           {% if trigger.to_state.state == 'AppleTV' %}
-            script.input_apple_tv
+            script.set_input_apple_tv
           {% elif trigger.to_state.state == 'TV' %}
-            script.input_tv
+            script.set_input_tv
           {% elif trigger.to_state.state == 'Plex' %}
-            script.input_plex
+            script.set_input_plex
           {% elif trigger.to_state.state == 'Music' %}
-            script.input_music
+            script.set_input_music
           {% elif trigger.to_state.state == 'AUS' %}
             script.turn_off_tv_livingroom
           {% endif %}
@@ -41,13 +41,13 @@
       data_template:
         entity_id: >
           {% if trigger.to_state.state == 'AppleTV' %}
-            script.input_apple_tv
+            script.set_input_apple_tv
           {% elif trigger.to_state.state == 'TV' %}
-            script.input_tv
+            script.set_input_tv
           {% elif trigger.to_state.state == 'Plex' %}
-            script.input_plex
+            script.set_input_plex
           {% elif trigger.to_state.state == 'Music' %}
-            script.input_music
+            script.set_input_music
           {% elif trigger.to_state.state == 'AUS' %}
             script.turn_off_tv_livingroom
           {% endif %}
@@ -181,7 +181,7 @@
       after: '08:00'
       before: '23:00'
   action:
-    - service: script.sonos_play_radio
+    - service: script.play_sonos_radio
 
 - alias: 'Media: Turn on radio in the morning'
   initial_state: 'on'
@@ -223,7 +223,7 @@
         entity_id: media_player.living_room
         state: 'paused'
   action:
-    - service: script.sonos_play_radio
+    - service: script.play_sonos_radio
       data:
         variables:
           volume: 0.05
@@ -304,7 +304,7 @@
     entity_id: group.all_speaker
     state: 'off'
   action:
-    - service: script.sonos_play_radio
+    - service: script.play_sonos_radio
 
 - alias: 'Media: Select sonos volume with cube rotation'
   trigger:
