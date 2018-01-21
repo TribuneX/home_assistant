@@ -220,6 +220,13 @@
   command: /usr/bin/curl -s -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML  | awk -F"'" '/Ink_C.PNG/ && $6+0 == $6 { printf "%.0f\n", $6 / 50 * 100 }'
   unit_of_measurement: '%'
   scan_interval: 120
-  
+
+
+- platform: luftdaten
+  sensorid: 3111
+  monitored_conditions:
+    - P1
+    - P2
+
 
 
