@@ -74,7 +74,11 @@
     platform: homeassistant
     event: start
   action:
-    - service: script.init_hass   
+    - service: script.init_hass
+    - service: notify.ios_iphones_app
+      data:
+        title: 'System'
+        message: 'Home Assistant started'   
 
 - alias: 'Misc: Startup nobody is home'
   initial_state: 'on'
