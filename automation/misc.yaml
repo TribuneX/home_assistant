@@ -107,6 +107,7 @@
       data:
         title: 'Travis'
         message: 'Build was successful'
+    - service: script.restart_hass
 
 
 - alias: 'Misc: Raspberry full volume'
