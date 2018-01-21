@@ -157,8 +157,8 @@ devices:
     - sensor.switch
     - sensor.server
     - sensor.aqara_gateway
-tradfri:
-  name: 'Battery Status'
+battery_levels:
+  name: 'Battery Levels'
   entities:
     - sensor.eingang
     - sensor.bad
@@ -274,8 +274,6 @@ system:
     - group.pi
     - group.devices
     - group.pings
-    - group.printer
-    - group.tradfri
     - group.docker_container
 automation:
   name: 'Automation'
@@ -292,3 +290,10 @@ christmas:
   entities:
     - switch.light_baum
     - switch.light_sterne
+device_status:
+  name: 'Device Status'
+  view: yes
+  icon: mdi:oil-temperature
+  entities:
+    - group.printer
+    - group.battery_levels
