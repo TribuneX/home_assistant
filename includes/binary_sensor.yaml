@@ -42,20 +42,3 @@
 - platform: ping
   name: PING WSW
   host: 192.168.2.1
-
-
-- platform: 'bayesian'
-  prior: 0.5
-  name: 'Sascha Home'
-  probability_threshold: 0.90
-  observations:
-    - entity_id: 'device_tracker.iphones'
-      prob_given_true: 0.99
-      prob_given_false: 0.1
-      platform: 'state'
-      to_state: 'home'
-    - entity_id: 'device_tracker.owntracks_iphones'
-      prob_given_true: 0.8
-      prob_given_false: 0.4
-      platform: 'state'
-      to_state: 'home'
