@@ -220,7 +220,7 @@ input_number:
     step: 0.01
 
 tradfri:
-  host: 192.168.178.52
+  host: !secret tradfri_ip
   allow_tradfri_groups: true
 
 xiaomi_aqara:
@@ -259,6 +259,5 @@ automation: !include_dir_merge_list automation/
 script: !include includes/scripts.yaml
 group: !include includes/groups.yaml
 switch: !include includes/switch.yaml
-scene: !include includes/scenes.yaml
 input_boolean: !include includes/inputs.yaml
 shell_command: !include includes/shell_commands.yaml
