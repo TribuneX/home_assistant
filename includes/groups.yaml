@@ -145,7 +145,7 @@ devices:
   entities:
     - switch.tv
     - switch.speaker_1
-    - switch.socket_1
+    - switch.speaker_2
     - sensor.fritz_netmonitor
     - sensor.robo
     - sensor.epson
@@ -193,7 +193,7 @@ printer:
 all_speaker:
   entities:
     - switch.speaker_1
-    - switch.socket_1
+    - switch.speaker_2
 doors:
   name: 'Doors'
   entities:
@@ -222,7 +222,7 @@ not_necessary_devices:
     - switch.light_baum
     - switch.light_sterne
     - switch.server
-    - switch.socket_1
+    - switch.speaker_2
     - switch.speaker_1
     - switch.tv
     - switch.tv_2
