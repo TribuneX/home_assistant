@@ -26,7 +26,7 @@
       data_template:
         entity_id: >
           {% if is_state('switch.tv', 'on') %}
-            script.livingroom_dimmed_lights
+            script.turn_on_livingroom_dimmed_lights
           {% else %}
             script.turn_on_livingroom_default_lights
           {% endif %}
@@ -57,7 +57,7 @@
         entity_id: light.sofa
         state: 'on'   
   action:   
-    - service: script.livingroom_dimmed_lights
+    - service: script.turn_on_livingroom_dimmed_lights
 
 
 # Turn on light at Sofa if ATV is paused
@@ -128,7 +128,7 @@
     after: '21:00'
     before: '00:00'
   action: 
-    - service: script.bedroom_dimmed_lights
+    - service: script.turn_on_bedroom_dimmed_lights
     - service: script.turn_off_livingroom_delay_15
 
 # Turn on lights in the livingroom if someone is awake before sun rises
@@ -160,9 +160,9 @@
         - sat
   action:
     - service: script.turn_off
-      entity_id: script.turn_off_livingroom_lights_delay_15
+      entity_id: script.turn_off_livingroom_lights_delay_30
     - service: script.turn_on_livingroom_morning
-    - service: script.turn_off_livingroom_lights_delay_15
+    - service: script.turn_off_livingroom_lights_delay_30
 
 - alias: 'Lights: Dim hallway light at night'
   initial_state: 'on'
@@ -211,7 +211,7 @@
         before: sunrise
         before_offset: '01:00:00'
   action:
-    - service: script.kueche_lights_on
+    - service: script.turn_on_kitchen_lights
 
 - alias: 'Lights: Turn off light in the kitchen if there is no motion for 2.5 minutes'
   trigger:
@@ -222,7 +222,7 @@
     for: 
       seconds: 30
   action:
-    - service: script.kueche_lights_off
+    - service: script.turn_off_kitchen_lights
 
 
 - alias: 'Lights: Turn on light in working room if motion is detected'
@@ -290,7 +290,7 @@
       entity_id: group.lights_bedroom
       state: 'off' 
   action:
-    - service: script.bedroom_dimmed_lights
+    - service: script.turn_on_bedroom_dimmed_lights
 
 
 - alias: 'Turn off lights in bedroom'
