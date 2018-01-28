@@ -228,5 +228,7 @@
     - P1
     - P2
 
+- platform: pi_hole
+  host: 192.168.178.5
 
 
