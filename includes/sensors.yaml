@@ -231,4 +231,16 @@
 - platform: pi_hole
   host: 192.168.178.5
 
+- platform: template
+  sensors:
+    pihole_queries_today:
+      value_template: '{{ states.sensor.pihole.attributes.queries_today }}'
+      friendly_name: 'Queries Today'
+    pihole_percentage_today:
+      value_template: '{{ states.sensor.pihole.attributes.percentage_today }}'
+      friendly_name: 'Percentage Today'
+    pihole_domains_blocked:
+      value_template: '{{ states.sensor.pihole.attributes.domains_blocked }}'
+      friendly_name: 'Domains Blocked'
+
 
