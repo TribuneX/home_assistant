@@ -215,6 +215,7 @@ docker_container:
     - switch.resilio
     - switch.dnsmasq
     - switch.portainer
+    - switch.pihole
 pihole:
   name: pihole
   entities:
