@@ -219,10 +219,9 @@ docker_container:
 pihole:
   name: pihole
   entities:
-    - sensor.pihole_queries_today
-    - sensor.pihole_percentage_today
-    - sensor.pihole_domains_blocked
-
+    - sensor.pihole_dns_queries_today
+    - sensor.pihole_ads_blocked_today
+    - sensor.pihole_ads_percentage_blocked_today
 
 not_necessary_devices:
   name: 'Not necessary'
