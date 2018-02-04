@@ -231,7 +231,7 @@ xiaomi_aqara:
 vacuum:
   platform: xiaomi_miio 
   name: 'Vacuum Cleaner'
-  host: robo.cbs-service.net
+  host: !secret robo_ip
   token: !secret mirobo_token
 
 tts:
