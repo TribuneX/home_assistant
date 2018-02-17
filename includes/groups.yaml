@@ -43,13 +43,13 @@ office:
     - switch.server
     - sensor.palmek_temperature
 plant_1:
-  name: 'Sanseviera'
+  name: 'Bonsai'
   entities:  
-    - sensor.sanseviera_moisture
-    - sensor.sanseviera_light_intensity
-    - sensor.sanseviera_temperature
-    - sensor.sanseviera_conductivity
-    - sensor.sanseviera_battery
+    - sensor.bonsai_moisture
+    - sensor.bonsai_light_intensity
+    - sensor.bonsai_temperature
+    - sensor.bonsai_conductivity
+    - sensor.bonsai_battery
 plant_2:
   name: 'Palm'
   entities:  
