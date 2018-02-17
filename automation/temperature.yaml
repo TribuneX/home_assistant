@@ -92,6 +92,37 @@
         title: 'Rain Alert'
         message: 'It looks like its gonna rain: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
 
+- alias: 'Weather: Rain detected by water sensor'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.water_leak_sensor_158d00021371e5
+    from: 'off'
+    to: 'on'
+  condition:
+    - condition: time   
+      after: '07:00'    
+      before: '22:00'
+  action:
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Rain Alert'
+        message: 'Water Sensor: Rain detected: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+
+- alias: 'Weather: Stopped Rain detected by water sensor'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.water_leak_sensor_158d00021371e5
+    from: 'on'
+    to: 'off'
+  condition:
+    - condition: time   
+      after: '07:00'    
+      before: '22:00'
+  action:
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Rain Alert'
+         message: 'Water sensor: It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
 
 - alias: 'Weather: Rainy Day'
   initial_state: 'on'
