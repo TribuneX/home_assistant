@@ -90,8 +90,6 @@
                  sensor.netatmo_wohnzimmer_temperature, 
                  sensor.netatmo_outdoor_temperature
       from: 'unknown'
-      for:
-        minutes: 1
   action:
     - service: notify.ios_iphones_app   
       data_template:   
