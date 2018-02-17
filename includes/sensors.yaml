@@ -197,6 +197,23 @@
         friendly_name: 'Aqara Gateway'
         value_template: "{{ 'online' if is_state('device_tracker.aqaragateway', 'home') else 'off' }}"
 
+      sonoff_tv:
+        friendly_name: 'Sonoff TV'
+        value_template: "{{ 'online' if is_state('device_tracker.sonofftv', 'home') else 'off' }}"
+
+      sonoff_tv_2:
+        friendly_name: 'Sonoff TV2'
+        value_template: "{{ 'online' if is_state('device_tracker.sonofftv2', 'home') else 'off' }}"
+
+      sonoff_speaker_1:
+        friendly_name: 'Sonoff Speaker 1'
+        value_template: "{{ 'online' if is_state('device_tracker.sonoffspeakerlivingroom', 'home') else 'off' }}"
+
+      sonoff_speaker_2:
+        friendly_name: 'Sonoff Speaker 2'
+        value_template: "{{ 'online' if is_state('device_tracker.sonoffdefault1', 'home') else 'off' }}"
+
+
 - platform: command_line
   name: Epson Ink Level Black
   command: /usr/bin/curl -s -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML  | awk -F"'" '/Ink_K.PNG/ && $6+0 == $6 { printf "%.0f\n", $6 / 50 * 100 }'
