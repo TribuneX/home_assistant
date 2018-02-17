@@ -18,7 +18,7 @@
         title: 'Plants'
         message: 'Please water plant in the bathroom! Moisture: {{states.sensor.bad_moisture.state}}% | Conductivity: {{states.sensor.bad_conductivity.state}}'
 
-- alias: 'Plants: Water Sanseviera plant' 
+- alias: 'Plants: Water Bonsai plant' 
   hide_entity: True
   initial_state: 'on'
   trigger:
@@ -30,13 +30,13 @@
       minutes: 4 
   condition:
     condition: numeric_state
-    entity_id: sensor.sanseviera_moisture
+    entity_id: sensor.bonsai_moisture
     below: 10
   action:
     - service: notify.ios_iphones_app
       data:
         title: 'Plants'
-        message: 'Please water Plant Sanseviera! Moisture: {{states.sensor.sanseviera_moisture.state}}% | Conductivity: {{states.sensor.sanseviera_conductivity.state}}'
+        message: 'Please water Plant Bonsai! Moisture: {{states.sensor.bonsai_moisture.state}}% | Conductivity: {{states.sensor.bonsai_conductivity.state}}'
 
 - alias: 'Plants: Water Palm plant'
   hide_entity: True 

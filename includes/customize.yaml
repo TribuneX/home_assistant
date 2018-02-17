@@ -61,11 +61,11 @@
 # Sensors
   sensor.palme_battery:
     icon: mdi:battery-80
-  sensor.sanseviera_temperature:
+  sensor.bonsai_temperature:
     homebridge_hidden: true
-  sensor.sanseviera_battery:
+  sensor.bonsai_battery:
     icon: mdi:battery-80
-  sensor.sanseviera_light_intensity:
+  sensor.bonsai_light_intensity:
     icon: mdi:white-balance-sunny
     homebridge_hidden: true
   sensor.palme_light_intensity:
@@ -75,9 +75,9 @@
     icon: mdi:barley
   sensor.palme_temperature:
     homebridge_hidden: true
-  sensor.sanseviera_conductivity:
+  sensor.bonsai_conductivity:
     icon: mdi:barley
-  sensor.sanseviera_moisture:
+  sensor.bonsai_moisture:
     icon: mdi:cup-water
   sensor.palme_moisture:
     icon: mdi:cup-water
