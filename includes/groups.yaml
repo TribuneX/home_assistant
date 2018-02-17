@@ -157,10 +157,10 @@ devices:
     - sensor.switch
     - sensor.server
     - sensor.aqara_gateway
-    - sensor_sonoff_tv
-    - sensor_sonoff_tv_2 
-    - sensor_sonoff_speaker_1
-    - sensor_sonoff_speaker_2
+    - sensor.sonoff_tv
+    - sensor.sonoff_tv_2 
+    - sensor.sonoff_speaker_1
+    - sensor.sonoff_speaker_2
 battery_levels:
   name: 'Battery Levels'
   entities:

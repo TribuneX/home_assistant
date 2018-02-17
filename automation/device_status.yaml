@@ -7,10 +7,10 @@
                  sensor.tradfri, 
                  sensor.switch, 
                  sensor.aqara_gateway, 
-                 sensor_sonoff_tv, 
-                 sensor_sonoff_tv_2, 
-                 sensor_sonoff_speaker_1, 
-                 sensor_sonoff_speaker_2 
+                 sensor.sonoff_tv, 
+                 sensor.sonoff_tv_2, 
+                 sensor.sonoff_speaker_1, 
+                 sensor.sonoff_speaker_2 
       to: 'off'
       for:
         minutes: 5
@@ -43,10 +43,10 @@
                  sensor.tradfri, 
                  sensor.switch, 
                  sensor.aqara_gateway, 
-                 sensor_sonoff_tv, 
-                 sensor_sonoff_tv_2, 
-                 sensor_sonoff_speaker_1, 
-                 sensor_sonoff_speaker_2, 
+                 sensor.sonoff_tv, 
+                 sensor.sonoff_tv_2, 
+                 sensor.sonoff_speaker_1, 
+                 sensor.sonoff_speaker_2, 
                  binary_sensor.ping_dreieich, 
                  binary_sensor.ping_eltern, 
                  binary_sensor.ping_gote, 
