@@ -122,7 +122,7 @@
     - service: notify.ios_iphones_app
       data:
         title: 'Rain Alert'
-         message: 'Water sensor: It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+        message: 'Water sensor: It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
 
 - alias: 'Weather: Rainy Day'
   initial_state: 'on'
