@@ -2,37 +2,37 @@
   initial_state: 'on'
   trigger:
     platform: numeric_state
-    entity_id: sensor.netatmo_schlafzimmer_co2
+    entity_id: sensor.netatmo_schlafzimmer_co2_2
     above: 900
   action:
     - service: notify.ios_iphones_app
       data:
         title: 'Rooms'
-        message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
+        message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2_2.state}}ppm'
 
 - alias: 'Weather: CO2 Livingroom'
   initial_state: 'on'
   trigger:
     platform: numeric_state
-    entity_id: sensor.netatmo_wohnzimmer_co2
+    entity_id: sensor.netatmo_wohnzimmer_co2_2
     above: 900
   action:
     - service: notify.ios_iphones_app
       data:
         title: 'Rooms'
-        message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2.state}}ppm'
+        message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2_2.state}}ppm'
 
 - alias: 'Weather: Noise Livingroom'
   initial_state: 'on'
   trigger:
     platform: numeric_state
-    entity_id: sensor.netatmo_wohnzimmer_noise
+    entity_id: sensor.netatmo_wohnzimmer_noise_2
     above: 59
   action:
     - service: notify.ios_iphones_app
       data:
         title: 'Rooms'
-        message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise.state}}db'
+        message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise_2.state}}db'
 
 
 - alias: 'Weather: Out vs In notification'
@@ -57,7 +57,7 @@
     - service: notify.ios_iphones_app
       data:
         title: 'Weather'
-        message: 'Out vs. In is: {{states.sensor.out_vs_in.state}}°C. Out: {{states.sensor.netatmo_outdoor_temperature.state}}°C / In: {{states.sensor.netatmo_wohnzimmer_temperature.state}}°C'
+        message: 'Out vs. In is: {{states.sensor.out_vs_in.state}}°C. Out: {{states.sensor.netatmo_outdoor_temperature.state}}°C / In: {{states.sensor.netatmo_wohnzimmer_temperature_2.state}}°C'
 
 - alias: 'Weather: Weather Report'
   initial_state: 'on'

@@ -155,28 +155,28 @@
   sensor.mein_schiff_price:
     icon: mdi:ferry
 
-  sensor.netatmo_schlafzimmer_temperature:
+  sensor.netatmo_schlafzimmer_temperature_2:
     friendly_name: Temperature Bedroom
     homebridge_name: Temperature
-  sensor.netatmo_schlafzimmer_co2:
+  sensor.netatmo_schlafzimmer_co2_2:
     friendly_name: CO2 Bedroom
     homebridge_name: CO2
-  sensor.netatmo_schlafzimmer_humidity:
+  sensor.netatmo_schlafzimmer_humidity_2:
     friendly_name: Humidity Bedroom
     homebridge_name: Humidity
-  sensor.netatmo_wohnzimmer_temperature:
+  sensor.netatmo_wohnzimmer_temperature_2:
     friendly_name: Temperature Livingroom
     homebridge_name: Temperature 
-  sensor.netatmo_wohnzimmer_co2:
+  sensor.netatmo_wohnzimmer_co2_2:
     friendly_name: CO2 Livingroom
     homebridge_name: CO2
-  sensor.netatmo_wohnzimmer_humidity:
+  sensor.netatmo_wohnzimmer_humidity_2:
     friendly_name: Humidity Livingroom
     homebridge_name: Humidity
-  sensor.netatmo_wohnzimmer_pressure:
+  sensor.netatmo_wohnzimmer_pressure_2:
     friendly_name: Pressure Livingroom
     homebridge_name: Pressure
-  sensor.netatmo_wohnzimmer_noise:
+  sensor.netatmo_wohnzimmer_noise_2:
     friendly_name: Noise Livingroom
     homebridge_name: Noise
   sensor.netatmo_outdoor_temperature:

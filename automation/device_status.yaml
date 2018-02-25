@@ -70,8 +70,8 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: sensor.netatmo_schlafzimmer_temperature, 
-                 sensor.netatmo_wohnzimmer_temperature, 
+      entity_id: sensor.netatmo_schlafzimmer_temperature_2, 
+                 sensor.netatmo_wohnzimmer_temperature_2, 
                  sensor.netatmo_outdoor_temperature
       to: 'unknown'
       for:
@@ -86,8 +86,8 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: sensor.netatmo_schlafzimmer_temperature, 
-                 sensor.netatmo_wohnzimmer_temperature, 
+      entity_id: sensor.netatmo_schlafzimmer_temperature_2, 
+                 sensor.netatmo_wohnzimmer_temperature_2, 
                  sensor.netatmo_outdoor_temperature
       from: 'unknown'
   action:
