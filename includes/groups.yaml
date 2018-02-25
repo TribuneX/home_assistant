@@ -193,7 +193,11 @@ printer:
     - sensor.epson_ink_level_black
     - sensor.epson_ink_level_magenta
     - sensor.epson_ink_level_yellow
-    - sensor.epson_ink_level_cyan    
+    - sensor.epson_ink_level_cyan   
+prices:
+  name: 'Prices'
+  entities:
+    - sensor.mein_schiff_price 
 all_speaker:
   entities:
     - switch.speaker_1
@@ -308,4 +312,5 @@ device_status:
   icon: mdi:oil-temperature
   entities:
     - group.printer
+    - group.prices
     - group.battery_levels
