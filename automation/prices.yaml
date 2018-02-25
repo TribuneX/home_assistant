@@ -3,7 +3,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.dark_sky_precip_probability
-      below: 1.495
+      below: 1495
   action:
     - service: notify.ios_iphones_app
       data:
