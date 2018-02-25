@@ -238,13 +238,11 @@
   unit_of_measurement: '%'
   scan_interval: 120
 
-
 - platform: command_line
   name: Mein Schiff Price
-  command: /usr/bin/curl -s https://www.pooldeck24.de/mein-schiff/mein-schiff-buchen/mein-schiff-flexpreise | grep "Jungfernfahrt neue Mein Schiff" -A 10 | grep fprice -m 1 | grep -o '[0-9]\.[0-9]\+ | curl -s https://www.pooldeck24.de/mein-schiff/mein-schiff-buchen/mein-schiff-flexpreise | grep "Jungfernfahrt neue Mein Schiff" -A 10 | grep fprice -m 1 | grep -o '[0-9]\.[0-9]\+' | tr -d '.'
+  command: /usr/bin/curl -s https://www.pooldeck24.de/mein-schiff/mein-schiff-buchen/mein-schiff-flexpreise | grep "Jungfernfahrt neue Mein Schiff" -A 2 | grep -o '[0-9]\.[0-9]\+' | tr -d '.'
   unit_of_measurement: '€'
   scan_interval: 120
-
 
 - platform: luftdaten
   sensorid: 3111
