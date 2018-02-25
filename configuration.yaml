@@ -35,7 +35,6 @@ influxdb:
   username: homeassistant
   password: influxdb_password
   max_retries: 10
-  retry_queue_limit: 100
   include:
     domains:
       - sensor
