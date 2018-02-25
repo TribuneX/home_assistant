@@ -27,7 +27,7 @@
   qos: 0
   payload_on: "on"
   payload_off: "off"
-  retain: false
+  retain: true
 
 - platform: mqtt
   name: "Speaker 2"
