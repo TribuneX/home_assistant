@@ -152,6 +152,8 @@
     icon: mdi:speaker-wireless
   sensor.sonos2:
     icon: mdi:speaker-wireless
+  sensor.mein_schiff_price:
+    icon: mdi:ferry
 
   sensor.netatmo_schlafzimmer_temperature:
     friendly_name: Temperature Bedroom
