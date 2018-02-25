@@ -252,3 +252,28 @@
 
 - platform: pi_hole
   host: 192.168.178.5
+
+- platform: netatmo
+  modules:
+    Wohnzimmer:
+      - temperature
+      - humidity
+      - co2
+      - wifi_status
+      - noise
+      - pressure
+  
+    Outdoor:
+      - temperature
+      - humidity
+      - min_temp
+      - max_temp
+      - battery_vp
+      - rf_status
+
+    Schlafzimmer:
+      - temperature
+      - humidity
+      - co2
+      - battery_vp
+      - rf_status
