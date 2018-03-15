@@ -36,6 +36,10 @@
   api_key: !secret github_token
   repository:
     - home_assistant
+  branch:
+    - master
+  monitored_conditions:
+    - last_build_state
 
 - platform: command_line
   name: CPU Temperature
