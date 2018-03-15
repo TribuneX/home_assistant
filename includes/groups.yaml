@@ -224,12 +224,6 @@ docker_container:
     - switch.dnsmasq
     - switch.portainer
     - switch.pihole
-pihole:
-  name: pihole
-  entities:
-    - sensor.pihole_dns_queries_today
-    - sensor.pihole_ads_blocked_today
-    - sensor.pihole_ads_percentage_blocked_today
 
 not_necessary_devices:
   name: 'Not necessary'
@@ -287,7 +281,6 @@ system:
   icon: mdi:server
   entities:
     - group.pi
-    - group.pihole
     - group.devices
     - group.pings
     - group.docker_container
