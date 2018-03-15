@@ -56,6 +56,8 @@
     homebridge_hidden: true
   switch.portainer:
     homebridge_hidden: true
+  switch.pihole:
+    homebridge_hidden: true
   
 
 # Sensors
