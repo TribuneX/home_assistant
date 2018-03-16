@@ -233,6 +233,9 @@ vacuum:
   host: !secret robo_ip
   token: !secret mirobo_token
 
+# homekit:
+#   pincode: !secret homekit_code
+
 tts:
   - platform: google
     language: 'de'
