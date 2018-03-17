@@ -221,7 +221,6 @@ docker_container:
     - switch.grafana
     - switch.mosquitto
     - switch.resilio
-    - switch.dnsmasq
     - switch.portainer
     - switch.pihole
 

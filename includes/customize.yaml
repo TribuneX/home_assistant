@@ -52,8 +52,6 @@
     homebridge_hidden: true
   switch.resilio:
     homebridge_hidden: true
-  switch.dnsmasq:
-    homebridge_hidden: true
   switch.portainer:
     homebridge_hidden: true
   switch.pihole:
