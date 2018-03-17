@@ -51,7 +51,7 @@
         entity_id: sun.sun    
         state: below_horizon    
       - condition: time   
-        after: '15:00'    
+        after: '20:00'    
         before: '03:00'
       - condition: state
         entity_id: light.sofa
@@ -77,7 +77,7 @@
         entity_id: sun.sun
         state: below_horizon
       - condition: time
-        after: '15:00'
+        after: '20:00'
         before: '03:00'
       - condition: state
         entity_id: light.sofa
