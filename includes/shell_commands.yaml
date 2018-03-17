@@ -3,6 +3,6 @@
 ##########################
 
 turn_off_server: 'bash /opt/scripts/freenas/shutdown_server.sh'
-restart_homebridge: 'curl http://pi3.cbs-service.net:8126/container/homebridge/restart'
-restart_hass: 'curl http://pi3.cbs-service.net:8126/container/homeassistant/restart'
-restart_influxdb: 'curl http://pi3.cbs-service.net:8126/container/influxdb/restart'
+restart_homebridge: 'curl http://tinker.cbs-service.net:8126/container/homebridge/restart'
+restart_hass: 'curl http://tinker.cbs-service.net:8126/container/homeassistant/restart'
+restart_influxdb: 'curl http://tinker.cbs-service.net:8126/container/influxdb/restart'

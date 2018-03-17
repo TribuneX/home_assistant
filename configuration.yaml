@@ -21,7 +21,7 @@ logger:
   default: warning
 
 mqtt:
-  broker: hass.cbs-service.net
+  broker: !secret mqtt_broker_ip
   username: owntracks
   password: !secret mqtt_password
   protocol: 3.1
@@ -31,7 +31,7 @@ map:
 
 
 influxdb:
-  host: pi3.cbs-service.net
+  host: !secret influxdb_ip
   username: homeassistant
   password: influxdb_password
   max_retries: 10
