@@ -15,7 +15,6 @@ prepare_restart:
       entity_id: switch.tv 
     - service: homeassistant.turn_on
       entity_id: group.all_speaker
-    - service: shell_command.restart_influxdb
     - service: shell_command.restart_homebridge
 
 reload_automations:
