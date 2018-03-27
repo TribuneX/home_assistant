@@ -2,8 +2,8 @@
   initial_state: 'on'
   trigger:
     - platform: numeric_state
-      entity_id: sensor.dark_sky_precip_probability
-      below: 1495
+      entity_id: sensor.mein_schiff_price
+      below: 1395
   action:
     - service: notify.ios_iphones_app
       data:
