@@ -6,7 +6,6 @@
   action:
     - service: script.turn_off_all
 
-
 - alias: 'Misc: Update Available Notifications'
   initial_state: 'on'
   trigger:
@@ -28,7 +27,6 @@
     service: logger.set_level
     data_template:
       homeassistant.components: "{{ trigger.to_state.state }}"
-
 
 # automations for the fan
 - alias: 'Misc: Activate Fan auto off'
@@ -65,6 +63,8 @@
         entity_id: media_player.living_room
         state: 'paused'
   action:
+    - delay:
+        seconds: 30
     - service: homeassistant.turn_off
       entity_id: group.all_speaker
 
@@ -113,7 +113,6 @@
         message: 'Build was successful'
     - service: script.restart_hass
 
-
 - alias: 'Misc: Raspberry full volume'
   initial_state: 'on'
   trigger:
@@ -125,15 +124,3 @@
       data:
         title: 'System'
         message: 'Volume is running out of space. Current usage is: {{states.sensor.disk_use_.state}}%'
-
-- alias: 'Tradfri: Low battery'
-  initial_state: 'on'
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.eingang, sensor.bad, sensor.kueche
-      below: 10
-  action:
-    - service: notify.ios_iphones_app   
-      data_template:   
-        title: 'Devices'    
-        message: 'Tradfri battery is low! Battery state of {{ trigger.to_state.attributes.friendly_name }} is {{ trigger.to_state.state }}%'
