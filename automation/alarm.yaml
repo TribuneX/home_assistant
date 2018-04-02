@@ -21,7 +21,6 @@
         title: 'Alarm'    
         message: 'Motion was detected by {{ trigger.to_state.attributes.friendly_name }}, but nobody seems to be at home!'
 
-
 - alias: 'Door: Door is still open' 
   initial_state: 'on'   
   trigger:    

@@ -24,7 +24,17 @@
   initial_state: 'on'
   trigger:
     - platform: state
-      entity_id: binary_sensor.ping_dreieich, binary_sensor.ping_eltern, binary_sensor.ping_gote, binary_sensor.ping_polanetzki, binary_sensor.ping_schwarzwald, binary_sensor.ping_sebastian, binary_sensor.ping_sonja, binary_sensor.ping_uwe, binary_sensor.ping_vhv, binary_sensor.ping_wsw
+      entity_id: binary_sensor.ping_dreieich, 
+                 binary_sensor.ping_eltern, 
+                 binary_sensor.ping_gote, 
+                 binary_sensor.ping_polanetzki, 
+                 binary_sensor.ping_schwarzwald, 
+                 binary_sensor.ping_sebastian, 
+                 binary_sensor.ping_sonja, 
+                 binary_sensor.ping_uwe, 
+                 binary_sensor.ping_vhv,
+                 binary_sensor.ping_wsw, 
+                 binary_sensor.ping_anny
       to: 'off'
       for:
         minutes: 5
@@ -56,7 +66,8 @@
                  binary_sensor.ping_sonja, 
                  binary_sensor.ping_uwe, 
                  binary_sensor.ping_vhv, 
-                 binary_sensor.ping_wsw
+                 binary_sensor.ping_wsw,
+                 binary_sensor.ping_anny
       to: 'on'
       for:
         minutes: 1

@@ -34,7 +34,6 @@
         title: 'Rooms'
         message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise_2.state}}db'
 
-
 - alias: 'Weather: Out vs In notification'
   initial_state: 'on'
   trigger:

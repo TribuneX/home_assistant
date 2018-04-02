@@ -29,7 +29,6 @@ mqtt:
 
 map:
 
-
 influxdb:
   host: !secret influxdb_ip
   username: homeassistant
@@ -72,7 +71,6 @@ recorder:
       - sensor.tribunexhome_assistant_last_build_id
       - sensor.tribunexhome_assistant_last_build_started_at
       - sensor.tribunexhome_assistant_last_build_state
-
 
 # Enables the frontend
 frontend:
@@ -171,7 +169,6 @@ netatmo:
   secret_key: !secret netatmo_secret_key
   username: !secret netatmo_username
   password: !secret netatmo_password
-
 
 input_select:
   tv_mode:

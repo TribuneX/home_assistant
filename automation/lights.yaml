@@ -59,7 +59,6 @@
   action:   
     - service: script.turn_on_livingroom_dimmed_lights
 
-
 # Turn on light at Sofa if ATV is paused
 - alias: 'Lights: Turn on light when AppleTV is paused'
   initial_state: 'on'
@@ -114,7 +113,6 @@
   action:
     - service: script.turn_off_livingroom_delay_15
 
-
 # Turn on lights in bedroom, if TV is switched off
 - alias: 'Lights: Turn on lights in bedroom after TV is switched off'
   initial_state: 'on'
@@ -132,7 +130,7 @@
     - service: script.turn_off_livingroom_delay_15
 
 # Turn on lights in the livingroom if someone is awake before sun rises
-- alias: 'Lights: Turn on livingroom lights in the morning'
+- alias: 'Lights: Turn on livingroom lights in the morning from Tue to Sat'
   initial_state: 'on'
   trigger:
     - platform: state
@@ -152,12 +150,39 @@
       after: '06:30'
       before: '10:00'
       weekday:
-        - mon
         - tue
         - wed
         - thu
         - fri
         - sat
+  action:
+    - service: script.turn_off
+      entity_id: script.turn_off_livingroom_lights_delay_30
+    - service: script.turn_on_livingroom_morning
+    - service: script.turn_off_livingroom_lights_delay_30
+
+    # Turn on lights in the livingroom if someone is awake before sun rises
+- alias: 'Lights: Turn on livingroom lights in the morning on Mondays'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: light.bad
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: light.kueche1
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: light.eingang
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      after: '05:00'
+      before: '10:00'
+      weekday:
+        - mon
   action:
     - service: script.turn_off
       entity_id: script.turn_off_livingroom_lights_delay_30
@@ -224,7 +249,6 @@
   action:
     - service: script.turn_off_kitchen_lights
 
-
 - alias: 'Lights: Turn on light in working room if motion is detected'
   trigger:
     platform: state
@@ -256,7 +280,6 @@
       data:
         entity_id: light.arbeitszimmer
         transition: 2
-
 
 - alias: 'Turn on hallway light if door is opened'
   trigger:
@@ -291,7 +314,6 @@
       state: 'off' 
   action:
     - service: script.turn_on_bedroom_dimmed_lights
-
 
 - alias: 'Turn off lights in bedroom'
   trigger:  

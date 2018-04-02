@@ -129,6 +129,7 @@ pings:
     - binary_sensor.ping_uwe
     - binary_sensor.ping_vhv
     - binary_sensor.ping_wsw
+    - binary_sensor.ping_anny
 settings:
   name: 'Settings'
   entities:

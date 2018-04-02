@@ -11,7 +11,7 @@
   condition:
     condition: numeric_state
     entity_id: sensor.bad_moisture
-    below: 15
+    below: 10
   action:
     - service: notify.ios_iphones_app
       data:
@@ -31,7 +31,7 @@
   condition:
     condition: numeric_state
     entity_id: sensor.bonsai_moisture
-    below: 10
+    below: 30
   action:
     - service: notify.ios_iphones_app
       data:

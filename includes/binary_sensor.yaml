@@ -40,5 +40,9 @@
   host: vhv.cbs-service.net
 
 - platform: ping
+  name: PING Anny
+  host: anny.cbs-service.net
+
+- platform: ping
   name: PING WSW
   host: 192.168.2.1
