@@ -233,10 +233,6 @@ vacuum:
 # homekit:
 #   pincode: !secret homekit_code
 
-tts:
-  - platform: google
-    language: 'de'
-
 zone 1:
   name: Work User 1
   latitude: !secret lat_zone_1 
