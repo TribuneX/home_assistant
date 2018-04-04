@@ -11,11 +11,12 @@
         message: 'The cruise is cheaper: ({{states.sensor.mein_schiff_price.state}}€)'
 
 
-- alias: 'Prices: Notify if cruise price changes'
+- alias: 'Prices: Notify if cruise price is higher'
   initial_state: 'on'
   trigger:
     - platform: numeric_state
       entity_id: sensor.mein_schiff_price
+      above: 1495
   action:
     - service: notify.ios_iphones_app
       data:
