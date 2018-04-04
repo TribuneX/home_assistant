@@ -9,3 +9,15 @@
       data:
         title: 'Price Drop'
         message: 'The cruise is cheaper: ({{states.sensor.mein_schiff_price.state}}€)'
+
+
+- alias: 'Prices: Notify if cruise price changes'
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.mein_schiff_price
+  action:
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Price Drop'
+        message: 'The cruise is cheaper: ({{states.sensor.mein_schiff_price.state}}€)'
