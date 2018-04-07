@@ -70,11 +70,11 @@ turn_off_tv_livingroom:
     - service: switch.turn_off
       entity_id: switch.tv
 
-turn_off_livingroom_delay_15:
-  alias: 'Turn off livingroom group (delay 15 minutes)'
+turn_off_livingroom_delay_10:
+  alias: 'Turn off livingroom group (delay 10 minutes)'
   sequence:
     - delay:
-        minutes: 15
+        minutes: 10
     - service: homeassistant.turn_off
       entity_id: group.wohnzimmer
     # - service: homeassistant.turn_off

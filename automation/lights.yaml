@@ -98,7 +98,7 @@
   action:
     - service: script.turn_off_bedroom_delay_60
 
-# Turn off devices in the livingroom 15 minutes when switched on after 3:01
+# Turn off devices in the livingroom 10 minutes when switched on after 3:01
 - alias: 'Lights: 15 minutes timer for devices at night'
   initial_state: 'on'
   trigger:
@@ -111,7 +111,7 @@
     after: '03:01'
     before: '05:00'
   action:
-    - service: script.turn_off_livingroom_delay_15
+    - service: script.turn_off_livingroom_delay_10
 
 # Turn on lights in bedroom, if TV is switched off
 - alias: 'Lights: Turn on lights in bedroom after TV is switched off'
@@ -124,10 +124,10 @@
   condition:
     condition: time
     after: '21:00'
-    before: '00:00'
+    before: '02:00'
   action: 
     - service: script.turn_on_bedroom_dimmed_lights
-    - service: script.turn_off_livingroom_delay_15
+    - service: script.turn_off_livingroom_delay_10
 
 # Turn on lights in the livingroom if someone is awake before sun rises
 - alias: 'Lights: Turn on livingroom lights in the morning from Tue to Sat'
