@@ -12,7 +12,6 @@ living_room:
     - light.fernseher
     - light.sofa
     - light.sessel
-    - binary_sensor.door_window_sensor_158d0001b7700c
 bed_room:
   name: 'Bedroom'
   entities:
@@ -26,7 +25,6 @@ bed_room:
 outdoor:
   name: 'Outdoor'
   entities:
-    - binary_sensor.door_window_sensor_158d0001d8253a
     - sensor.netatmo_outdoor_temperature
     - sensor.dark_sky_daily_high_temperature
     - sensor.dark_sky_daily_low_temperature
@@ -202,10 +200,15 @@ all_speaker:
   entities:
     - switch.speaker_1
     - switch.speaker_2
+balcony_doors:
+  name: 'balcony_doors'
+  entities:
+    - binary_sensor.door_window_sensor_158d0001b7700c
 doors:
   name: 'Doors'
   entities:
     - binary_sensor.door_window_sensor_158d0001b7700c
+    - binary_sensor.door_window_sensor_158d0001d8253a
 lights_livingroom:
   name: 'Lights Living Room'
   entities:
@@ -252,6 +255,7 @@ default_view:
     - group.bed_room
     - group.office
     - group.outdoor
+    - group.doors
     - group.states
     - group.robot
     - group.personen

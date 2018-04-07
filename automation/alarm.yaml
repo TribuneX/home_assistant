@@ -30,7 +30,7 @@
       to: 'on'   
   condition:
     condition: state    
-    entity_id: group.doors   
+    entity_id: group.balcony_doors   
     state: 'on'
   action:     
     - service: notify.ios_iphones_app   
