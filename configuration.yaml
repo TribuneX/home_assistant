@@ -230,8 +230,27 @@ vacuum:
   host: !secret robo_ip
   token: !secret mirobo_token
 
-# homekit:
-#   pincode: !secret homekit_code
+homekit:
+  filter:
+    include_entities:
+      - switch.appletv_mode
+      - switch.sonos_mode
+      - switch.plex_mode
+      - switch.music_mode
+      - switch.server
+      - switch.tv_mode
+      - switch.tv_2
+      - sensor.bad_temperature
+      - sensor.netatmo_schlafzimmer_co2_2
+      - sensor.netatmo_schlafzimmer_humidity_2
+      - sensor.netatmo_schlafzimmer_temperature_2
+      - sensor.netatmo_wohnzimmer_co2_2
+      - sensor.netatmo_wohnzimmer_humidity_2
+      - sensor.netatmo_wohnzimmer_temperature_2
+      - sensor.netatmo_outdoor_temperature
+      - sensor.netatmo_outdoor_humidity
+      - binary_sensor.door_window_sensor_158d0001b7700c
+      - binary_sensor.door_window_sensor_158d0001d8253a
 
 zone 1:
   name: Work User 1
