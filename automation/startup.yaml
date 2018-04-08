@@ -45,7 +45,7 @@
         entity_id: media_player.wohnzimmer
         state: 'idle'
   action:
-    - service: script.tv_mode_off   
+    - service: script.turn_off_tv_livingroom   
 
 - alias: 'Startup: Startup nobody is home'
   initial_state: 'on'
