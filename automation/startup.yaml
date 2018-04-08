@@ -1,0 +1,65 @@
+- alias: 'Startup: Startup notification'
+  initial_state: 'on'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: script.init_hass
+    - service: notify.ios_iphones_app
+      data:
+        title: 'System'
+        message: 'Home Assistant started'
+
+- alias: 'Startup: Turn of speaker if unused at startup'
+  initial_state: 'on'
+  trigger:
+    platform: homeassistant
+    event: start
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.personen
+        state: 'home'
+      - condition: state
+        entity_id: media_player.living_room
+        state: 'paused'
+  action:
+    - delay:
+        seconds: 30
+    - service: homeassistant.turn_off
+      entity_id: group.all_speaker
+
+- alias: 'Startup: Turn off TV if unused at startup'
+  initial_state: 'on'
+  trigger:
+    platform: homeassistant
+    event: start
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.personen
+        state: 'home'
+      - condition: state
+        entity_id: media_player.wohnzimmer
+        state: 'idle'
+  action:
+    - service: script.tv_mode_off   
+
+- alias: 'Startup: Startup nobody is home'
+  initial_state: 'on'
+  trigger:
+    platform: homeassistant
+    event: start
+  condition:
+    - condition: state
+      entity_id: group.personen
+      state: 'not_home'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: group.all_speaker
+    - service: script.tv_mode_off
+    - service: switch.turn_off
+      entity_id: switch.tv
+    - service: script.init_hass
