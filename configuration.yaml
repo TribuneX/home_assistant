@@ -76,9 +76,6 @@ recorder:
 frontend:
   javascript_version: latest
 
-# Enables configuration UI
-config:
-
 http:
   api_password: !secret http_password
   base_url: !secret base_url
@@ -86,9 +83,6 @@ http:
   ssl_key: !secret ssl_private_key
   ip_ban_enabled: True
   login_attempts_threshold: 3
-
-# Checks for available updates
-updater:
 
 # Discover some devices automatically
 discovery:
