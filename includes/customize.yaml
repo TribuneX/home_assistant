@@ -204,6 +204,9 @@
     friendly_name: FritzBox
     icon: mdi:router-wireless
 
+  sensor.dark_outside:
+    icon: mdi:weather-night
+
   # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
   sensor.epson_ink_level_black:
     entity_picture: /local/icon_ink_black.png

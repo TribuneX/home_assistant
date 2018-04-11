@@ -1,9 +1,10 @@
 - alias: 'Lights: Turn on livingroom lights at sunset'
   initial_state: 'on'
   trigger:
-    - platform: sun
-      event: sunset
-      offset: '-00:20:00'
+    - platform: state
+      entity_id: sensor.dark_outside
+      from: 'off' 
+      to: 'on'
     - platform: state
       entity_id: group.personen
       from: 'not_home'
@@ -16,9 +17,9 @@
         state: 'home'
       - condition: or
         conditions:
-          - condition: sun
-            after: sunset
-            after_offset: '-00:20:00'
+          - condition: state
+            entity_id: sensor.dark_outside
+            state: 'on'
           - condition: time
             before: '03:00'
   action:
@@ -47,11 +48,11 @@
   condition:    
     condition: and    
     conditions:   
-      - condition: state    
-        entity_id: sun.sun    
-        state: below_horizon    
+      - condition: state
+        entity_id: sensor.dark_outside
+        state: 'on'
       - condition: time   
-        after: '20:00'    
+        after: '21:00'    
         before: '03:00'
       - condition: state
         entity_id: light.sofa
@@ -73,10 +74,10 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: sun.sun
-        state: below_horizon
+        entity_id: sensor.dark_outside
+        state: 'on'
       - condition: time
-        after: '20:00'
+        after: '21:00'
         before: '03:00'
       - condition: state
         entity_id: light.sofa
@@ -123,7 +124,7 @@
       to: 'off'
   condition:
     condition: time
-    after: '21:00'
+    after: '20:00'
     before: '02:00'
   action: 
     - service: script.turn_on_bedroom_dimmed_lights
@@ -227,14 +228,9 @@
     from: 'off'
     to: 'on'
   condition:
-    condition: or
-    conditions:
-      - condition: sun
-        after: sunset
-        after_offset: '-01:00:00'
-      - condition: sun
-        before: sunrise
-        before_offset: '01:00:00'
+    - condition: state
+      entity_id: sensor.dark_outside
+      state: 'on'
   action:
     - service: script.turn_on_kitchen_lights
 
@@ -256,14 +252,9 @@
     from: 'off'
     to: 'on'
   condition:
-    condition: or
-    conditions:
-      - condition: sun
-        after: sunset
-        after_offset: '-01:00:00'
-      - condition: sun
-        before: sunrise
-        before_offset: '01:00:00'
+    - condition: state
+      entity_id: sensor.dark_outside
+      state: 'on'
   action:
     - service: script.turn_on_office_default_lights
 
@@ -288,14 +279,9 @@
     from: 'off'
     to: 'on'
   condition:
-    condition: or
-    conditions:
-      - condition: sun
-        after: sunset
-        after_offset: '-01:00:00'
-      - condition: sun
-        before: sunrise
-        before_offset: '01:00:00'
+    - condition: state
+      entity_id: sensor.dark_outside
+      state: 'on'
   action:
     - service: light.turn_on
       data:
