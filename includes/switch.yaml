@@ -61,42 +61,42 @@
   type: rm_mini
 
 - platform: rest
-  resource: http://tinker.cbs-service.net:8126/container/influxdb
+  resource: http://192.168.178.5:8126/container/influxdb
   name: Influxdb
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
 
 - platform: rest
-  resource: http://tinker.cbs-service.net:8126/container/portainer
+  resource: http://192.168.178.5:8126/container/portainer
   name: Portainer
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
 
 - platform: rest
-  resource: http://tinker.cbs-service.net:8126/container/mosquitto
+  resource: http://192.168.178.5:8126/container/mosquitto
   name: Mosquitto
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
 
 - platform: rest
-  resource: http://tinker.cbs-service.net:8126/container/resilio
+  resource: http://192.168.178.5:8126/container/resilio
   name: Resilio
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
 
 - platform: rest
-  resource: http://tinker.cbs-service.net:8126/container/grafana
+  resource: http://192.168.178.5:8126/container/grafana
   name: Grafana
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
   is_on_template: '{{ value_json is not none and value_json.state == "running" }}'
 
 - platform: rest
-  resource: http://tinker.cbs-service.net:8126/container/pihole
+  resource: http://192.168.178.5:8126/container/pihole
   name: pihole
   body_on: '{"state": "start"}'
   body_off: '{"state": "stop"}'
