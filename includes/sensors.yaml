@@ -218,10 +218,10 @@
         value_template: "{{ 'online' if is_state('device_tracker.sonoffdefault1', 'home') else 'off' }}"
 
       # Inspired by https://community.home-assistant.io/t/virtual-light-sensor/31975/9
-      turn_on_indoor_lights:
-        friendly_name: 'Turn On Indoor Lights'
+      dark_outside:
+        friendly_name: 'Dark Outside'
         value_template: >
-          {% if (states.sun.sun.attributes.elevation | int < -5) %}true
+          {% if (states.sun.sun.attributes.elevation | int < -2) %}true
           {% elif ( (states.sun.sun.attributes.elevation | int < 10) and (states.sensor.dark_sky_cloud_coverage.state | int > 50)) %}true
           {% elif (states.sensor.dark_sky_cloud_coverage.state | int > 90) %}true
           {% elif ( states.sensor.turn_on_indoor_lights.state == 'true' and ((as_timestamp(now()) - as_timestamp(states.sensor.turn_on_indoor_lights.last_changed)) | float < 1200)) %}true
