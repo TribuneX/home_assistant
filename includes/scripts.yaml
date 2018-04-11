@@ -83,7 +83,7 @@ turn_off_livingroom_delay_10:
     - delay:
         minutes: 10
     - service: homeassistant.turn_off
-      entity_id: group.wohnzimmer
+      entity_id: group.living_room
     # - service: homeassistant.turn_off
     #   entity_id: group.christmas
 
@@ -93,7 +93,7 @@ turn_off_bedroom_delay_60:
     - delay:
         minutes: 60
     - service: homeassistant.turn_off
-      entity_id: group.schlafzimmer
+      entity_id: group.bed_room
 
 turn_on_tv:
   sequence:
