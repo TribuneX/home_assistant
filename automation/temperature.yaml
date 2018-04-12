@@ -22,7 +22,7 @@
         title: 'Rooms'
         message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2_2.state}}ppm'
 
-- alias: 'Weather: Noise Livingroom'
+- alias: 'Noise: Noise Livingroom'
   initial_state: 'on'
   trigger:
     platform: numeric_state
@@ -34,12 +34,33 @@
         title: 'Rooms'
         message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise_2.state}}db'
 
-- alias: 'Weather: Out vs In notification'
+- alias: 'Weather: Hotter outside'
   initial_state: 'on'
   trigger:
     - platform: numeric_state
       entity_id: sensor.out_vs_in
       above: 2
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.iphones
+        state: 'home'
+      - condition: numeric_state
+        entity_id: 'sensor.netatmo_outdoor_temperature'
+        above: '20'
+      - condition: state
+        entity_id: binary_sensor.door_window_sensor_158d0001b7700c
+        state: 'on'
+  action:
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Doors'
+        message: 'Close the balcony door, since it is {{states.sensor.out_vs_in.state}}°C outside.'
+
+  - alias: 'Weather: Colder outside'
+  initial_state: 'on'
+  trigger:
     - platform: numeric_state
       entity_id: sensor.out_vs_in
       below: -2
@@ -52,11 +73,14 @@
       - condition: numeric_state
         entity_id: 'sensor.netatmo_outdoor_temperature'
         above: '20'
+      - condition: state
+        entity_id: binary_sensor.door_window_sensor_158d0001b7700c
+        state: 'off'
   action:
     - service: notify.ios_iphones_app
       data:
-        title: 'Weather'
-        message: 'Out vs. In is: {{states.sensor.out_vs_in.state}}°C. Out: {{states.sensor.netatmo_outdoor_temperature.state}}°C / In: {{states.sensor.netatmo_wohnzimmer_temperature_2.state}}°C'
+        title: 'Doors'
+        message: 'Open the balcony door, since it is {{states.sensor.out_vs_in.state}}°C colder outside.'
 
 - alias: 'Weather: Weather Report'
   initial_state: 'on'
