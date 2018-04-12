@@ -157,6 +157,9 @@ media_player:
     credentials: !secret atv2_credentials
 
   - platform: sonos
+    hosts: 
+      - !secret sonos_ip
+      - !secret sonos2_ip
 
 netatmo:
   api_key: !secret netatmo_api_key
