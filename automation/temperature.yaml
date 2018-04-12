@@ -58,7 +58,7 @@
         title: 'Doors'
         message: 'Close the balcony door, since it is {{states.sensor.out_vs_in.state}}°C outside.'
 
-  - alias: 'Weather: Colder outside'
+- alias: 'Weather: Colder outside'
   initial_state: 'on'
   trigger:
     - platform: numeric_state

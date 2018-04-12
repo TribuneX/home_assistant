@@ -147,15 +147,20 @@
       from: 'off'
       to: 'on'
   condition:
-    - condition: time
-      after: '06:30'
-      before: '10:00'
-      weekday:
-        - tue
-        - wed
-        - thu
-        - fri
-        - sat
+    condition: and
+    conditions:
+      - condition: time
+        after: '06:30'
+        before: '10:00'
+        weekday:
+          - tue
+          - wed
+          - thu
+          - fri
+          - sat
+      - condition: state
+        entity_id: sensor.dark_outside
+        state: 'on'
   action:
     - service: script.turn_off
       entity_id: script.turn_off_livingroom_lights_delay_30
@@ -179,11 +184,16 @@
       from: 'off'
       to: 'on'
   condition:
-    - condition: time
-      after: '05:00'
-      before: '10:00'
-      weekday:
-        - mon
+    condition: and
+    conditions:
+      - condition: time
+        after: '05:00'
+        before: '10:00'
+        weekday:
+          - mon
+      - condition: state
+        entity_id: sensor.dark_outside
+        state: 'on'
   action:
     - service: script.turn_off
       entity_id: script.turn_off_livingroom_lights_delay_30
@@ -209,7 +219,7 @@
   initial_state: 'on'
   trigger:
       platform: time
-      at: '05:30'
+      at: '04:55'
   action:
     - service: light.turn_on
       data: 
@@ -217,7 +227,7 @@
         brightness: 50
         transition: 4
     - delay:
-        minutes: 1 
+        seconds: 1 
     - service: light.turn_off
       entity_id: light.bad
 
