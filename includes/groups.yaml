@@ -220,7 +220,6 @@ docker_container:
   name: 'Docker Container'
   control: hidden
   entities:
-    - switch.homebridge
     - switch.influxdb
     - switch.grafana
     - switch.mosquitto

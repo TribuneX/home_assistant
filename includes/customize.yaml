@@ -1,5 +1,4 @@
   # Switches
-
   switch.light_baum:
     icon: mdi:pine-tree
     assumed_state: false
@@ -10,7 +9,6 @@
     icon: mdi:television
     assumed_state: false
     friendly_name: TV Power
-    homebridge_hidden: true
   switch.tv_2:
     icon: mdi:television
     friendly_name: TV 2
@@ -34,47 +32,24 @@
   switch.speaker_1:
     icon: mdi:speaker-wireless
     friendly_name: Sonos
-    homebridge_hidden: true
   switch.speaker_2:
     friendly_name: Sonos2
-    homebridge_hidden: true
     icon: mdi:speaker-wireless
   switch.ventilator:
     icon: mdi:fan
     assumed_state: false
-  switch.homebridge:
-    homebridge_hidden: true
-  switch.influxdb:
-    homebridge_hidden: true
-  switch.grafana:
-    homebridge_hidden: true
-  switch.mosquitto:
-    homebridge_hidden: true
-  switch.resilio:
-    homebridge_hidden: true
-  switch.portainer:
-    homebridge_hidden: true
-  switch.pihole:
-    homebridge_hidden: true
-  
 
 # Sensors
   sensor.palme_battery:
     icon: mdi:battery-80
-  sensor.bonsai_temperature:
-    homebridge_hidden: true
   sensor.bonsai_battery:
     icon: mdi:battery-80
   sensor.bonsai_light_intensity:
     icon: mdi:white-balance-sunny
-    homebridge_hidden: true
   sensor.palme_light_intensity:
     icon: mdi:white-balance-sunny
-    homebridge_hidden: true
   sensor.palme_conductivity:
     icon: mdi:barley
-  sensor.palme_temperature:
-    homebridge_hidden: true
   sensor.bonsai_conductivity:
     icon: mdi:barley
   sensor.bonsai_moisture:
@@ -85,7 +60,6 @@
     icon: mdi:battery-80
   sensor.palmek_light_intensity:
     icon: mdi:white-balance-sunny
-    homebridge_hidden: true
   sensor.palmek_conductivity:
     icon: mdi:barley
   sensor.palmek_moisture:
@@ -96,7 +70,6 @@
     icon: mdi:battery-80
   sensor.bad_light_intensity:
     icon: mdi:white-balance-sunny
-    homebridge_hidden: true
   sensor.bad_conductivity:
     icon: mdi:barley
   sensor.bad_moisture:
@@ -108,7 +81,6 @@
     friendly_name: 'Vacuum Cleaner'
   sensor.switch:
     icon: mdi:server-network
-    homebridge_hidden: true
   sensor.plex:
     icon: mdi:plex
   sensor.appletv_livingroom:
@@ -122,26 +94,19 @@
     friendly_name: Drucker
   sensor.broadlink:
     icon: mdi:remote
-    homebridge_hidden: true
   sensor.tradfri:
     icon: mdi:lightbulb-on
     friendly_name: Tradfri Gateway
   sensor.netatmo:
     icon: mdi:weather-hail
-    homebridge_hidden: true
   sensor.speedtest_upload:
     icon: mdi:speedometer
     friendly_name: Upload
-    homebridge_hidden: true
   sensor.speedtest_download:
     icon: mdi:speedometer
     friendly_name: Download
-    homebridge_hidden: true
   sensor.server:
     icon: mdi:server
-    homebridge_hidden: true
-  sensor.cpu_temperature:
-    homebridge_hidden: true
   sensor.eingang:
     icon: mdi:battery-80
   sensor.kueche:
@@ -154,56 +119,40 @@
     icon: mdi:speaker-wireless
   sensor.mein_schiff_price:
     icon: mdi:ferry
-
   sensor.netatmo_schlafzimmer_temperature_2:
     friendly_name: Temperature Bedroom
-    homebridge_name: Temperature
   sensor.netatmo_schlafzimmer_co2_2:
     friendly_name: CO2 Bedroom
-    homebridge_name: CO2
   sensor.netatmo_schlafzimmer_humidity_2:
     friendly_name: Humidity Bedroom
-    homebridge_name: Humidity
   sensor.netatmo_wohnzimmer_temperature_2:
     friendly_name: Temperature Livingroom
-    homebridge_name: Temperature 
   sensor.netatmo_wohnzimmer_co2_2:
     friendly_name: CO2 Livingroom
-    homebridge_name: CO2
   sensor.netatmo_wohnzimmer_humidity_2:
     friendly_name: Humidity Livingroom
-    homebridge_name: Humidity
   sensor.netatmo_wohnzimmer_pressure_2:
     friendly_name: Pressure Livingroom
-    homebridge_name: Pressure
   sensor.netatmo_wohnzimmer_noise_2:
     friendly_name: Noise Livingroom
-    homebridge_name: Noise
   sensor.netatmo_outdoor_temperature:
     friendly_name: Temperature Outdoor
-    homebridge_name: Temperature
   sensor.netatmo_outdoor_humidity:
     friendly_name: Humidity Outdoor
-    homebridge_name: Humidity
   sensor.dark_sky_daily_high_temperature:
     friendly_name: High Outdoor
-    homebridge_name: High
   sensor.dark_sky_daily_low_temperature:
     friendly_name: Low Outdoor
-    homebridge_name: Low
   sensor.dark_sky_summary:
     friendly_name: Summary
   sensor.dark_sky_precip_intensity:
     friendly_name: Regen
-
   sensor.ha_current_version:
     icon: mdi:home-assistant
     friendly_name: Latest HA version
-
   sensor.fritz_netmonitor:
     friendly_name: FritzBox
     icon: mdi:router-wireless
-
   sensor.dark_outside:
     icon: mdi:weather-night
 
@@ -232,7 +181,6 @@
     icon: mdi:home-automation
 
 # Device Tracker
-
   device_tracker.user_2_iphone:
     friendly_name: 'User 2 Router'
   device_tracker.iphones:
@@ -244,40 +192,12 @@
   
   
 # Lights
-
   light.bed1:
     friendly_name: !secret user_2
-    homebridge_hidden: true
   light.bed2:
     friendly_name: !secret user_1
-    homebridge_hidden: true
-  light.bad:
-    homebridge_hidden: true
-  light.eingang:
-    homebridge_hidden: true
-  light.bad_2:
-    homebridge_hidden: true
-  light.eingang_2:
-    homebridge_hidden: true
-  light.kuche:
-    homebridge_hidden: true
-  light.kueche1:
-    homebridge_hidden: true
-  light.kueche2:
-    homebridge_hidden: true
-  light.sofa:
-    homebridge_hidden: true
-  light.fernseher:
-    homebridge_hidden: true
-  light.wohnzimmer:
-    homebridge_hidden: true
-  light.schlafzimmer:
-    homebridge_hidden: true
-  light.sessel:
-    homebridge_hidden: true
 
 # Groups 
-
   group.user_1:
     entity_picture: /local/user_1.png
   group.user_2:
@@ -290,7 +210,6 @@
     friendly_name: Scripts
 
 # Scripts
-
   script.get_latest_config:
     icon: mdi:github-circle
   script.restart_hass:
@@ -299,9 +218,6 @@
   script.reboot_pi:
     icon: mdi:restart
     friendly_name: Reboot
-  script.restart_homebridge:
-    icon: mdi:home-automation
-    friendly_name: Restart Homebridge
   script.enable_beacon:
     icon: mdi:wifi
   input_number.sonos_speaker:

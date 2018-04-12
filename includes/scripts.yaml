@@ -15,18 +15,12 @@ prepare_restart:
       entity_id: switch.tv 
     - service: homeassistant.turn_on
       entity_id: group.all_speaker
-    - service: shell_command.restart_homebridge
 
 reload_automations:
   alias: Reload Automations
   sequence:
     - alias: Reload-Automations
       service: automation.reload
-
-restart_homebridge:
-  alias: Restart Homebrige
-  sequence:
-    - service: shell_command.restart_homebridge
 
 enable_beacon:
   alias: 'Enable Beacon'
@@ -42,7 +36,6 @@ init_hass:
       data:
         entity_id: input_select.log_level
         option: 'fatal'
-    #- service: script.restart_homebridge
     #- service: script.enable_beacon 
 
 # Turns lights on and off after sunset

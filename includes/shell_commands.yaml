@@ -3,6 +3,5 @@
 ##########################
 
 turn_off_server: 'ssh -t root@192.168.178.2 "/sbin/shutdown -p now"'
-restart_homebridge: 'curl http://192.168.178.5:8126/container/homebridge/restart'
 restart_hass: 'curl http://192.168.178.5:8126/container/homeassistant/restart'
 restart_influxdb: 'curl http://192.168.178.5:8126/container/influxdb/restart'
