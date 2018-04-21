@@ -22,6 +22,18 @@ bed_room:
     - light.bed1
     - switch.tv_2
     - switch.ventilator
+bath_room:
+  name: 'Bath'
+  entities:
+    - sensor.temperature_158d00022c9982
+    - sensor.humidity_158d00022c9982
+    - sensor.pressure_158d00022c9982
+kitchen:
+  name: 'Kitchen'
+  entities:
+    - sensor.temperature_158d00022b6674
+    - sensor.humidity_158d00022b6674
+    - sensor.pressure_158d00022b6674
 outdoor:
   name: 'Outdoor'
   entities:
@@ -254,6 +266,8 @@ default_view:
     - group.living_room
     - group.bed_room
     - group.office
+    - group.bath_room
+    - group.kitchen
     - group.outdoor
     - group.doors
     - group.states

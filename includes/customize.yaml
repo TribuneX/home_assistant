@@ -156,6 +156,20 @@
   sensor.dark_outside:
     icon: mdi:weather-night
 
+  # Xiaomi Temp Sensors
+  sensor.pressure_158d00022c9982:
+    friendly_name: Pressure Bath
+  sensor.humidity_158d00022c9982:
+    friendly_name: Humidity Bath
+  sensor.temperature_158d00022c9982:
+    friendly_name: Temperature Bath
+  sensor.pressure_158d00022b6674:
+    friendly_name: Pressure Kitchen
+  sensor.humidity_158d00022b6674:
+    friendly_name: Humidity Kitchen
+  sensor.temperature_158d00022b6674:
+    friendly_name: Temperature Kitchen
+
   # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
   sensor.epson_ink_level_black:
     entity_picture: /local/icon_ink_black.png

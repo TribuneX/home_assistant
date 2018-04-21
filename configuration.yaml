@@ -248,6 +248,12 @@ homekit:
       - sensor.netatmo_outdoor_humidity
       - binary_sensor.door_window_sensor_158d0001b7700c
       - binary_sensor.door_window_sensor_158d0001d8253a
+      - sensor.temperature_158d00022c9982
+      - sensor.humidity_158d00022c9982
+      - sensor.pressure_158d00022c9982
+      - sensor.temperature_158d00022b6674
+      - sensor.humidity_158d00022b6674
+      - sensor.pressure_158d00022b6674
 
 zone 1:
   name: Work User 1
