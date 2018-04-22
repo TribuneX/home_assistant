@@ -4,9 +4,7 @@
 living_room:
   name: 'Living Room'
   entities:
-    - sensor.netatmo_wohnzimmer_temperature_2
     - sensor.netatmo_wohnzimmer_co2_2
-    - sensor.netatmo_wohnzimmer_humidity_2
     - sensor.netatmo_wohnzimmer_pressure_2
     - sensor.netatmo_wohnzimmer_noise_2
     - light.fernseher
@@ -15,9 +13,7 @@ living_room:
 bed_room:
   name: 'Bedroom'
   entities:
-    - sensor.netatmo_schlafzimmer_temperature_2
     - sensor.netatmo_schlafzimmer_co2_2
-    - sensor.netatmo_schlafzimmer_humidity_2
     - light.bed2
     - light.bed1
     - switch.tv_2
@@ -25,25 +21,21 @@ bed_room:
 bath_room:
   name: 'Bath'
   entities:
-    - sensor.temperature_158d00022c9982
     - sensor.humidity_158d00022c9982
     - sensor.pressure_158d00022c9982
 kitchen:
   name: 'Kitchen'
   entities:
-    - sensor.temperature_158d00022b6674
     - sensor.humidity_158d00022b6674
     - sensor.pressure_158d00022b6674
 outdoor:
   name: 'Outdoor'
   entities:
-    - sensor.netatmo_outdoor_temperature
     - sensor.dark_sky_daily_high_temperature
     - sensor.dark_sky_daily_low_temperature
     - sensor.dark_sky_summary
     - sun.sun
     - sensor.dark_outside
-    - sensor.netatmo_outdoor_humidity
     - sensor.dark_sky_wind_speed
     - sensor.dark_sky_precip
     - sensor.dark_sky_precip_intensity
@@ -52,7 +44,6 @@ office:
   name: 'Office'
   entities:
     - switch.server
-    - sensor.palmek_temperature
 plant_1:
   name: 'Bonsai'
   entities:  
@@ -238,7 +229,6 @@ docker_container:
     - switch.resilio
     - switch.portainer
     - switch.pihole
-
 not_necessary_devices:
   name: 'Not necessary'
   entities:
@@ -250,12 +240,28 @@ not_necessary_devices:
     - switch.tv
     - switch.tv_2
     - switch.ventilator
-
 lights_bedroom:
   name: 'Lights Bedroom'
   entities:
     - light.bed2
     - light.bed1
+temperature:
+  name: 'Temperature'
+  entities:
+    - sensor.netatmo_wohnzimmer_temperature_2
+    - sensor.netatmo_schlafzimmer_temperature_2
+    - sensor.bonsai_temperature
+    - sensor.temperature_158d00022b6674
+    - sensor.temperature_158d00022c9982
+    - sensor.netatmo_outdoor_temperature
+humidity:
+  name: 'Humidity'
+  entities:
+    - sensor.netatmo_wohnzimmer_humidity_2
+    - sensor.netatmo_schlafzimmer_humidity_2
+    - sensor.humidity_158d00022b6674
+    - sensor.humidity_158d00022c9982
+    - sensor.netatmo_outdoor_humidity
 
 # Tabs
 default_view:
@@ -268,11 +274,13 @@ default_view:
     - group.office
     - group.bath_room
     - group.kitchen
+    - group.temperature
     - group.outdoor
     - group.doors
     - group.states
     - group.robot
     - group.personen
+    - group.humidity
 media:
   name: 'Media'
   view: yes
