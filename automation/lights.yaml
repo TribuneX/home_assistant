@@ -128,6 +128,7 @@
     before: '02:00'
   action: 
     - service: script.turn_on_bedroom_dimmed_lights
+    - service: script.turn_on_bath_default_lights
     - service: script.turn_off_livingroom_delay_10
 
 # Turn on lights in the livingroom if someone is awake before sun rises
@@ -255,20 +256,25 @@
   action:
     - service: script.turn_off_kitchen_lights
 
-- alias: 'Lights: Turn on light in working room if motion is detected'
+- alias: 'Lights: Turn on light in bathroom if motion is detected'
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d000121c575
     from: 'off'
     to: 'on'
   condition:
-    - condition: state
-      entity_id: sensor.dark_outside
-      state: 'on'
+    condition: and
+    conditions:
+      - condition: time
+        after: '16:00'
+        before: '02:00'
+      - condition: state
+        entity_id: sensor.dark_outside
+        state: 'on'
   action:
-    - service: script.turn_on_office_default_lights
+    - service: script.turn_on_bath_default_lights
 
-- alias: 'Lights: Turn off light in working room if there is no motion for 3 minutes'
+- alias: 'Lights: Turn off light in bathroom if there is no motion for 3 minutes'
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d000121c575
@@ -279,7 +285,7 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.arbeitszimmer
+        entity_id: light.bath
         transition: 2
 
 - alias: 'Lights: Turn on hallway light if door is opened'
