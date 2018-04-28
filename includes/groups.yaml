@@ -41,38 +41,6 @@ office:
   name: 'Office'
   entities:
     - switch.server
-plant_1:
-  name: 'Bonsai'
-  entities:  
-    - sensor.bonsai_moisture
-    - sensor.bonsai_light_intensity
-    - sensor.bonsai_temperature
-    - sensor.bonsai_conductivity
-    - sensor.bonsai_battery
-plant_2:
-  name: 'Palm'
-  entities:  
-    - sensor.palme_moisture
-    - sensor.palme_light_intensity
-    - sensor.palme_temperature
-    - sensor.palme_conductivity
-    - sensor.palme_battery
-plant_3:
-  name: 'Bath'
-  entities:  
-    - sensor.bad_moisture
-    - sensor.bad_light_intensity
-    - sensor.bad_temperature
-    - sensor.bad_conductivity
-    - sensor.bad_battery
-plant_4:
-  name: 'Small Palm'
-  entities:  
-    - sensor.palmek_moisture
-    - sensor.palmek_light_intensity
-    - sensor.palmek_temperature
-    - sensor.palmek_conductivity
-    - sensor.palmek_battery
 pi:
   name: 'Raspberry'
   entities:
@@ -234,12 +202,11 @@ not_necessary_devices:
 temperature:
   name: 'Temperature'
   entities:
+    - sensor.netatmo_outdoor_temperature
     - sensor.netatmo_wohnzimmer_temperature_2
     - sensor.netatmo_schlafzimmer_temperature_2
-    - sensor.bonsai_temperature
     - sensor.temperature_158d00022b6674
     - sensor.temperature_158d00022c9982
-    - sensor.netatmo_outdoor_temperature
 humidity:
   name: 'Humidity'
   entities:
@@ -282,10 +249,10 @@ plants:
   view: yes
   icon: mdi:barley
   entities:
-    - group.plant_1
-    - group.plant_2  
-    - group.plant_3
-    - group.plant_4
+    - plant.bonsai
+    - plant.bad
+    - plant.palm
+    - plant.palm_small
 system:
   name: 'System'
   view: yes

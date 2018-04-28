@@ -1,0 +1,32 @@
+bonsai:
+  sensors:
+    moisture: sensor.bonsai_moisture
+    battery: sensor.bonsai_battery
+    temperature: sensor.bonsai_temperature
+    conductivity: sensor.bonsai_conductivity
+    brightness: sensor.bonsai_light_intensity
+  min_moisture: 25
+palm:
+  sensors:
+    moisture: sensor.palme_moisture
+    battery: sensor.palme_battery
+    temperature: sensor.palme_temperature
+    conductivity: sensor.palme_conductivity
+    brightness: sensor.palme_light_intensity
+  min_moisture: 15
+palm_small:
+  sensors:
+    moisture: sensor.palmek_moisture
+    battery: sensor.palmek_battery
+    temperature: sensor.palmek_temperature
+    conductivity: sensor.palmek_conductivity
+    brightness: sensor.palmek_light_intensity
+  min_moisture: 15
+bad:
+  sensors:
+    moisture: sensor.bad_moisture
+    battery: sensor.bad_battery
+    temperature: sensor.bad_temperature
+    conductivity: sensor.bad_conductivity
+    brightness: sensor.bad_light_intensity
+  min_moisture: 10

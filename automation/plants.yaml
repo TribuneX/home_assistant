@@ -1,5 +1,4 @@
-- alias: 'Plants: Water Bathroom plant' 
-  hide_entity: True
+- alias: 'Plants: Water notification' 
   initial_state: 'on'
   trigger:
     platform: state
@@ -7,73 +6,40 @@
     from: 'not_home'
     to: 'home'
     for:
-      minutes: 5
+      minutes: 5 
   condition:
-    condition: numeric_state
-    entity_id: sensor.bad_moisture
-    below: 10
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: plant.bonsai
+        state: 'problem'
+      - condition: state
+        entity_id: plant.bad
+        state: 'problem'
+      - condition: state
+        entity_id: plant.palme_small
+        state: 'problem'
+      - condition: state
+        entity_id: plant.palme
+        state: 'problem'
   action:
     - service: notify.ios_iphones_app
-      data:
+      data_template:
         title: 'Plants'
-        message: 'Please water plant in the bathroom! Moisture: {{states.sensor.bad_moisture.state}}% | Conductivity: {{states.sensor.bad_conductivity.state}}'
-
-- alias: 'Plants: Water Bonsai plant' 
-  hide_entity: True
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: group.user_1
-    from: 'not_home'
-    to: 'home'
-    for:
-      minutes: 4 
-  condition:
-    condition: numeric_state
-    entity_id: sensor.bonsai_moisture
-    below: 30
-  action:
-    - service: notify.ios_iphones_app
-      data:
-        title: 'Plants'
-        message: 'Please water Plant Bonsai! Moisture: {{states.sensor.bonsai_moisture.state}}% | Conductivity: {{states.sensor.bonsai_conductivity.state}}'
-
-- alias: 'Plants: Water Palm plant'
-  hide_entity: True 
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: group.user_1
-    from: 'not_home'
-    to: 'home'
-    for:
-      minutes: 3 
-  condition:
-    condition: numeric_state
-    entity_id: sensor.palme_moisture
-    below: 20
-  action:
-    - service: notify.ios_iphones_app
-      data:
-        title: 'Plants'
-        message: 'Please water Palm! Moisture: {{states.sensor.palme_moisture.state}}% | Conductivity: {{states.sensor.palme_conductivity.state}}'
-
-- alias: 'Plants: Water small palm plant'
-  hide_entity: True 
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: group.user_1
-    from: 'not_home'
-    to: 'home'
-    for:
-      minutes: 6 
-  condition:
-    condition: numeric_state
-    entity_id: sensor.palme_moisture
-    below: 15
-  action:
-    - service: notify.ios_iphones_app
-      data:
-        title: 'Plants'
-        message: 'Please water Palm next to the computer! Moisture: {{states.sensor.palmek_moisture.state}}% | Conductivity: {{states.sensor.palmek_conductivity.state}}'
+        message: >
+          'Please water Plant '
+          {% if is_state('plant.bonsai', 'problem') %}
+            'Bonsai! Moisture: {{states.sensor.bonsai_moisture.state}}% | Conductivity: {{states.sensor.bonsai_conductivity.state}}'
+          {% else %}
+          {% if is_state('plant.palm', 'problem') %}
+            'Palm! Moisture: {{states.sensor.palme_moisture.state}}% | Conductivity: {{states.sensor.palme_conductivity.state}}'
+          {% else %}
+          {% if is_state('plant.palm_small', 'problem') %}
+            'Palm next to the computer! Moisture: {{states.sensor.palmek_moisture.state}}% | Conductivity: {{states.sensor.palmek_conductivity.state}}'
+          {% else %}
+          {% if is_state('plant.bad', 'problem') %}
+            'in the Bathroom! Moisture: {{states.sensor.bad_moisture.state}}% | Conductivity: {{states.sensor.bad_conductivity.state}}'
+          {% endif %}
+          {% endif %}
+          {% endif %}
+          {% endif %}

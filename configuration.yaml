@@ -279,3 +279,4 @@ switch: !include includes/switch.yaml
 input_boolean: !include includes/inputs.yaml
 shell_command: !include includes/shell_commands.yaml
 light: !include includes/lights.yaml
+plant: !include includes/plants.yaml
