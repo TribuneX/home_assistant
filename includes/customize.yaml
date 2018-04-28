@@ -38,6 +38,8 @@
   switch.ventilator:
     icon: mdi:fan
     assumed_state: false
+  switch.vacuum_mode:
+    friendly_name: Robot
 
 # Sensors
   sensor.palme_battery:
