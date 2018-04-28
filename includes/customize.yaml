@@ -16,10 +16,10 @@
     icon: mdi:server
   switch.tv_mode:
     icon: mdi:television
-    friendly_name: TV
+    friendly_name: Legacy TV
   switch.appletv_mode:
     icon: mdi:airplay
-    friendly_name: Apple TV
+    friendly_name: TV
   switch.plex_mode:
     icon: mdi:plex
     friendly_name: Plex
@@ -120,25 +120,25 @@
   sensor.mein_schiff_price:
     icon: mdi:ferry
   sensor.netatmo_schlafzimmer_temperature_2:
-    friendly_name: Temperature Bedroom
+    friendly_name: Bedroom
   sensor.netatmo_schlafzimmer_co2_2:
-    friendly_name: CO2 Bedroom
+    friendly_name: Bedroom
   sensor.netatmo_schlafzimmer_humidity_2:
-    friendly_name: Humidity Bedroom
+    friendly_name: Bedroom
   sensor.netatmo_wohnzimmer_temperature_2:
-    friendly_name: Temperature Livingroom
+    friendly_name: Livingroom
   sensor.netatmo_wohnzimmer_co2_2:
-    friendly_name: CO2 Livingroom
+    friendly_name: Livingroom
   sensor.netatmo_wohnzimmer_humidity_2:
-    friendly_name: Humidity Livingroom
+    friendly_name: Livingroom
   sensor.netatmo_wohnzimmer_pressure_2:
-    friendly_name: Pressure Livingroom
+    friendly_name: Livingroom
   sensor.netatmo_wohnzimmer_noise_2:
-    friendly_name: Noise Livingroom
+    friendly_name: Livingroom
   sensor.netatmo_outdoor_temperature:
-    friendly_name: Temperature Outdoor
+    friendly_name: Outdoor
   sensor.netatmo_outdoor_humidity:
-    friendly_name: Humidity Outdoor
+    friendly_name: Outdoor
   sensor.dark_sky_daily_high_temperature:
     friendly_name: High Outdoor
   sensor.dark_sky_daily_low_temperature:
@@ -146,7 +146,7 @@
   sensor.dark_sky_summary:
     friendly_name: Summary
   sensor.dark_sky_precip_intensity:
-    friendly_name: Regen
+    friendly_name: Rain
   sensor.ha_current_version:
     icon: mdi:home-assistant
     friendly_name: Latest HA version
@@ -158,17 +158,17 @@
 
   # Xiaomi Temp Sensors
   sensor.pressure_158d00022c9982:
-    friendly_name: Pressure Bath
+    friendly_name: Bath
   sensor.humidity_158d00022c9982:
-    friendly_name: Humidity Bath
+    friendly_name: Bath
   sensor.temperature_158d00022c9982:
-    friendly_name: Temperature Bath
+    friendly_name: Bath
   sensor.pressure_158d00022b6674:
-    friendly_name: Pressure Kitchen
+    friendly_name: Kitchen
   sensor.humidity_158d00022b6674:
-    friendly_name: Humidity Kitchen
+    friendly_name: Kitchen
   sensor.temperature_158d00022b6674:
-    friendly_name: Temperature Kitchen
+    friendly_name: Kitchen
 
   # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
   sensor.epson_ink_level_black:
