@@ -1,0 +1,16 @@
+- platform: group
+  name: Living Room Lights
+  entities:
+    - light.fernseher
+    - light.sofa
+    - light.sessel
+- platform: group
+  name: Bedroom Lights
+  entities:
+    - light.bed2
+    - light.bed1
+- platform: group
+  name: Kitchen Lights
+  entities:
+    - light.kueche1
+    - light.kueche2

@@ -7,15 +7,12 @@ living_room:
     - sensor.netatmo_wohnzimmer_co2_2
     - sensor.netatmo_wohnzimmer_pressure_2
     - sensor.netatmo_wohnzimmer_noise_2
-    - light.fernseher
-    - light.sofa
-    - light.sessel
+    - light.living_room_lights
 bed_room:
   name: 'Bedroom'
   entities:
     - sensor.netatmo_schlafzimmer_co2_2
-    - light.bed2
-    - light.bed1
+    - light.bedroom_lights
     - switch.tv_2
     - switch.ventilator
 bath_room:
@@ -213,12 +210,6 @@ doors:
   entities:
     - binary_sensor.door_window_sensor_158d0001b7700c
     - binary_sensor.door_window_sensor_158d0001d8253a
-lights_livingroom:
-  name: 'Lights Living Room'
-  entities:
-    - light.fernseher
-    - light.sofa
-    - light.sessel
 docker_container:
   name: 'Docker Container'
   control: hidden
@@ -240,11 +231,6 @@ not_necessary_devices:
     - switch.tv
     - switch.tv_2
     - switch.ventilator
-lights_bedroom:
-  name: 'Lights Bedroom'
-  entities:
-    - light.bed2
-    - light.bed1
 temperature:
   name: 'Temperature'
   entities:

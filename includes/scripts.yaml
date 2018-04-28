@@ -265,17 +265,7 @@ turn_on_livingroom_default_lights:
   sequence:
     - service: light.turn_on
       data: 
-        entity_id: light.sofa
-        brightness: 150
-        transition: 4
-    - service: light.turn_on
-      data: 
-        entity_id: light.fernseher
-        brightness: 150
-        transition: 4
-    - service: light.turn_on
-      data: 
-        entity_id: light.sessel
+        entity_id: light.living_room_lights
         brightness: 150
         transition: 4
 
@@ -290,17 +280,7 @@ turn_on_livingroom_dimmed_lights:
   sequence:
     - service: light.turn_on
       data: 
-        entity_id: light.sofa
-        brightness: 20
-        transition: 4
-    - service: light.turn_on
-      data: 
-        entity_id: light.fernseher
-        brightness: 20
-        transition: 4
-    - service: light.turn_on
-      data: 
-        entity_id: light.sessel
+        entity_id: light.living_room_lights
         brightness: 20
         transition: 4
 
@@ -308,12 +288,7 @@ turn_on_bedroom_dimmed_lights:
   sequence:
     - service: light.turn_on
       data: 
-        entity_id: light.bed2
-        brightness: 100
-        transition: 4
-    - service: light.turn_on
-      data: 
-        entity_id: light.bed1
+        entity_id: light.bedroom_lights
         brightness: 100
         transition: 4
 
@@ -323,7 +298,7 @@ turn_off_livingroom_lights_delay_30:
     - delay:
         minutes: 30
     - service: light.turn_off
-      entity_id: light.wohnzimmer
+      entity_id: light.living_room_lights
     # - service: homeassistant.turn_off
     #   entity_id: group.christmas
     - service: script.pause_sonos
@@ -332,22 +307,14 @@ turn_on_kitchen_lights:
   sequence:
     - service: light.turn_on
       data:
-        entity_id: light.kueche1
-        brightness: 150
-    - service: light.turn_on
-      data:
-        entity_id: light.kueche2
+        entity_id: light.kitchen_lights
         brightness: 150
 
 turn_off_kitchen_lights:
   sequence:
     - service: light.turn_off
       data:
-        entity_id: light.kueche1
-        transition: 2
-    - service: light.turn_off
-      data:
-        entity_id: light.kueche2
+        entity_id: light.kitchen_lights
         transition: 2
 
 # Inspired by https://github.com/arsaboo/homeassistant-config/blob/master/scripts.yaml
