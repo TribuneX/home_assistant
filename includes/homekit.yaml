@@ -1,0 +1,29 @@
+filter:
+    include_entities:
+      - switch.appletv_mode
+      - switch.sonos_mode
+      - switch.plex_mode
+      - switch.music_mode
+      - switch.server
+      - switch.tv_mode
+      - switch.tv_2
+      - sensor.netatmo_schlafzimmer_co2_2
+      - sensor.netatmo_schlafzimmer_humidity_2
+      - sensor.netatmo_schlafzimmer_temperature_2
+      - sensor.netatmo_wohnzimmer_co2_2
+      - sensor.netatmo_wohnzimmer_humidity_2
+      - sensor.netatmo_wohnzimmer_temperature_2
+      - sensor.netatmo_outdoor_temperature
+      - sensor.netatmo_outdoor_humidity
+      - binary_sensor.door_window_sensor_158d0001b7700c
+      - binary_sensor.door_window_sensor_158d0001d8253a
+      - sensor.temperature_158d00022c9982
+      - sensor.humidity_158d00022c9982
+      - sensor.pressure_158d00022c9982
+      - sensor.temperature_158d00022b6674
+      - sensor.humidity_158d00022b6674
+      - sensor.pressure_158d00022b6674
+      - sensor.luftdaten_pm10
+      - sensor.luftdaten_pm25
+      - binary_sensor.water_leak_sensor_158d00021371e5
+      - switch.vacuum_mode

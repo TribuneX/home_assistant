@@ -195,6 +195,8 @@
     friendly_name: 'Button 1'
   sensor.aqara_gateway:
     icon: mdi:home-automation
+  binary_sensor.water_leak_sensor_158d00021371e5:
+    friendly_name: 'Rain'
 
 # Device Tracker
   device_tracker.user_2_iphone:
