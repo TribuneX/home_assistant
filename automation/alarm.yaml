@@ -35,7 +35,7 @@
   action:     
     - service: notify.ios_iphones_app   
       data_template:   
-        title: 'Alarm'    
+        title: 'Door'    
         message: 'Balcony Door is still open'
 
 - alias: 'Door: Front Door is still open' 
@@ -46,9 +46,9 @@
       from: 'off'   
       to: 'on'
       for:
-        minutes: 5 
+        minutes: 5
   action:     
     - service: notify.ios_iphones_app   
       data_template:   
-        title: 'Alarm'    
+        title: 'Door'    
         message: 'Front Door is still open'

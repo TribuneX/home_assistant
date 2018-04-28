@@ -128,8 +128,8 @@
   action:
     - service: notify.ios_iphones_app
       data:
-        title: 'Rain Alert'
-        message: 'Water Sensor: Rain detected: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+        title: 'Rain Sensor'
+        message: 'Rain detected: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
 
 - alias: 'Weather: Stopped Rain detected by water sensor'
   trigger:
@@ -144,8 +144,8 @@
   action:
     - service: notify.ios_iphones_app
       data:
-        title: 'Rain Alert'
-        message: 'Water sensor: It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+        title: 'Rain Sensor'
+        message: 'It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
 
 - alias: 'Weather: Rainy Day'
   initial_state: 'on'
@@ -162,3 +162,15 @@
       data:
         title: 'Rain Stoppes'
         message: 'It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+
+- alias: 'Env: Fine Dust'
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.luftdaten_pm10
+    above: 50
+  action:
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Fine Dust'
+        message: 'High values: {{states.sensor.luftdaten_pm10.state}} µg/m3'
