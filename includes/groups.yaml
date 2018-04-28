@@ -8,6 +8,8 @@ living_room:
     - sensor.netatmo_wohnzimmer_pressure_2
     - sensor.netatmo_wohnzimmer_noise_2
     - light.living_room_lights
+    - switch.appletv_mode
+    - switch.sonos_mode
 bed_room:
   name: 'Bedroom'
   entities:
@@ -225,8 +227,6 @@ default_view:
     - group.living_room
     - group.bed_room
     - group.office
-    - group.bath_room
-    - group.kitchen
     - group.temperature
     - group.outdoor
     - group.doors
