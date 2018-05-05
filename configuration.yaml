@@ -18,7 +18,7 @@ homeassistant:
   packages: !include_dir_named packages
 
 logger:
-  default: warning
+  default: error
 
 mqtt:
   broker: !secret mqtt_broker_ip
