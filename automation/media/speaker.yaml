@@ -1,58 +1,4 @@
-- alias: 'Media: Select mode'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: input_select.tv_mode
-  condition:  
-   condition: state
-   entity_id: switch.tv
-   state: 'on'
-  action:
-    - service: script.turn_on 
-      data_template:
-        entity_id: >
-          {% if trigger.to_state.state == 'AppleTV' %}
-            script.set_input_apple_tv
-          {% elif trigger.to_state.state == 'TV' %}
-            script.set_input_tv
-          {% elif trigger.to_state.state == 'Plex' %}
-            script.set_input_plex
-          {% elif trigger.to_state.state == 'Music' %}
-            script.set_input_music
-          {% elif trigger.to_state.state == 'AUS' %}
-            script.turn_off_tv_livingroom
-          {% endif %}
-
-- alias: 'Media: Select mode + TV'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: input_select.tv_mode
-  condition:  
-   condition: state
-   entity_id: switch.tv
-   state: 'off'
-  action:
-    - service: switch.turn_on
-      entity_id: switch.tv
-    - delay:
-        seconds: 12
-    - service: script.turn_on 
-      data_template:
-        entity_id: >
-          {% if trigger.to_state.state == 'AppleTV' %}
-            script.set_input_apple_tv
-          {% elif trigger.to_state.state == 'TV' %}
-            script.set_input_tv
-          {% elif trigger.to_state.state == 'Plex' %}
-            script.set_input_plex
-          {% elif trigger.to_state.state == 'Music' %}
-            script.set_input_music
-          {% elif trigger.to_state.state == 'AUS' %}
-            script.turn_off_tv_livingroom
-          {% endif %}
-
-- alias: "Play selected source on sonos"
+- alias: 'Speaker: Play selected source on sonos'
   initial_state: 'on'
   trigger:
     - entity_id: input_select.sonos_source
@@ -68,7 +14,7 @@
       entity_id: media_player.living_room
       shuffle: true
   - data_template:
-      source: "{{ trigger.to_state.state }}"
+      source: '{{ trigger.to_state.state }}'
     entity_id: media_player.living_room
     service: media_player.select_source
   - service: input_select.select_option
@@ -76,7 +22,7 @@
       entity_id: input_select.sonos_source
       option: 'SELECT'
 
-- alias: "Play selected source on sonos + sonos"
+- alias: 'Speaker: Play selected source on sonos + sonos'
   initial_state: 'on'
   trigger:
     - entity_id: input_select.sonos_source
@@ -96,7 +42,7 @@
       entity_id: media_player.living_room
       shuffle: true
   - data_template:
-      source: "{{ trigger.to_state.state }}"
+      source: '{{ trigger.to_state.state }}'
     entity_id: media_player.living_room
     service: media_player.select_source
   - service: input_select.select_option
@@ -104,7 +50,7 @@
       entity_id: input_select.sonos_source
       option: 'SELECT'
 
-- alias: Speaker - Adjust Volume
+- alias: 'Speaker: Adjust Volume'
   initial_state: 'on'
   trigger:
     platform: state
@@ -115,7 +61,7 @@
         entity_id: media_player.living_room
         volume_level: '{{ trigger.to_state.state }}'
 
-- alias: Speaker - Update Volume slider
+- alias: 'Speaker: Update Volume slider'
   initial_state: 'off'
   trigger:
     platform: state
@@ -126,22 +72,7 @@
         entity_id: input_number.sonos_speaker
         value: '{{ states.media_player.living_room.attributes.volume_level }}'
 
-- alias: 'Media: Pause AppleTV if SONOS is used'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: media_player.living_room
-    from: 'paused'
-    to: 'playing'
-  condition:
-    - condition: state
-      entity_id: media_player.wohnzimmer
-      state: 'playing'
-  action:
-    - service: media_player.media_pause
-      entity_id: media_player.wohnzimmer
-
-- alias: 'Media: Auto standby is Sonos is paused for 10 minutes'
+- alias: 'Speaker: Auto standby is Sonos is paused for 10 minutes'
   initial_state: 'on'
   trigger:
     platform: state
@@ -154,7 +85,7 @@
     - service: homeassistant.turn_off
       entity_id: group.all_speaker
 
-- alias: 'Media: Pause SONOS if AppleTV is used'
+- alias: 'Speaker: Pause SONOS if AppleTV is used'
   initial_state: 'on'
   trigger:
     - platform: state
@@ -169,7 +100,7 @@
     - service: media_player.media_pause
       entity_id: media_player.living_room
 
-- alias: 'Media: Play Radio when someone arrives at home'
+- alias: 'Speaker: Play Radio when someone arrives at home'
   initial_state: 'on'
   trigger:
     platform: state
@@ -183,7 +114,7 @@
   action:
     - service: script.play_sonos_radio
 
-- alias: 'Media: Turn on radio in the morning'
+- alias: 'Speaker: Turn on radio in the morning'
   initial_state: 'on'
   trigger:
     - platform: state
@@ -228,55 +159,7 @@
         variables:
           volume: 0.05
 
-- alias: 'Media: Turn on AppleTV on flip90'
-  initial_state: 'on'
-  trigger:
-    platform: event
-    event_type: cube_action
-    event_data:
-      entity_id: binary_sensor.cube_158d0001108360
-      action_type: flip90
-  condition:
-    condition: state
-    entity_id: switch.tv
-    state: 'off'
-  action:
-    service: input_select.select_option
-    data:
-      entity_id: input_select.tv_mode
-      option: AppleTV
-
-- alias: 'Media: Pause AppleTV on flip90'
-  initial_state: 'on'
-  trigger:
-    platform: event
-    event_type: cube_action
-    event_data:
-      entity_id: binary_sensor.cube_158d0001108360
-      action_type: flip90
-  condition:
-    condition: state
-    entity_id: switch.tv
-    state: 'on'
-  action:
-    - service: media_player.media_pause
-      entity_id: media_player.wohnzimmer
-
-- alias: 'Media: Turn off TV on shake_air'
-  initial_state: 'on'
-  trigger:
-    platform: event
-    event_type: cube_action
-    event_data:
-      entity_id: binary_sensor.cube_158d0001108360
-      action_type: shake_air
-  action:
-    service: input_select.select_option
-    data:
-      entity_id: input_select.tv_mode
-      option: AUS
-
-- alias: 'Media: Pause Radio on tap_twice'
+- alias: 'Speaker: Pause Radio on tap_twice'
   initial_state: 'on'
   trigger:
     platform: event
@@ -291,7 +174,7 @@
   action:
     - service: script.pause_sonos
 
-- alias: 'Media: Start Radio on tap_twice'
+- alias: 'Speaker: Start Radio on tap_twice'
   initial_state: 'on'
   trigger:
     platform: event
@@ -306,7 +189,7 @@
   action:
     - service: script.play_sonos_radio
 
-- alias: 'Media: Select sonos volume with cube rotation'
+- alias: 'Speaker: Select sonos volume with cube rotation'
   trigger:
     platform: event
     event_type: cube_action
@@ -327,34 +210,3 @@
           {% else %} 
           {{  states.media_player.living_room.attributes.volume_level | float - 0.05 }}
           {% endif %}
-
-- alias: 'Turn on TV 2 in bedroom on long button press'
-  trigger:
-    platform: event
-    event_type: click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001d8795f
-      click_type: long_click_press
-  condition:
-    - condition: state
-      entity_id: switch.tv_2
-      state: 'off' 
-  action:
-    - service: switch.turn_on
-      entity_id: switch.tv_2
-
-
-- alias: 'Turn off TV 2 in bedroom on long button press'
-  trigger:  
-    platform: event
-    event_type: click
-    event_data:
-      entity_id: binary_sensor.switch_158d0001d8795f
-      click_type: long_click_press
-  condition:
-    - condition: state
-      entity_id: switch.tv_2
-      state: 'on'
-  action:
-    - service: switch.turn_off
-      entity_id: switch.tv_2

@@ -1,0 +1,147 @@
+- alias: 'TV: Select mode'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'on'
+  action:
+    - service: script.turn_on 
+      data_template:
+        entity_id: >
+          {% if trigger.to_state.state == 'AppleTV' %}
+            script.set_input_apple_tv
+          {% elif trigger.to_state.state == 'TV' %}
+            script.set_input_tv
+          {% elif trigger.to_state.state == 'Plex' %}
+            script.set_input_plex
+          {% elif trigger.to_state.state == 'Music' %}
+            script.set_input_music
+          {% elif trigger.to_state.state == 'AUS' %}
+            script.turn_off_tv_livingroom
+          {% endif %}
+
+- alias: 'TV: Select mode + TV'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_select.tv_mode
+  condition:  
+   condition: state
+   entity_id: switch.tv
+   state: 'off'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.tv
+    - delay:
+        seconds: 12
+    - service: script.turn_on 
+      data_template:
+        entity_id: >
+          {% if trigger.to_state.state == 'AppleTV' %}
+            script.set_input_apple_tv
+          {% elif trigger.to_state.state == 'TV' %}
+            script.set_input_tv
+          {% elif trigger.to_state.state == 'Plex' %}
+            script.set_input_plex
+          {% elif trigger.to_state.state == 'Music' %}
+            script.set_input_music
+          {% elif trigger.to_state.state == 'AUS' %}
+            script.turn_off_tv_livingroom
+          {% endif %}
+
+- alias: 'TV: Pause AppleTV if SONOS is used'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: media_player.living_room
+    from: 'paused'
+    to: 'playing'
+  condition:
+    - condition: state
+      entity_id: media_player.wohnzimmer
+      state: 'playing'
+  action:
+    - service: media_player.media_pause
+      entity_id: media_player.wohnzimmer
+
+- alias: 'TV: Turn on AppleTV on flip90'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d0001108360
+      action_type: flip90
+  condition:
+    condition: state
+    entity_id: switch.tv
+    state: 'off'
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.tv_mode
+      option: AppleTV
+
+- alias: 'TV: Pause AppleTV on flip90'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d0001108360
+      action_type: flip90
+  condition:
+    condition: state
+    entity_id: switch.tv
+    state: 'on'
+  action:
+    - service: media_player.media_pause
+      entity_id: media_player.wohnzimmer
+
+- alias: 'TV: Turn off TV on shake_air'
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: cube_action
+    event_data:
+      entity_id: binary_sensor.cube_158d0001108360
+      action_type: shake_air
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.tv_mode
+      option: AUS
+
+- alias: 'TV: Turn off TV 2 in bedroom on long button press'
+  trigger:  
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001d8795f
+      click_type: long_click_press
+  condition:
+    - condition: state
+      entity_id: switch.tv_2
+      state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.tv_2
+
+- alias: 'TV: Turn on TV 2 in bedroom on long button press'
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001d8795f
+      click_type: long_click_press
+  condition:
+    - condition: state
+      entity_id: switch.tv_2
+      state: 'off' 
+  action:
+    - service: switch.turn_on
+      entity_id: switch.tv_2
+    
