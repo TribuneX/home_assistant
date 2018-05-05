@@ -149,9 +149,6 @@
     friendly_name: Summary
   sensor.dark_sky_precip_intensity:
     friendly_name: Rain
-  sensor.ha_current_version:
-    icon: mdi:home-assistant
-    friendly_name: Latest HA version
   sensor.fritz_netmonitor:
     friendly_name: FritzBox
     icon: mdi:router-wireless

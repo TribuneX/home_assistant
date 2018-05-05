@@ -106,25 +106,16 @@
     - light
     - temperature
     - conductivity
-    - battery
-
-# Inspired by https://community.home-assistant.io/t/temp-compare/19497
-- platform: template
-  sensors:
-    out_vs_in:
-      value_template: "{{states.sensor.netatmo_outdoor_temperature.state | round(0) - states.sensor.netatmo_wohnzimmer_temperature_2.state | round(0)}}"
-      friendly_name: "Temperature Diff"
-
-# Inspired by https://community.home-assistant.io/t/0-46-1-not-available-via-upgrade/19539
-- platform: rest
-  resource: https://pypi.python.org/pypi/homeassistant/json
-  name: HA Current Version
-  value_template: '{{ value_json.info.version }}'
-  scan_interval: 3600
+    - battery    
 
 # Inspired by https://github.com/CCOSTAN/Home-AssistantConfig/blob/9b088e5bee97d242463b7d794edeb4a1d967bac1/sensor/devices_states.yaml
 - platform: template
   sensors: 
+      # Inspired by https://community.home-assistant.io/t/temp-compare/19497
+      out_vs_in:
+        value_template: "{{states.sensor.netatmo_outdoor_temperature.state | round(0) - states.sensor.netatmo_wohnzimmer_temperature_2.state | round(0)}}"
+        friendly_name: "Temperature Diff"
+
       # Inspired by https://github.com/rytilahti/python-mirobo/issues/4   
       vacuum_status:   
        value_template: '{{ states.vacuum.vacuum_cleaner.attributes.status}}'    
