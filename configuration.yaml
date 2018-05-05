@@ -43,34 +43,13 @@ recorder:
   db_url: !secret mysql_path
   purge_interval: 2
   purge_keep_days: 5
-  exclude:
-    domains:
-      - automation
-      - script
-    entities:
-      - sensor.netatmo
-      - sensor.netatmo_outdoor_radio
-      - sensor.netatmo_schlafzimmer_radio
-      - sensor.dark_sky_summary
-      - sensor.dark_sky_hourly_summary
-      - device_tracker.netatmo
-      - device_tracker.server
-      - device_tracker.wohnzimmer
-      - device_tracker.appletv
-      - device_tracker.tradfri
-      - device_tracker.switch
-      - device_tracker.plex
-      - device_tracker.broadlink
-      - device_tracker.epson029ea9
-      - device_tracker.batplay1
-      - light.kuche1
-      - light.kuche2
-      - light.eingang
-      - sensor.tribunexhome_assistant_last_build_duration
-      - sensor.tribunexhome_assistant_last_build_finished_at
-      - sensor.tribunexhome_assistant_last_build_id
-      - sensor.tribunexhome_assistant_last_build_started_at
-      - sensor.tribunexhome_assistant_last_build_state
+  include: !include includes/include.yaml
+  exclude: !include includes/exclude.yaml
+
+# View all events in a logbook
+logbook:
+  include: !include includes/include.yaml
+  exclude: !include includes/exclude.yaml
 
 # Enables the frontend
 frontend:
@@ -90,40 +69,6 @@ discovery:
 # Enables support for tracking state changes over time.
 history:
 
-# View all events in a logbook
-logbook:
-  exclude:
-    entities:
-      - sensor.netatmo
-      - sensor.netatmo_outdoor_radio
-      - sensor.netatmo_schlafzimmer_radio
-      - sensor.dark_sky_summary
-      - sensor.dark_sky_hourly_summary
-      - device_tracker.netatmo
-      - device_tracker.server
-      - device_tracker.wohnzimmer
-      - device_tracker.appletv
-      - device_tracker.tradfri
-      - device_tracker.switch
-      - device_tracker.plex
-      - device_tracker.broadlink
-      - device_tracker.epson029ea9
-      - device_tracker.batplay1
-      - device_tracker.aquara_gateway
-      - light.kuche1
-      - light.kuche2
-      - light.eingang
-      - sensor.tribunexhome_assistant_last_build_duration
-      - sensor.tribunexhome_assistant_last_build_finished_at
-      - sensor.tribunexhome_assistant_last_build_id
-      - sensor.tribunexhome_assistant_last_build_started_at
-      - sensor.tribunexhome_assistant_last_build_state
-      - binary_sensor.motion_sensor_158d0001a90475
-      - binary_sensor.switch_158d0001d8795f
-      - light.gateway_light_7811dc6c865a
-      - sensor.illumination_7811dc6c865a
-
-
 # Support for iOS app
 ios:
 
@@ -141,7 +86,6 @@ device_tracker:
     track_new_devices: false 
   - platform: owntracks
     max_gps_accuracy: 100
-  #- platform: bluetooth_tracker
 
 # Track the sun
 sun:
@@ -167,43 +111,6 @@ netatmo:
   username: !secret netatmo_username
   password: !secret netatmo_password
 
-input_select:
-  tv_mode:
-    name: 'TV mode'
-    options:
-     - AUS
-     - TV
-     - AppleTV
-     - Plex
-     - Music
-    initial: AUS
-    icon: mdi:television
-  sonos_source:
-    name: Sonos Source
-    options:
-      - Hits
-      - Fidi & Bumsi
-      - HIT RADIO FFH
-      - ANTENNE BAYERN
-      - Christmas
-      - Gregor
-      - Soundtracks
-      - SELECT
-    initial: SELECT
-    icon: mdi:radio
-  log_level:
-    name: 'Log Level'
-    options:
-      - critical
-      - fatal
-      - error
-      - warning
-      - warn
-      - info
-      - debug
-      - notset
-    initial: error
-
 input_number:
   sonos_speaker:
     name: Volume
@@ -227,7 +134,6 @@ vacuum:
   host: !secret robo_ip
   token: !secret mirobo_token
 
-
 zone 1:
   name: Work User 1
   latitude: !secret lat_zone_1 
@@ -237,7 +143,6 @@ zone 2:
   name: Work User 2
   latitude: !secret lat_zone_2 
   longitude: !secret long_zone_2 
-
 
 ##########################
 # Includes
@@ -254,3 +159,4 @@ shell_command: !include includes/shell_commands.yaml
 light: !include includes/lights.yaml
 plant: !include includes/plants.yaml
 homekit: !include includes/homekit.yaml
+input_select: !include includes/input_select.yaml

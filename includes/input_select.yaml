@@ -1,0 +1,35 @@
+tv_mode:
+    name: 'TV mode'
+    options:
+     - AUS
+     - TV
+     - AppleTV
+     - Plex
+     - Music
+    initial: AUS
+    icon: mdi:television
+sonos_source:
+  name: Sonos Source
+  options:
+    - Hits
+    - Fidi & Bumsi
+    - HIT RADIO FFH
+    - ANTENNE BAYERN
+    - Christmas
+    - Gregor
+    - Soundtracks
+    - SELECT
+  initial: SELECT
+  icon: mdi:radio
+log_level:
+  name: 'Log Level'
+  options:
+    - critical
+    - fatal
+    - error
+    - warning
+    - warn
+    - info
+    - debug
+    - notset
+  initial: error

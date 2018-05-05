@@ -1,0 +1,5 @@
+domains:
+      - sensor
+      - binary_sensor
+      - automation
+      - plant
