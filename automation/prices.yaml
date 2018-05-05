@@ -10,7 +10,6 @@
         title: 'Price Drop'
         message: 'The cruise is cheaper: ({{states.sensor.mein_schiff_price.state}}€)'
 
-
 - alias: 'Prices: Notify if cruise price is higher'
   initial_state: 'on'
   trigger:

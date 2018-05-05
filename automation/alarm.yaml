@@ -1,4 +1,3 @@
-# Trigger alarm if motion is detected, altough noboby is home   
 - alias: 'Alarm: Notify if motion is detected' 
   initial_state: 'on'   
   trigger:    

@@ -63,7 +63,3 @@
     to: 'not_home' 
   action:
     - service: script.turn_off_all
-  #- service: notify.ios_iphones_app
-    #  data:
-    #    title: 'Location'
-    #    message: 'Everybody left. I will switch off all devices.'

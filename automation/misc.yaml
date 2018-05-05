@@ -28,7 +28,6 @@
     data_template:
       homeassistant.components: "{{ trigger.to_state.state }}"
 
-# automations for the fan
 - alias: 'Misc: Activate Fan auto off'
   initial_state: 'on'
   trigger:
