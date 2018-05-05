@@ -1,0 +1,40 @@
+- alias: 'Lights: 60 minutes timer for devices at night'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: group.bed_room
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: time
+    after: '23:00'
+    before: '05:00'
+  action:
+    - service: script.turn_off_bedroom_delay_60
+
+- alias: 'Lights: Turn on lights in bedroom after TV is switched off'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: switch.tv
+      from: 'on'
+      to: 'off'
+  condition:
+    condition: time
+    after: '20:00'
+    before: '02:00'
+  action: 
+    - service: script.turn_on_bedroom_dimmed_lights
+    - service: script.turn_on_bath_default_lights
+    - service: script.turn_off_livingroom_delay_10
+
+- alias: 'Lights: Toggle lights in bedroom'
+  trigger:  
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001d8795f
+      click_type: single
+  action:
+    - service: light.toggle
+      entity_id: light.bedroom_lights

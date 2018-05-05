@@ -1,0 +1,38 @@
+- alias: 'Lights: Turn on light in the kitchen if motion is detected'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001a90475
+    from: 'off'
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: sensor.dark_outside
+      state: 'on'
+  action:
+    - service: script.turn_on_kitchen_lights
+
+- alias: 'Lights: Turn off light in the kitchen if there is no motion for 2.5 minutes'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001a90475
+    from: 'on'
+    to: 'off'
+    for: 
+      seconds: 30
+  action:
+    - service: script.turn_off_kitchen_lights
+
+- alias: 'Lights: Turn on hallway light if door is opened'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d0001d8253a
+    from: 'off'
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: sensor.dark_outside
+      state: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.eingang

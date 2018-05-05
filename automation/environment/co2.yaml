@@ -1,0 +1,23 @@
+- alias: 'Environment: CO2 Bedroom'
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_schlafzimmer_co2_2
+    above: 900
+  action:
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Rooms'
+        message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2_2.state}}ppm'
+
+- alias: 'Environment: CO2 Livingroom'
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_wohnzimmer_co2_2
+    above: 900
+  action:
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Rooms'
+        message: 'High CO2 in bedroom Currently: {{states.sensor.netatmo_schlafzimmer_co2_2.state}}ppm'

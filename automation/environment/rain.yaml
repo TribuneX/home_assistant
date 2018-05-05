@@ -1,0 +1,63 @@
+- alias: 'Rain: Rainy Day'
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.dark_sky_precip_probability
+      above: 60
+  condition:
+    - condition: time   
+      after: '07:00'    
+      before: '20:00'
+  action:
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Rain Alert'
+        message: 'It looks like its gonna rain: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+
+- alias: 'Rain: Rainy Day'
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.dark_sky_precip_probability
+      below: 20
+  condition:
+    - condition: time   
+      after: '07:00'    
+      before: '20:00'
+  action:
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Rain Stoppes'
+        message: 'It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+
+- alias: 'Rain: Rain detected by water sensor'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.water_leak_sensor_158d00021371e5
+    from: 'off'
+    to: 'on'
+  condition:
+    - condition: time   
+      after: '07:00'    
+      before: '22:00'
+  action:
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Rain Sensor'
+        message: 'Rain detected: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+
+- alias: 'Rain: Stopped Rain detected by water sensor'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.water_leak_sensor_158d00021371e5
+    from: 'on'
+    to: 'off'
+  condition:
+    - condition: time   
+      after: '07:00'    
+      before: '22:00'
+  action:
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Rain Sensor'
+        message: 'It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
