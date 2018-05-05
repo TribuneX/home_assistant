@@ -32,7 +32,7 @@ map:
 influxdb:
   host: !secret influxdb_ip
   username: homeassistant
-  password: influxdb_password
+  password: !secret influxdb_password
   max_retries: 10
   include:
     domains:
