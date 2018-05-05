@@ -33,9 +33,6 @@
           {% endif %}
     # - service: homeassistant.turn_on
     #   entity_id: group.christmas
-    - service: light.turn_on
-      data:
-        entity_id: light.eingang
 
 # Turn on light at Sofa if ATV is paused   
 - alias: 'Lights: Dim lights when AppleTV is played'
