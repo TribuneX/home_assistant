@@ -11,7 +11,8 @@
 This repository contains the configuration for my [Home Assistant](https://www.home-assistant.io) (HA) setup. More information on my HA setup is available on my [blog](https://sascha-bleidner.de). Feel free to reach out to me also via [Twitter](https://twitter.com/sbleidner) or open an issue if you have feedback.
 
 ## Host
-### [ASUS Tinkerboard](https://www.asus.com/Single-Board-Computer/Tinker-Board/)
+### [ASUS Tinker Board](https://www.asus.com/Single-Board-Computer/Tinker-Board/)
+[Tinker Board](https://raw.githubusercontent.com/TribuneX/home_assistant/master/images/tinkerboard.jpg)
 I moved from a Raspberry Pi3 to an ASUS Tinker Board, which has 2GB of RAM and Gigabit Ethernet. It has the same form factor, therefore cases can be reused. 
 
 ### Docker
