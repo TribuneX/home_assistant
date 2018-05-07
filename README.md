@@ -11,9 +11,11 @@
 This repository contains the configuration for my [Home Assistant](https://www.home-assistant.io) (HA) setup. More information on my HA setup is available on my [blog](https://sascha-bleidner.de). Feel free to reach out to me also via [Twitter](https://twitter.com/sbleidner) or open an issue if you have feedback.
 
 ## Host
-### [ASUS Tinker Board](https://www.asus.com/Single-Board-Computer/Tinker-Board/)
-[Tinker Board](https://raw.githubusercontent.com/TribuneX/home_assistant/master/images/tinkerboard.jpg)
-I moved from a Raspberry Pi3 to an ASUS Tinker Board, which has 2GB of RAM and Gigabit Ethernet. It has the same form factor, therefore cases can be reused. 
+### ASUS Tinker Board
+![Tinker Board](/images/tinkerboard.png)
+
+I moved from a Raspberry Pi3 to an [ASUS Tinker Board](https://www.asus.com/Single-Board-Computer/Tinker-Board/), which has 2GB of RAM and Gigabit Ethernet. It has the same form factor, therefore cases can be reused. 
+
 
 ### Docker
 I am running HA as a [Docker Container](https://hub.docker.com/r/homeassistant/raspberrypi3-homeassistant/) with [DietPi](https://dietpi.com) as Host OS. Docker makes it easy to upgrade to the latest HA release, while not having to worry about dependencies and python verions.  
@@ -27,6 +29,7 @@ While HA supports over 1000 components, I am currently using a small number of h
 * [Broadlink Mini3](https://www.aliexpress.com/item/Broadlink-RM-Mini-3-Black-Bean-Smart-Home-Automation-Universal-Wifi-Switch-Remote-WiFi-IR-Controller/32828421072.html)
 * [GhostyuBeacon](https://www.aliexpress.com/item/Free-shipping-1pcs-lot-GhostyuBeacon-IBeacon-Base-Station-Low-Power-Consumption-Bluetooth-4-0-Module-CC2541/32561819600.html) for presence detection
 * [Sonoff S20](https://www.aliexpress.com/item/Sonoff-S20-EU-UK-US-Plug-Wifi-Power-Socket-Switch-Wireless-Remote-Control-Socket-Outlet-Timing/32823895149.html) flashed with [KamSonoff Firmware](https://github.com/KmanOz/KmanSonoff)
+* [AVM Fritz!Box 7580](https://www.amazon.de/AVM-Router-Modem-MU-MIMO-DECT-Basis/dp/B01KKJFJ92/ref=sr_1_1?ie=UTF8&qid=1525735204&sr=8-1&keywords=7580)
 
 #### Xiaomi Smart Home Hardware
 I can recommend the Xiaomi Smart Home hardware due to its high build quality and affordable prices. The hardware from Aqara is compatible with the Xiaomi Gateway. Compared to the Xiaomi hardware, the Aqara motion sensor has an additional light sensor and the Aqara temperature sensor has an additional pressure sensor. The Xiaomi hardware works isolated from the Xiaomi cloud. I have the internet access blocked in my router for the Xiaomi gateway.
@@ -50,6 +53,6 @@ Before pushing my config to this repository, I am using HA running in a [local D
 * Mosquitto as a MQTT broker for owntracks and Sonoff
 
 ## Screenshots
-![Home Tab](https://raw.githubusercontent.com/TribuneX/home_assistant/master/images/Home_Assistant_tab_1.png)
-![Tab2](https://raw.githubusercontent.com/TribuneX/home_assistant/master/images/Home_Assistant_tab_2.png)
-![Tab3](https://raw.githubusercontent.com/TribuneX/home_assistant/master/images/Home_Assistant_tab_3.png)
+![Home Tab](/images/Home_Assistant_tab_1.png)
+![Tab2](/images/Home_Assistant_tab_2.png)
+![Tab3](/images/Home_Assistant_tab_3.png)
