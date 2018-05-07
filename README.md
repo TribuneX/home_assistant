@@ -52,6 +52,11 @@ Before pushing my config to this repository, I am using HA running in a [local D
 * Grafana to visualize the collected data from InfluxDB
 * Mosquitto as a MQTT broker for owntracks and Sonoff
 
+## HomeKit
+![HomeKit](/images/homekit.png)
+
+Beside the HA web UI, I am using Apple's HomeKit to control my devices via Siri. Since the release 0.64 HA has a native [HomeKit component](https://www.home-assistant.io/components/homekit/). It works more reliable than [HomeBridge](https://github.com/nfarina/homebridge).
+
 ## Screenshots
 ![Home Tab](/images/Home_Assistant_tab_1.png)
 ![Tab2](/images/Home_Assistant_tab_2.png)
