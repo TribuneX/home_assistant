@@ -4,29 +4,15 @@
 living_room:
   name: 'Living Room'
   entities:
-    - sensor.netatmo_wohnzimmer_co2_2
-    - sensor.netatmo_wohnzimmer_pressure_2
-    - sensor.netatmo_wohnzimmer_noise_2
     - light.living_room_lights
     - switch.appletv_mode
     - switch.sonos_mode
 bed_room:
   name: 'Bedroom'
   entities:
-    - sensor.netatmo_schlafzimmer_co2_2
     - light.bedroom_lights
     - switch.tv_2
     - switch.ventilator
-bath_room:
-  name: 'Bath'
-  entities:
-    - sensor.humidity_158d00022c9982
-    - sensor.pressure_158d00022c9982
-kitchen:
-  name: 'Kitchen'
-  entities:
-    - sensor.humidity_158d00022b6674
-    - sensor.pressure_158d00022b6674
 outdoor:
   name: 'Outdoor'
   entities:
@@ -135,8 +121,6 @@ battery_levels:
     - sensor.eingang
     - sensor.bad
     - sensor.kueche
-    - sensor.netatmo_schlafzimmer_battery
-    - sensor.netatmo_outdoor_battery
     - sensor.door1_battery
     - sensor.door2_battery
     - sensor.motion1_battery
@@ -203,19 +187,26 @@ not_necessary_devices:
 temperature:
   name: 'Temperature'
   entities:
-    - sensor.netatmo_outdoor_temperature
-    - sensor.netatmo_wohnzimmer_temperature_2
-    - sensor.netatmo_schlafzimmer_temperature_2
+    - sensor.dark_sky_temperature
     - sensor.temperature_158d00022b6674
     - sensor.temperature_158d00022c9982
+    - sensor.temperature_158d00022cb37f
+    - sensor.temperature_158d00022cb65c
 humidity:
   name: 'Humidity'
   entities:
-    - sensor.netatmo_wohnzimmer_humidity_2
-    - sensor.netatmo_schlafzimmer_humidity_2
+    - sensor.dark_sky_humidity
     - sensor.humidity_158d00022b6674
     - sensor.humidity_158d00022c9982
-    - sensor.netatmo_outdoor_humidity
+    - sensor.humidity_158d00022cb37f
+    - sensor.humidity_158d00022cb65c
+pressure:
+  name: 'Pressure'
+  entities:
+    - sensor.pressure_158d00022b6674
+    - sensor.pressure_158d00022c9982
+    - sensor.pressure_158d00022cb37f
+    - sensor.pressure_158d00022cb65c
 
 # Tabs
 default_view:
@@ -233,6 +224,7 @@ default_view:
     - group.robot
     - group.personen
     - group.humidity
+    - group.pressure
 media:
   name: 'Media'
   view: yes

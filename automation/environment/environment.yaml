@@ -1,15 +1,3 @@
-- alias: 'Environment: Noise Livingroom'
-  initial_state: 'on'
-  trigger:
-    platform: numeric_state
-    entity_id: sensor.netatmo_wohnzimmer_noise_2
-    above: 59
-  action:
-    - service: notify.ios_iphones_app
-      data:
-        title: 'Rooms'
-        message: 'It is quite noise. Currently: {{states.sensor.netatmo_wohnzimmer_noise_2.state}}db'
-
 - alias: 'Weather: Weather Report'
   initial_state: 'on'
   trigger:
@@ -23,7 +11,7 @@
     - service: notify.ios_iphones_app
       data:
         title: 'Weather Report for today'
-        message: 'Current: {{states.sensor.netatmo_outdoor_temperature.state}}°C 
+        message: 'Current: {{states.sensor.dark_sky_temperature.state}}°C 
         H/L: {{states.sensor.dark_sky_daily_high_temperature.state}}°C/{{states.sensor.dark_sky_daily_low_temperature.state}}°C 
         {{states.sensor.dark_sky_hourly_summary.state}}'    
 

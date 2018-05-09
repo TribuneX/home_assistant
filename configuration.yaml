@@ -105,12 +105,6 @@ media_player:
       - !secret sonos_ip
       - !secret sonos2_ip
 
-netatmo:
-  api_key: !secret netatmo_api_key
-  secret_key: !secret netatmo_secret_key
-  username: !secret netatmo_username
-  password: !secret netatmo_password
-
 input_number:
   sonos_speaker:
     name: Volume

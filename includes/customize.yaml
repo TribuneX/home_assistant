@@ -99,8 +99,6 @@
   sensor.tradfri:
     icon: mdi:lightbulb-on
     friendly_name: Tradfri Gateway
-  sensor.netatmo:
-    icon: mdi:weather-hail
   sensor.speedtest_upload:
     icon: mdi:speedometer
     friendly_name: Upload
@@ -121,26 +119,6 @@
     icon: mdi:speaker-wireless
   sensor.mein_schiff_price:
     icon: mdi:ferry
-  sensor.netatmo_schlafzimmer_temperature_2:
-    friendly_name: Bedroom
-  sensor.netatmo_schlafzimmer_co2_2:
-    friendly_name: Bedroom
-  sensor.netatmo_schlafzimmer_humidity_2:
-    friendly_name: Bedroom
-  sensor.netatmo_wohnzimmer_temperature_2:
-    friendly_name: Livingroom
-  sensor.netatmo_wohnzimmer_co2_2:
-    friendly_name: Livingroom
-  sensor.netatmo_wohnzimmer_humidity_2:
-    friendly_name: Livingroom
-  sensor.netatmo_wohnzimmer_pressure_2:
-    friendly_name: Livingroom
-  sensor.netatmo_wohnzimmer_noise_2:
-    friendly_name: Livingroom
-  sensor.netatmo_outdoor_temperature:
-    friendly_name: Outdoor
-  sensor.netatmo_outdoor_humidity:
-    friendly_name: Outdoor
   sensor.dark_sky_daily_high_temperature:
     friendly_name: High Outdoor
   sensor.dark_sky_daily_low_temperature:
@@ -154,6 +132,8 @@
     icon: mdi:router-wireless
   sensor.dark_outside:
     icon: mdi:weather-night
+  sensor.dark_sky_temperature:
+    friendly_name: Outdoor
 
   # Xiaomi Temp Sensors
   sensor.pressure_158d00022c9982:
@@ -163,11 +143,23 @@
   sensor.temperature_158d00022c9982:
     friendly_name: Bath
   sensor.pressure_158d00022b6674:
-    friendly_name: Kitchen
+    friendly_name: Office
   sensor.humidity_158d00022b6674:
-    friendly_name: Kitchen
+    friendly_name: Office
   sensor.temperature_158d00022b6674:
-    friendly_name: Kitchen
+    friendly_name: Office
+  sensor.pressure_158d00022cb37f:
+    friendly_name: Bedroom
+  sensor.humidity_158d00022cb37f:
+    friendly_name: Bedroom
+  sensor.temperature_158d00022cb37f:
+    friendly_name: Bedroom
+  sensor.pressure_158d00022cb65c:
+    friendly_name: Livingroom
+  sensor.humidity_158d00022cb65c:
+    friendly_name: Livingroom
+  sensor.temperature_158d00022cb65c:
+    friendly_name: Livingroom
 
   # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
   sensor.epson_ink_level_black:
