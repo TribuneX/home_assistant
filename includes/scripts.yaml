@@ -36,16 +36,10 @@ init_hass:
       data:
         entity_id: input_select.log_level
         option: 'fatal'
-    #- service: script.enable_beacon 
 
-# Turns lights on and off after sunset
 turn_on_vacation_lights:
   alias: Vacation Light Mode
   sequence:
-    # wait an hour after sunset
-    - delay:
-        hours: 1
-    # turn lights on for 2 hours after sunset
     - service: notify.ios_iphones_app
       data:
         title: 'Vacation mode'
@@ -53,10 +47,14 @@ turn_on_vacation_lights:
     - service: light.turn_on
       entity_id: light.fernseher
     - delay:
-        hours: 2
-    # turn lights off
+        hours: 1
     - service: light.turn_off
       entity_id: light.fernseher
+    - service: script.turn_on_bedroom_dimmed_lights
+    - delay:
+        minutes: 40
+    - service: light.turn_off
+      entity_id: light.bedroom_lights
 
 turn_off_tv_livingroom:
   sequence:

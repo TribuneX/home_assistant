@@ -1,7 +1,6 @@
 # Vacation Mode 
 # Inspired by https://github.com/ronmarco/home-assistant-config/blob/master/yaml_automation/status-vacation.yaml
 
-# Turn vacation mode on automatically
 - alias: 'Vacation: Turn on vacation mode when nobody is home for more than 24 hours'
   initial_state: 'on'
   trigger:
@@ -10,7 +9,7 @@
       from: 'home'
       to: 'not_home'
       for:
-        hours: 24
+        hours: 16
         minutes: 0
         seconds: 0
   action:
@@ -21,7 +20,6 @@
         title: 'Vacation mode'
         message: 'I did not see anybody within the last 24 hours. I will switch on the vacation mode'
 
-# Turn vacation mode off automatically
 - alias: 'Vacation: Turn vacation mode off when home'
   initial_state: 'on'
   trigger:
@@ -41,7 +39,6 @@
         title: 'Vacation mode'
         message: 'Welcome back! I switched off the vacation mode'
 
-# Turn on lights when vacation mode active
 - alias: 'Vacation: Turn on vacation lights at sunset when vacation mode on'
   initial_state: 'on'
   trigger:
