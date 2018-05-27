@@ -12,7 +12,7 @@ bed_room:
   entities:
     - light.bedroom_lights
     - switch.tv_2
-    - switch.ventilator
+    - switch.fan
 outdoor:
   name: 'Outdoor'
   entities:
@@ -183,7 +183,7 @@ not_necessary_devices:
     - switch.speaker_1
     - switch.tv
     - switch.tv_2
-    - switch.ventilator
+    - switch.fan
 temperature:
   name: 'Temperature'
   entities:

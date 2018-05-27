@@ -231,7 +231,7 @@ turn_off_fan_after_delay:
     - delay:
         hours: 2
     - service: switch.turn_off
-      entity_id: switch.ventilator 
+      entity_id: switch.fan 
 
 turn_off_all:
   sequence:
