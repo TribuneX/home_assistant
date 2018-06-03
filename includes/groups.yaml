@@ -224,7 +224,6 @@ default_view:
     - group.robot
     - group.personen
     - group.humidity
-    - group.pressure
 media:
   name: 'Media'
   view: yes
