@@ -27,18 +27,17 @@
       data_template:
         title: 'Plants'
         message: >
-          'Please water Plant '
           {% if is_state('plant.bonsai', 'problem') %}
-            'Bonsai! Moisture: {{states.sensor.bonsai_moisture.state}}% | Conductivity: {{states.sensor.bonsai_conductivity.state}}'
+            'Please water Plant Bonsai! Moisture: {{states.sensor.bonsai_moisture.state}}% | Conductivity: {{states.sensor.bonsai_conductivity.state}}'
           {% else %}
             {% if is_state('plant.palm', 'problem') %}
-              'Palm! Moisture: {{states.sensor.palme_moisture.state}}% | Conductivity: {{states.sensor.palme_conductivity.state}}'
+              'Please water Plant Palm! Moisture: {{states.sensor.palme_moisture.state}}% | Conductivity: {{states.sensor.palme_conductivity.state}}'
             {% else %}
               {% if is_state('plant.palm_small', 'problem') %}
-                'Palm next to the computer! Moisture: {{states.sensor.palmek_moisture.state}}% | Conductivity: {{states.sensor.palmek_conductivity.state}}'
+                'Please water Plant Palm next to the computer! Moisture: {{states.sensor.palmek_moisture.state}}% | Conductivity: {{states.sensor.palmek_conductivity.state}}'
               {% else %}
                 {% if is_state('plant.bad', 'problem') %}
-                  'in the Bathroom! Moisture: {{states.sensor.bad_moisture.state}}% | Conductivity: {{states.sensor.bad_conductivity.state}}'
+                  'Please water Plant Bathroom! Moisture: {{states.sensor.bad_moisture.state}}% | Conductivity: {{states.sensor.bad_conductivity.state}}'
                 {% endif %}
               {% endif %}
             {% endif %}
