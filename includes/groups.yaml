@@ -7,6 +7,7 @@ living_room:
     - light.living_room_lights
     - switch.appletv_mode
     - switch.sonos_mode
+    - sensor.illumination_158d0001ff3f0a
 bed_room:
   name: 'Bedroom'
   entities:

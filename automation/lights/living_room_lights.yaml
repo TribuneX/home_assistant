@@ -161,3 +161,21 @@
         state: 'on'
   action:
     - service: script.turn_on_livingroom_default_lights
+
+- alias: 'Lights: Notify if there is no motion in the living room'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001ff3f0a
+    from: 'on'
+    to: 'off'
+    for: 
+      minutes: 5
+  condition:
+    - condition: state
+      entity_id: group.personen
+      state: 'home'
+  action:
+    - service: notify.ios_iphones_app   
+      data_template:   
+        title: 'Motion'    
+        message: 'No motion in living room'
