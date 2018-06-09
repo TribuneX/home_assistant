@@ -30,7 +30,7 @@
     - service: homeassistant.turn_off
       entity_id: group.all_speaker
 
-- alias: 'Startup: Turn off TV if unused at startup'
+- alias: 'Startup: Turn off TV 2 at startup'
   initial_state: 'on'
   trigger:
     platform: homeassistant
@@ -41,11 +41,9 @@
       - condition: state
         entity_id: group.personen
         state: 'home'
-      - condition: state
-        entity_id: media_player.wohnzimmer
-        state: 'idle'
   action:
-    - service: script.turn_off_tv_livingroom   
+    - service: switch.turn_off
+      entity_id: switch.tv_2   
 
 - alias: 'Startup: Startup nobody is home'
   initial_state: 'on'
