@@ -13,6 +13,8 @@ prepare_restart:
   sequence:
     - service: switch.turn_on
       entity_id: switch.tv 
+    - service: switch.turn_on
+      entity_id: switch.tv_2
     - service: homeassistant.turn_on
       entity_id: group.all_speaker
 
