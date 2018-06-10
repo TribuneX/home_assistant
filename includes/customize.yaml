@@ -187,9 +187,9 @@
   binary_sensor.water_leak_sensor_158d00021371e5:
     friendly_name: 'Rain'
   binary_sensor.motion_sensor_158d0001ff3f0a:
-    friendly_name: 'Living Room'
+    friendly_name: 'Office'
   sensor.illumination_158d0001ff3f0a:
-    friendly_name: 'Living Room'
+    friendly_name: 'Office'
 
 # Device Tracker
   device_tracker.user_2_iphone:
