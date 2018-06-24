@@ -17,6 +17,8 @@ homeassistant:
   customize: !include includes/customize.yaml
   packages: !include_dir_named packages
 
+config:
+
 logger:
   default: error
 
@@ -100,8 +102,9 @@ media_player:
     login_id: !secret atv_login
     credentials: !secret atv2_credentials
 
-  - platform: sonos
-    hosts: 
+sonos:
+  media_player:
+    hosts:
       - !secret sonos_ip
       - !secret sonos2_ip
 
