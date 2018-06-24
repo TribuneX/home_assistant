@@ -11,7 +11,7 @@
   action:
     - service: script.turn_on_office_default_lights
 
-- alias: 'Lights: Turn off light in bathroom if there is no motion for 3 minutes'
+- alias: 'Lights: Turn off light in office lights if there is no motion for 3 minutes'
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001ff3f0a
