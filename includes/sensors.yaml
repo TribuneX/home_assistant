@@ -10,8 +10,8 @@
     - temperature
     - wind_speed
     - humidity
-    - temperature_min
-    - temperature_max
+    - temperature_high
+    - temperature_low
     - hourly_summary
     - precip_type
     - precip_intensity
