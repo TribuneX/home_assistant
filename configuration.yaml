@@ -125,6 +125,12 @@ xiaomi_aqara:
   gateways:
     - key: !secret aqara_token
 
+fan:
+  - platform: xiaomi_miio_fan
+    name: Fan
+    host: 192.168.178.28
+    token: !secret fan_token
+
 vacuum:
   platform: xiaomi_miio 
   name: 'Vacuum Cleaner'
