@@ -26,3 +26,4 @@ filter:
       - sensor.luftdaten_pm25
       - binary_sensor.water_leak_sensor_158d00021371e5
       - switch.vacuum_mode
+      - climate.dining_room
