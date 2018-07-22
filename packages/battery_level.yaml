@@ -68,7 +68,7 @@ automation:
   condition:
     - condition: template
       value_template: >
-        {%- set threshold_high = 30 -%}
+        {%- set threshold_high = 20 -%}
         {%- set threshold_low = -1 -%}
         {% macro battery_level() %}
         {% set domains = ['light', 'switch', 'sensor', 'zwave', 'lock', 'device_tracker'] %}
@@ -88,7 +88,7 @@ automation:
         title: "Low Battery levels"
         notification_id: low-battery-alert
         message: >
-          {%- set threshold_high = 30 -%}
+          {%- set threshold_high = 20 -%}
           {%- set threshold_low = -1 -%}
           {% macro battery_level(domain) %}
           {%- for item in states[domain] if (item.attributes['battery_level'] is defined or ("battery" in item.name | lower and not "voltage" in item.name | lower and not "runtime" in item.name | lower )) -%}
@@ -110,7 +110,7 @@ automation:
           - color: '#52c0f2'
             title: "These devices have low battery levels"
             text: >
-              {%- set threshold_high = 30 -%}
+              {%- set threshold_high = 20 -%}
               {%- set threshold_low = -1 -%}
               {% macro battery_level(domain) %}
               {%- for item in states[domain] if (item.attributes['battery_level'] is defined or ("battery" in item.name | lower and not "voltage" in item.name | lower and not "runtime" in item.name | lower )) -%}
@@ -133,7 +133,7 @@ automation:
   condition:
     - condition: template
       value_template: >
-        {%- set threshold_high = 40 -%}
+        {%- set threshold_high = 20 -%}
         {%- set threshold_low = -1 -%}
         {% macro battery_level() %}
         {% set domains = ['light', 'switch', 'sensor', 'zwave', 'lock', 'device_tracker'] %}
