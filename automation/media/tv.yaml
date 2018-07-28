@@ -68,6 +68,7 @@
       entity_id: media_player.wohnzimmer
 
 - alias: 'TV: Toggle TV2 in bedroom on long button press'
+  initial_state: 'on'
   trigger:
     platform: event
     event_type: click

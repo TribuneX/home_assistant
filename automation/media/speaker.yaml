@@ -175,6 +175,7 @@
     - service: script.pause_sonos
 
 - alias: 'Speaker: Select sonos volume with cube rotation'
+  initial_state: 'on'
   trigger:
     platform: event
     event_type: cube_action
@@ -197,6 +198,7 @@
           {% endif %}
 
 - alias: 'Speaker: Turn on radio with cube rotation'
+  initial_state: 'on'
   trigger:
     platform: event
     event_type: cube_action
