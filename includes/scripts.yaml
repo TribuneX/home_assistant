@@ -38,6 +38,10 @@ init_hass:
       data:
         entity_id: input_select.log_level
         option: 'fatal'
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.tv_mode
+        option: AppleTV
 
 turn_on_vacation_lights:
   alias: Vacation Light Mode
