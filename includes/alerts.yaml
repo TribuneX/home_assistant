@@ -8,4 +8,4 @@ garage_door:
   can_acknowledge: True
   skip_first: True
   notifiers:
-    - ios_iphones_app
+    - jarvis
