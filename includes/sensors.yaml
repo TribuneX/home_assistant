@@ -226,6 +226,15 @@
           {% else %}
           off
           {% endif %}
+      
+      robot_dust_bin:
+        friendly_name: 'Robot dust bin'
+        value_template: >
+          {% if ( (is_state('input_boolean.cleaned_today', 'on')) and (is_state('group.user_1', 'home')) ) %} 
+          full
+          {% else %}
+          empty
+          {% endif %}
 
 - platform: command_line
   name: Epson Ink Level Black

@@ -1,8 +1,19 @@
-garage_door:
+bonsai_water_level:
   name: 'Bonsai water level is low'
   done_message: 'Bonsai feels well again'
   entity_id: sensor.bonsai_water_level_low
   state: 'on'
+  repeat:
+    - 10
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - jarvis
+
+robot_dust_bin:
+  name: 'Please clean the dust bin.'
+  entity_id: sensor.robot_dust_bin
+  state: 'full'
   repeat:
     - 10
   can_acknowledge: True
