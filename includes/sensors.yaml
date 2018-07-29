@@ -218,6 +218,15 @@
           off
           {% endif %}
 
+      bonsai_water_level_low:
+        friendly_name: 'Bonsai Water Levels'
+        value_template: >
+          {% if ( (is_state('plant.bonsai', 'problem')) and (is_state('group.user_1', 'home')) ) %} 
+          on
+          {% else %}
+          off
+          {% endif %}
+
 - platform: command_line
   name: Epson Ink Level Black
   command: /usr/bin/curl -s -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML  | awk -F"'" '/Ink_K.PNG/ && $6+0 == $6 { printf "%.0f\n", $6 / 50 * 100 }'

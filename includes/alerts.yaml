@@ -1,0 +1,11 @@
+garage_door:
+  name: 'Bonsai water level is low'
+  done_message: 'Bonsai feels well again'
+  entity_id: sensor.bonsai_water_level_low
+  state: 'on'
+  repeat:
+    - 10
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - ios_iphones_app
