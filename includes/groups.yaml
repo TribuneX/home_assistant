@@ -219,7 +219,6 @@ default_view:
     - group.bed_room
     - group.office
     - group.temperature
-    - group.outdoor
     - group.doors
     - group.states
     - group.robot
@@ -276,3 +275,4 @@ device_status:
     - group.printer
     - group.prices
     - group.battery_levels
+    - group.outdoor
