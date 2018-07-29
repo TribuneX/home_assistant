@@ -1,0 +1,43 @@
+title: Frankfurt
+
+views:
+  - title: Home
+    icon: mdi:home
+    # Optional unique id for direct access /lovelace/${id}
+    id: home
+    # The cards to show on this view.
+    cards:
+        # The filter card will filter entities for their state
+      - type: entity-filter
+        entities:
+          - group.user_1
+          - group.user_2
+        state_filter:
+          - 'home'
+        card:
+          type: glance
+          title: People that are home
+
+      - type: picture-glance
+        title: Living room
+        entities:
+          - light.living_room_lights
+          - switch.appletv_mode
+          - switch.sonos_mode
+          - sensor.temperature_158d00022cb65c
+          - sensor.humidity_158d00022cb65c
+          - sensor.pressure_158d00022cb65c
+        #image: /local/living_room.png
+
+  - title: Plants
+    icon: mdi:barley
+    cards:
+      - type: plant-status
+        entity: plant.bonsai
+      - type: plant-status
+        entity: plant.palm
+      - type: plant-status
+        entity: plant.palm_small
+      - type: plant-status
+        entity: plant.bad
+        
