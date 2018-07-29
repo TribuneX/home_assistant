@@ -43,6 +43,44 @@ init_hass:
         entity_id: input_select.tv_mode
         option: AppleTV
 
+init_tv:
+  alias: 'Init TV'
+  sequence:
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: media_player.wohnzimmer
+        state: 'paused'
+      - condition: state
+        entity_id: media_player.wohnzimmer
+        state: 'idle'
+    - service: script.tv_mode_off
+    - service: switch.turn_off
+      entity_id: switch.tv
+
+init_tv_2:
+  alias: 'Init TV2'
+  sequence:
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: media_player.schlafzimmer
+        state: 'paused'
+      - condition: state
+        entity_id: media_player.schlafzimmer
+        state: 'idle'
+    - service: switch.turn_off
+      entity_id: switch.tv_2
+
+init_sonos:
+  alias: 'Init Sonos speaker'
+  sequence:
+    - condition: state
+      entity_id: media_player.living_room
+      state: 'paused'
+    - service: homeassistant.turn_off
+      entity_id: group.all_speaker
+
 turn_on_vacation_lights:
   alias: Vacation Light Mode
   sequence:

@@ -9,42 +9,12 @@
       data:
         title: 'System'
         message: 'Home Assistant started'
-
-- alias: 'Startup: Turn of speaker if unused at startup'
-  initial_state: 'on'
-  trigger:
-    platform: homeassistant
-    event: start
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: group.personen
-        state: 'home'
-      - condition: state
-        entity_id: media_player.living_room
-        state: 'paused'
-  action:
     - delay:
-        seconds: 30
-    - service: homeassistant.turn_off
-      entity_id: group.all_speaker
-
-- alias: 'Startup: Turn off TV 2 at startup'
-  initial_state: 'on'
-  trigger:
-    platform: homeassistant
-    event: start
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: group.personen
-        state: 'home'
-  action:
-    - service: switch.turn_off
-      entity_id: switch.tv_2   
-
+        minutes: 1
+    - service: script.init_tv
+    - service: script.init_tv_2
+    - service: script.init_sonos
+    
 - alias: 'Startup: Startup nobody is home'
   initial_state: 'on'
   trigger:

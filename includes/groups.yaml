@@ -99,6 +99,7 @@ devices:
   name: 'Devices'
   entities:
     - switch.tv
+    - switch.tv_2
     - switch.speaker_1
     - switch.speaker_2
     - sensor.fritz_netmonitor
