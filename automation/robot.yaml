@@ -86,22 +86,3 @@
     - service: input_boolean.turn_off
       data:
         entity_id: input_boolean.cleaned_today
-
-- alias: 'Robot: Robot: Clean dust bin' 
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: device_tracker.iphones
-    from: 'not_home'
-    to: 'home'
-    for:
-      minutes: 10
-  condition:
-    - condition: state
-      entity_id: input_boolean.cleaned_today
-      state: 'on'
-  action:
-    - service: notify.ios_iphones_app
-      data:
-        title: 'Robot'
-        message: 'Please clean the dust bin.'

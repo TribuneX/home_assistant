@@ -8,7 +8,7 @@ bonsai_water_level:
   can_acknowledge: True
   skip_first: True
   notifiers:
-    - jarvis
+    - ios_iphones_app
 
 robot_dust_bin:
   name: 'Please clean the dust bin.'
@@ -19,4 +19,4 @@ robot_dust_bin:
   can_acknowledge: True
   skip_first: True
   notifiers:
-    - jarvis
+    - ios_iphones_app
