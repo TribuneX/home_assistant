@@ -30,6 +30,7 @@ While HA supports over 1000 components, I am currently using a small number of h
 * [GhostyuBeacon](https://www.aliexpress.com/item/Free-shipping-1pcs-lot-GhostyuBeacon-IBeacon-Base-Station-Low-Power-Consumption-Bluetooth-4-0-Module-CC2541/32561819600.html) for presence detection
 * [Sonoff S20](https://www.aliexpress.com/item/Sonoff-S20-EU-UK-US-Plug-Wifi-Power-Socket-Switch-Wireless-Remote-Control-Socket-Outlet-Timing/32823895149.html) flashed with [KamSonoff Firmware](https://github.com/KmanOz/KmanSonoff)
 * [AVM Fritz!Box 7580](https://www.amazon.de/AVM-Router-Modem-MU-MIMO-DECT-Basis/dp/B01KKJFJ92/ref=sr_1_1?ie=UTF8&qid=1525735204&sr=8-1&keywords=7580)
+* [COMET DECT Thermostats](https://www.eurotronic.org/en/products/comet-dect.html)
 
 #### Xiaomi Smart Home Hardware
 I can recommend the Xiaomi Smart Home hardware due to its high build quality and affordable prices. The hardware from Aqara is compatible with the Xiaomi Gateway. Compared to the Xiaomi hardware, the Aqara motion sensor has an additional light sensor and the Aqara temperature sensor has an additional pressure sensor. The Xiaomi hardware works isolated from the Xiaomi cloud. I have the internet access blocked in my router for the Xiaomi gateway.
