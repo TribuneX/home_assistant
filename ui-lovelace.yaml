@@ -1,0 +1,187 @@
+title: Frankfurt
+
+views:
+  - title: Home
+    icon: mdi:home
+    id: home
+    cards:
+      - type: entity-filter
+        entities:
+          - group.user_1
+          - group.user_2
+        state_filter:
+          - 'home'
+        card:
+          type: glance
+          title: At Home
+      
+      - type: entity-filter
+        entities:
+          - binary_sensor.door_window_sensor_158d0001b7700c
+          - binary_sensor.door_window_sensor_158d0001d8253a
+        state_filter:
+          - 'on'
+        card:
+          type: glance
+          title: Open Doors
+        show_empty: false
+
+      - type: entities
+        title: Living Room
+        entities:
+          - light.living_room_lights
+          - switch.appletv_mode
+          - switch.sonos_mode
+          - sensor.temperature_158d00022cb65c
+          - sensor.humidity_158d00022cb65c
+      
+      - type: entities
+        title: Bedroom
+        entities:
+          - light.bedroom_lights
+          - switch.tv_2
+          - sensor.temperature_158d00022cb37f
+          - sensor.humidity_158d00022cb37f
+      
+      - type: entities
+        title: Kitchen
+        entities:
+          - light.kitchen_lights
+      
+      - type: entities
+        title: Bath
+        entities:
+          - light.bath
+      
+      - type: entities
+        title: Office
+        entities:
+          - light.arbeitszimmer
+          - switch.server
+          - sensor.cpu_temperature
+      
+      - type: entities
+        title: Vacuum Cleaner
+        entities:
+          - vacuum.vacuum_cleaner
+          - input_boolean.cleaned_today
+    
+## Tab Plant
+  - title: Plants
+    id: plant
+    icon: mdi:barley
+    cards:
+      - type: plant-status
+        entity: plant.bonsai
+      - type: plant-status
+        entity: plant.palm
+      - type: plant-status
+        entity: plant.palm_small
+      - type: plant-status
+        entity: plant.bad
+
+## Tab Devices
+  - title: Devices
+    id: devices
+    icon: mdi:server
+    cards:
+      - type: entity-filter
+        card:
+          type: entities
+          title: Devices
+        entities:
+          - sensor.fritz_netmonitor
+          - sensor.robo
+          - sensor.epson
+          - sensor.tradfri
+          - sensor.plex
+          - sensor.appletv_livingroom
+          - sensor.broadlink
+          - sensor.switch
+          - sensor.server
+          - sensor.aqara_gateway
+          - sensor.sonoff_tv
+          - sensor.sonoff_tv_2 
+          - sensor.sonoff_speaker_1
+          - sensor.sonoff_speaker_2
+        state_filter:
+          - 'off'
+        show_empty: false
+
+      - title: Media
+        id: media
+        type: entities
+        entities:
+          - switch.tv
+          - switch.tv_2
+          - switch.speaker_1
+          - switch.speaker_2
+
+      - type: entity-filter
+        card:
+          type: entities
+          title: Ping
+        entities:
+          - binary_sensor.ping_eltern
+          - binary_sensor.ping_sonja
+          - binary_sensor.ping_gote
+          - binary_sensor.ping_dreieich
+          - binary_sensor.ping_schwarzwald
+          - binary_sensor.ping_polanetzki
+          - binary_sensor.ping_sebastian
+          - binary_sensor.ping_uwe
+          - binary_sensor.ping_vhv
+          - binary_sensor.ping_wsw
+          - binary_sensor.ping_anny
+          - binary_sensor.ping_bender
+        state_filter:
+          - 'off'
+        show_empty: false
+    
+  
+## Tab Status
+  - title: Status
+    id: status
+    icon: mdi:oil-temperature
+    cards:
+      - type: entities
+        title: Printer
+        entities:
+          - sensor.epson
+          - sensor.epson_ink_level_black
+          - sensor.epson_ink_level_magenta
+          - sensor.epson_ink_level_yellow
+          - sensor.epson_ink_level_cyan 
+      - type: entities
+        title: Battery Level
+        entities:
+          - sensor.eingang
+          - sensor.bad
+          - sensor.kueche
+          - sensor.door1_battery
+          - sensor.door2_battery
+          - sensor.motion1_battery
+          - sensor.motion2_battery
+          - sensor.cube_battery
+          - sensor.switch1_battery
+
+## Tab Settings
+  - title: Settings
+    id: settings
+    icon: mdi:settings
+    cards:
+      - type: entities
+        title: Settings
+        entities:
+          - script.restart_hass
+          - input_select.log_level
+          - input_select.tv_mode
+          - input_boolean.vacation_mode
+          - input_boolean.cleaned_today
+      - type: glance
+        title: Automations & Skripts
+        entities:
+          - group.all_automations
+          - group.all_scripts
+        show_state: false
+        
