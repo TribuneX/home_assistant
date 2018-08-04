@@ -86,6 +86,7 @@ pings:
     - binary_sensor.ping_vhv
     - binary_sensor.ping_wsw
     - binary_sensor.ping_anny
+    - binary_sensor.ping_bender
 settings:
   name: 'Settings'
   entities:

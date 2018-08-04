@@ -44,5 +44,9 @@
   host: anny.cbs-service.net
 
 - platform: ping
+  name: PING Bender
+  host: bender.cbs-service.net
+
+- platform: ping
   name: PING WSW
   host: 192.168.2.1
