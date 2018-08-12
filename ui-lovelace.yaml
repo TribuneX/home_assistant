@@ -19,12 +19,15 @@ views:
         entities:
           - binary_sensor.door_window_sensor_158d0001b7700c
           - binary_sensor.door_window_sensor_158d0001d8253a
+          - binary_sensor.door_window_sensor_158d000237c9d7
+          - binary_sensor.door_window_sensor_158d0002329e52
         state_filter:
           - 'on'
         card:
           type: glance
           title: Open Doors
         show_empty: false
+        show_state: false
 
       - type: entities
         title: Living Room
