@@ -30,15 +30,16 @@ CONF_MODEL = 'model'
 
 MODEL_FAN_V2 = 'zhimi.fan.v2'
 MODEL_FAN_V3 = 'zhimi.fan.v3'
+MODEL_FAN_SA1 = 'zhimi.fan.sa1'
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_HOST): cv.string,
     vol.Required(CONF_TOKEN): vol.All(cv.string, vol.Length(min=32, max=32)),
     vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
-    vol.Optional(CONF_MODEL): vol.In([MODEL_FAN_V2, MODEL_FAN_V3]),
+    vol.Optional(CONF_MODEL): vol.In([MODEL_FAN_V2, MODEL_FAN_V3, MODEL_FAN_SA1]),
 })
 
-REQUIREMENTS = ['python-miio>=0.4.0']
+REQUIREMENTS = ['python-miio>=0.4.1']
 
 ATTR_MODEL = 'model'
 ATTR_BRIGHTNESS = 'brightness'
@@ -79,7 +80,7 @@ AVAILABLE_ATTRIBUTES_FAN = {
     ATTR_LED_BRIGHTNESS: 'led_brightness',
     ATTR_USE_TIME: 'use_time',
     ATTR_BATTERY_CHARGE: 'battery_charge',
-    # FIXME: Improve python-miio here
+    # Will be fixed with the next release of python-miio
     #ATTR_BUTTON_PRESSED: 'button_pressed',
 
     # Additional properties of version 2
@@ -117,7 +118,6 @@ FEATURE_SET_LED_BRIGHTNESS = 8
 FEATURE_SET_OSCILLATION_ANGLE = 16
 FEATURE_SET_NATURAL_MODE = 32
 
-# FIXME: Align buzzer, child lock, led method (set_method(bool) vs. set_method_{on,off})
 FEATURE_FLAGS_GENERIC = (FEATURE_SET_BUZZER |
                          FEATURE_SET_CHILD_LOCK)
 
@@ -194,7 +194,7 @@ async def async_setup_platform(hass, config, async_add_devices,
         except DeviceException:
             raise PlatformNotReady
 
-    if model in [MODEL_FAN_V2, MODEL_FAN_V3]:
+    if model in [MODEL_FAN_V2, MODEL_FAN_V3, MODEL_FAN_SA1]:
         from miio import Fan
         fan = Fan(host, token, model=model)
         device = XiaomiFan(name, fan, model, unique_id)
