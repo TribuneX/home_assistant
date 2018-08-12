@@ -55,12 +55,16 @@ views:
         title: Bath
         entities:
           - light.bath
+          - sensor.temperature_158d00022c9982
+          - sensor.humidity_158d00022c9982
       
       - type: entities
         title: Office
         entities:
           - light.arbeitszimmer
           - switch.server
+          - sensor.temperature_158d00022b6674
+          - sensor.humidity_158d00022b6674
           - sensor.cpu_temperature
       
       - type: entities
