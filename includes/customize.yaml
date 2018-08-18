@@ -232,6 +232,9 @@
   script.restart_hass:
     icon: mdi:home-assistant
     friendly_name: Restart
+  script.prepare_restart:
+    icon: mdi:restart
+    friendly_name: Prepare Restart
   script.reboot_pi:
     icon: mdi:restart
     friendly_name: Reboot

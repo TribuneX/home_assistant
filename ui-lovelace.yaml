@@ -180,6 +180,7 @@ views:
       - type: entities
         title: Settings
         entities:
+          - script.prepare_restart
           - script.restart_hass
           - input_select.log_level
           - input_select.tv_mode
