@@ -164,7 +164,6 @@ views:
         entities:
           - sensor.eingang
           - sensor.bad
-          - sensor.kueche
           - sensor.door1_battery
           - sensor.door2_battery
           - sensor.motion1_battery
