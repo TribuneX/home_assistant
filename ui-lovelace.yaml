@@ -45,6 +45,7 @@ views:
           - switch.tv_2
           - sensor.temperature_158d00022cb37f
           - sensor.humidity_158d00022cb37f
+          - fan.fan
       
       - type: entities
         title: Kitchen

@@ -7,7 +7,6 @@ filter:
       - switch.server
       - switch.tv_mode
       - switch.tv_2
-      - switch.fan
       - binary_sensor.door_window_sensor_158d0001b7700c
       - binary_sensor.door_window_sensor_158d0001d8253a
       - binary_sensor.door_window_sensor_158d000237c9d7
@@ -29,3 +28,4 @@ filter:
       - binary_sensor.water_leak_sensor_158d00021371e5
       - switch.vacuum_mode
       - climate.dining_room
+      - fan.fan

@@ -32,7 +32,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: switch.fan
+    entity_id: fan.fan
     to: 'on'
   action: 
     - service: script.turn_off_fan_after_delay
@@ -41,7 +41,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: switch.fan
+    entity_id: fan.fan
     to: 'off'
   action: 
     - service: script.turn_off

@@ -35,7 +35,7 @@
   switch.speaker_2:
     friendly_name: Sonos2
     icon: mdi:speaker-wireless
-  switch.fan:
+  fan.fan:
     icon: mdi:fan
     assumed_state: false
   switch.vacuum_mode:
