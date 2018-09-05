@@ -17,6 +17,10 @@ homeassistant:
   customize: !include includes/customize.yaml
   packages: !include_dir_named packages
 
+  auth_providers:
+   - type: homeassistant
+   - type: legacy_api_password
+
 config:
 
 logger:
