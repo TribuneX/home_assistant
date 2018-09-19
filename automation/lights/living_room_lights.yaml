@@ -100,7 +100,7 @@
     - service: script.turn_on_livingroom_morning
     - service: script.turn_off_livingroom_lights_delay_30
 
-- alias: 'Lights: 15 minutes timer for devices at night'
+- alias: 'Lights: 10 minutes timer for devices at night'
   initial_state: 'on'
   trigger:
     - platform: state
@@ -113,6 +113,21 @@
     before: '05:00'
   action:
     - service: script.turn_off_livingroom_delay_10
+
+- alias: 'Lights: Turn off auto standby if TV is used'
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: switch.tv
+      from: 'on'
+      to: 'off'
+  condition:
+    condition: time
+    after: '21:00'
+    before: '05:00'
+  action:
+    - service: script.turn_off
+      entity_id: script.turn_off_livingroom_delay_10
 
 - alias: 'Lights: Dim lights when AppleTV is played'
   initial_state: 'on'   

@@ -21,7 +21,7 @@
       to: 'off'
   condition:
     condition: time
-    after: '20:00'
+    after: '21:00'
     before: '02:00'
   action: 
     - service: script.turn_on_bedroom_dimmed_lights
