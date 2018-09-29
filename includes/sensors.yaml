@@ -221,7 +221,7 @@
       bonsai_water_level_low:
         friendly_name: 'Bonsai Water Levels'
         value_template: >
-          {% if ( (is_state('plant.bonsai', 'problem')) and (is_state('group.user_1', 'home')) ) %} 
+          {% if ( (is_state('plant.bonsai', 'problem')) and (is_state('group.user_1', 'home')) and (is_state(' sensor.dark_outside', 'off')) ) %} 
           on
           {% else %}
           off
