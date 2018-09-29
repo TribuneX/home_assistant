@@ -37,6 +37,8 @@ views:
           - switch.sonos_mode
           - sensor.temperature_158d00022cb65c
           - sensor.humidity_158d00022cb65c
+          - climate.living_room
+          - climate.dining_room
       
       - type: entities
         title: Bedroom
@@ -57,6 +59,7 @@ views:
           - light.bath
           - sensor.temperature_158d00022c9982
           - sensor.humidity_158d00022c9982
+          - climate.bath
       
       - type: entities
         title: Office

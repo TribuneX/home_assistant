@@ -28,4 +28,5 @@ filter:
       - binary_sensor.water_leak_sensor_158d00021371e5
       - switch.vacuum_mode
       - climate.living_room
+      - climate.dining_room
       - climate.bath
