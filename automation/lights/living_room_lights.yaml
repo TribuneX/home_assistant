@@ -130,7 +130,7 @@
       entity_id: script.turn_off_livingroom_delay_10
 
 - alias: 'Lights: Dim lights when AppleTV is played'
-  initial_state: 'on'   
+  initial_state: 'off'   
   trigger:    
     - platform: state   
       entity_id: media_player.wohnzimmer    
@@ -152,7 +152,7 @@
     - service: script.turn_on_livingroom_dimmed_lights
 
 - alias: 'Lights: Turn on light when AppleTV is paused'
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     - platform: state
       entity_id: media_player.wohnzimmer
