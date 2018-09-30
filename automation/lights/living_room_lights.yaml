@@ -174,3 +174,38 @@
         state: 'on'
   action:
     - service: script.turn_on_livingroom_default_lights
+
+
+- alias: 'Lights: Turn on lights in livingroom if motion is detected'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d000121c575
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: '00:00'
+        before: '05:00'
+      - condition: state
+        entity_id: sensor.dark_outside
+        state: 'on'
+  action:
+    - service: script.turn_on_livingroom_dimmed_lights
+
+- alias: 'Lights: Turn off lights in living room if there is no motion for 3 minutes'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d000121c575
+    from: 'on'
+    to: 'off'
+    for: 
+      minutes: 1
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.living_room_lights
+        transition: 2
