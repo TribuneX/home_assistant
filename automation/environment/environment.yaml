@@ -12,7 +12,7 @@
       data:
         title: 'Weather Report for today'
         message: 'Current: {{states.sensor.dark_sky_temperature.state}}°C 
-        H/L: {{states.sensor.dark_sky_daily_high_temperature.state}}°C/{{states.sensor.dark_sky_daily_low_temperature.state}}°C 
+        H/L: {{states.sensor.dark_sky_daytime_high_temperature.state}}°C/{{states.sensor.dark_sky_overnight_low_temperature.state}}°C 
         {{states.sensor.dark_sky_hourly_summary.state}}'    
 
 - alias: 'Environment: Fine Dust'
