@@ -117,7 +117,7 @@
     icon: mdi:speaker-wireless
   sensor.sonos2:
     icon: mdi:speaker-wireless
-  sensor.mein_schiff_price:
+  sensor.mein_schiff_ostsee:
     icon: mdi:ferry
   sensor.dark_sky_daily_high_temperature:
     friendly_name: High Outdoor

@@ -163,6 +163,10 @@ views:
           - sensor.epson_ink_level_yellow
           - sensor.epson_ink_level_cyan 
       - type: entities
+        title: Mein Schiff Prices
+        entities:
+          - sensor.mein_schiff_ostsee
+      - type: entities
         title: Battery Level
         entities:
           - sensor.eingang
