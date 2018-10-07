@@ -266,6 +266,24 @@
   unit_of_measurement: '€'
   scan_interval: 120
 
+- platform: command_line
+  name: Mein Schiff Ostsee 1905
+  command: /usr/bin/curl -s https://www.pooldeck24.de/mein-schiff/mein-schiff-buchen/mein-schiff-flexpreise | grep "Ostsee mit St. Petersburg I" -A 2 | grep -o '[0-9]\.[0-9]\+' | tr -d '.' | awk 'FNR == 1 {print}'
+  unit_of_measurement: '€'
+  scan_interval: 120
+
+- platform: command_line
+  name: Mein Schiff Ostsee 2705
+  command: /usr/bin/curl -s https://www.pooldeck24.de/mein-schiff/mein-schiff-buchen/mein-schiff-flexpreise | grep "Danzig I" -A 2 | grep -o '[0-9]\.[0-9]\+' | tr -d '.'
+  unit_of_measurement: '€'
+  scan_interval: 120
+
+- platform: command_line
+  name: Mein Schiff Singapur 1302
+  command: /usr/bin/curl -s https://www.pooldeck24.de/mein-schiff/mein-schiff-buchen/mein-schiff-flexpreise | grep "Asien mit Singapur" -A 2 | grep -o '[0-9]\.[0-9]\+' | tr -d '.' | awk 'FNR == 4 {print}'
+  unit_of_measurement: '€'
+  scan_interval: 120
+
 - platform: luftdaten
   sensorid: 3111
   monitored_conditions:
