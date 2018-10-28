@@ -294,6 +294,7 @@ turn_off_all:
       data:
         entity_id: input_select.tv_mode
         option: AUS 
+    - service: script.turn_off_heating_living_room
 
 turn_on_livingroom_morning:
   sequence:
@@ -372,6 +373,53 @@ turn_off_kitchen_lights:
       data:
         entity_id: light.kitchen_lights
         transition: 2
+
+turn_off_heating_living_room:
+  sequence:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: 
+          - climate.living_room
+          - climate.dining_room
+        operation_mode: eco
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Heating Off'
+        message: 'I switched off the heating in the living room'      
+
+turn_on_heating_living_room:
+  sequence:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: 
+          - climate.living_room
+          - climate.dining_room
+        operation_mode: heat
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Heating On'
+        message: 'I switched on the heating in the living room'
+
+turn_on_heating_bath_room:
+  sequence:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.bath_room
+        operation_mode: heat
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Heating On'
+        message: 'I switched on the heating in the bath room'
+turn_off_heating_bath_room:
+  sequence:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.bath_room
+        operation_mode: eco
+    - service: notify.ios_iphones_app
+      data:
+        title: 'Heating On'
+        message: 'I switched on the heating in the bath room'
 
 # Inspired by https://github.com/arsaboo/homeassistant-config/blob/master/scripts.yaml
 sonos_say:
