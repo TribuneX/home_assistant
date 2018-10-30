@@ -57,9 +57,9 @@ views:
       - type: entities
         title: Bath
         entities:
-          - light.bath
           - sensor.temperature_158d00022c9982
           - sensor.humidity_158d00022c9982
+          - switch.heating_bath_room
           - climate.bath
       
       - type: entities

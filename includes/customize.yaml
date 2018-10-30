@@ -43,6 +43,9 @@
   switch.heating_living_room:
     icon: mdi:temperature-celsius
     friendly_name: Heating
+  switch.heating_bath_room:
+    icon: mdi:temperature-celsius
+    friendly_name: Heating
 
 # Sensors
   sensor.palme_battery:

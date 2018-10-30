@@ -30,3 +30,5 @@ filter:
       - climate.living_room
       - climate.dining_room
       - climate.bath
+      - switch.heating_bath_room
+      - switch.heating_living_room
