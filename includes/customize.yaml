@@ -39,7 +39,10 @@
     icon: mdi:fan
     assumed_state: false
   switch.vacuum_mode:
-    friendly_name: Robot
+    friendly_name: Robot  
+  switch.heating_living_room:
+    icon: mdi:temperature-celsius
+    friendly_name: Heating
 
 # Sensors
   sensor.palme_battery:

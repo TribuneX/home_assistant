@@ -37,6 +37,7 @@ views:
           - switch.sonos_mode
           - sensor.temperature_158d00022cb65c
           - sensor.humidity_158d00022cb65c
+          - switch.heating_living_room
           - climate.living_room
           - climate.dining_room
       
