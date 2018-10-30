@@ -171,7 +171,7 @@ views:
         title: Battery Level
         entities:
           - sensor.eingang
-          - sensor.bad
+          - sensor.bad_gang_motion
           - sensor.door1_battery
           - sensor.door2_battery
           - sensor.motion1_battery
