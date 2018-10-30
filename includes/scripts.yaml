@@ -404,7 +404,7 @@ turn_on_heating_bath_room:
   sequence:
     - service: climate.set_operation_mode
       data:
-        entity_id: climate.bath_room
+        entity_id: climate.bath
         operation_mode: heat
     - service: notify.ios_iphones_app
       data:
@@ -414,7 +414,7 @@ turn_off_heating_bath_room:
   sequence:
     - service: climate.set_operation_mode
       data:
-        entity_id: climate.bath_room
+        entity_id: climate.bath
         operation_mode: eco
     - service: notify.ios_iphones_app
       data:
