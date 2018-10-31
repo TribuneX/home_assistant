@@ -50,12 +50,12 @@ user_1:
   name: !secret user_1
   entities:
     - device_tracker.iphones
-    - device_tracker.owntracks_iphones
+    #- device_tracker.owntracks_iphones
 user_2:
   name: !secret user_2
   entities:
     - device_tracker.user_2_iphone
-    - device_tracker.owntracks_user_2_iphone
+    #- device_tracker.owntracks_user_2_iphone
 tv_scenes:
   name: 'TV'
   entities:
