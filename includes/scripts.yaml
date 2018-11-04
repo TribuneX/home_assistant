@@ -295,6 +295,7 @@ turn_off_all:
         entity_id: input_select.tv_mode
         option: AUS 
     - service: script.turn_off_heating_living_room
+    - service: script.turn_off_heating_bath_room
 
 turn_on_livingroom_morning:
   sequence:
@@ -419,7 +420,7 @@ turn_off_heating_bath_room:
     - service: notify.ios_iphones_app
       data:
         title: 'Heating On'
-        message: 'I switched on the heating in the bath room'
+        message: 'I switched off the heating in the bath room'
 
 # Inspired by https://github.com/arsaboo/homeassistant-config/blob/master/scripts.yaml
 sonos_say:
