@@ -75,12 +75,6 @@ discovery:
 # Enables support for tracking state changes over time.
 history:
 
-telegram_bot:
-  - platform: polling
-    api_key: !secret telegram_api_key
-    allowed_chat_ids:
-      - !secret telegram_chat_id
-
 # Support for iOS app
 ios:
 
@@ -89,9 +83,6 @@ notify:
   - platform: ios
     name: ios_app
     target: !secret ios_token
-  - platform: telegram
-    name: jarvis
-    chat_id: !secret telegram_chat_id
 
 # Presence Detection
 device_tracker:
