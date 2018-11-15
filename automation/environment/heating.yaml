@@ -13,7 +13,7 @@
         before: '22:00'
       - condition: numeric_state
         entity_id: sensor.temperature_158d00022cb65c
-        below: '19'
+        below: '20'
   action:
     - service: script.turn_on_heating_living_room
 
@@ -30,7 +30,7 @@
         state: 'home'
       - condition: numeric_state
         entity_id: sensor.temperature_158d00022cb65c
-        below: '19'
+        below: '20'
   action:
     - service: script.turn_on_heating_living_room
 
