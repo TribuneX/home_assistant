@@ -90,7 +90,8 @@ device_tracker:
     host: !secret fritz_host
     password: !secret fritz_password
     track_new_devices: false 
-  - platform: owntracks
+
+owntracks:
     max_gps_accuracy: 100
 
 # Fritzbox Smart Home
