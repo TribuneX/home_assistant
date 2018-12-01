@@ -271,6 +271,7 @@ christmas:
   entities:
     - switch.light_baum
     - switch.light_sterne
+    - light.stern
 device_status:
   name: 'Device Status'
   view: yes

@@ -29,8 +29,8 @@
           {% else %}
             script.turn_on_livingroom_default_lights
           {% endif %}
-    # - service: homeassistant.turn_on
-    #   entity_id: group.christmas
+    - service: homeassistant.turn_on
+      entity_id: group.christmas
 
 - alias: 'Lights: Turn on livingroom lights in the morning from Tue to Sat'
   initial_state: 'on'
