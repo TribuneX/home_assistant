@@ -39,7 +39,7 @@
   retain: true
 
 - platform: mqtt
-  name: "Fan"
+  name: "Light Sterne"
   state_topic: "home/sonoff/default_room/2/stat"
   command_topic: "home/sonoff/default_room/2"
   qos: 0

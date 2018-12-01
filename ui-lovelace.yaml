@@ -53,6 +53,13 @@ views:
         title: Kitchen
         entities:
           - light.kitchen_lights
+
+      - type: entities
+        title: Christmas
+        entities:
+          - light.stern
+          - switch.light_sterne
+          # - switch.light_baum
       
       - type: entities
         title: Bath

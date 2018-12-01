@@ -3,7 +3,7 @@
     icon: mdi:pine-tree
     assumed_state: false
   switch.light_sterne:
-    icon: mdi:star
+    icon: mdi:weather-night
     assumed_state: false
   switch.tv:
     icon: mdi:television
@@ -219,6 +219,8 @@
     friendly_name: !secret user_2
   light.bed2:
     friendly_name: !secret user_1
+  light.stern:
+    icon: mdi:star
 
 # Groups 
   group.user_1:
