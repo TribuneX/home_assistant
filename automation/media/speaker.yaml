@@ -163,7 +163,7 @@
   initial_state: 'on'
   trigger:
     platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.cube_158d0001108360
       action_type: flip90
@@ -178,7 +178,7 @@
   initial_state: 'on'
   trigger:
     platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.cube_158d0001108360
       action_type: rotate
@@ -201,7 +201,7 @@
   initial_state: 'on'
   trigger:
     platform: event
-    event_type: cube_action
+    event_type: xiaomi_aqara.cube_action
     event_data:
       entity_id: binary_sensor.cube_158d0001108360
       action_type: rotate
