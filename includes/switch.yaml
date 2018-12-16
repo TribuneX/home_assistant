@@ -47,6 +47,15 @@
   payload_off: "off"
   retain: true
 
+- platform: mqtt
+  name: "Light Baum"
+  state_topic: "home/sonoff/default_room/3/stat"
+  command_topic: "home/sonoff/default_room/3"
+  qos: 0
+  payload_on: "on"
+  payload_off: "off"
+  retain: true
+
 - platform: wake_on_lan
   name: Server
   host: server.cbs-service.net
