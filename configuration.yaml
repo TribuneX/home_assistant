@@ -88,7 +88,8 @@ notify:
 device_tracker:
   - platform: fritz
     host: !secret fritz_host
-    password: !secret fritz_password
+    username: !secret fritz_home_username
+    password: !secret fritz_home_password
     track_new_devices: false 
 
 owntracks:
