@@ -49,8 +49,7 @@
         entity_id: input_boolean.vacation_mode
         state: 'off'
   action:
-    - service: vacuum.start
-      entity_id: vacuum.vacuum_cleaner
+    - service: script.start_vacuum_cleaning
 
 - alias: 'Robot: Robot waits until everybody left'
   initial_state: 'on'
@@ -74,8 +73,7 @@
         entity_id: input_boolean.vacation_mode
         state: 'off'
   action:
-    - service: vacuum.start
-      entity_id: vacuum.vacuum_cleaner
+    - service: script.start_vacuum_cleaning
 
 - alias: 'Robot: Reset cleaned today counter'
   initial_state: 'on'

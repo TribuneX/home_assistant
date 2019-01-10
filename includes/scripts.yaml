@@ -407,6 +407,15 @@ turn_off_heating_bath_room:
         entity_id: climate.bath
         operation_mode: eco
 
+start_vacuum_cleaning:
+      alias: "Start the vacuum"
+      sequence:
+        - service: vacuum.send_command
+          data:
+            entity_id: vacuum.vacuum_cleaner
+            command: app_zoned_clean
+            params: [[23400, 20500, 34000, 28700, 1]]
+
 # Inspired by https://github.com/arsaboo/homeassistant-config/blob/master/scripts.yaml
 sonos_say:
     alias: "Sonos TTS script"
