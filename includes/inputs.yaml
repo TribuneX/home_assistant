@@ -11,3 +11,7 @@ cleaned_today:
   name: 'Cleaned today'
   initial: off
   icon: mdi:broom
+
+christmas:
+  name: 'Christmas'
+  icon: mdi:pine-tree

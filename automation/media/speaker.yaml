@@ -115,7 +115,7 @@
     - service: script.play_sonos_radio
 
 - alias: 'Speaker: Turn on radio in the morning'
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     - platform: state
       entity_id: light.bad
