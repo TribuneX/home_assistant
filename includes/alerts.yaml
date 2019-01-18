@@ -15,7 +15,7 @@ robot_dust_bin:
   entity_id: sensor.robot_dust_bin
   state: 'full'
   repeat:
-    - 10
+    - 20
   can_acknowledge: True
   skip_first: True
   notifiers:
