@@ -34,7 +34,7 @@ pi:
   entities:
     - sensor.cpu_temperature
     - sensor.cpu_use
-    - sensor.disk_used_
+    - sensor.disk_use_percent
     - sensor.last_boot
     - sensor.ram_free
     - sensor.sent_eth0

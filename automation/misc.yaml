@@ -64,7 +64,7 @@
   initial_state: 'on'
   trigger:
     platform: numeric_state
-    entity_id: sensor.disk_used_
+    entity_id: sensor.disk_use_percent
     above: 90
   action:
     - service: notify.ios_iphones_app
