@@ -363,7 +363,7 @@ turn_on_kitchen_lights:
     - service: light.turn_on
       data:
         entity_id: light.kitchen_lights
-        brightness: 150
+        brightness: 200
 
 turn_off_kitchen_lights:
   sequence:

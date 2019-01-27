@@ -199,3 +199,7 @@
       turn_off:
         service: script.turn_on
         entity_id: script.turn_off_heating_bath_room
+
+- platform: flux
+  lights:
+    - light.living_room_lights
