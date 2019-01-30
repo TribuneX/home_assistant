@@ -32,8 +32,7 @@
                  binary_sensor.ping_sebastian, 
                  binary_sensor.ping_sonja, 
                  binary_sensor.ping_uwe, 
-                 binary_sensor.ping_vhv,
-                 binary_sensor.ping_wsw, 
+                 binary_sensor.ping_vhv, 
                  binary_sensor.ping_anny
       to: 'off'
       for:
@@ -66,7 +65,6 @@
                  binary_sensor.ping_sonja, 
                  binary_sensor.ping_uwe, 
                  binary_sensor.ping_vhv, 
-                 binary_sensor.ping_wsw,
                  binary_sensor.ping_anny
       to: 'on'
       for:
