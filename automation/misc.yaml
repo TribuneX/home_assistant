@@ -51,7 +51,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: sensor.tribunexhome_assistant_last_build_state
+    entity_id: sensor.tribunex_home_assistant_last_build_state
     to: 'passed'
   action:
     - service: notify.ios_iphones_app

@@ -14,7 +14,7 @@ entities:
   - sensor.dark_sky_cloud_coverage
   - sensor.dark_sky_daily_high_temperature
   - sensor.dark_sky_daily_low_temperature
-  - sensor.tribunexhome_assistant_last_build_state
+  - sensor.tribunex_home_assistant_last_build_state
   - sensor.illumination_7811dc6c865a
   - sensor.palme_battery
   - sensor.palmek_battery
