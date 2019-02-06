@@ -178,7 +178,7 @@
     entity_picture: /local/icon_ink_cyan.png
   
   # Xiaomi Aqara
-  binary_sensor.door_window_sensor_158d0002e9ec76:
+  binary_sensor.door_window_sensor_158d0001d8253a:
     friendly_name: 'Front Door'
     icon: mdi:door
   binary_sensor.door_window_sensor_158d0001b7700c:
@@ -190,7 +190,7 @@
   binary_sensor.door_window_sensor_158d0002e69593:
     friendly_name: 'Fenster'
     icon: mdi:window-maximize
-  binary_sensor.door_window_sensor_158d0001d8253a:
+  binary_sensor.door_window_sensor_158d0002e9ec76:
     friendly_name: 'Backup'
     icon: mdi:door
   binary_sensor.door_window_sensor_158d0002329e52:
