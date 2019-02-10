@@ -165,7 +165,7 @@
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.cube_158d0001108360
+      entity_id: binary_sensor.cube_livingroom
       action_type: flip90
   condition:
     condition: state
@@ -180,7 +180,7 @@
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.cube_158d0001108360
+      entity_id: binary_sensor.cube_livingroom
       action_type: rotate
   condition:
       - condition: state
@@ -203,7 +203,7 @@
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.cube_158d0001108360
+      entity_id: binary_sensor.cube_livingroom
       action_type: rotate
   condition:
       - condition: state

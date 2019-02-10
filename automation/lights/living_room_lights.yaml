@@ -179,7 +179,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor_158d000121c575
+    entity_id: binary_sensor.motion_livingroom
     from: 'off'
     to: 'on'
   condition:
@@ -198,7 +198,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: binary_sensor.motion_sensor_158d000121c575
+    entity_id: binary_sensor.motion_livingroom
     from: 'on'
     to: 'off'
     for: 

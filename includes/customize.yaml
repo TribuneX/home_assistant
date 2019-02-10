@@ -142,29 +142,29 @@
     friendly_name: Outdoor
 
   # Xiaomi Temp Sensors
-  sensor.pressure_158d00022c9982:
+  sensor.pressure_bath:
     friendly_name: Bath
-  sensor.humidity_158d00022c9982:
+  sensor.humidity_bath:
     friendly_name: Bath
-  sensor.temperature_158d00022c9982:
+  sensor.temperature_bath:
     friendly_name: Bath
-  sensor.pressure_158d00022b6674:
+  sensor.pressure_office:
     friendly_name: Office
-  sensor.humidity_158d00022b6674:
+  sensor.humidity_office:
     friendly_name: Office
-  sensor.temperature_158d00022b6674:
+  sensor.temperature_office:
     friendly_name: Office
-  sensor.pressure_158d00022cb37f:
+  sensor.pressure_bedroom:
     friendly_name: Bedroom
-  sensor.humidity_158d00022cb37f:
+  sensor.humidity_bedroom:
     friendly_name: Bedroom
-  sensor.temperature_158d00022cb37f:
+  sensor.temperature_bedroom:
     friendly_name: Bedroom
-  sensor.pressure_158d00022cb65c:
+  sensor.pressure_livingroom:
     friendly_name: Livingroom
-  sensor.humidity_158d00022cb65c:
+  sensor.humidity_livingroom:
     friendly_name: Livingroom
-  sensor.temperature_158d00022cb65c:
+  sensor.temperature_livingroom:
     friendly_name: Livingroom
 
   # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
@@ -178,13 +178,13 @@
     entity_picture: /local/icon_ink_cyan.png
   
   # Xiaomi Aqara
-  binary_sensor.door_window_sensor_158d0001d8253a:
+  binary_sensor.front_door:
     friendly_name: 'Front Door'
     icon: mdi:door
-  binary_sensor.door_window_sensor_158d0001b7700c:
+  binary_sensor.balcony_door:
     friendly_name: 'Balcony'
     icon: mdi:door
-  binary_sensor.door_window_sensor_158d000237c9d7:
+  binary_sensor.bedroom_door:
     friendly_name: 'Bedroom'
     icon: mdi:door
   binary_sensor.door_window_sensor_158d0002e69593:
@@ -193,20 +193,26 @@
   binary_sensor.door_window_sensor_158d0002e9ec76:
     friendly_name: 'Backup'
     icon: mdi:door
-  binary_sensor.door_window_sensor_158d0002329e52:
+  binary_sensor.cube_livingroom:
+    friendly_name: 'Cube'
+  light.gateway_light:
+    friendly_name: 'Gateway Light'
+  sensor.illumination_gateway:
+    friendly_name: 'Gateway Illumination'
+  binary_sensor.bath_window:
     friendly_name: 'Bath'
     icon: mdi:window-maximize
-  binary_sensor.motion_sensor_158d0001a90475:
-    friendly_name: 'Motion 1'
-  binary_sensor.switch_158d0001d8795f:
-    friendly_name: 'Button 1'
+  binary_sensor.motion_kitchen:
+    friendly_name: 'Motion Kitchen'
+  binary_sensor.switch_bedroom:
+    friendly_name: 'Switch Bedroom'
   sensor.aqara_gateway:
     icon: mdi:home-automation
-  binary_sensor.water_leak_sensor_158d00021371e5:
+  binary_sensor.water_leak_sensor:
     friendly_name: 'Rain'
-  binary_sensor.motion_sensor_158d0001ff3f0a:
-    friendly_name: 'Office'
-  sensor.illumination_158d0001ff3f0a:
+  binary_sensor.motion_office:
+    friendly_name: 'Motion Office'
+  sensor.illumination_office:
     friendly_name: 'Office'
 
 # Device Tracker

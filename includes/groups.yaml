@@ -28,7 +28,7 @@ office:
   name: 'Office'
   entities:
     - switch.server
-    - sensor.illumination_158d0001ff3f0a
+    - sensor.illumination_office
 pi:
   name: 'Raspberry'
   entities:
@@ -159,16 +159,16 @@ all_speaker:
 doors_and_windows:
   name: 'Doors and Windows'
   entities:
-    - binary_sensor.door_window_sensor_158d0001b7700c
-    - binary_sensor.door_window_sensor_158d000237c9d7
-    - binary_sensor.door_window_sensor_158d0001b7700c
+    - binary_sensor.balcony_door
+    - binary_sensor.bedroom_door
+    - binary_sensor.balcony_door
 doors:
   name: 'Doors'
   entities:
-    - binary_sensor.door_window_sensor_158d0001b7700c
-    - binary_sensor.door_window_sensor_158d0001d8253a
-    - binary_sensor.door_window_sensor_158d000237c9d7
-    - binary_sensor.door_window_sensor_158d0001b7700c
+    - binary_sensor.balcony_door
+    - binary_sensor.front_door
+    - binary_sensor.bedroom_door
+    - binary_sensor.balcony_door
 docker_container:
   name: 'Docker Container'
   control: hidden
@@ -193,25 +193,25 @@ temperature:
   name: 'Temperature'
   entities:
     - sensor.dark_sky_temperature
-    - sensor.temperature_158d00022b6674
-    - sensor.temperature_158d00022c9982
-    - sensor.temperature_158d00022cb37f
-    - sensor.temperature_158d00022cb65c
+    - sensor.temperature_office
+    - sensor.temperature_bath
+    - sensor.temperature_bedroom
+    - sensor.temperature_livingroom
 humidity:
   name: 'Humidity'
   entities:
     - sensor.dark_sky_humidity
-    - sensor.humidity_158d00022b6674
-    - sensor.humidity_158d00022c9982
-    - sensor.humidity_158d00022cb37f
-    - sensor.humidity_158d00022cb65c
+    - sensor.humidity_office
+    - sensor.humidity_bath
+    - sensor.humidity_bedroom
+    - sensor.humidity_livingroom
 pressure:
   name: 'Pressure'
   entities:
-    - sensor.pressure_158d00022b6674
-    - sensor.pressure_158d00022c9982
-    - sensor.pressure_158d00022cb37f
-    - sensor.pressure_158d00022cb65c
+    - sensor.pressure_office
+    - sensor.pressure_bath
+    - sensor.pressure_bedroom
+    - sensor.pressure_livingroom
 
 # Tabs
 default_view:

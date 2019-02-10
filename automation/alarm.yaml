@@ -2,7 +2,7 @@
   initial_state: 'on'   
   trigger:    
     - platform: state     
-      entity_id: light.eingang, binary_sensor.door_window_sensor_158d0001d8253a, light.kueche1
+      entity_id: light.eingang, binary_sensor.front_door, light.kueche1
       from: 'off'   
       to: 'on'   
   condition:
@@ -24,7 +24,7 @@
   initial_state: 'on'   
   trigger:    
     - platform: state     
-      entity_id: binary_sensor.door_window_sensor_158d0001d8253a
+      entity_id: binary_sensor.front_door
       from: 'off'   
       to: 'on'   
   condition:
@@ -36,13 +36,13 @@
       data_template:
         title: 'Doors'
         message: >
-          'Open doors: {% if is_state('binary_sensor.door_window_sensor_158d0001b7700c', 'on') %}Balcony, {% endif %}{% if is_state('binary_sensor.door_window_sensor_158d000237c9d7', 'on') %}Bedroom, {% endif %}{% if is_state('binary_sensor.door_window_sensor_158d0002329e52', 'on') %}Bath{% endif %}'
+          'Open doors: {% if is_state('binary_sensor.balcony_door', 'on') %}Balcony, {% endif %}{% if is_state('binary_sensor.bedroom_door', 'on') %}Bedroom, {% endif %}{% if is_state('binary_sensor.bath_window', 'on') %}Bath{% endif %}'
 
 - alias: 'Door: Front Door is still open' 
   initial_state: 'on'   
   trigger:    
     - platform: state     
-      entity_id: binary_sensor.door_window_sensor_158d0001d8253a
+      entity_id: binary_sensor.front_door
       from: 'off'   
       to: 'on'
       for:

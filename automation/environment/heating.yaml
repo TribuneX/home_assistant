@@ -12,7 +12,7 @@
         after: '08:00'
         before: '22:00'
       - condition: numeric_state
-        entity_id: sensor.temperature_158d00022cb65c
+        entity_id: sensor.temperature_livingroom
         below: '20'
   action:
     - service: script.turn_on_heating_living_room
@@ -29,7 +29,7 @@
         entity_id: group.personen
         state: 'home'
       - condition: numeric_state
-        entity_id: sensor.temperature_158d00022cb65c
+        entity_id: sensor.temperature_livingroom
         below: '20'
   action:
     - service: script.turn_on_heating_living_room
@@ -62,7 +62,7 @@
         entity_id: group.personen
         state: 'home'
       - condition: numeric_state
-        entity_id: sensor.temperature_158d00022cb65c
+        entity_id: sensor.temperature_livingroom
         below: '20'
   action:
     - service: script.turn_on_heating_living_room
@@ -83,7 +83,7 @@
           - thu
           - fri
       - condition: numeric_state
-        entity_id: sensor.temperature_158d00022c9982
+        entity_id: sensor.temperature_bath
         below: '20'
   action:
     - service: script.turn_on_heating_bath_room

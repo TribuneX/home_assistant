@@ -34,7 +34,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: binary_sensor.water_leak_sensor_158d00021371e5
+    entity_id: binary_sensor.water_leak_sensor
     from: 'off'
     to: 'on'
   condition:
@@ -51,7 +51,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: binary_sensor.water_leak_sensor_158d00021371e5
+    entity_id: binary_sensor.water_leak_sensor
     from: 'on'
     to: 'off'
   condition:

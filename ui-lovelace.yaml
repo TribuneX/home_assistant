@@ -17,10 +17,10 @@ views:
       
       - type: entity-filter
         entities:
-          - binary_sensor.door_window_sensor_158d0001b7700c
-          - binary_sensor.door_window_sensor_158d0001d8253a
-          - binary_sensor.door_window_sensor_158d000237c9d7
-          - binary_sensor.door_window_sensor_158d0002329e52
+          - binary_sensor.balcony_door
+          - binary_sensor.front_door
+          - binary_sensor.bedroom_door
+          - binary_sensor.bath_window
         state_filter:
           - 'on'
         card:
@@ -35,8 +35,8 @@ views:
           - light.living_room_lights
           - switch.appletv_mode
           - switch.sonos_mode
-          - sensor.temperature_158d00022cb65c
-          - sensor.humidity_158d00022cb65c
+          - sensor.temperature_livingroom
+          - sensor.humidity_livingroom
           - switch.heating_living_room
           - climate.living_room
           - climate.dining_room
@@ -46,8 +46,8 @@ views:
         entities:
           - light.bedroom_lights
           - switch.tv_2
-          - sensor.temperature_158d00022cb37f
-          - sensor.humidity_158d00022cb37f
+          - sensor.temperature_bedroom
+          - sensor.humidity_bedroom
       
       - type: entities
         title: Kitchen
@@ -64,8 +64,8 @@ views:
       - type: entities
         title: Bath
         entities:
-          - sensor.temperature_158d00022c9982
-          - sensor.humidity_158d00022c9982
+          - sensor.temperature_bath
+          - sensor.humidity_bath
           - switch.heating_bath_room
           - climate.bath
       
@@ -74,8 +74,8 @@ views:
         entities:
           - light.arbeitszimmer
           - switch.server
-          - sensor.temperature_158d00022b6674
-          - sensor.humidity_158d00022b6674
+          - sensor.temperature_office
+          - sensor.humidity_office
           - sensor.cpu_temperature
       
       - type: entities

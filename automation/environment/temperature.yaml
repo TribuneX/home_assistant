@@ -14,7 +14,7 @@
         entity_id: 'sensor.dark_sky_temperature'
         above: '20'
       - condition: state
-        entity_id: binary_sensor.door_window_sensor_158d0001b7700c
+        entity_id: binary_sensor.balcony_door
         state: 'on'
   action:
     - service: notify.ios_iphones_app
@@ -38,7 +38,7 @@
         entity_id: 'sensor.dark_sky_temperature'
         above: '20'
       - condition: state
-        entity_id: binary_sensor.door_window_sensor_158d0001b7700c
+        entity_id: binary_sensor.balcony_door
         state: 'off'
   action:
     - service: notify.ios_iphones_app
