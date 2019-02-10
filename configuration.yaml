@@ -35,6 +35,8 @@ mqtt:
 
 map:
 
+system_health:
+
 influxdb:
   host: !secret influxdb_ip
   username: homeassistant
