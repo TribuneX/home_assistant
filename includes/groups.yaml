@@ -182,8 +182,8 @@ docker_container:
 not_necessary_devices:
   name: 'Not necessary'
   entities:
-    - switch.light_baum
-    - switch.light_sterne
+    - light.christmas_tree
+    - light.stars
     - switch.server
     - switch.speaker_2
     - switch.speaker_1
@@ -269,8 +269,8 @@ christmas:
   view: no
   icon: mdi:pine-tree
   entities:
-    - switch.light_baum
-    - switch.light_sterne
+    - light.christmas_tree
+    - light.stars
     - light.stern
 device_status:
   name: 'Device Status'

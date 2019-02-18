@@ -1,10 +1,4 @@
   # Switches
-  switch.light_baum:
-    icon: mdi:pine-tree
-    assumed_state: false
-  switch.light_sterne:
-    icon: mdi:weather-night
-    assumed_state: false
   switch.tv:
     icon: mdi:television
     assumed_state: false
@@ -233,6 +227,12 @@
     friendly_name: !secret user_1
   light.stern:
     icon: mdi:star
+  light.christmas_tree:
+    icon: mdi:pine-tree
+    assumed_state: false
+  light.stars:
+    icon: mdi:weather-night
+    assumed_state: false
 
 # Groups 
   group.user_1:

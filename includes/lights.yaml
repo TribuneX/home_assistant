@@ -27,3 +27,16 @@
   payload_available: "Online"
   payload_not_available: "Offline"
   retain: false
+
+- platform: mqtt
+  name: "Stars"
+  state_topic: "tele/sonoff/living_room/stars/STATE"
+  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/sonoff/living_room/stars/POWER"
+  availability_topic: "tele/sonoff/living_room/stars/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
