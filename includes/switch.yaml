@@ -12,15 +12,6 @@
   retain: true
 
 - platform: mqtt
-  name: "Speaker_1"
-  state_topic: "home/sonoff/living_room/2/stat"
-  command_topic: "home/sonoff/living_room/2"
-  qos: 0
-  payload_on: "on"
-  payload_off: "off"
-  retain: true
-
-- platform: mqtt
   name: "TV_2"
   state_topic: "home/sonoff/bed_room/1/stat"
   command_topic: "home/sonoff/bed_room/1"
@@ -30,13 +21,30 @@
   retain: true
 
 - platform: mqtt
+  name: "Speaker 1"
+  state_topic: "tele/sonoff/speaker/1/STATE"
+  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/sonoff/speaker/1/POWER"
+  availability_topic: "tele/sonoff/speaker/1/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
+
+- platform: mqtt
   name: "Speaker 2"
-  state_topic: "home/sonoff/default_room/1/stat"
-  command_topic: "home/sonoff/default_room/1"
-  qos: 0
-  payload_on: "on"
-  payload_off: "off"
-  retain: true
+  state_topic: "tele/sonoff/speaker/2/STATE"
+  value_template: "{{ value_json.POWER }}"
+  command_topic: "cmnd/sonoff/speaker/2/POWER"
+  availability_topic: "tele/sonoff/speaker/2/LWT"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  payload_available: "Online"
+  payload_not_available: "Offline"
+  retain: false
 
 - platform: wake_on_lan
   name: Server
