@@ -99,12 +99,6 @@
   sensor.tradfri:
     icon: mdi:lightbulb-on
     friendly_name: Tradfri Gateway
-  sensor.speedtest_upload:
-    icon: mdi:speedometer
-    friendly_name: Upload
-  sensor.speedtest_download:
-    icon: mdi:speedometer
-    friendly_name: Download
   sensor.server:
     icon: mdi:server
   sensor.eingang:

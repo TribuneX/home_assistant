@@ -39,8 +39,6 @@ pi:
     - sensor.ram_free
     - sensor.sent_eth0
     - sensor.received_eth0
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
 personen:
   name: 'People'
   entities:
