@@ -19,7 +19,6 @@ homeassistant:
 
   auth_providers:
    - type: homeassistant
-   - type: legacy_api_password
 
 config:
 
@@ -64,7 +63,6 @@ frontend:
   javascript_version: latest
 
 http:
-  api_password: !secret http_password
   base_url: !secret base_url
   ssl_certificate: !secret ssl_certificate_path        
   ssl_key: !secret ssl_private_key
