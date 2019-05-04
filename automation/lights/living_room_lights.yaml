@@ -15,11 +15,12 @@
       - condition: state
         entity_id: group.personen
         state: 'home'
-      - condition: or
-        conditions:
-          - condition: state
-            entity_id: sensor.dark_outside
-            state: 'on'
+      - condition: state
+        entity_id: sensor.dark_outside
+        state: 'on'
+      - condition: state
+        entity_id: light.living_room_lights
+        state: 'off'
   action:
     - service: script.turn_on 
       data_template:
