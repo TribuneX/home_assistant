@@ -174,7 +174,7 @@
         service: script.turn_on
         entity_id: script.pause_sonos
     vacuum_mode:
-      value_template: "{{ is_state('vacuum.vacuum_cleaner', 'cleaning')}}"
+      value_template: "{{ is_state('vacuum.vacuum_cleaner', 'Cleaning')}}"
       turn_on:
         service: vacuum.start
         entity_id: vacuum.vacuum_cleaner
