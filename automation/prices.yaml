@@ -3,7 +3,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.mein_schiff_ostsee
-      below: 1945
+      below: 2095
   action:
     - service: notify.ios_iphones_app
       data:
@@ -15,7 +15,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.mein_schiff_ostsee
-      above: 1945
+      above: 2095
   action:
     - service: notify.ios_iphones_app
       data:
