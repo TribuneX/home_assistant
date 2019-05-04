@@ -13,7 +13,7 @@
         state: 'not_home'
       - condition: state
         entity_id: vacuum.vacuum_cleaner
-        state: 'off'
+        state: 'docked'
   action:     
     - service: notify.ios_iphones_app   
       data_template:   
