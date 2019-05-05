@@ -276,3 +276,33 @@
   monitored_conditions:
     - P1
     - P2
+
+- platform: mqtt
+  name: "TV Energy Today"
+  state_topic: "tele/sonoff/tv/1/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Today"] }}'
+  unit_of_measurement: "kWh"
+- platform: mqtt
+  name: "TV Energy Yesterday"
+  state_topic: "tele/sonoff/tv/1/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Yesterday"] }}'
+  unit_of_measurement: "kWh"
+- platform: mqtt
+  name: "TV Energy Total"
+  state_topic: "tele/sonoff/tv/1/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Total"] }}'
+  unit_of_measurement: "kWh"
+- platform: mqtt
+  name: "TV Power"
+  state_topic: "tele/sonoff/tv/1/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Power"] }}'
+  unit_of_measurement: "W"
+- platform: mqtt
+  name: "TV Voltage"
+  state_topic: "tele/sonoff/tv/1/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Voltage"] }}'
+  unit_of_measurement: "V"
+- platform: mqtt
+  name: "TV Power Factor"
+  state_topic: "tele/sonoff/tv/1/SENSOR"
+  value_template: '{{ value_json["ENERGY"]["Factor"] }}'
