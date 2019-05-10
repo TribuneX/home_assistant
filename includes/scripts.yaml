@@ -416,11 +416,8 @@ turn_off_heating_bath_room:
 start_vacuum_cleaning:
       alias: "Start the vacuum"
       sequence:
-        - service: vacuum.send_command
-          data:
-            entity_id: vacuum.vacuum_cleaner
-            command: app_zoned_clean
-            params: [[23400, 20500, 34000, 28700, 1]]
+        - service: vacuum.start
+          entity_id: vacuum.vacuum_cleaner
 
 # Inspired by https://github.com/arsaboo/homeassistant-config/blob/master/scripts.yaml
 sonos_say:
