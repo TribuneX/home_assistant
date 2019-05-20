@@ -165,7 +165,7 @@
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.cube_livingroom
+      entity_id: sensor.cube_action
       action_type: flip90
   condition:
     condition: state
@@ -177,12 +177,13 @@
 - alias: 'Speaker: Select sonos volume with cube rotation'
   initial_state: 'on'
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.cube_action
-    event_data:
-      entity_id: binary_sensor.cube_livingroom
-      action_type: rotate
+      platform: mqtt
+      topic: 'zigbee2mqtt/sensor.cube_action'
   condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: '{{ "rotate_right" == trigger.payload_json.action }}'   
       - condition: state
         entity_id: group.all_speaker
         state: 'on' 
@@ -200,12 +201,13 @@
 - alias: 'Speaker: Turn on radio with cube rotation'
   initial_state: 'on'
   trigger:
-    platform: event
-    event_type: xiaomi_aqara.cube_action
-    event_data:
-      entity_id: binary_sensor.cube_livingroom
-      action_type: rotate
+    platform: mqtt
+    topic: 'zigbee2mqtt/sensor.cube_action'
   condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: '{{ "slide" == trigger.payload_json.action }}'   
       - condition: state
         entity_id: group.all_speaker
         state: 'off' 

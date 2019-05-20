@@ -37,5 +37,5 @@ entities:
   - sensor.memory_free
   - sensor.motion1_battery
   - sensor.motion2_battery
-  - binary_sensor.cube_livingroom
+  - sensor.cube_action
   - binary_sensor.switch_bedroom

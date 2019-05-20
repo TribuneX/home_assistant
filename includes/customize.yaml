@@ -181,7 +181,7 @@
   binary_sensor.door_window_sensor_158d0002e9ec76:
     friendly_name: 'Backup'
     icon: mdi:door
-  binary_sensor.cube_livingroom:
+  sensor.cube_action:
     friendly_name: 'Cube'
   light.gateway_light:
     friendly_name: 'Gateway Light'

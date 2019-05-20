@@ -31,11 +31,9 @@
 - alias: 'Lights: Toggle lights in bedroom'
   initial_state: 'on'
   trigger:  
-    platform: event
-    event_type: sensor.bedroom_click
-    event_data:
-      entity_id: sensor.bedroom_click
-      click_type: single
+    platform: state
+    entity_id: sensor.bedroom_click
+    to: 'single'
   action:
     - service: light.toggle
       entity_id: light.bedroom_lights

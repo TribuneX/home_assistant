@@ -134,10 +134,10 @@
        entity_id: binary_sensor.switch_bedroom
       
       cube_battery:   
-       value_template: '{{ states.binary_sensor.cube_livingroom.attributes.battery_level}}'    
+       value_template: '{{ states.sensor.cube_action.attributes.battery_level}}'    
        friendly_name: 'Cube'   
        icon_template: mdi:battery
-       entity_id: binary_sensor.cube_livingroom
+       entity_id: sensor.cube_action
 
       robo:
         friendly_name: 'Robo'
