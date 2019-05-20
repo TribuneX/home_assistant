@@ -140,11 +140,6 @@ tradfri:
   host: !secret tradfri_ip
   allow_tradfri_groups: true
 
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    - key: !secret aqara_token
-
 vacuum:
   platform: xiaomi_miio 
   name: 'Vacuum Cleaner'
