@@ -136,10 +136,6 @@ input_number:
     max: 1
     step: 0.01
 
-tradfri:
-  host: !secret tradfri_ip
-  allow_tradfri_groups: true
-
 vacuum:
   platform: xiaomi_miio 
   name: 'Vacuum Cleaner'
