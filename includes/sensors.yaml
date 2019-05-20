@@ -306,3 +306,8 @@
   name: "TV Power Factor"
   state_topic: "tele/sonoff/tv/1/SENSOR"
   value_template: '{{ value_json["ENERGY"]["Factor"] }}'
+
+- platform: mqtt
+  name: Zigbee2mqtt Bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless

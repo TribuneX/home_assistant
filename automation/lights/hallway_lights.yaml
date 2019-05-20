@@ -1,4 +1,4 @@
-- alias: 'Lights: Turn on light in office if motion is detected'
+- alias: 'Lights: Turn on light in hallway if motion is detected'
   initial_state: 'on'
   trigger:
     platform: state
@@ -12,15 +12,13 @@
         brightness: 150
         transition: 2
 
-- alias: 'Lights: Turn off light in office lights if there is no motion for 3 minutes'
+- alias: 'Lights: Turn off light in hallway if there is no motion'
   initial_state: 'on'
   trigger:
     platform: state
     entity_id: binary_sensor.gang_motion
     from: 'on'
     to: 'off'
-    for: 
-      minutes: 1
   action:
     - service: light.turn_off
       data:

@@ -54,6 +54,13 @@
   payload_not_available: "Offline"
   retain: false
 
+- platform: mqtt
+  name: "Zigbee2mqtt Main join"
+  state_topic: "zigbee2mqtt/bridge/config/permit_join"
+  command_topic: "zigbee2mqtt/bridge/config/permit_join"
+  payload_on: "true"
+  payload_off: "false"
+
 - platform: wake_on_lan
   name: Server
   host: server.cbs-service.net
