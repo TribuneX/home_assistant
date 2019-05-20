@@ -32,3 +32,13 @@ filter:
       - climate.bath
       - switch.heating_bath_room
       - switch.heating_living_room
+      - light.sessel
+      - light.fernseher
+      - light.sofa
+      - light.arbeitszimmer
+      - light.bed1
+      - light.bed2
+      - light.bad_gang
+      - light.eingang
+      - light.kueche1
+      - light.kueche2
