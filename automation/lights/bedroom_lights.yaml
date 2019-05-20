@@ -32,9 +32,9 @@
   initial_state: 'on'
   trigger:  
     platform: event
-    event_type: xiaomi_aqara.click
+    event_type: sensor.bedroom_click
     event_data:
-      entity_id: binary_sensor.switch_bedroom
+      entity_id: sensor.bedroom_click
       click_type: single
   action:
     - service: light.toggle

@@ -71,9 +71,9 @@
   initial_state: 'on'
   trigger:
     platform: event
-    event_type: xiaomi_aqara.click
+    event_type: sensor.bedroom_click
     event_data:
-      entity_id: binary_sensor.switch_bedroom
+      entity_id: sensor.bedroom_click
       click_type: long_click_press
   action:
     - service: switch.toggle
@@ -85,7 +85,7 @@
     platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.cube_livingroom
+      entity_id: sensor.cube_action
       action_type: tap_twice
   condition:
     condition: state
@@ -101,9 +101,9 @@
   initial_state: 'on'
   trigger:
     platform: event
-    event_type: xiaomi_aqara.cube_action
+    event_type: sensor.cube_action
     event_data:
-      entity_id: binary_sensor.cube_livingroom
+      entity_id: sensor.cube_action
       action_type: shake_air
   action:
     - service: input_select.select_option
@@ -116,9 +116,9 @@
   initial_state: 'on'
   trigger:
     platform: event
-    event_type: xiaomi_aqara.cube_action
+    event_type: sensor.cube_action
     event_data:
-      entity_id: binary_sensor.cube_livingroom
+      entity_id: sensor.cube_action
       action_type: flip90
   condition:
     condition: state
