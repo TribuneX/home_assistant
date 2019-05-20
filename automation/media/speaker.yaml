@@ -178,7 +178,7 @@
   initial_state: 'on'
   trigger:
       platform: mqtt
-      topic: 'zigbee2mqtt/sensor.cube_action'
+      topic: 'zigbee2mqtt/0x00158d0001108360'
   condition:
     condition: and
     conditions:
@@ -202,7 +202,7 @@
   initial_state: 'on'
   trigger:
     platform: mqtt
-    topic: 'zigbee2mqtt/sensor.cube_action'
+    topic: 'zigbee2mqtt/0x00158d0001108360'
   condition:
     condition: and
     conditions:
