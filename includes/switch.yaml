@@ -55,14 +55,6 @@
   retain: false
 
 - platform: mqtt
-  schema: json
-  name: lights_living_room
-  command_topic: "zigbee2mqtt/lights_living_room/set"
-  state_topic: "zigbee2mqtt/lights_living_room"
-  brightness: 150
-  transition: 4
-
-- platform: mqtt
   name: "Zigbee2mqtt Main join"
   state_topic: "zigbee2mqtt/bridge/config/permit_join"
   command_topic: "zigbee2mqtt/bridge/config/permit_join"
