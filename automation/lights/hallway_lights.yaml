@@ -9,7 +9,7 @@
     - service: light.turn_on
       data:
         entity_id: light.bad_gang
-        brightness: 150
+        brightness: 100
         transition: 2
 
 - alias: 'Lights: Turn off light in hallway if there is no motion'
@@ -24,3 +24,30 @@
       data:
         entity_id: light.bad_gang
         transition: 2
+
+- alias: 'Lights: Turn on light in front hallway if motion is detected'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.entry
+    from: 'off'
+    to: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.eingang
+        brightness: 100
+        transition: 1
+
+- alias: 'Lights: Turn off light in front hallway if there is no motion'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.entry
+    from: 'on'
+    to: 'off'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.eingang
+        transition: 1
