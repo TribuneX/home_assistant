@@ -200,6 +200,11 @@ views:
           - input_select.tv_mode
           - input_boolean.vacation_mode
           - input_boolean.cleaned_today
+      - type: entities
+        title: Zigbee2mqtt
+        entities:
+          - input_select.zigbee2mqtt_log_level
+          - switch.zigbee2mqtt_main_join
       - type: glance
         title: Automations & Skripts
         entities:
