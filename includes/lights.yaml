@@ -62,5 +62,5 @@
   name: kitchen
   command_topic: "zigbee2mqtt/kitchen/set"
   state_topic: "zigbee2mqtt/kitchen"
-  brightness: 150
+  brightness: 200
   transition: 4
