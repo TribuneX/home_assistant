@@ -1,20 +1,3 @@
-- platform: group
-  name: Living Room Lights
-  entities:
-    - light.fernseher
-    - light.sofa
-    - light.sessel
-- platform: group
-  name: Bedroom Lights
-  entities:
-    - light.bed2
-    - light.bed1
-- platform: group
-  name: Kitchen Lights
-  entities:
-    - light.kueche1
-    - light.kueche2
-
 - platform: mqtt
   name: "Christmas Tree"
   state_topic: "tele/sonoff/living_room/tree/STATE"
@@ -47,7 +30,6 @@
   command_topic: "zigbee2mqtt/living_room/set"
   state_topic: "zigbee2mqtt/living_room"
   brightness: 150
-  transition: 4
 
 - platform: mqtt
   schema: json
@@ -55,7 +37,6 @@
   command_topic: "zigbee2mqtt/bed_room/set"
   state_topic: "zigbee2mqtt/bed_room"
   brightness: 150
-  transition: 4
 
 - platform: mqtt
   schema: json
@@ -63,4 +44,3 @@
   command_topic: "zigbee2mqtt/kitchen/set"
   state_topic: "zigbee2mqtt/kitchen"
   brightness: 200
-  transition: 4

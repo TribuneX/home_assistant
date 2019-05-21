@@ -227,6 +227,13 @@
   light.stars:
     icon: mdi:weather-night
     assumed_state: false
+  light.bedroom:
+    friendly_name: Bedroom Lights
+  light.living_room:
+    friendly_name: Living Room Lights
+  light.kitchen:
+    friendly_name: Kitchen Lights
+    
 
 # Groups 
   group.user_1:
