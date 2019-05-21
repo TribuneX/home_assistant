@@ -207,4 +207,4 @@
 
 - platform: flux
   lights:
-    - light.living_room_lights
+    - light.living_room

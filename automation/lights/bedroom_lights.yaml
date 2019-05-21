@@ -36,4 +36,4 @@
     to: 'single'
   action:
     - service: light.toggle
-      entity_id: light.bedroom_lights
+      entity_id: light.bedroom

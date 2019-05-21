@@ -32,7 +32,7 @@ views:
       - type: entities
         title: Living Room
         entities:
-          - light.living_room_lights
+          - light.living_room
           - switch.appletv_mode
           - switch.sonos_mode
           - sensor.temperature_livingroom
@@ -44,7 +44,7 @@ views:
       - type: entities
         title: Bedroom
         entities:
-          - light.bedroom_lights
+          - light.bedroom
           - switch.tv_2
           - sensor.temperature_bedroom
           - sensor.humidity_bedroom
@@ -52,7 +52,7 @@ views:
       - type: entities
         title: Kitchen
         entities:
-          - light.kitchen_lights
+          - light.kitchen
 
       - type: entities
         title: Christmas

@@ -105,7 +105,7 @@ turn_on_vacation_lights:
     - delay:
         minutes: 40
     - service: light.turn_off
-      entity_id: light.bedroom_lights
+      entity_id: light.bedroom
 
 turn_off_tv_livingroom:
   sequence:
@@ -323,9 +323,7 @@ turn_on_livingroom_default_lights:
   sequence:
     - service: light.turn_on
       data: 
-        entity_id: light.living_room_lights
-        brightness: 150
-        transition: 4
+        entity_id: light.living_room
 
 turn_on_office_default_lights:
   sequence:
@@ -345,17 +343,13 @@ turn_on_livingroom_dimmed_lights:
   sequence:
     - service: light.turn_on
       data: 
-        entity_id: light.living_room_lights
-        brightness: 20
-        transition: 4
+        entity_id: light.living_room
 
 turn_on_bedroom_dimmed_lights:
   sequence:
     - service: light.turn_on
       data: 
-        entity_id: light.bedroom_lights
-        brightness: 100
-        transition: 4
+        entity_id: light.bedroom
 
 turn_off_livingroom_lights_delay_30:
   alias: 'Turn off livingroom lights (delay 30 minutes)'
@@ -363,7 +357,7 @@ turn_off_livingroom_lights_delay_30:
     - delay:
         minutes: 30
     - service: light.turn_off
-      entity_id: light.living_room_lights
+      entity_id: light.living_room
     - service: script.pause_sonos
     - service: script.turn_off_christmas
 
@@ -371,15 +365,13 @@ turn_on_kitchen_lights:
   sequence:
     - service: light.turn_on
       data:
-        entity_id: light.kitchen_lights
-        brightness: 200
+        entity_id: light.kitchen
 
 turn_off_kitchen_lights:
   sequence:
     - service: light.turn_off
       data:
-        entity_id: light.kitchen_lights
-        transition: 2
+        entity_id: light.kitchen
         
 turn_off_heating_living_room:
   sequence:

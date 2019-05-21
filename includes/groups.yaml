@@ -4,13 +4,13 @@
 living_room:
   name: 'Living Room'
   entities:
-    - light.living_room_lights
+    - light.living_room
     - switch.appletv_mode
     - switch.sonos_mode
 bed_room:
   name: 'Bedroom'
   entities:
-    - light.bedroom_lights
+    - light.bedroom
     - switch.tv_2
 outdoor:
   name: 'Outdoor'

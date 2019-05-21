@@ -19,7 +19,7 @@
         entity_id: sensor.dark_outside
         state: 'on'
       - condition: state
-        entity_id: light.living_room_lights
+        entity_id: light.living_room
         state: 'off'
   action:
     - service: script.turn_on 
@@ -216,5 +216,5 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.living_room_lights
+        entity_id: light.living_room
         transition: 2
