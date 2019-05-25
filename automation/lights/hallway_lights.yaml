@@ -5,6 +5,10 @@
     entity_id: binary_sensor.gang_motion
     from: 'off'
     to: 'on'
+  condition:
+    - condition: state
+      entity_id: sensor.dark_outside
+      state: 'on'
   action:
     - service: light.turn_on
       data:
@@ -19,6 +23,10 @@
     entity_id: binary_sensor.gang_motion
     from: 'on'
     to: 'off'
+  condition:
+    - condition: state
+      entity_id: sensor.dark_outside
+      state: 'on'
   action:
     - service: light.turn_off
       data:
@@ -32,6 +40,10 @@
     entity_id: binary_sensor.entry
     from: 'off'
     to: 'on'
+  condition:
+    - condition: state
+      entity_id: sensor.dark_outside
+      state: 'on'
   action:
     - service: light.turn_on
       data:
@@ -46,6 +58,10 @@
     entity_id: binary_sensor.entry
     from: 'on'
     to: 'off'
+  condition:
+    - condition: state
+      entity_id: sensor.dark_outside
+      state: 'on'
   action:
     - service: light.turn_off
       data:
