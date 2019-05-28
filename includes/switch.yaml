@@ -3,7 +3,7 @@
 ##########################
 
 - platform: mqtt
-  name: "TV"
+  name: "TV-old"
   state_topic: "tele/sonoff/tv/1/STATE"
   value_template: "{{ value_json.POWER }}"
   command_topic: "cmnd/sonoff/tv/1/POWER"
@@ -16,7 +16,7 @@
   retain: false
 
 - platform: mqtt
-  name: "TV 2"
+  name: "TV 2-old"
   state_topic: "tele/sonoff/tv/2/STATE"
   value_template: "{{ value_json.POWER }}"
   command_topic: "cmnd/sonoff/tv/2/POWER"
