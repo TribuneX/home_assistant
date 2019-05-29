@@ -2,44 +2,44 @@
 # Switches
 ##########################
 
-- platform: mqtt
-  name: "TV-old"
-  state_topic: "tele/sonoff/tv/1/STATE"
-  value_template: "{{ value_json.POWER }}"
-  command_topic: "cmnd/sonoff/tv/1/POWER"
-  availability_topic: "tele/sonoff/tv/1/LWT"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: false
+# - platform: mqtt
+#   name: "TV-old"
+#   state_topic: "tele/sonoff/tv/1/STATE"
+#   value_template: "{{ value_json.POWER }}"
+#   command_topic: "cmnd/sonoff/tv/1/POWER"
+#   availability_topic: "tele/sonoff/tv/1/LWT"
+#   qos: 1
+#   payload_on: "ON"
+#   payload_off: "OFF"
+#   payload_available: "Online"
+#   payload_not_available: "Offline"
+#   retain: false
 
-- platform: mqtt
-  name: "TV 2-old"
-  state_topic: "tele/sonoff/tv/2/STATE"
-  value_template: "{{ value_json.POWER }}"
-  command_topic: "cmnd/sonoff/tv/2/POWER"
-  availability_topic: "tele/sonoff/tv/2/LWT"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: false
+# - platform: mqtt
+#   name: "TV 2-old"
+#   state_topic: "tele/sonoff/tv/2/STATE"
+#   value_template: "{{ value_json.POWER }}"
+#   command_topic: "cmnd/sonoff/tv/2/POWER"
+#   availability_topic: "tele/sonoff/tv/2/LWT"
+#   qos: 1
+#   payload_on: "ON"
+#   payload_off: "OFF"
+#   payload_available: "Online"
+#   payload_not_available: "Offline"
+#   retain: false
 
-- platform: mqtt
-  name: "Speaker 1"
-  state_topic: "tele/sonoff/speaker/1/STATE"
-  value_template: "{{ value_json.POWER }}"
-  command_topic: "cmnd/sonoff/speaker/1/POWER"
-  availability_topic: "tele/sonoff/speaker/1/LWT"
-  qos: 1
-  payload_on: "ON"
-  payload_off: "OFF"
-  payload_available: "Online"
-  payload_not_available: "Offline"
-  retain: false
+# - platform: mqtt
+#   name: "Speaker 1"
+#   state_topic: "tele/sonoff/speaker/1/STATE"
+#   value_template: "{{ value_json.POWER }}"
+#   command_topic: "cmnd/sonoff/speaker/1/POWER"
+#   availability_topic: "tele/sonoff/speaker/1/LWT"
+#   qos: 1
+#   payload_on: "ON"
+#   payload_off: "OFF"
+#   payload_available: "Online"
+#   payload_not_available: "Offline"
+#   retain: false
 
 - platform: mqtt
   name: "Speaker 2"
