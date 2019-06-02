@@ -142,11 +142,11 @@ vacuum:
   host: !secret robo_ip
   token: !secret mirobo_token
 
-# fan:
-#   platform: xiaomi_miio_fan
-#   name: Fan
-#   host: 192.168.178.38
-#   token: !secret fan_token
+fan:
+  platform: xiaomi_miio_fan
+  name: Fan
+  host: 192.168.178.38
+  token: !secret fan_token
 
 zone 1:
   name: Work User 1
