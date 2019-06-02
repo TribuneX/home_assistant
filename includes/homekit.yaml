@@ -40,3 +40,4 @@ filter:
       - light.bedroom
       - switch.speaker_1
       - switch.speaker_2
+      - fan.fan
