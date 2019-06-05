@@ -158,6 +158,18 @@ zone 2:
   latitude: !secret lat_zone_2 
   longitude: !secret long_zone_2 
 
+person:
+  - name: !secret user_1
+    id: user_1
+    device_trackers:
+      - device_tracker.iphones
+      - device_tracker.owntracks_iphones
+  - name: !secret user_2
+    id: user_2
+    device_trackers:
+      - device_tracker.user_2_iphone
+      - device_tracker.owntracks_user_2_iphone
+
 ##########################
 # Includes
 ##########################

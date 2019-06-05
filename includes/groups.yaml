@@ -42,8 +42,8 @@ pi:
 personen:
   name: 'People'
   entities:
-    - group.user_1
-    - group.user_2
+    - person.user_1
+    - person.user_2
 user_1:
   name: !secret user_1
   entities:
