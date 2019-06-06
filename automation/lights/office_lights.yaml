@@ -20,7 +20,7 @@
     from: 'on'
     to: 'off'
     for: 
-      minutes: 1
+      minutes: 2
   action:
     - service: light.turn_off
       data:
