@@ -175,6 +175,9 @@
   binary_sensor.bedroom_door:
     friendly_name: 'Bedroom'
     icon: mdi:door
+  binary_sensor.office_door:
+    friendly_name: 'Office Bacony'
+    icon: mdi:door
   binary_sensor.door_window_sensor_158d0002e69593:
     friendly_name: 'Fenster'
     icon: mdi:window-maximize
