@@ -101,7 +101,7 @@
       entity_id: media_player.living_room
 
 - alias: 'Speaker: Play Radio when someone arrives at home'
-  initial_state: 'on'
+  initial_state: 'off'
   trigger:
     platform: state
     entity_id: group.personen
