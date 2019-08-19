@@ -36,7 +36,7 @@
       data_template:
         title: 'Doors'
         message: >
-          'Open doors: {% if is_state('binary_sensor.balcony_door', 'on') %}Balcony, {% endif %}{% if is_state('binary_sensor.bedroom_door', 'on') %}Bedroom, {% endif %}{% if is_state('binary_sensor.bath_window', 'on') %}Bath{% endif %}'
+          'Open doors: {% if is_state('binary_sensor.balcony_door', 'on') %}Balcony, {% endif %}{% if is_state('binary_sensor.bedroom_door', 'on') %}Bedroom, {% endif %}{% if is_state('binary_sensor.office_door', 'on') %}Office, {% endif %}{% if is_state('binary_sensor.bath_window', 'on') %}Bath{% endif %}'
 
 - alias: 'Door: Front Door is still open' 
   initial_state: 'on'   
