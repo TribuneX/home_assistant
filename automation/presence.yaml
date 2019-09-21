@@ -10,7 +10,7 @@
     entity_id: group.user_1   
     state: 'not home'  
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Location'
         message: 'User 2 left home.'
@@ -23,7 +23,7 @@
     zone: zone.home
     event: enter
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Location'
         message: 'User 2 arrived at home.'
@@ -36,7 +36,7 @@
     zone: zone.work_user_2
     event: leave
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Location'
         message: 'User 2 left work.'
@@ -49,7 +49,7 @@
     zone: zone.work_user_2
     event: enter
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Location'
         message: 'User 2 arrived at work.'

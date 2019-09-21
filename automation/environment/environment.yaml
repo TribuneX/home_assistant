@@ -8,7 +8,7 @@
     entity_id: device_tracker.iphones
     state: 'home'
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Weather Report for today'
         message: 'Current: {{states.sensor.dark_sky_temperature.state}}°C 
@@ -22,7 +22,7 @@
     entity_id: sensor.luftdaten_pm10
     above: 50
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Fine Dust'
         message: 'High values: {{states.sensor.luftdaten_pm10.state}} µg/m3'

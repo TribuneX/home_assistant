@@ -12,7 +12,7 @@
     platform: state
     entity_id: updater.updater
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Update'
         message: 'Update for Home Assistant is available.'
@@ -54,7 +54,7 @@
     entity_id: sensor.tribunex_home_assistant_last_build_state
     to: 'passed'
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Travis'
         message: 'Build was successful'
@@ -67,7 +67,7 @@
     entity_id: sensor.disk_use_percent
     above: 90
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'System'
         message: 'Volume is running out of space. Current usage is: {{states.sensor.disk_use_.state}}%'

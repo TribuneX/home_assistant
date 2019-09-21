@@ -17,7 +17,7 @@
         entity_id: binary_sensor.balcony_door
         state: 'on'
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Doors'
         message: 'Close the balcony door, since it is {{states.sensor.out_vs_in.state}}°C outside.'
@@ -41,7 +41,7 @@
         entity_id: binary_sensor.balcony_door
         state: 'off'
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Doors'
         message: 'Open the balcony door, since it is {{states.sensor.out_vs_in.state}}°C colder outside.'

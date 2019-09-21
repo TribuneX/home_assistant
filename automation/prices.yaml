@@ -5,7 +5,7 @@
       entity_id: sensor.mein_schiff_ostsee
       below: 2095
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Price Drop'
         message: 'The cruise is cheaper: ({{states.sensor.mein_schiff_price.state}}€)'
@@ -17,7 +17,7 @@
       entity_id: sensor.mein_schiff_ostsee
       above: 2095
   action:
-    - service: notify.ios_iphones_app
+    - service: notify.mobile_app_batphone
       data:
         title: 'Price Increase'
         message: 'The cruise is more expensive: ({{states.sensor.mein_schiff_price.state}}€)'
