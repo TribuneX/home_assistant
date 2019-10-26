@@ -5,7 +5,7 @@ filter:
       - switch.plex_mode
       - switch.music_mode
       - switch.server
-      - switch.tv_mode
+      - switch.tv
       - switch.tv_2
       - binary_sensor.balcony_door
       - binary_sensor.front_door
