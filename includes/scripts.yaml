@@ -380,7 +380,7 @@ turn_off_heating_living_room:
         entity_id: 
           - climate.living_room
           - climate.dining_room
-        operation_mode: eco
+        hvac_mode: off
 
 turn_on_heating_living_room:
   sequence:
@@ -389,21 +389,21 @@ turn_on_heating_living_room:
         entity_id: 
           - climate.living_room
           - climate.dining_room
-        operation_mode: heat
+        hvac_mode: heat
 
 turn_on_heating_bath_room:
   sequence:
     - service: climate.set_operation_mode
       data:
         entity_id: climate.bath
-        operation_mode: heat
+        hvac_mode: heat 
 
 turn_off_heating_bath_room:
   sequence:
     - service: climate.set_operation_mode
       data:
         entity_id: climate.bath
-        operation_mode: eco
+        hvac_mode: off
 
 start_vacuum_cleaning:
       alias: "Start the vacuum"
