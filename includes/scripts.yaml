@@ -375,7 +375,7 @@ turn_off_kitchen_lights:
         
 turn_off_heating_living_room:
   sequence:
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: 
           - climate.living_room
@@ -384,7 +384,7 @@ turn_off_heating_living_room:
 
 turn_on_heating_living_room:
   sequence:
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: 
           - climate.living_room
@@ -393,14 +393,14 @@ turn_on_heating_living_room:
 
 turn_on_heating_bath_room:
   sequence:
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.bath
         hvac_mode: heat 
 
 turn_off_heating_bath_room:
   sequence:
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.bath
         hvac_mode: off
