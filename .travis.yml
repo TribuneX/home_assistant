@@ -1,9 +1,19 @@
-language: python
-python:
-  - "3.6"
+sudo: required
+
+services:
+  - docker
+
+env:
+  DOCKER_COMPOSE_VERSION: 1.24.1
+
 before_install:
-  - mv travis_secrets.yaml secrets.yaml
-install:
-  - pip3 install homeassistant
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
 script:
-  - hass -c . --script check_config
+  - docker-compose -f testing/docker-compose.yml up
+
+after_script:
+  - docker-compose -f testing/docker-compose.yml down
