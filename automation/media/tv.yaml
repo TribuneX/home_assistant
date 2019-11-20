@@ -19,8 +19,6 @@
             script.set_input_plex
           {% elif trigger.to_state.state == 'Music' %}
             script.set_input_music
-          {% elif trigger.to_state.state == 'AUS' %}
-            script.turn_off_tv_livingroom
           {% endif %}
 
 - alias: 'TV: Select mode + TV'
@@ -48,8 +46,6 @@
             script.set_input_plex
           {% elif trigger.to_state.state == 'Music' %}
             script.set_input_music
-          {% elif trigger.to_state.state == 'AUS' %}
-            script.turn_off_tv_livingroom
           {% endif %}
 
 - alias: 'TV: Pause AppleTV if SONOS is used'

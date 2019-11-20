@@ -92,10 +92,8 @@
           entity_id: input_select.tv_mode
           option: AppleTV
       turn_off:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: AUS
+        service: script.turn_on
+        entity_id: script.turn_off_tv_livingroom
     plex_mode:
       value_template: "{{ is_state('input_select.tv_mode', 'Plex')}}"
       turn_on:
@@ -116,10 +114,8 @@
           entity_id: input_select.tv_mode
           option: Music
       turn_off:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: AUS
+        service: script.turn_on
+        entity_id: script.turn_off_tv_livingroom
     sonos_mode:
       value_template: "{{ is_state('media_player.living_room', 'playing')}}"
       turn_on:
