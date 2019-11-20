@@ -53,14 +53,14 @@ init_hass:
 init_tv:
   alias: 'Init TV'
   sequence:
-    - condition: or
-      conditions:
-      - condition: state
-        entity_id: media_player.wohnzimmer
-        state: 'paused'
-      - condition: state
-        entity_id: media_player.wohnzimmer
-        state: 'idle'
+    # - condition: or
+    #   conditions:
+    #   - condition: state
+    #     entity_id: media_player.wohnzimmer
+    #     state: 'paused'
+    #   - condition: state
+    #     entity_id: media_player.wohnzimmer
+    #     state: 'idle'
     - service: script.tv_mode_off
     - service: switch.turn_off
       entity_id: switch.tv
