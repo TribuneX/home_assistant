@@ -30,42 +30,24 @@
 - alias: 'Robot: Robot cleanup if nobody is home'
   initial_state: 'on'
   trigger:
-    platform: time
-    at: '14:00'
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        weekday:
-          - mon
-          - fri
-      - condition: state
-        entity_id: group.personen
-        state: 'not_home'
-      - condition: state
-        entity_id: input_boolean.cleaned_today
-        state: 'off'
-      - condition: state
-        entity_id: input_boolean.vacation_mode
-        state: 'off'
-  action:
-    - service: script.start_vacuum_cleaning
-
-- alias: 'Robot: Robot waits until everybody left'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: group.personen
-    from: 'home'
-    to: 'not_home' 
+    - platform: time
+      at: '14:00'
+    - platform: state
+      entity_id: group.persons
+      from: home
+      to: not_home
   condition:
     condition: and
     conditions:
       - condition: time
         after: '14:00:00'
+        before: '22:00:00'
         weekday:
           - mon
           - fri
+      - condition: state
+        entity_id: group.personen
+        state: not_home
       - condition: state
         entity_id: input_boolean.cleaned_today
         state: 'off'
@@ -73,7 +55,8 @@
         entity_id: input_boolean.vacation_mode
         state: 'off'
   action:
-    - service: script.start_vacuum_cleaning
+    - service: vacuum.start
+      entity_id: vacuum.vacuum_cleaner
 
 - alias: 'Robot: Reset cleaned today counter'
   initial_state: 'on'
