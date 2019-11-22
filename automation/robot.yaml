@@ -33,7 +33,7 @@
     - platform: time
       at: '14:00'
     - platform: state
-      entity_id: group.persons
+      entity_id: group.personen
       from: home
       to: not_home
   condition:
