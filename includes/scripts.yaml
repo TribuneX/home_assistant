@@ -68,14 +68,14 @@ init_tv:
 init_tv_2:
   alias: 'Init TV2'
   sequence:
-    - condition: or
-      conditions:
-      - condition: state
-        entity_id: media_player.schlafzimmer
-        state: 'paused'
-      - condition: state
-        entity_id: media_player.schlafzimmer
-        state: 'idle'
+    # - condition: or
+    #   conditions:
+    #   - condition: state
+    #     entity_id: media_player.schlafzimmer
+    #     state: 'paused'
+    #   - condition: state
+    #     entity_id: media_player.schlafzimmer
+    #     state: 'idle'
     - service: switch.turn_off
       entity_id: switch.tv_2
 
