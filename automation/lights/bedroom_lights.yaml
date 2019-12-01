@@ -10,7 +10,7 @@
     after: '23:00'
     before: '05:00'
   action:
-    - service: script.urn_off_bedroom_delay_120
+    - service: script.turn_off_bedroom_delay_120
 
 - alias: 'Lights: Turn on lights in bedroom after TV is switched off'
   initial_state: 'on'

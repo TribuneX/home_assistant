@@ -132,7 +132,7 @@ turn_off_livingroom_delay_10:
       entity_id: group.living_room
     - service: script.turn_off_christmas
 
-urn_off_bedroom_delay_120:
+turn_off_bedroom_delay_120:
   alias: 'Turn off bedroom (delay 120 minutes)'
   sequence:
     - delay:
