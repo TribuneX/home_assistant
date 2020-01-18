@@ -12,7 +12,7 @@
 - platform: wake_on_lan
   name: Server
   host: server.cbs-service.net
-  mac_address: '38-EA-A7-A3-25-F0'
+  mac: '38-EA-A7-A3-25-F0'
   turn_off:
     service: shell_command.turn_off_server
 
