@@ -22,8 +22,6 @@ filter:
       - sensor.pressure_bedroom
       - sensor.humidity_bedroom
       - sensor.temperature_bedroom
-      - sensor.luftdaten_pm10
-      - sensor.luftdaten_pm25
       - binary_sensor.water_leak_sensor
       - switch.vacuum_mode
       - climate.living_room

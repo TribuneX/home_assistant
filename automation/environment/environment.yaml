@@ -14,15 +14,3 @@
         message: 'Current: {{states.sensor.dark_sky_temperature.state}}°C 
         H/L: {{states.sensor.dark_sky_daytime_high_temperature.state}}°C/{{states.sensor.dark_sky_overnight_low_temperature.state}}°C 
         {{states.sensor.dark_sky_hourly_summary.state}}'    
-
-- alias: 'Environment: Fine Dust'
-  initial_state: 'on'
-  trigger:
-    platform: numeric_state
-    entity_id: sensor.luftdaten_pm10
-    above: 50
-  action:
-    - service: notify.mobile_app_batphone
-      data:
-        title: 'Fine Dust'
-        message: 'High values: {{states.sensor.luftdaten_pm10.state}} µg/m3'

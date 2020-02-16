@@ -253,12 +253,6 @@
 #   unit_of_measurement: '€'
 #   scan_interval: 120
 
-- platform: luftdaten
-  sensorid: 3111
-  monitored_conditions:
-    - P1
-    - P2
-
 - platform: mqtt
   name: "TV Energy Today"
   state_topic: "tele/sonoff/tv/1/SENSOR"
