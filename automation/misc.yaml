@@ -28,24 +28,24 @@
     data_template:
       homeassistant.components: "{{ trigger.to_state.state }}"
 
-- alias: 'Misc: Activate Fan auto off'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: fan.fan
-    to: 'on'
-  action: 
-    - service: script.turn_off_fan_after_delay
+# - alias: 'Misc: Activate Fan auto off'
+#   initial_state: 'on'
+#   trigger:
+#     platform: state
+#     entity_id: fan.fan
+#     to: 'on'
+#   action: 
+#     - service: script.turn_off_fan_after_delay
 
-- alias: 'Misc: Deactivate fan auto off'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: fan.fan
-    to: 'off'
-  action: 
-    - service: script.turn_off
-      entity_id: script.turn_off_fan_after_delay 
+# - alias: 'Misc: Deactivate fan auto off'
+#   initial_state: 'on'
+#   trigger:
+#     platform: state
+#     entity_id: fan.fan
+#     to: 'off'
+#   action: 
+#     - service: script.turn_off
+#       entity_id: script.turn_off_fan_after_delay 
 
 - alias: 'Misc: Notify if travis build is successfull'
   initial_state: 'on'

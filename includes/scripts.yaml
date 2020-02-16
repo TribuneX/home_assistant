@@ -289,12 +289,12 @@ play_sonos_radio:
         entity_id: media_player.living_room
         volume_level: "{{ volume|default(0.1) }}"
 
-turn_off_fan_after_delay:
-  sequence:
-    - delay:
-        hours: 2
-    - service: fan.turn_off
-      entity_id: fan.fan 
+# turn_off_fan_after_delay:
+#   sequence:
+#     - delay:
+#         hours: 2
+#     - service: fan.turn_off
+#       entity_id: fan.fan 
 
 turn_off_all:
   sequence:
