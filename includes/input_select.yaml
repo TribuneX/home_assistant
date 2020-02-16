@@ -41,5 +41,5 @@ zigbee2mqtt_log_level:
     - info
     - warn
     - error
-  initial: info
+  initial: error
   icon: mdi:format-list-bulleted
