@@ -85,12 +85,6 @@ history:
 # Support for iOS app
 ios:
 
-# iOS notification
-notify:
-  - platform: ios
-    name: ios_app
-    target: !secret ios_token
-
 # Presence Detection
 device_tracker:
   - platform: fritz
