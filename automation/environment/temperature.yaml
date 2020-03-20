@@ -1,47 +1,47 @@
-- alias: 'Temperature: Warmer outside'
-  initial_state: 'on'
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.out_vs_in
-      above: 2
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: device_tracker.iphones
-        state: 'home'
-      - condition: numeric_state
-        entity_id: 'sensor.dark_sky_temperature'
-        above: '20'
-      - condition: state
-        entity_id: binary_sensor.balcony_door
-        state: 'on'
-  action:
-    - service: notify.mobile_app_batphone
-      data:
-        title: 'Doors'
-        message: 'Close the balcony door, since it is {{states.sensor.out_vs_in.state}}°C outside.'
+# - alias: 'Temperature: Warmer outside'
+#   initial_state: 'on'
+#   trigger:
+#     - platform: numeric_state
+#       entity_id: sensor.out_vs_in
+#       above: 2
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: device_tracker.iphones
+#         state: 'home'
+#       - condition: numeric_state
+#         entity_id: 'sensor.dark_sky_temperature'
+#         above: '20'
+#       - condition: state
+#         entity_id: binary_sensor.balcony_door
+#         state: 'on'
+#   action:
+#     - service: notify.mobile_app_batphone
+#       data:
+#         title: 'Doors'
+#         message: 'Close the balcony door, since it is {{states.sensor.out_vs_in.state}}°C outside.'
 
-- alias: 'Temperature: Colder outside'
-  initial_state: 'on'
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.out_vs_in
-      below: -2
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: device_tracker.iphones
-        state: 'home'
-      - condition: numeric_state
-        entity_id: 'sensor.dark_sky_temperature'
-        above: '20'
-      - condition: state
-        entity_id: binary_sensor.balcony_door
-        state: 'off'
-  action:
-    - service: notify.mobile_app_batphone
-      data:
-        title: 'Doors'
-        message: 'Open the balcony door, since it is {{states.sensor.out_vs_in.state}}°C colder outside.'
+# - alias: 'Temperature: Colder outside'
+#   initial_state: 'on'
+#   trigger:
+#     - platform: numeric_state
+#       entity_id: sensor.out_vs_in
+#       below: -2
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: state
+#         entity_id: device_tracker.iphones
+#         state: 'home'
+#       - condition: numeric_state
+#         entity_id: 'sensor.dark_sky_temperature'
+#         above: '20'
+#       - condition: state
+#         entity_id: binary_sensor.balcony_door
+#         state: 'off'
+#   action:
+#     - service: notify.mobile_app_batphone
+#       data:
+#         title: 'Doors'
+#         message: 'Open the balcony door, since it is {{states.sensor.out_vs_in.state}}°C colder outside.'

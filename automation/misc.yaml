@@ -6,17 +6,6 @@
   action:
     - service: script.turn_off_all
 
-- alias: 'Misc: Update Available Notifications'
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: updater.updater
-  action:
-    - service: notify.mobile_app_batphone
-      data:
-        title: 'Update'
-        message: 'Update for Home Assistant is available.'
-
 # Inspired by https://community.home-assistant.io/t/logger-set-level/14267
 - alias: 'Misc: Log Level'
   initial_state: 'on'
@@ -59,15 +48,3 @@
         title: 'Travis'
         message: 'Build was successful'
     - service: script.restart_hass
-
-- alias: 'Misc: Raspberry full volume'
-  initial_state: 'on'
-  trigger:
-    platform: numeric_state
-    entity_id: sensor.disk_use_percent
-    above: 90
-  action:
-    - service: notify.mobile_app_batphone
-      data:
-        title: 'System'
-        message: 'Volume is running out of space. Current usage is: {{states.sensor.disk_use_.state}}%'

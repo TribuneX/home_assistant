@@ -4,9 +4,9 @@
     platform: state
     entity_id: input_select.tv_mode
   condition:  
-   condition: state
-   entity_id: switch.tv
-   state: 'on'
+    condition: state
+    entity_id: switch.tv
+    state: 'on'
   action:
     - service: script.turn_on 
       data_template:
@@ -27,9 +27,9 @@
     platform: state
     entity_id: input_select.tv_mode
   condition:  
-   condition: state
-   entity_id: switch.tv
-   state: 'off'
+    condition: state
+    entity_id: switch.tv
+    state: 'off'
   action:
     - service: switch.turn_on
       entity_id: switch.tv

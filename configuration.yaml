@@ -142,15 +142,14 @@ vacuum:
 #   host: 192.168.178.38
 #   token: !secret fan_token
 
-zone 1:
-  name: Work User 1
-  latitude: !secret lat_zone_1 
-  longitude: !secret long_zone_1 
+zone:
+  - name: Work User 1
+    latitude: !secret lat_zone_1 
+    longitude: !secret long_zone_1 
 
-zone 2:
-  name: Work User 2
-  latitude: !secret lat_zone_2 
-  longitude: !secret long_zone_2 
+  - name: Work User 2
+    latitude: !secret lat_zone_2 
+    longitude: !secret long_zone_2 
 
 person:
   - name: !secret user_1

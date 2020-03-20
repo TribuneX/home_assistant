@@ -81,7 +81,6 @@ pings:
     - binary_sensor.ping_sebastian
     - binary_sensor.ping_uwe
     - binary_sensor.ping_vhv
-    - binary_sensor.ping_wsw
     - binary_sensor.ping_anny
     - binary_sensor.ping_bender
 settings:
@@ -170,7 +169,6 @@ doors:
     - binary_sensor.office_door
 docker_container:
   name: 'Docker Container'
-  control: hidden
   entities:
     - switch.influxdb
     - switch.grafana
@@ -211,25 +209,8 @@ pressure:
     - sensor.pressure_bath
     - sensor.pressure_bedroom
     - sensor.pressure_livingroom
-
-# Tabs
-default_view:
-  name: 'Home'
-  view: yes
-  icon: mdi:home
-  entities:
-    - group.living_room
-    - group.bed_room
-    - group.office
-    - group.temperature
-    - group.doors
-    - group.states
-    - group.robot
-    - group.personen
-    - group.humidity
 media:
   name: 'Media'
-  view: yes
   icon: mdi:television 
   entities:
     - group.tv_scenes
@@ -239,7 +220,6 @@ media:
     - media_player.living_room    
 plants:
   name: 'Plants'
-  view: yes
   icon: mdi:barley
   entities:
     - plant.bonsai
@@ -248,7 +228,6 @@ plants:
     - plant.palm_small
 system:
   name: 'System'
-  view: yes
   icon: mdi:server
   entities:
     - group.pi
@@ -257,7 +236,6 @@ system:
     - group.docker_container
 automation:
   name: 'Automation'
-  view: yes
   icon: mdi:settings
   entities:
     - group.settings
@@ -265,7 +243,6 @@ automation:
     - group.all_scripts
 christmas:
   name: 'Christmas'
-  view: no
   icon: mdi:pine-tree
   entities:
     - light.christmas_tree
@@ -273,7 +250,6 @@ christmas:
     - light.stern
 device_status:
   name: 'Device Status'
-  view: yes
   icon: mdi:oil-temperature
   entities:
     - group.printer
