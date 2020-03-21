@@ -2,10 +2,6 @@
   <img src="https://github.com/home-assistant/home-assistant-assets/blob/master/loading-screen.gif">
 </p>
 
-<p align="center">
-  <img src="https://travis-ci.org/TribuneX/home_assistant.svg?branch=master">
-</p>
-
 # My Home Assistant Setup
 
 This repository contains the configuration for my [Home Assistant](https://www.home-assistant.io) (HA) setup. More information on my HA setup is available on my [blog](https://sascha-bleidner.de). Feel free to reach out to me also via [Twitter](https://twitter.com/sbleidner) or open an issue if you have feedback.
