@@ -1,34 +1,11 @@
 ---
 kind: pipeline
-name: testing
-
-steps:
-  - name: test
-    image: homeassistant/home-assistant:latest
-    pull: always
-    commands:
-      - mv travis_secrets.yaml secrets.yaml
-      - python -m homeassistant --script check_config --config .
-  - name: lint
-    image: cytopia/yamllint:latest
-    commands:
-      - yamllint .
-    failure: ignore
-
----
-kind: pipeline
 type: ssh
-name: deploy
+name: update
 
 trigger:
   branch:
-  - master
-  event:
-    exclude:
-    - pull_request
-
-depends_on:
-  - testing
+  - update_home_assistant
 
 server:
   host: 192.168.178.5
@@ -37,11 +14,6 @@ server:
     from_secret: SSH_KEY
 
 steps:
-- name: pull
-  commands:
-  - cd /media/usbstick/container/homeassistant/config
-  - git pull
-
 - name: prepare
   environment:
     TOKEN:
@@ -55,6 +27,12 @@ steps:
 - name: restart
   commands:
   - cd /opt/configurations/docker-compose/homeassistant
-  - bash
+  - docker-compose pull
   - docker-compose down
   - docker-compose up -d
+
+- name: clean
+  commands:
+  - cd /opt/configurations/docker-compose/homeassistant
+  - docker image prune -f
+  - docker container prune -f 
