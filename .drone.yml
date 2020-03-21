@@ -1,0 +1,60 @@
+---
+kind: pipeline
+name: testing
+
+steps:
+  - name: test
+    image: homeassistant/home-assistant:latest
+    pull: always
+    commands:
+      - mv travis_secrets.yaml secrets.yaml
+      - python -m homeassistant --script check_config --config .
+  - name: lint
+    image: cytopia/yamllint:latest
+    commands:
+      - yamllint .
+    failure: ignore
+
+---
+kind: pipeline
+type: ssh
+name: deploy
+
+trigger:
+  branch:
+  - master
+  event:
+    exclude:
+    - pull_request
+
+depends_on:
+  - testing
+
+server:
+  host: 192.168.178.5
+  user: pi
+  ssh_key:
+    from_secret: SSH_KEY
+
+steps:
+- name: pull
+  commands:
+  - cd /media/usbstick/container/homeassistant/config
+  - git pull
+
+- name: prepare
+  environment:
+    TOKEN:
+      from_secret: token
+    URL:
+      from_secret: url
+  commands:
+    - >
+      curl -X POST -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' -d '{"entity_id": "script.prepare_restart"}' https://$URL:8123/api/services/script/turn_on
+
+- name: restart
+  commands:
+  - cd /opt/configurations/docker-compose/homeassistant
+  - bash
+  - docker-compose down
+  - docker-compose up -d

@@ -1,31 +1,31 @@
-- alias: 'Plants: Water notification' 
-  initial_state: 'on'
+- alias: "Plants: Water notification"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: group.user_1
-    from: 'not_home'
-    to: 'home'
+    from: "not_home"
+    to: "home"
     for:
-      minutes: 5 
+      minutes: 5
   condition:
     condition: or
     conditions:
       - condition: state
         entity_id: plant.bonsai
-        state: 'problem'
+        state: "problem"
       - condition: state
         entity_id: plant.bad
-        state: 'problem'
+        state: "problem"
       - condition: state
         entity_id: plant.palme_small
-        state: 'problem'
+        state: "problem"
       - condition: state
         entity_id: plant.palme
-        state: 'problem'
+        state: "problem"
   action:
     - service: notify.mobile_app_batphone
       data_template:
-        title: 'Plants'
+        title: "Plants"
         message: >
           {% if is_state('plant.bonsai', 'problem') %}
             'Please water Plant Bonsai! Moisture: {{states.sensor.bonsai_moisture.state}}% | Conductivity: {{states.sensor.bonsai_conductivity.state}}'

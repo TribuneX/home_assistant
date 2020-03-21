@@ -1,270 +1,266 @@
-  # Switches
-  switch.tv:
-    icon: mdi:television
-    assumed_state: false
-    friendly_name: TV Power
-  switch.tv_2:
-    icon: mdi:television
-    friendly_name: TV 2
-  switch.server:
-    icon: mdi:server
-  switch.tv_mode:
-    icon: mdi:television
-    friendly_name: Legacy TV
-  switch.appletv_mode:
-    icon: mdi:airplay
-    friendly_name: TV
-  switch.plex_mode:
-    icon: mdi:plex
-    friendly_name: Plex
-  switch.music_mode:
-    icon: mdi:music-circle
-    friendly_name: Music
-  switch.sonos_mode:
-    icon: mdi:speaker-wireless          
-    friendly_name: Sonos
-  switch.speaker_1:
-    icon: mdi:speaker-wireless
-    friendly_name: Sonos
-  switch.speaker_2:
-    friendly_name: Sonos2
-    icon: mdi:speaker-wireless
-  fan.fan:
-    icon: mdi:fan
-    assumed_state: false
-  switch.vacuum_mode:
-    friendly_name: Robot  
-  switch.heating_living_room:
-    icon: mdi:temperature-celsius
-    friendly_name: Heating
-  switch.heating_bath_room:
-    icon: mdi:temperature-celsius
-    friendly_name: Heating
+# Switches
+switch.tv:
+  icon: mdi:television
+  assumed_state: false
+  friendly_name: TV Power
+switch.tv_2:
+  icon: mdi:television
+  friendly_name: TV 2
+switch.server:
+  icon: mdi:server
+switch.tv_mode:
+  icon: mdi:television
+  friendly_name: Legacy TV
+switch.appletv_mode:
+  icon: mdi:airplay
+  friendly_name: TV
+switch.plex_mode:
+  icon: mdi:plex
+  friendly_name: Plex
+switch.music_mode:
+  icon: mdi:music-circle
+  friendly_name: Music
+switch.sonos_mode:
+  icon: mdi:speaker-wireless
+  friendly_name: Sonos
+switch.speaker_1:
+  icon: mdi:speaker-wireless
+  friendly_name: Sonos
+switch.speaker_2:
+  friendly_name: Sonos2
+  icon: mdi:speaker-wireless
+fan.fan:
+  icon: mdi:fan
+  assumed_state: false
+switch.vacuum_mode:
+  friendly_name: Robot
+switch.heating_living_room:
+  icon: mdi:temperature-celsius
+  friendly_name: Heating
+switch.heating_bath_room:
+  icon: mdi:temperature-celsius
+  friendly_name: Heating
 
 # Sensors
-  sensor.palme_battery:
-    icon: mdi:battery-80
-  sensor.bonsai_battery:
-    icon: mdi:battery-80
-  sensor.bonsai_light_intensity:
-    icon: mdi:white-balance-sunny
-  sensor.palme_light_intensity:
-    icon: mdi:white-balance-sunny
-  sensor.palme_conductivity:
-    icon: mdi:barley
-  sensor.bonsai_conductivity:
-    icon: mdi:barley
-  sensor.bonsai_moisture:
-    icon: mdi:cup-water
-  sensor.palme_moisture:
-    icon: mdi:cup-water
-  sensor.palmek_battery:
-    icon: mdi:battery-80
-  sensor.palmek_light_intensity:
-    icon: mdi:white-balance-sunny
-  sensor.palmek_conductivity:
-    icon: mdi:barley
-  sensor.palmek_moisture:
-    icon: mdi:cup-water
-  sensor.palmek_temperature:
-    friendly_name: Temperature
-  sensor.bad_battery:
-    icon: mdi:battery-80
-  sensor.bad_light_intensity:
-    icon: mdi:white-balance-sunny
-  sensor.bad_conductivity:
-    icon: mdi:barley
-  sensor.bad_moisture:
-    icon: mdi:cup-water
-  sensor.fastcom_download:
-    icon: mdi:cloud-download
-  sensor.robo:
-    icon: mdi:broom
-    friendly_name: 'Vacuum Cleaner'
-  sensor.switch:
-    icon: mdi:server-network
-  sensor.plex:
-    icon: mdi:plex
-  sensor.appletv_livingroom:
-    icon: mdi:apple
-    friendly_name: AppleTV Livingroom
-  sensor.appletv_bedroom:
-    icon: mdi:apple
-    friendly_name: AppleTV Bedroom
-  sensor.epson:
-    icon: mdi:printer
-    friendly_name: Drucker
-  sensor.broadlink:
-    icon: mdi:remote
-  sensor.tradfri:
-    icon: mdi:lightbulb-on
-    friendly_name: Tradfri Gateway
-  sensor.server:
-    icon: mdi:server
-  sensor.eingang:
-    icon: mdi:battery-80
-  sensor.kueche:
-    icon: mdi:battery-80
-  sensor.bad:
-    icon: mdi:battery-80
-  sensor.sonos:
-    icon: mdi:speaker-wireless
-  sensor.sonos2:
-    icon: mdi:speaker-wireless
-  sensor.mein_schiff_ostsee:
-    icon: mdi:ferry
-  sensor.dark_sky_daily_high_temperature:
-    friendly_name: High Outdoor
-  sensor.dark_sky_daily_low_temperature:
-    friendly_name: Low Outdoor
-  sensor.dark_sky_summary:
-    friendly_name: Summary
-  sensor.dark_sky_precip_intensity:
-    friendly_name: Rain
-  sensor.fritz_netmonitor:
-    friendly_name: FritzBox
-    icon: mdi:router-wireless
-  sensor.dark_outside:
-    icon: mdi:weather-night
-  sensor.dark_sky_temperature:
-    friendly_name: Outdoor
+sensor.palme_battery:
+  icon: mdi:battery-80
+sensor.bonsai_battery:
+  icon: mdi:battery-80
+sensor.bonsai_light_intensity:
+  icon: mdi:white-balance-sunny
+sensor.palme_light_intensity:
+  icon: mdi:white-balance-sunny
+sensor.palme_conductivity:
+  icon: mdi:barley
+sensor.bonsai_conductivity:
+  icon: mdi:barley
+sensor.bonsai_moisture:
+  icon: mdi:cup-water
+sensor.palme_moisture:
+  icon: mdi:cup-water
+sensor.palmek_battery:
+  icon: mdi:battery-80
+sensor.palmek_light_intensity:
+  icon: mdi:white-balance-sunny
+sensor.palmek_conductivity:
+  icon: mdi:barley
+sensor.palmek_moisture:
+  icon: mdi:cup-water
+sensor.palmek_temperature:
+  friendly_name: Temperature
+sensor.bad_battery:
+  icon: mdi:battery-80
+sensor.bad_light_intensity:
+  icon: mdi:white-balance-sunny
+sensor.bad_conductivity:
+  icon: mdi:barley
+sensor.bad_moisture:
+  icon: mdi:cup-water
+sensor.fastcom_download:
+  icon: mdi:cloud-download
+sensor.robo:
+  icon: mdi:broom
+  friendly_name: "Vacuum Cleaner"
+sensor.switch:
+  icon: mdi:server-network
+sensor.plex:
+  icon: mdi:plex
+sensor.appletv_livingroom:
+  icon: mdi:apple
+  friendly_name: AppleTV Livingroom
+sensor.appletv_bedroom:
+  icon: mdi:apple
+  friendly_name: AppleTV Bedroom
+sensor.epson:
+  icon: mdi:printer
+  friendly_name: Drucker
+sensor.broadlink:
+  icon: mdi:remote
+sensor.tradfri:
+  icon: mdi:lightbulb-on
+  friendly_name: Tradfri Gateway
+sensor.server:
+  icon: mdi:server
+sensor.eingang:
+  icon: mdi:battery-80
+sensor.kueche:
+  icon: mdi:battery-80
+sensor.bad:
+  icon: mdi:battery-80
+sensor.sonos:
+  icon: mdi:speaker-wireless
+sensor.sonos2:
+  icon: mdi:speaker-wireless
+sensor.mein_schiff_ostsee:
+  icon: mdi:ferry
+sensor.dark_sky_daily_high_temperature:
+  friendly_name: High Outdoor
+sensor.dark_sky_daily_low_temperature:
+  friendly_name: Low Outdoor
+sensor.dark_sky_summary:
+  friendly_name: Summary
+sensor.dark_sky_precip_intensity:
+  friendly_name: Rain
+sensor.fritz_netmonitor:
+  friendly_name: FritzBox
+  icon: mdi:router-wireless
+sensor.dark_outside:
+  icon: mdi:weather-night
+sensor.dark_sky_temperature:
+  friendly_name: Outdoor
 
-  # Xiaomi Temp Sensors
-  sensor.pressure_bath:
-    friendly_name: Bath
-  sensor.humidity_bath:
-    friendly_name: Bath
-  sensor.temperature_bath:
-    friendly_name: Bath
-  sensor.pressure_office:
-    friendly_name: Office
-  sensor.humidity_office:
-    friendly_name: Office
-  sensor.temperature_office:
-    friendly_name: Office
-  sensor.pressure_bedroom:
-    friendly_name: Bedroom
-  sensor.humidity_bedroom:
-    friendly_name: Bedroom
-  sensor.temperature_bedroom:
-    friendly_name: Bedroom
-  sensor.pressure_livingroom:
-    friendly_name: Livingroom
-  sensor.humidity_livingroom:
-    friendly_name: Livingroom
-  sensor.temperature_livingroom:
-    friendly_name: Livingroom
+# Xiaomi Temp Sensors
+sensor.pressure_bath:
+  friendly_name: Bath
+sensor.humidity_bath:
+  friendly_name: Bath
+sensor.temperature_bath:
+  friendly_name: Bath
+sensor.pressure_office:
+  friendly_name: Office
+sensor.humidity_office:
+  friendly_name: Office
+sensor.temperature_office:
+  friendly_name: Office
+sensor.pressure_bedroom:
+  friendly_name: Bedroom
+sensor.humidity_bedroom:
+  friendly_name: Bedroom
+sensor.temperature_bedroom:
+  friendly_name: Bedroom
+sensor.pressure_livingroom:
+  friendly_name: Livingroom
+sensor.humidity_livingroom:
+  friendly_name: Livingroom
+sensor.temperature_livingroom:
+  friendly_name: Livingroom
 
-  # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
-  sensor.epson_ink_level_black:
-    entity_picture: /local/icon_ink_black.png
-  sensor.epson_ink_level_magenta:
-    entity_picture: /local/icon_ink_magenta.png
-  sensor.epson_ink_level_yellow:
-    entity_picture: /local/icon_ink_yellow.png
-  sensor.epson_ink_level_cyan:
-    entity_picture: /local/icon_ink_cyan.png
-  
-  # Xiaomi Aqara
-  binary_sensor.front_door:
-    friendly_name: 'Front Door'
-    icon: mdi:door
-  binary_sensor.balcony_door:
-    friendly_name: 'Balcony'
-    icon: mdi:door
-  binary_sensor.bedroom_door:
-    friendly_name: 'Bedroom'
-    icon: mdi:door
-  binary_sensor.office_door:
-    friendly_name: 'Office Bacony'
-    icon: mdi:door
-  binary_sensor.door_window_sensor_158d0002e69593:
-    friendly_name: 'Fenster'
-    icon: mdi:window-maximize
-  binary_sensor.door_window_sensor_158d0002e9ec76:
-    friendly_name: 'Backup'
-    icon: mdi:door
-  sensor.cube_action:
-    friendly_name: 'Cube'
-  light.gateway_light:
-    friendly_name: 'Gateway Light'
-  sensor.illumination_gateway:
-    friendly_name: 'Gateway Illumination'
-  binary_sensor.bath_window:
-    friendly_name: 'Bath'
-    icon: mdi:window-maximize
-  binary_sensor.motion_kitchen:
-    friendly_name: 'Motion Kitchen'
-  binary_sensor.switch_bedroom:
-    friendly_name: 'Switch Bedroom'
-  sensor.aqara_gateway:
-    icon: mdi:home-automation
-  binary_sensor.water_leak_sensor:
-    friendly_name: 'Rain'
-  binary_sensor.motion_office:
-    friendly_name: 'Motion Office'
-  sensor.illumination_office:
-    friendly_name: 'Office'
+# ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
+sensor.epson_ink_level_black:
+  entity_picture: /local/icon_ink_black.png
+sensor.epson_ink_level_magenta:
+  entity_picture: /local/icon_ink_magenta.png
+sensor.epson_ink_level_yellow:
+  entity_picture: /local/icon_ink_yellow.png
+sensor.epson_ink_level_cyan:
+  entity_picture: /local/icon_ink_cyan.png
+
+# Xiaomi Aqara
+binary_sensor.front_door:
+  friendly_name: "Front Door"
+  icon: mdi:door
+binary_sensor.balcony_door:
+  friendly_name: "Balcony"
+  icon: mdi:door
+binary_sensor.bedroom_door:
+  friendly_name: "Bedroom"
+  icon: mdi:door
+binary_sensor.office_door:
+  friendly_name: "Office Bacony"
+  icon: mdi:door
+binary_sensor.door_window_sensor_158d0002e69593:
+  friendly_name: "Fenster"
+  icon: mdi:window-maximize
+binary_sensor.door_window_sensor_158d0002e9ec76:
+  friendly_name: "Backup"
+  icon: mdi:door
+sensor.cube_action:
+  friendly_name: "Cube"
+light.gateway_light:
+  friendly_name: "Gateway Light"
+sensor.illumination_gateway:
+  friendly_name: "Gateway Illumination"
+binary_sensor.bath_window:
+  friendly_name: "Bath"
+  icon: mdi:window-maximize
+binary_sensor.motion_kitchen:
+  friendly_name: "Motion Kitchen"
+binary_sensor.switch_bedroom:
+  friendly_name: "Switch Bedroom"
+sensor.aqara_gateway:
+  icon: mdi:home-automation
+binary_sensor.water_leak_sensor:
+  friendly_name: "Rain"
+binary_sensor.motion_office:
+  friendly_name: "Motion Office"
+sensor.illumination_office:
+  friendly_name: "Office"
 
 # Device Tracker
-  device_tracker.user_2_iphone:
-    friendly_name: 'User 2 Router'
-  device_tracker.iphones:
-    friendly_name: 'User 1 Router'
-  device_tracker.owntracks_user_2_iphone:
-    friendly_name: 'User 2 owntracks'
-  device_tracker.owntracks_iphones:
-    friendly_name: 'User 1 owntracks'
-  
-  
-# Lights
-  light.bed1:
-    friendly_name: !secret user_2
-  light.bed2:
-    friendly_name: !secret user_1
-  light.stern:
-    icon: mdi:star
-  light.christmas_tree:
-    icon: mdi:pine-tree
-    assumed_state: false
-  light.stars:
-    icon: mdi:weather-night
-    assumed_state: false
-  light.bedroom:
-    friendly_name: Bedroom Lights
-  light.living_room:
-    friendly_name: Living Room Lights
-  light.kitchen:
-    friendly_name: Kitchen Lights
-    
+device_tracker.user_2_iphone:
+  friendly_name: "User 2 Router"
+device_tracker.iphones:
+  friendly_name: "User 1 Router"
+device_tracker.owntracks_user_2_iphone:
+  friendly_name: "User 2 owntracks"
+device_tracker.owntracks_iphones:
+  friendly_name: "User 1 owntracks"
 
-# Groups 
-  group.user_1:
-    entity_picture: /local/user_1.png
-  group.user_2:
-    entity_picture: /local/user_2.png
-  group.all_automations:
-    hidden: false
-    friendly_name: Automations
-  group.all_scripts:
-    hidden: false
-    friendly_name: Scripts
+# Lights
+light.bed1:
+  friendly_name: !secret user_2
+light.bed2:
+  friendly_name: !secret user_1
+light.stern:
+  icon: mdi:star
+light.christmas_tree:
+  icon: mdi:pine-tree
+  assumed_state: false
+light.stars:
+  icon: mdi:weather-night
+  assumed_state: false
+light.bedroom:
+  friendly_name: Bedroom Lights
+light.living_room:
+  friendly_name: Living Room Lights
+light.kitchen:
+  friendly_name: Kitchen Lights
+
+# Groups
+group.user_1:
+  entity_picture: /local/user_1.png
+group.user_2:
+  entity_picture: /local/user_2.png
+group.all_automations:
+  hidden: false
+  friendly_name: Automations
+group.all_scripts:
+  hidden: false
+  friendly_name: Scripts
 
 # Scripts
-  script.get_latest_config:
-    icon: mdi:github-circle
-  script.restart_hass:
-    icon: mdi:home-assistant
-    friendly_name: Restart
-  script.prepare_restart:
-    icon: mdi:restart
-    friendly_name: Prepare Restart
-  script.reboot_pi:
-    icon: mdi:restart
-    friendly_name: Reboot
-  script.enable_beacon:
-    icon: mdi:wifi
-  input_number.sonos_speaker:
-    icon: mdi:volume-high 
-
-  
+script.get_latest_config:
+  icon: mdi:github-circle
+script.restart_hass:
+  icon: mdi:home-assistant
+  friendly_name: Restart
+script.prepare_restart:
+  icon: mdi:restart
+  friendly_name: Prepare Restart
+script.reboot_pi:
+  icon: mdi:restart
+  friendly_name: Reboot
+script.enable_beacon:
+  icon: mdi:wifi
+input_number.sonos_speaker:
+  icon: mdi:volume-high

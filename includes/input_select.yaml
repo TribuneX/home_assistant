@@ -1,13 +1,13 @@
 tv_mode:
-    name: 'TV mode'
-    options:
-     - AUS
-     - TV
-     - AppleTV
-     - Plex
-     - Music
-    initial: AUS
-    icon: mdi:television
+  name: "TV mode"
+  options:
+    - AUS
+    - TV
+    - AppleTV
+    - Plex
+    - Music
+  initial: AUS
+  icon: mdi:television
 sonos_source:
   name: Sonos Source
   options:
@@ -22,7 +22,7 @@ sonos_source:
   initial: SELECT
   icon: mdi:radio
 log_level:
-  name: 'Log Level'
+  name: "Log Level"
   options:
     - critical
     - fatal
@@ -41,5 +41,5 @@ zigbee2mqtt_log_level:
     - info
     - warn
     - error
-  initial: info
+  initial: error
   icon: mdi:format-list-bulleted

@@ -1,65 +1,65 @@
-- alias: 'Rain: Rainy Day'
-  initial_state: 'on'
+- alias: "Rain: Rainy Day"
+  initial_state: "on"
   trigger:
     - platform: numeric_state
       entity_id: sensor.dark_sky_precip_probability
       above: 60
   condition:
-    - condition: time   
-      after: '07:00'    
-      before: '20:00'
+    - condition: time
+      after: "07:00"
+      before: "20:00"
   action:
     - service: notify.mobile_app_batphone
       data:
-        title: 'Rain Alert'
-        message: 'It looks like its gonna rain: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+        title: "Rain Alert"
+        message: "It looks like its gonna rain: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}"
 
-- alias: 'Rain: Rainy Day'
-  initial_state: 'on'
+- alias: "Rain: Rainy Day"
+  initial_state: "on"
   trigger:
     - platform: numeric_state
       entity_id: sensor.dark_sky_precip_probability
       below: 20
   condition:
-    - condition: time   
-      after: '07:00'    
-      before: '20:00'
+    - condition: time
+      after: "07:00"
+      before: "20:00"
   action:
     - service: notify.mobile_app_batphone
       data:
-        title: 'Rain Stoppes'
-        message: 'It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+        title: "Rain Stoppes"
+        message: "It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}"
 
-- alias: 'Rain: Rain detected by water sensor'
-  initial_state: 'on'
+- alias: "Rain: Rain detected by water sensor"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: binary_sensor.water_leak_sensor
-    from: 'off'
-    to: 'on'
+    from: "off"
+    to: "on"
   condition:
-    - condition: time   
-      after: '07:00'    
-      before: '22:00'
+    - condition: time
+      after: "07:00"
+      before: "22:00"
   action:
     - service: notify.mobile_app_batphone
       data:
-        title: 'Rain Sensor'
-        message: 'Rain detected: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+        title: "Rain Sensor"
+        message: "Rain detected: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}"
 
-- alias: 'Rain: Stopped Rain detected by water sensor'
-  initial_state: 'on'
+- alias: "Rain: Stopped Rain detected by water sensor"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: binary_sensor.water_leak_sensor
-    from: 'on'
-    to: 'off'
+    from: "on"
+    to: "off"
   condition:
-    - condition: time   
-      after: '07:00'    
-      before: '22:00'
+    - condition: time
+      after: "07:00"
+      before: "22:00"
   action:
     - service: notify.mobile_app_batphone
       data:
-        title: 'Rain Sensor'
-        message: 'It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}'
+        title: "Rain Sensor"
+        message: "It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}"

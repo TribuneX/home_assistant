@@ -2,18 +2,18 @@
 # Groups
 ##########################
 living_room:
-  name: 'Living Room'
+  name: "Living Room"
   entities:
     - light.living_room
     - switch.appletv_mode
     - switch.sonos_mode
 bed_room:
-  name: 'Bedroom'
+  name: "Bedroom"
   entities:
     - light.bedroom
     - switch.tv_2
 outdoor:
-  name: 'Outdoor'
+  name: "Outdoor"
   entities:
     - sensor.dark_sky_daily_high_temperature
     - sensor.dark_sky_daily_low_temperature
@@ -25,12 +25,12 @@ outdoor:
     - sensor.dark_sky_precip_intensity
     - sensor.dark_sky_precip_probability
 office:
-  name: 'Office'
+  name: "Office"
   entities:
     - switch.server
     - sensor.illumination_office
 pi:
-  name: 'Raspberry'
+  name: "Raspberry"
   entities:
     - sensor.cpu_temperature
     - sensor.cpu_use
@@ -40,7 +40,7 @@ pi:
     - sensor.sent_eth0
     - sensor.received_eth0
 personen:
-  name: 'People'
+  name: "People"
   entities:
     - person.sascha
     - person.nicole
@@ -55,7 +55,7 @@ user_2:
     - device_tracker.user_2_iphone
     - device_tracker.owntracks_user_2_iphone
 tv_scenes:
-  name: 'TV'
+  name: "TV"
   entities:
     - switch.tv_mode
     - switch.appletv_mode
@@ -63,14 +63,14 @@ tv_scenes:
     - switch.music_mode
     - switch.tv
 iphone:
-  name: 'Devices'
+  name: "Devices"
   entities:
     - sensor.iphones_battery_level
     - sensor.iphones_battery_state
     - sensor.ipads_battery_level
     - sensor.ipads_battery_state
 pings:
-  name: 'Ping'
+  name: "Ping"
   entities:
     - binary_sensor.ping_eltern
     - binary_sensor.ping_sonja
@@ -81,11 +81,10 @@ pings:
     - binary_sensor.ping_sebastian
     - binary_sensor.ping_uwe
     - binary_sensor.ping_vhv
-    - binary_sensor.ping_wsw
     - binary_sensor.ping_anny
     - binary_sensor.ping_bender
 settings:
-  name: 'Settings'
+  name: "Settings"
   entities:
     - script.get_latest_config
     - script.restart_hass
@@ -94,7 +93,7 @@ settings:
     - input_boolean.vacation_mode
     - input_boolean.cleaned_today
 devices:
-  name: 'Devices'
+  name: "Devices"
   entities:
     - switch.tv
     - switch.tv_2
@@ -112,11 +111,11 @@ devices:
     - sensor.server
     - sensor.aqara_gateway
     - sensor.sonoff_tv
-    - sensor.sonoff_tv_2 
+    - sensor.sonoff_tv_2
     - sensor.sonoff_speaker_1
     - sensor.sonoff_speaker_2
 battery_levels:
-  name: 'Battery Levels'
+  name: "Battery Levels"
   entities:
     - sensor.eingang
     - sensor.bad
@@ -128,49 +127,48 @@ battery_levels:
     - sensor.cube_battery
     - sensor.switch1_battery
 robot:
-  name: 'Vacuum Cleaner'
+  name: "Vacuum Cleaner"
   entities:
     - vacuum.vacuum_cleaner
     - input_boolean.cleaned_today
 speaker:
-  name: 'Music'
+  name: "Music"
   entities:
     - input_select.sonos_source
     - switch.sonos_mode
-    - input_number.sonos_speaker   
+    - input_number.sonos_speaker
 printer:
-  name: 'Epson Printer'
+  name: "Epson Printer"
   entities:
     - sensor.epson
     - sensor.epson_ink_level_black
     - sensor.epson_ink_level_magenta
     - sensor.epson_ink_level_yellow
-    - sensor.epson_ink_level_cyan   
+    - sensor.epson_ink_level_cyan
 prices:
-  name: 'Prices'
+  name: "Prices"
   entities:
-    - sensor.mein_schiff_price 
+    - sensor.mein_schiff_price
 all_speaker:
   entities:
     - switch.speaker_1
     - switch.speaker_2
 doors_and_windows:
-  name: 'Doors and Windows'
+  name: "Doors and Windows"
   entities:
     - binary_sensor.balcony_door
     - binary_sensor.bedroom_door
     - binary_sensor.bath_window
     - binary_sensor.office_door
 doors:
-  name: 'Doors'
+  name: "Doors"
   entities:
     - binary_sensor.balcony_door
     - binary_sensor.front_door
     - binary_sensor.bedroom_door
     - binary_sensor.office_door
 docker_container:
-  name: 'Docker Container'
-  control: hidden
+  name: "Docker Container"
   entities:
     - switch.influxdb
     - switch.grafana
@@ -179,7 +177,7 @@ docker_container:
     - switch.portainer
     - switch.pihole
 not_necessary_devices:
-  name: 'Not necessary'
+  name: "Not necessary"
   entities:
     - light.christmas_tree
     - light.stars
@@ -189,7 +187,7 @@ not_necessary_devices:
     - switch.tv
     - switch.tv_2
 temperature:
-  name: 'Temperature'
+  name: "Temperature"
   entities:
     - sensor.dark_sky_temperature
     - sensor.temperature_office
@@ -197,7 +195,7 @@ temperature:
     - sensor.temperature_bedroom
     - sensor.temperature_livingroom
 humidity:
-  name: 'Humidity'
+  name: "Humidity"
   entities:
     - sensor.dark_sky_humidity
     - sensor.humidity_office
@@ -205,41 +203,23 @@ humidity:
     - sensor.humidity_bedroom
     - sensor.humidity_livingroom
 pressure:
-  name: 'Pressure'
+  name: "Pressure"
   entities:
     - sensor.pressure_office
     - sensor.pressure_bath
     - sensor.pressure_bedroom
     - sensor.pressure_livingroom
-
-# Tabs
-default_view:
-  name: 'Home'
-  view: yes
-  icon: mdi:home
-  entities:
-    - group.living_room
-    - group.bed_room
-    - group.office
-    - group.temperature
-    - group.doors
-    - group.states
-    - group.robot
-    - group.personen
-    - group.humidity
 media:
-  name: 'Media'
-  view: yes
-  icon: mdi:television 
+  name: "Media"
+  icon: mdi:television
   entities:
     - group.tv_scenes
     - media_player.wohnzimmer
     - media_player.schlafzimmer
     - group.speaker
-    - media_player.living_room    
+    - media_player.living_room
 plants:
-  name: 'Plants'
-  view: yes
+  name: "Plants"
   icon: mdi:barley
   entities:
     - plant.bonsai
@@ -247,8 +227,7 @@ plants:
     - plant.palm
     - plant.palm_small
 system:
-  name: 'System'
-  view: yes
+  name: "System"
   icon: mdi:server
   entities:
     - group.pi
@@ -256,24 +235,21 @@ system:
     - group.pings
     - group.docker_container
 automation:
-  name: 'Automation'
-  view: yes
+  name: "Automation"
   icon: mdi:settings
   entities:
     - group.settings
     - group.all_automations
     - group.all_scripts
 christmas:
-  name: 'Christmas'
-  view: no
+  name: "Christmas"
   icon: mdi:pine-tree
   entities:
     - light.christmas_tree
     - light.stars
     - light.stern
 device_status:
-  name: 'Device Status'
-  view: yes
+  name: "Device Status"
   icon: mdi:oil-temperature
   entities:
     - group.printer

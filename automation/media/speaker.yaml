@@ -1,57 +1,57 @@
-- alias: 'Speaker: Play selected source on sonos'
-  initial_state: 'on'
+- alias: "Speaker: Play selected source on sonos"
+  initial_state: "on"
   trigger:
     - entity_id: input_select.sonos_source
       platform: state
-      from: 'SELECT'
-  condition:  
-   condition: state
-   entity_id: group.all_speaker
-   state: 'on'    
-  action:
-  - service: media_player.shuffle_set
-    data:
-      entity_id: media_player.living_room
-      shuffle: true
-  - data_template:
-      source: '{{ trigger.to_state.state }}'
-    entity_id: media_player.living_room
-    service: media_player.select_source
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.sonos_source
-      option: 'SELECT'
-
-- alias: 'Speaker: Play selected source on sonos + sonos'
-  initial_state: 'on'
-  trigger:
-    - entity_id: input_select.sonos_source
-      platform: state
-      from: 'SELECT'
-  condition:  
-   condition: state
-   entity_id: group.all_speaker
-   state: 'off'    
-  action:
-  - service: homeassistant.turn_on
+      from: "SELECT"
+  condition:
+    condition: state
     entity_id: group.all_speaker
-  - delay:
-      seconds: 35
-  - service: media_player.shuffle_set
-    data:
+    state: "on"
+  action:
+    - service: media_player.shuffle_set
+      data:
+        entity_id: media_player.living_room
+        shuffle: true
+    - data_template:
+        source: "{{ trigger.to_state.state }}"
       entity_id: media_player.living_room
-      shuffle: true
-  - data_template:
-      source: '{{ trigger.to_state.state }}'
-    entity_id: media_player.living_room
-    service: media_player.select_source
-  - service: input_select.select_option
-    data:
-      entity_id: input_select.sonos_source
-      option: 'SELECT'
+      service: media_player.select_source
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.sonos_source
+        option: "SELECT"
 
-- alias: 'Speaker: Adjust Volume'
-  initial_state: 'on'
+- alias: "Speaker: Play selected source on sonos + sonos"
+  initial_state: "on"
+  trigger:
+    - entity_id: input_select.sonos_source
+      platform: state
+      from: "SELECT"
+  condition:
+    condition: state
+    entity_id: group.all_speaker
+    state: "off"
+  action:
+    - service: homeassistant.turn_on
+      entity_id: group.all_speaker
+    - delay:
+        seconds: 35
+    - service: media_player.shuffle_set
+      data:
+        entity_id: media_player.living_room
+        shuffle: true
+    - data_template:
+        source: "{{ trigger.to_state.state }}"
+      entity_id: media_player.living_room
+      service: media_player.select_source
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.sonos_source
+        option: "SELECT"
+
+- alias: "Speaker: Adjust Volume"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: input_number.sonos_speaker
@@ -59,10 +59,10 @@
     - service: media_player.volume_set
       data_template:
         entity_id: media_player.living_room
-        volume_level: '{{ trigger.to_state.state }}'
+        volume_level: "{{ trigger.to_state.state }}"
 
-- alias: 'Speaker: Update Volume slider'
-  initial_state: 'off'
+- alias: "Speaker: Update Volume slider"
+  initial_state: "off"
   trigger:
     platform: state
     entity_id: media_player.living_room
@@ -70,97 +70,97 @@
     - service: input_number.set_value
       data_template:
         entity_id: input_number.sonos_speaker
-        value: '{{ states.media_player.living_room.attributes.volume_level }}'
+        value: "{{ states.media_player.living_room.attributes.volume_level }}"
 
-- alias: 'Speaker: Auto standby is Sonos is paused for 10 minutes'
-  initial_state: 'on'
+- alias: "Speaker: Auto standby is Sonos is paused for 10 minutes"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: media_player.living_room
-    from: 'playing'
-    to: 'paused'
+    from: "playing"
+    to: "paused"
     for:
-        minutes: 10
+      minutes: 10
   action:
     - service: homeassistant.turn_off
       entity_id: group.all_speaker
 
-- alias: 'Speaker: Pause SONOS if AppleTV is used'
-  initial_state: 'on'
+- alias: "Speaker: Pause SONOS if AppleTV is used"
+  initial_state: "on"
   trigger:
     - platform: state
       entity_id: media_player.wohnzimmer
-      from: 'paused'
-      to: 'playing'
+      from: "paused"
+      to: "playing"
   condition:
     - condition: state
       entity_id: media_player.living_room
-      state: 'playing'
+      state: "playing"
   action:
     - service: media_player.media_pause
       entity_id: media_player.living_room
 
-- alias: 'Speaker: Play Radio when someone arrives at home'
-  initial_state: 'off'
+- alias: "Speaker: Play Radio when someone arrives at home"
+  initial_state: "off"
   trigger:
     platform: state
     entity_id: group.personen
-    from: 'not_home'
-    to: 'home'
+    from: "not_home"
+    to: "home"
   condition:
     - condition: time
-      after: '08:00'
-      before: '23:00'
+      after: "08:00"
+      before: "23:00"
   action:
     - service: script.play_sonos_radio
 
-- alias: 'Speaker: Turn on radio in the morning'
-  initial_state: 'off'
+- alias: "Speaker: Turn on radio in the morning"
+  initial_state: "off"
   trigger:
     - platform: state
       entity_id: light.bad
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
     - platform: state
       entity_id: light.kueche1
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
     - platform: state
       entity_id: light.eingang
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
   condition:
     condition: and
     conditions:
-    - condition: time
-      after: '07:00'
-      before: '10:00'
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
-        - sat
-    - condition: state
-      entity_id: switch.tv
-      state: 'off'
-    - condition: or
-      conditions:
+      - condition: time
+        after: "07:00"
+        before: "10:00"
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+          - sat
       - condition: state
-        entity_id: group.all_speaker
-        state: 'off'
-      - condition: state
-        entity_id: media_player.living_room
-        state: 'paused'
+        entity_id: switch.tv
+        state: "off"
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: group.all_speaker
+            state: "off"
+          - condition: state
+            entity_id: media_player.living_room
+            state: "paused"
   action:
     - service: script.play_sonos_radio
       data:
         variables:
           volume: 0.05
 
-- alias: 'Speaker: Pause Radio on flip90'
-  initial_state: 'on'
+- alias: "Speaker: Pause Radio on flip90"
+  initial_state: "on"
   trigger:
     platform: event
     event_type: xiaomi_aqara.cube_action
@@ -170,46 +170,46 @@
   condition:
     condition: state
     entity_id: group.all_speaker
-    state: 'on'
+    state: "on"
   action:
     - service: script.pause_sonos
 
-- alias: 'Speaker: Select sonos volume with cube rotation'
-  initial_state: 'on'
+- alias: "Speaker: Select sonos volume with cube rotation"
+  initial_state: "on"
   trigger:
-      platform: mqtt
-      topic: 'zigbee2mqtt/0x00158d0001108360'
+    platform: mqtt
+    topic: "zigbee2mqtt/0x00158d0001108360"
   condition:
     condition: and
     conditions:
       - condition: template
-        value_template: '{{ "rotate_right" == trigger.payload_json.action }}'   
+        value_template: '{{ "rotate_right" == trigger.payload_json.action }}'
       - condition: state
         entity_id: group.all_speaker
-        state: 'on' 
+        state: "on"
   action:
     - service: media_player.volume_set
       data_template:
-        entity_id: media_player.living_room          
+        entity_id: media_player.living_room
         volume_level: >
-          {%if trigger.event.data.action_value | float > 0 %} 
+          {%if trigger.event.data.action_value | float > 0 %}
           {{  states.media_player.living_room.attributes.volume_level | float + 0.05 }}
-          {% else %} 
+          {% else %}
           {{  states.media_player.living_room.attributes.volume_level | float - 0.05 }}
           {% endif %}
 
-- alias: 'Speaker: Turn on radio with cube rotation'
-  initial_state: 'on'
+- alias: "Speaker: Turn on radio with cube rotation"
+  initial_state: "on"
   trigger:
     platform: mqtt
-    topic: 'zigbee2mqtt/0x00158d0001108360'
+    topic: "zigbee2mqtt/0x00158d0001108360"
   condition:
     condition: and
     conditions:
       - condition: template
-        value_template: '{{ "slide" == trigger.payload_json.action }}'   
+        value_template: '{{ "slide" == trigger.payload_json.action }}'
       - condition: state
         entity_id: group.all_speaker
-        state: 'off' 
+        state: "off"
   action:
     - service: script.play_sonos_radio

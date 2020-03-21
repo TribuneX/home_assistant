@@ -30,26 +30,26 @@
 
 - platform: command_line
   name: CPU Temperature
-  command: 'cat /sys/class/thermal/thermal_zone0/temp'
-  unit_of_measurement: '°C'
-  value_template: '{{ (value | multiply(0.001)) | round(1) }}'
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: "°C"
+  value_template: "{{ (value | multiply(0.001)) | round(1) }}"
 
 - platform: systemmonitor
   resources:
-  - type: disk_use_percent
-    arg: /
-  - type: memory_free
-  - type: processor_use
-  - type: network_in
-    arg: eth0
-  - type: network_out
-    arg: eth0
-  - type: last_boot
+    - type: disk_use_percent
+      arg: /
+    - type: memory_free
+    - type: processor_use
+    - type: network_in
+      arg: eth0
+    - type: network_out
+      arg: eth0
+    - type: last_boot
 
 # Plant sensors
 - platform: miflora
   mac: C4:7C:8D:62:B7:02
-  name: Bonsai 
+  name: Bonsai
   force_update: false
   median: 3
   monitored_conditions:
@@ -93,158 +93,158 @@
     - light
     - temperature
     - conductivity
-    - battery    
+    - battery
 
 # Inspired by https://github.com/CCOSTAN/Home-AssistantConfig/blob/9b088e5bee97d242463b7d794edeb4a1d967bac1/sensor/devices_states.yaml
 - platform: template
-  sensors: 
-      # Inspired by https://community.home-assistant.io/t/temp-compare/19497
-      out_vs_in:
-        value_template: "{{states.sensor.dark_sky_temperature.state | round(0) - states.sensor.temperature_livingroom.state | round(0)}}"
-        friendly_name: "Temperature Diff"
+  sensors:
+    # Inspired by https://community.home-assistant.io/t/temp-compare/19497
+    out_vs_in:
+      value_template: "{{states.sensor.dark_sky_temperature.state | round(0) - states.sensor.temperature_livingroom.state | round(0)}}"
+      friendly_name: "Temperature Diff"
 
-      door1_battery:   
-       value_template: '{{ states.binary_sensor.front_door.attributes.battery_level}}'    
-       friendly_name: 'Front Door'   
-       icon_template: mdi:battery
-       entity_id: binary_sensor.front_door
+    door1_battery:
+      value_template: "{{ states.binary_sensor.front_door.attributes.battery_level}}"
+      friendly_name: "Front Door"
+      icon_template: mdi:battery
+      entity_id: binary_sensor.front_door
 
-      door2_battery:   
-       value_template: '{{ states.binary_sensor.balcony_door.attributes.battery_level}}'    
-       friendly_name: 'Balcony Door'   
-       icon_template: mdi:battery
-       entity_id: binary_sensor.balcony_door
+    door2_battery:
+      value_template: "{{ states.binary_sensor.balcony_door.attributes.battery_level}}"
+      friendly_name: "Balcony Door"
+      icon_template: mdi:battery
+      entity_id: binary_sensor.balcony_door
 
-      motion1_battery:   
-       value_template: '{{ states.binary_sensor.motion_kitchen.attributes.battery_level}}'    
-       friendly_name: 'Kitchen Motion'   
-       icon_template: mdi:battery
-       entity_id: binary_sensor.motion_kitchen
+    motion1_battery:
+      value_template: "{{ states.binary_sensor.motion_kitchen.attributes.battery_level}}"
+      friendly_name: "Kitchen Motion"
+      icon_template: mdi:battery
+      entity_id: binary_sensor.motion_kitchen
 
-      motion2_battery:   
-       value_template: '{{ states.binary_sensor.motion_livingroom.attributes.battery_level}}'    
-       friendly_name: 'Working Room Motion'   
-       icon_template: mdi:battery
-       entity_id: binary_sensor.motion_livingroom
+    motion2_battery:
+      value_template: "{{ states.binary_sensor.motion_livingroom.attributes.battery_level}}"
+      friendly_name: "Working Room Motion"
+      icon_template: mdi:battery
+      entity_id: binary_sensor.motion_livingroom
 
-      switch1_battery:   
-       value_template: '{{ states.binary_sensor.switch_bedroom.attributes.battery_level}}'    
-       friendly_name: 'Switch'   
-       icon_template: mdi:battery
-       entity_id: binary_sensor.switch_bedroom
-      
-      cube_battery:   
-       value_template: '{{ states.sensor.cube_action.attributes.battery_level}}'    
-       friendly_name: 'Cube'   
-       icon_template: mdi:battery
-       entity_id: sensor.cube_action
+    switch1_battery:
+      value_template: "{{ states.binary_sensor.switch_bedroom.attributes.battery_level}}"
+      friendly_name: "Switch"
+      icon_template: mdi:battery
+      entity_id: binary_sensor.switch_bedroom
 
-      robo:
-        friendly_name: 'Robo'
-        value_template: "{{ 'online' if is_state('device_tracker.robot', 'home') else 'off' }}"
+    cube_battery:
+      value_template: "{{ states.sensor.cube_action.attributes.battery_level}}"
+      friendly_name: "Cube"
+      icon_template: mdi:battery
+      entity_id: sensor.cube_action
 
-      epson:
-        friendly_name: 'Epson'
-        value_template: "{{ 'online' if is_state('device_tracker.epson', 'home') else 'off' }}"
+    robo:
+      friendly_name: "Robo"
+      value_template: "{{ 'online' if is_state('device_tracker.robot', 'home') else 'off' }}"
 
-      broadlink:
-        friendly_name: 'Broadlink'
-        value_template: "{{ 'online' if is_state('device_tracker.broadlink', 'home') else 'off' }}"
+    epson:
+      friendly_name: "Epson"
+      value_template: "{{ 'online' if is_state('device_tracker.epson', 'home') else 'off' }}"
 
-      plex:
-        friendly_name: 'Plex'
-        value_template: "{{ 'online' if is_state('device_tracker.plex', 'home') else 'off' }}"
+    broadlink:
+      friendly_name: "Broadlink"
+      value_template: "{{ 'online' if is_state('device_tracker.broadlink', 'home') else 'off' }}"
 
-      switch:
-        friendly_name: 'Switch'
-        value_template: "{{ 'online' if is_state('device_tracker.switch', 'home') else 'off' }}"
+    plex:
+      friendly_name: "Plex"
+      value_template: "{{ 'online' if is_state('device_tracker.plex', 'home') else 'off' }}"
 
-      tradfri:
-        friendly_name: 'Tradfri Gateway'
-        value_template: "{{ 'online' if is_state('device_tracker.tradfri', 'home') else 'off' }}"
+    switch:
+      friendly_name: "Switch"
+      value_template: "{{ 'online' if is_state('device_tracker.switch', 'home') else 'off' }}"
 
-      appletv_bedroom:
-        friendly_name: 'AppleTV Bedroom'
-        value_template: "{{ 'online' if is_state('device_tracker.appletvschlafzimmer', 'home') else 'off' }}"
+    tradfri:
+      friendly_name: "Tradfri Gateway"
+      value_template: "{{ 'online' if is_state('device_tracker.tradfri', 'home') else 'off' }}"
 
-      appletv_livingroom:
-        friendly_name: 'AppleTV Livingroom'
-        value_template: "{{ 'online' if is_state('device_tracker.appletvwohnzimmer', 'home') else 'off' }}"
-        
-      server:
-        friendly_name: 'Server'
-        value_template: "{{ 'online' if is_state('device_tracker.server', 'home') else 'off' }}"
+    appletv_bedroom:
+      friendly_name: "AppleTV Bedroom"
+      value_template: "{{ 'online' if is_state('device_tracker.appletvschlafzimmer', 'home') else 'off' }}"
 
-      aqara_gateway:
-        friendly_name: 'Aqara Gateway'
-        value_template: "{{ 'online' if is_state('device_tracker.aqaragateway', 'home') else 'off' }}"
+    appletv_livingroom:
+      friendly_name: "AppleTV Livingroom"
+      value_template: "{{ 'online' if is_state('device_tracker.appletvwohnzimmer', 'home') else 'off' }}"
 
-      sonoff_tv:
-        friendly_name: 'Sonoff TV'
-        value_template: "{{ 'online' if is_state('device_tracker.sonofftv', 'home') else 'off' }}"
+    server:
+      friendly_name: "Server"
+      value_template: "{{ 'online' if is_state('device_tracker.server', 'home') else 'off' }}"
 
-      sonoff_tv_2:
-        friendly_name: 'Sonoff TV2'
-        value_template: "{{ 'online' if is_state('device_tracker.sonofftv2', 'home') else 'off' }}"
+    aqara_gateway:
+      friendly_name: "Aqara Gateway"
+      value_template: "{{ 'online' if is_state('device_tracker.aqaragateway', 'home') else 'off' }}"
 
-      sonoff_speaker_1:
-        friendly_name: 'Sonoff Speaker 1'
-        value_template: "{{ 'online' if is_state('device_tracker.sonoffspeakerlivingroom', 'home') else 'off' }}"
+    sonoff_tv:
+      friendly_name: "Sonoff TV"
+      value_template: "{{ 'online' if is_state('device_tracker.sonofftv', 'home') else 'off' }}"
 
-      sonoff_speaker_2:
-        friendly_name: 'Sonoff Speaker 2'
-        value_template: "{{ 'online' if is_state('device_tracker.sonoffdefault1', 'home') else 'off' }}"
+    sonoff_tv_2:
+      friendly_name: "Sonoff TV2"
+      value_template: "{{ 'online' if is_state('device_tracker.sonofftv2', 'home') else 'off' }}"
 
-      # Inspired by https://community.home-assistant.io/t/virtual-light-sensor/31975/9
-      dark_outside:
-        friendly_name: 'Dark Outside'
-        value_template: >
-          {% if (states.sensor.illumination_office.state | int < 15) %}
-          on
-          {% else %}
-          off
-          {% endif %}
+    sonoff_speaker_1:
+      friendly_name: "Sonoff Speaker 1"
+      value_template: "{{ 'online' if is_state('device_tracker.sonoffspeakerlivingroom', 'home') else 'off' }}"
 
-      bonsai_water_level_low:
-        friendly_name: 'Bonsai Water Levels'
-        value_template: >
-          {% if ( (is_state('plant.bonsai', 'problem')) and (is_state('group.user_1', 'home')) and (is_state(' sensor.dark_outside', 'off')) ) %} 
-          on
-          {% else %}
-          off
-          {% endif %}
-      
-      robot_dust_bin:
-        friendly_name: 'Robot dust bin'
-        value_template: >
-          {% if ( (is_state('input_boolean.cleaned_today', 'on')) and (is_state('group.user_1', 'home')) ) %} 
-          full
-          {% else %}
-          empty
-          {% endif %}
+    sonoff_speaker_2:
+      friendly_name: "Sonoff Speaker 2"
+      value_template: "{{ 'online' if is_state('device_tracker.sonoffdefault1', 'home') else 'off' }}"
+
+    # Inspired by https://community.home-assistant.io/t/virtual-light-sensor/31975/9
+    dark_outside:
+      friendly_name: "Dark Outside"
+      value_template: >
+        {% if (states.sensor.illumination_office.state | int < 15) %}
+        on
+        {% else %}
+        off
+        {% endif %}
+
+    bonsai_water_level_low:
+      friendly_name: "Bonsai Water Levels"
+      value_template: >
+        {% if ( (is_state('plant.bonsai', 'problem')) and (is_state('group.user_1', 'home')) and (is_state(' sensor.dark_outside', 'off')) ) %} 
+        on
+        {% else %}
+        off
+        {% endif %}
+
+    robot_dust_bin:
+      friendly_name: "Robot dust bin"
+      value_template: >
+        {% if ( (is_state('input_boolean.cleaned_today', 'on')) and (is_state('group.user_1', 'home')) ) %} 
+        full
+        {% else %}
+        empty
+        {% endif %}
 
 - platform: command_line
   name: Epson Ink Level Black
   command: /usr/bin/curl -s -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML  | awk -F"'" '/Ink_K.PNG/ && $6+0 == $6 { printf "%.0f\n", $6 / 50 * 100 }'
-  unit_of_measurement: '%'
+  unit_of_measurement: "%"
   scan_interval: 120
 
 - platform: command_line
   name: Epson Ink Level Magenta
   command: /usr/bin/curl -s -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML  | awk -F"'" '/Ink_M.PNG/ && $6+0 == $6 { printf "%.0f\n", $6 / 50 * 100 }'
-  unit_of_measurement: '%'
+  unit_of_measurement: "%"
   scan_interval: 120
 
 - platform: command_line
   name: Epson Ink Level Yellow
   command: /usr/bin/curl -s -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML  | awk -F"'" '/Ink_Y.PNG/ && $6+0 == $6 { printf "%.0f\n", $6 / 50 * 100 }'
-  unit_of_measurement: '%'
+  unit_of_measurement: "%"
   scan_interval: 120
 
 - platform: command_line
   name: Epson Ink Level Cyan
   command: /usr/bin/curl -s -X GET http://epson.cbs-service.net/PRESENTATION/HTML/TOP/PRTINFO.HTML  | awk -F"'" '/Ink_C.PNG/ && $6+0 == $6 { printf "%.0f\n", $6 / 50 * 100 }'
-  unit_of_measurement: '%'
+  unit_of_measurement: "%"
   scan_interval: 120
 
 # - platform: command_line

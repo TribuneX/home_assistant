@@ -1,22 +1,22 @@
-- alias: 'Presence: User 2 left home'
-  initial_state: 'on'
+- alias: "Presence: User 2 left home"
+  initial_state: "on"
   trigger:
     platform: zone
     entity_id: device_tracker.owntracks_user_2_iphone
     zone: zone.home
     event: leave
   condition:
-    condition: state    
-    entity_id: group.user_1   
-    state: 'not home'  
+    condition: state
+    entity_id: group.user_1
+    state: "not home"
   action:
     - service: notify.mobile_app_batphone
       data:
-        title: 'Location'
-        message: 'User 2 left home.'
+        title: "Location"
+        message: "User 2 left home."
 
-- alias: 'Presence: User 2 arrived at home'
-  initial_state: 'on'
+- alias: "Presence: User 2 arrived at home"
+  initial_state: "on"
   trigger:
     platform: zone
     entity_id: device_tracker.owntracks_user_2_iphone
@@ -25,11 +25,11 @@
   action:
     - service: notify.mobile_app_batphone
       data:
-        title: 'Location'
-        message: 'User 2 arrived at home.'
+        title: "Location"
+        message: "User 2 arrived at home."
 
-- alias: 'Presence: User 2 left work'
-  initial_state: 'on'
+- alias: "Presence: User 2 left work"
+  initial_state: "on"
   trigger:
     platform: zone
     entity_id: device_tracker.owntracks_user_2_iphone
@@ -38,11 +38,11 @@
   action:
     - service: notify.mobile_app_batphone
       data:
-        title: 'Location'
-        message: 'User 2 left work.'
+        title: "Location"
+        message: "User 2 left work."
 
-- alias: 'Presence: User 2 arrived at work'
-  initial_state: 'on'
+- alias: "Presence: User 2 arrived at work"
+  initial_state: "on"
   trigger:
     platform: zone
     entity_id: device_tracker.owntracks_user_2_iphone
@@ -51,15 +51,15 @@
   action:
     - service: notify.mobile_app_batphone
       data:
-        title: 'Location'
-        message: 'User 2 arrived at work.'
+        title: "Location"
+        message: "User 2 arrived at work."
 
-- alias: 'Presence: Nobody at home'
-  initial_state: 'on'
+- alias: "Presence: Nobody at home"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: group.personen
-    from: 'home'
-    to: 'not_home' 
+    from: "home"
+    to: "not_home"
   action:
     - service: script.turn_off_all

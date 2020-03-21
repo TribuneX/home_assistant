@@ -10,7 +10,7 @@ homeassistant:
 
   # metric for Metric, imperial for Imperial
   unit_system: metric
-  
+
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Berlin
 
@@ -18,7 +18,7 @@ homeassistant:
   packages: !include_dir_named packages
 
   auth_providers:
-   - type: homeassistant
+    - type: homeassistant
 
 config:
 
@@ -33,11 +33,11 @@ mqtt:
   port: 1883
   discovery: true
   birth_message:
-    topic: 'hass/status'
-    payload: 'online'
+    topic: "hass/status"
+    payload: "online"
   will_message:
-    topic: 'hass/status'
-    payload: 'offline'
+    topic: "hass/status"
+    payload: "offline"
 
 map:
 
@@ -71,7 +71,7 @@ frontend:
 
 http:
   base_url: !secret base_url
-  ssl_certificate: !secret ssl_certificate_path        
+  ssl_certificate: !secret ssl_certificate_path
   ssl_key: !secret ssl_private_key
   ip_ban_enabled: false
   login_attempts_threshold: 3
@@ -91,10 +91,10 @@ device_tracker:
     host: !secret fritz_host
     username: !secret fritz_home_username
     password: !secret fritz_home_password
-    track_new_devices: false 
+    track_new_devices: false
 
 owntracks:
-    max_gps_accuracy: 100
+  max_gps_accuracy: 100
 
 # Fritzbox Smart Home
 fritzbox:
@@ -131,8 +131,8 @@ input_number:
     step: 0.01
 
 vacuum:
-  platform: xiaomi_miio 
-  name: 'Vacuum Cleaner'
+  platform: xiaomi_miio
+  name: "Vacuum Cleaner"
   host: !secret robo_ip
   token: !secret mirobo_token
 
@@ -142,15 +142,14 @@ vacuum:
 #   host: 192.168.178.38
 #   token: !secret fan_token
 
-zone 1:
-  name: Work User 1
-  latitude: !secret lat_zone_1 
-  longitude: !secret long_zone_1 
+zone:
+  - name: Work User 1
+    latitude: !secret lat_zone_1
+    longitude: !secret long_zone_1
 
-zone 2:
-  name: Work User 2
-  latitude: !secret lat_zone_2 
-  longitude: !secret long_zone_2 
+  - name: Work User 2
+    latitude: !secret lat_zone_2
+    longitude: !secret long_zone_2
 
 person:
   - name: !secret user_1

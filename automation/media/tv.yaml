@@ -1,14 +1,14 @@
-- alias: 'TV: Select mode'
-  initial_state: 'on'
+- alias: "TV: Select mode"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: input_select.tv_mode
-  condition:  
-   condition: state
-   entity_id: switch.tv
-   state: 'on'
+  condition:
+    condition: state
+    entity_id: switch.tv
+    state: "on"
   action:
-    - service: script.turn_on 
+    - service: script.turn_on
       data_template:
         entity_id: >
           {% if trigger.to_state.state == 'AppleTV' %}
@@ -21,21 +21,21 @@
             script.set_input_music
           {% endif %}
 
-- alias: 'TV: Select mode + TV'
-  initial_state: 'on'
+- alias: "TV: Select mode + TV"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: input_select.tv_mode
-  condition:  
-   condition: state
-   entity_id: switch.tv
-   state: 'off'
+  condition:
+    condition: state
+    entity_id: switch.tv
+    state: "off"
   action:
     - service: switch.turn_on
       entity_id: switch.tv
     - delay:
         seconds: 12
-    - service: script.turn_on 
+    - service: script.turn_on
       data_template:
         entity_id: >
           {% if trigger.to_state.state == 'AppleTV' %}
@@ -48,36 +48,36 @@
             script.set_input_music
           {% endif %}
 
-- alias: 'TV: Pause AppleTV if SONOS is used'
-  initial_state: 'on'
+- alias: "TV: Pause AppleTV if SONOS is used"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: media_player.living_room
-    from: 'paused'
-    to: 'playing'
+    from: "paused"
+    to: "playing"
   condition:
     - condition: state
       entity_id: media_player.wohnzimmer
-      state: 'playing'
+      state: "playing"
   action:
     - service: media_player.media_pause
       entity_id: media_player.wohnzimmer
 
-- alias: 'TV: Toggle TV2 in bedroom on long button press'
-  initial_state: 'on'
+- alias: "TV: Toggle TV2 in bedroom on long button press"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: sensor.bedroom_click
-    to: 'long'
+    to: "long"
   action:
     - service: switch.toggle
       entity_id: switch.tv_2
 
-- alias: 'TV: Turn on AppleTV on tap twice action'
-  initial_state: 'on'
+- alias: "TV: Turn on AppleTV on tap twice action"
+  initial_state: "on"
   trigger:
-      platform: mqtt
-      topic: 'zigbee2mqtt/0x00158d0001108360'
+    platform: mqtt
+    topic: "zigbee2mqtt/0x00158d0001108360"
   condition:
     condition: and
     conditions:
@@ -85,18 +85,18 @@
         value_template: '{{ "tap" == trigger.payload_json.action }}'
       - condition: state
         entity_id: switch.tv
-        state: 'off'
+        state: "off"
   action:
     service: input_select.select_option
     data:
       entity_id: input_select.tv_mode
       option: AppleTV
 
-- alias: 'TV: Turn off TV and pause sonos on shake_air'
-  initial_state: 'on'
+- alias: "TV: Turn off TV and pause sonos on shake_air"
+  initial_state: "on"
   trigger:
-      platform: mqtt
-      topic: 'zigbee2mqtt/0x00158d0001108360'
+    platform: mqtt
+    topic: "zigbee2mqtt/0x00158d0001108360"
   condition:
     condition: template
     value_template: '{{ "shake" == trigger.payload_json.action }}'
@@ -107,11 +107,11 @@
         option: AUS
     - service: script.pause_sonos
 
-- alias: 'TV: Pause AppleTV on flip90'
-  initial_state: 'on'
+- alias: "TV: Pause AppleTV on flip90"
+  initial_state: "on"
   trigger:
-      platform: mqtt
-      topic: 'zigbee2mqtt/0x00158d0001108360'
+    platform: mqtt
+    topic: "zigbee2mqtt/0x00158d0001108360"
   condition:
     condition: and
     conditions:
@@ -119,7 +119,7 @@
         value_template: '{{ "flip90" == trigger.payload_json.action }}'
       - condition: state
         entity_id: switch.tv
-        state: 'on'
+        state: "on"
   action:
     - service: media_player.media_pause
       entity_id: media_player.wohnzimmer
