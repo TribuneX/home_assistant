@@ -1,77 +1,77 @@
-- alias: 'Heating: Turn on heating if somebody arrives at home'
-  initial_state: 'on'
+- alias: "Heating: Turn on heating if somebody arrives at home"
+  initial_state: "on"
   trigger:
     - platform: state
       entity_id: group.personen
-      from: 'not_home'
-      to: 'home'
+      from: "not_home"
+      to: "home"
   condition:
     condition: and
     conditions:
       - condition: time
-        after: '08:00'
-        before: '22:00'
+        after: "08:00"
+        before: "22:00"
       - condition: numeric_state
         entity_id: sensor.temperature_livingroom
-        below: '20'
+        below: "20"
   action:
     - service: script.turn_on_heating_living_room
 
-- alias: 'Heating: Turn on heating if somebody stays home'
-  initial_state: 'on'
+- alias: "Heating: Turn on heating if somebody stays home"
+  initial_state: "on"
   trigger:
     - platform: time
-      at: '10:00:00'
+      at: "10:00:00"
   condition:
     condition: and
     conditions:
       - condition: state
         entity_id: group.personen
-        state: 'home'
+        state: "home"
       - condition: numeric_state
         entity_id: sensor.temperature_livingroom
-        below: '20'
+        below: "20"
   action:
     - service: script.turn_on_heating_living_room
 
-- alias: 'Heating: Turn off heating in the evening'
-  initial_state: 'on'
+- alias: "Heating: Turn off heating in the evening"
+  initial_state: "on"
   trigger:
     - platform: time
-      at: '23:00:00'
+      at: "23:00:00"
     - platform: state
       entity_id: light.living_room
-      from: 'on'
-      to: 'off'
+      from: "on"
+      to: "off"
   condition:
     - condition: time
-      after: '20:00'
-      before: '23:01'
+      after: "20:00"
+      before: "23:01"
   action:
     - service: script.turn_off_heating_living_room
 
-- alias: 'Heating: Turn on heating if somebody stays home'
-  initial_state: 'on'
+- alias: "Heating: Turn on heating if somebody stays home"
+  initial_state: "on"
   trigger:
     - platform: time
-      at: '10:00:00'
+      at: "10:00:00"
   condition:
     condition: and
     conditions:
       - condition: state
         entity_id: group.personen
-        state: 'home'
+        state: "home"
       - condition: numeric_state
         entity_id: sensor.temperature_livingroom
-        below: '20'
+        below: "20"
   action:
     - service: script.turn_on_heating_living_room
 
-- alias: 'Heating: Turn on heating in the bathroom based on time'
-  initial_state: 'on'
+- alias: "Heating: Turn on heating in the bathroom based on time"
+  initial_state: "on"
   trigger:
     - platform: time
-      at: '07:00:00'
+      at: "07:00:00"
   condition:
     condition: and
     conditions:
@@ -84,15 +84,15 @@
           - fri
       - condition: numeric_state
         entity_id: sensor.temperature_bath
-        below: '20'
+        below: "20"
   action:
     - service: script.turn_on_heating_bath_room
 
-- alias: 'Heating: Turn off heating in the bathroom based on time'
-  initial_state: 'on'
+- alias: "Heating: Turn off heating in the bathroom based on time"
+  initial_state: "on"
   trigger:
     - platform: time
-      at: '08:00:00'
+      at: "08:00:00"
   condition:
     - condition: time
       weekday:

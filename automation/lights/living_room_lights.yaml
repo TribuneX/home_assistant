@@ -1,28 +1,28 @@
-- alias: 'Lights: Turn on livingroom lights at sunset'
-  initial_state: 'on'
+- alias: "Lights: Turn on livingroom lights at sunset"
+  initial_state: "on"
   trigger:
     - platform: state
       entity_id: sensor.dark_outside
-      from: 'off' 
-      to: 'on'
+      from: "off"
+      to: "on"
     - platform: state
       entity_id: group.personen
-      from: 'not_home'
-      to: 'home'
+      from: "not_home"
+      to: "home"
   condition:
     condition: and
     conditions:
       - condition: state
         entity_id: group.personen
-        state: 'home'
+        state: "home"
       - condition: state
         entity_id: sensor.dark_outside
-        state: 'on'
+        state: "on"
       - condition: state
         entity_id: light.living_room
-        state: 'off'
+        state: "off"
   action:
-    - service: script.turn_on 
+    - service: script.turn_on
       data_template:
         entity_id: >
           {% if is_state('switch.tv', 'on') %}
@@ -32,27 +32,27 @@
           {% endif %}
     - service: script.turn_on_christmas
 
-- alias: 'Lights: Turn on livingroom lights in the morning from Tue to Sat'
-  initial_state: 'on'
+- alias: "Lights: Turn on livingroom lights in the morning from Tue to Sat"
+  initial_state: "on"
   trigger:
     - platform: state
       entity_id: light.bad
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
     - platform: state
       entity_id: light.kueche1
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
     - platform: state
       entity_id: light.eingang
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
   condition:
     condition: and
     conditions:
       - condition: time
-        after: '06:30'
-        before: '10:00'
+        after: "06:30"
+        before: "10:00"
         weekday:
           - tue
           - wed
@@ -61,103 +61,103 @@
           - sat
       - condition: state
         entity_id: sensor.dark_outside
-        state: 'on'
+        state: "on"
   action:
     - service: script.turn_off
       entity_id: script.turn_off_livingroom_lights_delay_30
     - service: script.turn_on_livingroom_morning
     - service: script.turn_off_livingroom_lights_delay_30
 
-- alias: 'Lights: Turn on livingroom lights in the morning on Mondays'
-  initial_state: 'on'
+- alias: "Lights: Turn on livingroom lights in the morning on Mondays"
+  initial_state: "on"
   trigger:
     - platform: state
       entity_id: light.bad
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
     - platform: state
       entity_id: light.kueche1
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
     - platform: state
       entity_id: light.eingang
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
   condition:
     condition: and
     conditions:
       - condition: time
-        after: '05:00'
-        before: '10:00'
+        after: "05:00"
+        before: "10:00"
         weekday:
           - mon
       - condition: state
         entity_id: sensor.dark_outside
-        state: 'on'
+        state: "on"
   action:
     - service: script.turn_off
       entity_id: script.turn_off_livingroom_lights_delay_30
     - service: script.turn_on_livingroom_morning
     - service: script.turn_off_livingroom_lights_delay_30
 
-- alias: 'Lights: 10 minutes timer for devices at night'
-  initial_state: 'on'
+- alias: "Lights: 10 minutes timer for devices at night"
+  initial_state: "on"
   trigger:
     - platform: state
       entity_id: group.living_room
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
   condition:
     condition: time
-    after: '03:01'
-    before: '05:00'
+    after: "03:01"
+    before: "05:00"
   action:
     - service: script.turn_off_livingroom_delay_10
 
-- alias: 'Lights: Turn off auto standby if TV is used'
-  initial_state: 'on'
+- alias: "Lights: Turn off auto standby if TV is used"
+  initial_state: "on"
   trigger:
     - platform: state
       entity_id: switch.tv
-      from: 'off'
-      to: 'on'
+      from: "off"
+      to: "on"
   condition:
     condition: time
-    after: '21:00'
-    before: '05:00'
+    after: "21:00"
+    before: "05:00"
   action:
     - service: script.turn_off
       entity_id: script.turn_off_livingroom_delay_10
 
-- alias: 'Lights: Dim lights when AppleTV is played'
-  initial_state: 'off'   
-  trigger:    
-    - platform: state   
-      entity_id: media_player.wohnzimmer    
-      from: 'paused'    
-      to: 'playing'     
-  condition:    
-    condition: and    
-    conditions:   
-      - condition: state
-        entity_id: sensor.dark_outside
-        state: 'on'
-      - condition: time   
-        after: '21:00'    
-        before: '03:00'
-      - condition: state
-        entity_id: light.sofa
-        state: 'on'   
-  action:   
-    - service: script.turn_on_livingroom_dimmed_lights
-
-- alias: 'Lights: Turn on light when AppleTV is paused'
-  initial_state: 'off'
+- alias: "Lights: Dim lights when AppleTV is played"
+  initial_state: "off"
   trigger:
     - platform: state
       entity_id: media_player.wohnzimmer
-      from: 'playing'
-      to: 'paused'
+      from: "paused"
+      to: "playing"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.dark_outside
+        state: "on"
+      - condition: time
+        after: "21:00"
+        before: "03:00"
+      - condition: state
+        entity_id: light.sofa
+        state: "on"
+  action:
+    - service: script.turn_on_livingroom_dimmed_lights
+
+- alias: "Lights: Turn on light when AppleTV is paused"
+  initial_state: "off"
+  trigger:
+    - platform: state
+      entity_id: media_player.wohnzimmer
+      from: "playing"
+      to: "paused"
       for:
         seconds: 1
   condition:
@@ -165,54 +165,53 @@
     conditions:
       - condition: state
         entity_id: sensor.dark_outside
-        state: 'on'
+        state: "on"
       - condition: time
-        after: '21:00'
-        before: '03:00'
+        after: "21:00"
+        before: "03:00"
       - condition: state
         entity_id: light.sofa
-        state: 'on'
+        state: "on"
   action:
     - service: script.turn_on_livingroom_default_lights
 
-
-- alias: 'Lights: Turn on lights in livingroom if motion is detected'
-  initial_state: 'on'
+- alias: "Lights: Turn on lights in livingroom if motion is detected"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: binary_sensor.motion_livingroom
-    from: 'off'
-    to: 'on'
+    from: "off"
+    to: "on"
   condition:
     condition: and
     conditions:
       - condition: time
-        after: '00:00'
-        before: '05:00'
+        after: "00:00"
+        before: "05:00"
       - condition: state
         entity_id: sensor.dark_outside
-        state: 'on'
+        state: "on"
   action:
     - service: script.turn_on_livingroom_dimmed_lights
 
-- alias: 'Lights: Turn off lights in living room if there is no motion for 3 minutes'
-  initial_state: 'on'
+- alias: "Lights: Turn off lights in living room if there is no motion for 3 minutes"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: binary_sensor.motion_livingroom
-    from: 'on'
-    to: 'off'
-    for: 
+    from: "on"
+    to: "off"
+    for:
       minutes: 1
   condition:
     condition: and
     conditions:
       - condition: time
-        after: '00:00'
-        before: '05:00'
+        after: "00:00"
+        before: "05:00"
       - condition: state
         entity_id: sensor.dark_outside
-        state: 'on'
+        state: "on"
   action:
     - service: light.turn_off
       data:

@@ -1,17 +1,17 @@
 ##########################
-# Inputs 
+# Inputs
 ##########################
 
-vacation_mode: 
-  name: 'On Vacation'
+vacation_mode:
+  name: "On Vacation"
   initial: off
   icon: mdi:airplane
 
 cleaned_today:
-  name: 'Cleaned today'
+  name: "Cleaned today"
   initial: off
   icon: mdi:broom
 
 christmas:
-  name: 'Christmas'
+  name: "Christmas"
   icon: mdi:pine-tree

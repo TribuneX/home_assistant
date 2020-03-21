@@ -1,6 +1,6 @@
 domains:
-      - sensor
-      - binary_sensor
-      - automation
-      - plant
-      - climate
+  - sensor
+  - binary_sensor
+  - automation
+  - plant
+  - climate

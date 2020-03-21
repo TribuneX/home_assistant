@@ -3,7 +3,6 @@
 ## Source: https://community.home-assistant.io/t/howto-create-battery-alert-without-creating-a-template-for-every-device/30576/58
 ################################################################
 
-
 ################################################
 ## Customize
 ################################################
@@ -16,7 +15,7 @@ homeassistant:
 
     package.node_anchors:
       customize: &customize
-        package: 'battery_alert'
+        package: "battery_alert"
 
       expose: &expose
         <<: *customize
@@ -58,95 +57,95 @@ group:
 ################################################
 
 automation:
-- alias: battery_alert
-  trigger:
-    - platform: time
-      at: '10:00:00'
-    - platform: time
-      at: '18:00:00'
-  condition:
-    - condition: template
-      value_template: >
-        {%- set threshold_high = 10 -%}
-        {%- set threshold_low = -1 -%}
-        {% macro battery_level() %}
-        {% set domains = ['light', 'switch', 'sensor', 'zwave', 'lock', 'device_tracker'] %}
-        {% for domain in domains -%}
-        {%- for item in states[domain] if (item.attributes['battery_level'] is defined or ("battery" in item.name | lower and not "voltage" in item.name | lower and not "runtime" in item.name | lower )) -%}
-        {% if (item.attributes['battery_level'] is defined and (item.attributes['battery_level'] is number or item.attributes['battery_level'] | length == item.attributes['battery_level'] | int | string | length) and item.attributes['battery_level'] | int < threshold_high and item.attributes['battery_level'] | int > threshold_low) -%}
-        {{ item.name }}{% endif -%}
-        {%- if ("battery" in item.name | lower and ((item.state is number or item.state | length == item.state | int | string | length) and item.state | int < threshold_high and item.state | int > threshold_low) or item.state | lower == "low" or item.state | lower == "unknown") -%}
-        {{ item.name }}{% endif -%}
-        {% endfor %}
-        {%- endfor %}
-        {% endmacro %}
-        {{ battery_level() |trim != "" }}
-  action:
-    - service: persistent_notification.create
-      data_template:
-        title: "Low Battery levels"
-        notification_id: low-battery-alert
-        message: >
+  - alias: battery_alert
+    trigger:
+      - platform: time
+        at: "10:00:00"
+      - platform: time
+        at: "18:00:00"
+    condition:
+      - condition: template
+        value_template: >
           {%- set threshold_high = 10 -%}
           {%- set threshold_low = -1 -%}
-          {% macro battery_level(domain) %}
+          {% macro battery_level() %}
+          {% set domains = ['light', 'switch', 'sensor', 'zwave', 'lock', 'device_tracker'] %}
+          {% for domain in domains -%}
           {%- for item in states[domain] if (item.attributes['battery_level'] is defined or ("battery" in item.name | lower and not "voltage" in item.name | lower and not "runtime" in item.name | lower )) -%}
           {% if (item.attributes['battery_level'] is defined and (item.attributes['battery_level'] is number or item.attributes['battery_level'] | length == item.attributes['battery_level'] | int | string | length) and item.attributes['battery_level'] | int < threshold_high and item.attributes['battery_level'] | int > threshold_low) -%}
-          {{ item.name }} ({{ item.attributes['battery_level'] }}){%- if not loop.last %}, {% endif -%}{%- endif -%}
+          {{ item.name }}{% endif -%}
           {%- if ("battery" in item.name | lower and ((item.state is number or item.state | length == item.state | int | string | length) and item.state | int < threshold_high and item.state | int > threshold_low) or item.state | lower == "low" or item.state | lower == "unknown") -%}
-          {{ item.name }} ({{ item.state }}){% if not loop.last %}, {% endif %}{% endif -%}
-          {%- endfor -%}
+          {{ item.name }}{% endif -%}
+          {% endfor %}
+          {%- endfor %}
           {% endmacro %}
-          {%- set domains = ['light', 'switch', 'sensor', 'zwave', 'lock', 'device_tracker'] -%}
-          {%- for domain in domains if battery_level(domain) |trim != ""-%}
-          {{ battery_level(domain) }}{%- if not loop.last %}, {% endif -%}
-          {%- endfor -%}
-    - service: notify.mobile_app_batphone
-      data_template:
-        message: "Low Battery Levels"
-        data:
-          attachments:
-          - color: '#52c0f2'
-            title: "These devices have low battery levels"
-            text: >
-              {%- set threshold_high = 10 -%}
-              {%- set threshold_low = -1 -%}
-              {% macro battery_level(domain) %}
-              {%- for item in states[domain] if (item.attributes['battery_level'] is defined or ("battery" in item.name | lower and not "voltage" in item.name | lower and not "runtime" in item.name | lower )) -%}
-              {% if (item.attributes['battery_level'] is defined and (item.attributes['battery_level'] is number or item.attributes['battery_level'] | length == item.attributes['battery_level'] | int | string | length) and item.attributes['battery_level'] | int < threshold_high and item.attributes['battery_level'] | int > threshold_low) -%}
-              {{ item.name }} ({{ item.attributes['battery_level'] }}){%- if not loop.last %}, {% endif -%}{%- endif -%}
-              {%- if ("battery" in item.name | lower and ((item.state is number or item.state | length == item.state | int | string | length) and item.state | int < threshold_high and item.state | int > threshold_low) or item.state | lower == "low" or item.state | lower == "unknown") -%}
-              {{ item.name }} ({{ item.state }}){% if not loop.last %}, {% endif %}{% endif -%}
-              {%- endfor -%}
-              {% endmacro %}
-              {%- set domains = ['light', 'switch', 'sensor', 'zwave', 'lock', 'device_tracker'] -%}
-              {%- for domain in domains if battery_level(domain) |trim != ""-%}
-              {{ battery_level(domain) }}{%- if not loop.last %}, {% endif -%}
-              {%- endfor -%}
+          {{ battery_level() |trim != "" }}
+    action:
+      - service: persistent_notification.create
+        data_template:
+          title: "Low Battery levels"
+          notification_id: low-battery-alert
+          message: >
+            {%- set threshold_high = 10 -%}
+            {%- set threshold_low = -1 -%}
+            {% macro battery_level(domain) %}
+            {%- for item in states[domain] if (item.attributes['battery_level'] is defined or ("battery" in item.name | lower and not "voltage" in item.name | lower and not "runtime" in item.name | lower )) -%}
+            {% if (item.attributes['battery_level'] is defined and (item.attributes['battery_level'] is number or item.attributes['battery_level'] | length == item.attributes['battery_level'] | int | string | length) and item.attributes['battery_level'] | int < threshold_high and item.attributes['battery_level'] | int > threshold_low) -%}
+            {{ item.name }} ({{ item.attributes['battery_level'] }}){%- if not loop.last %}, {% endif -%}{%- endif -%}
+            {%- if ("battery" in item.name | lower and ((item.state is number or item.state | length == item.state | int | string | length) and item.state | int < threshold_high and item.state | int > threshold_low) or item.state | lower == "low" or item.state | lower == "unknown") -%}
+            {{ item.name }} ({{ item.state }}){% if not loop.last %}, {% endif %}{% endif -%}
+            {%- endfor -%}
+            {% endmacro %}
+            {%- set domains = ['light', 'switch', 'sensor', 'zwave', 'lock', 'device_tracker'] -%}
+            {%- for domain in domains if battery_level(domain) |trim != ""-%}
+            {{ battery_level(domain) }}{%- if not loop.last %}, {% endif -%}
+            {%- endfor -%}
+      - service: notify.mobile_app_batphone
+        data_template:
+          message: "Low Battery Levels"
+          data:
+            attachments:
+              - color: "#52c0f2"
+                title: "These devices have low battery levels"
+                text: >
+                  {%- set threshold_high = 10 -%}
+                  {%- set threshold_low = -1 -%}
+                  {% macro battery_level(domain) %}
+                  {%- for item in states[domain] if (item.attributes['battery_level'] is defined or ("battery" in item.name | lower and not "voltage" in item.name | lower and not "runtime" in item.name | lower )) -%}
+                  {% if (item.attributes['battery_level'] is defined and (item.attributes['battery_level'] is number or item.attributes['battery_level'] | length == item.attributes['battery_level'] | int | string | length) and item.attributes['battery_level'] | int < threshold_high and item.attributes['battery_level'] | int > threshold_low) -%}
+                  {{ item.name }} ({{ item.attributes['battery_level'] }}){%- if not loop.last %}, {% endif -%}{%- endif -%}
+                  {%- if ("battery" in item.name | lower and ((item.state is number or item.state | length == item.state | int | string | length) and item.state | int < threshold_high and item.state | int > threshold_low) or item.state | lower == "low" or item.state | lower == "unknown") -%}
+                  {{ item.name }} ({{ item.state }}){% if not loop.last %}, {% endif %}{% endif -%}
+                  {%- endfor -%}
+                  {% endmacro %}
+                  {%- set domains = ['light', 'switch', 'sensor', 'zwave', 'lock', 'device_tracker'] -%}
+                  {%- for domain in domains if battery_level(domain) |trim != ""-%}
+                  {{ battery_level(domain) }}{%- if not loop.last %}, {% endif -%}
+                  {%- endfor -%}
 
-- alias: battery_alert_clear
-  trigger:
-    - platform: time_pattern
-      minutes: '/30'
-      seconds: 00
-  condition:
-    - condition: template
-      value_template: >
-        {%- set threshold_high = 10 -%}
-        {%- set threshold_low = -1 -%}
-        {% macro battery_level() %}
-        {% set domains = ['light', 'switch', 'sensor', 'zwave', 'lock', 'device_tracker'] %}
-        {% for domain in domains -%}
-        {%- for item in states[domain] if (item.attributes['battery_level'] is defined or ("battery" in item.name | lower and not "voltage" in item.name | lower and not "runtime" in item.name | lower )) -%}
-        {% if (item.attributes['battery_level'] is defined and (item.attributes['battery_level'] is number or item.attributes['battery_level'] | length == item.attributes['battery_level'] | int | string | length) and item.attributes['battery_level'] | int < threshold_high and item.attributes['battery_level'] | int > threshold_low) -%}
-        {{ item.name }}{% endif -%}
-        {%- if ("battery" in item.name | lower and ((item.state is number or item.state | length == item.state | int | string | length) and item.state | int < threshold_high and item.state | int > threshold_low) or item.state | lower == "low" or item.state | lower == "unknown") -%}
-        {{ item.name }}{% endif -%}
-        {% endfor %}
-        {%- endfor %}
-        {% endmacro %}
-        {{ battery_level() |trim == "" }}
-  action:
-    - service: persistent_notification.dismiss
-      data:
-        notification_id: low-battery-alert
+  - alias: battery_alert_clear
+    trigger:
+      - platform: time_pattern
+        minutes: "/30"
+        seconds: 00
+    condition:
+      - condition: template
+        value_template: >
+          {%- set threshold_high = 10 -%}
+          {%- set threshold_low = -1 -%}
+          {% macro battery_level() %}
+          {% set domains = ['light', 'switch', 'sensor', 'zwave', 'lock', 'device_tracker'] %}
+          {% for domain in domains -%}
+          {%- for item in states[domain] if (item.attributes['battery_level'] is defined or ("battery" in item.name | lower and not "voltage" in item.name | lower and not "runtime" in item.name | lower )) -%}
+          {% if (item.attributes['battery_level'] is defined and (item.attributes['battery_level'] is number or item.attributes['battery_level'] | length == item.attributes['battery_level'] | int | string | length) and item.attributes['battery_level'] | int < threshold_high and item.attributes['battery_level'] | int > threshold_low) -%}
+          {{ item.name }}{% endif -%}
+          {%- if ("battery" in item.name | lower and ((item.state is number or item.state | length == item.state | int | string | length) and item.state | int < threshold_high and item.state | int > threshold_low) or item.state | lower == "low" or item.state | lower == "unknown") -%}
+          {{ item.name }}{% endif -%}
+          {% endfor %}
+          {%- endfor %}
+          {% endmacro %}
+          {{ battery_level() |trim == "" }}
+    action:
+      - service: persistent_notification.dismiss
+        data:
+          notification_id: low-battery-alert

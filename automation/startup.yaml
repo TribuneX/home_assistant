@@ -1,5 +1,5 @@
-- alias: 'Startup: Startup notification'
-  initial_state: 'on'
+- alias: "Startup: Startup notification"
+  initial_state: "on"
   trigger:
     platform: homeassistant
     event: start
@@ -7,23 +7,23 @@
     - service: script.init_hass
     - service: notify.mobile_app_batphone
       data:
-        title: 'System'
-        message: 'Home Assistant started'
+        title: "System"
+        message: "Home Assistant started"
     - delay:
         minutes: 1
     - service: script.init_tv
     - service: script.init_tv_2
     - service: script.init_sonos
-    
-- alias: 'Startup: Startup nobody is home'
-  initial_state: 'on'
+
+- alias: "Startup: Startup nobody is home"
+  initial_state: "on"
   trigger:
     platform: homeassistant
     event: start
   condition:
     - condition: state
       entity_id: group.personen
-      state: 'not_home'
+      state: "not_home"
   action:
     - service: homeassistant.turn_off
       entity_id: group.all_speaker

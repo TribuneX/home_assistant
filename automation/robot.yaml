@@ -1,37 +1,37 @@
-- alias: 'Robot: Robot started cleaning' 
-  initial_state: 'on'
+- alias: "Robot: Robot started cleaning"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: vacuum.vacuum_cleaner
-    from: 'docked'
-    to: 'cleaning'
+    from: "docked"
+    to: "cleaning"
   action:
     - service: notify.mobile_app_batphone
       data:
-        title: 'Robot'
-        message: 'Robot started to clean!'
+        title: "Robot"
+        message: "Robot started to clean!"
 
-- alias: 'Robot: Robot stopped cleaning' 
-  initial_state: 'on'
+- alias: "Robot: Robot stopped cleaning"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: vacuum.vacuum_cleaner
-    from: 'returning'
-    to: 'docked'
+    from: "returning"
+    to: "docked"
   action:
     - service: notify.mobile_app_batphone
       data:
-        title: 'Robot'
-        message: 'Cleanup successful after {{states.vacuum.vacuum_cleaner.attributes.cleaning_time}} minutes.'
+        title: "Robot"
+        message: "Cleanup successful after {{states.vacuum.vacuum_cleaner.attributes.cleaning_time}} minutes."
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.cleaned_today
 
-- alias: 'Robot: Robot cleanup if nobody is home'
-  initial_state: 'on'
+- alias: "Robot: Robot cleanup if nobody is home"
+  initial_state: "on"
   trigger:
     - platform: time
-      at: '14:00'
+      at: "14:00"
     - platform: state
       entity_id: group.personen
       from: home
@@ -40,8 +40,8 @@
     condition: and
     conditions:
       - condition: time
-        after: '14:00:00'
-        before: '22:00:00'
+        after: "14:00:00"
+        before: "22:00:00"
         weekday:
           - mon
           - fri
@@ -50,19 +50,19 @@
         state: not_home
       - condition: state
         entity_id: input_boolean.cleaned_today
-        state: 'off'
+        state: "off"
       - condition: state
         entity_id: input_boolean.vacation_mode
-        state: 'off'
+        state: "off"
   action:
     - service: vacuum.start
       entity_id: vacuum.vacuum_cleaner
 
-- alias: 'Robot: Reset cleaned today counter'
-  initial_state: 'on'
+- alias: "Robot: Reset cleaned today counter"
+  initial_state: "on"
   trigger:
     platform: time
-    at: '01:00:00'
+    at: "01:00:00"
   action:
     - service: input_boolean.turn_off
       data:

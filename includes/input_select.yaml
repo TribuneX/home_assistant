@@ -1,5 +1,5 @@
 tv_mode:
-  name: 'TV mode'
+  name: "TV mode"
   options:
     - AUS
     - TV
@@ -22,7 +22,7 @@ sonos_source:
   initial: SELECT
   icon: mdi:radio
 log_level:
-  name: 'Log Level'
+  name: "Log Level"
   options:
     - critical
     - fatal

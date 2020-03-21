@@ -1,25 +1,25 @@
-- alias: 'Lights: Turn on light in office if motion is detected'
-  initial_state: 'on'
+- alias: "Lights: Turn on light in office if motion is detected"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: binary_sensor.motion_office
-    from: 'off'
-    to: 'on'
+    from: "off"
+    to: "on"
   condition:
     - condition: state
       entity_id: sensor.dark_outside
-      state: 'on'
+      state: "on"
   action:
     - service: script.turn_on_office_default_lights
 
-- alias: 'Lights: Turn off light in office lights if there is no motion for 3 minutes'
-  initial_state: 'on'
+- alias: "Lights: Turn off light in office lights if there is no motion for 3 minutes"
+  initial_state: "on"
   trigger:
     platform: state
     entity_id: binary_sensor.motion_office
-    from: 'on'
-    to: 'off'
-    for: 
+    from: "on"
+    to: "off"
+    for:
       minutes: 2
   action:
     - service: light.turn_off

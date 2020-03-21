@@ -1,5 +1,5 @@
 - alias: Zigbee2mqtt Log Level
-  initial_state: 'on'
+  initial_state: "on"
   trigger:
     - platform: state
       entity_id: input_select.zigbee2mqtt_log_level
@@ -16,5 +16,5 @@
   action:
     - service: mqtt.publish
       data:
-        payload_template: '{{ states(''input_select.zigbee2mqtt_log_level'') }}'
+        payload_template: "{{ states('input_select.zigbee2mqtt_log_level') }}"
         topic: zigbee2mqtt/bridge/config/log_level
