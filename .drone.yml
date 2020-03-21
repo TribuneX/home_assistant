@@ -20,6 +20,10 @@ kind: pipeline
 type: ssh
 name: deploy
 
+trigger:
+  branch:
+  - master
+
 depends_on:
   - testing
 
@@ -48,5 +52,6 @@ steps:
 - name: restart
   commands:
   - cd /opt/configurations/docker-compose/homeassistant
+  - bash
   - docker-compose down
   - docker-compose up -d
