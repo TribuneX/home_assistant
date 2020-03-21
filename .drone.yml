@@ -23,6 +23,9 @@ name: deploy
 trigger:
   branch:
   - master
+  event:
+    exclude:
+    - pull_request
 
 depends_on:
   - testing
