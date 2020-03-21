@@ -6,7 +6,7 @@ tv_mode:
     - AppleTV
     - Plex
     - Music
-  initial: AUS
+  initial: AppleTV
   icon: mdi:television
 sonos_source:
   name: Sonos Source

@@ -45,10 +45,10 @@ init_hass:
       data:
         entity_id: input_select.log_level
         option: "fatal"
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.tv_mode
-        option: AppleTV
+    # - service: input_select.select_option
+    #   data:
+    #     entity_id: input_select.tv_mode
+    #     option: AppleTV
 
 init_tv:
   alias: "Init TV"
