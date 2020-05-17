@@ -16,6 +16,7 @@ filter:
     - sensor.temperature_office
     - sensor.humidity_office
     - sensor.pressure_office
+    - binary_sensor.office_door
     - sensor.temperature_livingroom
     - sensor.humidity_livingroom
     - sensor.pressure_livingroom
