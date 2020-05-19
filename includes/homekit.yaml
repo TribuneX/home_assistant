@@ -16,6 +16,7 @@ filter:
     - sensor.temperature_office
     - sensor.humidity_office
     - sensor.pressure_office
+    - binary_sensor.office_door
     - sensor.temperature_livingroom
     - sensor.humidity_livingroom
     - sensor.pressure_livingroom
@@ -24,11 +25,6 @@ filter:
     - sensor.temperature_bedroom
     - binary_sensor.water_leak_sensor
     - switch.vacuum_mode
-    - climate.living_room
-    - climate.dining_room
-    - climate.bath
-    - switch.heating_bath_room
-    - switch.heating_living_room
     - light.arbeitszimmer
     - light.bad_gang
     - light.eingang
