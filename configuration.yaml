@@ -96,13 +96,6 @@ device_tracker:
 owntracks:
   max_gps_accuracy: 100
 
-# Fritzbox Smart Home
-fritzbox:
-  devices:
-    - host: !secret fritz_host
-      username: !secret fritz_home_username
-      password: !secret fritz_home_password
-
 # Track the sun
 sun:
 
