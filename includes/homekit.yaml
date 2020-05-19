@@ -28,6 +28,7 @@ filter:
     - light.arbeitszimmer
     - light.bad_gang
     - light.eingang
+    - light.ankleide
     - light.living_room
     - light.kitchen
     - light.bedroom
