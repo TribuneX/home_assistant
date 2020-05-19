@@ -132,22 +132,6 @@
       turn_off:
         service: vacuum.return_to_base
         entity_id: vacuum.vacuum_cleaner
-    heating_living_room:
-      value_template: "{{ is_state('climate.living_room', 'heat')}}"
-      turn_on:
-        service: script.turn_on
-        entity_id: script.turn_on_heating_living_room
-      turn_off:
-        service: script.turn_on
-        entity_id: script.turn_off_heating_living_room
-    heating_bath_room:
-      value_template: "{{ is_state('climate.bath', 'heat')}}"
-      turn_on:
-        service: script.turn_on
-        entity_id: script.turn_on_heating_bath_room
-      turn_off:
-        service: script.turn_on
-        entity_id: script.turn_off_heating_bath_room
 
 - platform: flux
   lights:
