@@ -30,6 +30,7 @@ filter:
     - light.eingang
     - light.ankleide
     - light.living_room
+    - light.sofa
     - light.kitchen
     - light.bedroom
     - switch.speaker_1
