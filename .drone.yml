@@ -14,6 +14,11 @@ server:
     from_secret: SSH_KEY
 
 steps:
+- name: upgrade
+  commands:
+  - cd /opt/configurations/docker-compose/homeassistant
+  - docker-compose pull
+
 - name: prepare
   environment:
     TOKEN:
@@ -27,7 +32,6 @@ steps:
 - name: restart
   commands:
   - cd /opt/configurations/docker-compose/homeassistant
-  - docker-compose pull
   - docker-compose down
   - docker-compose up -d
 
