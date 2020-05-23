@@ -51,7 +51,8 @@ steps:
   commands:
     - >
       curl -X POST -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' -d '{"entity_id": "script.prepare_restart"}' https://$URL:8123/api/services/script/turn_on
-
+  failure: ignore
+  
 - name: restart
   commands:
   - cd /opt/configurations/docker-compose/homeassistant
