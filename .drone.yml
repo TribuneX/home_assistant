@@ -5,7 +5,7 @@ name: testing
 steps:
   - name: test
     image: homeassistant/home-assistant:latest
-    pull: always
+    pull: if-not-exists
     commands:
       - mv travis_secrets.yaml secrets.yaml
       - python -m homeassistant --script check_config --config .
@@ -42,6 +42,11 @@ steps:
   - cd /media/usbstick/container/homeassistant/config
   - git pull
 
+- name: upgrade
+  commands:
+    - cd /opt/configurations/docker-compose/homeassistant
+    - docker-compose pull
+
 - name: prepare
   environment:
     TOKEN:
@@ -59,3 +64,9 @@ steps:
   - bash
   - docker-compose down
   - docker-compose up -d
+
+- name: clean
+  commands:
+  - cd /opt/configurations/docker-compose/homeassistant
+  - docker image prune -f
+  - docker container prune -f 
