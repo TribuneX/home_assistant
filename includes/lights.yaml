@@ -44,3 +44,10 @@
   command_topic: "zigbee2mqtt/kitchen/set"
   state_topic: "zigbee2mqtt/kitchen"
   brightness: 200
+
+- platform: mqtt
+  schema: json
+  name: bedroom
+  command_topic: "zigbee2mqtt/entry_room/set"
+  state_topic: "zigbee2mqtt/entry_room"
+  brightness: 150
