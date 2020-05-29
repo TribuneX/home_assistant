@@ -20,6 +20,12 @@ kind: pipeline
 type: ssh
 name: upgrade
 
+server:
+  host: 192.168.178.5
+  user: pi
+  ssh_key:
+    from_secret: SSH_KEY
+
 steps:
   - name: upgrade
     commands:
