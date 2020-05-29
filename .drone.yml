@@ -17,6 +17,7 @@ steps:
 
 ---
 kind: pipeline
+type: ssh
 name: upgrade
 
 steps:
