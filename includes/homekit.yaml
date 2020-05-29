@@ -27,9 +27,6 @@ filter:
     - switch.vacuum_mode
     - light.arbeitszimmer
     - light.bad_gang
-    - light.eingang
-    - light.front_gang
-    - light.front_gang_2
     - light.ankleide
     - light.living_room
     - light.entrance
