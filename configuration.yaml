@@ -55,7 +55,6 @@ influxdb:
 
 recorder:
   db_url: !secret mysql_path
-  purge_interval: 2
   purge_keep_days: 5
   include: !include includes/include.yaml
   exclude: !include includes/exclude.yaml
