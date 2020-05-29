@@ -30,7 +30,7 @@ filter:
     - light.eingang
     - light.ankleide
     - light.living_room
-    - light.entry_room
+    - light.entrance
     - light.sofa
     - light.kitchen
     - light.bedroom
