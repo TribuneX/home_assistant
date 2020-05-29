@@ -47,7 +47,7 @@
 
 - platform: mqtt
   schema: json
-  name: bedroom
+  name: entry_room
   command_topic: "zigbee2mqtt/entry_room/set"
   state_topic: "zigbee2mqtt/entry_room"
   brightness: 150
