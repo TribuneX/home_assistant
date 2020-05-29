@@ -235,6 +235,8 @@ light.living_room:
   friendly_name: Living Room Lights
 light.kitchen:
   friendly_name: Kitchen Lights
+light.entrance:
+  friendly_name: Entrance Lights
 
 # Groups
 group.user_1:
