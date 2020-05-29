@@ -44,7 +44,7 @@
       from: "off"
       to: "on"
     - platform: state
-      entity_id: light.eingang
+      entity_id: light.eingag
       from: "off"
       to: "on"
   condition:

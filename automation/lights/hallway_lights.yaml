@@ -43,8 +43,8 @@
   action:
     - service: light.turn_on
       data:
-        entity_id: light.eingang
-        brightness: 100
+        entity_id: light.entrance
+        brightness: 200
         transition: 1
 
 - alias: "Lights: Turn off light in front hallway if there is no motion"
@@ -57,5 +57,5 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.eingang
+        entity_id: light.entrance
         transition: 1
