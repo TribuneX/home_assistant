@@ -20,6 +20,9 @@ homeassistant:
   auth_providers:
     - type: homeassistant
 
+  internal_url: !secret base_url
+  external_url: !secret base_url
+
 config:
 
 logger:
@@ -69,8 +72,6 @@ frontend:
   javascript_version: latest
 
 http:
-  internal_url: !secret base_url
-  external_url: !secret base_url
   ssl_certificate: !secret ssl_certificate_path
   ssl_key: !secret ssl_private_key
   ip_ban_enabled: false
