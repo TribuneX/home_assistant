@@ -20,9 +20,6 @@ homeassistant:
   auth_providers:
     - type: homeassistant
 
-  internal_url: !secret base_url
-  external_url: !secret base_url
-
 config:
 
 logger:
