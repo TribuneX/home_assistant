@@ -17,6 +17,16 @@ steps:
 
 ---
 kind: pipeline
+name: upgrade
+
+steps:
+  - name: upgrade
+    commands:
+      - cd /opt/configurations/docker-compose/homeassistant
+      - docker-compose pull
+
+---
+kind: pipeline
 type: ssh
 name: deploy
 
@@ -29,6 +39,7 @@ trigger:
 
 depends_on:
   - testing
+  - upgrade
 
 server:
   host: 192.168.178.5
@@ -41,11 +52,6 @@ steps:
   commands:
   - cd /media/usbstick/container/homeassistant/config
   - git pull
-
-- name: upgrade
-  commands:
-    - cd /opt/configurations/docker-compose/homeassistant
-    - docker-compose pull
 
 - name: prepare
   environment:
