@@ -21,3 +21,25 @@
 #       data:
 #         title: 'Price Increase'
 #         message: 'The cruise is more expensive: ({{states.sensor.mein_schiff_price.state}}€)'
+
+- alias: 'Prices: Notify if yello 1 discount is higher'
+  initial_state: 'on'
+  trigger:
+    - platform: template
+      value_template: "{% if states.sensor.yello_price_1.state | float > 10 %} true {% endif %}"
+  action:
+    - service: notify.mobile_app_batphone
+      data:
+        title: 'Yello Discount'
+        message: 'Higher discount at yello 1: {{states.sensor.yello_price_1.state}}%'
+
+- alias: 'Prices: Notify if yello 2 discount is higher'
+  initial_state: 'on'
+  trigger:
+    - platform: template
+      value_template: "{% if states.sensor.yello_price_1.state | float > 13 %} true {% endif %}"
+  action:
+    - service: notify.mobile_app_batphone
+      data:
+        title: 'Yello Discount'
+        message: 'Higher discount at yello 2: {{states.sensor.yello_price_2.state}}%'

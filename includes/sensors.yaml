@@ -280,3 +280,15 @@
   name: Zigbee2mqtt Bridge state
   state_topic: "zigbee2mqtt/bridge/state"
   icon: mdi:router-wireless
+
+- platform: rest
+  resource: !secret yello_url_1
+  name: yello price 1
+  value_template: '{{ value_json.discount }}'
+  unit_of_measurement: '%'
+
+- platform: rest
+  resource: !secret yello_url_2
+  name: yello price 2
+  value_template: '{{ value_json.discount }}'
+  unit_of_measurement: '%'
