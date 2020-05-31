@@ -31,6 +31,11 @@ steps:
     commands:
       - cd /opt/configurations/docker-compose/homeassistant
       - docker-compose pull
+  - name: clean
+    commands:
+      - cd /opt/configurations/docker-compose/homeassistant
+      - docker image prune -f
+      - docker container prune -f
 
 ---
 kind: pipeline
@@ -77,9 +82,3 @@ steps:
   - bash
   - docker-compose down
   - docker-compose up -d
-
-- name: clean
-  commands:
-  - cd /opt/configurations/docker-compose/homeassistant
-  - docker image prune -f
-  - docker container prune -f 
