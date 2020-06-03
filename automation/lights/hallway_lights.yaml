@@ -40,6 +40,10 @@
     entity_id: binary_sensor.entry
     from: "off"
     to: "on"
+  condition:
+  - condition: state
+    entity_id: sensor.dark_outside
+    state: "on"
   action:
     - service: light.turn_on
       data:
