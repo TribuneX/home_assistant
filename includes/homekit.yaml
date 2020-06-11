@@ -10,6 +10,8 @@ filter:
     - binary_sensor.front_door
     - binary_sensor.bedroom_door
     - binary_sensor.bath_window
+    - binary_sensor.living_room_balcony_door
+    - binary_sensor.childrens_room_door
     - sensor.temperature_bath
     - sensor.humidity_bath
     - sensor.pressure_bath
