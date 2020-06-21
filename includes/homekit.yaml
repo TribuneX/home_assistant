@@ -6,6 +6,7 @@ filter:
     - switch.server
     - switch.tv
     - switch.tv_2
+    - switch.shutter_office_1
     - binary_sensor.balcony_door
     - binary_sensor.front_door
     - binary_sensor.bedroom_door
