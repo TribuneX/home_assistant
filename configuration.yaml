@@ -171,3 +171,4 @@ plant: !include includes/plants.yaml
 homekit: !include includes/homekit.yaml
 input_select: !include includes/input_select.yaml
 alert: !include includes/alerts.yaml
+cover: !include includes/cover.yaml

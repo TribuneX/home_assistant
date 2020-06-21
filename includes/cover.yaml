@@ -1,0 +1,21 @@
+##########################
+# Cover
+##########################
+
+  - platform: mqtt
+    name: "Shutter Office 1"
+    state_topic: "shellies/shellyswitch25-C46A6A/roller/0"
+    command_topic: "shellies/shellyswitch25-C46A6A/roller/0/command"
+    position_topic: "shellies/shellyswitch25-C46A6A/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-C46A6A/roller/0/command/pos"
+    #availability_topic: "shellies/shellyswitch25-C46A6A/online"
+    payload_available: "true"
+    payload_not_available: "false"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    position_open: 100
+    position_closed: 0
+    optimistic: false 
