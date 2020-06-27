@@ -1,5 +1,5 @@
 - alias: "Plants: Water notification"
-  initial_state: "on"
+  initial_state: "off"
   trigger:
     platform: state
     entity_id: group.user_1
