@@ -40,4 +40,8 @@ filter:
     # - fan.fan
     - person.nicole
     - person.sascha
-    - cover.shutter_office_1
+    - cover.office
+    - cover.child
+    - cover.livingroom
+    - cover.kitchen
+    - cover.all

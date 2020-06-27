@@ -3,14 +3,11 @@
 ##########################
 
   - platform: mqtt
-    name: "Shutter Office 1"
+    name: "Office Left"
     state_topic: "shellies/shellyswitch25-C46A6A/roller/0"
     command_topic: "shellies/shellyswitch25-C46A6A/roller/0/command"
     position_topic: "shellies/shellyswitch25-C46A6A/roller/0/pos"
     set_position_topic: "shellies/shellyswitch25-C46A6A/roller/0/command/pos"
-    #availability_topic: "shellies/shellyswitch25-C46A6A/online"
-    payload_available: "true"
-    payload_not_available: "false"
     qos: 1
     retain: false
     payload_open: "open"
@@ -19,3 +16,130 @@
     position_open: 100
     position_closed: 0
     optimistic: false 
+
+  - platform: mqtt
+    name: "Office Right"
+    state_topic: "shellies/shellyswitch25-68C63AF98DE7/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF98DE7/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF98DE7/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF98DE7/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    position_open: 100
+    position_closed: 0
+    optimistic: false 
+  
+  - platform: mqtt
+    name: "Livingroom Small"
+    state_topic: "shellies/shellyswitch25-68C63AF96014/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF96014/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF96014/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF96014/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    position_open: 100
+    position_closed: 0
+    optimistic: false 
+  
+  - platform: mqtt
+    name: "Livingroom Door"
+    state_topic: "shellies/shellyswitch25-68C63AF982F5/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF982F5/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF982F5/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF982F5/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    position_open: 100
+    position_closed: 0
+    optimistic: false 
+    
+  - platform: mqtt
+    name: "Livingroom Coach Right"
+    state_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    position_open: 100
+    position_closed: 0
+    optimistic: false 
+
+  - platform: mqtt
+    name: "Livingroom Coach Left"
+    state_topic: "shellies/shellyswitch25-68C63AF98CEB/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF98CEB/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF98CEB/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF98CEB/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    position_open: 100
+    position_closed: 0
+    optimistic: false 
+
+  - platform: mqtt
+    name: "Kitchen"
+    state_topic: "shellies/shellyswitch25-68C63AF962FF/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF962FF/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF962FF/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF962FF/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    position_open: 100
+    position_closed: 0
+    optimistic: false 
+
+  - platform: mqtt
+    name: "Child"
+    state_topic: "shellies/shellyswitch25-68C63AF997B0/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF997B0/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF997B0/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF997B0/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    position_open: 100
+    position_closed: 0
+    optimistic: false
+
+  - platform: group
+    name: Office
+    entities:
+      - cover.office_left
+      - cover.office_right
+
+  - platform: group
+    name: Livingroom
+    entities:
+      - cover.livingroom_coach_left
+      - cover.livingroom_coach_right
+      - cover.livingroom_door
+      - cover.livingroom_small
+
+  - platform: group
+    name: Cover All
+    entities:
+    - cover.livingroom
+    - cover.office
+    - cover.child
+    - cover.kitchen
