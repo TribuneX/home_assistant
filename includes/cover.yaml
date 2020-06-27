@@ -137,9 +137,10 @@
       - cover.livingroom_small
 
   - platform: group
-    name: Cover All
+    name: All
     entities:
     - cover.livingroom
     - cover.office
     - cover.child
     - cover.kitchen
+    
