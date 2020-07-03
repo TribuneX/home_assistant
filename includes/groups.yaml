@@ -157,17 +157,16 @@ doors_and_windows:
   name: "Doors and Windows"
   entities:
     - binary_sensor.balcony_door
-    - binary_sensor.bedroom_door
+    - binary_sensor.bedroom_window
     - binary_sensor.bath_window
     - binary_sensor.office_door
     - binary_sensor.living_room_balcony_door
     - binary_sensor.childrens_room_door
+    - binary_sensor.bedroom_window
 doors:
   name: "Doors"
   entities:
     - binary_sensor.balcony_door
-    - binary_sensor.front_door
-    - binary_sensor.bedroom_door
     - binary_sensor.office_door
     - binary_sensor.living_room_balcony_door
     - binary_sensor.childrens_room_door

@@ -172,17 +172,17 @@ binary_sensor.front_door:
 binary_sensor.balcony_door:
   friendly_name: "Balcony"
   icon: mdi:door
-binary_sensor.bedroom_door:
+binary_sensor.bedroom_window:
   friendly_name: "Bedroom"
-  icon: mdi:door
+  icon: mdi:window-maximize
 binary_sensor.office_door:
   friendly_name: "Office Bacony"
   icon: mdi:door
-binary_sensor.door_window_sensor_158d0002e69593:
-  friendly_name: "Fenster"
-  icon: mdi:window-maximize
-binary_sensor.door_window_sensor_158d0002e9ec76:
-  friendly_name: "Backup"
+binary_sensor.childrens_room_door:
+  friendly_name: "Childrens Room Door"
+  icon: mdi:door
+binary_sensor.living_room_balcony_door:
+  friendly_name: "Living room Door"
   icon: mdi:door
 sensor.cube_action:
   friendly_name: "Cube"

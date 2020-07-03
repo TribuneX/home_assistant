@@ -2,7 +2,9 @@
   initial_state: "on"
   trigger:
     - platform: state
-      entity_id: light.eingang, binary_sensor.front_door, light.kueche1
+      entity_id: 
+        - light.eingang
+        - binary_sensor.front_door
       from: "off"
       to: "on"
   condition:
@@ -29,14 +31,17 @@
       to: "on"
   condition:
     condition: state
-    entity_id: group.doors_and_windows
+    entity_id: group.doors
     state: "on"
   action:
     - service: notify.mobile_app_batphone
       data_template:
         title: "Doors"
         message: >
-          'Open doors: {% if is_state('binary_sensor.balcony_door', 'on') %}Kitchen, {% endif %}{% if is_state('binary_sensor.living_room_balcony_door', 'on') %}Livingroom, {% endif %}{% if is_state('binary_sensor.office_door', 'on') %}Office, {% endif %}{% if is_state('binary_sensor.childrens_room_door', 'on') %}Child`s room{% endif %}'
+          "Open doors:  {% if is_state('binary_sensor.balcony_door', 'on') %}Kitchen, {% endif %}
+                        {% if is_state('binary_sensor.living_room_balcony_door', 'on') %}Livingroom, {% endif %}
+                        {% if is_state('binary_sensor.office_door', 'on') %}Office, {% endif %}
+                        {% if is_state('binary_sensor.childrens_room_door', 'on') %}Child`s room{% endif %}"
 
 - alias: "Door: Front Door is still open"
   initial_state: "on"
