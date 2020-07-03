@@ -1,10 +1,10 @@
 - alias: "Presence: User 2 left home"
   initial_state: "on"
   trigger:
-    platform: zone
-    entity_id: device_tracker.owntracks_user_2_iphone
-    zone: zone.home
-    event: leave
+    - platform: zone
+      entity_id: device_tracker.owntracks_user_2_iphone
+      zone: zone.home
+      event: leave
   condition:
     condition: state
     entity_id: group.user_1
@@ -18,10 +18,10 @@
 - alias: "Presence: User 2 arrived at home"
   initial_state: "on"
   trigger:
-    platform: zone
-    entity_id: device_tracker.owntracks_user_2_iphone
-    zone: zone.home
-    event: enter
+    - platform: zone
+      entity_id: device_tracker.owntracks_user_2_iphone
+      zone: zone.home
+      event: enter
   action:
     - service: notify.mobile_app_batphone
       data:
@@ -31,10 +31,10 @@
 - alias: "Presence: User 2 left work"
   initial_state: "on"
   trigger:
-    platform: zone
-    entity_id: device_tracker.owntracks_user_2_iphone
-    zone: zone.work_user_2
-    event: leave
+    - platform: zone
+      entity_id: device_tracker.owntracks_user_2_iphone
+      zone: zone.work_user_2
+      event: leave
   action:
     - service: notify.mobile_app_batphone
       data:
@@ -44,10 +44,10 @@
 - alias: "Presence: User 2 arrived at work"
   initial_state: "on"
   trigger:
-    platform: zone
-    entity_id: device_tracker.owntracks_user_2_iphone
-    zone: zone.work_user_2
-    event: enter
+    - platform: zone
+      entity_id: device_tracker.owntracks_user_2_iphone
+      zone: zone.work_user_2
+      event: enter
   action:
     - service: notify.mobile_app_batphone
       data:
@@ -57,9 +57,9 @@
 - alias: "Presence: Nobody at home"
   initial_state: "on"
   trigger:
-    platform: state
-    entity_id: group.personen
-    from: "home"
-    to: "not_home"
+    - platform: state
+      entity_id: group.personen
+      from: "home"
+      to: "not_home"
   action:
     - service: script.turn_off_all

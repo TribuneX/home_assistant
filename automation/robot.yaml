@@ -1,10 +1,10 @@
 - alias: "Robot: Robot started cleaning"
   initial_state: "on"
   trigger:
-    platform: state
-    entity_id: vacuum.vacuum_cleaner
-    from: "docked"
-    to: "cleaning"
+    - platform: state
+      entity_id: vacuum.vacuum_cleaner
+      from: "docked"
+      to: "cleaning"
   action:
     - service: notify.mobile_app_batphone
       data:
@@ -14,10 +14,10 @@
 - alias: "Robot: Robot stopped cleaning"
   initial_state: "on"
   trigger:
-    platform: state
-    entity_id: vacuum.vacuum_cleaner
-    from: "returning"
-    to: "docked"
+    - platform: state
+      entity_id: vacuum.vacuum_cleaner
+      from: "returning"
+      to: "docked"
   action:
     - service: notify.mobile_app_batphone
       data:
@@ -61,8 +61,8 @@
 - alias: "Robot: Reset cleaned today counter"
   initial_state: "on"
   trigger:
-    platform: time
-    at: "01:00:00"
+    - platform: time
+      at: "01:00:00"
   action:
     - service: input_boolean.turn_off
       data:

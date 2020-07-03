@@ -1,8 +1,8 @@
 - alias: "Startup: Startup notification"
   initial_state: "on"
   trigger:
-    platform: homeassistant
-    event: start
+    - platform: homeassistant
+      event: start
   action:
     - service: script.init_hass
     - service: notify.mobile_app_batphone
@@ -18,8 +18,8 @@
 - alias: "Startup: Startup nobody is home"
   initial_state: "on"
   trigger:
-    platform: homeassistant
-    event: start
+    - platform: homeassistant
+      event: start
   condition:
     - condition: state
       entity_id: group.personen
