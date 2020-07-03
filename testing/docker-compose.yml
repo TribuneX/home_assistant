@@ -4,7 +4,7 @@ services:
     image: homeassistant/home-assistant:stable
     container_name: homeassistant
     network_mode: host
-    command: [ "python", "-m", "homeassistant", "--script", "check_config", "--config", "/config" ] 
+    command: ["python", "-m", "homeassistant", "--script", "check_config", "--config", "/config"]
     volumes:
       - ../:/config
       - ../ssl:/ssl

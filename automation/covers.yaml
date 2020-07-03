@@ -88,4 +88,3 @@
         state: "open"
   action:
     - service: script.open_all_covers
-

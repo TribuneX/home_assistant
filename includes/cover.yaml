@@ -61,7 +61,7 @@
   position_open: 100
   position_closed: 0
   optimistic: false
-  
+
 - platform: mqtt
   name: "Livingroom Coach Right"
   state_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0"
