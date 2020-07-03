@@ -2,13 +2,11 @@
   initial_state: "on"
   trigger:
     - platform: state
-      entity_id: binary_sensor.gang_motion
-      from: "on"
-      to: "off"
-    - platform: state
-      entity_id: binary_sensor.gang_motion_2
-      from: "on"
-      to: "off"
+      entity_id: 
+        - binary_sensor.gang_motion
+        - binary_sensor.gang_motion_2
+      from: "off"
+      to: "on"
   condition:
     condition: and
     conditions:
