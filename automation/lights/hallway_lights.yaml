@@ -1,47 +1,65 @@
-- alias: "Lights: Turn on light in hallway if motion is detected"
+- alias: "Lights: Turn on light in hallway if motion is detected (nightmode)"
   initial_state: "on"
   trigger:
     - platform: state
-      entity_id: binary_sensor.gang_motion
+      entity_id: 
+        - binary_sensor.gang_motion
+        - binary_sensor.gang_motion_2
       from: "off"
       to: "on"
-    - platform: state
-      entity_id: binary_sensor.gang_motion_2
-      from: "off"
-      to: "on"
+  condition:
+    - condition: time
+      after: "22:00"
+      before: "07:00"
   action:
     - service: light.turn_on
       data:
-        entity_id: light.bad_gang
-        brightness: 200
-        transition: 2
+        entity_id: light.hallway
+        brightness: 100
+        transition: 3
+
+- alias: "Lights: Turn on light in hallway if motion is detected (daymode)"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: 
+        - binary_sensor.gang_motion
+        - binary_sensor.gang_motion_2
+      from: "off"
+      to: "on"
+  condition:
+    - condition: time
+      after: "07:00"
+      before: "22:00"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.hallway
+        brightness: 230
+        transition: 3
 
 - alias: "Lights: Turn off light in hallway if there is no motion"
   initial_state: "on"
   trigger:
     - platform: state
-      entity_id: binary_sensor.gang_motion
-      from: "on"
-      to: "off"
-    - platform: state
-      entity_id: binary_sensor.gang_motion_2
-      from: "on"
-      to: "off"
+      entity_id: 
+        - binary_sensor.gang_motion
+        - binary_sensor.gang_motion_2
+      from: "off"
+      to: "on"
   action:
     - service: light.turn_off
       data:
-        entity_id: light.bad_gang
+        entity_id: light.hallway
         transition: 2
 
 - alias: "Lights: Turn on light in front hallway if motion is detected"
   initial_state: "on"
   trigger:
     - platform: state
-      entity_id: binary_sensor.entry
-      from: "off"
-      to: "on"
-    - platform: state
-      entity_id: binary_sensor.motion_entrance
+      entity_id: 
+        - binary_sensor.entry
+        - binary_sensor.motion_entrance
       from: "off"
       to: "on"
   condition:
@@ -53,33 +71,31 @@
       data:
         entity_id: light.entrance
         brightness: 200
-        transition: 1
+        transition: 2
 
 - alias: "Lights: Turn off light in front hallway if there is no motion"
   initial_state: "on"
   trigger:
     - platform: state
-      entity_id: binary_sensor.entry
-      from: "on"
-      to: "off"
-    - platform: state
-      entity_id: binary_sensor.motion_entrance
+      entity_id: 
+        - binary_sensor.entry
+        - binary_sensor.motion_entrance
       from: "on"
       to: "off"
   action:
     - service: light.turn_off
       data:
         entity_id: light.entrance
-        transition: 1
+        transition: 2
 
 
 - alias: "Lights: Turn on hallway light if door is opened"
   initial_state: "on"
   trigger:
-    platform: state
-    entity_id: binary_sensor.front_door
-    from: "off"
-    to: "on"
+    - platform: state
+      entity_id: binary_sensor.front_door
+      from: "off"
+      to: "on"
   condition:
     - condition: state
       entity_id: sensor.dark_outside

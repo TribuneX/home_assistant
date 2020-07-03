@@ -28,7 +28,7 @@ filter:
     - binary_sensor.water_leak_sensor
     - switch.vacuum_mode
     - light.arbeitszimmer
-    - light.bad_gang
+    - light.hallway
     - light.ankleide
     - light.living_room
     - light.entrance
