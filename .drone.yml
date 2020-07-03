@@ -70,7 +70,7 @@ steps:
   - name: pull
     commands:
       - cd /media/usbstick/container/homeassistant/config
-      - git pull
+      - git reset --hard origin/master
 
   - name: prepare
     environment:
