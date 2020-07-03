@@ -31,11 +31,6 @@ reload_automations:
     - alias: Reload-Automations
       service: automation.reload
 
-enable_beacon:
-  alias: "Enable Beacon"
-  sequence:
-    - service: shell_command.enable_beacon
-
 init_hass:
   alias: Init HASS
   sequence:
@@ -82,9 +77,6 @@ init_tv_2:
 init_sonos:
   alias: "Init Sonos speaker"
   sequence:
-    - condition: state
-      entity_id: media_player.living_room
-      state: "paused"
     - service: homeassistant.turn_off
       entity_id: group.all_speaker
 

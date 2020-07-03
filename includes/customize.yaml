@@ -262,7 +262,5 @@ script.prepare_restart:
 script.reboot_pi:
   icon: mdi:restart
   friendly_name: Reboot
-script.enable_beacon:
-  icon: mdi:wifi
 input_number.sonos_speaker:
   icon: mdi:volume-high
