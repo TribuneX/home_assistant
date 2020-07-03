@@ -1,6 +1,18 @@
 ---
 kind: pipeline
-name: testing
+name: validate
+
+steps:
+  - name: lint
+    image: cytopia/yamllint:latest
+    commands:
+      - yamllint .
+    failure: ignore
+
+
+---
+kind: pipeline
+name: test
 
 steps:
   - name: test
@@ -9,11 +21,6 @@ steps:
     commands:
       - mv travis_secrets.yaml secrets.yaml
       - python -m homeassistant --script check_config --config .
-  - name: lint
-    image: cytopia/yamllint:latest
-    commands:
-      - yamllint .
-    failure: ignore
 
 ---
 kind: pipeline
@@ -50,7 +57,7 @@ trigger:
     - pull_request
 
 depends_on:
-  - testing
+  - test
   - upgrade
 
 server:
