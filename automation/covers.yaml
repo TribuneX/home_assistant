@@ -37,3 +37,55 @@
         state: "open"
   action:
     - service: script.close_all_covers
+
+- alias: "Cover: Close all covers if it is sunny"
+  initial_state: "on"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.dark_sky_temperature
+      above: 20
+    - platform: state
+      entity_id: group.personen
+      from: home
+      to: not_home
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: "10:00"
+        before: "20:00"
+      - condition: state
+        entity_id: group.personen
+        state: not_home
+      - condition: numeric_state
+        entity_id: sensor.dark_sky_temperature
+        above: 20
+  action:
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.all
+        position: 40
+    - service: notify.mobile_app_batphone
+      data_template:
+        title: "Cover"
+        message: "Close covers since nobody is home"
+
+- alias: "Cover: Open all covers if someone arrives home"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: group.personen
+      from: not_home
+      to: home
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: "10:00"
+        before: "20:00"
+      - condition: state
+        entity_id: cover.all
+        state: "open"
+  action:
+    - service: script.open_all_covers
+
