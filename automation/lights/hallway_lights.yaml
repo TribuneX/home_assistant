@@ -45,8 +45,8 @@
       entity_id:
         - binary_sensor.gang_motion
         - binary_sensor.gang_motion_2
-      from: "off"
-      to: "on"
+      from: "on"
+      to: "off"
   action:
     - service: light.turn_off
       data:
