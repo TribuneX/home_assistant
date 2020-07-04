@@ -70,6 +70,7 @@ steps:
   - name: pull
     commands:
       - cd /media/usbstick/container/homeassistant/config
+      - git fetch
       - git reset --hard origin/master
 
   - name: prepare
