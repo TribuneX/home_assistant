@@ -192,7 +192,7 @@
     dark_outside:
       friendly_name: "Dark Outside"
       value_template: >
-        {% if (states.sensor.illumination_office.state | int < 15) %}
+        {% if (states.sensor.illumination_office.state | int < 10) %}
         on
         {% else %}
         off

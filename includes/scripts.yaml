@@ -439,8 +439,6 @@ open_all_covers:
 
 close_all_covers:
   sequence:
-    - delay:
-        minutes: 30
     - service: cover.close_cover
       entity_id: cover.child
     - delay:
