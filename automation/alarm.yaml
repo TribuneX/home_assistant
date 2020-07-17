@@ -63,6 +63,12 @@
       event_data:
         entity_id: sensor.vibration_action
         movement_type: tilt
+    - platform: state
+      entity_id: sensor.vibration_action
+      to: 'vibration'
+    - platform: state
+      entity_id: sensor.vibration_action
+      to: 'tilt'
   action:
     - service: notify.mobile_app_batphone
       data_template:
