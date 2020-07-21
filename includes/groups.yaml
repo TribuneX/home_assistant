@@ -47,7 +47,7 @@ personen:
 user_1:
   name: !secret user_1
   entities:
-    - device_tracker.iphones
+    - device_tracker.batphone
     - device_tracker.owntracks_iphones
 user_2:
   name: !secret user_2

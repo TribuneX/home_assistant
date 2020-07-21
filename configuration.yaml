@@ -146,7 +146,7 @@ person:
   - name: !secret user_1
     id: user_1
     device_trackers:
-      - device_tracker.iphones
+      - device_tracker.batphone
       - device_tracker.owntracks_iphones
   - name: !secret user_2
     id: user_2

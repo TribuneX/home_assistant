@@ -209,7 +209,7 @@ sensor.illumination_office:
 # Device Tracker
 device_tracker.user_2_iphone:
   friendly_name: "User 2 Router"
-device_tracker.iphones:
+device_tracker.batphone:
   friendly_name: "User 1 Router"
 device_tracker.owntracks_user_2_iphone:
   friendly_name: "User 2 owntracks"
