@@ -40,10 +40,6 @@ init_hass:
       data:
         entity_id: input_select.log_level
         option: "fatal"
-    # - service: input_select.select_option
-    #   data:
-    #     entity_id: input_select.tv_mode
-    #     option: AppleTV
 
 init_tv:
   alias: "Init TV"
@@ -88,16 +84,11 @@ turn_on_vacation_lights:
         title: "Vacation mode"
         message: "I switched on the lights while you are on vacation"
     - service: light.turn_on
-      entity_id: light.fernseher
+      entity_id: light.living_room
     - delay:
-        hours: 1
+        minutes: 30
     - service: light.turn_off
-      entity_id: light.fernseher
-    - service: script.turn_on_bedroom_dimmed_lights
-    - delay:
-        minutes: 40
-    - service: light.turn_off
-      entity_id: light.bedroom
+      entity_id: light.living_room
 
 turn_off_tv_livingroom:
   sequence:
@@ -448,10 +439,10 @@ close_all_covers:
     - delay:
         seconds: 2
     - service: cover.close_cover
-      entity_id: cover.livingroom
+      entity_id: cover.livingroom_front
     - delay:
-        seconds: 2
+        minutes: 30
+    - service: cover.close_cover
+      entity_id: cover.livingroom_right
     - service: cover.close_cover
       entity_id: cover.kitchen
-    - delay:
-        seconds: 2

@@ -137,6 +137,18 @@
     - cover.livingroom_small
 
 - platform: group
+  name: Livingroom_front
+  entities:
+    - cover.livingroom_door
+    - cover.livingroom_coach_left
+
+- platform: group
+  name: Livingroom_right
+  entities:
+    - cover.livingroom_coach_right
+    - cover.livingroom_small
+
+- platform: group
   name: All
   entities:
     - cover.livingroom

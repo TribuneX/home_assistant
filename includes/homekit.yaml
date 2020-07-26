@@ -45,3 +45,4 @@ filter:
     - cover.livingroom
     - cover.kitchen
     - cover.all
+    - cover.livingroom_front

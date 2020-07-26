@@ -36,6 +36,8 @@
         entity_id: cover.all
         state: "open"
   action:
+    - delay:
+        minutes: 30
     - service: script.close_all_covers
 
 - alias: "Cover: Close all covers if it is sunny"
@@ -88,3 +90,26 @@
         state: "open"
   action:
     - service: script.open_all_covers
+
+- alias: "Cover: Open all covers in the morning on vacation"
+  initial_state: "on"
+  trigger:
+    - platform: time
+      at: "08:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.vacation_mode
+        state: "on"
+      - condition: state
+        entity_id: cover.all
+        state: "closed"
+  action:
+    - delay:
+        minutes: '{{ range(2, 36) | random }}'
+    - service: script.open_all_covers
+    - service: notify.mobile_app_batphone
+      data_template:
+        title: "Cover"
+        message: "Open all covers since you are not home"
