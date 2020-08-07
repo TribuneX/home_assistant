@@ -61,7 +61,7 @@
         state: not_home
   action:
     - service: script.close_front_covers
-      
+
 - alias: "Cover: Open front covers if someone arrives home"
   initial_state: "on"
   trigger:
