@@ -40,12 +40,12 @@
         minutes: 30
     - service: script.close_all_covers
 
-- alias: "Cover: Close all covers if it is sunny"
+- alias: "Cover: Close front covers if it is sunny and nobody is home"
   initial_state: "on"
   trigger:
     - platform: numeric_state
       entity_id: sensor.dark_sky_temperature
-      above: 20
+      above: 25
     - platform: state
       entity_id: group.personen
       from: home
@@ -59,20 +59,10 @@
       - condition: state
         entity_id: group.personen
         state: not_home
-      - condition: numeric_state
-        entity_id: sensor.dark_sky_temperature
-        above: 20
   action:
-    - service: cover.set_cover_position
-      data:
-        entity_id: cover.all
-        position: 40
-    - service: notify.mobile_app_batphone
-      data_template:
-        title: "Cover"
-        message: "Close covers since nobody is home"
-
-- alias: "Cover: Open all covers if someone arrives home"
+    - service: script.close_front_covers
+      
+- alias: "Cover: Open front covers if someone arrives home"
   initial_state: "on"
   trigger:
     - platform: state
@@ -85,11 +75,27 @@
       - condition: time
         after: "10:00"
         before: "20:00"
-      - condition: state
-        entity_id: cover.all
-        state: "open"
+      - condition: numeric_state
+        entity_id: sensor.dark_sky_temperature
+        below: 25
   action:
-    - service: script.open_all_covers
+    - service: script.open_front_covers
+
+- alias: "Cover: Close front covers if it is sunny"
+  initial_state: "on"
+  trigger:
+    - platform: time
+      at: "14:30"
+  action:
+    - service: script.close_front_covers
+
+- alias: "Cover: Open front covers after sun is away"
+  initial_state: "on"
+  trigger:
+    - platform: time
+      at: "18:30"
+  action:
+    - service: script.open_front_covers
 
 - alias: "Cover: Open all covers in the morning on vacation"
   initial_state: "on"
@@ -109,7 +115,3 @@
     - delay:
         minutes: '{{ range(2, 36) | random }}'
     - service: script.open_all_covers
-    - service: notify.mobile_app_batphone
-      data_template:
-        title: "Cover"
-        message: "Open all covers since you are not home"

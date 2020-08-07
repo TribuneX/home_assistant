@@ -3,4 +3,4 @@ domains:
   - binary_sensor
   - automation
   - plant
-  - climate
+  - cover

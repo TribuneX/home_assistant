@@ -143,6 +143,14 @@
     - cover.livingroom_coach_left
 
 - platform: group
+  name: Front
+  entities:
+    - cover.livingroom_door
+    - cover.livingroom_coach_left
+    - cover.office
+    - cover.child
+
+- platform: group
   name: Livingroom_right
   entities:
     - cover.livingroom_coach_right

@@ -446,3 +446,22 @@ close_all_covers:
       entity_id: cover.livingroom_right
     - service: cover.close_cover
       entity_id: cover.kitchen
+
+close_front_covers:
+  sequence:
+    - condition: numeric_state
+      entity_id: sensor.dark_sky_temperature
+      above: 25
+    - condition: template
+      value_template: '{{ state_attr("cover.front", "current_position") == 100 }}'
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.front
+        position: 30
+
+open_front_covers:
+  sequence:
+    - condition: template
+      value_template: '{{ state_attr("cover.front", "current_position") == 30 }}'
+    - service: cover.open_cover
+      entity_id: cover.front
