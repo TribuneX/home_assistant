@@ -17,6 +17,8 @@
         entity_id: light.hallway
         brightness: 100
         transition: 3
+    - service: switch.turn_on
+      entity_id: switch.light_stairs
 
 - alias: "Lights: Turn on light in hallway if motion is detected (daymode)"
   initial_state: "on"
@@ -37,6 +39,8 @@
         entity_id: light.hallway
         brightness: 230
         transition: 3
+    - service: switch.turn_on
+      entity_id: switch.light_stairs
 
 - alias: "Lights: Turn off light in hallway if there is no motion"
   initial_state: "on"
@@ -52,6 +56,8 @@
       data:
         entity_id: light.hallway
         transition: 2
+    - service: switch.turn_off
+      entity_id: switch.light_stairs
 
 - alias: "Lights: Turn on light in front hallway if motion is detected"
   initial_state: "on"

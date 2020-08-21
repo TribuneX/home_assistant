@@ -87,8 +87,8 @@
 
 - platform: mqtt
   name: "Light Stairs"
-  state_topic: "shellies/shellyswitch-98F4ABD0B809/relay/1"
-  command_topic: "shellies/shellyswitch-98F4ABD0B809/relay/1/command"
+  state_topic: "shellies/shelly1-98F4ABD0B809/relay/0"
+  command_topic: "shellies/shelly1-98F4ABD0B809/relay/0/command"
   payload_on: "on"
   payload_off: "off"
   state_on: "on"
