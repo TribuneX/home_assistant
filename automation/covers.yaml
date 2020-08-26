@@ -115,3 +115,16 @@
     - delay:
         minutes: '{{ range(2, 36) | random }}'
     - service: script.open_all_covers
+
+- alias: "Cover: Close kitchen cover in the evening"
+  initial_state: "on"
+  trigger:
+    - platform: time
+      at: "22:30"
+    - platform: state
+      entity_id: switch.tv_2
+      from: "off"
+      to: "on"
+  action:
+    - service: cover.close_cover
+      entity_id: cover.kitchen
