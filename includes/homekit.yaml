@@ -1,10 +1,7 @@
 filter:
   include_entities:
-    - switch.appletv_mode
-    - switch.sonos_mode
-    - switch.music_mode
     - switch.server
-    - switch.tv
+    - switch.tv_media
     - switch.tv_2
     - binary_sensor.balcony_door
     - binary_sensor.front_door
@@ -37,6 +34,7 @@ filter:
     - light.bedroom
     - switch.speaker_1
     - switch.speaker_2
+    - switch.sonos_playbar
     # - fan.fan
     - person.nicole
     - person.sascha
