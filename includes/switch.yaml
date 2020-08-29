@@ -89,13 +89,13 @@
       turn_on:
         service: switch.turn_on
         data:
-          entity_id: 
+          entity_id:
             - switch.tv
             - switch.sonos_playbar
       turn_off:
         service: switch.turn_off
         data:
-          entity_id: 
+          entity_id:
             - switch.tv
             - switch.sonos_playbar
 
