@@ -213,8 +213,8 @@ device_tracker.batphone:
   friendly_name: "User 1 Router"
 device_tracker.owntracks_user_2_iphone:
   friendly_name: "User 2 owntracks"
-device_tracker.owntracks_iphones:
-  friendly_name: "User 1 owntracks"
+device_tracker.batphone_app:
+  friendly_name: "User 1 App"
 
 # Lights
 light.bed1:
