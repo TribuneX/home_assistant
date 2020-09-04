@@ -213,3 +213,55 @@
         state: "off"
   action:
     - service: script.play_sonos_radio
+
+- alias: "Speaker: Toggle Sonos Office"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: sensor.volume_controller_action
+      to: "skip_forward"
+  action:
+    - service: switch.toggle
+      entity_id: switch.speaker_2
+
+- alias: "Speaker: Play sonos office"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: sensor.volume_controller_action
+      to: "play_pause"
+  condition:
+    - condition: state
+      entity_id: media_player.office
+      state: "playing"
+  action:
+    - service: media_player.media_pause
+      entity_id: media_player.office
+
+- alias: "Speaker: Turn up sonos office volume"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: sensor.volume_controller_action
+      to: "rotate_right"
+  condition:
+    condition: state
+    entity_id: switch.speaker_2
+    state: "on"
+  action:
+    - service: media_player.volume_up
+      entity_id: media_player.office
+
+- alias: "Speaker: Turn down sonos office volume"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: sensor.volume_controller_action
+      to: "rotate_left"
+  condition:
+    - condition: state
+      entity_id: switch.speaker_2
+      state: "on"
+  action:
+    - service: media_player.volume_down
+      entity_id: media_player.office

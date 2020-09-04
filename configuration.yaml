@@ -107,12 +107,6 @@ media_player:
     login_id: !secret atv_login
     credentials: !secret atv2_credentials
 
-sonos:
-  media_player:
-    hosts:
-      - !secret sonos_ip
-      - !secret sonos2_ip
-
 input_number:
   sonos_speaker:
     name: Volume
