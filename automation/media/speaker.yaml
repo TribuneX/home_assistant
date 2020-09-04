@@ -242,7 +242,7 @@
         entity_id: media_player.office
         volume_level: >
           {%if trigger.payload_json.action ==  'rotate_right'%}
-          {{  states.media_player.office.attributes.volume_level | float + 0.05 }}
+          {{  states.media_player.office.attributes.volume_level | float + ((trigger.payload_json.brightness | float) / 255 )}}
           {% else %}
-          {{  states.media_player.office.attributes.volume_level | float - 0.05 }}
+          {{  states.media_player.office.attributes.volume_level | float - ((trigger.payload_json.brightness | float) / 255 )}}
           {% endif %}
