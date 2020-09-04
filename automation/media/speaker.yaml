@@ -241,7 +241,7 @@
       data_template:
         entity_id: media_player.office
         volume_level: >
-          {%if trigger.payload_json.action == 'rotate_right'}
+          {%if trigger.payload_json.action ==  'rotate_right'%}
           {{  states.media_player.office.attributes.volume_level | float + 0.05 }}
           {% else %}
           {{  states.media_player.office.attributes.volume_level | float - 0.05 }}
