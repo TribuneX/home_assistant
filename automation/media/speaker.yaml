@@ -227,7 +227,7 @@
   initial_state: "on"
   trigger:
     platform: mqtt
-    topic: "zigbee2mqtt/sensor_cube"
+    topic: "zigbee2mqtt/volume_controller"
   condition:
     condition: and
     conditions:
