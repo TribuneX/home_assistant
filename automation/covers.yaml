@@ -125,6 +125,15 @@
       entity_id: switch.tv_2
       from: "off"
       to: "on"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: "20:00"
+        before: "22:30"
+      - condition: state
+        entity_id: cover.kitchen
+        state: "open"
   action:
     - service: cover.close_cover
       entity_id: cover.kitchen
