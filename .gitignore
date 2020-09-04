@@ -2,3 +2,5 @@
 *.pyc
 secrets.yaml
 .vscode/settings.json
+.HA_VERSION
+home-assistant.log
