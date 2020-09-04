@@ -73,53 +73,18 @@
     - service: switch.toggle
       entity_id: switch.tv_2
 
-- alias: "TV: Turn on AppleTV on tap twice action"
+- alias: "TV: Toggle on AppleTV on tap twice action"
   initial_state: "on"
   trigger:
-    platform: mqtt
-    topic: "zigbee2mqtt/sensor_cube"
+    - platform: mqtt
+      topic: 'zigbee2mqtt/sensor_cube'
   condition:
-    condition: and
+    condition: or
     conditions:
       - condition: template
         value_template: '{{ "tap" == trigger.payload_json.action }}'
-      - condition: state
-        entity_id: switch.tv
-        state: "off"
-  action:
-    service: input_select.select_option
-    data:
-      entity_id: input_select.tv_mode
-      option: AppleTV
-
-- alias: "TV: Turn off TV and pause sonos on shake_air"
-  initial_state: "on"
-  trigger:
-    platform: mqtt
-    topic: "zigbee2mqtt/sensor_cube"
-  condition:
-    condition: template
-    value_template: '{{ "shake" == trigger.payload_json.action }}'
-  action:
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.tv_mode
-        option: AUS
-    - service: script.pause_sonos
-
-- alias: "TV: Pause AppleTV on flip90"
-  initial_state: "on"
-  trigger:
-    platform: mqtt
-    topic: "zigbee2mqtt/sensor_cube"
-  condition:
-    condition: and
-    conditions:
       - condition: template
-        value_template: '{{ "flip90" == trigger.payload_json.action }}'
-      - condition: state
-        entity_id: switch.tv
-        state: "on"
+        value_template: '{{ "shake" == trigger.payload_json.action }}'
   action:
-    - service: media_player.media_pause
-      entity_id: media_player.wohnzimmer
+    service: switch.toggle
+    entity_id: switch.tv_media

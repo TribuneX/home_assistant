@@ -159,21 +159,6 @@
         variables:
           volume: 0.05
 
-- alias: "Speaker: Pause Radio on flip90"
-  initial_state: "on"
-  trigger:
-    platform: event
-    event_type: xiaomi_aqara.cube_action
-    event_data:
-      entity_id: sensor.cube_action
-      action_type: flip90
-  condition:
-    condition: state
-    entity_id: group.all_speaker
-    state: "on"
-  action:
-    - service: script.pause_sonos
-
 - alias: "Speaker: Select sonos volume with cube rotation"
   initial_state: "on"
   trigger:
@@ -183,16 +168,16 @@
     condition: and
     conditions:
       - condition: template
-        value_template: '{{ "rotate_right" == trigger.payload_json.action }}'
+        value_template: "{{ trigger.payload_json.action in ['rotate_right', 'rotate_left'] }}"
       - condition: state
-        entity_id: group.all_speaker
+        entity_id: switch.sonos_playbar
         state: "on"
   action:
     - service: media_player.volume_set
       data_template:
         entity_id: media_player.living_room
         volume_level: >
-          {%if trigger.event.data.action_value | float > 0 %}
+          {%if trigger.payload_json.angle | float > 0 %}
           {{  states.media_player.living_room.attributes.volume_level | float + 0.05 }}
           {% else %}
           {{  states.media_player.living_room.attributes.volume_level | float - 0.05 }}
