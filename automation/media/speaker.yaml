@@ -232,7 +232,7 @@
     condition: and
     conditions:
       - condition: template
-        value_template: "{{ trigger.payload_json.action in ['rotate_right', 'rotate_left'] }}"
+        value_template: "{{ trigger.payload_json.action in ['rotate_right', 'rotate_left', 'rotate_stop'] }}"
       - condition: state
         entity_id: switch.speaker_2
         state: "on"
@@ -241,4 +241,4 @@
       data_template:
         entity_id: media_player.office
         volume_level: >
-          {{ trigger.payload_json.brigtness / 510 | float }}
+          {{ trigger.payload_json.brightness / 2000 | float }}
