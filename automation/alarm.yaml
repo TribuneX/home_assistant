@@ -31,6 +31,7 @@
               name: default
               critical: 1
               volume: 1.0
+            thread-id: "alarm"
 
 - alias: "Door: A Door is still open"
   initial_state: "on"
@@ -84,3 +85,8 @@
       data_template:
         title: "Mailbox"
         message: "Mailbox was opened"
+        data:
+          push:
+            thread-id: "mailbox"
+
+        
