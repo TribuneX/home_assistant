@@ -32,6 +32,8 @@
               critical: 1
               volume: 1.0
             thread-id: "alarm"
+    - delay:
+        seconds: 10
 
 - alias: "Door: A Door is still open"
   initial_state: "on"
@@ -50,6 +52,8 @@
         title: "Doors"
         message: >
           "Open doors: {% if is_state('binary_sensor.balcony_door', 'on') %}Kitchen, {% endif %} {% if is_state('binary_sensor.living_room_balcony_door', 'on') %}Livingroom, {% endif %}{% if is_state('binary_sensor.office_door', 'on') %}Office, {% endif %}{% if is_state('binary_sensor.childrens_room_door', 'on') %}Child`s room{% endif %}"
+    - delay:
+        seconds: 20
 
 - alias: "Door: Front Door is still open"
   initial_state: "on"
@@ -88,5 +92,7 @@
         data:
           push:
             thread-id: "mailbox"
+    - delay:
+        seconds: 10
 
         
