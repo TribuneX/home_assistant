@@ -94,5 +94,3 @@
             thread-id: "mailbox"
     - delay:
         seconds: 10
-
-        
