@@ -88,3 +88,39 @@
   action:
     service: switch.toggle
     entity_id: switch.tv_media
+
+- alias: "TV: Close covers if TV is used"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: switch.tv
+    from: "off"
+    to: "on"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: "09:00"
+        before: "18:00"
+  action:
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.livingroom_tv
+        position: 50
+
+- alias: "TV: Open covers if TV is turned off"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: switch.tv
+    from: "on"
+    to: "off"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: "09:00"
+        before: "18:00"
+  action:
+    - service: cover.open_cover
+      entity_id: cover.livingroom_tv
