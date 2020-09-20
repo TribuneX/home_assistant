@@ -103,10 +103,7 @@
         after: "09:00"
         before: "18:00"
   action:
-    - service: cover.set_cover_position
-      data:
-        entity_id: cover.livingroom_tv
-        position: 50
+    - service: script.close_covers_for_tv
 
 - alias: "TV: Open covers if TV is turned off"
   initial_state: "on"
@@ -121,6 +118,8 @@
       - condition: time
         after: "09:00"
         before: "18:00"
+      - condition: state
+        entity_id: cover.all
+        state: "closed"
   action:
-    - service: cover.open_cover
-      entity_id: cover.livingroom_tv
+    - service: script.open_covers_for_tv

@@ -463,3 +463,20 @@ open_front_covers:
       value_template: '{{ state_attr("cover.front", "current_position") == 30 }}'
     - service: cover.open_cover
       entity_id: cover.front
+
+close_covers_for_tv:
+  sequence:
+    - condition: state
+      entity_id: cover.livingroom_tv
+      state: "open"
+    - service: cover.set_cover_position
+      data:
+        entity_id: cover.livingroom_tv
+        position: 50
+
+open_covers_for_tv:
+  sequence:
+    - condition: template
+      value_template: '{{ state_attr("cover.livingroom_tv", "current_position") == 50 }}'
+    - service: cover.open_cover
+      entity_id: cover.livingroom_tv
