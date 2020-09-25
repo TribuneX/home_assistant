@@ -113,13 +113,8 @@
     from: "on"
     to: "off"
   condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: "09:00"
-        before: "18:00"
-      - condition: state
-        entity_id: cover.all
-        state: "closed"
+    - condition: time
+      after: "09:00"
+      before: "18:00"
   action:
     - service: script.open_covers_for_tv
