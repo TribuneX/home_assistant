@@ -153,6 +153,7 @@ all_speaker:
   entities:
     - switch.speaker_1
     - switch.speaker_2
+    - switch.sonos_playbar
 doors_and_windows:
   name: "Doors and Windows"
   entities:
