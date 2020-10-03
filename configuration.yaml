@@ -146,7 +146,7 @@ person:
     id: user_2
     device_trackers:
       - device_tracker.user_2_iphone
-      # - device_tracker.owntracks_user_2_iphone
+      - device_tracker.user_2_iphone_app
 
 ##########################
 # Includes
