@@ -283,6 +283,8 @@ turn_off_all:
   sequence:
     - service: light.turn_off
       entity_id: all
+    - delay:
+        seconds: 5
     - service: switch.turn_off
       entity_id: all
 
