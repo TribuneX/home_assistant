@@ -282,15 +282,9 @@ play_sonos_radio:
 turn_off_all:
   sequence:
     - service: light.turn_off
-      entity_id: group.all_lights
-    - service: homeassistant.turn_off
-      entity_id: group.not_necessary_devices
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.tv_mode
-        option: AUS
-    - service: script.turn_off_heating_living_room
-    - service: script.turn_off_heating_bath_room
+      entity_id: all
+    - service: switch.turn_off
+      entity_id: all
 
 turn_on_livingroom_morning:
   sequence:

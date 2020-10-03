@@ -179,16 +179,6 @@ docker_container:
     - switch.resilio
     - switch.portainer
     - switch.pihole
-not_necessary_devices:
-  name: "Not necessary"
-  entities:
-    - light.christmas_tree
-    - light.stars
-    - switch.server
-    - switch.speaker_2
-    - switch.speaker_1
-    - switch.tv
-    - switch.tv_2
 temperature:
   name: "Temperature"
   entities:
