@@ -410,30 +410,28 @@ open_all_covers:
     - service: cover.open_cover
       entity_id: cover.child
     - delay:
-        seconds: 2
+        seconds: 10
     - service: cover.open_cover
       entity_id: cover.office
     - delay:
-        seconds: 2
+        seconds: 10
     - service: cover.open_cover
       entity_id: cover.livingroom
     - delay:
-        seconds: 2
+        seconds: 10
     - service: cover.open_cover
       entity_id: cover.kitchen
-    - delay:
-        seconds: 2
 
 close_all_covers:
   sequence:
     - service: cover.close_cover
       entity_id: cover.child
     - delay:
-        seconds: 2
+        seconds: 10
     - service: cover.close_cover
       entity_id: cover.office
     - delay:
-        seconds: 2
+        seconds: 10
     - service: cover.close_cover
       entity_id: cover.livingroom_front
     - delay:
