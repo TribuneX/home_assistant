@@ -16,6 +16,24 @@
       - condition: state
         entity_id: cover.all
         state: "closed"
+      - condition: state
+        entity_id: sensor.dark_outside
+        state: "off"
+  action:
+    - service: script.open_all_covers
+
+- alias: "Cover: Open all covers in the morning if its bright outside"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id:
+        - sensor.dark_outside
+      from: "off"
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: cover.all
+      state: "closed"
   action:
     - service: script.open_all_covers
 
