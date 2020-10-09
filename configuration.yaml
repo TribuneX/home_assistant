@@ -148,6 +148,14 @@ person:
       - device_tracker.user_2_iphone
       # - device_tracker.user_2_iphone_app
 
+notify:
+  - name: devices_user_1
+    platform: group
+    services:
+      - service: mobile_app_batphone
+      - service: mobile_app_batmac
+
+
 ##########################
 # Includes
 ##########################

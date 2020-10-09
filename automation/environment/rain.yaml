@@ -9,7 +9,7 @@
       after: "07:00"
       before: "20:00"
   action:
-    - service: notify.mobile_app_batphone
+    - service: notify.devices_user_1
       data:
         title: "Rain Alert"
         message: "It looks like its gonna rain: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}"
@@ -25,7 +25,7 @@
       after: "07:00"
       before: "20:00"
   action:
-    - service: notify.mobile_app_batphone
+    - service: notify.devices_user_1
       data:
         title: "Rain Stoppes"
         message: "It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}"
@@ -42,7 +42,7 @@
       after: "07:00"
       before: "22:00"
   action:
-    - service: notify.mobile_app_batphone
+    - service: notify.devices_user_1
       data:
         title: "Rain Sensor"
         message: "Rain detected: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}"
@@ -59,7 +59,7 @@
       after: "07:00"
       before: "22:00"
   action:
-    - service: notify.mobile_app_batphone
+    - service: notify.devices_user_1
       data:
         title: "Rain Sensor"
         message: "It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}"

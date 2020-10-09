@@ -9,7 +9,7 @@
 #       for:
 #         minutes: 5
 #   action:
-#     - service: notify.mobile_app_batphone
+#     - service: notify.devices_user_1
 #       data_template:
 #         title: 'Devices'
 #         message: '{{ trigger.to_state.attributes.friendly_name }} is {{ trigger.to_state.state }}'
@@ -31,7 +31,7 @@
 #       for:
 #         minutes: 5
 #   action:
-#     - service: notify.mobile_app_batphone
+#     - service: notify.devices_user_1
 #       data_template:
 #         title: 'Devices'
 #         message: '{{ trigger.to_state.attributes.friendly_name }} is {{ trigger.to_state.state }}'
@@ -57,7 +57,7 @@
 #       for:
 #         minutes: 1
 #   action:
-#     - service: notify.mobile_app_batphone
+#     - service: notify.devices_user_1
 #       data_template:
 #         title: 'Devices'
 #         message: '{{ trigger.to_state.attributes.friendly_name }} is {{ trigger.to_state.state }}'

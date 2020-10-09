@@ -5,7 +5,7 @@
       event: start
   action:
     - service: script.init_hass
-    - service: notify.mobile_app_batphone
+    - service: notify.devices_user_1
       data:
         title: "System"
         message: "Home Assistant started"

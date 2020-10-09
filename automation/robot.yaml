@@ -6,7 +6,7 @@
       from: "docked"
       to: "cleaning"
   action:
-    - service: notify.mobile_app_batphone
+    - service: notify.devices_user_1
       data:
         title: "Robot"
         message: "Robot started to clean!"
@@ -19,7 +19,7 @@
       from: "returning"
       to: "docked"
   action:
-    - service: notify.mobile_app_batphone
+    - service: notify.devices_user_1
       data:
         title: "Robot"
         message: "Cleanup successful after {{states.vacuum.vacuum_cleaner.attributes.cleaning_time}} minutes."

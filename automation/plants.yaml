@@ -23,7 +23,7 @@
         entity_id: plant.palme
         state: "problem"
   action:
-    - service: notify.mobile_app_batphone
+    - service: notify.devices_user_1
       data_template:
         title: "Plants"
         message: >

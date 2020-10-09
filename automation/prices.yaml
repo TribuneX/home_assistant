@@ -5,7 +5,7 @@
 #       entity_id: sensor.mein_schiff_ostsee
 #       below: 2095
 #   action:
-#     - service: notify.mobile_app_batphone
+#     - service: notify.devices_user_1
 #       data:
 #         title: 'Price Drop'
 #         message: 'The cruise is cheaper: ({{states.sensor.mein_schiff_price.state}}€)'
@@ -17,7 +17,7 @@
 #       entity_id: sensor.mein_schiff_ostsee
 #       above: 2095
 #   action:
-#     - service: notify.mobile_app_batphone
+#     - service: notify.devices_user_1
 #       data:
 #         title: 'Price Increase'
 #         message: 'The cruise is more expensive: ({{states.sensor.mein_schiff_price.state}}€)'
@@ -28,7 +28,7 @@
     - platform: template
       value_template: "{% if states.sensor.yello_price_1.state | float > 10 %} true {% endif %}"
   action:
-    - service: notify.mobile_app_batphone
+    - service: notify.devices_user_1
       data:
         title: 'Yello Discount'
         message: 'Higher discount at yello 1: {{states.sensor.yello_price_1.state}}%'
@@ -39,7 +39,7 @@
     - platform: template
       value_template: "{% if states.sensor.yello_price_1.state | float > 13 %} true {% endif %}"
   action:
-    - service: notify.mobile_app_batphone
+    - service: notify.devices_user_1
       data:
         title: 'Yello Discount'
         message: 'Higher discount at yello 2: {{states.sensor.yello_price_2.state}}%'

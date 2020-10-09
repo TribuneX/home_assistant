@@ -100,7 +100,7 @@ automation:
             {%- for domain in domains if battery_level(domain) |trim != ""-%}
             {{ battery_level(domain) }}{%- if not loop.last %}, {% endif -%}
             {%- endfor -%}
-      - service: notify.mobile_app_batphone
+      - service: notify.devices_user_1
         data_template:
           message: "Low Battery Levels"
           data:

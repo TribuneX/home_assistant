@@ -79,7 +79,7 @@ init_sonos:
 turn_on_vacation_lights:
   alias: Vacation Light Mode
   sequence:
-    - service: notify.mobile_app_batphone
+    - service: notify.devices_user_1
       data:
         title: "Vacation mode"
         message: "I switched on the lights while you are on vacation"
