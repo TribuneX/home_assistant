@@ -205,6 +205,8 @@ binary_sensor.motion_office:
   friendly_name: "Motion Office"
 sensor.illumination_office:
   friendly_name: "Office"
+binary_sensor.entry:
+  friendly_name: "Motion Entrance"
 
 # Device Tracker
 device_tracker.user_2_iphone:
