@@ -35,6 +35,98 @@
     - delay:
         seconds: 10
 
+- alias: 'Alarm: Trigger alarm when motion is detected'
+  trigger:
+    - platform: state
+      entity_id:
+        - light.eingang
+        - binary_sensor.front_door
+        - binary_sensor.gang_motion
+        - binary_sensor.gang_motion_2
+        - group.doors
+        - binary_sensor.entry
+        - binary_sensor.motion_entrance
+        - binary_sensor.motion_office
+      to: 'on'
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: armed_home
+      - condition: state
+        entity_id: alarm_control_panel.alarm
+        state: armed_away
+  action:
+    service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.alarm
+
+- alias: 'Alarm: Send notification when alarm triggered'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'triggered'
+  action:
+    - service: notify.devices_user_1
+      data_template:
+        title: 'Alarm'
+        message: "Activity was detected by {{ trigger.to_state.attributes.friendly_name }}"
+        data:
+          push:
+            sound:
+              name: default
+              critical: 1
+              volume: 1.0
+            thread-id: "alarm"
+
+# Disarm Alarm
+
+- alias: 'Alarm: Disarm alarm when users are home'
+  trigger:
+    - platform: state
+      entity_id: group.personen
+      from: not_home
+      to: home
+  action:
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.alarm
+
+- alias: 'Alarm: Send notification when alarm is Disarmed'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'disarmed'
+  action:
+    - service: notify.devices_user_1
+      data_template:
+        title: 'Alarm'
+        message: "Alarm is disarmed at {{ states('sensor.date_time') }}"
+
+
+# Enable Alarm
+
+- alias: 'Alarm: Arm the alarm when users are not home'
+  trigger:
+    - platform: state
+      entity_id: group.personen
+      from: home
+      to: not_home
+  action:
+    - service: alarm_control_panel.alarm_arm_away
+      entity_id: alarm_control_panel.alarm
+
+
+- alias: 'Alarm: Send notification when alarm is Armed in Away mode'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm
+      to: 'armed_away'
+  action:
+    - service: notify.devices_user_1
+      data_template:
+        title: "Alarm"
+        message: "Alarm is armed at {{ states('sensor.date_time') }}"
+
 - alias: "Door: A Door is still open"
   initial_state: "on"
   trigger:
