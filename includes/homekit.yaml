@@ -46,3 +46,6 @@ filter:
     - cover.all
     - cover.livingroom_front
     - alarm_control_panel.alarm
+entity_config:
+  alarm_control_panel.alarm:
+    code: 1234
