@@ -157,8 +157,8 @@ all_speaker:
 doors_and_windows:
   name: "Doors and Windows"
   entities:
+    - binary_sensor.front_door
     - binary_sensor.balcony_door
-    - binary_sensor.bedroom_window
     - binary_sensor.bath_window
     - binary_sensor.office_door
     - binary_sensor.living_room_balcony_door
@@ -167,6 +167,7 @@ doors_and_windows:
 doors:
   name: "Doors"
   entities:
+    - binary_sensor.front_door
     - binary_sensor.balcony_door
     - binary_sensor.office_door
     - binary_sensor.living_room_balcony_door

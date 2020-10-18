@@ -461,3 +461,17 @@ open_covers_for_tv:
       value_template: '{{ state_attr("cover.livingroom_tv", "current_position") == 50 }}'
     - service: cover.open_cover
       entity_id: cover.livingroom_tv
+
+disable_alarm:
+  sequence:
+    - service: alarm_control_panel.alarm_disarm
+      data:
+        entity_id: alarm_control_panel.alarm
+        code: 1234
+
+enable_alarm:
+  sequence:
+    - service: alarm_control_panel.alarm_arm_away
+      data:
+        entity_id: alarm_control_panel.alarm
+        code: 1234
