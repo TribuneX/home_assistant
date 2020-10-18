@@ -3,7 +3,7 @@
   name: Alarm
   code: '1234'
   delay_time: 60
-  trigger_time: 4
+  trigger_time: 120
   disarmed:
     trigger_time: 0
   armed_home:

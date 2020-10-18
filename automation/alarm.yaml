@@ -89,7 +89,9 @@
       to: home
   action:
     - service: alarm_control_panel.alarm_disarm
-      entity_id: alarm_control_panel.alarm
+      data:
+        entity_id: alarm_control_panel.alarm
+        code: 1234
 
 - alias: 'Alarm: Send notification when alarm is Disarmed'
   trigger:
@@ -113,8 +115,9 @@
       to: not_home
   action:
     - service: alarm_control_panel.alarm_arm_away
-      entity_id: alarm_control_panel.alarm
-
+      data:
+        entity_id: alarm_control_panel.alarm
+        code: 1234
 
 - alias: 'Alarm: Send notification when alarm is Armed in Away mode'
   trigger:

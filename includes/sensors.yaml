@@ -292,3 +292,7 @@
   name: yello price 2
   value_template: '{{ value_json.discount }}'
   unit_of_measurement: '%'
+
+- platform: time_date
+  display_options:
+    - 'date_time'
