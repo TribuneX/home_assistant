@@ -1,5 +1,5 @@
 filter:
-  include_entities:
+  include_entities: 
     - switch.server
     - switch.tv_media
     - switch.tv_2
@@ -9,6 +9,7 @@ filter:
     - binary_sensor.bath_window
     - binary_sensor.living_room_balcony_door
     - binary_sensor.childrens_room_door
+    - binary_sensor.motion_livingroom
     - sensor.temperature_bath
     - sensor.humidity_bath
     - sensor.pressure_bath
