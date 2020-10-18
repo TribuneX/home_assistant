@@ -64,7 +64,6 @@
   trigger:
     - platform: state
       entity_id:
-        - binary_sensor.entry
         - binary_sensor.motion_entrance
       from: "off"
       to: "on"
@@ -84,7 +83,6 @@
   trigger:
     - platform: state
       entity_id:
-        - binary_sensor.entry
         - binary_sensor.motion_entrance
       from: "on"
       to: "off"
@@ -95,7 +93,7 @@
         transition: 2
 
 
-- alias: "Lights: Turn on hallway light if door is opened"
+- alias: "Lights: Turn on entrance light if door is opened"
   initial_state: "on"
   trigger:
     - platform: state
@@ -110,3 +108,18 @@
         entity_id: light.eingang
         brightness: 200
         transition: 1
+
+
+- alias: "Lights: Turn off entrance light if no motion"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.entry
+      from: "on"
+      to: "off"
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.eingang
+        transition: 2
