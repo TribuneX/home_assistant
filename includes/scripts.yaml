@@ -315,24 +315,11 @@ turn_on_office_default_lights:
         entity_id: light.arbeitszimmer
         brightness: 150
 
-turn_on_bath_default_lights:
-  sequence:
-    - service: light.turn_on
-      data:
-        entity_id: light.bath
-        brightness: 150
-
 turn_on_livingroom_dimmed_lights:
   sequence:
     - service: light.turn_on
       data:
         entity_id: light.living_room
-
-turn_on_bedroom_dimmed_lights:
-  sequence:
-    - service: light.turn_on
-      data:
-        entity_id: light.bedroom
 
 turn_off_livingroom_lights_delay_30:
   alias: "Turn off livingroom lights (delay 30 minutes)"
