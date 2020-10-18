@@ -32,7 +32,6 @@ filter:
     - light.living_room
     - light.entrance
     - light.sofa
-    - light.kitchen
     - light.bedroom
     - switch.speaker_1
     - switch.speaker_2
