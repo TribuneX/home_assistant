@@ -33,6 +33,7 @@ filter:
     - light.entrance
     - light.sofa
     - light.bedroom
+    - light.eingang
     - switch.speaker_1
     - switch.speaker_2
     - switch.sonos_playbar
