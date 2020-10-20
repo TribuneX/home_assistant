@@ -39,3 +39,7 @@ entities:
   - sensor.motion2_battery
   - sensor.cube_action
   - binary_sensor.switch_bedroom
+  - sensor.date_time
+entity_globs:
+  - sensor.batphone_*
+  - sensor.batpad_*
