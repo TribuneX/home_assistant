@@ -49,3 +49,15 @@
 
 - platform: workday
   country: DE
+
+- platform: template
+  sensors:
+    # Inspired by https://community.home-assistant.io/t/virtual-light-sensor/31975/9
+    dark_outside:
+      friendly_name: "Dark Outside"
+      delay_off:
+        seconds: 60
+      delay_on:
+        seconds: 60
+      value_template: >
+        {{state_attr('sensor.outdoor_illumination', 'illuminance_lux'|int < 8)}}
