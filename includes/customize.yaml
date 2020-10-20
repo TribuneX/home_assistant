@@ -124,7 +124,7 @@ sensor.dark_sky_precip_intensity:
 sensor.fritz_netmonitor:
   friendly_name: FritzBox
   icon: mdi:router-wireless
-sensor.dark_outside:
+binary_sensor.dark_outside:
   icon: mdi:weather-night
 sensor.dark_sky_temperature:
   friendly_name: Outdoor

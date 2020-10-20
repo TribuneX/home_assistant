@@ -19,7 +19,7 @@ outdoor:
     - sensor.dark_sky_daily_low_temperature
     - sensor.dark_sky_summary
     - sun.sun
-    - sensor.dark_outside
+    - binary_sensor.dark_outside
     - sensor.dark_sky_wind_speed
     - sensor.dark_sky_precip
     - sensor.dark_sky_precip_intensity
