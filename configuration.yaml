@@ -64,10 +64,6 @@ logbook:
   include: !include includes/include.yaml
   exclude: !include includes/exclude.yaml
 
-# Enables the frontend
-frontend:
-  javascript_version: latest
-
 http:
   ssl_certificate: !secret ssl_certificate_path
   ssl_key: !secret ssl_private_key
