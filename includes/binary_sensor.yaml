@@ -60,4 +60,4 @@
       delay_on:
         seconds: 60
       value_template: >
-        {{state_attr('sensor.outdoor_illumination', 'illuminance_lux'|int < 8)}}
+        {{state_attr('sensor.outdoor_illumination', 'illuminance_lux')|int < 8}}
