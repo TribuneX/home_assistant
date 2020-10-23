@@ -167,7 +167,6 @@ doors_and_windows:
 doors:
   name: "Doors"
   entities:
-    - binary_sensor.front_door
     - binary_sensor.balcony_door
     - binary_sensor.office_door
     - binary_sensor.living_room_balcony_door
