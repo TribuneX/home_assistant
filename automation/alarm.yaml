@@ -59,8 +59,9 @@
         message: > 
           Activity was detected by 
           {%- for entity_id in states.group.doors_and_windows.attributes.entity_id if states(entity_id) == 'on' -%}
-            {{' '}}
-            {{ state_attr(entity_id, 'friendly_name')}},
+            {%- if loop.first %} {% endif -%}
+            {{state_attr(entity_id, 'friendly_name') }}
+            {%- if not loop.last %}, {% endif -%}
           {%- endfor -%}
         data:
           push:
