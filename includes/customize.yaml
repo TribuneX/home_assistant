@@ -167,22 +167,22 @@ sensor.epson_ink_level_cyan:
 
 # Xiaomi Aqara
 binary_sensor.front_door:
-  friendly_name: "Front Door"
+  friendly_name: "Haustür"
   icon: mdi:door
 binary_sensor.balcony_door:
-  friendly_name: "Balcony"
+  friendly_name: "Terrasse"
   icon: mdi:door
 binary_sensor.bedroom_window:
-  friendly_name: "Bedroom"
+  friendly_name: "Schlafzimmer"
   icon: mdi:window-maximize
 binary_sensor.office_door:
-  friendly_name: "Office Bacony"
+  friendly_name: "Garten Office"
   icon: mdi:door
 binary_sensor.childrens_room_door:
-  friendly_name: "Childrens Room Door"
+  friendly_name: "Kinderzimmer"
   icon: mdi:door
 binary_sensor.living_room_balcony_door:
-  friendly_name: "Living room Door"
+  friendly_name: "Garten Wohnzimmer"
   icon: mdi:door
 sensor.cube_action:
   friendly_name: "Cube"

@@ -56,7 +56,11 @@
     - service: notify.devices_user_1
       data_template:
         title: 'Alarm'
-        message: "Activity was detected by {{ trigger.to_state.attributes.friendly_name }}"
+        message: > 
+          Activity was detected by 
+          {%- for entity_id in states.group.doors_and_windows.attributes.entity_id if states(entity_id) == 'on' -%}
+            {{ state_attr(entity_id, 'friendly_name') }}
+          {%- endfor -%}
         data:
           push:
             sound:
