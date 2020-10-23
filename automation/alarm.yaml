@@ -56,9 +56,8 @@
     - service: notify.devices_user_1
       data_template:
         title: 'Alarm'
-        message: > 
-          Activity was detected by 
-          {%- for entity_id in states.group.doors_and_windows.attributes.entity_id if states(entity_id) == 'on' -%}
+        message: >
+          Activity was detected by: {%- for entity_id in states.group.doors_and_windows.attributes.entity_id if states(entity_id) == 'on' -%}
             {%- if loop.first %} {% endif -%}
             {{state_attr(entity_id, 'friendly_name') }}
             {%- if not loop.last %}, {% endif -%}
@@ -156,7 +155,12 @@
       data_template:
         title: "Doors"
         message: >
-          "Open doors: {% if is_state('binary_sensor.balcony_door', 'on') %}Kitchen, {% endif %} {% if is_state('binary_sensor.living_room_balcony_door', 'on') %}Livingroom, {% endif %}{% if is_state('binary_sensor.office_door', 'on') %}Office, {% endif %}{% if is_state('binary_sensor.childrens_room_door', 'on') %}Child`s room{% endif %}"
+          Still open:
+          {%- for entity_id in states.group.doors.attributes.entity_id if states(entity_id) == 'on' -%}
+            {%- if loop.first %} {% endif -%}
+            {{state_attr(entity_id, 'friendly_name') }}
+            {%- if not loop.last %}, {% endif -%}
+          {%- endfor -%}
     - delay:
         seconds: 20
 
