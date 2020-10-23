@@ -7,3 +7,4 @@
     trigger_time: 0
   armed_home:
     delay_time: 0
+    trigger_time: 10
