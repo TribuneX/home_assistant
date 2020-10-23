@@ -47,28 +47,28 @@
     entity_id: alarm_control_panel.alarm
 
 
-- alias: 'Alarm: Send notification when alarm triggered'
-  trigger:
-    - platform: state
-      entity_id: alarm_control_panel.alarm
-      to: 'triggered'
-  action:
-    - service: notify.devices_user_1
-      data_template:
-        title: 'Alarm'
-        message: >
-          Activity was detected by: {%- for entity_id in states.group.doors_and_windows.attributes.entity_id if states(entity_id) == 'on' -%}
-            {%- if loop.first %} {% endif -%}
-            {{state_attr(entity_id, 'friendly_name') }}
-            {%- if not loop.last %}, {% endif -%}
-          {%- endfor -%}
-        data:
-          push:
-            sound:
-              name: default
-              critical: 1
-              volume: 1.0
-            thread-id: "alarm"
+# - alias: 'Alarm: Send notification when alarm triggered'
+#   trigger:
+#     - platform: state
+#       entity_id: alarm_control_panel.alarm
+#       to: 'triggered'
+#   action:
+#     - service: notify.devices_user_1
+#       data_template:
+#         title: 'Alarm'
+#         message: >
+#           {%- for entity_id in states.group.doors_and_windows.attributes.entity_id if states(entity_id) == 'on' -%}
+#             {%- if loop.first %}Activity was detected by: {% endif -%}
+#             {{state_attr(entity_id, 'friendly_name') }}
+#             {%- if not loop.last %}, {% endif -%}
+#           {%- endfor -%}
+#         data:
+#           push:
+#             sound:
+#               name: default
+#               critical: 1
+#               volume: 1.0
+#             thread-id: "alarm"
 
 # Disarm Alarm
 
@@ -116,19 +116,32 @@
   action:
     - service: script.enable_alarm
 
-- alias: 'Alarm: Arm the alarm when users are not home'
+- alias: 'Alarm: Arm the alarm when phone is charging'
   trigger:
     - platform: state
       entity_id: sensor.batphone_battery_state
-      to: 'Not Charging'
+      to: 'Charging'
   condition:
     - condition: time
       after: "20:00"
       before: "05:00"
   action:
-    - service: script.enable_alarm
+    - service: alarm_control_panel.alarm_arm_home
+      data:
+        entity_id: alarm_control_panel.alarm
+        code: 1234
+    - service: notify.devices_user_1
+      data_template:
+        title: "Alarm"
+        message: >
+          Alarm is armed in home mode at {{ states('sensor.date_time') }}.
+          {%- for entity_id in states.group.doors.attributes.entity_id if states(entity_id) == 'on' -%}
+            {%- if loop.first %}Open Doors: {% endif -%}
+            {{state_attr(entity_id, 'friendly_name') }}
+            {%- if not loop.last %}, {% endif -%}
+          {%- endfor -%}
 
-- alias: 'Alarm: Send notification when alarm is Armed in Away mode'
+- alias: 'Alarm: Send notification when alarm is armed in away mode'
   trigger:
     - platform: state
       entity_id: alarm_control_panel.alarm
@@ -137,7 +150,13 @@
     - service: notify.devices_user_1
       data_template:
         title: "Alarm"
-        message: "Alarm is armed at {{ states('sensor.date_time') }}"
+        message: >
+          Alarm is armed at {{ states('sensor.date_time') }}.
+          {%- for entity_id in states.group.doors_and_windows.attributes.entity_id if states(entity_id) == 'on' -%}
+            {%- if loop.first %}Open Doors: {% endif -%}
+            {{state_attr(entity_id, 'friendly_name') }}
+            {%- if not loop.last %}, {% endif -%}
+          {%- endfor -%}
 
 - alias: "Door: A Door is still open"
   initial_state: "on"
@@ -155,9 +174,8 @@
       data_template:
         title: "Doors"
         message: >
-          Still open:
           {%- for entity_id in states.group.doors.attributes.entity_id if states(entity_id) == 'on' -%}
-            {%- if loop.first %} {% endif -%}
+            {%- if loop.first %}Open doors: {% endif -%}
             {{state_attr(entity_id, 'friendly_name') }}
             {%- if not loop.last %}, {% endif -%}
           {%- endfor -%}
