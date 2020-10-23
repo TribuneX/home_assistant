@@ -81,6 +81,18 @@
   action:
     - service: script.disable_alarm
 
+- alias: 'Alarm: Disarm phone is removed from charger in the morning'
+  trigger:
+    - platform: state
+      entity_id: sensor.batphone_battery_state
+      to: 'Not Charging'
+  condition:
+    - condition: time
+      after: "06:00"
+      before: "11:00"
+  action:
+    - service: script.disable_alarm
+
 - alias: 'Alarm: Send notification when alarm is Disarmed'
   trigger:
     - platform: state
@@ -101,6 +113,18 @@
       entity_id: group.personen
       from: home
       to: not_home
+  action:
+    - service: script.enable_alarm
+
+- alias: 'Alarm: Arm the alarm when users are not home'
+  trigger:
+    - platform: state
+      entity_id: sensor.batphone_battery_state
+      to: 'Not Charging'
+  condition:
+    - condition: time
+      after: "20:00"
+      before: "05:00"
   action:
     - service: script.enable_alarm
 
