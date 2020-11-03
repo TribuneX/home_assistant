@@ -3,8 +3,7 @@
   trigger:
     - platform: state
       entity_id:
-        - binary_sensor.gang_motion
-        - binary_sensor.gang_motion_2
+        - group.motion_gang
       from: "off"
       to: "on"
   condition:
@@ -25,8 +24,7 @@
   trigger:
     - platform: state
       entity_id:
-        - binary_sensor.gang_motion
-        - binary_sensor.gang_motion_2
+        - group.motion_gang
       from: "off"
       to: "on"
   condition:
@@ -47,8 +45,7 @@
   trigger:
     - platform: state
       entity_id:
-        - binary_sensor.gang_motion
-        - binary_sensor.gang_motion_2
+        - group.motion_gang
       from: "on"
       to: "off"
   action:

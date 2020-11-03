@@ -171,6 +171,12 @@ doors:
     - binary_sensor.office_door
     - binary_sensor.living_room_balcony_door
     - binary_sensor.childrens_room_door
+motion_gang:
+  name: motion_gang
+  entities:
+    - binary_sensor.gang_motion
+    - binary_sensor.gang_motion_2
+    - binary_sensor.gang_motion_3
 docker_container:
   name: "Docker Container"
   entities:
