@@ -53,7 +53,7 @@
     condition: and
     conditions:
       - condition: time
-        after: "17:00"
+        after: "16:00"
         before: "23:00"
       - condition: state
         entity_id: cover.all
