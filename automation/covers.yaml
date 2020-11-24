@@ -14,9 +14,6 @@
         after: "06:00"
         before: "11:00"
       - condition: state
-        entity_id: cover.all
-        state: "closed"
-      - condition: state
         entity_id: binary_sensor.dark_outside
         state: "off"
   action:
@@ -31,14 +28,9 @@
       from: "off"
       to: "on"
   condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: cover.all
-        state: "closed"
-      - condition: time
-        after: "06:00"
-        before: "10:00"
+    - condition: time
+      after: "06:00"
+      before: "10:00"
   action:
     - service: script.open_all_covers
 
@@ -50,14 +42,9 @@
       from: "off"
       to: "on"
   condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: "16:00"
-        before: "23:00"
-      - condition: state
-        entity_id: cover.all
-        state: "open"
+    - condition: time
+      after: "16:00"
+      before: "23:00"
   action:
     - delay:
         minutes: 30
@@ -126,37 +113,10 @@
     - platform: time
       at: "08:00"
   condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.vacation_mode
-        state: "on"
-      - condition: state
-        entity_id: cover.all
-        state: "closed"
+    - condition: state
+      entity_id: input_boolean.vacation_mode
+      state: "on"
   action:
     - delay:
         minutes: '{{ range(2, 36) | random }}'
     - service: script.open_all_covers
-
-- alias: "Cover: Close kitchen cover in the evening"
-  initial_state: "on"
-  trigger:
-    - platform: time
-      at: "22:30"
-    - platform: state
-      entity_id: switch.tv_2
-      from: "off"
-      to: "on"
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: "20:00"
-        before: "22:30"
-      - condition: state
-        entity_id: cover.kitchen
-        state: "open"
-  action:
-    - service: cover.close_cover
-      entity_id: cover.kitchen
