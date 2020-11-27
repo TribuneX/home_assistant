@@ -418,6 +418,10 @@ close_all_covers:
         minutes: 30
     - service: cover.close_cover
       entity_id: cover.livingroom_right
+    - delay:
+         minutes: 60
+    - service: cover.close_cover
+      entity_id: cover.kitchen
 
 close_front_covers:
   sequence:
