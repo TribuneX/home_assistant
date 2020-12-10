@@ -245,9 +245,8 @@ christmas:
   name: "Christmas"
   icon: mdi:pine-tree
   entities:
-    - light.christmas_tree
+    - switch.tree
     - light.stars
-    - light.stern
 device_status:
   name: "Device Status"
   icon: mdi:oil-temperature
