@@ -8,21 +8,6 @@ switch.tv_2:
   friendly_name: TV 2
 switch.server:
   icon: mdi:server
-switch.tv_mode:
-  icon: mdi:television
-  friendly_name: Legacy TV
-switch.appletv_mode:
-  icon: mdi:airplay
-  friendly_name: TV
-switch.plex_mode:
-  icon: mdi:plex
-  friendly_name: Plex
-switch.music_mode:
-  icon: mdi:music-circle
-  friendly_name: Music
-switch.sonos_mode:
-  icon: mdi:speaker-wireless
-  friendly_name: Sonos
 switch.speaker_1:
   icon: mdi:speaker-wireless
   friendly_name: Sonos

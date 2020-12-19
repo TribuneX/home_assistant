@@ -1,13 +1,3 @@
-tv_mode:
-  name: "TV mode"
-  options:
-    - AUS
-    - TV
-    - AppleTV
-    - Plex
-    - Music
-  initial: AppleTV
-  icon: mdi:television
 sonos_source:
   name: Sonos Source
   options:

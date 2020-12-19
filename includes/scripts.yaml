@@ -52,7 +52,6 @@ init_tv:
     #   - condition: state
     #     entity_id: media_player.wohnzimmer
     #     state: 'idle'
-    - service: script.tv_mode_off
     - service: switch.turn_off
       entity_id: switch.tv
 
@@ -89,22 +88,6 @@ turn_on_vacation_lights:
         minutes: 30
     - service: light.turn_off
       entity_id: light.living_room
-
-turn_off_tv_livingroom:
-  sequence:
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.tv_mode
-        option: AUS
-    - service: switch.turn_off
-      entity_id: switch.tv
-
-tv_mode_off:
-  sequence:
-    - service: input_select.select_option
-      data:
-        entity_id: input_select.tv_mode
-        option: AUS
 
 turn_off_livingroom_delay_10:
   alias: "Turn off livingroom group (delay 10 minutes)"

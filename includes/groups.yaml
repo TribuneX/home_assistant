@@ -5,8 +5,6 @@ living_room:
   name: "Living Room"
   entities:
     - light.living_room
-    - switch.appletv_mode
-    - switch.sonos_mode
 bed_room:
   name: "Bedroom"
   entities:
@@ -54,14 +52,6 @@ user_2:
   entities:
     - device_tracker.user_2_iphone
     - device_tracker.owntracks_user_2_iphone
-tv_scenes:
-  name: "TV"
-  entities:
-    - switch.tv_mode
-    - switch.appletv_mode
-    - switch.plex_mode
-    - switch.music_mode
-    - switch.tv
 iphone:
   name: "Devices"
   entities:
@@ -89,7 +79,6 @@ settings:
     - script.get_latest_config
     - script.restart_hass
     - input_select.log_level
-    - input_select.tv_mode
     - input_boolean.vacation_mode
     - input_boolean.cleaned_today
 devices:
@@ -135,7 +124,6 @@ speaker:
   name: "Music"
   entities:
     - input_select.sonos_source
-    - switch.sonos_mode
     - input_number.sonos_speaker
 printer:
   name: "Epson Printer"
@@ -213,7 +201,6 @@ media:
   name: "Media"
   icon: mdi:television
   entities:
-    - group.tv_scenes
     - media_player.wohnzimmer
     - media_player.schlafzimmer
     - group.speaker

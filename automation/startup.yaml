@@ -27,7 +27,6 @@
   action:
     - service: homeassistant.turn_off
       entity_id: group.all_speaker
-    - service: script.tv_mode_off
     - service: switch.turn_off
       entity_id: switch.tv
     - service: switch.turn_off

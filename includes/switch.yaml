@@ -18,58 +18,6 @@
 
 - platform: template
   switches:
-    tv_mode:
-      value_template: "{{ is_state('input_select.tv_mode', 'TV')}}"
-      turn_on:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: TV
-      turn_off:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: AUS
-    appletv_mode:
-      value_template: "{{ is_state('input_select.tv_mode', 'AppleTV')}}"
-      turn_on:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: AppleTV
-      turn_off:
-        service: script.turn_on
-        entity_id: script.turn_off_tv_livingroom
-    plex_mode:
-      value_template: "{{ is_state('input_select.tv_mode', 'Plex')}}"
-      turn_on:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: Plex
-      turn_off:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: AUS
-    music_mode:
-      value_template: "{{ is_state('input_select.tv_mode', 'Music')}}"
-      turn_on:
-        service: input_select.select_option
-        data:
-          entity_id: input_select.tv_mode
-          option: Music
-      turn_off:
-        service: script.turn_on
-        entity_id: script.turn_off_tv_livingroom
-    sonos_mode:
-      value_template: "{{ is_state('media_player.living_room', 'playing')}}"
-      turn_on:
-        service: script.turn_on
-        entity_id: script.play_sonos_radio
-      turn_off:
-        service: script.turn_on
-        entity_id: script.pause_sonos
     vacuum_mode:
       value_template: "{{ is_state('vacuum.vacuum_cleaner', 'Cleaning')}}"
       turn_on:
