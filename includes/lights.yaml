@@ -51,3 +51,13 @@
   command_topic: "zigbee2mqtt/entrance/set"
   state_topic: "zigbee2mqtt/entrance"
   brightness: 150
+
+- platform: mqtt
+  name: "stairs"
+  state_topic: "shellies/shelly1-98F4ABD0B809/relay/0"
+  command_topic: "shellies/shelly1-98F4ABD0B809/relay/0/command"
+  payload_on: "on"
+  payload_off: "off"
+  optimistic: false
+  qos: 0
+  retain: true

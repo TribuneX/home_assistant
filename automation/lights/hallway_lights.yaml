@@ -4,7 +4,7 @@
     input:
       motion_sensor: group.motion_gang
       target_light:
-        entity_id: switch.light_stairs
+        entity_id: light.stairs
 
 - alias: Trigger front hallway lights by motion sensor
   use_blueprint:

@@ -92,15 +92,3 @@
           entity_id:
             - switch.tv
             - switch.sonos_playbar
-
-- platform: mqtt
-  name: "Light Stairs"
-  state_topic: "shellies/shelly1-98F4ABD0B809/relay/0"
-  command_topic: "shellies/shelly1-98F4ABD0B809/relay/0/command"
-  payload_on: "on"
-  payload_off: "off"
-  state_on: "on"
-  state_off: "off"
-  optimistic: false
-  qos: 0
-  retain: true
