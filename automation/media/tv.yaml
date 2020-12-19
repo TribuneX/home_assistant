@@ -1,68 +1,3 @@
-- alias: "TV: Select mode"
-  initial_state: "on"
-  trigger:
-    platform: state
-    entity_id: input_select.tv_mode
-  condition:
-    condition: state
-    entity_id: switch.tv
-    state: "on"
-  action:
-    - service: script.turn_on
-      data_template:
-        entity_id: >
-          {% if trigger.to_state.state == 'AppleTV' %}
-            script.set_input_apple_tv
-          {% elif trigger.to_state.state == 'TV' %}
-            script.set_input_tv
-          {% elif trigger.to_state.state == 'Plex' %}
-            script.set_input_plex
-          {% elif trigger.to_state.state == 'Music' %}
-            script.set_input_music
-          {% endif %}
-
-- alias: "TV: Select mode + TV"
-  initial_state: "on"
-  trigger:
-    platform: state
-    entity_id: input_select.tv_mode
-  condition:
-    condition: state
-    entity_id: switch.tv
-    state: "off"
-  action:
-    - service: switch.turn_on
-      entity_id: switch.tv
-    - delay:
-        seconds: 12
-    - service: script.turn_on
-      data_template:
-        entity_id: >
-          {% if trigger.to_state.state == 'AppleTV' %}
-            script.set_input_apple_tv
-          {% elif trigger.to_state.state == 'TV' %}
-            script.set_input_tv
-          {% elif trigger.to_state.state == 'Plex' %}
-            script.set_input_plex
-          {% elif trigger.to_state.state == 'Music' %}
-            script.set_input_music
-          {% endif %}
-
-- alias: "TV: Pause AppleTV if SONOS is used"
-  initial_state: "on"
-  trigger:
-    platform: state
-    entity_id: media_player.living_room
-    from: "paused"
-    to: "playing"
-  condition:
-    - condition: state
-      entity_id: media_player.wohnzimmer
-      state: "playing"
-  action:
-    - service: media_player.media_pause
-      entity_id: media_player.wohnzimmer
-
 - alias: "TV: Toggle TV2 in bedroom on long button press"
   initial_state: "on"
   trigger:
@@ -102,19 +37,14 @@
       - condition: time
         after: "09:00"
         before: "18:00"
+      - condition: state
+        entity_id: binary_sensor.dark_outside
+        state: "off"
   action:
     - service: script.close_covers_for_tv
-
-- alias: "TV: Open covers if TV is turned off"
-  initial_state: "on"
-  trigger:
-    platform: state
-    entity_id: switch.tv
-    from: "on"
-    to: "off"
-  condition:
-    - condition: time
-      after: "09:00"
-      before: "18:00"
-  action:
+    - wait_for_trigger:
+        platform: state
+        entity_id: switch.tv
+        from: "on"
+        to: "off"
     - service: script.open_covers_for_tv
