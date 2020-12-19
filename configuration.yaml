@@ -168,6 +168,5 @@ light: !include includes/lights.yaml
 plant: !include includes/plants.yaml
 homekit: !include includes/homekit.yaml
 input_select: !include includes/input_select.yaml
-alert: !include includes/alerts.yaml
 cover: !include includes/cover.yaml
 alarm_control_panel: !include includes/alarm_control_panel.yaml
