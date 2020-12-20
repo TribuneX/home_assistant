@@ -46,30 +46,6 @@
     service: alarm_control_panel.alarm_trigger
     entity_id: alarm_control_panel.alarm
 
-
-# - alias: 'Alarm: Send notification when alarm triggered'
-#   trigger:
-#     - platform: state
-#       entity_id: alarm_control_panel.alarm
-#       to: 'triggered'
-#   action:
-#     - service: notify.devices_user_1
-#       data_template:
-#         title: 'Alarm'
-#         message: >
-#           {%- for entity_id in states.group.doors_and_windows.attributes.entity_id if states(entity_id) == 'on' -%}
-#             {%- if loop.first %}Activity was detected by: {% endif -%}
-#             {{state_attr(entity_id, 'friendly_name') }}
-#             {%- if not loop.last %}, {% endif -%}
-#           {%- endfor -%}
-#         data:
-#           push:
-#             sound:
-#               name: default
-#               critical: 1
-#               volume: 1.0
-#             thread-id: "alarm"
-
 # Disarm Alarm
 
 - alias: 'Alarm: Disarm alarm when users are home'
