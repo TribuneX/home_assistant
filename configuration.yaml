@@ -165,7 +165,6 @@ switch: !include includes/switch.yaml
 input_boolean: !include includes/inputs.yaml
 shell_command: !include includes/shell_commands.yaml
 light: !include includes/lights.yaml
-plant: !include includes/plants.yaml
 homekit: !include includes/homekit.yaml
 input_select: !include includes/input_select.yaml
 cover: !include includes/cover.yaml
