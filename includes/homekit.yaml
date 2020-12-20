@@ -29,6 +29,7 @@ filter:
     - switch.vacuum_mode
     - light.arbeitszimmer
     - light.hallway
+    - light.kitchen
     - light.living_room
     - light.entrance
     - light.sofa
