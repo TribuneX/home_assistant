@@ -27,8 +27,8 @@
   trigger:
     - platform: state
       entity_id: binary_sensor.dark_outside
-      from: "off"
-      to: "on"
+      from: "on"
+      to: "off"
   condition:
     condition: and
     conditions:
