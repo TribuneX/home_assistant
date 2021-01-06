@@ -47,6 +47,7 @@
         from: "on"
         to: "off"
     - service: script.turn_off_living_room_lights
+    - service: script.turn_off_christmans
 
 - alias: "Lights: Turn on and off lights in livingroom if motion is detected"
   initial_state: "on"
