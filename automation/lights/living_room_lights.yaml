@@ -46,6 +46,8 @@
         entity_id: binary_sensor.dark_outside
         from: "on"
         to: "off"
+    - delay:
+        minutes: 10
     - service: script.turn_off_living_room_lights
     - service: script.turn_off_christmans
 
