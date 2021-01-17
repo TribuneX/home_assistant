@@ -210,9 +210,6 @@ light.bed2:
   friendly_name: !secret user_1
 light.stern:
   icon: mdi:star
-light.christmas_tree:
-  icon: mdi:pine-tree
-  assumed_state: false
 light.stars:
   icon: mdi:weather-night
   assumed_state: false
