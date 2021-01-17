@@ -220,7 +220,7 @@
       entity_id: media_player.office
       state: "playing"
   action:
-    - service: media_player.media_pause
+    - service: media_player.media_play_pause
       entity_id: media_player.office
 
 - alias: "Speaker: Select sonos office volume with cube rotation"
