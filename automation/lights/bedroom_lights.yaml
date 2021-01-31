@@ -20,14 +20,19 @@
       from: "on"
       to: "off"
   condition:
-    condition: time
-    after: "21:00"
-    before: "02:00"
+    condition: and
+    conditions:
+      - condition: time
+        after: "21:00"
+        before: "02:00"
+      - condition: state
+        entity_id: light.turn_on
+        state: "off"
   action:
     - service: light.turn_on
       data:
         entity_id: light.bedroom
-        brightness: 100
+        brightness: 40
         transition: 1
     - service: script.turn_off_livingroom_delay_10
 
