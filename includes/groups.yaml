@@ -185,7 +185,6 @@ temperature:
 humidity:
   name: "Humidity"
   entities:
-    - sensor.dark_sky_humidity
     - sensor.humidity_office
     - sensor.humidity_bath
     - sensor.humidity_bedroom

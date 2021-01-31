@@ -45,3 +45,24 @@
       data:
         title: "Doors"
         message: "Open the balcony door, since it is {{states.sensor.out_vs_in.state}}°C colder outside."
+
+- alias: "Humidity warning"
+  initial_state: "on"
+  trigger:
+    - platform: numeric_state
+      entity_id:
+        - sensor.humidity_bath
+        - sensor.humidity_bedroom
+        - sensor.humidity_livingroom
+        - sensor.humidity_office
+      above: 65
+  action:
+    - service: nnotify.devices_user_1
+      data:
+        title: "Humidity"
+        message: >
+          {%- for entity_id in states.group.humidity.attributes.entity_id if states(entity_id) > '65' -%}
+            {%- if loop.first %}Humidity: {% endif -%}
+              {{state_attr(entity_id, 'friendly_name') }}: {{state_attr(entity_id, 'humidity') }}
+            {%- if not loop.last %}, {% endif -%}
+          {%- endfor -%}
