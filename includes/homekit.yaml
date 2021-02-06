@@ -1,5 +1,5 @@
 filter:
-  include_entities: 
+  include_entities:
     - switch.server
     - switch.tv_media
     - switch.tv_2
@@ -32,10 +32,8 @@ filter:
     - light.hallway
     - light.kitchen
     - light.living_room
-    - light.entrance
     - light.sofa
     - light.bedroom
-    - light.eingang
     - light.bed2
     - switch.speaker_1
     - switch.speaker_2
