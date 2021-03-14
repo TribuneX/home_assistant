@@ -27,7 +27,6 @@ filter:
     - sensor.temperature_childs_room
     - binary_sensor.water_leak_sensor
     - switch.vacuum_mode
-    - switch.mac
     - light.arbeitszimmer
     - light.hallway
     - light.kitchen
@@ -35,6 +34,7 @@ filter:
     - light.sofa
     - light.bedroom
     - light.bed2
+    - light.child
     - switch.speaker_1
     - switch.speaker_2
     - switch.sonos_playbar

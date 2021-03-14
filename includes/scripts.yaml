@@ -325,3 +325,14 @@ turn_on_tv:
         command:
           - menu
 
+toggle_speaker_and_light_childroom:
+  sequence:
+    - service: switch.toggle
+      entity_id: switch.speaker_1
+    - condition: state
+      entity_id: binary_sensor.dark_outside
+      state: "on"
+    - service: light.toggle
+      entity_id: light.child
+      brightness: 150
+      transition: 3
