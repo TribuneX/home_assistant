@@ -137,3 +137,17 @@
     - delay:
         minutes: '{{ range(2, 36) | random }}'
     - service: script.open_all_covers
+
+- alias: "Cover: Close covers in living room with double press"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: sensor.button_livingroom_click
+    to: "hold"
+  action:
+    - service: script.close_covers_for_tv
+    - wait_for_trigger:
+        platform: state
+        entity_id: sensor.button_livingroom_click
+        to: "hold"
+    - service: script.open_covers_for_tv
