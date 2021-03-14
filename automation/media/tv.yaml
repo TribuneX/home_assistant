@@ -24,6 +24,26 @@
     service: switch.toggle
     entity_id: switch.tv_media
 
+- alias: "TV: Toggle TV on single press"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: sensor.button_livingroom_action
+    to: "single"
+  action:
+    - service: switch.toggle
+      entity_id: switch.tv_media
+
+- alias: "Speaker: Toggle playbar on double press"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: sensor.button_livingroom_action
+    to: "double"
+  action:
+    - service: switch.toggle
+      entity_id: switch.sonos_playbar
+
 - alias: "TV: Close covers if TV is used"
   initial_state: "on"
   trigger:

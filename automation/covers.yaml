@@ -142,7 +142,7 @@
   initial_state: "on"
   trigger:
     platform: state
-    entity_id: sensor.button_livingroom_click
+    entity_id: sensor.button_livingroom_action
     to: "hold"
   action:
     - service: switch.toggle
