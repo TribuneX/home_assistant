@@ -13,7 +13,7 @@
         minutes: 1
     # - service: script.init_tv
     # - service: script.init_tv_2
-    - service: script.init_sonos
+    # - service: script.init_sonos
 
 - alias: "Startup: Startup nobody is home"
   initial_state: "on"
