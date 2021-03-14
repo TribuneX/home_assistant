@@ -36,3 +36,17 @@
           entity_id:
             - switch.tv
             - switch.sonos_playbar
+    cover_coach:
+      value_template: "{{ state_attr('cover.livingroom_coach_left', 'current_position') == 50 }}"
+      turn_off:
+        - service: cover.open_cover
+          entity_id:
+            - cover.livingroom_coach_left
+            - cover.livingroom_coach_right
+      turn_on:
+        - service: cover.set_cover_position
+          data:
+            entity_id:
+              - cover.livingroom_coach_right
+              - cover.livingroom_coach_left
+            position: 50

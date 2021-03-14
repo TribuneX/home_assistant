@@ -297,34 +297,6 @@ open_covers_for_tv:
     - service: cover.open_cover
       entity_id: cover.livingroom_tv
 
-close_covers_coach:
-  sequence:
-    - condition: state
-      entity_id: cover.livingroom_coach_left
-      state: "open"
-    - service: cover.set_cover_position
-      data:
-        entity_id: cover.livingroom_coach_left
-        position: 50
-    - condition: state
-      entity_id: cover.livingroom_coach_right
-      state: "open"
-    - service: cover.set_cover_position
-      data:
-        entity_id: cover.livingroom_coach_right
-        position: 50
-
-open_covers_coach:
-  sequence:
-    - condition: template
-      value_template: '{{ state_attr("cover.livingroom_coach_left", "current_position") == 50 }}'
-    - service: cover.open_cover
-      entity_id: cover.livingroom_coach_left
-    - condition: template
-      value_template: '{{ state_attr("cover.livingroom_coach_right", "current_position") == 50 }}'
-    - service: cover.open_cover
-      entity_id: cover.livingroom_coach_right
-
 disable_alarm:
   sequence:
     - service: alarm_control_panel.alarm_disarm
