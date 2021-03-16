@@ -334,5 +334,3 @@ toggle_speaker_and_light_childroom:
       state: "on"
     - service: light.toggle
       entity_id: light.child
-      brightness: 150
-      transition: 3
