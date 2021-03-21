@@ -104,10 +104,6 @@
       friendly_name: "Epson"
       value_template: "{{ 'online' if is_state('device_tracker.epson', 'home') else 'off' }}"
 
-    broadlink:
-      friendly_name: "Broadlink"
-      value_template: "{{ 'online' if is_state('device_tracker.broadlink', 'home') else 'off' }}"
-
     plex:
       friendly_name: "Plex"
       value_template: "{{ 'online' if is_state('device_tracker.plex', 'home') else 'off' }}"
@@ -115,10 +111,6 @@
     switch:
       friendly_name: "Switch"
       value_template: "{{ 'online' if is_state('device_tracker.switch', 'home') else 'off' }}"
-
-    tradfri:
-      friendly_name: "Tradfri Gateway"
-      value_template: "{{ 'online' if is_state('device_tracker.tradfri', 'home') else 'off' }}"
 
     appletv_bedroom:
       friendly_name: "AppleTV Bedroom"
@@ -131,35 +123,6 @@
     server:
       friendly_name: "Server"
       value_template: "{{ 'online' if is_state('device_tracker.server', 'home') else 'off' }}"
-
-    aqara_gateway:
-      friendly_name: "Aqara Gateway"
-      value_template: "{{ 'online' if is_state('device_tracker.aqaragateway', 'home') else 'off' }}"
-
-    sonoff_tv:
-      friendly_name: "Sonoff TV"
-      value_template: "{{ 'online' if is_state('device_tracker.sonofftv', 'home') else 'off' }}"
-
-    sonoff_tv_2:
-      friendly_name: "Sonoff TV2"
-      value_template: "{{ 'online' if is_state('device_tracker.sonofftv2', 'home') else 'off' }}"
-
-    sonoff_speaker_1:
-      friendly_name: "Sonoff Speaker 1"
-      value_template: "{{ 'online' if is_state('device_tracker.sonoffspeakerlivingroom', 'home') else 'off' }}"
-
-    sonoff_speaker_2:
-      friendly_name: "Sonoff Speaker 2"
-      value_template: "{{ 'online' if is_state('device_tracker.sonoffdefault1', 'home') else 'off' }}"
-
-    bonsai_water_level_low:
-      friendly_name: "Bonsai Water Levels"
-      value_template: >
-        {% if ( (is_state('plant.bonsai', 'problem')) and (is_state('group.user_1', 'home')) and (is_state(' binary_sensor.dark_outside', 'off')) ) %}
-        on
-        {% else %}
-        off
-        {% endif %}
 
     robot_dust_bin:
       friendly_name: "Robot dust bin"

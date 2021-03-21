@@ -18,13 +18,7 @@ entities:
   - sensor.door1_battery
   - sensor.door2_battery
   - sensor.robo
-  - sensor.tradfri
   - sensor.server
-  - sensor.tradfri_remote_control
-  - sensor.sonoff_speaker_1
-  - sensor.sonoff_speaker_2
-  - sensor.sonoff_tv
-  - sensor.sonoff_tv_2
   - sensor.switch
   - sensor.switch1_battery
   - sensor.eingang
@@ -43,3 +37,5 @@ entities:
 entity_globs:
   - sensor.batphone_*
   - sensor.batpad_*
+  - binary_sensor.*_update_available
+  - sensor.*_linkquality
