@@ -297,6 +297,9 @@ close_covers_for_tv:
 
 open_covers_for_tv:
   sequence:
+    - condition: state
+      entity_id: switch.cover_coach
+      state: "off"
     - condition: template
       value_template: '{{ state_attr("cover.livingroom_tv", "current_position") == 50 }}'
     - service: cover.open_cover
