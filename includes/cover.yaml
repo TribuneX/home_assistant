@@ -13,6 +13,10 @@
   payload_open: "open"
   payload_close: "close"
   payload_stop: "stop"
+  state_opening: "open"
+  state_closing: "close"
+  state_stopped: "stop"
+  device_class: shutter
   position_open: 100
   position_closed: 0
   optimistic: false
@@ -28,6 +32,10 @@
   payload_open: "open"
   payload_close: "close"
   payload_stop: "stop"
+  state_opening: "open"
+  state_closing: "close"
+  state_stopped: "stop"
+  device_class: shutter
   position_open: 100
   position_closed: 0
   optimistic: false
@@ -43,6 +51,10 @@
   payload_open: "open"
   payload_close: "close"
   payload_stop: "stop"
+  state_opening: "open"
+  state_closing: "close"
+  state_stopped: "stop"
+  device_class: shutter
   position_open: 100
   position_closed: 0
   optimistic: false
@@ -58,6 +70,10 @@
   payload_open: "open"
   payload_close: "close"
   payload_stop: "stop"
+  state_opening: "open"
+  state_closing: "close"
+  state_stopped: "stop"
+  device_class: shutter
   position_open: 100
   position_closed: 0
   optimistic: false
@@ -73,6 +89,10 @@
   payload_open: "open"
   payload_close: "close"
   payload_stop: "stop"
+  state_opening: "open"
+  state_closing: "close"
+  state_stopped: "stop"
+  device_class: shutter
   position_open: 100
   position_closed: 0
   optimistic: false
@@ -88,6 +108,10 @@
   payload_open: "open"
   payload_close: "close"
   payload_stop: "stop"
+  state_opening: "open"
+  state_closing: "close"
+  state_stopped: "stop"
+  device_class: shutter
   position_open: 100
   position_closed: 0
   optimistic: false
@@ -103,6 +127,10 @@
   payload_open: "open"
   payload_close: "close"
   payload_stop: "stop"
+  state_opening: "open"
+  state_closing: "close"
+  state_stopped: "stop"
+  device_class: shutter
   position_open: 100
   position_closed: 0
   optimistic: false
@@ -118,6 +146,10 @@
   payload_open: "open"
   payload_close: "close"
   payload_stop: "stop"
+  state_opening: "open"
+  state_closing: "close"
+  state_stopped: "stop"
+  device_class: shutter
   position_open: 100
   position_closed: 0
   optimistic: false
