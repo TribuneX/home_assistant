@@ -79,14 +79,6 @@ history:
 # Support for iOS app
 ios:
 
-# Presence Detection
-device_tracker:
-  - platform: fritz
-    host: !secret fritz_host
-    username: !secret fritz_home_username
-    password: !secret fritz_home_password
-    track_new_devices: false
-
 owntracks:
   max_gps_accuracy: 100
 
