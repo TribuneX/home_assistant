@@ -43,15 +43,15 @@ map:
 
 system_health:
 
-influxdb:
-  host: !secret influxdb_ip
-  username: homeassistant
-  password: !secret influxdb_password
-  max_retries: 10
-  include:
-    domains:
-      - sensor
-      - binary_sensor
+#influxdb:
+#  host: !secret influxdb_ip
+#  username: homeassistant
+#  password: !secret influxdb_password
+#  max_retries: 10
+#  include:
+#    domains:
+#      - sensor
+#      - binary_sensor
 
 recorder:
   db_url: !secret mysql_path
