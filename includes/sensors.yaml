@@ -18,9 +18,6 @@
     - precip_probability
     - cloud_cover
 
-- platform: fritzbox_netmonitor
-  host: !secret fritz_host
-
 - platform: command_line
   name: CPU Temperature
   command: "cat /sys/class/thermal/thermal_zone0/temp"
