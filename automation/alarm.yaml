@@ -12,7 +12,7 @@
         - binary_sensor.gang_motion_2
         - binary_sensor.motion_gang
         - binary_sensor.motion_office
-        - binary_sensor.motion_eingang
+        - binary_sensor.entry
       to: 'on'
   condition:
     condition: and
@@ -176,17 +176,11 @@
 - alias: "Mail: The mailbox was opened"
   initial_state: "on"
   trigger:
-    - platform: event
-      event_type: xiaomi_aqara.movement
-      event_data:
-        entity_id: sensor.vibration_action
-        movement_type: tilt
-    - platform: state
-      entity_id: sensor.vibration_action
-      to: 'vibration'
-    - platform: state
-      entity_id: sensor.vibration_action
-      to: 'tilt'
+    - device_id: b9805d8380855ea31eb01ce954f06e1d
+      domain: zha
+      platform: device
+      type: device_tilted
+      subtype: device_tilted
   action:
     - service: notify.devices_user_1
       data_template:
