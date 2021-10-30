@@ -215,10 +215,6 @@ light.stars:
   assumed_state: false
 light.bedroom:
   friendly_name: Bedroom Lights
-light.living_room:
-  friendly_name: Living Room Lights
-light.kitchen:
-  friendly_name: Kitchen Lights
 light.gang:
   friendly_name: Gang
 

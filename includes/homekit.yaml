@@ -30,7 +30,7 @@ filter:
     - light.office
     - light.hallway
     - light.kitchen
-    - light.living_room
+    - light.sofa
     - light.sofa
     - light.bedroom
     - light.bed2

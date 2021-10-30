@@ -79,11 +79,11 @@ turn_on_vacation_lights:
         title: "Vacation mode"
         message: "I switched on the lights while you are on vacation"
     - service: light.turn_on
-      entity_id: light.living_room
+      entity_id: light.sofa
     - delay:
         minutes: 30
     - service: light.turn_off
-      entity_id: light.living_room
+      entity_id: light.sofa
 
 turn_off_livingroom_delay_10:
   alias: "Turn off livingroom group (delay 10 minutes)"
@@ -91,14 +91,14 @@ turn_off_livingroom_delay_10:
     - delay:
         minutes: 10
     - service: light.turn_off
-      entity_id: light.living_room
+      entity_id: light.sofa
     - service: script.turn_off_christmas
 
 turn_off_livingroom:
   alias: "Turn off livingroom group"
   sequence:
     - service: light.turn_off
-      entity_id: light.living_room
+      entity_id: light.sofa
     - service: script.turn_off_christmas
 
 turn_off_bedroom_delay_120:
@@ -171,13 +171,13 @@ turn_on_livingroom_default_lights:
   sequence:
     - service: light.turn_on
       data:
-        entity_id: light.living_room
+        entity_id: light.sofa
 
 turn_off_living_room_lights:
   sequence:
     - service: light.turn_off
       data:
-        entity_id: light.living_room
+        entity_id: light.sofa
 
 start_vacuum_cleaning:
   alias: "Start the vacuum"

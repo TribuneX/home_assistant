@@ -41,3 +41,12 @@
   entities:
     - light.front_gang
     - light.front_gang_2
+
+- platform: group
+  name: Kitchen
+  entities:
+    - light.kitchen_1
+    - light.kitchen_2
+    - light.kitchen_3
+    - light.kitchen_4
+    - light.kitchen_5
