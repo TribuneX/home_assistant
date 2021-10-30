@@ -90,15 +90,15 @@ turn_off_livingroom_delay_10:
   sequence:
     - delay:
         minutes: 10
-    - service: homeassistant.turn_off
-      entity_id: group.living_room
+    - service: light.turn_off
+      entity_id: light.living_room
     - service: script.turn_off_christmas
 
 turn_off_livingroom:
   alias: "Turn off livingroom group"
   sequence:
-    - service: homeassistant.turn_off
-      entity_id: group.living_room
+    - service: light.turn_off
+      entity_id: light.living_room
     - service: script.turn_off_christmas
 
 turn_off_bedroom_delay_120:

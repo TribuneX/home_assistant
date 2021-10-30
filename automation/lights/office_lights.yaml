@@ -5,4 +5,4 @@
     input:
       motion_sensor: binary_sensor.motion_office
       target_light:
-        entity_id: light.arbeitszimmer
+        entity_id: light.office

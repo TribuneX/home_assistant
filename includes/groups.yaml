@@ -1,10 +1,6 @@
 ##########################
 # Groups
 ##########################
-living_room:
-  name: "Living Room"
-  entities:
-    - light.living_room
 bed_room:
   name: "Bedroom"
   entities:
