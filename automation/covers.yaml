@@ -137,13 +137,3 @@
     - delay:
         minutes: '{{ range(2, 36) | random }}'
     - service: script.open_all_covers
-
-- alias: "Cover: Close covers in living room with hold action"
-  initial_state: "on"
-  trigger:
-    platform: state
-    entity_id: sensor.button_livingroom_action
-    to: "hold"
-  action:
-    - service: switch.toggle
-      entity_id: switch.cover_coach

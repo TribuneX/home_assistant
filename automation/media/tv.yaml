@@ -24,25 +24,24 @@
     service: switch.toggle
     entity_id: switch.tv_media
 
-- alias: "TV: Toggle TV on single press"
-  initial_state: "on"
-  trigger:
-    platform: state
-    entity_id: sensor.button_livingroom_action
-    to: "single"
-  action:
-    - service: switch.toggle
-      entity_id: switch.tv_media
+- alias: "Button: Toggle TV and Sonos via button"
+  use_blueprint:
+    path: SeanM/zha-aqara-wireless-mini-switch.yaml
+    input:
+      aqara_mini_switch: 7e237bc87038fb5dedc5330f5b42497c
+      button_single_press:
+        - service: switch.toggle
+          target:
+            entity_id: switch.tv_media
+      button_double_press:
+        - service: switch.toggle
+          target:
+            entity_id: switch.sonos_playbar
+      button_long_press:
+        - service: switch.toggle
+          target:
+            entity_id: switch.cover_coach
 
-- alias: "Speaker: Toggle playbar on double press"
-  initial_state: "on"
-  trigger:
-    platform: state
-    entity_id: sensor.button_livingroom_action
-    to: "double"
-  action:
-    - service: switch.toggle
-      entity_id: switch.sonos_playbar
 
 - alias: "TV: Close covers if TV is used"
   initial_state: "on"
