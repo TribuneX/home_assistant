@@ -35,3 +35,9 @@
   optimistic: false
   qos: 0
   retain: true
+
+- platform: group
+  name: Gang
+  entities:
+    - light.front_gang
+    - light.front_gang_2

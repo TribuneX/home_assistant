@@ -190,7 +190,7 @@ binary_sensor.motion_office:
   friendly_name: "Motion Office"
 sensor.illumination_office:
   friendly_name: "Office"
-binary_sensor.entry:
+binary_sensor.motion_eingang:
   friendly_name: "Motion Entrance"
 
 # Device Tracker
@@ -219,8 +219,8 @@ light.living_room:
   friendly_name: Living Room Lights
 light.kitchen:
   friendly_name: Kitchen Lights
-light.entrance:
-  friendly_name: Entrance Lights
+light.gang:
+  friendly_name: Gang
 
 # Groups
 group.user_1:

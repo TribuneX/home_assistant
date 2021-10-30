@@ -10,9 +10,9 @@
         - binary_sensor.motion_livingroom
         - binary_sensor.gang_motion
         - binary_sensor.gang_motion_2
-        - binary_sensor.motion_entrance
+        - binary_sensor.motion_gang
         - binary_sensor.motion_office
-        - binary_sensor.entry
+        - binary_sensor.motion_eingang
       to: 'on'
   condition:
     condition: and

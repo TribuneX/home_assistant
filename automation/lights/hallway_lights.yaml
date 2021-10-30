@@ -10,14 +10,14 @@
   use_blueprint:
     path: motion_lights_dark_outside.yaml
     input:
-      motion_sensor: binary_sensor.motion_entrance
+      motion_sensor: binary_sensor.motion_gang
       target_light:
-        entity_id: light.entrance
+        entity_id: light.gang
 
 - alias: Trigger front door light by motion sensor
   use_blueprint:
     path: motion_lights.yaml
     input:
-      motion_sensor: binary_sensor.entry
+      motion_sensor: binary_sensor.motion_eingang
       target_light:
         entity_id: light.eingang
