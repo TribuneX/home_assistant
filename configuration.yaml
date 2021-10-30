@@ -43,7 +43,7 @@ map:
 
 system_health:
 
-#influxdb:
+# influxdb:
 #  host: !secret influxdb_ip
 #  username: homeassistant
 #  password: !secret influxdb_password

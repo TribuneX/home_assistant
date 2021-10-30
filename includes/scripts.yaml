@@ -262,7 +262,7 @@ close_all_covers:
     - service: cover.close_cover
       entity_id: cover.livingroom_right
     - delay:
-         minutes: 60
+        minutes: 60
     - service: cover.close_cover
       entity_id: cover.kitchen
 
