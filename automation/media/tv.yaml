@@ -1,12 +1,14 @@
 - alias: "TV: Toggle TV2 in bedroom on long button press"
   initial_state: "on"
   trigger:
-    platform: state
-    entity_id: sensor.bedroom_click
-    to: "long"
+    - device_id: 3fc934a83becd8fc3406f5ca61be4928
+      domain: zha
+      platform: device
+      type: remote_button_long_press
+      subtype: button
   action:
-    - service: switch.toggle
-      entity_id: switch.tv_2
+    service: switch.toggle
+    entity_id: switch.tv_2
 
 - alias: "TV: Toggle on AppleTV on tap twice action"
   initial_state: "on"

@@ -39,9 +39,11 @@
 - alias: "Lights: Toggle lights in bedroom"
   initial_state: "on"
   trigger:
-    platform: state
-    entity_id: sensor.bedroom_click
-    to: "single"
+    - device_id: 3fc934a83becd8fc3406f5ca61be4928
+      domain: zha
+      platform: device
+      type: remote_button_short_press
+      subtype: remote_button_short_press
   action:
-    - service: light.toggle
-      entity_id: light.bed1
+    service: light.toggle
+    entity_id: light.bed1
