@@ -10,21 +10,21 @@ filter:
     - binary_sensor.living_room_balcony_door
     - binary_sensor.childrens_room_door
     - binary_sensor.motion_livingroom
-    - sensor.temperature_bath
-    - sensor.humidity_bath
-    - sensor.pressure_bath
-    - sensor.temperature_office
-    - sensor.humidity_office
-    - sensor.pressure_office
+    - sensor.bath_temperature
+    - sensor.bath_humidity
+    - sensor.bath_pressure
+    - sensor.office_temperature
+    - sensor.office_humidity
+    - sensor.office_pressure
     - binary_sensor.office_door
-    - sensor.temperature_livingroom
-    - sensor.humidity_livingroom
-    - sensor.pressure_livingroom
-    - sensor.pressure_bedroom
-    - sensor.humidity_bedroom
-    - sensor.temperature_bedroom
-    - sensor.humidity_childs_room
-    - sensor.temperature_childs_room
+    - sensor.livingroom_temperature
+    - sensor.livingroom_humidity
+    - sensor.livingroom_pressure
+    - sensor.bedroom_pressure
+    - sensor.bedroom_humidity
+    - sensor.bedroom_temperature
+    - sensor.child_humidity
+    - sensor.child_temperature
     - binary_sensor.water_leak_sensor
     - switch.vacuum_mode
     - light.office
