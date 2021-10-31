@@ -1,32 +1,4 @@
 - platform: mqtt
-  schema: json
-  name: living_room
-  command_topic: "zigbee2mqtt/living_room/set"
-  state_topic: "zigbee2mqtt/living_room"
-  brightness: 150
-
-- platform: mqtt
-  schema: json
-  name: bedroom
-  command_topic: "zigbee2mqtt/bed_room/set"
-  state_topic: "zigbee2mqtt/bed_room"
-  brightness: 150
-
-- platform: mqtt
-  schema: json
-  name: kitchen
-  command_topic: "zigbee2mqtt/kitchen/set"
-  state_topic: "zigbee2mqtt/kitchen"
-  brightness: 200
-
-- platform: mqtt
-  schema: json
-  name: entrance
-  command_topic: "zigbee2mqtt/entrance/set"
-  state_topic: "zigbee2mqtt/entrance"
-  brightness: 150
-
-- platform: mqtt
   name: "stairs"
   state_topic: "shellies/shelly1-98F4ABD0B809/relay/0"
   command_topic: "shellies/shelly1-98F4ABD0B809/relay/0/command"
@@ -50,3 +22,9 @@
     - light.kitchen_3
     - light.kitchen_4
     - light.kitchen_5
+
+- platform: group
+  name: bedroom
+  entities:
+    - light.bed_1
+    - light.bed_2
