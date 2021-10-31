@@ -85,16 +85,6 @@ owntracks:
 # Track the sun
 sun:
 
-media_player:
-  - platform: apple_tv
-    host: atv.cbs-service.net
-    login_id: !secret atv_login
-    credentials: !secret atv_credentials
-  - platform: apple_tv
-    host: atv2.cbs-service.net
-    login_id: !secret atv_login
-    credentials: !secret atv2_credentials
-
 input_number:
   sonos_speaker:
     name: Volume
