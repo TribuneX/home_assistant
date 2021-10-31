@@ -173,6 +173,21 @@
         title: "Door"
         message: "Front Door is still open"
 
+- alias: "Door: Garden trunk left open"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.garden_trunk
+      from: "off"
+      to: "on"
+      for:
+        minutes: 5
+  action:
+    - service: notify.devices_user_1
+      data_template:
+        title: "Door"
+        message: "Garden trunk is still open!"
+
 - alias: "Mail: The mailbox was opened"
   initial_state: "on"
   trigger:
