@@ -155,6 +155,7 @@ doors:
     - binary_sensor.office_door
     - binary_sensor.living_room_balcony_door
     - binary_sensor.childrens_room_door
+    - binary_sensor.garden_trunk
 motion_gang:
   name: motion_gang
   entities:
