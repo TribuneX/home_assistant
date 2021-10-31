@@ -191,3 +191,29 @@
             thread-id: "mailbox"
     - delay:
         seconds: 10
+
+- alias: "Water: Water leak detected by water sensor"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.water_leak_sensor
+    from: "off"
+    to: "on"
+  action:
+    - service: notify.devices_user_1
+      data:
+        title: "Water Sensor"
+        message: "Water leak detected! Check washing mashine"
+
+- alias: "Water: Stopped Water leak detected by water sensor"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.water_leak_sensor
+    from: "on"
+    to: "off"
+  action:
+    - service: notify.devices_user_1
+      data:
+        title: "Water Sensor"
+        message: "Water leak got resolved"

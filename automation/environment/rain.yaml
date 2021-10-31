@@ -30,36 +30,3 @@
         title: "Rain Stoppes"
         message: "It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}"
 
-- alias: "Rain: Rain detected by water sensor"
-  initial_state: "on"
-  trigger:
-    platform: state
-    entity_id: binary_sensor.water_leak_sensor
-    from: "off"
-    to: "on"
-  condition:
-    - condition: time
-      after: "07:00"
-      before: "22:00"
-  action:
-    - service: notify.devices_user_1
-      data:
-        title: "Rain Sensor"
-        message: "Rain detected: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}"
-
-- alias: "Rain: Stopped Rain detected by water sensor"
-  initial_state: "on"
-  trigger:
-    platform: state
-    entity_id: binary_sensor.water_leak_sensor
-    from: "on"
-    to: "off"
-  condition:
-    - condition: time
-      after: "07:00"
-      before: "22:00"
-  action:
-    - service: notify.devices_user_1
-      data:
-        title: "Rain Sensor"
-        message: "It looks like it stopped raining: ({{states.sensor.dark_sky_precip_probability.state}}%) / ({{states.sensor.dark_sky_precip_intensity.state}}). {{states.sensor.dark_sky_summary.state}}"
