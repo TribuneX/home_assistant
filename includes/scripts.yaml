@@ -258,11 +258,11 @@ close_all_covers:
     - service: cover.close_cover
       entity_id: cover.livingroom_front
     - delay:
-        minutes: 30
+        minutes: 90
     - service: cover.close_cover
       entity_id: cover.livingroom_right
     - delay:
-        minutes: 60
+        minutes: 120
     - service: cover.close_cover
       entity_id: cover.kitchen
 
