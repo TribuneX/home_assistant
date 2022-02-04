@@ -22,7 +22,7 @@
     - service: notify.devices_user_1
       data:
         title: "Robot"
-        message: "Cleanup successful after {{states.vacuum.vacuum_cleaner.attributes.cleaning_time}} minutes."
+        message: "Cleanup successful after {{'%.2f'|format|states('sensor.vacuum_cleaner_current_clean_duration')| int / 60)}} minutes."
     - service: input_boolean.turn_on
       data:
         entity_id: input_boolean.cleaned_today
@@ -31,23 +31,15 @@
   initial_state: "on"
   trigger:
     - platform: time
-      at: "14:00"
-    - platform: state
-      entity_id: group.personen
-      from: home
-      to: not_home
+      at: "11:00"
   condition:
     condition: and
     conditions:
       - condition: time
-        after: "14:00:00"
-        before: "22:00:00"
         weekday:
           - mon
-          - fri
-      - condition: state
-        entity_id: group.personen
-        state: not_home
+          - wed
+          - sat
       - condition: state
         entity_id: input_boolean.cleaned_today
         state: "off"
