@@ -37,6 +37,7 @@ steps:
   - name: upgrade
     commands:
       - cd /opt/configurations/docker-compose/homeassistant
+      - bash
       - docker-compose pull
   - name: clean
     commands:
