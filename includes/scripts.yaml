@@ -269,7 +269,7 @@ close_all_covers:
 close_front_covers:
   sequence:
     - condition: numeric_state
-      entity_id: sensor.dark_sky_temperature
+      entity_id: sensor.openweathermap_temperature
       above: 25
     - condition: template
       value_template: '{{ state_attr("cover.front", "current_position") == 100 }}'

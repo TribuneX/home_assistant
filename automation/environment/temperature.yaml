@@ -11,7 +11,7 @@
         entity_id: device_tracker.batphone
         state: "home"
       - condition: numeric_state
-        entity_id: "sensor.dark_sky_temperature"
+        entity_id: "sensor.openweathermap_temperature"
         above: "20"
       - condition: state
         entity_id: binary_sensor.balcony_door
@@ -35,7 +35,7 @@
         entity_id: device_tracker.batphone
         state: "home"
       - condition: numeric_state
-        entity_id: "sensor.dark_sky_temperature"
+        entity_id: "sensor.openweathermap_temperature"
         above: "20"
       - condition: state
         entity_id: binary_sensor.balcony_door

@@ -47,7 +47,7 @@ sensor.fritz_netmonitor:
   icon: mdi:router-wireless
 binary_sensor.dark_outside:
   icon: mdi:weather-night
-sensor.dark_sky_temperature:
+sensor.openweathermap_temperature:
   friendly_name: Outdoor
 
 # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2

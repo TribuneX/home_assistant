@@ -66,7 +66,7 @@
   initial_state: "on"
   trigger:
     - platform: numeric_state
-      entity_id: sensor.dark_sky_temperature
+      entity_id: sensor.openweathermap_temperature
       above: 25
     - platform: state
       entity_id: group.personen
@@ -98,7 +98,7 @@
         after: "10:00"
         before: "20:00"
       - condition: numeric_state
-        entity_id: sensor.dark_sky_temperature
+        entity_id: sensor.openweathermap_temperature
         below: 25
   action:
     - service: script.open_front_covers

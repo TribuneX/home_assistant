@@ -2,22 +2,6 @@
 # Sensors
 ##########################
 
-# Weather Prediction
-- platform: darksky
-  api_key: !secret dark_sky_api_password
-  monitored_conditions:
-    - summary
-    - temperature
-    - wind_speed
-    - humidity
-    - temperature_high
-    - temperature_low
-    - hourly_summary
-    - precip_type
-    - precip_intensity
-    - precip_probability
-    - cloud_cover
-
 - platform: command_line
   name: CPU Temperature
   command: "cat /sys/class/thermal/thermal_zone0/temp"
@@ -90,7 +74,7 @@
   sensors:
     # Inspired by https://community.home-assistant.io/t/temp-compare/19497
     out_vs_in:
-      value_template: "{{states.sensor.dark_sky_temperature.state | round(0) - states.sensor.temperature_livingroom.state | round(0)}}"
+      value_template: "{{states.sensor.openweathermap_temperature.state | round(0) - states.sensor.temperature_livingroom.state | round(0)}}"
       friendly_name: "Temperature Diff"
 
     robo:

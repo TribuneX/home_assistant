@@ -174,7 +174,7 @@ docker_container:
 temperature:
   name: "Temperature"
   entities:
-    - sensor.dark_sky_temperature
+    - sensor.openweathermap_temperature
     - sensor.temperature_office
     - sensor.temperature_bath
     - sensor.temperature_bedroom
