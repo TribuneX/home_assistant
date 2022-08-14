@@ -37,7 +37,7 @@
         state: "closed"
       - condition: time
         after: "06:00"
-        before: "10:00"
+        before: "11:00"
   action:
     - service: script.open_all_covers
 

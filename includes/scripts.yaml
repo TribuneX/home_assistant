@@ -239,11 +239,23 @@ open_all_covers:
     - delay:
         seconds: 10
     - service: cover.open_cover
-      entity_id: cover.livingroom
-    - delay:
-        seconds: 10
-    - service: cover.open_cover
-      entity_id: cover.kitchen
+      entity_id: cover.livingroom_front
+    - if:
+        - condition: numeric_state
+          entity_id: "sensor.openweathermap_temperature"
+          below: "20"
+      then:
+        - service: cover.open_cover
+          entity_id: cover.side
+      else:
+        - service: cover.set_cover_position
+          data:
+            entity_id: cover.side
+            position: 40
+        - delay:
+            minutes: 90
+        - service: cover.open_cover
+          entity_id: cover.side
 
 close_all_covers:
   sequence:
@@ -252,19 +264,23 @@ close_all_covers:
     - delay:
         seconds: 10
     - service: cover.close_cover
-      entity_id: cover.office
-    - delay:
-        seconds: 10
-    - service: cover.close_cover
       entity_id: cover.livingroom_front
     - delay:
         minutes: 90
     - service: cover.close_cover
-      entity_id: cover.livingroom_right
+      entity_id: cover.livingroom_coach_right
     - delay:
         minutes: 120
     - service: cover.close_cover
       entity_id: cover.kitchen
+    - delay:
+        seconds: 10
+    - service: cover.close_cover
+      entity_id: cover.office
+    - delay:
+        seconds: 10
+    - service: cover.close_cover
+      entity_id: cover.livingroom_small
 
 close_front_covers:
   sequence:
