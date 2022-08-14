@@ -11,21 +11,21 @@
         title: "Robot"
         message: "Robot started to clean!"
 
-- alias: "Robot: Robot stopped cleaning"
-  initial_state: "on"
-  trigger:
-    - platform: state
-      entity_id: vacuum.vacuum_cleaner
-      from: "returning"
-      to: "docked"
-  action:
-    - service: notify.devices_user_1
-      data:
-        title: "Robot"
-        message: "Cleanup successful after {{'%.2f'|format|states('sensor.vacuum_cleaner_current_clean_duration')| int / 60)}} minutes."
-    - service: input_boolean.turn_on
-      data:
-        entity_id: input_boolean.cleaned_today
+#- alias: "Robot: Robot stopped cleaning"
+#  initial_state: "on"
+#  trigger:
+#    - platform: state
+#      entity_id: vacuum.vacuum_cleaner
+#      from: "returning"
+#      to: "docked"
+#  action:
+#    - service: notify.devices_user_1
+#      data:
+#        title: "Robot"
+#        message: "Cleanup successful after {{'%.2f'|format|states('sensor.vacuum_cleaner_current_clean_duration')| int / 60)}} minutes."
+#    - service: input_boolean.turn_on
+#      data:
+#        entity_id: input_boolean.cleaned_today
 
 - alias: "Robot: Robot cleanup if nobody is home"
   initial_state: "on"
