@@ -1,13 +1,3 @@
-- platform: mqtt
-  name: "stairs"
-  state_topic: "shellies/shelly1-98F4ABD0B809/relay/0"
-  command_topic: "shellies/shelly1-98F4ABD0B809/relay/0/command"
-  payload_on: "on"
-  payload_off: "off"
-  optimistic: false
-  qos: 0
-  retain: true
-
 - platform: group
   name: Gang
   entities:

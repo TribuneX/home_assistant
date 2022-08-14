@@ -25,20 +25,6 @@ config:
 logger:
   default: error
 
-mqtt:
-  broker: !secret mqtt_broker_ip
-  username: owntracks
-  password: !secret mqtt_password
-  protocol: 3.1
-  port: 1883
-  discovery: true
-  birth_message:
-    topic: "hass/status"
-    payload: "online"
-  will_message:
-    topic: "hass/status"
-    payload: "offline"
-
 map:
 
 system_health:
@@ -151,3 +137,4 @@ homekit: !include includes/homekit.yaml
 input_select: !include includes/input_select.yaml
 cover: !include includes/cover.yaml
 alarm_control_panel: !include includes/alarm_control_panel.yaml
+mqtt: !include includes/mqtt.yaml

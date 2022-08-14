@@ -1,0 +1,158 @@
+##########################
+# Cover
+##########################
+
+cover:
+  - name: "Office Left"
+    state_topic: "shellies/shellyswitch25-C46A6A/roller/0"
+    command_topic: "shellies/shellyswitch25-C46A6A/roller/0/command"
+    position_topic: "shellies/shellyswitch25-C46A6A/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-C46A6A/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_opening: "open"
+    state_closing: "close"
+    state_stopped: "stop"
+    device_class: shutter
+    position_open: 100
+    position_closed: 0
+    optimistic: false
+
+  - name: "Office Right"
+    state_topic: "shellies/shellyswitch25-68C63AF98DE7/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF98DE7/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF98DE7/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF98DE7/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_opening: "open"
+    state_closing: "close"
+    state_stopped: "stop"
+    device_class: shutter
+    position_open: 100
+    position_closed: 0
+    optimistic: false
+
+  - name: "Livingroom Small"
+    state_topic: "shellies/shellyswitch25-68C63AF96014/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF96014/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF96014/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF96014/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_opening: "open"
+    state_closing: "close"
+    state_stopped: "stop"
+    device_class: shutter
+    position_open: 100
+    position_closed: 0
+    optimistic: false
+
+  - name: "Livingroom Door"
+    state_topic: "shellies/shellyswitch25-68C63AF982F5/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF982F5/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF982F5/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF982F5/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_opening: "open"
+    state_closing: "close"
+    state_stopped: "stop"
+    device_class: shutter
+    position_open: 100
+    position_closed: 0
+    optimistic: false
+
+  - name: "Livingroom Coach Right"
+    state_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_opening: "open"
+    state_closing: "close"
+    state_stopped: "stop"
+    device_class: shutter
+    position_open: 100
+    position_closed: 0
+    optimistic: false
+
+  - name: "Livingroom Coach Left"
+    state_topic: "shellies/shellyswitch25-68C63AF98CEB/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF98CEB/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF98CEB/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF98CEB/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_opening: "open"
+    state_closing: "close"
+    state_stopped: "stop"
+    device_class: shutter
+    position_open: 100
+    position_closed: 0
+    optimistic: false
+
+  - name: "Kitchen"
+    state_topic: "shellies/shellyswitch25-68C63AF962FF/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF962FF/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF962FF/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF962FF/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_opening: "open"
+    state_closing: "close"
+    state_stopped: "stop"
+    device_class: shutter
+    position_open: 100
+    position_closed: 0
+    optimistic: false
+
+  - name: "Child"
+    state_topic: "shellies/shellyswitch25-68C63AF997B0/roller/0"
+    command_topic: "shellies/shellyswitch25-68C63AF997B0/roller/0/command"
+    position_topic: "shellies/shellyswitch25-68C63AF997B0/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-68C63AF997B0/roller/0/command/pos"
+    qos: 1
+    retain: false
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    state_opening: "open"
+    state_closing: "close"
+    state_stopped: "stop"
+    device_class: shutter
+    position_open: 100
+    position_closed: 0
+    optimistic: false
+
+light:
+  - name: "stairs"
+    state_topic: "shellies/shelly1-98F4ABD0B809/relay/0"
+    command_topic: "shellies/shelly1-98F4ABD0B809/relay/0/command"
+    payload_on: "on"
+    payload_off: "off"
+    optimistic: false
+    qos: 0
+    retain: true
