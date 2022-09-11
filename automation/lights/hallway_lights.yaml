@@ -6,6 +6,23 @@
       target_light:
         entity_id: light.stairs
 
+- alias: Turn on hallway & stair lights for a fixed time period to support cleaning the floor
+  initial_state: "on"
+  trigger:
+    - platform: time
+      at: "11:30"
+  condition:
+    - condition: time
+      weekday:
+        - thu
+  action:
+    - service: light.turn_on
+      entity_id: light.stairs
+    - delay:
+        minutes: 60
+    - service: light.turn_off
+      entity_id: light.stairs
+
 - alias: Trigger front hallway lights by motion sensor
   use_blueprint:
     path: motion_lights_dark_outside.yaml
