@@ -1,0 +1,25 @@
+name: Deploy
+on:
+  workflow_run:
+    workflows: ["verify"]
+    branches: [master]
+    types:
+      - completed
+jobs:
+  pull:
+    runs-on: self-hosted
+    steps:
+      - run: docker compose pull
+        working-directory: /opt/configurations/docker-compose/homeassistant
+      - run: docker image prune -f && docker container prune -f
+  upgrade:
+    runs-on: self-hosted
+    steps:
+      - run: git fetch && git reset --hard origin/master
+        working-directory: /media/usbstick/container/homeassistant/config
+  deploy:
+    needs: upgrade
+    runs-on: self-hosted
+    steps:
+      - run: docker-compose down && docker-compose up -d
+        working-directory: /opt/configurations/docker-compose/homeassistant
