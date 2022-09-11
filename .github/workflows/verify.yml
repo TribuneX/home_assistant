@@ -1,0 +1,16 @@
+name: Verify
+on: [push]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    container: cytopia/yamllint:latest
+    steps:
+      - run: yamllint .
+  test:
+    runs-on: ubuntu-latest
+    container: homeassistant/home-assistant:latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: mv travis_secrets.yaml secrets.yaml
+      - run: python -m homeassistant --script check_config --config .
