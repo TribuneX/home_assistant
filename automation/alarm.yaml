@@ -232,3 +232,41 @@
       data:
         title: "Water Sensor"
         message: "Water leak got resolved"
+
+- alias: "Window: Bedroom window is still open"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroom_window
+      from: "off"
+      to: "on"
+      for:
+        minutes: 20
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.openweathermap_temperature
+      below: 10
+  action:
+    - service: notify.devices_user_1
+      data_template:
+        title: "Window"
+        message: "Window bedroom is open for more than 20 minutes"
+
+- alias: "Window: Bathroom window is still open"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bath_window
+      from: "off"
+      to: "on"
+      for:
+        minutes: 20
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.openweathermap_temperature
+      below: 10
+  action:
+    - service: notify.devices_user_1
+      data_template:
+        title: "Window"
+        message: "Bathroom window is open for more than 20 minutes"
