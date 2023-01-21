@@ -51,11 +51,12 @@
   trigger:
     - platform: numeric_state
       entity_id:
-        - sensor.humidity_bath
-        - sensor.humidity_bedroom
-        - sensor.humidity_livingroom
-        - sensor.humidity_office
-      above: 65
+        - sensor.bath_humidity
+        - sensor.bedroom_humidity
+        - sensor.livingroom_humidity
+        - sensor.office_humidity
+        - sensor.child_humidity
+      above: 60
   action:
     - service: nnotify.devices_user_1
       data:
