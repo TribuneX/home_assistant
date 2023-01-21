@@ -21,5 +21,5 @@ jobs:
     needs: upgrade
     runs-on: self-hosted
     steps:
-      - run: docker-compose down && docker-compose up -d
+      - run: docker compose down && docker compose up -d
         working-directory: /opt/configurations/docker-compose/homeassistant
