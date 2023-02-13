@@ -10,11 +10,11 @@
   initial_state: "on"
   trigger:
     - platform: time
-      at: "11:30"
+      at: "09:00"
   condition:
     - condition: time
       weekday:
-        - thu
+        - wed
   action:
     - service: light.turn_on
       entity_id: light.stairs
