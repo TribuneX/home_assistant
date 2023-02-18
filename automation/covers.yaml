@@ -37,11 +37,11 @@
     - service: script.open_all_covers
 
 
-- alias: "Cover: Open child cover in the morning at 7:30am"
+- alias: "Cover: Open child cover in the morning at 7:00am"
   initial_state: "on"
   trigger:
     platform: time
-    at: "07:30"
+    at: "07:00"
   condition:
     condition: time
     weekday:
