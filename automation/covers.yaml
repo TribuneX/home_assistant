@@ -37,11 +37,11 @@
     - service: script.open_all_covers
 
 
-- alias: "Cover: Open child cover in the morning at 7:00am"
+- alias: "Cover: Open child cover at 7:30am on weekdays"
   initial_state: "on"
   trigger:
     platform: time
-    at: "07:00"
+    at: "07:30"
   condition:
     condition: time
     weekday:
@@ -51,9 +51,31 @@
       - thu
       - fri
   action:
-    - service: script.open_all_covers
+    - service: cover.open_cover
+      entity_id: cover.child
 
+- alias: "Cover: Open child cover at 9:00am on weekends"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "09:00"
+  condition:
+    condition: time
+    weekday:
+      - sat
+      - sun
+  action:
+    - service: cover.open_cover
+      entity_id: cover.child
 
+- alias: "Cover: Close child cover at 7:30pm"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "07:30"
+  action:
+    - service: cover.close_cover
+      entity_id: cover.child
 
 - alias: "Cover: Close all covers in the evening"
   initial_state: "on"

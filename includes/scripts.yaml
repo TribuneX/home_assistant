@@ -230,15 +230,6 @@ turn_off_christmas:
 
 open_all_covers:
   sequence:
-    - if:
-        - condition: state
-          entity_id: cover.child
-          state: "closed"
-      then:
-        - service: cover.open_cover
-          entity_id: cover.child
-    - delay:
-        seconds: 10
     - service: cover.open_cover
       entity_id: cover.office
     - delay:
@@ -284,8 +275,6 @@ close_all_covers:
       entity_id: cover.livingroom_small
     - delay:
         seconds: 10
-    - service: cover.close_cover
-      entity_id: cover.child
 
 close_front_covers:
   sequence:
