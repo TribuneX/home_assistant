@@ -72,7 +72,7 @@
   initial_state: "on"
   trigger:
     platform: time
-    at: "07:30"
+    at: "19:30"
   action:
     - service: cover.close_cover
       entity_id: cover.child
