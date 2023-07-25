@@ -49,6 +49,7 @@ filter:
     - cover.all
     - cover.livingroom_front
     - alarm_control_panel.alarm
+    - switch.wallbox_charging_enabled
 entity_config:
   alarm_control_panel.alarm:
     code: 1234
