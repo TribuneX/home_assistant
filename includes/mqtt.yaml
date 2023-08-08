@@ -4,10 +4,10 @@
 
 cover:
   - name: "Office Left"
-    state_topic: "shellies/shellyswitch25-C46A6A/roller/0"
-    command_topic: "shellies/shellyswitch25-C46A6A/roller/0/command"
-    position_topic: "shellies/shellyswitch25-C46A6A/roller/0/pos"
-    set_position_topic: "shellies/shellyswitch25-C46A6A/roller/0/command/pos"
+    state_topic: "shellies/shellyswitch25-ECFABCC46A6A/roller/0"
+    command_topic: "shellies/shellyswitch25-ECFABCC46A6A/roller/0/command"
+    position_topic: "shellies/shellyswitch25-ECFABCC46A6A/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-ECFABCC46A6A/roller/0/command/pos"
     qos: 1
     retain: false
     payload_open: "open"
