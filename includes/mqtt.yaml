@@ -21,7 +21,8 @@ cover:
     position_closed: 0
     optimistic: false
 
-  - name: "Office Right"
+
+  - name: "Livingroom Door"
     state_topic: "shellies/shellyswitch25-68C63AF98DE7/roller/0"
     command_topic: "shellies/shellyswitch25-68C63AF98DE7/roller/0/command"
     position_topic: "shellies/shellyswitch25-68C63AF98DE7/roller/0/pos"
@@ -39,7 +40,7 @@ cover:
     position_closed: 0
     optimistic: false
 
-  - name: "Livingroom Small"
+  - name: "Livingroom Coach Left"
     state_topic: "shellies/shellyswitch25-68C63AF96014/roller/0"
     command_topic: "shellies/shellyswitch25-68C63AF96014/roller/0/command"
     position_topic: "shellies/shellyswitch25-68C63AF96014/roller/0/pos"
@@ -57,7 +58,7 @@ cover:
     position_closed: 0
     optimistic: false
 
-  - name: "Livingroom Door"
+  - name: "Livingroom Coach Right"
     state_topic: "shellies/shellyswitch25-68C63AF982F5/roller/0"
     command_topic: "shellies/shellyswitch25-68C63AF982F5/roller/0/command"
     position_topic: "shellies/shellyswitch25-68C63AF982F5/roller/0/pos"
@@ -75,7 +76,7 @@ cover:
     position_closed: 0
     optimistic: false
 
-  - name: "Livingroom Coach Right"
+  - name: "Kitchen"
     state_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0"
     command_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0/command"
     position_topic: "shellies/shellyswitch25-68C63AF969FE/roller/0/pos"
@@ -93,7 +94,7 @@ cover:
     position_closed: 0
     optimistic: false
 
-  - name: "Livingroom Coach Left"
+  - name: "Office Right"
     state_topic: "shellies/shellyswitch25-68C63AF98CEB/roller/0"
     command_topic: "shellies/shellyswitch25-68C63AF98CEB/roller/0/command"
     position_topic: "shellies/shellyswitch25-68C63AF98CEB/roller/0/pos"
@@ -111,7 +112,7 @@ cover:
     position_closed: 0
     optimistic: false
 
-  - name: "Kitchen"
+  - name: "Child"
     state_topic: "shellies/shellyswitch25-68C63AF962FF/roller/0"
     command_topic: "shellies/shellyswitch25-68C63AF962FF/roller/0/command"
     position_topic: "shellies/shellyswitch25-68C63AF962FF/roller/0/pos"
@@ -129,7 +130,7 @@ cover:
     position_closed: 0
     optimistic: false
 
-  - name: "Child"
+  - name: "Livingroom Small"
     state_topic: "shellies/shellyswitch25-68C63AF997B0/roller/0"
     command_topic: "shellies/shellyswitch25-68C63AF997B0/roller/0/command"
     position_topic: "shellies/shellyswitch25-68C63AF997B0/roller/0/pos"
