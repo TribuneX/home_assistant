@@ -1,7 +1,0 @@
-- alias: "Button: Toggle child speaker with button press"
-  use_blueprint:
-    path: SeanM/zha-aqara-wireless-mini-switch.yaml
-    input:
-      aqara_mini_switch: 7d4e44223d0f247d55e848f335b99273
-      button_single_press:
-        - service: script.toggle_speaker_and_light_childroom
