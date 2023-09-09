@@ -58,7 +58,7 @@
         - sensor.child_humidity
       above: 60
   action:
-    - service: nnotify.devices_user_1
+    - service: notify.devices_user_1
       data:
         title: "Humidity"
         message: >
