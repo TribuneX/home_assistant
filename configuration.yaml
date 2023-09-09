@@ -57,9 +57,6 @@ http:
   ip_ban_enabled: false
   login_attempts_threshold: 3
 
-# Discover some devices automatically
-discovery:
-
 # Enables support for tracking state changes over time.
 history:
 
