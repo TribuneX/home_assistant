@@ -51,4 +51,4 @@
       entity_id: input_boolean.vacation_mode
       state: "on"
   action:
-    - service: script.vacation_lights
+    - service: script.turn_on_vacation_lights
