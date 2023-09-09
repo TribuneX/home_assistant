@@ -47,9 +47,6 @@
   name: PING Bender
   host: bender.cbs-service.net
 
-- platform: workday
-  country: DE
-
 - platform: template
   sensors:
     # Inspired by https://community.home-assistant.io/t/virtual-light-sensor/31975/9
