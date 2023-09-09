@@ -60,6 +60,8 @@ http:
 # Enables support for tracking state changes over time.
 history:
 
+my:
+
 # Support for iOS app
 ios:
 
