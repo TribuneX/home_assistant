@@ -80,7 +80,7 @@ settings:
 devices:
   name: "Devices"
   entities:
-    - switch.tv
+    - switch.sonos_playbar
     - switch.tv_2
     - switch.speaker_1
     - switch.speaker_2

@@ -20,15 +20,12 @@
         service: vacuum.return_to_base
         entity_id: vacuum.vacuum_cleaner
     tv_media:
-      value_template: "{{ is_state('switch.tv', 'on')}}"
+      value_template: "{{ is_state('switch.sonos_playbar', 'on')}}"
       turn_on:
         service: script.turn_on_tv
       turn_off:
-        service: switch.turn_off
-        data:
-          entity_id:
-            - switch.tv
-            - switch.sonos_playbar
+        service: script.turn_off_tv
+
     cover_coach:
       value_template: "{{ state_attr('cover.livingroom_coach_left', 'current_position') == 50 }}"
       turn_off:

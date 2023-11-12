@@ -329,19 +329,40 @@ enable_alarm:
         entity_id: alarm_control_panel.alarm
         code: 1234
 
+apple_tv_sleep:
+  alias: "Make the Apple TV & TV sleep"
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.wohnzimmer
+      data:
+        delay_secs: 1
+        command:
+          - home_hold
+          - select
+    - service: media_player.turn_off
+      target:
+        entity_id: media_player.wohnzimmer
 
 turn_on_tv:
   sequence:
     - service: switch.turn_on
       data:
         entity_id:
-          - switch.tv
           - switch.sonos_playbar
     - service: remote.send_command
       data:
         entity_id: remote.wohnzimmer
         command:
           - menu
+
+turn_off_tv:
+  sequence:
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.sonos_playbar
+    - service: script.apple_tv_sleep
 
 toggle_speaker_and_light_childroom:
   sequence:

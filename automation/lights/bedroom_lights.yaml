@@ -16,7 +16,7 @@
   initial_state: "on"
   trigger:
     - platform: state
-      entity_id: switch.tv
+      entity_id: switch.tv_media
       from: "on"
       to: "off"
   condition:

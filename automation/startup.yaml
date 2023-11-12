@@ -28,7 +28,5 @@
     - service: homeassistant.turn_off
       entity_id: group.all_speaker
     - service: switch.turn_off
-      entity_id: switch.tv
-    - service: switch.turn_off
-      entity_id: switch.tv_2
+      entity_id: switch.tv_media
     - service: script.init_hass
