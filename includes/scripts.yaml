@@ -256,10 +256,6 @@ open_all_covers:
 close_all_covers:
   sequence:
     - service: cover.close_cover
-      entity_id: cover.livingroom_front
-    - delay:
-        minutes: 90
-    - service: cover.close_cover
       entity_id: cover.livingroom_coach_right
     - delay:
         minutes: 120
@@ -275,6 +271,11 @@ close_all_covers:
       entity_id: cover.livingroom_small
     - delay:
         seconds: 10
+    - delay:
+        minutes: 90
+    - service: cover.close_cover
+      entity_id: cover.livingroom_front
+
 
 close_front_covers:
   sequence:
