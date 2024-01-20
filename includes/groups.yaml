@@ -162,6 +162,7 @@ motion_gang:
     - binary_sensor.gang_motion
     - binary_sensor.gang_motion_2
     - binary_sensor.gang_motion_3
+    - binary_sensor.gang_motion_hue
 docker_container:
   name: "Docker Container"
   entities:
