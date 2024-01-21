@@ -21,6 +21,12 @@ filter:
     - sensor.livingroom_temperature
     - sensor.livingroom_humidity
     - sensor.livingroom_pressure
+    - sensor.child_temperature
+    - sensor.child_humidity
+    - sensor.child_pressure
+    - sensor.outdoor_temperature
+    - sensor.outdoor_humidity
+    - sensor.outdoor_pressure
     - sensor.bedroom_pressure
     - sensor.bedroom_humidity
     - sensor.bedroom_temperature
@@ -49,7 +55,7 @@ filter:
     - cover.all
     - cover.livingroom_front
     - alarm_control_panel.alarm
-    - switch.wallbox_charging_enabled
+#    - switch.wallbox_charging_enabled
 entity_config:
   alarm_control_panel.alarm:
     code: 1234
