@@ -345,12 +345,24 @@ apple_tv_sleep:
       target:
         entity_id: media_player.wohnzimmer
 
-turn_on_tv:
+turn_tv_and_playbar:
   sequence:
     - service: switch.turn_on
       data:
         entity_id:
           - switch.sonos_playbar
+    - service: script.turn_on_tv
+
+turn_off_tv_and_playbar:
+  sequence:
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.sonos_playbar
+    - service: script.turn_off_tv
+
+turn_on_tv:
+  sequence:
     - service: remote.send_command
       data:
         entity_id: remote.wohnzimmer
@@ -359,10 +371,6 @@ turn_on_tv:
 
 turn_off_tv:
   sequence:
-    - service: switch.turn_off
-      data:
-        entity_id:
-          - switch.sonos_playbar
     - service: script.apple_tv_sleep
 
 toggle_speaker_and_light_childroom:
