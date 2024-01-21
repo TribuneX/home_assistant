@@ -176,24 +176,29 @@ temperature:
   name: "Temperature"
   entities:
     - sensor.openweathermap_temperature
-    - sensor.temperature_office
-    - sensor.temperature_bath
-    - sensor.temperature_bedroom
-    - sensor.temperature_livingroom
+    - sensor.office_temperature
+    - sensor.bath_temperature
+    - sensor.bedroom_temperature
+    - sensor.livingroom_temperature
+    - sensor.child_temperature
+    - sensor.outdoor_temperature
 humidity:
   name: "Humidity"
   entities:
-    - sensor.humidity_office
-    - sensor.humidity_bath
-    - sensor.humidity_bedroom
-    - sensor.humidity_livingroom
+    - sensor.office_humidity
+    - sensor.bath_humidity
+    - sensor.bedroom_humidity
+    - sensor.livingroom_humidity
+    - sensor.child_humidity
 pressure:
   name: "Pressure"
   entities:
-    - sensor.pressure_office
-    - sensor.pressure_bath
-    - sensor.pressure_bedroom
-    - sensor.pressure_livingroom
+    - sensor.office_pressure
+    - sensor.bath_pressure
+    - sensor.bedroom_pressure
+    - sensor.livingroom_pressure
+    - sensor.child_pressure
+    - sensor.outdoor_pressure
 media:
   name: "Media"
   icon: mdi:television
