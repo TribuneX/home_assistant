@@ -61,3 +61,16 @@
 #       data_template:
 #         title: 'Devices'
 #         message: '{{ trigger.to_state.attributes.friendly_name }} is {{ trigger.to_state.state }}'
+
+
+- alias: Notify if devices are unavailable
+  use_blueprint:
+    path: Tahutipai/notify_when_devices_offline_zigbee_zwave_switches.yaml
+    input:
+      time: "19:00:00"
+      actions:
+        - service: notify.devices_user_1
+          data_template:
+            title: 'Low Battery'
+            message: "The following devices are unavailable {{ sensors }}"
+
