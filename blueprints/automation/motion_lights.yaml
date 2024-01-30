@@ -31,5 +31,7 @@ action:
       entity_id: !input motion_sensor
       from: "on"
       to: "off"
+    timeout:
+      seconds: 30
   - service: light.turn_off
     target: !input target_light
