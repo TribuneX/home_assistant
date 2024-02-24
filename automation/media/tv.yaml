@@ -50,3 +50,19 @@
         from: "on"
         to: "off"
     - service: script.open_covers_for_tv
+
+- alias: "TV: Turn on Playbar if TV is turned on"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: switch.tv
+    from: "off"
+    to: "on"
+  action:
+    - service: script.turn_on_tv_and_playbar
+    - wait_for_trigger:
+        platform: state
+        entity_id: switch.tv
+        from: "on"
+        to: "off"
+    - service: script.turn_off_tv_and_playbar
