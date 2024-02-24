@@ -161,10 +161,9 @@ turn_off_all:
         seconds: 5
     - service: switch.turn_off
       entity_id:
-        - switch.tv_media
+        - switch.sonos_playbar
         - switch.speaker_1
         - switch.speaker_2
-        - switch.tv
         - switch.tv_2
 
 turn_on_livingroom_default_lights:
@@ -345,7 +344,7 @@ apple_tv_sleep:
       target:
         entity_id: media_player.wohnzimmer
 
-turn_tv_and_playbar:
+turn_on_tv_and_playbar:
   sequence:
     - service: switch.turn_on
       data:
