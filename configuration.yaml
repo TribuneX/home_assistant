@@ -116,7 +116,7 @@ notify:
   - name: devices_user_1
     platform: group
     services:
-      - service: mobile_app_iphone
+      - service: mobile_app_batphone
       - service: mobile_app_batmac
 
 
