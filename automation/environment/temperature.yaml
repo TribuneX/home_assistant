@@ -64,6 +64,6 @@
         message: >
           {%- for entity_id in states.group.humidity.attributes.entity_id if states(entity_id) > '65' -%}
             {%- if loop.first %}Humidity: {% endif -%}
-              {{state_attr(entity_id, 'friendly_name') }}: {{state_attr(entity_id, 'humidity') }}
+              {{state_attr(entity_id, 'friendly_name') }}: {{ states(entity_id) }}
             {%- if not loop.last %}, {% endif -%}
           {%- endfor -%}
