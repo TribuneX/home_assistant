@@ -52,11 +52,17 @@ sensor.openweathermap_temperature:
 
 # Energy
 sensor.energy_all_total:
-  unit_of_measurement: "Wh"
+  state_class: total_increasing
+  device_class: energy
+  unit_of_measurement: 'kWh'
 sensor.energy_all_nt:
-  unit_of_measurement: "Wh"
+  device_class: energy
+  state_class: total_increasing
+  unit_of_measurement: 'kWh'
 sensor.energy_all_ht:
-  unit_of_measurement: "Wh"
+  state_class: total_increasing
+  device_class: energy
+  unit_of_measurement: 'kWh'
 
 # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
 sensor.epson_ink_level_black:
