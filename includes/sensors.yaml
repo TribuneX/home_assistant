@@ -62,19 +62,19 @@
     # energy
     energy_all:
       unit_of_measurement: "kWh"
-      state: "{{ (states('sensor.energy_all_total_wh')|float / 1000 ) | round(1) }}"
+      value_template: "{{ (states('sensor.energy_all_total_wh')|float / 1000 ) | round(1) }}"
       device_class: energy
       state_class: total_increasing
 
     energy_all_ht:
       unit_of_measurement: "kWh"
-      state: "{{ (states('sensor.energy_all_ht_wh')|float / 1000 ) | round(1) }}"
+      value_template: "{{ (states('sensor.energy_all_ht_wh')|float / 1000 ) | round(1) }}"
       device_class: energy
       state_class: total_increasing
 
     energy_all_nt:
       unit_of_measurement: "kWh"
-      state: "{{ (states('sensor.energy_all_nt_wh')|float / 1000 ) | round(1) }}"
+      value_template: "{{ (states('sensor.energy_all_nt_wh')|float / 1000 ) | round(1) }}"
       device_class: energy
       state_class: total_increasing
 
