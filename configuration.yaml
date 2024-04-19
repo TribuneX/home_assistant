@@ -21,6 +21,8 @@ homeassistant:
   auth_providers:
     - type: homeassistant
 
+default_config:
+
 config:
 
 logger:
