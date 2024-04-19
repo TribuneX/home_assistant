@@ -50,6 +50,14 @@ binary_sensor.dark_outside:
 sensor.openweathermap_temperature:
   friendly_name: Outdoor
 
+# Energy
+sensor.energy_all_total:
+  unit_of_measurement: "Wh"
+sensor.energy_all_nt:
+  unit_of_measurement: "Wh"
+sensor.energy_all_ht:
+  unit_of_measurement: "Wh"
+
 # ink icons by rpitera: https://community.home-assistant.io/t/epson-wf-3540-ink-level-monitoring/21813/2
 sensor.epson_ink_level_black:
   entity_picture: /local/icon_ink_black.png
