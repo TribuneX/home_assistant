@@ -64,16 +64,19 @@
       unit_of_measurement: "kWh"
       value_template: "{{ (states('sensor.energy_all_total_wh')|float / 1000 ) | round(1) }}"
       device_class: energy
+      friendly_name: "WHG Total"
 
     energy_all_ht:
       unit_of_measurement: "kWh"
       value_template: "{{ (states('sensor.energy_all_ht_wh')|float / 1000 ) | round(1) }}"
       device_class: energy
+      friendly_name: "WHG HT"
 
     energy_all_nt:
       unit_of_measurement: "kWh"
       value_template: "{{ (states('sensor.energy_all_nt_wh')|float / 1000 ) | round(1) }}"
       device_class: energy
+      friendly_name: "WHG NT"
 
 # - platform: command_line
 #   name: Mein Schiff Ostsee
