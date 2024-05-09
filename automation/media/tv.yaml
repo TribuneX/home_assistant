@@ -51,7 +51,7 @@
         to: "off"
     - service: script.open_covers_for_tv
 
-- alias: "TV: Turn on Playbar if TV is turned on"
+- alias: "TV: Turn on Playbar if TV is turn"
   initial_state: "on"
   trigger:
     platform: state
@@ -66,3 +66,54 @@
         from: "on"
         to: "off"
     - service: script.turn_off_tv_and_playbar
+
+- alias: "TV 2: Turn off TV 2 after 120 minutes at night"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: switch.tv_2
+    from: "off"
+    to: "on"
+  condition:
+    - condition: time
+      after: "20:00"
+      before: "21:00"
+  action:
+    - delay:
+        minutes: 120
+    - service: switch.turn_off
+      entity_id: switch.tv_2
+
+- alias: "TV 2: Turn off TV 2 after 90 minutes at night"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: switch.tv_2
+    from: "off"
+    to: "on"
+  condition:
+    - condition: time
+      after: "21:00"
+      before: "23:00"
+  action:
+    - delay:
+        minutes: 90
+    - service: switch.turn_off
+      entity_id: switch.tv_2
+
+- alias: "TV 2: Turn off TV 2 after 45 minutes at night"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: switch.tv_2
+    from: "off"
+    to: "on"
+  condition:
+    - condition: time
+      after: "23:00"
+      before: "08:00"
+  action:
+    - delay:
+        minutes: 45
+    - service: switch.turn_off
+      entity_id: switch.tv_2
