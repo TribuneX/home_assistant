@@ -1,0 +1,9 @@
+- trigger:
+    - platform: time_pattern
+      minutes: "0" # every hour
+  sensor:
+    - name: "Rain last hour"
+      state: "{{ states('sensor.openweathermap_rain') }}"
+      unit_of_measurement: "ml"
+      attributes:
+        updated_at: "{{ now() }}"

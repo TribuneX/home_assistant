@@ -87,3 +87,12 @@
 - platform: time_date
   display_options:
     - 'date_time'
+
+- platform: statistics
+  name: "Rain last day"
+  entity_id: sensor.rain_last_hour
+  state_characteristic: total
+  max_age:
+    hours: 24
+  sampling_size: 24
+  precision: 0

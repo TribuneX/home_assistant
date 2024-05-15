@@ -140,3 +140,4 @@ input_select: !include includes/input_select.yaml
 cover: !include includes/cover.yaml
 alarm_control_panel: !include includes/alarm_control_panel.yaml
 mqtt: !include includes/mqtt.yaml
+template: !include includes/template.yaml
