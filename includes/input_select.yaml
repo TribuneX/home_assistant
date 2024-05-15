@@ -1,3 +1,11 @@
+garden_water_zone:
+  name: Bewässerung Zone Garten
+  options:
+    - Rasen
+    - Rasen (klein)
+    - Blumenbeet
+    - Hecke
+
 sonos_source:
   name: Sonos Source
   options:

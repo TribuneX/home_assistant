@@ -1,0 +1,16 @@
+- alias: "Garden Watering: Turn on watering"
+  initial_state: "on"
+  trigger:
+    platform: time
+    at: "07:00"
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - thu
+      - sat
+  action:
+    - service: script.activate_water_rasen
+    - service: script.activate_water_rasen_klein
+    - service: script.activate_water_blumenbeet
+    - service: script.activate_water_hecke
