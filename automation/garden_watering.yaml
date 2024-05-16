@@ -11,9 +11,9 @@
       - sat
   action:
     - service: script.activate_water_rasen
-    - service: script.activate_water_rasen_klein
-    - service: script.activate_water_blumenbeet
     - service: script.activate_water_hecke
+    - service: script.activate_water_blumenbeet
+    - service: script.activate_water_rasen_klein
 
 - alias: "Garden Watering: Reset Auto off timer"
   initial_state: "on"

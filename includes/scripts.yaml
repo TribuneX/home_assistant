@@ -390,7 +390,7 @@ activate_water_rasen:
     - service: switch.turn_on
       entity_id: switch.garden_water_valve
     - delay:
-        minutes: 1
+        minutes: 40
     - service: switch.turn_off
       entity_id: switch.garden_water_valve
     - delay:
@@ -407,7 +407,7 @@ activate_water_rasen_klein:
       data:
         entity_id: switch.garden_water_valve
     - delay:
-        minutes: 1
+        minutes: 15
     - service: switch.turn_off
       data:
         entity_id: switch.garden_water_valve
@@ -425,7 +425,7 @@ activate_water_blumenbeet:
       data:
         entity_id: switch.garden_water_valve
     - delay:
-        minutes: 1
+        minutes: 60
     - service: switch.turn_off
       data:
         entity_id: switch.garden_water_valve
@@ -442,7 +442,7 @@ activate_water_hecke:
     - service: switch.turn_on
       entity_id: switch.garden_water_valve
     - delay:
-        minutes: 1
+        minutes: 40
     - service: switch.turn_off
       entity_id: switch.garden_water_valve
     - delay:
