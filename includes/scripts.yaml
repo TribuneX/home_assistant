@@ -381,58 +381,74 @@ toggle_speaker_and_light_childroom:
       entity_id: light.child
 
 activate_water_rasen:
-  - service: input_select.select_option
-    target:
-      entity_id: input_select.garden_water_zone
-    data:
-      option: Rasen
-  # turn on watering
-  - delay:
-      minutes: 1
-    # turn of watering
-  - delay:
-      seconds: 20
+  sequence:
+    - service: input_select.select_option
+      target:
+        entity_id: input_select.garden_water_zone
+      data:
+        option: Rasen
+    - service: switch.turn_on
+      entity_id: switch.garden_water_valve
+    - delay:
+        minutes: 1
+    - service: switch.turn_off
+      entity_id: switch.garden_water_valve
+    - delay:
+        seconds: 30
 
 activate_water_rasen_klein:
-  - service: input_select.select_option
-    target:
-      entity_id: input_select.garden_water_zone
-    data:
-      option: Rasen (klein)
-  # turn on watering
-  - delay:
-      minutes: 1
-    # turn of watering
-  - delay:
-      seconds: 20
+  sequence:
+    - service: input_select.select_option
+      target:
+        entity_id: input_select.garden_water_zone
+      data:
+        option: Rasen (klein)
+    - service: switch.turn_on
+      data:
+        entity_id: switch.garden_water_valve
+    - delay:
+        minutes: 1
+    - service: switch.turn_off
+      data:
+        entity_id: switch.garden_water_valve
+    - delay:
+        seconds: 30
 
 activate_water_blumenbeet:
-  - service: input_select.select_option
-    target:
-      entity_id: input_select.garden_water_zone
-    data:
-      option: Blumenbeet
-  # turn on watering
-  - delay:
-      minutes: 1
-    # turn of watering
-  - delay:
-      seconds: 20
+  sequence:
+    - service: input_select.select_option
+      target:
+        entity_id: input_select.garden_water_zone
+      data:
+        option: Blumenbeet
+    - service: switch.turn_on
+      data:
+        entity_id: switch.garden_water_valve
+    - delay:
+        minutes: 1
+    - service: switch.turn_off
+      data:
+        entity_id: switch.garden_water_valve
+    - delay:
+        seconds: 30
 
 activate_water_hecke:
-  - service: input_select.select_option
-    target:
-      entity_id: input_select.garden_water_zone
-    data:
-      option: Hecke
-  # turn on watering
-  - delay:
-      minutes: 1
-    # turn of watering
-  - delay:
-      seconds: 20
-  - service: input_select.select_option
-    target:
-      entity_id: input_select.garden_water_zone
-    data:
-      option: Rasen
+  sequence:
+    - service: input_select.select_option
+      target:
+        entity_id: input_select.garden_water_zone
+      data:
+        option: Hecke
+    - service: switch.turn_on
+      entity_id: switch.garden_water_valve
+    - delay:
+        minutes: 1
+    - service: switch.turn_off
+      entity_id: switch.garden_water_valve
+    - delay:
+        seconds: 30
+    - service: input_select.select_option
+      target:
+        entity_id: input_select.garden_water_zone
+      data:
+        option: Rasen

@@ -14,3 +14,20 @@
     - service: script.activate_water_rasen_klein
     - service: script.activate_water_blumenbeet
     - service: script.activate_water_hecke
+
+- alias: "Garden Watering: Reset Auto off timer"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: switch.garden_water_valve
+      to: "off"
+  condition: []
+  action:
+    - service: zha.set_zigbee_cluster_attribute
+      data:
+        ieee: 00:3c:84:ff:fe:15:fc:9f
+        endpoint_id: 1
+        cluster_id: 61184
+        attribute: 61185
+        value: 3600
+  mode: single
