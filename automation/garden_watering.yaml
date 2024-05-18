@@ -2,18 +2,39 @@
   initial_state: "on"
   trigger:
     platform: time
-    at: "07:00"
+    at: "08:00"
   condition:
-    condition: time
-    weekday:
-      - mon
-      - thu
-      - sat
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - thu
+          - sat
+      - condition: numeric_state
+        entity_id: sensor.rain_last_day
+        below: 5
+      - condition: numeric_state
+        entity_id: sensor.openweathermap_forecast_precipitation
+        below: 5
   action:
+    - service: notify.devices_user_1
+      data_template:
+        title: "Watering"
+        message: > 
+          Garden Watering will start in 10 minutes. 
+          Rain yesterday: {{ states('sensor.rain_last_day') }}l /
+          Rain today: {{ states('sensor.openweathermap_forecast_precipitation') }}l
+    - delay:
+        minutes: 10
     - service: script.activate_water_rasen
     - service: script.activate_water_hecke
     - service: script.activate_water_blumenbeet
     - service: script.activate_water_rasen_klein
+    - service: notify.devices_user_1
+      data_template:
+        title: "Watering"
+        message: "Garden Watering finished"
 
 - alias: "Garden Watering: Reset Auto off timer"
   initial_state: "on"
