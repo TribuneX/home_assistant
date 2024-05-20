@@ -6,6 +6,8 @@
         - group.motion_gang
       from: "off"
       to: "on"
+    - platform: time
+      at: "08:30"
   condition:
     condition: and
     conditions:
