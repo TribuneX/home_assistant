@@ -39,3 +39,4 @@ entity_globs:
   - sensor.batpad_*
   - binary_sensor.*_update_available
   - sensor.*_linkquality
+  - sensor.bitshake_smartmeterreader_*
