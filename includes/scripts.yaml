@@ -81,9 +81,17 @@ turn_on_vacation_lights:
     - service: light.turn_on
       entity_id: light.sofa
     - delay:
-        minutes: 30
+        minutes: "{{range(1, 5)|random}}"
+    - service: light.turn_on
+      entity_id: light.office
+    - delay:
+        minutes: "{{ range(20, 40)|random }}"
     - service: light.turn_off
       entity_id: light.sofa
+    - delay:
+        minutes: "{{range(1, 5)|random}}"
+    - service: light.turn_off
+      entity_id: light.office
 
 turn_off_livingroom_delay_10:
   alias: "Turn off livingroom group (delay 10 minutes)"
