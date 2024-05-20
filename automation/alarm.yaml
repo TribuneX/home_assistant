@@ -187,24 +187,24 @@
         title: "Door"
         message: "Garden trunk is still open!"
 
-- alias: "Mail: The mailbox was opened"
-  initial_state: "on"
-  trigger:
-    - device_id: b9805d8380855ea31eb01ce954f06e1d
-      domain: zha
-      platform: device
-      type: device_tilted
-      subtype: device_tilted
-  action:
-    - service: notify.devices_user_1
-      data_template:
-        title: "Mailbox"
-        message: "Mailbox was opened"
-        data:
-          push:
-            thread-id: "mailbox"
-    - delay:
-        seconds: 10
+#- alias: "Mail: The mailbox was opened"
+#  initial_state: "on"
+#  trigger:
+#    - device_id: b9805d8380855ea31eb01ce954f06e1d
+#      domain: zha
+#      platform: device
+#      type: device_tilted
+#      subtype: device_tilted
+#  action:
+#    - service: notify.devices_user_1
+#      data_template:
+#        title: "Mailbox"
+#        message: "Mailbox was opened"
+#        data:
+#          push:
+#            thread-id: "mailbox"
+#    - delay:
+#        seconds: 10
 
 - alias: "Water: Water leak detected by water sensor"
   initial_state: "on"
