@@ -7,7 +7,7 @@
       from: "off"
       to: "on"
     - platform: time
-      at: "08:30"
+      at: "07:29"
   condition:
     condition: and
     conditions:
