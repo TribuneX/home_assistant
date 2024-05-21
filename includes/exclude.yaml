@@ -40,4 +40,3 @@ entity_globs:
   - binary_sensor.*_update_available
   - sensor.*_linkquality
   - sensor.bitshake_smartmeterreader_*
-  - sensor.energy_all_*
