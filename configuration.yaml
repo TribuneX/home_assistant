@@ -28,8 +28,6 @@ config:
 logger:
   default: error
 
-map:
-
 system_health:
 
 # influxdb:

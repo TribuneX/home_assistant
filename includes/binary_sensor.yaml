@@ -2,51 +2,6 @@
 # Binary Sensors
 ##########################
 
-# Monitor system uptime
-- platform: ping
-  name: PING Eltern
-  host: home.cbs-service.net
-
-- platform: ping
-  name: PING Sonja
-  host: bmw.cbs-service.net
-
-- platform: ping
-  name: PING Polanetzki
-  host: buero.pblaw.de
-
-- platform: ping
-  name: PING Dreieich
-  host: dreieich.cbs-service.net
-
-- platform: ping
-  name: PING Schwarzwald
-  host: heesen.cbs-service.net
-
-- platform: ping
-  name: PING Gote
-  host: gote.cbs-service.net
-
-- platform: ping
-  name: PING Sebastian
-  host: seb.cbs-service.net
-
-- platform: ping
-  name: PING Uwe
-  host: uwe.cbs-service.net
-
-- platform: ping
-  name: PING VHV
-  host: vhv.cbs-service.net
-
-- platform: ping
-  name: PING Anny
-  host: anny.cbs-service.net
-
-- platform: ping
-  name: PING Bender
-  host: bender.cbs-service.net
-
 - platform: template
   sensors:
     # Inspired by https://community.home-assistant.io/t/virtual-light-sensor/31975/9

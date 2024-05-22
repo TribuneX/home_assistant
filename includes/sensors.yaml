@@ -2,18 +2,6 @@
 # Sensors
 ##########################
 
-- platform: systemmonitor
-  resources:
-    - type: disk_use_percent
-      arg: /
-    - type: memory_free
-    - type: processor_use
-    - type: network_in
-      arg: eth0
-    - type: network_out
-      arg: eth0
-    - type: last_boot
-
 # Inspired by https://github.com/CCOSTAN/Home-AssistantConfig/blob/9b088e5bee97d242463b7d794edeb4a1d967bac1/sensor/devices_states.yaml
 - platform: template
   sensors:
