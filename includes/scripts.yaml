@@ -388,75 +388,41 @@ toggle_speaker_and_light_childroom:
     - service: light.toggle
       entity_id: light.child
 
-activate_water_rasen:
+watering_garden:
   sequence:
-    - service: input_select.select_option
-      target:
-        entity_id: input_select.garden_water_zone
+    - service: script.water_zone
       data:
-        option: Rasen
-    - service: switch.turn_on
-      entity_id: switch.garden_water_valve
-    - delay:
-        minutes: 40
-    - service: switch.turn_off
-      entity_id: switch.garden_water_valve
-    - delay:
-        seconds: 30
+        water_period: "{{ rasen_period | default('00:00:20') }}"
+    - service: script.water_zone
+      data:
+        water_period: "{{ hecke_period | default('00:00:20') }}"
+    - service: script.water_zone
+      data:
+        water_period: "{{ blumenbeet_period | default('00:00:20') }}"
+    - service: script.water_zone
+      data:
+        water_period: "{{ rasen_klein_period | default('00:00:20') }}"
 
-activate_water_rasen_klein:
+water_zone:
   sequence:
-    - service: input_select.select_option
-      target:
-        entity_id: input_select.garden_water_zone
-      data:
-        option: Rasen (klein)
-    - service: switch.turn_on
-      data:
-        entity_id: switch.garden_water_valve
-    - delay:
-        minutes: 15
-    - service: switch.turn_off
-      data:
-        entity_id: switch.garden_water_valve
-    - delay:
-        seconds: 30
-
-activate_water_blumenbeet:
-  sequence:
-    - service: input_select.select_option
-      target:
-        entity_id: input_select.garden_water_zone
-      data:
-        option: Blumenbeet
-    - service: switch.turn_on
-      data:
-        entity_id: switch.garden_water_valve
-    - delay:
-        minutes: 60
-    - service: switch.turn_off
-      data:
-        entity_id: switch.garden_water_valve
-    - delay:
-        seconds: 30
-
-activate_water_hecke:
-  sequence:
-    - service: input_select.select_option
-      target:
-        entity_id: input_select.garden_water_zone
-      data:
-        option: Hecke
+    - if:
+        - condition: template
+          value_template: "{{ water_period != '00:00:20' }}"
+      then:
+        - service: notify.devices_user_1
+          data:
+            title: "Garden"
+            message: "Watering {{ states('input_select.garden_water_zone') }} for {{ water_period }}"
     - service: switch.turn_on
       entity_id: switch.garden_water_valve
-    - delay:
-        minutes: 40
+    - delay: "{{ water_period }}"
     - service: switch.turn_off
       entity_id: switch.garden_water_valve
     - delay:
-        seconds: 30
-    - service: input_select.select_option
-      target:
-        entity_id: input_select.garden_water_zone
+        seconds: 20
+
+watering_blumenbeet:
+  sequence:
+    - service: script.watering_garden
       data:
-        option: Rasen
+        blumenbeet_period: '00:30:00'
