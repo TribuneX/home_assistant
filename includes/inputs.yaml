@@ -4,7 +4,6 @@
 
 vacation_mode:
   name: "On Vacation"
-  initial: off
   icon: mdi:airplane
 
 cleaned_today:
