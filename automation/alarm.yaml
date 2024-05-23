@@ -9,9 +9,7 @@
         - binary_sensor.childrens_room_door
         - binary_sensor.motion_livingroom
         - group.motion_gang
-        - binary_sensor.motion_gang
         - binary_sensor.motion_office
-        - binary_sensor.entry
       to: 'on'
   condition:
     condition: and
