@@ -426,3 +426,9 @@ watering_blumenbeet:
     - service: script.watering_garden
       data:
         blumenbeet_period: '00:30:00'
+
+watering_zone:
+  sequence:
+    - service: script.water_zone
+      data:
+        water_period: '00:40:00'
