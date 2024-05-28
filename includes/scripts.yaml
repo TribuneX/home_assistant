@@ -425,10 +425,22 @@ watering_blumenbeet:
   sequence:
     - service: script.watering_garden
       data:
-        blumenbeet_period: '00:30:00'
+        blumenbeet_period: "{{ states('input_select.garden_water_time') }}"
+
+watering_hecke:
+  sequence:
+    - service: script.watering_garden
+      data:
+        hecke_period: "{{ states('input_select.garden_water_time') }}"
+
+watering_rasen:
+  sequence:
+    - service: script.watering_garden
+      data:
+        rasen_period: "{{ states('input_select.garden_water_time') }}"
 
 watering_zone:
   sequence:
     - service: script.water_zone
       data:
-        water_period: '00:40:00'
+        water_period: "{{ states('input_select.garden_water_time') }}"

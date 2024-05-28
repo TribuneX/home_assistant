@@ -6,6 +6,15 @@ garden_water_zone:
     - Blumenbeet
     - Rasen (klein)
 
+garden_water_time:
+  name: Dauer Bewässerung
+  initial: '00:30:00'
+  options:
+    - '00:15:00'
+    - '00:30:00'
+    - '00:45:00'
+    - '01:00:00'
+
 sonos_source:
   name: Sonos Source
   options:
