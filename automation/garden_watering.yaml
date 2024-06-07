@@ -28,10 +28,10 @@
         minutes: 10
     - service: script.watering_garden
       data:
-        rasen_period: '00:40:00'
-        blumenbeet_period: '00:60:00'
-        hecke_period: '00:40:00'
-        rasen_klein_period: '00:15:00'
+        rasen_period: "{{ states('input_select.rasen_water_time') }}"
+        blumenbeet_period: "{{ states('input_select.blumenbeet_water_time') }}"
+        hecke_period: "{{ states('input_select.hecke_water_time') }}"
+        rasen_klein_period: "{{ states('input_select.rasen_klein_water_time') }}"
       data_template:
         title: "Watering"
         message: "Garden Watering finished"
