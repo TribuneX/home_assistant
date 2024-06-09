@@ -376,6 +376,9 @@ turn_on_tv:
 
 turn_off_tv:
   sequence:
+    - condition: state
+      entity_id: switch.tv
+      state: "on"
     - service: script.apple_tv_sleep
 
 toggle_speaker_and_light_childroom:
