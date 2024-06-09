@@ -59,13 +59,19 @@
     from: "off"
     to: "on"
   action:
-    - service: script.turn_on_tv_and_playbar
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.sonos_playbar
     - wait_for_trigger:
         platform: state
         entity_id: switch.tv
         from: "on"
         to: "off"
-    - service: script.turn_off_tv_and_playbar
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.sonos_playbar
 
 - alias: "TV 2: Turn off TV 2 after 120 minutes at night"
   initial_state: "on"
