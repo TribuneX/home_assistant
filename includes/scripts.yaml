@@ -237,19 +237,22 @@ turn_off_christmas:
 
 open_all_covers:
   sequence:
-    - service: cover.open_cover
-      entity_id: cover.office
+    - service: script.open_single_cover
+      data:
+        cover_name: cover.office
     - delay:
         seconds: 10
-    - service: cover.open_cover
-      entity_id: cover.livingroom_front
+    - service: script.open_single_cover
+      data:
+        cover_name: cover.livingroom_front
     - if:
         - condition: numeric_state
           entity_id: "sensor.openweathermap_temperature"
           below: "20"
       then:
-        - service: cover.open_cover
-          entity_id: cover.side
+        - service: script.open_single_cover
+          data:
+            cover_name: cover.side
       else:
         - service: cover.set_cover_position
           data:
@@ -257,29 +260,35 @@ open_all_covers:
             position: 40
         - delay:
             minutes: 90
-        - service: cover.open_cover
-          entity_id: cover.side
+        - service: script.open_single_cover
+          data:
+            cover_name: cover.side
 
 close_all_covers:
   sequence:
-    - service: cover.close_cover
-      entity_id: cover.livingroom_coach_right
+    - service: script.close_single_cover
+      data:
+        cover_name: cover.livingroom_coach_right
     - delay:
         minutes: 30
-    - service: cover.close_cover
-      entity_id: cover.kitchen
+    - service: script.close_single_cover
+      data:
+        cover_name: cover.kitchen
     - delay:
         seconds: 10
-    - service: cover.close_cover
-      entity_id: cover.office
+    - service: script.close_single_cover
+      data:
+        cover_name: cover.office
     - delay:
         seconds: 10
-    - service: cover.close_cover
-      entity_id: cover.livingroom_small
+    - service: script.close_single_cover
+      data:
+        cover_name: cover.livingroom_small
     - delay:
         minutes: 10
-    - service: cover.close_cover
-      entity_id: cover.livingroom_front
+    - service: script.close_single_cover
+      data:
+        cover_name: cover.livingroom_front
 
 
 close_front_covers:

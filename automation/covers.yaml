@@ -52,8 +52,9 @@
       - thu
       - fri
   action:
-    - service: cover.open_cover
-      entity_id: cover.child
+    - service: script.open_single_cover
+      data:
+        cover_name: cover.child
 
 - alias: "Cover: Open child cover at 9:00am on weekends"
   initial_state: "on"
@@ -66,8 +67,9 @@
       - sat
       - sun
   action:
-    - service: cover.open_cover
-      entity_id: cover.child
+    - service: script.open_single_cover
+      data:
+        cover_name: cover.child
 
 - alias: "Cover: Close child cover at 7:30pm"
   initial_state: "on"
@@ -75,8 +77,9 @@
     platform: time
     at: "19:30"
   action:
-    - service: cover.close_cover
-      entity_id: cover.child
+    - service: script.close_single_cover
+      data:
+        cover_name: cover.child
 
 - alias: "Cover: Close all covers in the evening"
   initial_state: "on"
