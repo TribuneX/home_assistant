@@ -454,9 +454,9 @@ open_single_cover:
     - choose:
       - conditions:
           - condition: template
-            value_template: '{{ state_attr("{{ cover_name }}", "current_position") < 100 }}'
+            value_template: '{{ state_attr(cover_name, "current_position") < 100 }}'
         sequence:
-          - service: cover.open
+          - service: cover.open_cover
             target:
               entity_id: '{{ cover_name }}'
 
@@ -465,8 +465,8 @@ close_single_cover:
     - choose:
       - conditions:
           - condition: template
-            value_template: '{{ state_attr("{{ cover_name }}", "current_position") > 0 }}'
+            value_template: '{{ state_attr(cover_name, "current_position") > 0 }}'
         sequence:
-          - service: cover.close
+          - service: cover.close_cover
             target:
               entity_id: '{{ cover_name }}'
