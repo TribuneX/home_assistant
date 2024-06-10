@@ -447,3 +447,26 @@ watering_zone:
     - service: script.water_zone
       data:
         water_period: "{{ states('input_select.garden_water_time') }}"
+
+
+open_single_cover:
+  sequence:
+    - choose:
+      - conditions:
+          - condition: template
+            value_template: '{{ state_attr("{{ cover_name }}", "current_position") < 100 }}'
+        sequence:
+          - service: cover.open
+            target:
+              entity_id: '{{ cover_name }}'
+
+close_single_cover:
+  sequence:
+    - choose:
+      - conditions:
+          - condition: template
+            value_template: '{{ state_attr("{{ cover_name }}", "current_position") > 0 }}'
+        sequence:
+          - service: cover.close
+            target:
+              entity_id: '{{ cover_name }}'
