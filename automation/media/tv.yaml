@@ -10,22 +10,6 @@
 #    service: switch.toggle
 #    entity_id: switch.tv_2
 
-- alias: "TV: Toggle on AppleTV on tap twice action"
-  initial_state: "on"
-  trigger:
-    - platform: mqtt
-      topic: 'zigbee2mqtt/sensor_cube'
-  condition:
-    condition: or
-    conditions:
-      - condition: template
-        value_template: '{{ "tap" == trigger.payload_json.action }}'
-      - condition: template
-        value_template: '{{ "shake" == trigger.payload_json.action }}'
-  action:
-    service: switch.toggle
-    entity_id: switch.tv_media
-
 - alias: "TV: Close covers if TV is used"
   initial_state: "on"
   trigger:
@@ -68,7 +52,7 @@
         entity_id: switch.tv
         from: "on"
         to: "off"
-    - service: switch.turn_on
+    - service: switch.turn_off
       data:
         entity_id:
           - switch.sonos_playbar
