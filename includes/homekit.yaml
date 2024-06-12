@@ -1,7 +1,7 @@
 filter:
   include_entities:
     - switch.server
-    - switch.tv_media
+    - switch.tv
     - switch.tv_2
     - binary_sensor.balcony_door
     - binary_sensor.front_door

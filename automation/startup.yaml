@@ -4,29 +4,9 @@
     - platform: homeassistant
       event: start
   action:
-    - service: script.init_hass
     - service: notify.devices_user_1
       data:
         title: "System"
         message: "Home Assistant started"
     - delay:
         minutes: 1
-    # - service: script.init_tv
-    # - service: script.init_tv_2
-    # - service: script.init_sonos
-
-- alias: "Startup: Startup nobody is home"
-  initial_state: "on"
-  trigger:
-    - platform: homeassistant
-      event: start
-  condition:
-    - condition: state
-      entity_id: group.personen
-      state: "not_home"
-  action:
-    - service: homeassistant.turn_off
-      entity_id: group.all_speaker
-    - service: switch.turn_off
-      entity_id: switch.tv_media
-    - service: script.init_hass

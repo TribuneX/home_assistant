@@ -100,65 +100,6 @@
     - service: media_player.media_pause
       entity_id: media_player.living_room
 
-- alias: "Speaker: Play Radio when someone arrives at home"
-  initial_state: "off"
-  trigger:
-    platform: state
-    entity_id: group.personen
-    from: "not_home"
-    to: "home"
-  condition:
-    - condition: time
-      after: "08:00"
-      before: "23:00"
-  action:
-    - service: script.play_sonos_radio
-
-- alias: "Speaker: Turn on radio in the morning"
-  initial_state: "off"
-  trigger:
-    - platform: state
-      entity_id: light.bad
-      from: "off"
-      to: "on"
-    - platform: state
-      entity_id: light.kueche1
-      from: "off"
-      to: "on"
-    - platform: state
-      entity_id: light.eingang
-      from: "off"
-      to: "on"
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: "07:00"
-        before: "10:00"
-        weekday:
-          - mon
-          - tue
-          - wed
-          - thu
-          - fri
-          - sat
-      - condition: state
-        entity_id: switch.tv_media
-        state: "off"
-      - condition: or
-        conditions:
-          - condition: state
-            entity_id: group.all_speaker
-            state: "off"
-          - condition: state
-            entity_id: media_player.living_room
-            state: "paused"
-  action:
-    - service: script.play_sonos_radio
-      data:
-        variables:
-          volume: 0.05
-
 - alias: "Speaker: Select playbar volume with cube rotation"
   initial_state: "on"
   trigger:
@@ -198,30 +139,6 @@
         state: "off"
   action:
     - service: script.play_sonos_radio
-
-- alias: "Speaker: Toggle Sonos Office"
-  initial_state: "on"
-  trigger:
-    - platform: state
-      entity_id: sensor.volume_controller_action
-      to: "skip_forward"
-  action:
-    - service: switch.toggle
-      entity_id: switch.speaker_2
-
-- alias: "Speaker: Play sonos office"
-  initial_state: "on"
-  trigger:
-    - platform: state
-      entity_id: sensor.volume_controller_action
-      to: "play_pause"
-  condition:
-    - condition: state
-      entity_id: media_player.office
-      state: "playing"
-  action:
-    - service: media_player.media_play_pause
-      entity_id: media_player.office
 
 - alias: "Speaker: Select sonos office volume with cube rotation"
   initial_state: "on"

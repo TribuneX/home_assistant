@@ -14,7 +14,7 @@
   initial_state: "on"
   trigger:
     platform: state
-    entity_id: switch.tv_media
+    entity_id: switch.tv
     from: "off"
     to: "on"
   condition:
@@ -30,7 +30,7 @@
     - service: script.close_covers_for_tv
     - wait_for_trigger:
         platform: state
-        entity_id: switch.tv_media
+        entity_id: switch.tv
         from: "on"
         to: "off"
     - service: script.open_covers_for_tv
