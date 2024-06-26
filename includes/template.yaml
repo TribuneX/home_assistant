@@ -7,3 +7,17 @@
       unit_of_measurement: "ml"
       attributes:
         updated_at: "{{ now() }}"
+
+- sensor:
+  - name: "Rainfall today"
+    unit_of_measurement: mm
+    state_class: total_increasing
+    unique_id: rainfall_today
+    state: >-
+      {% set count = states('sensor.rainsensor_flips') | int(0) %}
+      {% set mm = count * 0.30303 %}
+      {% if count >= 0 %}
+        {{ mm|round(1, 'floor') }}
+      {% endif %}
+    # If you have issues with the history sensor doubling after restarting HA, add the line below (@BigG)
+    availability: "{{ (states('sensor.rainsensor_flips') not in ('unknown', 'unavailable')) }}"

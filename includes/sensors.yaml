@@ -84,3 +84,11 @@
     hours: 24
   sampling_size: 24
   precision: 0
+
+- platform: history_stats
+  name: Rainsensor flips
+  entity_id: binary_sensor.rain_sensor
+  state: 'off'
+  type: count
+  start: '{{ now().replace(hour=0, minute=0, second=0) }}'
+  end: '{{ now() }}'
