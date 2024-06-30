@@ -142,3 +142,4 @@ cover: !include includes/cover.yaml
 alarm_control_panel: !include includes/alarm_control_panel.yaml
 mqtt: !include includes/mqtt.yaml
 template: !include includes/template.yaml
+utility_meter: !include includes/utility_meter.yaml
