@@ -3,7 +3,7 @@ blueprint:
   description: Send notification if colder outside
   domain: automation
   input:
-    out_vs_in:
+    input_out_vs_in:
       name: Diff Temperature Sensor
       description: The sensor calulating the diff betwenn a specific room and outdoor temperature
       selector:
@@ -16,18 +16,14 @@ blueprint:
         entity:
           domain: binary_sensor
           device_class: opening
-    input_room_name:
-      name: Roomname
-      description: Name of the room
-      selector:
-        text:
 
 variables:
-  room_name: !input input_room_name
+  group_windows: !input input_group_windows
+  sensor_out_vs_in: !input input_out_vs_in
 
 trigger:
   - platform: numeric_state
-    entity_id: !input out_vs_in
+    entity_id: !input input_out_vs_in
     below: -2
 condition:
   condition: and
@@ -45,4 +41,11 @@ action:
   - service: notify.devices_user_1
     data:
       title: "Doors"
-      message: "Open the {{ room_name }} doors, since it is {{states('sensor.livingroom_out_vs_in')}}°C colder outside."
+      message: >
+        Open the follwing doors / windows, since it is {{states(sensor_out_vs_in)}}°C colder outside.
+        {%- for entity_id in states[group_windows].attributes.entity_id if states(entity_id) == 'off' -%}
+          {%- if loop.first %} Closed: {% endif -%}
+          {{state_attr(entity_id, 'friendly_name') }}
+          {%- if not loop.last %}, {% endif -%}
+        {%- endfor -%}
+

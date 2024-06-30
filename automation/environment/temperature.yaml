@@ -2,36 +2,29 @@
   use_blueprint:
     path: temperature_outside_warmer.yaml
     input:
-      out_vs_in: sensor.livingroom_out_vs_in
+      input_out_vs_in: sensor.livingroom_out_vs_in
       input_group_windows: binary_sensor.livingroom_doors
-      input_room_name: "Living Room"
-
 
 - alias: "Temperature: Warmer outside bedroom"
   use_blueprint:
     path: temperature_outside_warmer.yaml
     input:
-      out_vs_in: sensor.bedroom_out_vs_in
+      input_out_vs_in: sensor.bedroom_out_vs_in
       input_group_windows: binary_sensor.bedroom_windows
-      input_room_name: "Bedroom"
-
 
 - alias: "Temperature: Colder outside living room"
   use_blueprint:
     path: temperature_outside_colder.yaml
     input:
-      out_vs_in: sensor.livingroom_out_vs_in
+      input_out_vs_in: sensor.livingroom_out_vs_in
       input_group_windows: binary_sensor.livingroom_doors
-      input_room_name: "Living Room"
 
 - alias: "Temperature: Colder outside bedroom"
   use_blueprint:
     path: temperature_outside_colder.yaml
     input:
-      out_vs_in: sensor.bedroom_out_vs_in
+      input_out_vs_in: sensor.bedroom_out_vs_in
       input_group_windows: binary_sensor.bedroom_windows
-      input_room_name: "Bedroom"
-
 
 - alias: "Humidity warning"
   initial_state: "on"
