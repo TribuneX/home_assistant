@@ -1,0 +1,48 @@
+blueprint:
+  name: Warmer outside
+  description: Send notification if warmer outside
+  domain: automation
+  input:
+    out_vs_in:
+      name: Diff Temperature Sensor
+      description: The sensor calulating the diff betwenn a specific room and outdoor temperature
+      selector:
+        entity:
+          domain: sensor
+    input_group_windows:
+      name: Open Windows
+      description: The group of windows in the room
+      selector:
+        entity:
+          domain: binary_sensor
+          device_class: opening
+    input_room_name:
+      name: Roomname
+      description: Name of the room
+      selector:
+        text:
+
+variables:
+  room_name: !input input_room_name
+
+trigger:
+  platform: numeric_state
+  entity_id: !input out_vs_in
+  above: 0
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: group.personen
+      state: "home"
+    - condition: numeric_state
+      entity_id: "sensor.outdoor_temperature"
+      above: "20"
+    - condition: state
+      entity_id: !input input_group_windows
+      state: "on"
+action:
+  - service: notify.devices_user_1
+    data:
+      title: "Doors"
+      message: "Close the {{ room_name }} doors, since it is {{states('sensor.livingroom_out_vs_in')}}°C warmer outside."

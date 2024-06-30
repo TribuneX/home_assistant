@@ -6,9 +6,15 @@
 - platform: template
   sensors:
     # Inspired by https://community.home-assistant.io/t/temp-compare/19497
-    out_vs_in:
+    livingroom_out_vs_in:
       value_template: "{{ (states('sensor.outdoor_temperature') | float) - (states('sensor.livingroom_temperature') | float) }}"
       friendly_name: "Temperature Diff"
+      unit_of_measurement: '°C'
+
+    bedroom_out_vs_in:
+      value_template: "{{ (states('sensor.outdoor_temperature') | float) - (states('sensor.bedroom_temperature') | float) }}"
+      friendly_name: "Temperature Diff"
+      unit_of_measurement: '°C'
 
     robo:
       friendly_name: "Robo"

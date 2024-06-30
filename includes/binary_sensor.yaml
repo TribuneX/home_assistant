@@ -13,3 +13,10 @@
         seconds: 60
       value_template: >
         {{states('sensor.outdoor_illumination')|int < 8}}
+
+- platform: group
+  name: "Livingroom Doors"
+  device_class: opening
+  entities:
+    - binary_sensor.balcony_door
+    - binary_sensor.living_room_balcony_door

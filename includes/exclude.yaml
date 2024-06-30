@@ -1,7 +1,7 @@
 entities:
   - sensor.network_in_eth0
   - sensor.network_out_eth0
-  - sensor.out_vs_in
+  - sensor.livingroom_out_vs_in
   - sensor.tribunex_home_assistant_last_build_state
   - sensor.illumination_gateway
   - sensor.palme_battery
