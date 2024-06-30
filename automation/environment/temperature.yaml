@@ -1,34 +1,37 @@
-- alias: "Temperature: Warmer outside"
+- alias: "Temperature: Warmer outside living room"
   use_blueprint:
-    path: temperature_outside.yaml
+    path: temperature_outside_warmer.yaml
     input:
       out_vs_in: sensor.livingroom_out_vs_in
       input_group_windows: binary_sensor.livingroom_doors
       input_room_name: "Living Room"
 
-- alias: "Temperature: Colder outside"
-  initial_state: "on"
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.livingroom_out_vs_in
-      below: -2
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: group.personen
-        state: "home"
-      - condition: numeric_state
-        entity_id: "sensor.outdoor_temperature"
-        above: "20"
-      - condition: state
-        entity_id: binary_sensor.balcony_door
-        state: "off"
-  action:
-    - service: notify.devices_user_1
-      data:
-        title: "Doors"
-        message: "Open the balcony door, since it is {{states('sensor.livingroom_out_vs_in')}}°C colder outside."
+
+- alias: "Temperature: Warmer outside bedroom"
+  use_blueprint:
+    path: temperature_outside_warmer.yaml
+    input:
+      out_vs_in: sensor.bedroom_out_vs_in
+      input_group_windows: binary_sensor.bedroom_windows
+      input_room_name: "Bedroom"
+
+
+- alias: "Temperature: Colder outside living room"
+  use_blueprint:
+    path: temperature_outside_colder.yaml
+    input:
+      out_vs_in: sensor.livingroom_out_vs_in
+      input_group_windows: binary_sensor.livingroom_doors
+      input_room_name: "Living Room"
+
+- alias: "Temperature: Colder outside bedroom"
+  use_blueprint:
+    path: temperature_outside_colder.yaml
+    input:
+      out_vs_in: sensor.bedroom_out_vs_in
+      input_group_windows: binary_sensor.bedroom_windows
+      input_room_name: "Bedroom"
+
 
 - alias: "Humidity warning"
   initial_state: "on"

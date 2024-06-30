@@ -20,3 +20,11 @@
   entities:
     - binary_sensor.balcony_door
     - binary_sensor.living_room_balcony_door
+
+- platform: group
+  name: "Bedroom Windows"
+  device_class: opening
+  entities:
+    - binary_sensor.bath_window
+    - binary_sensor.bedroom_window
+
