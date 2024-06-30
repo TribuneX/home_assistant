@@ -28,3 +28,8 @@
     - binary_sensor.bath_window
     - binary_sensor.bedroom_window
 
+- platform: group
+  name: "Office Doors"
+  device_class: opening
+  entities:
+    - binary_sensor.office_door

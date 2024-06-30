@@ -16,6 +16,11 @@
       friendly_name: "Temperature Diff"
       unit_of_measurement: '°C'
 
+    office_out_vs_in:
+      value_template: "{{ (states('sensor.outdoor_temperature') | float) - (states('sensor.office_temperature') | float) }}"
+      friendly_name: "Temperature Diff"
+      unit_of_measurement: '°C'
+
     robo:
       friendly_name: "Robo"
       value_template: "{{ 'online' if is_state('device_tracker.robot', 'home') else 'off' }}"
