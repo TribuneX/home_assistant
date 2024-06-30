@@ -203,7 +203,7 @@ open_all_covers:
         cover_name: cover.livingroom_front
     - if:
         - condition: numeric_state
-          entity_id: "sensor.openweathermap_temperature"
+          entity_id: "sensor.outdoor_temperature"
           below: "20"
       then:
         - service: script.open_single_cover
@@ -250,7 +250,7 @@ close_all_covers:
 close_front_covers:
   sequence:
     - condition: numeric_state
-      entity_id: sensor.openweathermap_temperature
+      entity_id: sensor.outdoor_temperature
       above: 25
     - condition: template
       value_template: '{{ state_attr("cover.front", "current_position") == 100 }}'

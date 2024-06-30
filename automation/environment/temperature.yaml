@@ -3,15 +3,15 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.out_vs_in
-      above: 2
+      above: 0
   condition:
     condition: and
     conditions:
       - condition: state
-        entity_id: device_tracker.batphone
+        entity_id: group.personen
         state: "home"
       - condition: numeric_state
-        entity_id: "sensor.openweathermap_temperature"
+        entity_id: "sensor.outdoor_temperature"
         above: "20"
       - condition: state
         entity_id: binary_sensor.balcony_door
@@ -20,7 +20,7 @@
     - service: notify.devices_user_1
       data:
         title: "Doors"
-        message: "Close the balcony door, since it is {{states.sensor.out_vs_in.state}}°C outside."
+        message: "Close the living room doors, since it is {{states('sensor.out_vs_in')}}°C warmer outside."
 
 - alias: "Temperature: Colder outside"
   initial_state: "on"
@@ -32,10 +32,10 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: device_tracker.batphone
+        entity_id: group.personen
         state: "home"
       - condition: numeric_state
-        entity_id: "sensor.openweathermap_temperature"
+        entity_id: "sensor.outdoor_temperature"
         above: "20"
       - condition: state
         entity_id: binary_sensor.balcony_door
@@ -44,7 +44,7 @@
     - service: notify.devices_user_1
       data:
         title: "Doors"
-        message: "Open the balcony door, since it is {{states.sensor.out_vs_in.state}}°C colder outside."
+        message: "Open the balcony door, since it is {{states('sensor.out_vs_in')}}°C colder outside."
 
 - alias: "Humidity warning"
   initial_state: "on"

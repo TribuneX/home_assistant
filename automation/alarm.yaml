@@ -241,7 +241,7 @@
         minutes: 20
   condition:
     - condition: numeric_state
-      entity_id: sensor.openweathermap_temperature
+      entity_id: sensor.outdoor_temperature
       below: 10
   action:
     - service: notify.devices_user_1
@@ -260,7 +260,7 @@
         minutes: 20
   condition:
     - condition: numeric_state
-      entity_id: sensor.openweathermap_temperature
+      entity_id: sensor.outdoor_temperature
       below: 10
   action:
     - service: notify.devices_user_1

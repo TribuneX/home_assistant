@@ -34,14 +34,6 @@ sensor.server:
   icon: mdi:server
 sensor.mein_schiff_ostsee:
   icon: mdi:ferry
-sensor.dark_sky_daily_high_temperature:
-  friendly_name: High Outdoor
-sensor.dark_sky_daily_low_temperature:
-  friendly_name: Low Outdoor
-sensor.dark_sky_summary:
-  friendly_name: Summary
-sensor.dark_sky_precip_intensity:
-  friendly_name: Rain
 sensor.fritz_netmonitor:
   friendly_name: FritzBox
   icon: mdi:router-wireless
