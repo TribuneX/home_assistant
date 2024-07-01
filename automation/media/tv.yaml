@@ -35,7 +35,7 @@
         to: "off"
     - service: script.open_covers_for_tv
 
-- alias: "TV: Turn on Playbar if TV is turn"
+- alias: "TV: Turn on Playbar if TV is turned on"
   initial_state: "on"
   trigger:
     platform: state
@@ -56,6 +56,32 @@
       data:
         entity_id:
           - switch.sonos_playbar
+
+- alias: "TV: Turn on Sonos Rear if TV is turned on in the evening"
+  initial_state: "on"
+  trigger:
+    platform: state
+    entity_id: switch.tv
+    from: "off"
+    to: "on"
+  condition:
+    - condition: time
+      after: "19:30"
+      before: "23:30"
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.speaker_1
+    - wait_for_trigger:
+        platform: state
+        entity_id: switch.tv
+        from: "on"
+        to: "off"
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.speaker_1
 
 - alias: "TV 2: Turn off TV 2 after 120 minutes at night"
   initial_state: "on"
