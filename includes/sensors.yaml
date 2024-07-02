@@ -49,6 +49,27 @@
       friendly_name: "Server"
       value_template: "{{ 'online' if is_state('device_tracker.server', 'home') else 'off' }}"
 
+    watering_rasen:
+      friendly_name: "Bewässerung Rasen"
+      unit_of_measurement: "l/min"
+      value_template: "{{8.4 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Rasen') else 0 }}"
+
+    watering_hecke:
+      friendly_name: "Bewässerung Hecke"
+      unit_of_measurement: "l/min"
+      value_template: "{{6.5 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Hecke') else 0 }}"
+
+    watering_blumenbeet:
+      friendly_name: "Bewässerung Blumenbeet"
+      unit_of_measurement: "l/min"
+      value_template: "{{1.5 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Blumenbeet') else 0 }}"
+
+    watering_rasen_klein:
+      friendly_name: "Bewässerung Rasen (klein)"
+      unit_of_measurement: "l/min"
+      value_template: "{{2.5 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Rasen (klein)') else 0 }}"
+
+
     robot_dust_bin:
       friendly_name: "Robot dust bin"
       value_template: >
@@ -96,6 +117,38 @@
   sampling_size: 24
   precision: 0
 
+- platform: integration
+  source: sensor.watering_rasen
+  name: watering_rasen_amount
+  unit_time: min
+  method: left
+  max_sub_interval:
+    minutes: 1
+
+- platform: integration
+  source: sensor.watering_hecke
+  name: watering_hecke_amount
+  unit_time: min
+  method: left
+  max_sub_interval:
+    minutes: 1
+
+- platform: integration
+  source: sensor.watering_blumenbeet
+  name: watering_blumenbeet_amount
+  unit_time: min
+  method: left
+  max_sub_interval:
+    minutes: 1
+
+- platform: integration
+  source: sensor.watering_rasen_klein
+  name: watering_rasen_klein_amount
+  unit_time: min
+  method: left
+  max_sub_interval:
+    minutes: 1
+
 - platform: history_stats
   name: Rainsensor flips
   entity_id: binary_sensor.rain_sensor
@@ -103,3 +156,35 @@
   type: count
   start: '{{ now().replace(hour=0, minute=0, second=0) }}'
   end: '{{ now() }}'
+
+- platform: history_stats
+  name: watering_rasen_today
+  entity_id: sensor.watering_rasen_amount
+  state: "on"
+  type: time
+  start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: watering_hecke_today
+  entity_id: sensor.watering_hecke_amount
+  state: "on"
+  type: time
+  start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: watering_blumenbeet_today
+  entity_id: sensor.watering_blumenbeet_amount
+  state: "on"
+  type: time
+  start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+  end: "{{ now() }}"
+
+- platform: history_stats
+  name: watering_rasen_klein_today
+  entity_id: sensor.watering_rasen_klein_amount
+  state: "on"
+  type: time
+  start: "{{ now().replace(hour=0, minute=0, second=0) }}"
+  end: "{{ now() }}"
