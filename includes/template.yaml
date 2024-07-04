@@ -21,3 +21,16 @@
       {% endif %}
     # If you have issues with the history sensor doubling after restarting HA, add the line below (@BigG)
     availability: "{{ (states('sensor.rainsensor_flips') not in ('unknown', 'unavailable')) }}"
+
+- sensor:
+  - name: "Total Garden Water Consumption"
+    unique_id: watering_garden_total_amount
+    state: >
+      {{ (states('sensor.watering_rasen_amount') | float(2) +
+          states('sensor.watering_hecke_amount') | float(0) +
+          states('sensor.watering_rasen_klein_amount') | float(0) +
+          states('sensor.watering_blumenbeet_amount') | float(0))
+         | round(2) }}
+    unit_of_measurement: "l"
+    device_class: water
+    state_class: total_increasing
