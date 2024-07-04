@@ -11,9 +11,6 @@
           - thu
           - sat
       - condition: numeric_state
-        entity_id: sensor.rain_last_day
-        below: 5
-      - condition: numeric_state
         entity_id: sensor.openweathermap_forecast_precipitation
         below: 5
   action:

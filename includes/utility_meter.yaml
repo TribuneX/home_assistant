@@ -1,3 +1,7 @@
+rain_day:
+  source: sensor.rainfall_today
+  cycle: daily
+  unique_id: rainfall_day
 rain_week:
   source: sensor.rainfall_today
   cycle: weekly
