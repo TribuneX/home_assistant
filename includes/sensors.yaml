@@ -52,12 +52,12 @@
     watering_rasen:
       friendly_name: "Bewässerung Rasen"
       unit_of_measurement: "l/min"
-      value_template: "{{8.4 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Rasen') else 0 }}"
+      value_template: "{{8.8 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Rasen') else 0 }}"
 
     watering_hecke:
       friendly_name: "Bewässerung Hecke"
       unit_of_measurement: "l/min"
-      value_template: "{{6.5 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Hecke') else 0 }}"
+      value_template: "{{6.6 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Hecke') else 0 }}"
 
     watering_blumenbeet:
       friendly_name: "Bewässerung Blumenbeet"
@@ -67,7 +67,7 @@
     watering_rasen_klein:
       friendly_name: "Bewässerung Rasen (klein)"
       unit_of_measurement: "l/min"
-      value_template: "{{2.5 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Rasen (klein)') else 0 }}"
+      value_template: "{{2.34 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Rasen (klein)') else 0 }}"
 
 
     robot_dust_bin:
