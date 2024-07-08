@@ -18,17 +18,14 @@
       data_template:
         title: "Garden"
         message: > 
-          Garden Watering will start in 10 minutes. 
-          Rain yesterday: {{ states('sensor.rain_last_day') }}l /
-          Rain today: {{ states('sensor.openweathermap_forecast_precipitation') }}l
-    - delay:
-        minutes: 10
+          Garden Watering will start in 10 minutes.
     - service: script.watering_garden
       data:
         rasen_period: "{{ states('input_select.rasen_water_time') }}"
         blumenbeet_period: "{{ states('input_select.blumenbeet_water_time') }}"
         hecke_period: "{{ states('input_select.hecke_water_time') }}"
         rasen_klein_period: "{{ states('input_select.rasen_klein_water_time') }}"
+    - service: notify.devices_user_1
       data_template:
         title: "Watering"
         message: "Garden Watering finished"
