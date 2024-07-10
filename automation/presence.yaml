@@ -2,9 +2,8 @@
   initial_state: "on"
   trigger:
     - platform: zone
-      entity_id: device_tracker.owntracks_user_2_iphone
-      zone: zone.home
-      event: leave
+      entity_id: device_tracker.user_2_iphone
+      from: "away"
   condition:
     condition: state
     entity_id: group.user_1
@@ -19,40 +18,13 @@
   initial_state: "on"
   trigger:
     - platform: zone
-      entity_id: device_tracker.owntracks_user_2_iphone
-      zone: zone.home
-      event: enter
+      entity_id: device_tracker.user_2_iphone
+      to: "home"
   action:
     - service: notify.devices_user_1
       data:
         title: "Location"
         message: "User 2 arrived at home."
-
-- alias: "Presence: User 2 left work"
-  initial_state: "on"
-  trigger:
-    - platform: zone
-      entity_id: device_tracker.owntracks_user_2_iphone
-      zone: zone.work_user_2
-      event: leave
-  action:
-    - service: notify.devices_user_1
-      data:
-        title: "Location"
-        message: "User 2 left work."
-
-- alias: "Presence: User 2 arrived at work"
-  initial_state: "on"
-  trigger:
-    - platform: zone
-      entity_id: device_tracker.owntracks_user_2_iphone
-      zone: zone.work_user_2
-      event: enter
-  action:
-    - service: notify.devices_user_1
-      data:
-        title: "Location"
-        message: "User 2 arrived at work."
 
 - alias: "Presence: Nobody at home"
   initial_state: "on"

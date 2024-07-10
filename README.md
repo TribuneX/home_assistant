@@ -47,7 +47,7 @@ Before pushing my config to this repository, I am using HA running in a [local D
 * [HA-Dockermon](https://hub.docker.com/r/tribunex/ha-dockermon-pi/) provides a REST-API to restart docker container
 * InfluxDB stores timeseries data
 * Grafana to visualize the collected data from InfluxDB
-* Mosquitto as a MQTT broker for owntracks and Sonoff
+* Mosquitto as a MQTT broker for some devices
 
 ## HomeKit
 ![HomeKit](/images/homekit.png)

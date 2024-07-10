@@ -64,9 +64,6 @@ my:
 # Support for iOS app
 ios:
 
-owntracks:
-  max_gps_accuracy: 100
-
 # Track the sun
 sun:
 
