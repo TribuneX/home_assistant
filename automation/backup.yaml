@@ -1,0 +1,11 @@
+- alias: "Backup: Backup Home Assistant every saturday night at 3 AM"
+  trigger:
+    platform: time
+    at: "03:00:00"
+  condition:
+    condition: time
+    weekday:
+      - sat
+  action:
+    alias: "Create backup now"
+    service: backup.create
