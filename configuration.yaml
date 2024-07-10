@@ -75,12 +75,6 @@ input_number:
     max: 1
     step: 0.01
 
-vacuum:
-  platform: xiaomi_miio
-  name: "Vacuum Cleaner"
-  host: !secret robo_ip
-  token: !secret mirobo_token
-
 # fan:
 #   platform: xiaomi_miio_fan
 #   name: Fan
