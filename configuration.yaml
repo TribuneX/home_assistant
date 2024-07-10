@@ -41,8 +41,7 @@ system_health:
 #      - binary_sensor
 
 recorder:
-  db_url: !secret mysql_path
-  purge_keep_days: 5
+  purge_keep_days: 30
   include: !include includes/include.yaml
   exclude: !include includes/exclude.yaml
 
