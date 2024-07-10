@@ -1,7 +1,7 @@
 - alias: "Presence: User 2 left home"
   initial_state: "on"
   trigger:
-    - platform: zone
+    - platform: state
       entity_id: device_tracker.user_2_iphone
       from: "away"
   condition:
@@ -17,7 +17,7 @@
 - alias: "Presence: User 2 arrived at home"
   initial_state: "on"
   trigger:
-    - platform: zone
+    - platform: state
       entity_id: device_tracker.user_2_iphone
       to: "home"
   action:
