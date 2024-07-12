@@ -158,10 +158,8 @@ doors:
 motion_gang:
   name: motion_gang
   entities:
-    - binary_sensor.gang_motion
-    - binary_sensor.gang_motion_2
-    - binary_sensor.gang_motion_3
     - binary_sensor.gang_motion_hue
+    - binary_sensor.gang_motion_hue_oben
 docker_container:
   name: "Docker Container"
   entities:
