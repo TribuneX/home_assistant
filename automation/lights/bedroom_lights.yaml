@@ -47,3 +47,12 @@
   action:
     service: light.toggle
     entity_id: light.child
+
+- alias: "Lights: Turn off light Wickeltisch in the morning"
+  initial_state: "on"
+  trigger:
+    - platform: time
+      at: "07:00"
+  action:
+    - service: light.turn_off
+      entity_id: light.child
