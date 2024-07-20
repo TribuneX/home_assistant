@@ -18,3 +18,14 @@
   entities:
     - light.bed_1
     - light.bed_2
+
+- platform: template
+  lights:
+    bathroom_eg:
+      value_template: "{{ states('switch.shelly_bad_eg') }}"
+      turn_on:
+        service: switch.turn_on
+        entity_id: switch.shelly_bad_eg
+      turn_off:
+        service: switch.turn_off
+        entity_id: switch.shelly_bad_eg

@@ -1,0 +1,7 @@
+- alias: Trigger bathroom lights with motion sensor
+  use_blueprint:
+    path: motion_lights.yaml
+    input:
+      motion_sensor: binary_sensor.bathroom_eg_hue
+      target_light:
+        entity_id: light.bathroom_eg
