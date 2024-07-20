@@ -120,7 +120,12 @@ play_sonos_radio:
 turn_off_all:
   sequence:
     - service: light.turn_off
-      entity_id: all
+      data_template:
+        entity_id: >
+          {% set exclude_light = [
+            'light.child'
+          ] %}
+          {%- for device in states.light|rejectattr('entity_id','in',exclude_light) %}{%- if loop.first %}{%- else %}, {% endif %}{{device.entity_id }}{%- if loop.last %}{% endif %}{%- endfor  %}
     - delay:
         seconds: 5
     - service: switch.turn_off
