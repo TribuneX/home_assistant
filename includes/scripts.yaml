@@ -120,6 +120,7 @@ play_sonos_radio:
 turn_off_all:
   sequence:
     - service: light.turn_off
+      continue_on_error: true
       data_template:
         entity_id: >
           {% set exclude_light = [
@@ -129,6 +130,7 @@ turn_off_all:
     - delay:
         seconds: 5
     - service: switch.turn_off
+      continue_on_error: true
       entity_id:
         - switch.sonos_playbar
         - switch.speaker_1

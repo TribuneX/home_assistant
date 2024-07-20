@@ -1,0 +1,9 @@
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: homeassistant_weg
+    ports:
+      - 8123:8123
+    volumes:
+      - ./config:/config
+#      - /etc/localtime:/etc/localtime:ro
