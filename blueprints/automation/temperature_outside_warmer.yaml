@@ -24,7 +24,7 @@ variables:
 trigger:
   platform: numeric_state
   entity_id: !input input_out_vs_in
-  above: 0
+  above: -1
 condition:
   condition: and
   conditions:
@@ -42,7 +42,7 @@ action:
     data:
       title: "Doors"
       message: >
-        Close the follwing doors / windows, since it is {{states(sensor_out_vs_in)}}°C warmer outside.
+        Close the follwing doors / windows, since it is only {{states(sensor_out_vs_in)}}°C colder outside.
         {%- for entity_id in states[group_windows].attributes.entity_id if states(entity_id) == 'on' -%}
           {%- if loop.first %} Open: {% endif -%}
           {{state_attr(entity_id, 'friendly_name') }}
