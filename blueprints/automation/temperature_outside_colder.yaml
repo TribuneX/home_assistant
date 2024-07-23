@@ -42,7 +42,7 @@ action:
     data:
       title: "Doors"
       message: >
-        Open the follwing doors / windows, since it is {{states(sensor_out_vs_in)}}°C colder outside.
+        Open the follwing doors / windows, since it is {{states(sensor_out_vs_in) | round(1) }}°C colder outside.
         {%- for entity_id in states[group_windows].attributes.entity_id if states(entity_id) == 'off' -%}
           {%- if loop.first %} Closed: {% endif -%}
           {{state_attr(entity_id, 'friendly_name') }}
