@@ -50,7 +50,7 @@
         - sensor.livingroom_humidity
         - sensor.office_humidity
         - sensor.child_humidity
-      above: 60
+      above: 75
   action:
     - service: notify.devices_user_1
       data:
