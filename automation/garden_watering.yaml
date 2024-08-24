@@ -44,7 +44,7 @@
         endpoint_id: 1
         cluster_id: 61184
         attribute: 61185
-        value: 120
+        value: 3800
     - service: input_select.select_next
       data:
         cycle: true
