@@ -19,7 +19,7 @@ rasen_water_time:
   name: Rasen Bewässerung
   initial: '00:45:00'
   options:
-    - '00:00:20'
+    - '00:00:10'
     - '00:15:00'
     - '00:30:00'
     - '00:45:00'
@@ -29,7 +29,7 @@ blumenbeet_water_time:
   name: Blumenbeet Bewässerung
   initial: '01:00:00'
   options:
-    - '00:00:20'
+    - '00:00:10'
     - '00:30:00'
     - '00:45:00'
     - '01:00:00'
@@ -39,7 +39,7 @@ hecke_water_time:
   name: Hecke Bewässerung
   initial: '00:45:00'
   options:
-    - '00:00:20'
+    - '00:00:10'
     - '00:30:00'
     - '00:45:00'
     - '01:00:00'
@@ -49,7 +49,7 @@ rasen_klein_water_time:
   name: Rasen (klein) Bewässerung
   initial: '00:15:00'
   options:
-    - '00:00:20'
+    - '00:00:10'
     - '00:15:00'
     - '00:21:00'
 
