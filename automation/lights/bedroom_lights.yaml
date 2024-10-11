@@ -52,7 +52,7 @@
   initial_state: "on"
   trigger:
     - platform: time
-      at: "07:00"
+      at: "09:00"
   action:
     - service: light.turn_off
       entity_id: light.child
