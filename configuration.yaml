@@ -3,6 +3,9 @@ homeassistant:
   name: Frankfurt
   country: DE
 
+  external_url: !secret base_url
+  internal_url: !secret base_url
+
   # Location required to calculate the time the sun rises and sets
   latitude: !secret latitude_value
   longitude: !secret longitude_value
