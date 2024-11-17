@@ -177,7 +177,7 @@ sonos_say:
     - wait_template: "{{ is_state(sonos_entity|default('media_player.living_room'), 'playing') }}"
       timeout: "00:00:05"
     - wait_template: "{{ not is_state(sonos_entity|default('media_player.living_room'), 'playing') }}"
-      timeout: "00:00:20"
+      timeout: "00:00:10"
     - service: media_player.sonos_restore
       data_template:
         entity_id: "{{ sonos_entity|default('media_player.living_room') }}"
@@ -351,22 +351,22 @@ watering_garden:
   sequence:
     - service: script.water_zone
       data:
-        water_period: "{{ rasen_period | default('00:00:20') }}"
+        water_period: "{{ rasen_period | default('00:00:10') }}"
     - service: script.water_zone
       data:
-        water_period: "{{ hecke_period | default('00:00:20') }}"
+        water_period: "{{ hecke_period | default('00:00:10') }}"
     - service: script.water_zone
       data:
-        water_period: "{{ blumenbeet_period | default('00:00:20') }}"
+        water_period: "{{ blumenbeet_period | default('00:00:10') }}"
     - service: script.water_zone
       data:
-        water_period: "{{ rasen_klein_period | default('00:00:20') }}"
+        water_period: "{{ rasen_klein_period | default('00:00:10') }}"
 
 water_zone:
   sequence:
     - if:
         - condition: template
-          value_template: "{{ water_period != '00:00:20' }}"
+          value_template: "{{ water_period != '00:00:10' }}"
       then:
         - service: notify.devices_user_1
           data:
@@ -378,7 +378,7 @@ water_zone:
     - service: switch.turn_off
       entity_id: switch.garden_water_valve
     - delay:
-        seconds: 20
+        seconds: 10
 
 watering_blumenbeet:
   sequence:
