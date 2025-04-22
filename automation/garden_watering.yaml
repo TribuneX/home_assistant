@@ -38,13 +38,11 @@
       to: "off"
   condition: []
   action:
-    - service: zha.set_zigbee_cluster_attribute
+    - service: number.set_value
       data:
-        ieee: 00:3c:84:ff:fe:15:fc:9f
-        endpoint_id: 1
-        cluster_id: 61184
-        attribute: 61185
-        value: 3800
+        value: 60
+      target:
+        entity_id: number.garden_water_time_left
     - service: input_select.select_next
       data:
         cycle: true
