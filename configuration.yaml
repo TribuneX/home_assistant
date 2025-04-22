@@ -113,9 +113,6 @@ notify:
       - service: mobile_app_batmac
 
 
-zha:
-  custom_quirks_path: /config/custom_zha_quirks/
-
 ##########################
 # Includes
 ##########################
