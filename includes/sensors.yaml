@@ -147,3 +147,10 @@
   type: count
   start: '{{ now().replace(hour=0, minute=0, second=0) }}'
   end: '{{ now() }}'
+
+- platform: statistics
+  name: "Rainfall last 24 hours"
+  entity_id: sensor.rainfall_today
+  state_characteristic: change
+  max_age:
+    hours: 24
