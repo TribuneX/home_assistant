@@ -28,3 +28,27 @@
     unit_of_measurement: "l"
     device_class: water
     state_class: total_increasing
+
+- trigger:
+    - platform: state
+      entity_id: weather.openweathermap
+    - platform: time_pattern
+      hours: /1
+  action:
+    - action: weather.get_forecasts
+      data:
+        type: daily
+      target:
+        entity_id: weather.openweathermap
+      response_variable: daily
+  sensor:
+    - name: OpenWeatherMap Forecast Precipitation
+      unique_id: openweathermap_forecast_precipitation
+      state: "{{ daily['weather.openweathermap'].forecast[0].precipitation }}"
+      unit_of_measurement: mm
+      device_class: precipitation
+    - name: OpenWeatherMap Forecast Precipitation probability
+      unique_id: openweathermap_forecast_precipitation_probability
+      state: "{{ daily['weather.openweathermap'].forecast[0].precipitation_probability }}"
+      unit_of_measurement: '%'
+
