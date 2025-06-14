@@ -16,9 +16,8 @@
   action:
     - service: notify.devices_user_1
       data_template:
-        title: "Garden"
-        message: > 
-          Garden Watering will start in 10 minutes.
+        title: "Watering"
+        message: "Garden Watering started"
     - service: script.watering_garden
       data:
         rasen_period: "{{ states('input_select.rasen_water_time') }}"
@@ -30,7 +29,7 @@
         title: "Watering"
         message: "Garden Watering finished"
 
-- alias: "Garden Watering: Reset Auto off timer"
+- alias: "Garden Watering: Switch to next output target"
   initial_state: "on"
   trigger:
     - platform: state
@@ -38,14 +37,24 @@
       to: "off"
   condition: []
   action:
-    - service: number.set_value
-      data:
-        value: 60
-      target:
-        entity_id: number.garden_water_time_left
     - service: input_select.select_next
       data:
         cycle: true
       target:
         entity_id: input_select.garden_water_zone
+  mode: single
+
+- alias: "Garden Watering: Reset Auto off timer"
+  initial_state: "on"
+  trigger:
+    - platform: state
+      entity_id: switch.garden_water_valve
+      to: "on"
+  condition: []
+  action:
+    - service: number.set_value
+      data:
+        value: 60
+      target:
+        entity_id: number.garden_water_time_left
   mode: single

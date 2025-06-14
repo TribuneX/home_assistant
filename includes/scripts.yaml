@@ -133,8 +133,8 @@ turn_off_all:
       continue_on_error: true
       entity_id:
         - switch.sonos_playbar
-        - switch.speaker_1
         - switch.speaker_2
+        - switch.tv
         - switch.tv_2
 
 turn_on_livingroom_default_lights:
