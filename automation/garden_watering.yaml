@@ -13,6 +13,12 @@
       - condition: numeric_state
         entity_id: sensor.openweathermap_forecast_precipitation
         below: 5
+      - condition: numeric_state
+        entity_id: sensor.rain_today
+        below: 3
+      - condition: numeric_state
+        entity_id: sensor.rain_week
+        below: 20
   action:
     - service: notify.devices_user_1
       data_template:
