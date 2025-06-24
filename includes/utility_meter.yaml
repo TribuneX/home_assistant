@@ -14,3 +14,19 @@ rain_year:
   source: sensor.rainfall_today
   cycle: yearly
   unique_id: rainfall_year
+water_garden_consumption_daily:
+  source: sensor.total_garden_water_consumption
+  cycle: daily
+  unique_id: water_garden_consumption_day
+water_garden_consumption_weekly:
+  source: sensor.total_garden_water_consumption
+  cycle: weekly
+  unique_id: water_garden_consumption_week
+water_garden_consumption_monthly:
+  source: sensor.total_garden_water_consumption
+  cycle: monthly
+  unique_id: water_garden_consumption_month
+water_garden_consumption_yearly:
+  source: sensor.total_garden_water_consumption
+  cycle: yearly
+  unique_id: water_garden_consumption_year
