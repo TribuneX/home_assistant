@@ -147,7 +147,7 @@
   initial_state: "on"
   trigger:
     - platform: time
-      at: "14:30"
+      at: "14:00"
   action:
     - service: script.close_front_covers
 
@@ -155,7 +155,7 @@
   initial_state: "on"
   trigger:
     - platform: time
-      at: "18:30"
+      at: "19:30"
   action:
     - service: script.open_front_covers
 
