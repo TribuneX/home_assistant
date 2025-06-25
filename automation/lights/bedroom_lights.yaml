@@ -36,17 +36,17 @@
         transition: 1
     - service: script.turn_off_livingroom_delay_10
 
-- alias: "Lights: Toggle lights for child"
-  initial_state: "on"
-  trigger:
-    - device_id: 3fc934a83becd8fc3406f5ca61be4928
-      domain: zha
-      platform: device
-      type: remote_button_short_press
-      subtype: remote_button_short_press
-  action:
-    service: light.toggle
-    entity_id: light.child
+#- alias: "Lights: Toggle lights for child"
+#  initial_state: "on"
+#  trigger:
+#    - device_id: 3fc934a83becd8fc3406f5ca61be4928
+#      domain: zha
+#      platform: device
+#      type: remote_button_short_press
+#      subtype: remote_button_short_press
+#  action:
+#    service: light.toggle
+#    entity_id: light.child
 
 - alias: "Lights: Turn off light Wickeltisch in the morning"
   initial_state: "on"
