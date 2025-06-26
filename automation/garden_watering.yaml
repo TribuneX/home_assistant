@@ -1,7 +1,7 @@
 - alias: "Garden Watering: Turn on watering"
   trigger:
     platform: time
-    at: "08:35"
+    at: "07:30"
   condition:
     condition: and
     conditions:
