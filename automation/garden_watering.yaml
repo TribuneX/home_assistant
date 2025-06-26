@@ -1,7 +1,7 @@
 - alias: "Garden Watering: Turn on watering"
   trigger:
     platform: time
-    at: "08:00"
+    at: "08:35"
   condition:
     condition: and
     conditions:
@@ -14,7 +14,7 @@
         entity_id: sensor.openweathermap_forecast_precipitation
         below: 5
       - condition: numeric_state
-        entity_id: sensor.rain_today
+        entity_id: sensor.rain_day
         below: 3
       - condition: numeric_state
         entity_id: sensor.rain_week
