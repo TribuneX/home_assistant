@@ -318,6 +318,7 @@ apple_tv_sleep:
         command:
           - home_hold
           - select
+          - select
     - service: media_player.turn_off
       target:
         entity_id: media_player.wohnzimmer
