@@ -2,18 +2,6 @@
 # Binary Sensors
 ##########################
 
-- platform: template
-  sensors:
-    # Inspired by https://community.home-assistant.io/t/virtual-light-sensor/31975/9
-    dark_outside:
-      friendly_name: "Dark Outside"
-      delay_off:
-        seconds: 60
-      delay_on:
-        seconds: 60
-      value_template: >
-        {{states('sensor.outdoor_illumination')|int < 8}}
-
 - platform: group
   name: "Livingroom Doors"
   device_class: opening

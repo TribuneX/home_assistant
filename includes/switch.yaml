@@ -8,35 +8,3 @@
   mac: "38-EA-A7-A3-25-F0"
   turn_off:
     service: shell_command.turn_off_server
-
-- platform: template
-  switches:
-    vacuum_mode:
-      value_template: "{{ is_state('vacuum.vacuum_cleaner', 'Cleaning')}}"
-      turn_on:
-        service: vacuum.start
-        entity_id: vacuum.vacuum_cleaner
-      turn_off:
-        service: vacuum.return_to_base
-        entity_id: vacuum.vacuum_cleaner
-    tv:
-      value_template: "{{ states('sensor.tv_electrical_measurement') | float(0) > 20 }}"
-      turn_on:
-        service: script.turn_on_tv
-      turn_off:
-        service: script.turn_off_tv
-
-    cover_coach:
-      value_template: "{{ state_attr('cover.livingroom_coach_left', 'current_position') == 50 }}"
-      turn_off:
-        - service: cover.open_cover
-          entity_id:
-            - cover.livingroom_coach_left
-            - cover.livingroom_coach_right
-      turn_on:
-        - service: cover.set_cover_position
-          data:
-            entity_id:
-              - cover.livingroom_coach_right
-              - cover.livingroom_coach_left
-            position: 50

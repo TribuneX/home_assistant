@@ -1,8 +1,7 @@
 - trigger:
     - platform: time_pattern
       minutes: "0" # every hour
-
-- sensor:
+  sensor:
   - name: "Rainfall today"
     unit_of_measurement: mm
     state_class: total_increasing
@@ -52,3 +51,151 @@
       state: "{{ daily['weather.openweathermap'].forecast[0].precipitation_probability }}"
       unit_of_measurement: '%'
 
+
+- sensor:
+  # Inspired by https://community.home-assistant.io/t/temp-compare/19497
+  - name: "Temperature Diff Livingroom"
+    unique_id: livingroom_out_vs_in
+    default_entity_id: sensor.livingroom_out_vs_in
+    unit_of_measurement: '°C'
+    state: "{{ (states('sensor.outdoor_temperature') | float) - (states('sensor.livingroom_temperature') | float) }}"
+
+  - name: "Temperature Diff Bedroom"
+    unique_id: bedroom_out_vs_in
+    default_entity_id: sensor.bedroom_out_vs_in
+    unit_of_measurement: '°C'
+    state: "{{ (states('sensor.outdoor_temperature') | float) - (states('sensor.bedroom_temperature') | float) }}"
+
+  - name: "Temperature Diff Office"
+    unique_id: office_out_vs_in
+    default_entity_id: sensor.office_out_vs_in
+    unit_of_measurement: '°C'
+    state: "{{ (states('sensor.outdoor_temperature') | float) - (states('sensor.office_temperature') | float) }}"
+
+  - name: "Robo"
+    unique_id: robo
+    default_entity_id: sensor.robo
+    state: "{{ 'online' if is_state('device_tracker.robot', 'home') else 'off' }}"
+
+  - name: "Switch"
+    unique_id: switch
+    default_entity_id: sensor.switch
+    state: "{{ 'online' if is_state('device_tracker.switch', 'home') else 'off' }}"
+
+  - name: "Server"
+    unique_id: server
+    default_entity_id: sensor.server
+    state: "{{ 'online' if is_state('device_tracker.server', 'home') else 'off' }}"
+
+  - name: "Bewässerung Rasen"
+    unique_id: watering_rasen
+    default_entity_id: sensor.watering_rasen
+    unit_of_measurement: "l/min"
+    state: "{{ 8.8 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Rasen') else 0 }}"
+
+  - name: "Bewässerung Hecke"
+    unique_id: watering_hecke
+    default_entity_id: sensor.watering_hecke
+    unit_of_measurement: "l/min"
+    state: "{{ 6.6 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Hecke') else 0 }}"
+
+  - name: "Bewässerung Blumenbeet"
+    unique_id: watering_blumenbeet
+    default_entity_id: sensor.watering_blumenbeet
+    unit_of_measurement: "l/min"
+    state: "{{ 1.5 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Blumenbeet') else 0 }}"
+
+  - name: "Bewässerung Rasen (klein)"
+    unique_id: watering_rasen_klein
+    default_entity_id: sensor.watering_rasen_klein
+    unit_of_measurement: "l/min"
+    state: "{{ 2.34 if is_state('switch.garden_water_valve', 'on') and is_state('input_select.garden_water_zone', 'Rasen (klein)') else 0 }}"
+
+  # energy
+  - name: "WHG Total"
+    unique_id: energy_all_total
+    default_entity_id: sensor.energy_all_total
+    unit_of_measurement: "kWh"
+    device_class: energy
+    state: "{{ (states('sensor.energy_all_total_wh')|float / 1000 ) | round(1) }}"
+
+  - name: "WHG HT"
+    unique_id: energy_all_ht
+    default_entity_id: sensor.energy_all_ht
+    unit_of_measurement: "kWh"
+    device_class: energy
+    state: "{{ (states('sensor.energy_all_ht_wh')|float / 1000 ) | round(1) }}"
+
+  - name: "WHG NT"
+    unique_id: energy_all_nt
+    default_entity_id: sensor.energy_all_nt
+    unit_of_measurement: "kWh"
+    device_class: energy
+    state: "{{ (states('sensor.energy_all_nt_wh')|float / 1000 ) | round(1) }}"
+
+- binary_sensor:
+  # Inspired by https://community.home-assistant.io/t/virtual-light-sensor/31975/9
+  - name: "Dark Outside"
+    unique_id: dark_outside
+    default_entity_id: binary_sensor.dark_outside
+    delay_on:
+      seconds: 60
+    delay_off:
+      seconds: 60
+    state: "{{ states('sensor.outdoor_illumination') | int < 8 }}"
+
+- switch:
+  - name: "Vacuum Mode"
+    unique_id: vacuum_mode
+    default_entity_id: switch.vacuum_mode
+    state: "{{ is_state('vacuum.vacuum_cleaner', 'Cleaning') }}"
+    turn_on:
+      - action: vacuum.start
+        target:
+          entity_id: vacuum.vacuum_cleaner
+    turn_off:
+      - action: vacuum.return_to_base
+        target:
+          entity_id: vacuum.vacuum_cleaner
+
+  - name: "TV"
+    unique_id: tv
+    default_entity_id: switch.tv
+    state: "{{ states('sensor.tv_electrical_measurement') | float(0) > 20 }}"
+    turn_on:
+      - action: script.turn_on_tv
+    turn_off:
+      - action: script.turn_off_tv
+
+  - name: "Cover Coach"
+    unique_id: cover_coach
+    default_entity_id: switch.cover_coach
+    state: "{{ state_attr('cover.livingroom_coach_left', 'current_position') == 50 }}"
+    turn_on:
+      - action: cover.set_cover_position
+        target:
+          entity_id:
+            - cover.livingroom_coach_right
+            - cover.livingroom_coach_left
+        data:
+          position: 50
+    turn_off:
+      - action: cover.open_cover
+        target:
+          entity_id:
+            - cover.livingroom_coach_left
+            - cover.livingroom_coach_right
+
+- light:
+  - name: "Bathroom EG"
+    unique_id: bathroom_eg
+    default_entity_id: light.bathroom_eg
+    state: "{{ is_state('switch.shelly_bad_eg', 'on') }}"
+    turn_on:
+      - action: switch.turn_on
+        target:
+          entity_id: switch.shelly_bad_eg
+    turn_off:
+      - action: switch.turn_off
+        target:
+          entity_id: switch.shelly_bad_eg
