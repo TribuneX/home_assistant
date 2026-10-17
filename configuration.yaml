@@ -53,12 +53,6 @@ logbook:
   include: !include includes/include.yaml
   exclude: !include includes/exclude.yaml
 
-http:
-  ssl_certificate: !secret ssl_certificate_path
-  ssl_key: !secret ssl_private_key
-  ip_ban_enabled: false
-  login_attempts_threshold: 3
-
 # Enables support for tracking state changes over time.
 history:
 
