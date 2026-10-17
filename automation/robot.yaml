@@ -26,29 +26,29 @@
 #    - service: input_boolean.turn_on
 #      data:
 #        entity_id: input_boolean.cleaned_today
-
-- alias: "Robot: Robot cleanup if nobody is home"
-  initial_state: "on"
-  trigger:
-    - platform: time
-      at: "11:00"
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        weekday:
-          - mon
-          - wed
-          - sat
-      - condition: state
-        entity_id: input_boolean.cleaned_today
-        state: "off"
-      - condition: state
-        entity_id: input_boolean.vacation_mode
-        state: "off"
-  action:
-    - service: vacuum.start
-      entity_id: vacuum.vacuum_cleaner
+#
+#- alias: "Robot: Robot cleanup if nobody is home"
+#  initial_state: "on"
+#  trigger:
+#    - platform: time
+#      at: "11:00"
+#  condition:
+#    condition: and
+#    conditions:
+#      - condition: time
+#        weekday:
+#          - mon
+#          - wed
+#          - sat
+#      - condition: state
+#        entity_id: input_boolean.cleaned_today
+#        state: "off"
+#      - condition: state
+#        entity_id: input_boolean.vacation_mode
+#        state: "off"
+#  action:
+#    - service: vacuum.start
+#      entity_id: vacuum.vacuum_cleaner
 
 - alias: "Robot: Reset cleaned today counter"
   initial_state: "on"
